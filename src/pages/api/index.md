@@ -1,5 +1,5 @@
 ---
-title: Cat API Spec 2.0
-description: Cat API Spec 2.0
-openAPISpec:  /petstore.json
---- 
+title: VIPMP
+description: APIs for Adobe VIP MarketPlace
+openAPISpec: ../open-api/partners.json
+---
