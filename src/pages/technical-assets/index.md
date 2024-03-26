@@ -39,12 +39,7 @@ External API Documentation.
 
 Sandbox User Guide - Ver 1.0a
 
-
-
 <DiscoverBlock width= "33%" slots="heading, link, text"/>
-
-
-
 
 ### Invoicing 
 
@@ -76,8 +71,6 @@ summay invoice example.
 
 <DiscoverBlock width= "33%" slots="heading, link, text"/>
 
-
-
 ### Postman Environment Files 
 
 
@@ -92,12 +85,7 @@ CPAPI V3 collection.
 
 Test distributor environment file.
 
-
-
 <DiscoverBlock width= "33%" slots="heading, link, text"/>
-
-
-
 
 
 ### Sample VIPMP emails sent by Adobe
