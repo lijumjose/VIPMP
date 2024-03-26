@@ -36,7 +36,7 @@ module.exports = {
       },
       {
         title: 'Technical Assets',
-        path: '/technical assets'
+        path: '/technical-assets'
       }
     ],
   },
