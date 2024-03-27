@@ -6,6 +6,7 @@ description: Includes documentation, sample price list and reconciliation files,
 <DiscoverBlock width= "33%" slots="heading, link, text"/>
 
 ### Developer Documentation
+
 [Adobe Commerce Partner API Credential Generation OAuth](../../documents/Adobe%20Commerce%20Partner%20API%20Credential%20Generation%20OAuth.pdf)
 
 Documentation for generating OAuth credentials in CPAPI.
@@ -40,7 +41,7 @@ Sandbox User Guide - Ver 1.0a
 
 [ACIS Customer User Guide_VIP Marketplace_Feb 2022](../../documents/invoicing/ACIS%20Customer%20User%20Guide_VIP%20Marketplace_Feb%202022.pdf)
 
-Adobe Customer Information Guide for VIP Marketplace.
+Adobe Customer Information Site for VIP Marketplace.
 
 <DiscoverBlock width= "33%" slots="link, text"/>
 
