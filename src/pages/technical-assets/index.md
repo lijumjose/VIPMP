@@ -40,7 +40,7 @@ Sandbox User Guide - Ver 1.0a
 
 [ACIS Customer User Guide_VIP Marketplace_Feb 2022](../../documents/invoicing/ACIS%20Customer%20User%20Guide_VIP%20Marketplace_Feb%202022.pdf)
 
-ACIS User Guide.
+Adobe Customer Information Guide for VIP Marketplace.
 
 <DiscoverBlock width= "33%" slots="link, text"/>
 
