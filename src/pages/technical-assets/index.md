@@ -5,7 +5,7 @@ description: Includes documentation, sample price list and reconciliation files,
 
 <DiscoverBlock width= "33%" slots="heading, link, text"/>
 
-### Developer Documentation 
+### Developer Documentation
 [Adobe Commerce Partner API Credential Generation OAuth](../../documents/Adobe%20Commerce%20Partner%20API%20Credential%20Generation%20OAuth.pdf)
 
 Documentation for generating OAuth credentials in CPAPI.
@@ -36,7 +36,7 @@ Sandbox User Guide - Ver 1.0a
 
 <DiscoverBlock width= "33%" slots="heading, link, text"/>
 
-### Invoicing 
+### Invoicing
 
 [ACIS Customer User Guide_VIP Marketplace_Feb 2022](../../documents/invoicing/ACIS%20Customer%20User%20Guide_VIP%20Marketplace_Feb%202022.pdf)
 
@@ -62,15 +62,15 @@ summay invoice example.
 
 <DiscoverBlock width= "33%" slots="heading, link, text"/>
 
-### Postman Environment Files 
+### Postman Environment Files
 
-[Adobe Commerce Partner API V3.postman_collection](../../documents/postman-enviornment-files/Adobe%20Commerce%20Partner%20API%20V3.postman_collection.json)
+[Adobe Commerce Partner API V3.postman_collection](../../documents/postman-environment-files/Adobe%20Commerce%20Partner%20API%20V3.postman_collection.json)
 
-CPAPI V3 collection.
+Commerce Partner API collection.
 
 <DiscoverBlock width= "33%" slots="link, text"/>
 
-[Anonymous Test Distributor.postman_environment](../../documents/postman-enviornment-files/Anonymous%20Test%20Distributor.postman_environment.json)
+[Anonymous Test Distributor.postman_environment](../../documents/postman-environment-files/Anonymous%20Test%20Distributor.postman_environment.json)
 
 Test distributor environment file.
 
@@ -104,16 +104,16 @@ Sample thanks for joining email.
 
 [Sample_VIP_MP_Email_Thanks_for_Your_Order](../../documents/sample-vipmp-emails-sent-by-adobe/Sample_VIP_MP_Email_Thanks_for_Your_Order.pdf)
 
-Sample VIPMP Email - Thanks for Your Order. 
+Sample VIPMP Email - Thanks for Your Order.
 
 <DiscoverBlock width= "33%" slots="link, text"/>
 
 [Sample_VIP_MP_Emails_Updates_to_your_Adobe_subscription](../../documents/sample-vipmp-emails-sent-by-adobe/Sample_VIP_MP_Emails_Updates_to_your_Adobe_subscription.pdf)
 
-Sample VIPMP Emails -Updates to your Adobe subscription. 
+Sample VIPMP Emails - Updates to your Adobe subscription.
 
 <DiscoverBlock width= "33%" slots="link, text"/>
 
 [Sample_VIP_MP_Emails_Your_Adobe_VIP_membership_has_changed](../../documents/sample-vipmp-emails-sent-by-adobe/Sample_VIP_MP_Emails_Your_Adobe_VIP_membership_has_changed.pdf)
 
-Sample VIPMP Emails - Your Adobe VIP membership haschanged.
+Sample VIPMP Emails - Your Adobe VIP membership has changed.
