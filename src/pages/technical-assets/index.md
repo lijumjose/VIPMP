@@ -6,11 +6,9 @@ description: Includes documentation, sample price list and reconciliation files,
 <DiscoverBlock width= "33%" slots="heading, link, text"/>
 
 ### Developer Documentation 
-
 [Adobe Commerce Partner API Credential Generation OAuth](../../documents/Adobe%20Commerce%20Partner%20API%20Credential%20Generation%20OAuth.pdf)
 
 Documentation for generating OAuth credentials in CPAPI.
-
 
 <DiscoverBlock width= "33%" slots="link, text"/>
 
@@ -18,20 +16,17 @@ Documentation for generating OAuth credentials in CPAPI.
 
 External API Documentation Market Segment Release
 
-
 <DiscoverBlock width= "33%" slots="link, text"/>
 
 [CPAPI Three Year Commit Sandbox Documentation](../../documents/developer-documentation/CPAPI%20Three%20Year%20Commit%20Sandbox%20Documentation.pdf)
 
 Sandbox Three Year Commit documentation.
 
-
 <DiscoverBlock width= "33%" slots="link, text"/>
 
 [12-21-23 External API Documentation](../../documents/developer-documentation/12-21-23%20External%20API%20Documentation.pdf)
 
 External API Documentation.
-
 
 <DiscoverBlock width= "33%" slots="link, text"/>
 
@@ -47,13 +42,11 @@ Sandbox User Guide - Ver 1.0a
 
 ACIS User Guide.
 
-
 <DiscoverBlock width= "33%" slots="link, text"/>
 
 [Adobe Recon File sample with description](../../documents/invoicing/Adobe%20Recon%20File%20sample%20with%20description.xlsx)
 
 Billing reconciliation file.
-
 
 <DiscoverBlock width= "33%" slots="link, text"/>
 
@@ -61,23 +54,19 @@ Billing reconciliation file.
 
 proration calculations.
 
-
 <DiscoverBlock width= "33%" slots="link, text"/>
 
 [Summary_Invoice_0819338879](../../documents/invoicing/Summary_Invoice_0819338879.xlsx)
 
 summay invoice example.
 
-
 <DiscoverBlock width= "33%" slots="heading, link, text"/>
 
 ### Postman Environment Files 
 
-
 [Adobe Commerce Partner API V3.postman_collection](../../documents/postman-enviornment-files/Adobe%20Commerce%20Partner%20API%20V3.postman_collection.json)
 
 CPAPI V3 collection.
-
 
 <DiscoverBlock width= "33%" slots="link, text"/>
 
@@ -87,9 +76,7 @@ Test distributor environment file.
 
 <DiscoverBlock width= "33%" slots="heading, link, text"/>
 
-
 ### Sample VIPMP emails sent by Adobe
-
 
 [Sample_VIP_MP_Email_Customer_Requesting_Purchase](../../documents/sample-vipmp-emails-sent-by-adobe/Sample_VIP_MP_Email_Customer_Requesting_Purchase.pdf)
 
@@ -113,20 +100,17 @@ Sample order placed email.
 
 Sample thanks for joining email.
 
-
 <DiscoverBlock width= "33%" slots="link, text"/>
 
 [Sample_VIP_MP_Email_Thanks_for_Your_Order](../../documents/sample-vipmp-emails-sent-by-adobe/Sample_VIP_MP_Email_Thanks_for_Your_Order.pdf)
 
 Sample VIPMP Email - Thanks for Your Order. 
 
-
 <DiscoverBlock width= "33%" slots="link, text"/>
 
 [Sample_VIP_MP_Emails_Updates_to_your_Adobe_subscription](../../documents/sample-vipmp-emails-sent-by-adobe/Sample_VIP_MP_Emails_Updates_to_your_Adobe_subscription.pdf)
 
 Sample VIPMP Emails -Updates to your Adobe subscription. 
-
 
 <DiscoverBlock width= "33%" slots="link, text"/>
 
