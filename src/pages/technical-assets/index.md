@@ -13,9 +13,9 @@ Documentation for generating OAuth credentials in CPAPI.
 
 <DiscoverBlock width= "33%" slots="link, text"/>
 
-[10-18-23 External API Documentation Market Segment Release](/documents/developer-documentation/External%20API%20Documentation%20Market%20Segment%20Release.pdf)
+[2-29-24 External API Documentation](/documents/developer-documentation/2-29-24%20External%20API%20Documentation.pdf)
 
-External API Documentation Market Segment Release
+External API Documentation.
 
 <DiscoverBlock width= "33%" slots="link, text"/>
 
