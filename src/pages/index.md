@@ -15,6 +15,4 @@ Please see the [VIPMP Partners API](api/).
 
 ### Resources
 
-[Adobe Commerce Partner API Credential Generation OAuth](../../documents/Adobe%20Commerce%20Partner%20API%20Credential%20Generation%20OAuth.pdf)
-
-Documentation for generating OAuth credentials in CPAPI.
+Please see the [Documentation](technical-assets/).
