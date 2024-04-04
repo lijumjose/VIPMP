@@ -11,7 +11,7 @@
  */
 
 module.exports = {
-  pathPrefix: process.env.PATH_PREFIX || '/VIPMP/',
+  pathPrefix: process.env.PATH_PREFIX || '/VIPMP',
   siteMetadata: {
     versions: [
       {
@@ -34,6 +34,10 @@ module.exports = {
           }
         ]
       },
+      {
+        title: 'Technical Assets',
+        path: '/technical-assets'
+      }
     ],
   },
   plugins: [`@adobe/gatsby-theme-aio`]
