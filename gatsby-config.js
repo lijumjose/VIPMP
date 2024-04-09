@@ -11,7 +11,7 @@
  */
 
 module.exports = {
-  pathPrefix: process.env.PATH_PREFIX || '/VIPMP/',
+  pathPrefix: process.env.PATH_PREFIX || '/vipmp/',
   siteMetadata: {
     versions: [
       {
