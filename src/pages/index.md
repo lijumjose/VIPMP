@@ -18,3 +18,4 @@ Learn more about [VIP-MP Partner APIs](api/).
 ### Resources
 
 Read more about [Documentation](technical-assets/).
+
