@@ -32,12 +32,12 @@ module.exports = {
         [
           {
             title: 'Introduction',
-            description: 'Overview',
+            description: '',
             path: '/docs/introduction.md'
           },
           {
             title: 'API authentication and access ',
-            description: 'Authentication method to use APIs',
+            description: '',
             path: '/docs/authenitcation/overview.md'
           },
           {
@@ -67,27 +67,27 @@ module.exports = {
           },
           {
             title: 'Manage subscriptions',
-            description: 'Embed high-fidelity PDFs in web apps with analytics',
+            description: '',
             path: '/docs/subscription_management/use_cases.md'
           },
           {
             title: 'Migrate to VIP Marketplace',
-            description: 'Embed high-fidelity PDFs in web apps with analytics',
+            description: '',
             path: '/docs/migration/eligibility_rules.md'
           },
           {
             title: 'Manage notifications',
-            description: 'Integrate e-signatures into your platform or application',
+            description: '',
             path: 'docs/notification_management/get_details/'
           },
           {
             title: 'References',
-            description: 'Build workflows on Microsoft Power Platform easily',
+            description: '',
             path: 'docs/microsoft-pa-integration/'
           },
           {
             title: 'Support',
-            description: 'Build workflows on Microsoft Power Platform easily',
+            description: '',
             path: 'docs/support.md'
           },
         ]
@@ -96,8 +96,8 @@ module.exports = {
         title: 'API Reference',
         menu: [
           {
-            title: 'VIPMP',
-            description: 'APIs for Adobe VIP MarketPlace',
+            title: 'Partner APIs',
+            description: 'APIs for Adobe VIP Marketplace',
             path: '/api/index.md'
           }
         ]
