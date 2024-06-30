@@ -12,21 +12,24 @@
 
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/vipmp/',
-  siteMetadata: {
+  siteMetadata: 
+  {
     versions: [
       {
         title: 'v0.0',
         selected: true
       }
     ],
-    pages: [
+    pages: 
+    [
       {
         title: 'Adobe VIP MarketPlace',
         path: '/'
       },
       {
         title: 'Documentation',
-        menu: [
+        menu: 
+        [
           {
             title: 'Introduction',
             description: 'Overview',
@@ -104,7 +107,8 @@ module.exports = {
         path: '/technical-assets'
       },
     ],
-    subPages: [
+    subPages: 
+    [
       {
         title: 'Introduction',
         path: '/docs/introduction.md'
@@ -112,7 +116,8 @@ module.exports = {
       {
         title: 'Use Cases',
         path: 'guides/admin/index.md',
-        pages: [
+        pages: 
+        [
           {
             title: 'Introduction',
             description: 'Overview',
@@ -175,19 +180,7 @@ module.exports = {
           },
         ]
       },
-      {
-        title: 'Calculated metrics API',
-        path: 'guides/calculated-metrics.md'
-      },
-      {
-        title: 'Classifications API',
-        path: 'guides/classifications/index.md',
-        pages: [
-          {
-            title: 'Data types',
-            path: 'guides/classifications/data-types.md'
-          }
-        ]
+    ]
   },
-  plugins: [`@adobe/gatsby-theme-aio`]
+  plugins: [`@adobe/gatsby-theme-aio`],
 };
