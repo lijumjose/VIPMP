@@ -12,17 +12,85 @@
 
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/vipmp/',
-  siteMetadata: {
+  siteMetadata: 
+  {
     versions: [
       {
         title: 'v0.0',
         selected: true
       }
     ],
-    pages: [
+    pages: 
+    [
       {
         title: 'Adobe VIP MarketPlace',
         path: '/'
+      },
+      {
+        title: 'Documentation',
+        menu: 
+        [
+          {
+            title: 'Introduction',
+            description: 'Overview',
+            path: '/docs/introduction.md'
+          },
+          {
+            title: 'API authentication and access ',
+            description: 'Authentication method to use APIs',
+            path: '/docs/authenitcation/overview.md'
+          },
+          {
+            title: 'Manage reseller accounts',
+            description: '',
+            path: '/docs/reseller_account/use_cases.md'
+          },
+          {
+            title: 'Manage customer accounts',
+            description: '',
+            path: '/docs/customer_account/use_cases.md'
+          },
+          {
+            title: 'Manage deployments',
+            description: '',
+            path: '/docs/deployment_management/use_cases.md'
+          },
+          {
+            title: 'Reseller change process',
+            description: '',
+            path: '/docs/reseller_change/use_cases.md'
+          },
+          {
+            title: 'Manager orders',
+            description: '',
+            path: '/docs/order_management/use_cases.md'
+          },
+          {
+            title: 'Manage subscriptions',
+            description: 'Embed high-fidelity PDFs in web apps with analytics',
+            path: '/docs/subscription_management/use_cases.md'
+          },
+          {
+            title: 'Migrate to VIP Marketplace',
+            description: 'Embed high-fidelity PDFs in web apps with analytics',
+            path: '/docs/migration/eligibility_rules.md'
+          },
+          {
+            title: 'Manage notifications',
+            description: 'Integrate e-signatures into your platform or application',
+            path: 'docs/notification_management/get_details/'
+          },
+          {
+            title: 'References',
+            description: 'Build workflows on Microsoft Power Platform easily',
+            path: 'docs/microsoft-pa-integration/'
+          },
+          {
+            title: 'Support',
+            description: 'Build workflows on Microsoft Power Platform easily',
+            path: 'docs/support.md'
+          },
+        ]
       },
       {
         title: 'API Reference',
@@ -35,10 +103,84 @@ module.exports = {
         ]
       },
       {
-        title: 'Technical Assets',
+        title: 'Sandbox user guide',
         path: '/technical-assets'
-      }
+      },
     ],
+    subPages: 
+    [
+      {
+        title: 'Introduction',
+        path: '/docs/introduction.md'
+      },
+      {
+        title: 'Use Cases',
+        path: 'guides/admin/index.md',
+        pages: 
+        [
+          {
+            title: 'Introduction',
+            description: 'Overview',
+            path: '/docs/introduction.md'
+          },
+          {
+            title: 'API authentication and access ',
+            description: 'Authentication method to use APIs',
+            path: '/docs/authenitcation/overview.md'
+          },
+          {
+            title: 'Manage reseller accounts',
+            description: '',
+            path: '/docs/reseller_account/use_cases.md'
+          },
+          {
+            title: 'Manage customer accounts',
+            description: '',
+            path: '/docs/customer_account/use_cases.md'
+          },
+          {
+            title: 'Manage deployments',
+            description: '',
+            path: '/docs/deployment_management/use_cases.md'
+          },
+          {
+            title: 'Reseller change process',
+            description: '',
+            path: '/docs/reseller_change/use_cases.md'
+          },
+          {
+            title: 'Manager orders',
+            description: '',
+            path: '/docs/order_management/use_cases.md'
+          },
+          {
+            title: 'Manage subscriptions',
+            description: 'Embed high-fidelity PDFs in web apps with analytics',
+            path: '/docs/subscription_management/use_cases.md'
+          },
+          {
+            title: 'Migrate to VIP Marketplace',
+            description: 'Embed high-fidelity PDFs in web apps with analytics',
+            path: '/docs/migration/eligibility_rules.md'
+          },
+          {
+            title: 'Manage notifications',
+            description: 'Integrate e-signatures into your platform or application',
+            path: 'docs/notification_management/get_details/'
+          },
+          {
+            title: 'References',
+            description: 'Build workflows on Microsoft Power Platform easily',
+            path: 'docs/microsoft-pa-integration/'
+          },
+          {
+            title: 'Support',
+            description: 'Build workflows on Microsoft Power Platform easily',
+            path: 'docs/support.md'
+          },
+        ]
+      },
+    ]
   },
-  plugins: [`@adobe/gatsby-theme-aio`]
+  plugins: [`@adobe/gatsby-theme-aio`],
 };
