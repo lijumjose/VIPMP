@@ -38,7 +38,7 @@ module.exports = {
           {
             title: 'API authentication and access ',
             description: '',
-            path: '/docs/authenitcation/overview.md'
+            path: '/docs/authentication/overview.md'
           },
           {
             title: 'Manage reseller accounts',
@@ -126,7 +126,7 @@ module.exports = {
           {
             title: 'API authentication and access ',
             description: 'Authentication method to use APIs',
-            path: '/docs/authenitcation/overview.md'
+            path: '/docs/authentication/overview.md'
           },
           {
             title: 'Manage reseller accounts',
