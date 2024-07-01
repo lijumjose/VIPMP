@@ -1,24 +1,26 @@
 # Health check
 
-Use the following two APIs to see whether you have the required access to run the VIP - Marketplace APIs. 
+Use the following two APIs to see whether you have the required access to run the VIP - Marketplace APIs.
 
 ## Ping
 
-GET `/ping`
+```http
+GET /ping
+X-Api-Key: <your-api-key>
+```
 
-REQUEST HEADERS:
-X-Api-Key: <your-api-key> REQUEST BODY: None RESPONSE BODY:
-
+Should respond with `pong`.
 
 ## Authenticated Ping
 
-GET `/partnerservice/ping`
+```http
+GET https://partners.adobe.io/partnerservice/ping
+X-Api-Key: <your-api-key>
+Authorization: <access_token>
+```
 
-REQUEST HEADERS:
-X-	Api-Key: ```<your-api-key>``` Authorization: Bearer ```<token>```
+should also respond with `pong`.
 
-REQUEST BODY: None
-RESPONSE BODY:
- 
-Assumptions:
-•	The authenticated ping endpoint is used to verify that the service is available and that your API Key and Authorization Token are valid.
+**Assumptions**
+
+- The authenticated ping endpoint is used to verify that the service is available and that your API Key and Authorization Token are valid.
