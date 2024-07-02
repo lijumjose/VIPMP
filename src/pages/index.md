@@ -12,6 +12,8 @@ contributors:
 
 VIP-Marketplace is a subscription licensing program that makes it convenient for organizations and institutions of all sizes to purchase, deploy, and manage Adobe products.
 
+<Resources slots="heading, links"/>
+
 #### Resources
 
 * [Partner API use cases](docs/index.md)
