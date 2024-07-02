@@ -23,7 +23,7 @@ module.exports = {
     pages: 
     [
       {
-        title: 'Adobe VIP MarketPlace',
+        title: 'Adobe VIP Marketplace',
         path: '/'
       },
       {
@@ -31,19 +31,24 @@ module.exports = {
         menu: 
         [
           {
+            title: 'Release notes',
+            description: '',
+            path: '/docs/index.md'
+          },
+          {
             title: 'Introduction',
             description: '',
             path: '/docs/introduction.md'
           },
           {
-            title: 'API authentication and access ',
+            title: 'Enable authentication and access',
             description: '',
             path: '/docs/authentication/overview.md'
           },
           {
             title: 'Manage reseller accounts',
             description: '',
-            path: '/docs/reseller_account/use_cases.md'
+            path: '/docs/reseller_account/index.md'
           },
           {
             title: 'Manage customer accounts',
@@ -97,7 +102,7 @@ module.exports = {
         menu: [
           {
             title: 'Partner APIs',
-            description: 'APIs for Adobe VIP Marketplace',
+            description: '',
             path: '/api/index.md'
           }
         ]
@@ -110,75 +115,72 @@ module.exports = {
     subPages: 
     [
       {
+        title: 'Release notes',
+        path: '/docs/index.md'
+      },
+      {
         title: 'Introduction',
         path: '/docs/introduction.md'
       },
       {
-        title: 'Use Cases',
-        path: 'guides/admin/index.md',
-        pages: 
-        [
-          {
-            title: 'Introduction',
-            description: 'Overview',
-            path: '/docs/introduction.md'
-          },
-          {
-            title: 'API authentication and access ',
-            description: 'Authentication method to use APIs',
-            path: '/docs/authentication/overview.md'
-          },
-          {
-            title: 'Manage reseller accounts',
-            description: '',
-            path: '/docs/reseller_account/use_cases.md'
-          },
-          {
-            title: 'Manage customer accounts',
-            description: '',
-            path: '/docs/customer_account/use_cases.md'
-          },
-          {
-            title: 'Manage deployments',
-            description: '',
-            path: '/docs/deployment_management/use_cases.md'
-          },
-          {
-            title: 'Reseller change process',
-            description: '',
-            path: '/docs/reseller_change/use_cases.md'
-          },
-          {
-            title: 'Manager orders',
-            description: '',
-            path: '/docs/order_management/use_cases.md'
-          },
-          {
-            title: 'Manage subscriptions',
-            description: 'Embed high-fidelity PDFs in web apps with analytics',
-            path: '/docs/subscription_management/use_cases.md'
-          },
-          {
-            title: 'Migrate to VIP Marketplace',
-            description: 'Embed high-fidelity PDFs in web apps with analytics',
-            path: '/docs/migration/eligibility_rules.md'
-          },
-          {
-            title: 'Manage notifications',
-            description: 'Integrate e-signatures into your platform or application',
-            path: 'docs/notification_management/get_details/'
-          },
-          {
-            title: 'References',
-            description: 'Build workflows on Microsoft Power Platform easily',
-            path: 'docs/microsoft-pa-integration/'
-          },
-          {
-            title: 'Support',
-            description: 'Build workflows on Microsoft Power Platform easily',
-            path: 'docs/support.md'
-          },
-        ]
+        title: 'Introduction',
+        description: 'Overview',
+        path: '/docs/introduction.md'
+      },
+      {
+        title: 'API authentication and access ',
+        description: 'Authentication method to use APIs',
+        path: '/docs/authentication/overview.md'
+      },
+      {
+        title: 'Manage reseller accounts',
+        description: '',
+        path: '/docs/reseller_account'
+      },
+      {
+        title: 'Manage customer accounts',
+        description: '',
+        path: '/docs/customer_account/use_cases.md'
+      },
+      {
+        title: 'Manage deployments',
+        description: '',
+        path: '/docs/deployment_management/use_cases.md'
+      },
+      {
+        title: 'Reseller change process',
+        description: '',
+        path: '/docs/reseller_change/use_cases.md'
+      },
+      {
+        title: 'Manager orders',
+        description: '',
+        path: '/docs/order_management/use_cases.md'
+      },
+      {
+        title: 'Manage subscriptions',
+        description: 'Embed high-fidelity PDFs in web apps with analytics',
+        path: '/docs/subscription_management/use_cases.md'
+      },
+      {
+        title: 'Migrate to VIP Marketplace',
+        description: 'Embed high-fidelity PDFs in web apps with analytics',
+        path: '/docs/migration/eligibility_rules.md'
+      },
+      {
+        title: 'Manage notifications',
+        description: 'Integrate e-signatures into your platform or application',
+        path: 'docs/notification_management/get_details/'
+      },
+      {
+        title: 'References',
+        description: 'Build workflows on Microsoft Power Platform easily',
+        path: 'docs/microsoft-pa-integration/'
+      },
+      {
+        title: 'Support',
+        description: 'Build workflows on Microsoft Power Platform easily',
+        path: 'docs/support.md'
       },
     ]
   },
