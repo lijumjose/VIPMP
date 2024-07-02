@@ -31,12 +31,17 @@ module.exports = {
         menu: 
         [
           {
+            title: 'Release notes',
+            description: '',
+            path: '/docs/index.md'
+          },
+          {
             title: 'Introduction',
             description: '',
             path: '/docs/introduction.md'
           },
           {
-            title: 'API authentication and access ',
+            title: 'Enable authentication and access ',
             description: '',
             path: '/docs/authentication/overview.md'
           },
@@ -44,6 +49,7 @@ module.exports = {
             title: 'Manage reseller accounts',
             description: '',
             path: '/docs/reseller_account/use_cases.md'
+
           },
           {
             title: 'Manage customer accounts',
@@ -110,6 +116,10 @@ module.exports = {
     subPages: 
     [
       {
+        title: 'Release notes',
+        path: '/docs/index.md'
+      },
+      {
         title: 'Introduction',
         path: '/docs/introduction.md'
       },
@@ -131,7 +141,22 @@ module.exports = {
           {
             title: 'Manage reseller accounts',
             description: '',
-            path: '/docs/reseller_account/use_cases.md'
+            path: '/docs/reseller_account/index.md'
+            pages: 
+            [
+              {
+                title: 'Create a reseller',
+                path: '/docs/reseller_account/create_reseller_account.md'
+              },
+              {
+                title: 'Get reseller details',
+                path: '/docs/reseller_account/get_reseller_account.md'
+              },
+              {
+                title: 'Update a reseller',
+                path: '/docs/reseller_account/update_reseller_account.md'
+              },
+            ],
           },
           {
             title: 'Manage customer accounts',
