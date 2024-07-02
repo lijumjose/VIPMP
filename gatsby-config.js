@@ -102,7 +102,7 @@ module.exports = {
         menu: [
           {
             title: 'Partner APIs',
-            description: 'APIs for Adobe VIP Marketplace',
+            description: '',
             path: '/api/index.md'
           }
         ]
