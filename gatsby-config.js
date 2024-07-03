@@ -23,11 +23,11 @@ module.exports = {
     pages: 
     [
       {
-        title: 'Adobe VIP Marketplace',
+        title: 'Home',
         path: '/'
       },
       {
-        title: 'Documentation',
+        title: 'Use Cases',
         menu: 
         [
           {
@@ -108,7 +108,7 @@ module.exports = {
         ]
       },
       {
-        title: 'Sandbox user guide',
+        title: 'Sandbox User Guide',
         path: '/technical-assets'
       },
     ],
