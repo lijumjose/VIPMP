@@ -16,7 +16,7 @@ Use the `PATCH /v3/resellers/<reseller-id>` API endpoint to update a reseller ac
 | X-Correlation-Id | **Required**. A unique identifier for the call. This is to ensure idempotency. In the case of a timeout, the retry call could include the same value. Upon receiving some response, the value should be reset for the next call.|
 | Accept | **Required**. Specifies the response type. Must be "application/json" for proper usage. |
 | Content-Type | **Required**. Specifies the request type. Must be "application/json" for proper usage. |
-| Authorization | **Required**. Authorization token in the form "Bearer <token>" |
+| Authorization | **Required**. Authorization token in the form `Bearer <token>` |
 | X-Api-Key | **Required**. The API Key for your integration|
 
 ## Request body
