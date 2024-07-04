@@ -53,7 +53,7 @@ module.exports = {
           {
             title: 'Manage customer accounts',
             description: '',
-            path: '/docs/customer_account/use_cases.md'
+            path: '/docs/customer_account/index.md'
           },
           {
             title: 'Manage deployments',
@@ -140,7 +140,7 @@ module.exports = {
       {
         title: 'Manage customer accounts',
         description: '',
-        path: '/docs/customer_account/use_cases.md'
+        path: '/docs/customer_account/index.md'
       },
       {
         title: 'Manage deployments',
