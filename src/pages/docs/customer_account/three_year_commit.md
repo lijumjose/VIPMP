@@ -126,7 +126,7 @@ REQUEST
 
 The diagram below shows the lifecycle of the commitmentRequest object. The same lifecycle applies for the recommitmentRequest, with the difference being that recommitmentRequest can’t move to COMMITTED status until the current commitment ends.
 
-![3YC flow diagram](/src/pages/image/3yc_flow_diagram.jpg)
+![3YC flow diagram](../image/3yc_flow_diagram.jpg)
 
 ```json
 "benefits":[
