@@ -10,7 +10,7 @@ Managing customer accounts is vital in enabling the purchase of products. You ca
 * [Get license of a customer](./get_licenses.md)
 * [Update a customer account](update_customer_account.md)
 
-As part of customer account management, you need to take care of the following use cases as well: 
+As part of customer account management, you need to take care of the following use cases as well:
 
 * [Manage market segments](./market_segment.md)
 * [Manage three-year commits](./three_year_commit.md)
