@@ -27,10 +27,10 @@ jobs:
       exclude_subfolder: ${{ github.event.inputs.excludeSubfolder }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Get pathPrefix
-        uses: actions/github-script@v7
+        uses: actions/github-script@v6
         id: get_path_prefix
         with:
           script: |
@@ -39,7 +39,7 @@ jobs:
           result-encoding: string
       - name: Get branch name
         shell: bash
-        run: echo "##[set-output name=branch;]${GITHUB_REF#refs/heads/}"
+        run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
         id: get_branch
 
   echo-state:
@@ -76,30 +76,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Setup for Yarn
-        uses: actions/setup-node@v4
+      - name: Setup Node v16 for Yarn v3
+        uses: actions/setup-node@v3
         with:
-          node-version: lts/iron
+          node-version: '16.15.0' # Current LTS version
 
-      - name: Enable Corepack
+      - name: Enable Corepack for Yarn v3
         run: corepack enable
 
-      - name: Install Yarn
-        uses: borales/actions-yarn@v4
+      - name: Install Yarn v3
+        uses: borales/actions-yarn@v3
         with:
           cmd: set version stable
 
       - name: Install Dependencies
-        uses: borales/actions-yarn@v4
+        uses: borales/actions-yarn@v3
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
         with:
           cmd: install
 
       - name: Gatsby Cache
-        uses: actions/cache@v4
+        uses: actions/cache@v2
         with:
           path: |
             public
@@ -115,7 +115,7 @@ jobs:
           cmd: clean
 
       - name: Build site
-        uses: borales/actions-yarn@v4
+        uses: borales/actions-yarn@v3
         with:
           cmd: build
         env:
@@ -179,30 +179,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Setup Node for Yarn
-        uses: actions/setup-node@v4
+      - name: Setup Node v16 for Yarn v3
+        uses: actions/setup-node@v3
         with:
-          node-version: lts/iron
+          node-version: '16.15.0' # Current LTS version
 
-      - name: Enable Corepack for Yarn
+      - name: Enable Corepack for Yarn v3
         run: corepack enable
 
-      - name: Install Yarn
-        uses: borales/actions-yarn@v4
+      - name: Install Yarn v3
+        uses: borales/actions-yarn@v3
         with:
           cmd: set version stable
 
       - name: Install Dependencies
-        uses: borales/actions-yarn@v4
+        uses: borales/actions-yarn@v3
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
         with:
           cmd: install
 
       - name: Gatsby Cache
-        uses: actions/cache@v4
+        uses: actions/cache@v2
         with:
           path: |
             public
@@ -213,12 +213,12 @@ jobs:
 
       - name: Clean Cache
         if: needs.set-state.outputs.clean_cache == 'true'
-        uses: borales/actions-yarn@v4
+        uses: borales/actions-yarn@v3
         with:
           cmd: clean
 
       - name: Build site
-        uses: borales/actions-yarn@v4
+        uses: borales/actions-yarn@v3
         with:
           cmd: build
         env:
