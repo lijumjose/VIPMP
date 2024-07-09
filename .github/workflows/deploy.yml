@@ -144,7 +144,7 @@ jobs:
           GATSBY_FEDS_PRIVACY_ID: ${{ secrets.AIO_FEDS_PRIVACY_ID }}
 
       - name: Deploy
-        uses: sparecycles/static-website-deploy@main
+        uses: AdobeDocs/static-website-deploy@master
         with:
           enabled-static-website: 'true'
           source: 'public'
@@ -249,7 +249,7 @@ jobs:
           GATSBY_ALGOLIA_INDEX_ENV_PREFIX: ${{ secrets.AIO_ALGOLIA_INDEX_ENV_PREFIX }}
           GATSBY_FEDS_PRIVACY_ID: ${{ secrets.AIO_FEDS_PRIVACY_ID }}
       - name: Deploy
-        uses: sparecycles/static-website-deploy@main
+        uses: AdobeDocs/static-website-deploy@master
         with:
           enabled-static-website: 'true'
           source: 'public'
