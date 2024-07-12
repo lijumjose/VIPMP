@@ -15,12 +15,12 @@ jobs:
           node-version: lts/iron
       - name: Enable Corepack for Yarn
         run: corepack enable
-      - name: Install Yarn
-        uses: borales/actions-yarn@v4
+      - name: Install dependencies
+        uses: borales/actions-yarn@v5
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
         with:
-          cmd: set version stable
-      - name: Yarn Install
-        uses: bahmutov/npm-install@v1
+          cmd: install
       - name: Build
         run: |
           yarn build
