@@ -86,15 +86,8 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
-      - name: Install Yarn
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: set version stable
-
       - name: Install Dependencies
-        uses: borales/actions-yarn@v4
-        env:
-          YARN_ENABLE_IMMUTABLE_INSTALLS: false
+        uses: borales/actions-yarn@v5
         with:
           cmd: install
 
@@ -189,15 +182,8 @@ jobs:
       - name: Enable Corepack for Yarn
         run: corepack enable
 
-#      - name: Install Yarn
-#        uses: borales/actions-yarn@v4
-#        with:
-#          cmd: set version stable
-
       - name: Install Dependencies
-        uses: borales/actions-yarn@v4
-        env:
-          YARN_ENABLE_IMMUTABLE_INSTALLS: false
+        uses: borales/actions-yarn@v5
         with:
           cmd: install
 
@@ -213,12 +199,12 @@ jobs:
 
       - name: Clean Cache
         if: needs.set-state.outputs.clean_cache == 'true'
-        uses: borales/actions-yarn@v4
+        uses: borales/actions-yarn@v5
         with:
           cmd: clean
 
       - name: Build site
-        uses: borales/actions-yarn@v4
+        uses: borales/actions-yarn@v5
         with:
           cmd: build
         env:
