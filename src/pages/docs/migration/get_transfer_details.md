@@ -1,6 +1,6 @@
-# Create deployment
+# Get transfer details
 
-Use the `POST /v3/customers/<customer-id>/deployments` endpoint to create a deployment resource for a customer.
+Use the `GET /v3/memberships/<membership-id>/transfers/<transfer-id>` API endpoint to get details of membership transfer from VIP to VIP-MP.
 
 ## Request header
 
@@ -13,49 +13,33 @@ Use the `POST /v3/customers/<customer-id>/deployments` endpoint to create a depl
 | Authorization    | **Required**. Authorization token in the form `Bearer <token>`                                                                                                                                                                   |
 | X-Api-Key        | **Required**. The API Key for your integration                                                                                                                                                                                   |
 
-## Request Body
+## Request body
 
-Deployment `companyProfile` with only address information:
-
-```json
-{
-    "companyProfile": {
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "San Jose",
-            "addressLine1": "200 Fairmont Ave",
-            "addressLine2": "Apt 123",
-            "postalCode": "95110-1234",
-            "phoneNumber": "800-123-4567"
-        }
-    }
-}
-```
+None.
 
 ## Response body
 
-Deployment resource:
-
 ```json
 {
-    "deploymentId": "345434543",
-    "companyProfile": {
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "San Jose",
-            "addressLine1": "200 Fairmont Ave",
-            "addressLine2": "Apt 123",
-            "postalCode": "95110-1234",
-            "phoneNumber": "800-123-4567"
-        }
-    },
-    "creationDate": "2019-05-02T22:49:52Z",
+    "transferId": "5555luaigdfads555",
+    "customerId": "10008675",
+    "membershipId": "12345678",
+    "resellerId": "999888777",
+    "creationDate": "2019-12-10T22:49:55Z",
     "status": "1000",
+    "lineItems": [
+        {
+            "lineItemNumber": 1,
+            "offerId": "12345678CA01A12",
+            "quantity": 10,
+            "subscriptionId": "8675309",
+            "currencyCode": "USD",
+            "deploymentId": "12345"
+        }
+    ],
     "links": {
         "self": {
-            "uri": "/v3/customers/5556667778/deployments/345434543",
+            "uri": "/v3/memberships/12345678/transfers/5555luaigdfads555",
             "method": "GET",
             "headers": []
         }
@@ -63,12 +47,12 @@ Deployment resource:
 }
 ```
 
-### HTTP status codes
+## HTTP status codes
 
-| Status code | Description                 |
-|-------------|-----------------------------|
-| 201         | Deployment created    |
-| 400         | Bad request                 |
-| 401         | Invalid Authorization token |
-| 403         | Invalid API Key             |
-| 404         | Invalid customer ID         |
+| Status code | Description                            |
+|-------------|----------------------------------------|
+| 202         | Transfer request received or initiated |
+| 400         | Bad request                            |
+| 401         | Invalid Authorization token            |
+| 403         | Invalid API Key                        |
+| 404         | Invalid membership ID or transfer ID   |

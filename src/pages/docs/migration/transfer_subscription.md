@@ -1,15 +1,6 @@
-# Preview offers
+# Transfer subscriptions
 
-Use the `GET /v3/memberships/<membership-id>/offers` API endpoint to preview offers of a membership.
-
-## Assumptions
-
-Ensure that you are aware of the following before fetching the offer details:
-
-- Each item corresponds to one subscription.
-- The subscription is active until the `renewalDate`.
-  - All subscriptions will have _auto-renewal_ enabled by default upon transfer, so they will renew on the `renewalDate`.
-- If the customer is in the renewal window after their anniversary date and has not renewed some products, the non-renewed products will be included with `renewalDate` in the past. These items will be created as inactive subscriptions – the same behavior as if the customer had products in VIP-MP that did not renew.
+Use the `POST /v3/memberships/<membership-id>/transfers` API endpoint to transfer subscriptions from VIP to VIP-MP.
 
 ## Request header
 
@@ -26,35 +17,52 @@ Ensure that you are aware of the following before fetching the offer details:
 
 | Parameter           | Values        | Default | Description                                                                         |
 |---------------------|---------------|---------|-------------------------------------------------------------------------------------|
-| ignore-order-return | true or false | false   | If true, customers with returnable purchases will be eligible for transfer.         |
-| expire-open-pas     | true or false | false   | If true, customers with open Purchase Authorizations will be eligible for transfer. |
+| ignore-order-return | true or false | false   | If `true`, customers with returnable purchases can be transferred. <br /> **Note:** Setting it to `true` will disable rollback to VIP and the “returnable” purchase can no longer be returned.         |
+| expire-open-pas     | true or false | false   | If `true`, customers with open purchase authorizations can be transferred. Any open purchase authorizations will expire during the async portion of the transfer. |
 
 ## Request body
 
-None.
+```json
+{
+"resellerId" : "999888777"
+}
+```
 
 ## Response body
 
 ```json
 {
-    "totalCount": 1,
-    "items": [
+    "transferId": "5555luaigdfads555",
+    "customerId": "",
+    "membershipId": "12345678",
+    "resellerId": "999888777",
+    "creationDate": "2019-12-10T22:49:55Z",
+    "status": "1002",
+    "lineItems": [
         {
-            "offerId": "12345678CA01A12", // Offer ID for marketplace to use
+            "lineItemNumber": 1,
+            "offerId": "12345678CA01A12",
             "currencyCode": "USD",
-            "quantity": 10
-    "renewalDate": "2020-06-08"
+            "quantity": 10,
+            "subscriptionId": ""
         }
-    ]
+    ],
+    "links": {
+        "self": {
+            "uri": "/v3/memberships/12345678/transfers/5555luaigdfads555",
+            "method": "GET",
+            "headers": []
+        }
+    }
 }
 ```
 
 ## HTTP status codes
 
-| Status code | Description                 |
-|-------------|-----------------------------|
-| 200         | Preview returned            |
-| 400         | Bad request                 |
-| 401         | Invalid Authorization token |
-| 403         | Invalid API Key             |
-| 404         | Invalid membership ID       |
+| Status code | Description                            |
+|-------------|----------------------------------------|
+| 202         | Transfer request received or initiated |
+| 400         | Bad request                            |
+| 401         | Invalid Authorization token            |
+| 403         | Invalid API Key                        |
+| 404         | Invalid membership ID or reseller ID   |

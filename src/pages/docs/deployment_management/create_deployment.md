@@ -1,15 +1,6 @@
-# Preview offers
+# Create deployment
 
-Use the `GET /v3/memberships/<membership-id>/offers` API endpoint to preview offers of a membership.
-
-## Assumptions
-
-Ensure that you are aware of the following before fetching the offer details:
-
-- Each item corresponds to one subscription.
-- The subscription is active until the `renewalDate`.
-  - All subscriptions will have _auto-renewal_ enabled by default upon transfer, so they will renew on the `renewalDate`.
-- If the customer is in the renewal window after their anniversary date and has not renewed some products, the non-renewed products will be included with `renewalDate` in the past. These items will be created as inactive subscriptions – the same behavior as if the customer had products in VIP-MP that did not renew.
+Use the `POST /v3/customers/<customer-id>/deployments` endpoint to create a deployment resource for a customer.
 
 ## Request header
 
@@ -22,30 +13,53 @@ Ensure that you are aware of the following before fetching the offer details:
 | Authorization    | **Required**. Authorization token in the form `Bearer <token>`                                                                                                                                                                   |
 | X-Api-Key        | **Required**. The API Key for your integration                                                                                                                                                                                   |
 
-## Query parameters
+## Request Body
 
-| Parameter           | Values        | Default | Description                                                                         |
-|---------------------|---------------|---------|-------------------------------------------------------------------------------------|
-| ignore-order-return | true or false | false   | If true, customers with returnable purchases will be eligible for transfer.         |
-| expire-open-pas     | true or false | false   | If true, customers with open Purchase Authorizations will be eligible for transfer. |
-
-## Request body
-
-None.
-
-## Response body
+Deployment `companyProfile` with only address information:
 
 ```json
 {
-    "totalCount": 1,
-    "items": [
-        {
-            "offerId": "12345678CA01A12", // Offer ID for marketplace to use
-            "currencyCode": "USD",
-            "quantity": 10
-    "renewalDate": "2020-06-08"
+    "companyProfile": {
+        "address": {
+            "country": "US",
+            "region": "CA",
+            "city": "San Jose",
+            "addressLine1": "200 Fairmont Ave",
+            "addressLine2": "Apt 123",
+            "postalCode": "95110-1234",
+            "phoneNumber": "800-123-4567"
         }
-    ]
+    }
+}
+```
+
+## Response body
+
+Deployment resource:
+
+```json
+{
+    "deploymentId": "345434543",
+    "companyProfile": {
+        "address": {
+            "country": "US",
+            "region": "CA",
+            "city": "San Jose",
+            "addressLine1": "200 Fairmont Ave",
+            "addressLine2": "Apt 123",
+            "postalCode": "95110-1234",
+            "phoneNumber": "800-123-4567"
+        }
+    },
+    "creationDate": "2019-05-02T22:49:52Z",
+    "status": "1000",
+    "links": {
+        "self": {
+            "uri": "/v3/customers/5556667778/deployments/345434543",
+            "method": "GET",
+            "headers": []
+        }
+    }
 }
 ```
 
@@ -53,8 +67,8 @@ None.
 
 | Status code | Description                 |
 |-------------|-----------------------------|
-| 200         | Preview returned            |
+| 201         | Deployment created    |
 | 400         | Bad request                 |
 | 401         | Invalid Authorization token |
 | 403         | Invalid API Key             |
-| 404         | Invalid membership ID       |
+| 404         | Invalid customer ID         |
