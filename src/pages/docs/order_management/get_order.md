@@ -3,7 +3,7 @@
 The following two API endpoints are available to get order details:
 
 - [Get details of a specific order](#get-details-of-a-specific-order)
-- [Get the order history of a customer](#get-order-history-of-a-customer)
+- [Get the order history of a customer](#get-the-order-history-of-a-customer)
 
 ## Get details of a specific order
 
