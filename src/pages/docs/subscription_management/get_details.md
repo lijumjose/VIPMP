@@ -4,7 +4,7 @@ Use the `GET /v3/customers/<customer-id>/subscriptions/<subscription-id>` API en
 
 ## Assumptions
 
-Ensure that you are aware of the following before trying out this API: 
+Ensure that you are aware of the following before trying out this API:
 
 - Each subscription corresponds to a product or group of products.
 - Subscriptions are created for line items upon order creation.
