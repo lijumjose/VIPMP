@@ -1,6 +1,6 @@
-# Get details of a customer's subscriptions
+# Transfer subscriptions
 
-Use the `GET /v3/customers/<customer-id>/subscriptions` API endpoint to get details of a customer's subscriptions.
+Use the `POST /v3/memberships/<membership-id>/transfers` API endpoint to transfer subscriptions from VIP to VIP-MP.
 
 ## Request header
 
@@ -13,35 +13,56 @@ Use the `GET /v3/customers/<customer-id>/subscriptions` API endpoint to get deta
 | Authorization    | **Required**. Authorization token in the form `Bearer <token>`                                                                                                                                                                   |
 | X-Api-Key        | **Required**. The API Key for your integration                                                                                                                                                                                   |
 
+## Query parameters
+
+| Parameter           | Values        | Default | Description                                                                         |
+|---------------------|---------------|---------|-------------------------------------------------------------------------------------|
+| ignore-order-return | true or false | false   | If `true`, customers with returnable purchases can be transferred. <br /> **Note:** Setting it to `true` will disable rollback to VIP and the “returnable” purchase can no longer be returned.         |
+| expire-open-pas     | true or false | false   | If `true`, customers with open purchase authorizations can be transferred. Any open purchase authorizations will expire during the async portion of the transfer. |
+
 ## Request body
 
-None.
+```json
+{
+"resellerId" : "999888777"
+}
+```
 
 ## Response body
 
 ```json
 {
-    "totalCount": 2,
-    "items": [
-        { Subscription resource
-        },
-        { Subscription resource
+    "transferId": "5555luaigdfads555",
+    "customerId": "",
+    "membershipId": "12345678",
+    "resellerId": "999888777",
+    "creationDate": "2019-12-10T22:49:55Z",
+    "status": "1002",
+    "lineItems": [
+        {
+            "lineItemNumber": 1,
+            "offerId": "12345678CA01A12",
+            "currencyCode": "USD",
+            "quantity": 10,
+            "subscriptionId": ""
         }
-    ]
+    ],
+    "links": {
+        "self": {
+            "uri": "/v3/memberships/12345678/transfers/5555luaigdfads555",
+            "method": "GET",
+            "headers": []
+        }
+    }
 }
 ```
 
-**Notes:**
-
-- Only the active subscriptions for VIP customers are included in the response.
-- No parameters or filters are available at this time.
-
 ## HTTP status codes
 
-| Status code | Description                                |
-|-------------|--------------------------------------------|
-| 200         | Subscription details successfully returned |
-| 400         | Bad request                                |
-| 401         | Invalid Authorization token                |
-| 403         | Invalid API Key                            |
-| 404         | Invalid customer ID                        |
+| Status code | Description                            |
+|-------------|----------------------------------------|
+| 202         | Transfer request received or initiated |
+| 400         | Bad request                            |
+| 401         | Invalid Authorization token            |
+| 403         | Invalid API Key                        |
+| 404         | Invalid membership ID or reseller ID   |
