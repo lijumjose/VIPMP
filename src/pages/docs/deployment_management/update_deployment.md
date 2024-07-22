@@ -69,7 +69,7 @@ Deployment resource:
 }
 ```
 
-### HTTP status codes
+## HTTP status codes
 
 | Status code | Description                 |
 |-------------|-----------------------------|
