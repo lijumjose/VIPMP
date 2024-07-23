@@ -88,7 +88,7 @@ module.exports = {
           {
             title: 'References',
             description: '',
-            path: 'docs/microsoft-pa-integration/'
+            path: 'docs/references/index.md'
           },
           {
             title: 'Support',
@@ -120,11 +120,6 @@ module.exports = {
       },
       {
         title: 'Introduction',
-        path: '/docs/introduction.md'
-      },
-      {
-        title: 'Introduction',
-        description: 'Overview',
         path: '/docs/introduction.md'
       },
       {
@@ -175,7 +170,7 @@ module.exports = {
       {
         title: 'References',
         description: 'Build workflows on Microsoft Power Platform easily',
-        path: 'docs/microsoft-pa-integration/'
+        path: 'docs/references/index.md'
       },
       {
         title: 'Support',
