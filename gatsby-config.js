@@ -17,8 +17,14 @@ module.exports = {
     versions: [
       {
         title: 'Release Notes',
-        selected: true
-      }
+        description: 'Latest version',
+        path: '/docs/release_notes/07_18_24.md'
+      },
+      {
+        title: 'June 20, 2024',
+        description: '',
+        path: '/docs/release_notes/06_20_24.md'
+      },
     ],
     pages: 
     [
@@ -26,92 +32,11 @@ module.exports = {
         title: 'Home',
         path: '/'
       },
-      {
-        title: 'Release Notes',
-        menu: 
-        [
-          {
-            title: 'June 18, 2024',
-            description: '',
-            path: '/docs/index.md'
-          },
-          {
-            title: 'Junly 10, 2024',
-            description: '',
-            path: '/docs/index.md'
-          },
-        ]
-      },
+      
       {
         title: 'Use Cases',
-        menu: 
-        [
-          {
-            title: 'Release notes',
-            description: '',
-            path: '/docs/index.md'
-          },
-          {
-            title: 'Introduction',
-            description: '',
-            path: '/docs/introduction.md'
-          },
-          {
-            title: 'Enable authentication and access',
-            description: '',
-            path: '/docs/authentication/index.md'
-          },
-          {
-            title: 'Manage reseller accounts',
-            description: '',
-            path: '/docs/reseller_account/index.md'
-          },
-          {
-            title: 'Manage customer accounts',
-            description: '',
-            path: '/docs/customer_account/index.md'
-          },
-          {
-            title: 'Manage deployments',
-            description: '',
-            path: '/docs/deployment_management/index.md'
-          },
-          {
-            title: 'Reseller change process',
-            description: '',
-            path: '/docs/reseller_change/index.md'
-          },
-          {
-            title: 'Manager orders',
-            description: '',
-            path: '/docs/order_management/index.md'
-          },
-          {
-            title: 'Manage subscriptions',
-            description: '',
-            path: '/docs/subscription_management/index.md'
-          },
-          {
-            title: 'Migrate to VIP Marketplace',
-            description: '',
-            path: '/docs/migration/eligibility_rules.md'
-          },
-          {
-            title: 'Manage notifications',
-            description: '',
-            path: 'docs/notification_management/get_details/'
-          },
-          {
-            title: 'References',
-            description: '',
-            path: 'docs/references/index.md'
-          },
-          {
-            title: 'Support',
-            description: '',
-            path: 'docs/support.md'
-          },
-        ]
+        description: '',
+        path: '/docs/introduction.md'
       },
       {
         title: 'API Reference',
@@ -137,8 +62,7 @@ module.exports = {
       {
         title: 'API authentication and access ',
         description: '',
-        path: '/docs/authentication/index.md',
-        header: true,
+        path: '/docs/authentication',
         pages: [
           {
             title: 'Health check',
@@ -149,37 +73,151 @@ module.exports = {
       {
         title: 'Manage reseller accounts',
         description: '',
-        path: '/docs/reseller_account'
+        path: '/docs/reseller_account',
+        pages: [
+          {
+            title: 'Create a reseller account',
+            path: '/docs/reseller_account/create_reseller_account.md'
+          },
+          {
+            title: 'Get reseller account details',
+            path: '/docs/reseller_account/get_reseller_account.md'
+          },
+          {
+            title: 'Update a reseller account',
+            path: '/docs/reseller_account/update_reseller_account.md'
+          },
+        ]
       },
       {
         title: 'Manage customer accounts',
         description: '',
-        path: '/docs/customer_account/index.md'
+        path: '/docs/customer_account/index.md',
+        pages: [
+          {
+            title: 'Manage market segments',
+            path: '/docs/customer_account/market_segment.md'
+          },
+          {
+            title: 'Manage Three-Year Commits',
+            path: '/docs/customer_account/three_year_commit.md'
+          },
+          {
+            title: 'Create customer account',
+            path: '/docs/customer_account/create_customer_account.md'
+          },
+          {
+            title: 'Get customer account details',
+            path: '/docs/customer_account/get_customer_account.md'
+          },
+          {
+            title: 'Update customer account',
+            path: '/docs/customer_account/update_customer_account.md'
+          },
+          {
+            title: 'Get licenses pending partner order',
+            path: '/docs/customer_account/get_licenses.md'
+          },
+        ]
       },
       {
         title: 'Manage deployments',
         description: '',
-        path: '/docs/deployment_management/index.md'
+        path: '/docs/deployment_management/index.md',
+        pages: [
+          {
+            title: 'Create deployment',
+            path: '/docs/deployment_management/create_deployment.md'
+          },
+          {
+            title: 'Get deployment details',
+            path: '/docs/deployment_management/get_deployment.md'
+          },
+          {
+            title: 'Update a deployment of a customer',
+            path: '/docs/deployment_management/update_deployment.md'
+          },
+        ]
       },
       {
         title: 'Reseller change process',
         description: '',
-        path: '/docs/reseller_change/index.md'
+        path: '/docs/reseller_change/index.md',
+        pages: [
+          {
+            title: 'Preview a reseller transfer',
+            path: '/docs/reseller_change/preview_transfer.md'
+          },
+          {
+            title: 'Commit a reseller transfer',
+            path: '/docs/reseller_change/commit_transfer.md'
+          },
+          {
+            title: 'Get reseller transfer details',
+            path: '/docs/reseller_change/get_transfer.md'
+          },
+        ]
       },
       {
         title: 'Manager orders',
         description: '',
-        path: '/docs/order_management/index.md'
+        path: '/docs/order_management/index.md',
+        pages: [
+          {
+            title: 'Create order',
+            path: '/docs/order_management/create_order.md'
+          },
+          {
+            title: 'Order creation scenarios',
+            path: '/docs/order_management/order_scenarios.md'
+          },
+          {
+            title: 'Get order details',
+            path: '/docs/order_management/get_order.md'
+          },
+          {
+            title: ' Update order',
+            path: '/docs/order_management/update_order.md'
+          },
+        ]
       },
       {
         title: 'Manage subscriptions',
         description: 'Embed high-fidelity PDFs in web apps with analytics',
-        path: '/docs/subscription_management/index.md'
+        path: '/docs/subscription_management/index.md',
+        pages: [
+          {
+            title: 'Get details of a specific subscription',
+            path: '/docs/subscription_management/get_details.md'
+          },
+          {
+            title: 'Get details of all subscriptions of a customer',
+            path: '/docs/subscription_management/get_details_for_customers.md'
+          },
+          {
+            title: 'Update auto-renewal configuration of a subscription',
+            path: '/docs/subscription_management/update_auto_renewal.md'
+          },
+        ]
       },
       {
         title: 'Migrate to VIP Marketplace',
         description: '',
-        path: '/docs/migration/eligibility_rules.md'
+        path: '/docs/migration/eligibility_rules.md',
+        pages: [
+          {
+            title: 'Preview offers',
+            path: '/docs/migration/preview_offers.md'
+          },
+          {
+            title: 'Transfer subscriptions',
+            path: '/docs/migration/transfer_subscription.md'
+          },
+          {
+            title: 'Get transfer details',
+            path: '/docs/migration/get_transfer_details.md'
+          },
+        ]
       },
       {
         title: 'Manage notifications',
@@ -189,7 +227,37 @@ module.exports = {
       {
         title: 'References',
         description: '',
-        path: 'docs/references/index.md'
+        path: 'docs/references/index.md',
+        pages: [
+          {
+            title: 'API request header',
+            path: 'docs/references/api_headers.md'
+          },
+          {
+            title: 'Idempotency – Correlation ID Header',
+            path: 'docs/references/idempotency.md'
+          },
+          {
+            title: 'HTTP status codes',
+            path: 'docs/references/status_codes.md'
+          },
+          {
+            title: 'Status codes and error handling',
+            path: 'docs/references/error_handling.md'
+          },
+          {
+            title: 'Supported Countries and Locales',
+            path: 'docs/references/supported_locales.md'
+          },
+          {
+            title: 'Resources and fields',
+            path: 'docs/references/resources.md'
+          },
+          {
+            title: 'Validations and regular expressions',
+            path: 'docs/references/validations.md'
+          },
+        ]
       },
       {
         title: 'Support',
