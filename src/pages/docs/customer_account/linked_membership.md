@@ -1,6 +1,8 @@
 # Manage linked memberships
 
-Linked Membership is an optional feature of the Adobe Value Incentive Plan Marketplace (VIP MP). Under this plan, organizations affiliated with VIP MP may aggregate purchases across linked customer accounts to achieve a [higher volume discount level](../order_management/index.md) while still purchasing and managing licenses separately. Linked Membership is designed for the following types of organizations:
+Linked Membership is an optional feature of the Adobe Value Incentive Plan Marketplace (VIP MP). Under this plan, organizations affiliated with VIP MP may aggregate purchases across linked customer accounts to achieve a [higher volume discount level](../order_management/index.md) while still purchasing and managing licenses separately.
+
+You can provide linked memberships for the customers of the following types of organizations:
 
 - Commercial affiliates
 - Government agencies
@@ -10,7 +12,7 @@ Linked Membership is an optional feature of the Adobe Value Incentive Plan Marke
 There are two types of Linked Membership Types.
 
 - **Standard:** Departments or sub-organizations with separate budget or admin needs. Business affiliates, school districts, state schools, government departments, and entities.
-- **Consortiums:** An association or combination of organizations that have similar interests and missions and such association or combination has a controlling entity.
+- **Consortiums:** An association or combination of organizations that have similar interests and missions, and such association or combination has a controlling entity.
 
 Each linked membership has one owner and multiple members. The owner can be any of the organization's system administrators. This user must agree to the terms and conditions in the Admin Console and enroll other members in the linked membership. Although a system owner can create a new linked membership from the Admin Console, resellers create new linked memberships using the Customer Account API. The workflow is as follows:
 
@@ -148,7 +150,7 @@ The Admin Console facilitates the following:
   - Generate an authorization code to add a linked member and share the details with the member.
 - Enable a VIP member who isn't part of a linked membership to become an affiliate.
 - Enroll in a linked membership by entering an authorization code provided by a linked membership owner.
-- Notify the linked membership owner and member of different events that are part of the linked membership lifecycle, such as the initiation of linked member ownership, enrollment of a member, and the owner creating an authorization code.
+- Notify the linked membership owner and member of different events that are part of the linked membership lifecycle, such as initiating a  linked member ownership, enrollment of a member, and  creating an authorization code.
 
 Read more about [how to manage linked memberships in the Admin Console](./index.md).
 

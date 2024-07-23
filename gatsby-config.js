@@ -41,11 +41,6 @@ module.exports = {
         menu: 
         [
           {
-            title: 'Release notes',
-            description: '',
-            path: '/docs/index.md'
-          },
-          {
             title: 'Introduction',
             description: '',
             path: '/docs/introduction.md'
@@ -106,20 +101,6 @@ module.exports = {
             path: 'docs/support.md'
           },
         ]
-      },
-      {
-        title: 'API Reference',
-        menu: [
-          {
-            title: 'Partner APIs',
-            description: '',
-            path: '/api/index.md'
-          }
-        ]
-      },
-      {
-        title: 'Sandbox User Guide',
-        path: '/technical-assets'
       },
       {
         title: 'API Reference',
