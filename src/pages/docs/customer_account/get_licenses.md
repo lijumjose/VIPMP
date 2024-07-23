@@ -1,6 +1,6 @@
 # Get licenses pending partner order
 
-Use the `GET /v3/customers/<customer-id>/open-acquisitions` to get all the licenses for the customer and their corresponding quantities for which partner is yet to place order. Partners can use this API in conjunction with the [notification](../notification_management/get_details.md) API to fetch all the products and quantities for each customer for which order has not been placed.
+Use the `GET /v3/customers/<customer-id>/open-acquisitions` to get all the licenses for the customer and their corresponding quantities for which partner is yet to place order. Partners can use this API in conjunction with the [notification](../notification_management/index.md) API to fetch all the products and quantities for each customer for which order has not been placed.
 
 ## Request header
 
