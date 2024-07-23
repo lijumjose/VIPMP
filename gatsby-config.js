@@ -14,12 +14,6 @@ module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/vipmp/',
   siteMetadata: 
   {
-    versions: [
-      {
-        title: 'Release Notes',
-        selected: true
-      }
-    ],
     pages: 
     [
       {
@@ -31,14 +25,14 @@ module.exports = {
         menu: 
         [
           {
-            title: 'June 18, 2024',
+            title: 'July 18, 2024',
             description: '',
-            path: '/docs/index.md'
+            path: '/docs/release_notes/index.md'
           },
           {
-            title: 'Junly 10, 2024',
+            title: 'August 10, 2024',
             description: '',
-            path: '/docs/index.md'
+            path: '/docs/release_notes/index.md'
           },
         ]
       },
@@ -137,8 +131,7 @@ module.exports = {
       {
         title: 'API authentication and access ',
         description: '',
-        path: '/docs/authentication/index.md',
-        header: true,
+        path: '/docs/authentication',
         pages: [
           {
             title: 'Health check',
@@ -149,7 +142,21 @@ module.exports = {
       {
         title: 'Manage reseller accounts',
         description: '',
-        path: '/docs/reseller_account'
+        path: '/docs/reseller_account',
+        pages: [
+          {
+            title: 'Create a reseller account',
+            path: '/docs/reseller_account/create_reseller_account.md'
+          },
+          {
+            title: 'Get reseller account details',
+            path: '/docs/reseller_account/get_reseller_account.md'
+          },
+          {
+            title: 'Update a reseller account',
+            path: '/docs/reseller_account/update_reseller_account.md'
+          },
+        ]
       },
       {
         title: 'Manage customer accounts',
