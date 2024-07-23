@@ -14,29 +14,112 @@ module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/vipmp/',
   siteMetadata: 
   {
-    versions: [
-      {
-        title: 'Release Notes',
-        description: 'Latest version',
-        path: '/docs/release_notes/07_18_24.md'
-      },
-      {
-        title: 'June 20, 2024',
-        description: '',
-        path: '/docs/release_notes/06_20_24.md'
-      },
-    ],
     pages: 
     [
       {
         title: 'Home',
         path: '/'
       },
-      
+      {
+        title: 'Release Notes',
+        menu: 
+        [
+          {
+            title: 'July 18, 2024',
+            description: '',
+            path: '/docs/release_notes/07_18_24.md'
+          },
+          {
+            title: 'June 20, 2024',
+            description: '',
+            path: '/docs/release_notes/06_20_24.md'
+          },
+        ]
+      },
       {
         title: 'Use Cases',
-        description: '',
-        path: '/docs/introduction.md'
+        menu: 
+        [
+          {
+            title: 'Release notes',
+            description: '',
+            path: '/docs/index.md'
+          },
+          {
+            title: 'Introduction',
+            description: '',
+            path: '/docs/introduction.md'
+          },
+          {
+            title: 'Enable authentication and access',
+            description: '',
+            path: '/docs/authentication/index.md'
+          },
+          {
+            title: 'Manage reseller accounts',
+            description: '',
+            path: '/docs/reseller_account/index.md'
+          },
+          {
+            title: 'Manage customer accounts',
+            description: '',
+            path: '/docs/customer_account/index.md'
+          },
+          {
+            title: 'Manage deployments',
+            description: '',
+            path: '/docs/deployment_management/index.md'
+          },
+          {
+            title: 'Reseller change process',
+            description: '',
+            path: '/docs/reseller_change/index.md'
+          },
+          {
+            title: 'Manager orders',
+            description: '',
+            path: '/docs/order_management/index.md'
+          },
+          {
+            title: 'Manage subscriptions',
+            description: '',
+            path: '/docs/subscription_management/index.md'
+          },
+          {
+            title: 'Migrate to VIP Marketplace',
+            description: '',
+            path: '/docs/migration/eligibility_rules.md'
+          },
+          {
+            title: 'Manage notifications',
+            description: '',
+            path: 'docs/notification_management/get_details/'
+          },
+          {
+            title: 'References',
+            description: '',
+            path: 'docs/references/index.md'
+          },
+          {
+            title: 'Support',
+            description: '',
+            path: 'docs/support.md'
+          },
+        ]
+      },
+      {
+        title: 'API Reference',
+        menu: [
+          {
+            title: 'Partner APIs',
+            description: '',
+            path: '/api/index.md'
+          }
+        ]
+      },
+      {
+        title: 'Sandbox User Guide',
+        path: '/technical-assets'
       },
       {
         title: 'API Reference',
@@ -101,6 +184,10 @@ module.exports = {
           {
             title: 'Manage Three-Year Commits',
             path: '/docs/customer_account/three_year_commit.md'
+          },
+          {
+            title: 'Manage linked memberships',
+            path: '/docs/customer_account/linked_membership.md'
           },
           {
             title: 'Create customer account',
