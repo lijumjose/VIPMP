@@ -16,7 +16,7 @@ VIP-Marketplace is a subscription licensing program that makes it convenient for
 
 #### Resources
 
-* [Partner API use cases](docs/index.md)
+* [Partner API use cases](./docs/introduction.md)
 * [API reference](api/index.md)
 * [Sandbox user guide](technical-assets/index.md)
 
