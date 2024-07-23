@@ -16,7 +16,7 @@ module.exports = {
   {
     versions: [
       {
-        title: 'v0.0',
+        title: 'Release Notes',
         selected: true
       }
     ],
@@ -25,6 +25,22 @@ module.exports = {
       {
         title: 'Home',
         path: '/'
+      },
+      {
+        title: 'Release Notes',
+        menu: 
+        [
+          {
+            title: 'June 18, 2024',
+            description: '',
+            path: '/docs/index.md'
+          },
+          {
+            title: 'Junly 10, 2024',
+            description: '',
+            path: '/docs/index.md'
+          },
+        ]
       },
       {
         title: 'Use Cases',
@@ -43,7 +59,7 @@ module.exports = {
           {
             title: 'Enable authentication and access',
             description: '',
-            path: '/docs/authentication/overview.md'
+            path: '/docs/authentication/index.md'
           },
           {
             title: 'Manage reseller accounts',
@@ -58,22 +74,22 @@ module.exports = {
           {
             title: 'Manage deployments',
             description: '',
-            path: '/docs/deployment_management/use_cases.md'
+            path: '/docs/deployment_management/index.md'
           },
           {
             title: 'Reseller change process',
             description: '',
-            path: '/docs/reseller_change/use_cases.md'
+            path: '/docs/reseller_change/index.md'
           },
           {
             title: 'Manager orders',
             description: '',
-            path: '/docs/order_management/use_cases.md'
+            path: '/docs/order_management/index.md'
           },
           {
             title: 'Manage subscriptions',
             description: '',
-            path: '/docs/subscription_management/use_cases.md'
+            path: '/docs/subscription_management/index.md'
           },
           {
             title: 'Migrate to VIP Marketplace',
@@ -115,17 +131,20 @@ module.exports = {
     subPages: 
     [
       {
-        title: 'Release notes',
-        path: '/docs/index.md'
-      },
-      {
         title: 'Introduction',
         path: '/docs/introduction.md'
       },
       {
         title: 'API authentication and access ',
-        description: 'Authentication method to use APIs',
-        path: '/docs/authentication/overview.md'
+        description: '',
+        path: '/docs/authentication/index.md',
+        header: true,
+        pages: [
+          {
+            title: 'Health check',
+            path: '/docs/authentication/health_check.md'
+          },
+        ]
       },
       {
         title: 'Manage reseller accounts',
@@ -140,41 +159,41 @@ module.exports = {
       {
         title: 'Manage deployments',
         description: '',
-        path: '/docs/deployment_management/use_cases.md'
+        path: '/docs/deployment_management/index.md'
       },
       {
         title: 'Reseller change process',
         description: '',
-        path: '/docs/reseller_change/use_cases.md'
+        path: '/docs/reseller_change/index.md'
       },
       {
         title: 'Manager orders',
         description: '',
-        path: '/docs/order_management/use_cases.md'
+        path: '/docs/order_management/index.md'
       },
       {
         title: 'Manage subscriptions',
         description: 'Embed high-fidelity PDFs in web apps with analytics',
-        path: '/docs/subscription_management/use_cases.md'
+        path: '/docs/subscription_management/index.md'
       },
       {
         title: 'Migrate to VIP Marketplace',
-        description: 'Embed high-fidelity PDFs in web apps with analytics',
+        description: '',
         path: '/docs/migration/eligibility_rules.md'
       },
       {
         title: 'Manage notifications',
-        description: 'Integrate e-signatures into your platform or application',
-        path: 'docs/notification_management/get_details/'
+        description: '',
+        path: 'docs/notification_management/index.md'
       },
       {
         title: 'References',
-        description: 'Build workflows on Microsoft Power Platform easily',
+        description: '',
         path: 'docs/references/index.md'
       },
       {
         title: 'Support',
-        description: 'Build workflows on Microsoft Power Platform easily',
+        description: '',
         path: 'docs/support.md'
       },
     ]

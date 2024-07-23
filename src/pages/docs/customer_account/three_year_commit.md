@@ -1,12 +1,12 @@
 # Manage Three-Year Commits
 
-Three-Year Commit (3YC) is a loyalty program that allows a customer to get a greater discount level as well as a price lock for 3 terms (the current term and 2 additional terms). The customer commits to a minimum quantity that they must purchase and maintain throughout the 3-year commitment period.
+Three-Year Commit (3YC) is a loyalty program that allows customers to get a greater discount level and a price lock for three terms (the current term and two additional terms). Customers commit to a minimum quantity they must purchase and maintain throughout the 3-year commitment period.
 
-It is important to use the Preview Order API to determine the correct discount level. Preview Order uses the customer’s 3YC commitment as well as any accepted commitment requests in order to return the Offer ID with the best discount.
+Using the Preview Order API to determine the correct discount level is important. Preview Order uses the customer’s 3YC commitment as well as any accepted commitment requests to return the Offer ID with the best discount.
 
 ## 3YC Workflows
 
-There are four ways that a customer can become enrolled in 3YC. In all scenarios, the customer is required to accept the commitment terms (the minimum quantities and commitment end date) in the Adobe Admin Console before receiving any discounts.
+There are four ways for a customer to enroll in 3YC. In all scenarios, the customer must accept the commitment terms (the minimum quantities and commitment end date) in the Adobe Admin Console before receiving any discounts.
 
 1. New Customer (partner-initiated): During customer creation, partners may set the requested minimum quantities, which would start the 3YC customer acceptance workflow after the account becomes active. API endpoints:
    - [POST Create Customer API](./index.md)
@@ -14,7 +14,7 @@ There are four ways that a customer can become enrolled in 3YC. In all scenarios
 2. Existing Customer (partner-initiated): Existing customers (with active 3YC or not) can be updated with new requested minimum quantities, which would start the 3YC customer acceptance workflow once the account is updated from the request. API endpoints:
    - [PATCH Update Customer API](./index.md)
    - [GET Get Customer API](./index.md)
-3. Existing Customer (customer-initiated): Existing customers (not already in 3YC) that meet the 3YC requirements may be presented an offer in Adobe admin Console to enter 3YC with the minimum quantities set to the customer’s current quantities. API endpoint:
+3. Existing Customer (customer-initiated): Existing customers (not already in 3YC) that meet the 3YC requirements may be presented an offer in Adobe Admin Console to enter 3YC with the minimum quantities set to the customer’s current quantities. API endpoint:
 
    - [GET Get Customer API](./index.md)
 
@@ -46,37 +46,37 @@ Sample request:
 
 ```json
 {
-  "companyProfile": {
-    "companyName": "Fairmont",
-    "preferredLanguage": "en-US",
-    "address": {
-      "country": "US",
-      "region": "CA",
-      "city": "San Jose",
-      "addressLine1": "200 Fairmont Ave",
-      "addressLine2": "Apt 123",
-      "postalCode": "95110-1234",
-      "phoneNumber": "800-123-4567"
+    "companyProfile": {
+        "companyName": "Fairmont",
+        "preferredLanguage": "en-US",
+        "address": {
+            "country": "US",
+            "region": "CA",
+            "city": "San Jose",
+            "addressLine1": "200 Fairmont Ave",
+            "addressLine2": "Apt 123",
+            "postalCode": "95110-1234",
+            "phoneNumber": "800-123-4567"
+        },
+        "contacts": []
     },
-    "contacts": []
-  },
-  "benefits": [
-    {
-      "type": "THREE_YEAR_COMMIT",
-      "commitmentRequest": {
-        "minimumQuantities": [
-          {
-            "offerType": "LICENSE",
-            "quantity": 10
-          },
-          {
-            "offerType": "CONSUMABLES",
-            "quantity": 1000
-          }
-        ]
-      }
-    }
-  ]
+    "benefits": [
+        {
+            "type": "THREE_YEAR_COMMIT",
+            "commitmentRequest": {
+                "minimumQuantities": [
+                    {
+                        "offerType": "LICENSE",
+                        "quantity": 10
+                    },
+                    {
+                        "offerType": "CONSUMABLES",
+                        "quantity": 1000
+                    }
+                ]
+            }
+        }
+    ]
 }
 ```
 
@@ -85,10 +85,10 @@ Sample request:
 - Used to request 3YC for a customer without a commitment.
 - Used to request 3YC quantity increase for a customer with an existing commitment.
 - Overwrites existing `commitmentRequest`.
-- Cannot be requested alongside recommitmentRequest or if customer has an existing recommitmentRequest.
-- Does not need to include quantities for all offerTypes.
-- endDate will be 2 years after the current cotermDate.
-  - If customer does not have a cotermDate (they have not placed an order) at the time of acceptance, the endDate will be 3 years from the acceptance date and the cotermDate will be set at that point.
+- Cannot be requested alongside `recommitmentRequest` or if customer has an existing `recommitmentRequest`.
+- Does not need to include quantities for all `offerTypes`.
+- endDate will be 2 years after the current `cotermDate`.
+  - If the customer does not have a `cotermDate` (they have not placed an order) at the time of acceptance, the `endDate` will be 3 years from the acceptance date and the `cotermDate` will be set at that point.
 
 #### recommitmentRequest object
 
@@ -96,69 +96,69 @@ Sample request:
 
 ```json
 {
-  "companyProfile": {
-    "companyName": "Fairmont",
-    "preferredLanguage": "en-US",
-    "address": {
-      "country": "US",
-      "region": "CA",
-      "city": "San Jose",
-      "addressLine1": "200 Fairmont Ave",
-      "addressLine2": "Apt 123",
-      "postalCode": "95110-1234",
-      "phoneNumber": "800-123-4567"
+    "companyProfile": {
+        "companyName": "Fairmont",
+        "preferredLanguage": "en-US",
+        "address": {
+            "country": "US",
+            "region": "CA",
+            "city": "San Jose",
+            "addressLine1": "200 Fairmont Ave",
+            "addressLine2": "Apt 123",
+            "postalCode": "95110-1234",
+            "phoneNumber": "800-123-4567"
+        },
+        "contacts": []
     },
-    "contacts": []
-  },
-  "benefits": [
-    {
-      "type": "THREE_YEAR_COMMIT",
-      "recommitmentRequest": {
-        "minimumQuantities": [
-          {
-            "offerType": "LICENSE",
-            "quantity": 10
-          },
-          {
-            "offerType": "CONSUMABLES",
-            "quantity": 1000
-          }
-        ]
-      }
-    }
-  ]
+    "benefits": [
+        {
+            "type": "THREE_YEAR_COMMIT",
+            "recommitmentRequest": {
+                "minimumQuantities": [
+                    {
+                        "offerType": "LICENSE",
+                        "quantity": 10
+                    },
+                    {
+                        "offerType": "CONSUMABLES",
+                        "quantity": 1000
+                    }
+                ]
+            }
+        }
+    ]
 }
 ```
 
 ## 3YC flow diagrams
 
-The diagram below shows the lifecycle of the commitmentRequest object. The same lifecycle applies for the recommitmentRequest, with the difference being that recommitmentRequest can’t move to COMMITTED status until the current commitment ends.
+The diagram below shows the lifecycle of the commitmentRequest object. The same lifecycle applies to the recommitmentRequest, with the difference being that recommitmentRequest can’t move to COMMITTED status until the current commitment ends.
 
 ![3YC flow diagram](../image/3yc_flow_diagram.jpg)
 
 ```json
-{
-  "benefits": [
+"benefits": [
     {
-      "type": "THREE_YEAR_COMMIT",
-      "commitment": {...},
-      "commitmentRequest": {
-        "startDate": "2022-07-17",
-        "endDate": "2025-04-28",
-        "status": "REQUESTED",
-        "minimumQuantities": [
-          {
-            "offerType": "LICENSE",
-            "quantity": 10
-          },
-          {
-            "offerType": "CONSUMABLES",
-            "quantity": 1000
-          }
-        ]
-      },
-      "recommitmentRequest": {...}
+        "type": "THREE_YEAR_COMMIT",
+        "commitment": {...
+        },
+        "commitmentRequest": {
+            "startDate": "2022-07-17",
+            "endDate": "2025-04-28",
+            "status": "REQUESTED",
+            "minimumQuantities": [
+                {
+                    "offerType": "LICENSE",
+                    "quantity": 10
+                },
+                {
+                    "offerType": "CONSUMABLES",
+                    "quantity": 1000
+                }
+            ]
+        },
+        "recommitmentRequest": {...
+        }
     }
-  ]
-}
+]
 ```
