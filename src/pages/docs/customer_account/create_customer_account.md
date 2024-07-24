@@ -7,17 +7,17 @@ Prior to placing an order, a reseller needs to create a customer account by usin
 Ensure that you are aware of the following before creating a customer account:
 
 * Customer account ID is created by this API and returned synchronously.
-* Customer payment instrument is managed on the partner marketplace.
+* The customer payment instrument is managed on the partner marketplace.
 * `cotermDate` is normally calculated when a customer’s first order is placed.
   * Most subscriptions will end or renew on the `cotermDate`, except for Stock Credit Packs.
-* Use `cotermDate`in the request to create an extended term customer.
-* Use `externalReferenceId` to pass it in the marketplace’s Customer ID.
+* Use `cotermDate`in the request to create an extended-term customer.
+* Use `externalReferenceId` to pass it to the marketplace’s Customer ID.
   * Optional and does not need to be unique.
 * `Contacts` specifies admins for the customer's account and receive an admin welcome email.
   * Contact names for existing email addresses cannot be changed. If you send a different name for an existing email, that name will be returned in the synchronous response, but it will not persist in the system. The existing first and last name of the contact will be used and returned in any GET calls.
 * The successful _Create Customer_ call always returns a customer with status 1002 (Pending) while the final validation happens asynchronously. The account may then become active or inactive. Pending customers can place orders, but they may not update their account using the _Update Customer_ API until the account becomes active or inactive. All orders placed for a pending customer fail if the customer becomes inactive.
 * `discounts` contains a list of objects with the customer’s discount levels for each `offerType`.
-* Customer can be created with a specified market segment.
+* Customers can be created with a specified market segment.
   * Reseller must be enabled for that market segment.
   * If no market segment is specified in the request, the customer becomes part of the commercial (COM) market segment by default.
 
@@ -38,28 +38,30 @@ Customer resource without read-only fields:
 
 ```json
 {
-"resellerId" : "5556667778",
-"externalReferenceId" : "342",
-"companyProfile" : {
-"companyName" : "Fairmont",
-"preferredLanguage" : "en-US",
-"marketSegment" : "EDU",
-"address" : {
-"country" : "US",
-"region" : "CA",
-"city" : "San Jose",
-"addressLine1" : "200 Fairmont Ave",
-"addressLine2" : "Apt 123",
-"postalCode" : "95110-1234",
-"phoneNumber" : "800-123-4567"
-},
-"contacts" : [{
-"firstName" : "Donald",
-"lastName" : "Duck",
-"email" : "donald@duck.com",
-"phoneNumber" : "408-123-4567"
-}]
-}
+    "resellerId": "5556667778",
+    "externalReferenceId": "342",
+    "companyProfile": {
+        "companyName": "Fairmont",
+        "preferredLanguage": "en-US",
+        "marketSegment": "EDU",
+        "address": {
+            "country": "US",
+            "region": "CA",
+            "city": "San Jose",
+            "addressLine1": "200 Fairmont Ave",
+            "addressLine2": "Apt 123",
+            "postalCode": "95110-1234",
+            "phoneNumber": "800-123-4567"
+        },
+        "contacts": [
+            {
+                "firstName": "Donald",
+                "lastName": "Duck",
+                "email": "donald@duck.com",
+                "phoneNumber": "408-123-4567"
+            }
+        ]
+    }
 }
 ```
 
@@ -67,42 +69,48 @@ Customer resource without read-only fields:
 
 ```json
 {
-"externalReferenceId" : "342",
-"customerId" : "9876543210",
-"resellerId" : "5556667778", "globalSalesEnabled" : false,
-"companyProfile" : {
-"companyName" : "Fairmont",
-"preferredLanguage" : "en-US",
-"marketSegment" : "EDU",
-"address" : {
-"country" : "US",
-"region" : "CA",
-"city" : "San Jose",
-"addressLine1" : "200 Fairmont Ave",
-"addressLine2" : "Apt 123",
-"postalCode" : "95110-1234",
-"phoneNumber" : "800-123-4567"
-},
-"contacts" : [
-{ "firstName" : "Donald",
-"lastName" : "Duck",
-"email" : "donald@duck.com",
-"phoneNumber" : "408-123-4567"
-}
-]
-},
-"discounts" : [{
-"offerType" : "LICENSE",
-"level" : "02",
-}],
-"cotermDate" : "",
-"creationDate" : "2019-05-02T22:49:52Z",
-"status" : "1002",
-"links" : {
-"self" : {
-"uri" : "/v3/customers/9876543210",
-"method" : "GET",
-"headers": []
+    "externalReferenceId": "342",
+    "customerId": "9876543210",
+    "resellerId": "5556667778",
+    "globalSalesEnabled": false,
+    "companyProfile": {
+        "companyName": "Fairmont",
+        "preferredLanguage": "en-US",
+        "marketSegment": "EDU",
+        "address": {
+            "country": "US",
+            "region": "CA",
+            "city": "San Jose",
+            "addressLine1": "200 Fairmont Ave",
+            "addressLine2": "Apt 123",
+            "postalCode": "95110-1234",
+            "phoneNumber": "800-123-4567"
+        },
+        "contacts": [
+            {
+                "firstName": "Donald",
+                "lastName": "Duck",
+                "email": "donald@duck.com",
+                "phoneNumber": "408-123-4567"
+            }
+        ]
+    },
+    "discounts": [
+        {
+            "offerType": "LICENSE",
+            "level": "02",
+        }
+    ],
+    "cotermDate": "",
+    "creationDate": "2019-05-02T22:49:52Z",
+    "status": "1002",
+    "links": {
+        "self": {
+            "uri": "/v3/customers/9876543210",
+            "method": "GET",
+            "headers": []
+        }
+    }
 }
 ```
 
