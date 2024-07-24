@@ -21,25 +21,25 @@ None.
 
 ```json
 {
-"customerId": "1005375278",
-"resellerId": "1000214906",
-"licenseCount": 2,
-"unpaidLicenses": [
-{
-"referenceId": "PO281097476551717943",
-"creationDate": "2024-03-28T06:03:50Z",
-"expiryDate": "2024-04-04T06:03:50Z",
-"quantity": 1,
-"productName": "Audition"
-},
-{
-"referenceId": "PO281097476551717943",
-"creationDate": "2024-03-28T06:03:51Z",
-"expiryDate": "2024-04-04T06:03:51Z",
-"quantity": 1,
-"productName": "Acrobat Pro"
-}
-]
+    "customerId": "1005375278",
+    "resellerId": "1000214906",
+    "licenseCount": 2,
+    "unpaidLicenses": [
+        {
+            "referenceId": "PO281097476551717943",
+            "creationDate": "2024-03-28T06:03:50Z",
+            "expiryDate": "2024-04-04T06:03:50Z",
+            "quantity": 1,
+            "productName": "Audition"
+        },
+        {
+            "referenceId": "PO281097476551717943",
+            "creationDate": "2024-03-28T06:03:51Z",
+            "expiryDate": "2024-04-04T06:03:51Z",
+            "quantity": 1,
+            "productName": "Acrobat Pro"
+        }
+    ]
 }
 ```
 

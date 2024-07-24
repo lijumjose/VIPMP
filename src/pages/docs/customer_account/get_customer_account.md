@@ -21,45 +21,49 @@ None.
 
 ```json
 {
-"externalReferenceId" : "342"
-"customerId" : "9876543210",
-"resellerId" : "5556667778", "globalSalesEnabled" : false,
-"companyProfile" : {
-"companyName" : "Fairmont",
-"preferredLanguage" : "en-US",
-"marketSegment" : "EDU",
-"marketSubSegments" : [“K_12”],
-"address" : {
-"country" : "US",
-"region" : "CA",
-"city" : "San Jose",
-"addressLine1" : "200 Fairmont Ave",
-"addressLine2" : "Apt 123",
-"postalCode" : "95110-1234",
-"phoneNumber" : "800-123-4567"
-},
-"contacts" : [{
-"firstName" : "Mickey",
-"lastName" : "Mouse",
-"email" : "mickey@mouse.com",
-"phoneNumber" : "408-123-4567"
-}
-]
-},
-"discounts" : [{
-"offerType" : "LICENSE",
-"level" : "02",
-}],
-"cotermDate" : "2020-05-02",
-"creationDate" : "2019-05-02T22:49:52Z",
-"status" : "1000",
-"links" : {
-"self" : {
-"uri" : "/v3/customers/9876543210",
-"method" : "GET",
-"headers": []
-}
-}
+    "externalReferenceId": "342""customerId": "9876543210",
+    "resellerId": "5556667778",
+    "globalSalesEnabled": false,
+    "companyProfile": {
+        "companyName": "Fairmont",
+        "preferredLanguage": "en-US",
+        "marketSegment": "EDU",
+        "marketSubSegments": [“K_12”
+        ],
+        "address": {
+            "country": "US",
+            "region": "CA",
+            "city": "San Jose",
+            "addressLine1": "200 Fairmont Ave",
+            "addressLine2": "Apt 123",
+            "postalCode": "95110-1234",
+            "phoneNumber": "800-123-4567"
+        },
+        "contacts": [
+            {
+                "firstName": "Mickey",
+                "lastName": "Mouse",
+                "email": "mickey@mouse.com",
+                "phoneNumber": "408-123-4567"
+            }
+        ]
+    },
+    "discounts": [
+        {
+            "offerType": "LICENSE",
+            "level": "02",
+        }
+    ],
+    "cotermDate": "2020-05-02",
+    "creationDate": "2019-05-02T22:49:52Z",
+    "status": "1000",
+    "links": {
+        "self": {
+            "uri": "/v3/customers/9876543210",
+            "method": "GET",
+            "headers": []
+        }
+    }
 }
 ```
 

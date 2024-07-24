@@ -38,6 +38,7 @@ module.exports = {
       },
       {
         title: 'Use Cases',
+        path: '/docs/index.md',
         menu: 
         [
           {
@@ -83,12 +84,12 @@ module.exports = {
           {
             title: 'Migrate to VIP Marketplace',
             description: '',
-            path: '/docs/migration/eligibility_rules.md'
+            path: '/docs/migration/index.md'
           },
           {
             title: 'Manage notifications',
             description: '',
-            path: 'docs/notification_management/get_details/'
+            path: 'docs/notification_management/index.md'
           },
           {
             title: 'References',
@@ -271,7 +272,7 @@ module.exports = {
       {
         title: 'Migrate to VIP Marketplace',
         description: '',
-        path: '/docs/migration/eligibility_rules.md',
+        path: '/docs/migration/index.md',
         pages: [
           {
             title: 'Preview offers',
