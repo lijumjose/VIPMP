@@ -44,7 +44,7 @@ module.exports = {
           {
             title: 'Introduction',
             description: '',
-            path: '/docs/introduction.md'
+            path: '/docs/index.md'
           },
           {
             title: 'Enable authentication and access',
@@ -104,16 +104,6 @@ module.exports = {
         ]
       },
       {
-        title: 'API Reference',
-        menu: [
-          {
-            title: 'Partner APIs',
-            description: '',
-            path: '/api/index.md'
-          }
-        ]
-      },
-      {
         title: 'Sandbox User Guide',
         path: '/technical-assets'
       },
@@ -122,7 +112,7 @@ module.exports = {
     [
       {
         title: 'Introduction',
-        path: '/docs/introduction.md'
+        path: '/docs/index.md'
       },
       {
         title: 'API authentication and access ',
