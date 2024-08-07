@@ -9,7 +9,7 @@ You can provide linked memberships to customers from the following types of orga
 - Primary and secondary education institutions, for example, school districts and state schools
 - Departments with separate budgets and license administration needs
 
-There are two types of Linked Membership types:
+There are two types of Linked Memberships:
 
 - **Standard:** Suitable for departments or sub-organizations with separate budget or administrative requirements,  including business affiliates, school districts, state schools, government departments, and entities.
 - **Consortiums:** An association or combination of organizations with similar interests and objectives, managed by a controlling entity.
@@ -20,9 +20,9 @@ The linked membership feature helps organizations achieve better volume discount
 
 ![Volume discounts](../image/vol_discounts.png)
 
-With linked membership, organizations affiliated with VIP MP can combine their affiliations with other affiliations to secure better discounts. For example, _Organization A_ has 70 licenses and falls into Discount Level 3, as indicated in the previous table. _Organization B_ has 31 licenses and gets 5% discount defined for Level 2. By combining these organizations through linked membership, now they have 101 licenses and qualify for level 3 (15%) discounts.
+With linked memberships, organizations affiliated with VIP MP can combine their affiliations with other affiliations to secure better discounts. For example, _Organization A_ has 70 licenses and falls into Discount Level 3, as indicated in the previous table. _Organization B_ has 31 licenses and gets 5% discount defined for Level 2. By combining these organizations through linked membership, now they have 101 licenses and qualify for level 4 (15%) discounts.
 
-You can include offers for all volume discounted price levels and scaled pricing models. The following table lists the discount tiers for Sign Enterprise transactions:
+You can include offers for all volume discounted price levels and scaled pricing models. The following table lists the discount tiers for transactions of all consumable-based products, such as Adobe Sign:
 
 |Transaction range |Tier|
 |:----|:----|
@@ -34,7 +34,7 @@ You can include offers for all volume discounted price levels and scaled pricing
 |50,000 to 99,999 |T6|
 |> 100K |T7|
 
-Each linked membership has one owner and multiple members. The owner can be any of the system administrators of an organization or the organization itself. The owner must agree to the [terms and conditions](./index.md) in the Admin Console and enroll other members in the linked membership. Although an owner can create a new linked membership from the Admin Console, resellers create new linked memberships using the Customer Account API. The workflow is as follows:
+Resellers can create new linked memberships using the [Update Customer Account API](./update_customer_account.md). Each linked membership has one owner and multiple members. The owner can be any of the system administrators of an organization or the organization itself. The owner must agree to the [terms and conditions](./index.md) in the Admin Console and enroll other members in the linked membership. The workflow for creating a linked membership and adding members is as follows:
 
 ![Linked membership workflow](../image/linked_membership_workflow.png)
 
@@ -46,19 +46,18 @@ The following sections provide how to manage different stages of this workflow:
 
 ## Creating new linked memberships using API
 
-The following list provides certain important aspects of linked membership creation:
+The following list provides certain important aspects related to linked membership creation:
 
-- Partner marketplaces can create linked memberships using the [Update Customer API](./update_customer_account.md). The Update Customer API endpoint accepts the [necessary parameters](#request) to define a new linked membership.
 - Linked membership account details are maintained independently of the VIP MP customer account details.
 - Discount levels for linked memberships are automatically calculated on the anniversary date of the linked membership. The calculated discount level is automatically applied to all members and the owner.
 - The calculated discount level will be propagated to all the participating linked members and the owner.
 - A linked membership owner and members are not qualified for the three-year commit benefits.
 
-You need to use the [Update customer account API](./update_customer_account.md) to create a linked membership for a customer account.
+Partner marketplaces can create linked memberships using the [Update Customer API](./update_customer_account.md).
 
 ### Request
 
-The following linked membership details are mandatory:
+The following example shows the parameters to be used in the request body of the [Update Customer API](./update_customer_account.md) endpoint to define a new linked membership:
 
 ```json
 "linkedMembership": {
@@ -134,7 +133,7 @@ curl --location --request PATCH 'https://partners.adobe.io/v3/customers/10055136
 
 Same as [Get Customer Account Details (Customer resource)](./get_customer_account.md).
 
-**Note:** Any contacts specified in this call will receive the admin welcome email. This can be resend if an end-user did not receive it.
+**Note:** Any contacts specified in this call will receive the admin welcome email. This can be resent if an end-user did not receive it.
 
 ### HTTP status codes
 
@@ -217,7 +216,7 @@ The Admin Console facilitates the following:
 - Enable a linked membership owner to:
   - Accept the terms (Standard/Consortium) within the Admin Console.
   - Generate an authorization code to add a linked member and share the details with the member.
-- Facilitate a VIP member to become an affiliate.
+- Facilitate a VIP MP member to become an affiliate.
 - Enroll in a linked membership by entering an authorization code provided by a linked membership owner.
 - Notify the linked membership owner and member of different events that are part of the linked membership lifecycle, such as initiating a  linked member ownership, enrolling a member, and  creating an authorization code.
 
