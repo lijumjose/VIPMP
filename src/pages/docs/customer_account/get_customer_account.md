@@ -57,6 +57,13 @@ None.
     "cotermDate": "2020-05-02",
     "creationDate": "2019-05-02T22:49:52Z",
     "status": "1000",
+    "linkedMembership": {
+        "id": "51001315",
+        "name": "This is the Group Created for 1005513636",
+        "type": "STANDARD",
+        "linkedMembershipType": "OWNER",
+        "creationDate": "2024-07-17T03:47:35"
+    },
     "links": {
         "self": {
             "uri": "/v3/customers/9876543210",
