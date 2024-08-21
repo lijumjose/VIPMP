@@ -27,7 +27,7 @@ module.exports = {
           {
             title: '2024 releases',
             description: '',
-            path: '/docs/release_notes/fy24.md'
+            path: '/docs/release_notes/index.md'
           },
           {
             title: 'Upcoming releases',
