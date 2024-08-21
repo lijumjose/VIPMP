@@ -20,7 +20,7 @@ The linked membership feature helps organizations achieve better volume discount
 
 ![Volume discounts](../image/vol_discounts.png)
 
-With linked memberships, organizations affiliated with VIP MP can combine their affiliations with other affiliations to secure better discounts. For example, _Organization A_ has 70 licenses and falls into Discount Level 3, as indicated in the previous table. _Organization B_ has 31 licenses and gets 5% discount defined for Level 2. By combining these organizations through linked membership, now they have 101 licenses and qualify for level 4 (15%) discounts.
+With linked memberships, organizations affiliated with VIP MP  can combine or aggregate their licenses or transactions with their affiliates to secure better discounts. For example, _Organization A_ has 70 licenses and falls into Discount Level 3, as indicated in the previous table. _Organization B_ has 31 licenses and gets 5% discount defined for Level 2. By combining these organizations through linked membership, now they have 101 licenses and qualify for level 4 (15%) discounts.
 
 You can include offers for all volume discounted price levels and scaled pricing models. The following table lists the discount tiers for transactions of all consumable-based products, such as Adobe Sign:
 
@@ -34,7 +34,7 @@ You can include offers for all volume discounted price levels and scaled pricing
 |50,000 to 99,999 |T6|
 |> 100K |T7|
 
-Resellers can create new linked memberships using the [Update Customer Account API](./update_customer_account.md). Each linked membership has one owner and multiple members. The owner can be any of the system administrators of an organization or the organization itself. The owner must agree to the [terms and conditions](./index.md) in the Admin Console and enroll other members in the linked membership. The workflow for creating a linked membership and adding members is as follows:
+Resellers can create new linked memberships using the [Update Customer Account API](./update_customer_account.md). Each linked membership has one owner and multiple members. The owner of a linked membership and its members are B2B customer organizations. The owner must agree to the [terms and conditions](./index.md) in the Admin Console and enroll other members in the linked membership. The workflow for creating a linked membership and adding members is as follows:
 
 ![Linked membership workflow](../image/linked_membership_workflow.png)
 
@@ -216,9 +216,8 @@ The Admin Console facilitates the following:
 - Enable a linked membership owner to:
   - Accept the terms (Standard/Consortium) within the Admin Console.
   - Generate an authorization code to add a linked member and share the details with the member.
-- Facilitate a VIP MP member to become an affiliate.
+- Facilitate a VIP customer to be a linked membership member.
 - Enroll in a linked membership by entering an authorization code provided by a linked membership owner.
-- Notify the linked membership owner and member of different events that are part of the linked membership lifecycle, such as initiating a  linked member ownership, enrolling a member, and  creating an authorization code.
 
 Read more about [how to manage linked memberships in the Admin Console](./index.md).
 

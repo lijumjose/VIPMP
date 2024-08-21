@@ -39,6 +39,10 @@ Ensure that you are aware of the following before updating a customer account:
 {
     "externalReferenceId": "99999",
     "globalSalesEnabled": true,
+    "linkedMembership": {
+        "type": "STANDARD",
+        "name": "This is the Group Created for 1005516130"
+    },
     "companyProfile": {
         "companyName": "Fairmont",
         "preferredLanguage": "en-US",

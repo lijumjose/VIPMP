@@ -25,14 +25,14 @@ module.exports = {
         menu: 
         [
           {
-            title: 'July 18, 2024',
+            title: '2024 releases',
             description: '',
-            path: '/docs/release_notes/07_18_24.md'
+            path: '/docs/release_notes/fy24.md'
           },
           {
-            title: 'June 20, 2024',
+            title: 'Upcoming releases',
             description: '',
-            path: '/docs/release_notes/06_20_24.md'
+            path: '/docs/release_notes/upcoming_releases.md'
           },
         ]
       },
