@@ -1,10 +1,10 @@
 # Upcoming releases
 
-The following features will be released by September 20, 2024:
+Upcoming features to be released by September 20, 2024:
 
 * Create and manage linked memberships
 
-    Added support for creating and managing linked memberships that facilitates combining purchases across linked customer accounts to achieve better volume discounts.
+    Adding support for creating and managing linked memberships, allowing marketplace to combine purchases across linked customer accounts to achieve better volume discounts.
 
     See [Manage linked memberships](../customer_account/linked_membership.md) for more information.
 
