@@ -10,6 +10,7 @@ Ensure that you are aware of the following before fetching the offer details:
 - The subscription is active until the `renewalDate`.
   - All subscriptions will have _auto-renewal_ enabled by default upon transfer, so they will renew on the `renewalDate`.
 - If the customer is in the renewal window after their anniversary date and has not renewed some products, the non-renewed products will be included with `renewalDate` in the past. These items will be created as inactive subscriptions – the same behavior as if the customer had products in VIP-MP that did not renew.
+- Benefits and discount will be shown if customer is a 3yc customer.
 
 ## Request header
 
@@ -40,10 +41,42 @@ None.
     "totalCount": 1,
     "items": [
         {
-            "offerId": "12345678CA01A12", // Offer ID for marketplace to use
-            "currencyCode": "USD",
+            "offerId": "12345678CA01A12", // Offer ID for marketplace to use "currencyCode" : "USD",
             "quantity": 10
     "renewalDate": "2020-06-08"
+        }
+    ],
+    "benefits": [
+        {
+            "type": "THREE_YEAR_COMMIT",
+            "commitment": {
+                "startDate": "2024-05-14",
+                "endDate": "2027-04-11",
+                "status": "ACTIVE",
+                "minimumQuantities": [
+                    {
+                        "offerType": "LICENSE",
+                        "quantity": 11
+                    }
+                ]
+            },
+            "commitmentRequest": {
+                "startDate": "2027-04-12",
+                "endDate": "2030-04-11",
+                "status": "ACCEPTED",
+                "minimumQuantities": [
+                    {
+                        "offerType": "LICENSE",
+                        "quantity": 11
+                    }
+                ]
+            },
+        }
+    ],
+    "discounts": [
+        {
+            "level": "12",
+            "offerType": "3YC"
         }
     ]
 }
