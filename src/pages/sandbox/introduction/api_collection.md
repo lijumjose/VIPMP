@@ -1,4 +1,4 @@
-# Commerce Partner API (CPAPI) collection
+# API collection and interaction basics
 
 As part of the onboarding process, Adobe provides a Postman collection that contains all preset API calls, making it easier to interact with CPAPI.
 
