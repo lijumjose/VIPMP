@@ -16,19 +16,19 @@ Clicking on the Transfer Memberships tab will land you on the Quick Create page.
 
 As stated above, creating a Membership ID in the Portal will make it possible to process a transfer through our preset API call, which requires an unused Membership ID. This is an important and necessary step because Membership IDs can only be used once.
 
-![Membership - Quick Create](/src/pages/sandbox/image/create_membership_1.png)
+![Membership - Quick Create](../image/create_membership_1.png)
 
 ### Quick create with Global Sales
 
 To create a membership ID with Global Sales, Select the checkbox “Enable Worldwide” and press the ‘Create’ button
 
-![Creating membership with worldwide enabled from Quick Create page](/src/pages/sandbox/image/global_sales_1.png)
+![Creating membership with worldwide enabled from Quick Create page](../image/global_sales_1.png)
 
 ### Quick Create with 3YC
 
 A Membership ID can optionally be created with existing 3YC. The 3YC information is also shown when viewing created memberships.
 
-![Creating membership with 3YC enabled from the Quick Create page](/src/pages/sandbox/image/membership_3yc.png)
+![Creating membership with 3YC enabled from the Quick Create page](../image/membership_3yc.png)
 
 **Note:** Selecting 3YC will disable Linked Membership Owner and Linked Membership Member
 
@@ -36,7 +36,7 @@ A Membership ID can optionally be created with existing 3YC. The 3YC information
 
 A Membership ID can optionally be created with a Linked Membership Owner. Selecting Linked Membership Owner will disable the checkboxes for Linked Membership Member and 3YC eligible.
 
-![Creating membership with Linked Membership Owner from the Quick Create page](/src/pages/sandbox/image/membership_quick_create.png)
+![Creating membership with Linked Membership Owner from the Quick Create page](../image/membership_quick_create.png)
 
 Once you click on ‘Create’, the Linked Membership ID is returned along with the Membership ID.
 
@@ -46,7 +46,7 @@ Once you click on ‘Create’, the Linked Membership ID is returned along with 
 
 By selecting the ‘Linked Membership Member’ checkbox, you can create a VIP Membership who is also a Linked Member. Please enter the “Linked Membership Group ID” in the textbox provided. This value can be obtained when you create a Membership with a Linked Owner.
 
-![Creating membership with Linked Membership Member from the Quick Create page](/src/pages/sandbox/image/create_membership_2.png)
+![Creating membership with Linked Membership Member from the Quick Create page](../image/create_membership_2.png)
 
 ## Custom Create
 
@@ -60,7 +60,7 @@ Upon successful creation of the custom Membership, a message will pop up with th
 
 As stated above, creating a Membership ID will make it possible to manage transfers with API calls. This is an important and necessary step because Membership IDs can only be used once, and every transfer requires a Membership ID.
 
-![Membership - custom create](/src/pages/sandbox/image/memebership_custom.png)
+![Membership - custom create](../image/memebership_custom.png)
 
 ### Custom Create with Global Sales
 
@@ -68,20 +68,20 @@ To create a custom VIP membership with worldwide enabled, go to the section labe
 
 Fill out the fields related to the deployment (Country, Region, City, Currency, etc.). Please note that you need to enter the offerID corresponding to the currencyCode entered in the Deployment section. To get the list of offers associated with a currency and price region please refer to the Available Offers section.
 
-![Creating membership with worldwide enabled from Custom Create page](/src/pages/sandbox/image/custom_create.png)
+![Creating membership with worldwide enabled from Custom Create page](../image/custom_create.png)
 
 ### Custom Create with 3YC
 
 To create a VIP membership with 3YC from the custom create page, enable the checkbox ‘3YC Enabled’, this will display a few additional fields with default values as shown in the image below. Feel free to modify the values as per your requirements.
 
-![Creating membership with 3YC enabled from Custom Create page](/src/pages/sandbox/image/custom_create_3yc.png)
+![Creating membership with 3YC enabled from Custom Create page](../image/custom_create_3yc.png)
 
 ### Custom Create with Linked Membership
 
 To create a VIP membership with a Linked Owner from the custom create tab, go to the section labeled Linked Membership and select the checkbox Linked Membership Owner. Fill out the Linked Membership Organization name and Type and click on ‘Create’ to create the membership. You can view a Linked Membership ID along with a VIP membership ID in the output alert box.
 
-![Creating membership with Linked Membership Owner](/src/pages/sandbox/image/custom_create_lm.png)
+![Creating membership with Linked Membership Owner](../image/custom_create_lm.png)
 
 To create a VIP membership with a Linked Membership Member, select the ‘Linked Membership Member’ checkbox and enter the Linked Membership ID from the previous step.
 
-![Creating membership with Linked Membership Member](/src/pages/sandbox/image/custom_create_lm2.png)
+![Creating membership with Linked Membership Member](../image/custom_create_lm2.png)

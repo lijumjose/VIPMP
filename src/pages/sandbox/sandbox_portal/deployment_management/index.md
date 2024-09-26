@@ -24,7 +24,7 @@ Follow these steps to edit a deployment in the Sandbox Portal:
 5. Modify the fields. All fields that are not greyed out are editable.
 6. Select **Save** to save the changes.
 
-![Editing a deployment from the Sandbox Portal](/src/pages/sandbox/image/edit_deployment.png)
+![Editing a deployment from the Sandbox Portal](../image/edit_deployment.png)
 
 **Note:** Once the deployment’s country is set, it cannot be changed.
 
@@ -42,7 +42,7 @@ To view the deployments for a customer:
 1. Navigate to **Manage Records > Customers**.
 2. Expand the customer. All the deployments associated with the customer are displayed.
 
-![Viewing customer's associated deployments in Sandbox Portal](/src/pages/sandbox/image/deployment2.png)
+![Viewing customer's associated deployments in Sandbox Portal](../image/deployment2.png)
 3. To view details of each deployment, select **View** next to the deployment ID.
 
-![Viewing each deployment's details](/src/pages/sandbox/image/deployment3.png)
+![Viewing each deployment's details](../image/deployment3.png)

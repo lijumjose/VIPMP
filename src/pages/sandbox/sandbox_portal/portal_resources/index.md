@@ -7,7 +7,7 @@ We have added some additional resources to assist with the Sandbox testing as fo
 A list of all available offers for the current distributor can be found on the View Available Offers page. You can filter the available offers by Level, market segment, price region, and Currency.
 The listed offer IDs can be used for testing the Create Order API call or for getting the offer IDs for global orders.
 
-![Viewing Available offers in the Sandbox Portal](/src/pages/sandbox/image/portal_resources_1.png)
+![Viewing Available offers in the Sandbox Portal](../image/portal_resources_1.png)
 
 ## Available countries
 
@@ -15,7 +15,7 @@ The list of available countries per Price Region can be viewed in the Portal Res
 
 The list of countries displayed on the page is determined by the price region to which they belong, as defined by Adobe. The price region can be selected by the dropdown menu at the top of the page.
 
-![Viewing Available Countries in Sandbox Portal](/src/pages/sandbox/image/portal_resources_2.png)
+![Viewing Available Countries in Sandbox Portal](../image/portal_resources_2.png)
 
 ## Partner API Files & Links
 

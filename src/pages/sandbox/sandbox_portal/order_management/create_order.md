@@ -4,7 +4,7 @@ Complete the following steps to create a default Order:
 
 1. Navigate to the **API Tools** tab in the Portal. The Create Default Records page is displayed.
 
-![Creating a default data set in the Sandbox Portal](/src/pages/sandbox/image/create_order_1.png)
+![Creating a default data set in the Sandbox Portal](../image/create_order_1.png)
 2. Select **Create Default Reseller** to create a default reseller.
 3. Select **Create Default Customer** to create a default customer.
 4. Select **Create Default Order** to create a default order. Clicking on the Create Default Order will generate three orders:

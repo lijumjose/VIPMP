@@ -2,7 +2,7 @@
 
 To view the status of three-year benefits, navigate to **benefits -> THREE_YEAR_COMMIT -> commitmentRequest**  section in the customer’s detailed view.
 
-![View 3YC benefit status](/src/pages/sandbox/image/view_3yc.png)
+![View 3YC benefit status](../image/view_3yc.png)
 
 The 3YC status can have the following values:
 

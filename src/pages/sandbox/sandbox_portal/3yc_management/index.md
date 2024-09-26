@@ -22,14 +22,14 @@ Whether 3YC is initiated by a partner or Adobe, the customer must accept the com
 
 If a 3YC commitment request is placed through an API, the customer will see a **Accept/Reject 3YC commitment** button on viewing the customer details under **Manage records--> Customers--> Search**.
 
-![Accept/Reject 3YC commitment terms from Sandbox Portal - 1](/src/pages/sandbox/image/3yc_1.png)
+![Accept/Reject 3YC commitment terms from Sandbox Portal - 1](../image/3yc_1.png)
 
 The customer can Accept/Reject the 3YC terms.
 
-![Accept/Reject 3YC commitment terms from Sandbox Portal - 2](/src/pages/sandbox/image/3yc_2.png)
+![Accept/Reject 3YC commitment terms from Sandbox Portal - 2](../image/3yc_2.png)
 
 ### Adobe-initiated 3YC enrollment
 
 The customer can receive an **Enroll for 3YC** option if he meets the eligibility criteria, that is, he has already purchased at least 10 licenses.
 
-![Accept/Reject 3YC commitment terms from Sandbox Portal - 2](/src/pages/sandbox/image/3yc_3.png)
+![Accept/Reject 3YC commitment terms from Sandbox Portal - 2](../image/3yc_3.png)

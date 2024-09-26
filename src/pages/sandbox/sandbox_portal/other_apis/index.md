@@ -19,12 +19,12 @@ The following dependencies exist among the choices above:
 
 To test an address, navigate to API Tools -> Test Address:
 
-![Check address validity in the Sandbox Portal](/src/pages/sandbox/image/check_address.png)
+![Check address validity in the Sandbox Portal](../image/check_address.png)
 
 If the API accepts the address format, the tool will display a message announcing that the validation was successful.
 
-![Address validation in Sandbox Portal – 1](/src/pages/sandbox/image/address_validation_1.png)
+![Address validation in Sandbox Portal – 1](../image/address_validation_1.png)
 
 If the address fails API validation, the tool will display a message indicating why the validation failed.
 
-![Address Validation in Sandbox –2](/src/pages/sandbox/image/address_validation_2.png)
+![Address Validation in Sandbox –2](../image/address_validation_2.png)

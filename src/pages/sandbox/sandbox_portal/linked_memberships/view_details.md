@@ -2,7 +2,7 @@
 
 Navigate to **Manage Records > Customers-> Search by the customer ID** and expand the view by clicking the down arrowhead. Further, expand the down arrowhead adjacent to ‘linkedAccountGroup’ to view the associated linked membership details.
 
-![View linked memberships](/src/pages/sandbox/image/view_lm.png)
+![View linked memberships](../image/view_lm.png)
 
 Please find a description of the fields below:
 
@@ -26,7 +26,7 @@ Before a linked owner can accept other members into the linked membership, he mu
 2. Select **Linked Membership Terms**’
 3. Accept or reject the terms.
 
-![View linked memberships](/src/pages/sandbox/image/lm2.png)
+![View linked memberships](../image/lm2.png)
 
 **Note:** Linked membership terms cannot be updated once it is set.
 Once the linked membership owner accepts the terms, the following actions can be performed:
@@ -36,4 +36,4 @@ Once the linked membership owner accepts the terms, the following actions can be
 
 You can view the Linked Membership terms acceptance status from the **termsAcceptanceStatus** field available under **linkedAccountGroup** in the detailed customer view.
 
-![View linked memberships](/src/pages/sandbox/image/lm3.png)
+![View linked memberships](../image/lm3.png)

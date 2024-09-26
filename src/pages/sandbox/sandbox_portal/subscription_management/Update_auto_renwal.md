@@ -28,7 +28,7 @@ The considerations named above translate into three states of autorenewal:
 
 To update Subscriptions through the Portal, navigate to Manage Records -> Customers and expand the view of the desired Customer. In the Customer’s Associated Subscriptions section, click on the EDIT button at the end of the Subscription line.
 
-![Updating Subscription details in Sandbox Portal -1](/src/pages/sandbox/image/update_subscription_1.png)
+![Updating Subscription details in Sandbox Portal -1](../image/update_subscription_1.png)
 
 Clicking on the EDIT button will bring up several fields that will allow you to change the different values associated with the Subscription, namely:
 
@@ -36,7 +36,7 @@ Clicking on the EDIT button will bring up several fields that will allow you to 
 - The Auto-Renewal Flag
 - The Status
 
-![Updating Subscription details in Sandbox Portal -2](/src/pages/sandbox/image/update_subscription_2.png)
+![Updating Subscription details in Sandbox Portal -2](../image/update_subscription_2.png)
 
 ## Manually trigger auto-renewal through Sandbox UI
 
@@ -44,4 +44,4 @@ Triggering an auto-renewal is a function that can be performed through the Porta
 
 Please, take note that there is a renewal job that runs automatically every hour that will trigger Auto-Renewals upon reaching the corresponding anniversary date and time. The Trigger Auto-Renewal function allows you to accelerate this process.
 
-![Triggering auto-renewal](/src/pages/sandbox/image/trigger.png)
+![Triggering auto-renewal](../image/trigger.png)

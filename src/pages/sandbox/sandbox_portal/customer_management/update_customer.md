@@ -17,7 +17,7 @@ Perform the following steps to edit customer status:
 1. Navigate to **Manage Records > Customers**
 2. Expand the Customer view by selecting the down arrow next to the Customer ID, which will reveal the **Edit** button under the **Status** column:
 
-![Edit customer status](/src/pages/sandbox/image/edit_customer_status.png)
+![Edit customer status](../image/edit_customer_status.png)
 3. Select **Edit**. This displays a dropdown menu with the five status options:
 
 - 1000 - Success (default)
@@ -28,7 +28,7 @@ Perform the following steps to edit customer status:
 
 Each status is designated by a four-digit number.
 4. Select the desired option.
-![Edit customer status](/src/pages/sandbox/image/edit_customer_status2.png)
+![Edit customer status](../image/edit_customer_status2.png)
 5. Select **Save** to save the changes.
 
 ## Set the cotermDate
@@ -40,7 +40,7 @@ You can set the anniversary or cotermDate of a customer by following these steps
 
 3. Select **Edit**. Clicking the **Edit** button  discloses the date field under the **Update Value** column.
 
-![Coterm date](/src/pages/sandbox/image/coterm.png)
+![Coterm date](../image/coterm.png)
 4. Enter the date using the following format: YYYY-MM-DD. Alternatively, a date may be chosen using the calendar function next to the date field. Click on the SAVE button to set the new cotermDate.
 
 ## Edit 3YC commitment terms
@@ -51,11 +51,11 @@ The 3YC commitment terms details such as status, and end/start date can be updat
 
 To Edit 3YC commitment terms, select **Edit 3YC terms** in the expanded customer view.
 
-![Updating 3YC terms - 1](/src/pages/sandbox/image/edit_customer_status5.png)
+![Updating 3YC terms - 1](../image/edit_customer_status5.png)
 
 Selecting the Edit 3YC terms button will enable you to edit the Start Date, End Date, and Status.
 
-![Updating 3YC terms - 2](/src/pages/sandbox/image/update_3yc.png)
+![Updating 3YC terms - 2](../image/update_3yc.png)
 
 ## Trigger Auto-renewal
 
@@ -65,7 +65,7 @@ To trigger auto-renewal, expand the Customer view by clicking on the down arrowh
 
 **Note:** Auto-renewals can be triggered once every 120 seconds. A counter will display the time remaining.
 
-![Trigger auto-renewal](/src/pages/sandbox/image/auto_renewal.png)
+![Trigger auto-renewal](../image/auto_renewal.png)
 
 Renewals will be managed at the subscription level. Triggering auto-renewal will create a renewal order for this customer. If a reseller or customer is inactive, the order will fail with an error.
 
@@ -77,7 +77,7 @@ To edit the global status of a customer:
 2. Select the **Edit** button to the right of the customer’s expanded details page.
 Update the `globalSalesEnabled` field to true/false and select the **Save** to save your selection.
 
-![Enable global sales](/src/pages/sandbox/image/global_sales.png)
+![Enable global sales](../image/global_sales.png)
 
 **Notes:**
 
