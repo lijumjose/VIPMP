@@ -105,7 +105,7 @@ module.exports = {
       },
       {
         title: 'Sandbox User Guide',
-        path: '/technical-assets'
+        path: 'sandbox/introduction/index.md'
       },
     ],
     subPages: 
@@ -322,6 +322,180 @@ module.exports = {
         title: 'Support',
         description: '',
         path: 'docs/support.md'
+      },
+      {
+        title: 'Sandbox User Guide',
+        description: '',
+        path: 'sandbox/introduction/index.md',
+        pages: [
+          {
+            title: 'API collection and interaction basics',
+            path: 'sandbox/introduction/api_collection.md'
+          },
+          {
+            title: 'Manage distributors',
+            path: 'sandbox/distributor_management/index.md'
+          },
+          {
+            title: 'Sandbox use cases',
+            description: '',
+            path: 'sandbox/sandbox_portal/index.md',
+            pages: [
+              {
+                title: 'Manage resellers',
+                path: 'sandbox/sandbox_portal/reseller_management/index.md',
+               pages: [
+                {
+                  title: 'Create a reseller',
+                  path: 'sandbox/sandbox_portal/reseller_management/create_reseller.md'
+                },
+                {
+                  title: 'View reseller information',
+                  path: 'sandbox/sandbox_portal/reseller_management/view_reseller_info.md'
+                },
+                {
+                  title: 'Edit reseller status',
+                  path: 'sandbox/sandbox_portal/reseller_management/view_reseller_info.md'
+                },
+               ]
+              },
+              {
+                title: 'API collection and interaction basics',
+                path: 'sandbox/sandbox_portal/index.md',
+               pages: [
+                {
+                  title: 'API collection and interaction basics',
+                  path: 'sandbox/introduction/api_collection.md'
+                },
+                {
+                  title: 'Manage distributors',
+                  path: 'sandbox/distributor_management/index.md'
+                },
+               ]
+              },
+              {
+                title: 'API collection and interaction basics',
+                path: 'sandbox/sandbox_portal/index.md',
+               pages: [
+                {
+                  title: 'API collection and interaction basics',
+                  path: 'sandbox/introduction/api_collection.md'
+                },
+                {
+                  title: 'Manage distributors',
+                  path: 'sandbox/distributor_management/index.md'
+                },
+               ]
+              },
+              {
+                title: 'API collection and interaction basics',
+                path: 'sandbox/sandbox_portal/index.md',
+               pages: [
+                {
+                  title: 'API collection and interaction basics',
+                  path: 'sandbox/introduction/api_collection.md'
+                },
+                {
+                  title: 'Manage distributors',
+                  path: 'sandbox/distributor_management/index.md'
+                },
+               ]
+              },
+              {
+                title: 'API collection and interaction basics',
+                path: 'sandbox/sandbox_portal/index.md',
+               pages: [
+                {
+                  title: 'API collection and interaction basics',
+                  path: 'sandbox/introduction/api_collection.md'
+                },
+                {
+                  title: 'Manage distributors',
+                  path: 'sandbox/distributor_management/index.md'
+                },
+               ]
+              },
+              {
+                title: 'API collection and interaction basics',
+                path: 'sandbox/sandbox_portal/index.md',
+               pages: [
+                {
+                  title: 'API collection and interaction basics',
+                  path: 'sandbox/introduction/api_collection.md'
+                },
+                {
+                  title: 'Manage distributors',
+                  path: 'sandbox/distributor_management/index.md'
+                },
+               ]
+              },
+              {
+                title: 'API collection and interaction basics',
+                path: 'sandbox/sandbox_portal/index.md',
+               pages: [
+                {
+                  title: 'API collection and interaction basics',
+                  path: 'sandbox/introduction/api_collection.md'
+                },
+                {
+                  title: 'Manage distributors',
+                  path: 'sandbox/distributor_management/index.md'
+                },
+               ]
+              },
+              {
+                title: 'API collection and interaction basics',
+                path: 'sandbox/sandbox_portal/index.md',
+               pages: [
+                {
+                  title: 'API collection and interaction basics',
+                  path: 'sandbox/introduction/api_collection.md'
+                },
+                {
+                  title: 'Manage distributors',
+                  path: 'sandbox/distributor_management/index.md'
+                },
+               ]
+              },
+              {
+                title: 'API collection and interaction basics',
+                path: 'sandbox/sandbox_portal/index.md',
+               pages: [
+                {
+                  title: 'API collection and interaction basics',
+                  path: 'sandbox/introduction/api_collection.md'
+                },
+                {
+                  title: 'Manage distributors',
+                  path: 'sandbox/distributor_management/index.md'
+                },
+               ]
+              },
+              {
+                title: 'API collection and interaction basics',
+                path: 'sandbox/sandbox_portal/index.md',
+               pages: [
+                {
+                  title: 'API collection and interaction basics',
+                  path: 'sandbox/introduction/api_collection.md'
+                },
+                {
+                  title: 'Manage distributors',
+                  path: 'sandbox/distributor_management/index.md'
+                },
+               ]
+              },
+              {
+                title: 'API collection and interaction basics',
+                path: 'sandbox/introduction/api_collection.md'
+              },
+              {
+                title: 'API collection and interaction basics',
+                path: 'sandbox/introduction/api_collection.md'
+              },
+            ]
+            }
+        ]
       },
     ]
   },
