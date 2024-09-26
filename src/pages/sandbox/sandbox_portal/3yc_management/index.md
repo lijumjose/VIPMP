@@ -1,4 +1,4 @@
-# Manage three-year contratcs (3YC)
+# Manage three-year commits (3YC)
 
 The 3-Year Commit (3YC) program is a loyalty initiative that offers customers greater discounts and a price lock for three terms (the current term plus two additional terms). Customers must commit to purchasing and maintaining a minimum quantity throughout the 3-year period.
 
