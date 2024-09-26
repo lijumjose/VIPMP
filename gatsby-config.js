@@ -336,151 +336,151 @@ module.exports = {
             title: 'Manage distributors',
             path: 'sandbox/distributor_management/index.md'
           },
+          {
+            title: 'Sandbox Use Cases',
+            description: '',
+            path: 'sandbox/sandbox_portal/index.md',
+          },
+          {
+            title: 'Manage resellers',
+            path: 'sandbox/sandbox_portal/reseller_management/index.md',
+            pages: [
+              {
+              title: 'Create a reseller',
+              path: 'sandbox/sandbox_portal/reseller_management/create_reseller.md'
+              },
+              {
+              title: 'View reseller information',
+              path: 'sandbox/sandbox_portal/reseller_management/view_reseller_info.md'
+              },
+              {
+               title: 'Edit reseller status',
+               path: 'sandbox/sandbox_portal/reseller_management/view_reseller_info.md'
+              },
+              ]
+          },
+          {
+            title: 'Manage customers',
+            path: 'sandbox/sandbox_portal/customer_management/index.md',
+            pages: [
+              {
+              title: 'Create a customer',
+              path: 'sandbox/sandbox_portal/customer_management/create_customer.md'
+              },
+              {
+              title: 'Create Product Arrangements for a customer',
+              path: 'sandbox/sandbox_portal/customer_management/create_pa_for_customer.md'
+              },
+              {
+               title: 'View customer details',
+               path: 'sandbox/sandbox_portal/customer_management/get_customer_details.md'
+              },
+              {
+                title: 'Update customer details',
+                path: 'sandbox/sandbox_portal/customer_management/update_customer.md'
+               },
+               {
+                title: 'Update reseller details of a customer',
+                path: 'sandbox/sandbox_portal/customer_management/update_reseller.md'
+               },
+              ]
+          },
+          {
+            title: 'Manage three-year commits (3YC)',
+            path: 'sandbox/sandbox_portal/3yc_management/index.md',
+            pages: [
+              {
+              title: 'View 3YC benefits status',
+              path: 'sandbox/sandbox_portal/3yc_management/view_3yc_status.md'
+              },
+              ]
+          },
+          {
+            title: 'Manage linked memberships',
+            path: 'sandbox/sandbox_portal/linked_memberships/index.md',
+            pages: [
+              {
+              title: 'Enroll in a linked membership',
+              path: 'sandbox/sandbox_portal/linked_memberships/enroll.md'
+              },
+              {
+              title: 'View linked membership details',
+              path: 'sandbox/sandbox_portal/linked_memberships/view_details.md'
+              },
+              ]
+          },
+          {
+            title: 'Management deployments',
+            path: 'sandbox/sandbox_portal/deployment_management/index.md',
+          },
+          {
+            title: 'Manage orders',
+            path: 'sandbox_portal/order_management/index.md',
+            pages: [
+              {
+              title: 'Create order',
+              path: 'sandbox_portal/order_management/create_order.md'
+              },
+              {
+              title: 'Search and view order details',
+              path: 'sandbox_portal/order_management/view_order_details.md'
+              },
+              {
+               title: 'Edit the order status and creation date',
+               path: 'sandbox_portal/order_management/edit_order_status.md'
+              },
+              {
+                title: 'Cancel an order',
+                path: 'sandbox_portal/order_management/.md'
+              },
+              ]
+          },
+          {
+            title: 'Manage subscriptions',
+            path: 'sandbox/sandbox_portal/subscription_management/index.md',
+            pages: [
+              {
+              title: 'View subscription details',
+              path: 'sandbox/sandbox_portal/subscription_management/view_subscription.md'
+              },
+              {
+              title: 'Update auto-renewal configuration',
+              path: 'sandbox/sandbox_portal/subscription_management/Update_auto_renwal.md'
+              },
+              ]
+          },
+          {
+            title: 'Managing membership transfers',
+            path: 'sandbox/sandbox_portal/transfer_memberships/index.md',
+            pages: [
+              {
+              title: 'Create memberships',
+              path: 'sandbox/sandbox_portal/transfer_memberships/create_memberships.md'
+              },
+              {
+              title: 'View memberships',
+              path: 'sandbox/sandbox_portal/transfer_memberships/list_memberships.md'
+              },
+              ]
+          },
+          {
+            title: 'Portal resources',
+            path: 'sandbox/sandbox_portal/portal_resources/index.md',
+          },
+          {
+            title: 'Other API tools',
+            path: 'sandbox/sandbox_portal/other_apis/index.md',
+          },
+          {
+            title: 'Error codes',
+            path: 'sandbox/error_codes.md',
+          },
+          {
+            title: 'Sandbox support',
+            path: 'sandbox/sandbox_support.md',
+          },
           ]
        },
-        {
-          title: 'Sandbox Use Cases',
-          description: '',
-          path: 'sandbox/sandbox_portal/index.md',
-        },
-        {
-          title: 'Manage resellers',
-          path: 'sandbox/sandbox_portal/reseller_management/index.md',
-          pages: [
-            {
-            title: 'Create a reseller',
-            path: 'sandbox/sandbox_portal/reseller_management/create_reseller.md'
-            },
-            {
-            title: 'View reseller information',
-            path: 'sandbox/sandbox_portal/reseller_management/view_reseller_info.md'
-            },
-            {
-             title: 'Edit reseller status',
-             path: 'sandbox/sandbox_portal/reseller_management/view_reseller_info.md'
-            },
-            ]
-        },
-        {
-          title: 'Manage customers',
-          path: 'sandbox/sandbox_portal/customer_management/index.md',
-          pages: [
-            {
-            title: 'Create a customer',
-            path: 'sandbox/sandbox_portal/customer_management/create_customer.md'
-            },
-            {
-            title: 'Create Product Arrangements for a customer',
-            path: 'sandbox/sandbox_portal/customer_management/create_pa_for_customer.md'
-            },
-            {
-             title: 'View customer details',
-             path: 'sandbox/sandbox_portal/customer_management/get_customer_details.md'
-            },
-            {
-              title: 'Update customer details',
-              path: 'sandbox/sandbox_portal/customer_management/update_customer.md'
-             },
-             {
-              title: 'Update reseller details of a customer',
-              path: 'sandbox/sandbox_portal/customer_management/update_reseller.md'
-             },
-            ]
-        },
-        {
-          title: 'Manage three-year commits (3YC)',
-          path: 'sandbox/sandbox_portal/3yc_management/index.md',
-          pages: [
-            {
-            title: 'View 3YC benefits status',
-            path: 'sandbox/sandbox_portal/3yc_management/view_3yc_status.md'
-            },
-            ]
-        },
-        {
-          title: 'Manage linked memberships',
-          path: 'sandbox/sandbox_portal/linked_memberships/index.md',
-          pages: [
-            {
-            title: 'Enroll in a linked membership',
-            path: 'sandbox/sandbox_portal/linked_memberships/enroll.md'
-            },
-            {
-            title: 'View linked membership details',
-            path: 'sandbox/sandbox_portal/linked_memberships/view_details.md'
-            },
-            ]
-        },
-        {
-          title: 'Management deployments',
-          path: 'sandbox/sandbox_portal/deployment_management/index.md',
-        },
-        {
-          title: 'Manage orders',
-          path: 'sandbox_portal/order_management/index.md',
-          pages: [
-            {
-            title: 'Create order',
-            path: 'sandbox_portal/order_management/create_order.md'
-            },
-            {
-            title: 'Search and view order details',
-            path: 'sandbox_portal/order_management/view_order_details.md'
-            },
-            {
-             title: 'Edit the order status and creation date',
-             path: 'sandbox_portal/order_management/edit_order_status.md'
-            },
-            {
-              title: 'Cancel an order',
-              path: 'sandbox_portal/order_management/.md'
-            },
-            ]
-        },
-        {
-          title: 'Manage subscriptions',
-          path: 'sandbox/sandbox_portal/subscription_management/index.md',
-          pages: [
-            {
-            title: 'View subscription details',
-            path: 'sandbox/sandbox_portal/subscription_management/view_subscription.md'
-            },
-            {
-            title: 'Update auto-renewal configuration',
-            path: 'sandbox/sandbox_portal/subscription_management/Update_auto_renwal.md'
-            },
-            ]
-        },
-        {
-          title: 'Managing membership transfers',
-          path: 'sandbox/sandbox_portal/transfer_memberships/index.md',
-          pages: [
-            {
-            title: 'Create memberships',
-            path: 'sandbox/sandbox_portal/transfer_memberships/create_memberships.md'
-            },
-            {
-            title: 'View memberships',
-            path: 'sandbox/sandbox_portal/transfer_memberships/list_memberships.md'
-            },
-            ]
-        },
-        {
-          title: 'Portal resources',
-          path: 'sandbox/sandbox_portal/portal_resources/index.md',
-        },
-        {
-          title: 'Other API tools',
-          path: 'sandbox/sandbox_portal/other_apis/index.md',
-        },
-        {
-          title: 'Error codes',
-          path: 'sandbox/error_codes.md',
-        },
-        {
-          title: 'Sandbox support',
-          path: 'sandbox/sandbox_support.md',
-        },
     ]
   },
   plugins: [`@adobe/gatsby-theme-aio`],
