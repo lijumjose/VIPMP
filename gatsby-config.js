@@ -39,69 +39,6 @@ module.exports = {
       {
         title: 'Use Cases',
         path: '/docs/index.md',
-        menu: 
-        [
-          {
-            title: 'Introduction',
-            description: '',
-            path: '/docs/index.md'
-          },
-          {
-            title: 'Enable authentication and access',
-            description: '',
-            path: '/docs/authentication/index.md'
-          },
-          {
-            title: 'Manage reseller accounts',
-            description: '',
-            path: '/docs/reseller_account/index.md'
-          },
-          {
-            title: 'Manage customer accounts',
-            description: '',
-            path: '/docs/customer_account/index.md'
-          },
-          {
-            title: 'Manage deployments',
-            description: '',
-            path: '/docs/deployment_management/index.md'
-          },
-          {
-            title: 'Reseller change process',
-            description: '',
-            path: '/docs/reseller_change/index.md'
-          },
-          {
-            title: 'Manager orders',
-            description: '',
-            path: '/docs/order_management/index.md'
-          },
-          {
-            title: 'Manage subscriptions',
-            description: '',
-            path: '/docs/subscription_management/index.md'
-          },
-          {
-            title: 'Migrate to VIP Marketplace',
-            description: '',
-            path: '/docs/migration/index.md'
-          },
-          {
-            title: 'Manage notifications',
-            description: '',
-            path: 'docs/notification_management/index.md'
-          },
-          {
-            title: 'References',
-            description: '',
-            path: 'docs/references/index.md'
-          },
-          {
-            title: 'Support',
-            description: '',
-            path: 'docs/support.md'
-          },
-        ]
       },
       {
         title: 'Sandbox User Guide',
