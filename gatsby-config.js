@@ -59,7 +59,7 @@ module.exports = {
           {
             title: 'Health check',
             path: '/docs/authentication/health_check.md'
-          },
+          }
         ]
       },
       {
@@ -78,7 +78,7 @@ module.exports = {
           {
             title: 'Update a reseller account',
             path: '/docs/reseller_account/update_reseller_account.md'
-          },
+          }
         ]
       },
       {
@@ -113,7 +113,7 @@ module.exports = {
           {
             title: 'Get licenses pending partner order',
             path: '/docs/customer_account/get_licenses.md'
-          },
+          }
         ]
       },
       {
@@ -132,7 +132,7 @@ module.exports = {
           {
             title: 'Update a deployment of a customer',
             path: '/docs/deployment_management/update_deployment.md'
-          },
+          }
         ]
       },
       {
@@ -151,7 +151,7 @@ module.exports = {
           {
             title: 'Get reseller transfer details',
             path: '/docs/reseller_change/get_transfer.md'
-          },
+          }
         ]
       },
       {
@@ -174,7 +174,7 @@ module.exports = {
           {
             title: ' Update order',
             path: '/docs/order_management/update_order.md'
-          },
+          }
         ]
       },
       {
@@ -193,7 +193,7 @@ module.exports = {
           {
             title: 'Update auto-renewal configuration of a subscription',
             path: '/docs/subscription_management/update_auto_renewal.md'
-          },
+          }
         ]
       },
       {
@@ -212,7 +212,7 @@ module.exports = {
           {
             title: 'Get transfer details',
             path: '/docs/migration/get_transfer_details.md'
-          },
+          }
         ]
       },
       {
@@ -252,7 +252,7 @@ module.exports = {
           {
             title: 'Validations and regular expressions',
             path: 'docs/references/validations.md'
-          },
+          }
         ]
       },
       {
@@ -427,9 +427,9 @@ module.exports = {
             title: 'Sandbox support',
             path: 'sandbox/sandbox_support.md',
             header: true,
-          },
+          }
           ]
-       },
+       }
     ]
   },
   plugins: [`@adobe/gatsby-theme-aio`],
