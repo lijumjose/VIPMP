@@ -263,7 +263,7 @@ module.exports = {
       {
         title: 'Sandbox User Guide - Introduction',
         description: '',
-        path: 'sandbox/introduction/index.md',
+        path: 'sandbox/introduction',
         pages: [
           {
             title: 'API collection and interaction basics',
@@ -271,16 +271,17 @@ module.exports = {
           },
           {
             title: 'Manage distributors',
-            path: 'sandbox/distributor_management/index.md'
+            path: 'sandbox/distributor_management'
           },
           {
             title: 'Sandbox Use Cases',
-            description: '',
-            path: 'sandbox/sandbox_portal/index.md',
+            path: 'sandbox/sandbox_portal',
+            header: true,
           },
           {
             title: 'Manage resellers',
-            path: 'sandbox/sandbox_portal/reseller_management/index.md',
+            path: 'sandbox/sandbox_portal/reseller_management',
+            header: true,
             pages: [
               {
               title: 'Create a reseller',
@@ -298,7 +299,8 @@ module.exports = {
           },
           {
             title: 'Manage customers',
-            path: 'sandbox/sandbox_portal/customer_management/index.md',
+            path: 'sandbox/sandbox_portal/customer_management',
+            header: true,
             pages: [
               {
               title: 'Create a customer',
@@ -324,7 +326,8 @@ module.exports = {
           },
           {
             title: 'Manage three-year commits (3YC)',
-            path: 'sandbox/sandbox_portal/3yc_management/index.md',
+            path: 'sandbox/sandbox_portal/3yc_management',
+            header: true,
             pages: [
               {
               title: 'View 3YC benefits status',
@@ -334,7 +337,8 @@ module.exports = {
           },
           {
             title: 'Manage linked memberships',
-            path: 'sandbox/sandbox_portal/linked_memberships/index.md',
+            path: 'sandbox/sandbox_portal/linked_memberships',
+            header: true,
             pages: [
               {
               title: 'Enroll in a linked membership',
@@ -348,11 +352,13 @@ module.exports = {
           },
           {
             title: 'Management deployments',
-            path: 'sandbox/sandbox_portal/deployment_management/index.md',
+            path: 'sandbox/sandbox_portal/deployment_management',
+            header: true,
           },
           {
             title: 'Manage orders',
-            path: 'sandbox_portal/order_management/index.md',
+            path: 'sandbox_portal/order_management',
+            header: true,
             pages: [
               {
               title: 'Create order',
@@ -374,7 +380,8 @@ module.exports = {
           },
           {
             title: 'Manage subscriptions',
-            path: 'sandbox/sandbox_portal/subscription_management/index.md',
+            path: 'sandbox/sandbox_portal/subscription_management',
+            header: true,
             pages: [
               {
               title: 'View subscription details',
@@ -388,7 +395,8 @@ module.exports = {
           },
           {
             title: 'Managing membership transfers',
-            path: 'sandbox/sandbox_portal/transfer_memberships/index.md',
+            path: 'sandbox/sandbox_portal/transfer_memberships',
+            header: true,
             pages: [
               {
               title: 'Create memberships',
@@ -402,19 +410,23 @@ module.exports = {
           },
           {
             title: 'Portal resources',
-            path: 'sandbox/sandbox_portal/portal_resources/index.md',
+            path: 'sandbox/sandbox_portal/portal_resources',
+            header: true,
           },
           {
             title: 'Other API tools',
-            path: 'sandbox/sandbox_portal/other_apis/index.md',
+            path: 'sandbox/sandbox_portal/other_apis',
+            header: true,
           },
           {
             title: 'Error codes',
             path: 'sandbox/error_codes.md',
+            header: true,
           },
           {
             title: 'Sandbox support',
             path: 'sandbox/sandbox_support.md',
+            header: true,
           },
           ]
        },
