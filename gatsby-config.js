@@ -42,7 +42,7 @@ module.exports = {
       },
       {
         title: 'Sandbox User Guide',
-        path: 'sandbox/introduction/index.md'
+        path: 'sandbox/index.md'
       },
     ],
     subPages: 
