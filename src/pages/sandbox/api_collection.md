@@ -2,7 +2,7 @@
 
 As part of the onboarding process, Adobe provides a Postman collection that contains all preset API calls, making it easier to interact with CPAPI.
 
-![API collection](../image/api_collection.png)
+![API collection](./image/api_collection.png)
 
 You can opt for an alternate method to interact with CPAPI. Read more about [getting started with Postman](https://learning.postman.com/docs/getting-started/introduction/).
 
@@ -31,4 +31,4 @@ The Sandbox Partner Portal (the Portal) is a website designed for viewing and in
 
 Sign in to the portal using your Adobe ID. If you don't have one, create it. In case of any access issues, contact support at: `partnerapi-integration-support@adobe.com` for access.
 
-![Login](../image/login.png)
+![Login](./image/login.png)

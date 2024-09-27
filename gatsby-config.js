@@ -261,13 +261,13 @@ module.exports = {
         path: 'docs/support.md'
       },
       {
-        title: 'Sandbox User Guide - Introduction',
+        title: 'Sandbox User Guide',
         description: '',
-        path: 'sandbox/introduction',
+        path: 'sandbox',
         pages: [
           {
             title: 'API collection and interaction basics',
-            path: 'sandbox/introduction/api_collection.md'
+            path: 'sandbox/api_collection.md'
           },
           {
             title: 'Manage distributors',
