@@ -357,24 +357,24 @@ module.exports = {
           },
           {
             title: 'Manage orders',
-            path: 'sandbox_portal/order_management',
+            path: 'sandbox/sandbox_portal/order_management',
             header: true,
             pages: [
               {
               title: 'Create order',
-              path: 'sandbox_portal/order_management/create_order.md'
+              path: 'sandbox/sandbox_portal/order_management/create_order.md'
               },
               {
               title: 'Search and view order details',
-              path: 'sandbox_portal/order_management/view_order_details.md'
+              path: 'sandbox/sandbox_portal/order_management/view_order_details.md'
               },
               {
                title: 'Edit the order status and creation date',
-               path: 'sandbox_portal/order_management/edit_order_status.md'
+               path: 'sandbox/sandbox_portal/order_management/edit_order_status.md'
               },
               {
                 title: 'Cancel an order',
-                path: 'sandbox_portal/order_management/.md'
+                path: 'sandbox/sandbox_portal/order_management/.md'
               },
               ]
           },
