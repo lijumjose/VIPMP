@@ -6,11 +6,11 @@ contributors:
 ---
 <Hero slots="image, heading, text" background="rgb(64, 34, 138)" hideBreadcrumbNav={false}/>
 
-![Hero image](./image/illustration.png)
+![Hero image](./image/background_new.png)
 
 # Value Incentive Plan - Marketplace (VIP MP)
 
-VIP Marketplace is a subscription licensing program that makes it convenient for organizations and institutions of all sizes to purchase, deploy, and manage Adobe products.
+VIP Marketplace is a subscription-based licensing program designed to simplify the process for organizations and institutions of all sizes to purchase, deploy, and manage Adobe products.
 
 <Resources slots="heading, links"/>
 
@@ -21,9 +21,9 @@ VIP Marketplace is a subscription licensing program that makes it convenient for
 
 ## Overview
 
-Adobe sells its products to a wide spectrum of customers, from individuals to organizations of all sizes spanning numerous industry verticals, education, and government agencies. Adobe either sells directly to the customers or indirectly through third-party marketplaces such as App Stores and VIP MP.
+Adobe caters to a diverse range of customers, including individuals, organizations across various industry sectors, educational institutions, and government agencies. Adobe’s products are available either directly from Adobe or through third-party marketplaces like App Stores and VIP Marketplace.
 
-VIP Marketplace allows your reseller to purchase the Adobe licenses a customer team needs. They can purchase as many or as few licenses as you need in one simple transaction with the flexibility to add more as your organization grows.
+The VIP Marketplace enables resellers to purchase the necessary Adobe licenses for their customers. This program offers the flexibility to purchase any number of licenses in a single transaction, with the option to add more as the organization expands.
 
 ### API Reference
 
@@ -33,4 +33,4 @@ Learn more about [VIP MP Partner APIs](./docs/index.md).
 
 ### Resources
 
-Read more about [Sandbox user guide](technical-assets/).
+Read more about [Sandbox user guide](./sandbox/index.md).
