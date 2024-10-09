@@ -99,6 +99,20 @@ module.exports = {
             path: '/docs/customer_account/linked_membership.md'
           },
           {
+            title: 'Manage high volume discounts',
+            path: '/docs/customer_account/high_volume_discounts.md',
+            pages: [
+              {
+                title: 'High penetration offer scenarios',
+                path: '/docs/customer_account/high_pen_scenarios.md'
+              },
+              {
+                title: 'Manage high penetration offers through APIs',
+                path: '/docs/customer_account/high_pen_apis.md'
+              }
+            ]
+          },
+          {
             title: 'Create customer account',
             path: '/docs/customer_account/create_customer_account.md'
           },

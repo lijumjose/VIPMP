@@ -295,7 +295,7 @@ Same as the [request header given in the previous endpoint](#request-header).
 
 None.
 
-### Request response 
+### Request response
 
 ```json
 {
