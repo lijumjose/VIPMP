@@ -28,16 +28,16 @@ Enterprise customers aiming to expand significantly can access high penetration 
 
     | Current seats at renewal <br/> Acrobat Pro + Standard|Eligible Minimum Quantity Orders (MQO)  |
     |--|--|
-    |$\le$ 50 seats| 100 </br> 250 </br> 500|
-    |$\le$ 125 seats|100 </br> 250  |
+    |$\le$ 50 seats| 100 <br /> 250 <br /> 500|
+    |$\le$ 125 seats|100 <br /> 250  |
     |$\le$ 250 seats |500 |
 
 The number of subscriptions at the renewal date on the anniversary date must be greater than or equal to the number of seats committed. The following table lists the seat expansion scenarios during renewals:
 
 | Current seats at renewal <br/> Acrobat Pro + Standard|Eligible Minimum Quantity Orders (MQO)  |3YC minimum commitment quantities <br /> (needs to be increased based on MOQ) |
 |--|--|--|
-|$\le$ 50 seats| 100 </br> 250 </br> 500| 100+ |
-|$\le$ 125 seats|100 </br> 250  | 250+ |
+|$\le$ 50 seats| 100 <br /> 250 <br /> 500| 100+ |
+|$\le$ 125 seats|100 <br /> 250  | 250+ |
 |$\le$ 250 seats |500 | 500+|
 
 ## High penetration offer renewal workflows
