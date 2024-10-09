@@ -6,7 +6,7 @@ contributors:
 ---
 <Hero slots="image, heading, text" background="rgb(64, 34, 138)" hideBreadcrumbNav={false}/>
 
-![Hero image](./image/background_new_2.png)
+![Hero image](./image/illustration.png)
 
 # Value Incentive Plan - Marketplace (VIP MP)
 
