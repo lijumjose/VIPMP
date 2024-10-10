@@ -2,15 +2,19 @@
 
 You can manage the following operations through APIs:
 
-- Preview renewl offers
-- Update subscription
-- Create subscription
-- Get subscription
-- Create order
+- [Preview renewl offers](#preview-renewal-offers)
+- [Update subscription](#update-subscription)
+- [Create subscription](#create-subscription)
+- [Get subscription](#get-subscription)
+- [Create order](#create-order)
 
 ## Preview renewal offers
 
 Use the `PreviewRenwal` API to get the preview of renewal order for the customer. This is the same `POST v3/customers/{customer-id}/orders` with `orderType` as _PREVIEW_RENEWAL_.
+
+**Assumptions:**
+
+Preview Renewal can be called anytime during the current term and recommendations be received.
 
 ### Request header
 
@@ -142,13 +146,13 @@ Success Response if customer has already opted for 100MOQX:
 
 ### HTTP status codes
 
-| Status code | Description                 |
-|-------------|-----------------------------|
-| 200         | AutoRenewal updated         |
-| 400         | Bad request                 |
-| 401         | Invalid Authorization token |
-| 403         | Invalid API Key             |
-| 404         | Invalid customer ID         |
+| Status code | Description                     |
+|-------------|---------------------------------|
+| 200         | Order Preview Successful        |
+| 400         | Bad request                     |
+| 401         | Invalid Authorization token     |
+| 403         | Invalid API Key                 |
+| 404         | Invalid customer ID or Order ID |
 
 #### Sample response in case of failure
 
@@ -163,6 +167,13 @@ Failure response:
 ## Update subscription
 
 Use the `PATCH /v3/customers/{customer-id}/subscriptions/{sub-id}reset-discount-code=false` API to update the renewal preferences for the customer's subscription with the MOQ offer details.
+
+You can use the optional query param `reset-discount-code` in the request to remove the discountCode after it has been opted by customer. Possible values are:
+
+- `true`
+- `false`
+
+The default value is `false`. For more information, see [sample request and response with query parameter.](#sample-request-and-response-with-query-parameter)
 
 ### Request header
 
@@ -179,12 +190,6 @@ Same as the [request header given in the previous endpoint](#request-header).
     }
 }
 ```
-
-#### Query parameter
-
-Optional Query param: reset-discount-code (reset-discount-code will be used to remove the discountCode after it has been opted by customer)
-
-Possible values are `true` or `false`, and the default is `false`
 
 ### Request response
 
@@ -214,9 +219,15 @@ Possible values are `true` or `false`, and the default is `false`
 }
 ```
 
-### HTTP Status code
+### HTTP status codes
 
-Same as [status codes mentioned in the previous API section](#http-status-code).
+| Status code | Description                     |
+|-------------|---------------------------------|
+| 200         | Order Preview Successful        |
+| 400         | Bad request                     |
+| 401         | Invalid Authorization token     |
+| 403         | Invalid API Key                 |
+| 404         | Invalid customer ID or Order ID |
 
 #### Sample failure response
 
@@ -226,15 +237,63 @@ On failure, the response the appropriate HTTP status code based on the reason/ty
 { "code": "4115", "message": "Api Key is invalid or missing" }
 ```
 
+#### Sample request and response with query parameter
+
+Use the `/v3/customers/{customer-id}/subscriptions/{sub-id}?reset-discount-code=true`
+
+Request body:
+
+```json
+{
+    "autoRenewal" :{
+        "enabled" : true,
+        "renewalQuantity" : 25
+    }
+}
+```
+
+Response:
+
+```json
+{
+    "subscriptionId": "a028303a454a168d6b824b6c0dfcc5NA",
+    "offerId": "65324918CA02A12",
+    "currentQuantity": 10,
+    "usedQuantity": 0,
+    "autoRenewal": {
+        "enabled": true,
+        "renewalQuantity": 25
+    },
+    "creationDate": "2023-09-22T08:38:27Z",
+    "renewalDate": "2024-09-22",
+    "status": "1000",
+    "deployToId": "",
+    "currencyCode": "USD",
+    "links": {
+        "self": {
+            "uri": "/v3/customers/1005388836/subscriptions/a028303a454a168d6b824b6c0dfcc5NA",
+            "method": "GET",
+            "headers": []
+        }
+    }
+}
+```
+
 ## Create subscription
 
 Use the `POST v3/customers/{{customerId}}/subscriptions` API to create a subscription for the specific customer.
 
-For global customers, the following parameters are required:
+A subscription is created for every unique product (SKU) of a customer and any subsequent purchase of the same product is added to the same subscription. For every new purchase of another product, the customer creates a new subscription. All these subscriptions at renewal (AD) form a Renewal Order and get fulfilled through the Ordering sub-system. For example, if the customer has only Acro Standard product and not Acrobat Pro, they can use Create Subscription API to create a scheduled subscription for the MOQ.
 
-- currencyCode: required (For Global Customer)
-- deployTo: could be part of later release (see if can be included now)
-- part of getsubscription as swell
+**Assumptions:**
+
+- The `Create Subscription` endpint now also supports `discountCode` to be given by partner in request for opting for a MOQ.
+- If the customer accepts to renew with Acrobat Pro MoQ SKU while the customer currently has Acrobat Standard SKU, the Distributor executes create subscription API that allows a scheduled subscription to be created to be activated at the anniversary date.
+- For global customers, the following parameters are required:
+  - `currencyCode`: required (For Global Customer)
+  - `deployTo`: **NEED DESCRIPTION**.
+  
+  These are part of `getsubscription` API as swell
 
 ### Request header
 
@@ -281,11 +340,17 @@ Same as the [request header given in the previous endpoint](#request-header).
 
 ### HTTP status codes
 
-Same as [status codes mentioned in the previous API section](#http-status-code).
+| Status code | Description                        |
+|-------------|------------------------------------|
+| 200         | Created subscription successfully  |
+| 400         | Bad request                        |
+| 401         | Invalid Authorization token        |
+| 403         | Invalid API Key                    |
+| 404         | Invalid customer ID or Order ID    |
 
 ## Get subscription
 
-Use the `GET /v3/customers/{{customerId}}/subscriptions` API to get the subscription details.
+Use the `GET /v3/customers/{{customerId}}/subscriptions` API to get the subscription details. Along with ther details, it displays the `discountCode` in the autoRenewal preferences if the customer has opted for it for the next term.
 
 ### Request header
 
@@ -323,9 +388,15 @@ None.
 }
 ```
 
-### HTTP Status code
+### HTTP status codes
 
-Same as [status codes mentioned in the previous API section](#http-status-code).
+| Status code | Description                     |
+|-------------|---------------------------------|
+| 200         | Successful                      |
+| 400         | Bad request                     |
+| 401         | Invalid Authorization token     |
+| 403         | Invalid API Key                 |
+| 404         | Invalid customer ID or Order ID |
 
 ## Create order
 
