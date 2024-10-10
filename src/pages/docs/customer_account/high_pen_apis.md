@@ -237,8 +237,6 @@ On failure, the response the appropriate HTTP status code based on the reason/ty
 { "code": "4115", "message": "Api Key is invalid or missing" }
 ```
 
-
-
 #### Sample request and response with query parameter
 
 Use the `/v3/customers/{customer-id}/subscriptions/{sub-id}?reset-discount-code=true`
