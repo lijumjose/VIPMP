@@ -2,7 +2,7 @@
 
 You can manage the following operations through APIs:
 
-- [Preview renewl offers](#preview-renewal-offers)
+- [Preview renewal offers](#preview-renewal-offers)
 - [Update subscription](#update-subscription)
 - [Create subscription](#create-subscription)
 - [Get subscription](#get-subscription)
@@ -10,11 +10,11 @@ You can manage the following operations through APIs:
 
 ## Preview renewal offers
 
-Use the `PreviewRenwal` API to get the preview of renewal order for the customer. This is the same `POST v3/customers/{customer-id}/orders` with `orderType` as _PREVIEW_RENEWAL_.
+Use the `PreviewRenwal` API to get the preview of the renewal order for the customer. This is the same `POST v3/customers/{customer-id}/orders` with `orderType` as _PREVIEW_RENEWAL_.
 
 **Assumptions:**
 
-Preview Renewal can be called anytime during the current term and recommendations be received.
+You can run the `PreviewRenewal` API anytime during the current term to get the recommendations.
 
 ### Request header
 
@@ -86,7 +86,7 @@ Preview Renewal can be called anytime during the current term and recommendation
 }
 ```
 
-Success Response if customer has already opted for 100MOQX:
+Success response if the customer has already opted for 100 MOQ offer:
 
 ```json
 {
@@ -148,7 +148,7 @@ Success Response if customer has already opted for 100MOQX:
 
 | Status code | Description                     |
 |-------------|---------------------------------|
-| 200         | Order Preview Successful        |
+| 200         | Preview Successful        |
 | 400         | Bad request                     |
 | 401         | Invalid Authorization token     |
 | 403         | Invalid API Key                 |
@@ -156,7 +156,7 @@ Success Response if customer has already opted for 100MOQX:
 
 #### Sample response in case of failure
 
-Upon failure, the response the appropriate HTTP status code based on the reason/type of failure will be sent.
+Upon failure, the appropriate HTTP status code based on the reason/type of failure will be sent.
 
 Failure response:
 
@@ -166,7 +166,7 @@ Failure response:
 
 ## Update subscription
 
-Use the `PATCH /v3/customers/{customer-id}/subscriptions/{sub-id}reset-discount-code=false` API to update the renewal preferences for the customer's subscription with the MOQ offer details.
+Use the `PATCH /v3/customers/{customer-id}/subscriptions/{sub-id}?reset-discount-code=false` API to update the renewal preferences for the customer's subscription with the MOQ offer details.
 
 You can use the optional query param `reset-discount-code` in the request to remove the discountCode after it has been opted by customer. Possible values are:
 
@@ -223,7 +223,7 @@ Same as the [request header given in the previous endpoint](#request-header).
 
 | Status code | Description                     |
 |-------------|---------------------------------|
-| 200         | Order Preview Successful        |
+| 200         | Preview Successful        |
 | 400         | Bad request                     |
 | 401         | Invalid Authorization token     |
 | 403         | Invalid API Key                 |
@@ -231,7 +231,7 @@ Same as the [request header given in the previous endpoint](#request-header).
 
 #### Sample failure response
 
-On failure, the response the appropriate HTTP status code based on the reason/type of failure will be sent. For example, if the API key is invalid , the response has status HTTP 403 and the failure response as:
+On failure, the appropriate HTTP status code based on the reason/type of failure will be sent. For example, if the API key is invalid , the response has status HTTP 403 and the failure response as:
 
 ```json
 { "code": "4115", "message": "Api Key is invalid or missing" }
@@ -283,15 +283,15 @@ Response:
 
 Use the `POST v3/customers/{{customerId}}/subscriptions` API to create a subscription for the specific customer.
 
-A subscription is created for every unique product (SKU) of a customer and any subsequent purchase of the same product is added to the same subscription. For every new purchase of another product, the customer creates a new subscription. All these subscriptions at renewal (AD) form a Renewal Order and get fulfilled through the Ordering sub-system. For example, if the customer has only Acro Standard product and not Acrobat Pro, they can use Create Subscription API to create a scheduled subscription for the MOQ.
+For example, if the customer has only Acro Standard product and not Acrobat Pro, they can use Create Subscription API to create a scheduled subscription for the MOQ.
 
 **Assumptions:**
 
 - The `Create Subscription` endpint now also supports `discountCode` to be given by partner in request for opting for a MOQ.
 - If the customer accepts to renew with Acrobat Pro MoQ SKU while the customer currently has Acrobat Standard SKU, the Distributor executes create subscription API that allows a scheduled subscription to be created to be activated at the anniversary date.
 - For global customers, the following parameters are required:
-  - `currencyCode`: required (For Global Customer)
-  - `deployTo`: **NEED DESCRIPTION**.
+  - `currencyCode`
+  - `deploymentId`
   
   These are part of `getsubscription` API as swell
 
