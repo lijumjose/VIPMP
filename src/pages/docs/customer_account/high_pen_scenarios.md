@@ -4,10 +4,6 @@ You can use this documentation as a reference while finalizing the offer for the
 
 **Hints:**
 
-- **Renewal codes:** Based on the MOQ offer, the following renewal codes are available:
-  - Renewal code X: 100 MOQ
-  - Renewal code Y: 250 MOQ
-  - Renewal code Z: 500 MOQ
 - **AD (Anniversary Date):**  The date on which 3YC contracts are renewed.
 - **Current quantity:** The number of subscriptions owned by the customer.
 -  **Renewal quantity:** The number of subscriptions that the customer would like to renew on the next anniversary date. This is specified in the auto-renewal configuration.
@@ -20,7 +16,7 @@ The following list gives an overview of possible scnearios. You may encounter ot
 
 - **At AD:**
   - Current quantity: 5
-  - Renewal quantity: MOQ X (100)
+  - Renewal quantity: MOQ 100
 - **Next AD:**
   - Renew subscriptions based on MOQ 100
 
@@ -30,7 +26,7 @@ The following list gives an overview of possible scnearios. You may encounter ot
 
 - **AD - 7:**
   - Current quantity: 5
-  - Renewal quantity: MOQ X (100)
+  - Renewal quantity: MOQ 100
 - **AD - 3:**
   - Added 50 seats. The current quantity becomes 55.
 - **AD:**
@@ -57,11 +53,11 @@ The following list gives an overview of possible scnearios. You may encounter ot
   - Renewal quantity: 25
   - MOQ: Null
 - **AD+6 months:**
-  - Mid-term upgrade to: MOQ 100 (X)
+  - Mid-term upgrade to: MOQ 100
   - Number of subscription becomes 130
   - Renewal quantity: 100 (based on the MOQ they opted)
 - **At renewal AD:**
-  - 100 qquantity invoiced with X 100MOQ
+  - 100 qquantity invoiced with MOQ 100
 
 **Result:** If the renewal quantity is greater than the MOQ, renew the subscription. If it is less, update to the MOQ and renew.
 
@@ -71,7 +67,7 @@ The following list gives an overview of possible scnearios. You may encounter ot
   - Current quantity: 30
   - Renewal quantity: 105
 - **AD+6 months:**
-  - Mid-term upgrade to: MOQ 100 (X)
+  - Mid-term upgrade to: MOQ 100
   - Subscription becomes 130
 
 - **At renewal AD:**
@@ -79,7 +75,7 @@ The following list gives an overview of possible scnearios. You may encounter ot
 
 **Result:** If the renewal quantity is greater than the MOQ, renew the subscription. If it is less, update to the MOQ and renew.
 
-## Scenario 4: Purchase MOQ mid-term
+## Scenario 4: Purchase MOQ at mid-term
 
 ### Example
 
@@ -98,6 +94,6 @@ The following list gives an overview of possible scnearios. You may encounter ot
   - Renewal quantity: 250
 
 - **At AD:**
-  - 250 quantity invoiced with Y 250MOQ
+  - 250 quantity invoiced with 250 MOQ
 
-**Result:** Customers can purchase MOQ offers mid-term, even if they don’t already hold MOQ. Highest MOQ to be retained for renewal setting.
+**Result:** Customers can purchase MOQ offers mid-term, even if they don’t already hold MOQ. Highest MOQ needs to be retained for renewal setting.

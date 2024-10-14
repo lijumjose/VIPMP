@@ -105,6 +105,16 @@ Some error responses will include additionalDetails, an array of strings with mo
 |5119| Customer cannot be transferred because reseller account is inactive |Transfer Subscriptions | 400|
 |5120| Customer cannot be transferred because there are no admin contacts |Preview Offers, Transfer Subscriptions| 400|
 |5121| Transfer currently in progress for this customer| Preview Offers, Transfer Subscriptions| 400|
+|5122| Order placement is currently unavailable. Please try again later. | Create Order| 400|
+|5123| Invalid Discount Code| Update Subscriptions| 400|
+|5124| Invalid Renewal Quantity for Discount Code| Update Subscriptions| 400|
+|5125| Invalid Request for Discount Code| Update Subscriptions| 400|
+|5126| Invalid Current Quantity for Discount Code| Update Subscriptions| 400|
+|5127| Discount Code is not valid for the current time period| Update Subscriptions| 400|
+|5128| Discount code not applicable for regular customer| Update Subscriptions| 400|
+|5129| Discount Code not applicable for 3yc committed quantity| Update Subscriptions| 400|
+|5131| TInvalid Order Quantity for Discount Code| Update Subscriptions| 400|
+|5132| Discount Code not applicable for the current term| Update Subscriptions| 400|
 
 ## 2129 Ineligible Purchase REASON_CODE List
 
