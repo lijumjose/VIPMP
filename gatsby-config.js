@@ -99,7 +99,7 @@ module.exports = {
             path: '/docs/customer_account/linked_membership.md'
           },
           {
-            title: 'Manage high volume discounts',
+            title: 'Manage high penetration seat expansion offers',
             path: '/docs/customer_account/high_volume_discounts.md',
             pages: [
               {
