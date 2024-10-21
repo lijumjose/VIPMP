@@ -30,9 +30,7 @@ Enterprise and Team customers aiming to expand significantly can access high pen
 1. Customers must be enrolled in the 3YC program.
 2. Customers require a minimum order quantity (MOQ) of 100 or more. Customers can choose from the available MOQ offers based on their seat requirements. For instance, if a customer already has 110 seats, they can consider selecting either the 250 or 500 MOQ offer option, as shown in the following table.
 
-   **Note:**
-
-- MOQ offers are available to new and existing customers with a certain number of licenses for specific product groups. For example, Acrobat Standard and Acrobat Pro are part of the Acrobat group, and customers with a combined quantity of 45 of these products will only qualify for Acrobat Pro MOQ 100 offer.
+   **Note:** MOQ offers are available to new and existing customers with a certain number of licenses for specific product groups. For example, Acrobat Standard and Acrobat Pro are part of the Acrobat group, and customers with a combined quantity of 45 of these products will only qualify for Acrobat Pro MOQ 100 offer.
 
      | Current seats at renewal <br/> Acrobat Pro + Standard | Eligible Minimum Order Quantity (MOQ) |
     |-------------------------------------------------------|---------------------------------------|
@@ -43,7 +41,7 @@ Enterprise and Team customers aiming to expand significantly can access high pen
 3 - The number of subscriptions at the renewal date on the anniversary date must be greater than or equal to the number of seats committed (MCQ). For example, if the number of seats is 130:
 
 - MOQ offer quantity must be 250 or 500
-- 3YC Minimum Commit Quantity (MCQ) must be 250+
+- 3YC Minimum Commit Quantity (MCQ) must be 250+ or 500+ respectively
 
   | Current seats at renewal <br/> Acrobat Pro + Standard | Eligible Minimum Order Quantity (MOQ) | 3YC Minimum Commit Quantities (MCQ) - Needs to be increased based on the MOQ) |
   |-------------------------------------------------------|---------------------------------------|-------------------------------------------------------------------------------|
@@ -55,16 +53,18 @@ Enterprise and Team customers aiming to expand significantly can access high pen
 
 Adobe defines the high penetration seat expansion offers, and the corresponding offer ID is shared with the partners. For example:
 
-- 65304479CA14X12 = Acrobat Pro 100 MOQ Pack
-- 65304479CA14Y12 = Acrobat Pro 250 MOQ Pack
-- 65304479CA14Z12 = Acrobat Pro 500 MOQ Pack
+- 65304479CA14X12 = Acrobat Pro 100 MOQ
+- 65304479CA14Y12 = Acrobat Pro 250 MOQ
+- 65304479CA14Z12 = Acrobat Pro 500 MOQ
 
-Customer can opt for an MOQ at the time of renewal of subscription at the anniversary date or at mid-term. Purchases at the anniversary date is for the next term aand mid-term purchases are applicable to the current term.
+Customers can opt for an MOQ at the time of renewal of the subscription at the anniversary date or at mid-term. Purchases at the anniversary date is for the next term and mid-term purchases are applicable to the current term.
 
 The following figures illustrate the workflows for these scenarios:
 
 ![Workflow 1](../image/moq_ad.png)
 
 ![Workflow 2](../image/moq_mid_term.png)
+
+![Workflow 2](../image/moq_non_acro.png)
 
 Read more about [high penetration offer scenarios](./high_pen_scenarios.md).

@@ -1,4 +1,4 @@
-# High penetration renewal scenarios
+# High penetration offer renewal scenarios
 
 You can use this documentation as a reference while finalizing the offer for the customers.
 
@@ -6,7 +6,7 @@ You can use this documentation as a reference while finalizing the offer for the
 
 - **AD (Anniversary Date):**  The date on which 3YC contracts are renewed.
 - **Current quantity:** The number of subscriptions owned by the customer.
-- **Renewal quantity:** The number of subscriptions that the customer would like to renew on the next anniversary date. This is specified in the auto-renewal configuration.
+- **Renewal quantity:** The number of subscriptions that the customer wants to renew on the next anniversary date. This is specified in the auto-renewal configuration.
 
 The following list gives an overview of possible scnearios. You may encounter other scenarios as well. In case of ony queries, contact [partnerapi-support@adobe.com](mailto:partnerapi-support@adobe.com).
 
@@ -52,4 +52,4 @@ The following list gives an overview of possible scnearios. You may encounter ot
 
 | At AD                                                   | AD + 3 months      | AD + 6 months| At AD | Decision on providing MOQ offer                         |
 |----------------------------------------------------------|--|----------------------------------------|---------------------------------------------------------|--|
-|- **Current quantity:** 20 <br /> - **MOQ:** Null |   - Purchased MOQ 100 <br /> - Current quantity: 120 <br /> - Renewal quantity 120 |  - Purchased MOQ 250 with 250 licenses <br /> - Current quantity: 370 <br /> - Renewal quantity: 250  |- 250 quantity invoiced with 250 MOQ  | Customers can purchase MOQ offers mid-term, even if they don’t already hold MOQ. Highest MOQ needs to be retained for renewal setting.|
+|- **Current quantity:** 20 <br /> - **MOQ:** Null |   - Purchased MOQ 100 <br /> - Current quantity: 120 <br /> - Renewal quantity 120 |  - Purchased MOQ 250 with 250 licenses <br /> - Current quantity: 370 <br /> - Renewal quantity: 250  |- 250 quantity invoiced with 250 MOQ  | Customers can purchase MOQ offers mid-term, even if they don’t already hold MOQ. The highest MOQ needs to be retained for renewal setting.|
