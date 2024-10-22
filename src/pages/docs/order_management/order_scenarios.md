@@ -227,7 +227,8 @@ OR
     "customerId": "9876543210",
     "currencyCode": "USD",
     "creationDate": "2019-05-02T22:49:54Z",
-    "status": """lineItems": [
+    "status": ""
+    "lineItems": [
         {
             "extLineItemNumber": 4,
             "offerId": "80004567EA01A12",
@@ -245,10 +246,11 @@ OR
 **Notes:**
 
 - RENEWAL order type is used for late renewals, which are initiated after the anniversary date.
-- Subscription ID is REQUIRED in the request line item.
+- Subscription ID is required in the request line item.
 - The license quantities must be less than or equal to customer’s current subscription current quantities.
 - Order ID is created by this service and returned synchronously.
 - Partner Marketplaces are expected to check the status of the order for success.
+- You can select the expired subscriptions for manual renewal by using the [Get All Subscriptions for a Customer](../subscription_management/get_details_for_customers.md) API. Subscriptions that can be selected for manual renewal are indicated by the `allowedActions`": `["MANUAL_RENEWAL"]` parameter of the Get All Subscriptions of a Customer API response.  
 
 ### Sample request
 

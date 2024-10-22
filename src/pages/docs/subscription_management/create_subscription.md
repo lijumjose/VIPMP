@@ -10,7 +10,8 @@ Use the `POST /v3/customers/<customer-id>/subscriptions` endpoint to create new 
 - Discount level is calculated and applied on the anniversary date with Renewal order. The subscription becomes active with success renewal.
 - Customers with no active subscriptions are not allowed to create subscription
 - Eligibility checks are evaluated while accepting the create request
-- Creating a subscription is allowed only during current date is between 30 days prior to anniversary date to 3 days prior to anniversary date
+- Creating a subscription is allowed only during current date is between 30 days prior to anniversary date to 3 days prior to anniversary date.
+- Global customers can create subscriptions. To do so, they need to include the `currencyCode` in their request. For subscriptions outside the customer’s home country, both `currencyCode` and `deploymentID` must be included in the request.
 
 ## Request header
 
@@ -33,6 +34,22 @@ Use the `POST /v3/customers/<customer-id>/subscriptions` endpoint to create new 
         "renewalQuantity": 30
     }
 }
+```
+
+For global customers to create subscriptions outside the customer’s home country, both `currencyCode` and `deploymentID` must be included in the request, as illustrated in the following example:
+
+```json
+"lineItems": [
+    {
+        "extLineItemNumber": 1,
+        "offerId": "30008891CA01012",
+        "currencyCode": "USD",
+        "deploymentId": "1400002289""autoRenewal": {
+            "enabled": true,
+            "renewalQuantity": 30
+        }
+    }
+]
 ```
 
 ## Response body
