@@ -1,6 +1,6 @@
 # Manage high penetration offers through APIs
 
-As explained in the [high penetration seat expansion offer workflows](./high_volume_discounts.md#high-penetration-seat-expansion-workflows) section, a reseller and a customer need to perform various steps to provide MOQ offers to customers. This section lists the APIs to be used to achive this goal:
+As explained in the [high penetration seat expansion offer workflows](./high_volume_discounts.md#high-penetration-seat-expansion-workflows) section, a reseller and a customer need to perform various steps to provide MOQ offers to customers. This section identifies the APIs necessary to achieve this objective:
 
 - [Preview renewal offers](#preview-renewal-offers)
 - [Update subscription](#update-subscription)
@@ -253,7 +253,7 @@ The response shows the `renewalCode` with the selected MOQ offer.
 
 #### Sample failure response
 
-On failure, the appropriate HTTP status code based on the reason/type of failure will be sent. For example, if the API key is invalid , the response has status HTTP 403 and the failure response as:
+On failure, the appropriate HTTP status code based on the reason/type of failure will be sent. For example, if the API key is invalid, the response has status HTTP 403 and the failure response as:
 
 ```json
 { "code": "4115", "message": "Api Key is invalid or missing" }
@@ -374,7 +374,7 @@ Same as the [request header given in the previous endpoint](#request-header).
 
 ## Get subscription
 
-Use the `GET /v3/customers/{{customerId}}/subscriptions` API to get the subscription details. Along with ther details, it displays the `renewalCode` in the autoRenewal preferences if the customer has opted for it for the next term.
+Use the `GET /v3/customers/{{customerId}}/subscriptions` API to get the subscription details. Along with their details, it displays the `renewalCode` in the autoRenewal preferences if the customer has opted for it for the next term.
 
 ### Request header
 

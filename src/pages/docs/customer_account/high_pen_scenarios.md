@@ -8,7 +8,7 @@ You can use this documentation as a reference while finalizing the offer for the
 - **Current quantity:** The number of subscriptions owned by the customer.
 - **Renewal quantity:** The number of subscriptions that the customer wants to renew on the next anniversary date. This is specified in the auto-renewal configuration.
 
-The following list gives an overview of possible scnearios. You may encounter other scenarios as well. In case of ony queries, contact [partnerapi-support@adobe.com](mailto:partnerapi-support@adobe.com).
+The following list gives an overview of possible scenarios. You may encounter other scenarios as well. In case of any queries, contact [partnerapi-support@adobe.com](mailto:partnerapi-support@adobe.com).
 
 ## Scenario 1: Renew subscription with no mid-term addition and the customer is eligible
 
@@ -38,7 +38,7 @@ The following list gives an overview of possible scnearios. You may encounter ot
 
 | At AD                                                   |AD+6 months | At AD | Decision on providing MOQ offer                         |
 |----------------------------------------------------------|--|----------------------------------------|---------------------------------------------------------|
-|- **Current quantity: 30** <br /> - **Renewal quantity:** 25 <br /> - **MOQ:** Null | - Mid-term upgrade to: MOQ 100 <br /> - Number of subscription becomes 130 <br />  - Renewal quantity: 100 (based on the MOQ they opted) | - 100 qquantity invoiced with MOQ 100 | If the renewal quantity is greater than the MOQ, renew the subscription. If it is less, update to the MOQ and renew |
+|- **Current quantity: 30** <br /> - **Renewal quantity:** 25 <br /> - **MOQ:** Null | - Mid-term upgrade to: MOQ 100 <br /> - Number of subscriptions becomes 130 <br />  - Renewal quantity: 100 (based on the MOQ they opted) | - 100 quantity invoiced with MOQ 100 | If the renewal quantity is greater than the MOQ, renew the subscription. If it is less, update to the MOQ and renew |
 
 ### Example 2
 
