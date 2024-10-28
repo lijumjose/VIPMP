@@ -99,15 +99,15 @@ module.exports = {
             path: '/docs/customer_account/linked_membership.md'
           },
           {
-            title: 'Manage high penetration seat expansion offers',
+            title: 'Manage high growth offers',
             path: '/docs/customer_account/high_volume_discounts.md',
             pages: [
               {
-                title: 'High penetration offer scenarios',
+                title: 'High growth offer scenarios',
                 path: '/docs/customer_account/high_pen_scenarios.md'
               },
               {
-                title: 'Manage high penetration offers through APIs',
+                title: 'Manage high growth offers through APIs',
                 path: '/docs/customer_account/high_pen_apis.md'
               }
             ]

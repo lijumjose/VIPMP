@@ -1,6 +1,6 @@
-# Manage high penetration offers through APIs
+# Manage high growth offers through APIs
 
-As explained in the [high penetration seat expansion offer workflows](./high_volume_discounts.md#high-penetration-seat-expansion-workflows) section, a reseller and a customer need to perform various steps to provide MOQ offers to customers. This section identifies the APIs necessary to achieve this objective:
+As explained in the [high growth offer workflows](./high_volume_discounts.md#high-growth-offer-workflows) section, a reseller and a customer need to perform various steps to provide MOQ offers to customers. This section identifies the APIs necessary to achieve this objective:
 
 - [Preview renewal offers](#preview-renewal-offers)
 - [Update subscription](#update-subscription)
@@ -81,10 +81,12 @@ In addition to the standard response of the Order API, the response of the Previ
         "offerId": "65324918CA14Z12",
         "renewalCode": "MOQ_500",
         "eligibilityCriteria":
-          { "minQuantity": 500, "additionalCriteria": ["THREE_YEAR_COMMIT"] },
+          { 
+            "minQuantity": 500, 
+            "additionalCriteria": ["THREE_YEAR_COMMIT"]
+          },
       },
     ],
-    --<mark style="background-color: yellow">Liju</mark>
   "creationDate": "2024-04-01T07:26:05Z",
 }
 ```
@@ -149,17 +151,17 @@ Success response if the customer has already opted for 100 MOQ offer:
 
 #### Response parameter details specific to eligible MOQ offers
 
-The full set of parameters of Order API are available in the [Order resource fields](../references/resources.md#order-top-level-resource) section. The following table lists the parameters specific to high penetration seat expansion offers:
+The full set of parameters of Order API are available in the [Order resource fields](../references/resources.md#order-top-level-resource) section. The following table lists the parameters specific to high growth offers:
 
 **Eligible offers**
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
 |offerId |string  |The unique ID of the offer |Max: 40 characters  |
-|renewalCode |string  |Unique identifier of the Minimum Order Quantity Offer. Available values are: <br />- MOQ_100 <br />- MOQ_250 <br />- MOQ_500 |Max: 40 characters  |
+|renewalCode |string  |Unique identifier of the Minimum Order Quantity Offer. Available values are: <br />- MOQ_100 <br />- MOQ_250 <br />- MOQ_500 |Max: 30 characters  |
 |eligibilityCriteria |Array |The eligibility criteria for availing the MOQ offer. | |
-|minQuantity |Integer |The minimum quantity for which this offer is applicable and also the minimum quantity that the customer needs to commit for 3YC term to be eligible for this offer. |Min: 0 <br /> Max: 999999 |
-|additionalCriteria |string  |The additional criteria list for availing the high penetration seat expansion offer. Currently, `THREE_YEAR_COMMIT` is the only supported value.  |Min: 1 item <br /> Max: 499 items |
+|minQuantity |Integer |The minimum quantity for which this offer is applicable, also the minimum quantity that the customer needs to commit for a 3YC term to be eligible for this offer. |Min: 0 <br /> Max: 999999 |
+|additionalCriteria |string  |The additional criteria list for availing the high growth offer. Currently, `THREE_YEAR_COMMIT` is the only supported value, indicating that 3YC is required to avail the high growth offers.  |Min: 1 item <br /> Max: 499 items |
 |deploymentId |string  |Unique ID for the deployment. | Max: 40 characters |
 
 ### HTTP status codes
@@ -211,7 +213,9 @@ You need to include the `renewalCode` parameter in the auto renewal configuratio
 }
 ```
 
-### Request response
+The `renewalCode` parameter is the renewal commitment code used for renewal.
+
+### Response
 
 The response shows the `renewalCode` with the selected MOQ offer.
 
@@ -303,13 +307,13 @@ Response:
 
 ## Create subscription
 
-Use the `POST v3/customers/{{customerId}}/subscriptions` API to create a subscription for the specific customer.
+Use the `POST v3/customers/{{customerId}}/subscriptions` API to create a scheduled subscription for the specific customer.
 
 For example, if the customer has only Acrobat Standard product and not Acrobat Pro, they can use Create Subscription API to create a scheduled subscription for the MOQ.
 
 **Assumptions:**
 
-- The `Create Subscription` endpoint now also supports `renewalCode` to be given by partner in request for opting for a MOQ.
+- The `Create Subscription` endpoint now also supports `renewalCode` to be given by a partner in a request for opting for a MOQ.
 - If the customer accepts to renew with Acrobat Pro MoQ SKU while the customer currently has Acrobat Standard SKU, the Distributor executes create subscription API that allows a scheduled subscription to be created to be activated at the anniversary date.
 
 - For global customers, the following parameters are required:
@@ -328,14 +332,14 @@ Same as the [request header given in the previous endpoint](#request-header).
 ```json
 {
     "offerId": "65322450CA14X12",
-    "renewalCode": "MOQ_100",
     "autoRenewal": {
-        "renewalQuantity": 100
+        "renewalQuantity": 100,
+        "renewalCode": "MOQ_100"
     }
 }
 ```
 
-### Request response
+### Response
 
 ```json
 {
@@ -374,7 +378,7 @@ Same as the [request header given in the previous endpoint](#request-header).
 
 ## Get subscription
 
-Use the `GET /v3/customers/{{customerId}}/subscriptions` API to get the subscription details. Along with their details, it displays the `renewalCode` in the autoRenewal preferences if the customer has opted for it for the next term.
+Use the `GET /v3/customers/{{customerId}}/subscriptions` API to get details of all subscriptions of a customer. Along with their details, it displays the `renewalCode` in the autoRenewal preferences if the customer will receive it in the next term.
 
 ### Request header
 
@@ -384,27 +388,38 @@ Same as the [request header given in the previous endpoint](#request-header).
 
 None.
 
-### Request response
+### Response
 
 ```json
 {
-    "subscriptionId": "e01756010447808cd0463411464d87NA",
-    "offerId": "65324918CA14A12",
-    "currentQuantity": 2,
-    "usedQuantity": 0,
-    "autoRenewal": {
-        "enabled": true,
-        "renewalQuantity": 100,
-        "renewalCode": "MOQ_100"
-    },
-    "creationDate": "2024-06-18T09:49:10Z",
-    "renewalDate": "2025-06-18",
-    "status": "1000",
-    "deploymentId": "",
-    "currencyCode": "USD",
+    "totalCount": 1,
+    "items": [
+        {
+            "subscriptionId": "43b889db7b4e7aa2d42b54b9813eebNA",
+            "offerId": "65322651CA14X12",
+            "currentQuantity": 10,
+            "usedQuantity": 4,
+            "autoRenewal": {
+                "enabled": true,
+                "renewalQuantity": 10,
+                "renewalCode": "MOQ_100"
+            },
+            "creationDate": "2024-10-23T10:23:11Z",
+            "renewalDate": "2025-10-23",
+            "status": "1000",
+            "currencyCode": "USD",
+            "links": {
+                "self": {
+                    "uri": "/v3/customers/D1005038400/subscriptions/43b889db7b4e7aa2d42b54b9813eebNA",
+                    "method": "GET",
+                    "headers": []
+                }
+            }
+        }
+    ],
     "links": {
         "self": {
-            "uri": "/v3/customers/1005481955/subscriptions/e01756010447808cd0463411464d87NA",
+            "uri": "/v3/customers/D1005038400/subscriptions",
             "method": "GET",
             "headers": []
         }
@@ -424,4 +439,4 @@ None.
 
 ## Create order
 
-No change in the API request or response. Read more about [how to create order through API](../order_management/create_order.md). Customer can send `offerId` corresponding to MOQ, for example 65322450CA14X12, to create mid-term purchase order of MOQ.
+No change in the API request or response. Read more about [how to create order through API](../order_management/create_order.md). Customers can send an `offerId` corresponding to MOQ, for example, 65322450CA14X12, to create a mid-term purchase order of MOQ.

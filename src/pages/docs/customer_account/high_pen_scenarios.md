@@ -1,4 +1,4 @@
-# High penetration offer renewal scenarios
+# High growth offer renewal scenarios
 
 You can use this documentation as a reference while finalizing the offer for the customers.
 
@@ -16,13 +16,13 @@ The following list gives an overview of possible scenarios. You may encounter ot
 
 | At AD                                                    | Next AD                                | Decision on providing MOQ offer                         |
 |----------------------------------------------------------|----------------------------------------|---------------------------------------------------------|
-| - **Current quantity:** 5 <br /> - **Renewal quantity:** MOQ 100 | - Renew subscriptions based on MOQ 100 | The customer will be given an MOQ offer for the product. |
+| - **Current quantity of Acrobat Pro:** 5 <br /> - **Renewal quantity:** MOQ 100 | - Renew subscriptions based on MOQ 100 | The customer can get an MOQ offer for the product. |
 
 ### Example 2
 
 | At AD - 7                                                   | AD - 3                                | At AD | Decision on providing MOQ offer                         |
 |----------------------------------------------------------|--|----------------------------------------|---------------------------------------------------------|
-| - **Current quantity:** 5 <br /> - **Renewal quantity:** MOQ 100 | - Added 50 seats. The current quantity becomes 55. | - Renew subscription based on MOQ 100. Do not penalize the customer for the extra 5 seats. | The customer will be given an MOQ offer for the product. |
+| - **Current quantity of Acrobat Pro:** 5 <br /> - **Renewal quantity:** MOQ 100 | - Added 50 Acrobat Pro base offer seats. The current quantity becomes 55. | - Renew subscription based on MOQ 100. Do not penalize the customer for the extra 5 seats. | The customer can get an MOQ offer for the product. |
 
 ## Scenario 2: Renew subscription with no mid-term addition, and the customer isn't eligible
 
@@ -30,7 +30,7 @@ The following list gives an overview of possible scenarios. You may encounter ot
 
 | At AD                                                    | Next AD                                | Decision on providing MOQ offer                         |
 |----------------------------------------------------------|----------------------------------------|---------------------------------------------------------|
-|   - **Current quantity: 120** <br /> - **Renewal quantity:** 30 | - Not opting for MOQ and renewal quantity is 30. | The base offer will be renewed instead of the MOQ offer. |
+|   - **Current quantity of Acrobat Pro: 120** <br /> - **Renewal quantity:** 30 | - Not opting for MOQ and renewal quantity is 30. | The base offer will be renewed instead of the MOQ offer. |
 
 ## Scenario 3: Renew subscription with mid-term seat addition
 
@@ -38,13 +38,13 @@ The following list gives an overview of possible scenarios. You may encounter ot
 
 | At AD                                                   |AD+6 months | At AD | Decision on providing MOQ offer                         |
 |----------------------------------------------------------|--|----------------------------------------|---------------------------------------------------------|
-|- **Current quantity: 30** <br /> - **Renewal quantity:** 25 <br /> - **MOQ:** Null | - Mid-term upgrade to: MOQ 100 <br /> - Number of subscriptions becomes 130 <br />  - Renewal quantity: 100 (based on the MOQ they opted) | - 100 quantity invoiced with MOQ 100 | If the renewal quantity is greater than the MOQ, renew the subscription. If it is less, update to the MOQ and renew |
+|- **Current quantity of Acrobat Pro: 30** <br /> - **Renewal quantity:** 25 <br /> - **MOQ:** Null | - Mid-term purchase: MOQ 100 <br /> - Number of subscriptions becomes 130 <br />  - Renewal quantity: 100 (based on the MOQ they opted) | - 100 quantity invoiced with MOQ 100 | The customer will be renewed with 100 MOQ because the renewal quantity earlier opted will be overridden by MOQ quantity because the earlier opted renewal quantity is not sufficient to maintain the MOQ |
 
 ### Example 2
 
 | At AD                                                   | AD+6 months    | At AD | Decision on providing MOQ offer                         |
 |----------------------------------------------------------|--|----------------------------------------|---------------------------------------------------------|
-|- **Current quantity:** 30 <br /> - **Renewal quantity:** 105 |   - **Mid-term upgrade to:** MOQ 100 <br />  - **Subscription becomes:** 130|  - 105 licenses are invoiced with MOQ 100 | If the renewal quantity is greater than the MOQ, renew the subscription. If it is less, update to the MOQ and renew. |
+|- **Current quantity of Acrobat Pro:** 30 <br /> - **Renewal quantity:** 105 |   - **Mid-term purchase:** MOQ 100 <br />  - **Subscription becomes:** 130|  - 105 licenses are invoiced with MOQ 100 | If the renewal quantity is greater than the MOQ, the customer can renew the subscription. If it is less, update the MOQ and renew. |
 
 ## Scenario 4: Purchase MOQ at mid-term
 
@@ -52,4 +52,4 @@ The following list gives an overview of possible scenarios. You may encounter ot
 
 | At AD                                                   | AD + 3 months      | AD + 6 months| At AD | Decision on providing MOQ offer                         |
 |----------------------------------------------------------|--|----------------------------------------|---------------------------------------------------------|--|
-|- **Current quantity:** 20 <br /> - **MOQ:** Null |   - Purchased MOQ 100 <br /> - Current quantity: 120 <br /> - Renewal quantity 120 |  - Purchased MOQ 250 with 250 licenses <br /> - Current quantity: 370 <br /> - Renewal quantity: 250  |- 250 quantity invoiced with 250 MOQ  | Customers can purchase MOQ offers mid-term, even if they don’t already hold MOQ. The highest MOQ needs to be retained for renewal setting.|
+|- **Current quantity of Acrobat Pro:** 20 <br /> - **MOQ:** Null |   - Purchased MOQ 100 <br /> - Current quantity: 120 <br /> - Renewal quantity 120 |  - Purchased MOQ 250 with 250 licenses <br /> - Current quantity: 370 <br /> - Renewal quantity: 250  |- 250 quantity invoiced with 250 MOQ  | Customers can purchase MOQ offers mid-term, even if they don’t already hold MOQ. The highest MOQ needs to be retained for renewal setting.|
