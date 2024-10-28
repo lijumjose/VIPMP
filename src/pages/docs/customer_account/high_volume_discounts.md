@@ -14,7 +14,7 @@ Here are the high growth offers available based on the MOQ:
 - MOQ 250
 - MOQ 500
 
-**Note:** The terminology "high growth seat expansion offer" and "MOQ offer" are used interchangeably in this document.
+**Note:** The terminology "high growth offer" and "MOQ offer" are used interchangeably in this document.
 
 Customers can add more licenses or seats either mid-term or at the anniversary date. Each new addition or renewal will benefit from the same discount rate as their original MOQ. For example, if an organization initially purchases a high growth offer of MOQ 100  and later adds 50 more seats in the same MOQ, the additional seats will also receive the same discount rate defined for the MOQ offer. Similarly, if the organization with an MOQ of 100 adds 300 more licenses, bringing the total to 400, the new purchases will still receive the same discount defined for the MOQ 100 offer. Therefore, if growth is anticipated, starting with a higher MOQ offer is advisable.
 Read more about various [high-growth offer scenarios](./high_pen_scenarios.md).
@@ -48,7 +48,7 @@ Enterprise and Team customers can take advantage of high growth offers if they m
 
 ## High growth offer workflows
 
-Adobe defines the high growth seat expansion offers, and the corresponding offer ID is shared with the partners. For example:
+Adobe defines the high growth offers, and the corresponding offer ID is shared with the partners. For example:
 
 - 65304479CA14X12 = Acrobat Pro 100 MOQ
 - 65304479CA14Y12 = Acrobat Pro 250 MOQ
