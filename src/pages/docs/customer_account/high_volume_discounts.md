@@ -54,7 +54,7 @@ Enterprise and Team customers of Acrobat Pro can take advantage of high growth o
 <style>
 table, th, td {
   border: 1px solid black;
-}
+        }
 </style>
 
   | Current seats at renewal <br/> Acrobat Pro + Standard | Eligible Minimum Order Quantity (MOQ) | 3YC Minimum Commit Quantities (MCQ) - Needs to be increased based on the MOQ) |

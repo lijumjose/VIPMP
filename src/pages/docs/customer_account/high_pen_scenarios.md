@@ -16,7 +16,7 @@ The following list gives an overview of possible scenarios. You may encounter ot
 
 <style>
 table, th, table td {
-  border: 1px solid black; 
+  border: 1px solid black;
         }
 </style>
 
