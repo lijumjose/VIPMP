@@ -14,7 +14,7 @@ Use the `PreviewRenwal` API to get the preview of the renewal order for the cust
 
 **Assumptions:**
 
-You can run the `PreviewRenewal` API anytime during the current term to get the MOQ offer recommendations.
+You can run the `PreviewRenewal` API anytime during the current term to get the recommendations.
 
 ### Request header
 
@@ -188,7 +188,7 @@ Failure response:
 
 Use the `PATCH /v3/customers/{customer-id}/subscriptions/{sub-id}?reset-renewal-code=false` API to update the renewal preferences for the customer's subscription with the MOQ offer details.
 
-You can use the optional query param `reset-renewal-code` in the request to remove the `renewalCode` after it has been opted by the customer. Possible values are:
+You can use the optional query param `reset-renewal-code` in the request to remove the renewalCode after it has been opted by the customer. Possible values are:
 
 - `true`
 - `false`
