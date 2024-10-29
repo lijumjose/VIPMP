@@ -16,13 +16,13 @@ Use the `PreviewRenwal` API to get the preview of the renewal order for the cust
 
 You can run the `PreviewRenewal` API anytime during the current term to get the recommendations.
 
+### Request header
+
 <style>
 table, th, td {
   border: 1px solid black;
 }
 </style>
-
-### Request header
 
 | Parameter        | Description                                                                                                                                                                                                                      |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
