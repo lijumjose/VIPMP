@@ -1,6 +1,6 @@
 # Manage high growth offers through APIs
 
-As explained in the [high growth offer workflows](./high_volume_discounts.md#high-growth-offer-workflows) section, a reseller and a customer need to perform various steps to provide MOQ offers to customers. This section identifies the APIs necessary to achieve this objective:
+As explained in the [High growth offer use cases](./high_volume_discounts.md#high-growth-offer-use-cases) section, various steps need to be performed to provide MOQ offers to customers. This section identifies the APIs necessary to achieve this objective:
 
 - [Preview renewal offers](#preview-renewal-offers)
 - [Update subscription](#update-subscription)
