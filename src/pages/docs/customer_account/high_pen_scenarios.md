@@ -16,8 +16,7 @@ The following list gives an overview of possible scenarios. You may encounter ot
 
 <style>
 table, th, td {
-  border: 1px solid black;
-}
+  border: 1px solid black; }
 </style>
 
 | At AD                                                    | Next AD                                | Decision on providing MOQ offer                         |
