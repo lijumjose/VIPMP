@@ -32,6 +32,7 @@ Adobe defines the high growth offers, and the corresponding offer ID is shared w
 - 65304479CA14X12 = Acrobat Pro 100 MOQ
 - 65304479CA14Y12 = Acrobat Pro 250 MOQ
 - 65304479CA14Z12 = Acrobat Pro 500 MOQ
+
 ## Who is eligible for high growth offers?
 
 Enterprise and Team customers of Acrobat Pro can take advantage of high growth offers if they meet the following conditions:
@@ -48,7 +49,7 @@ Enterprise and Team customers of Acrobat Pro can take advantage of high growth o
     | ≤ 125 seats                                           | 250 or 500                        |
     | ≤ 250 seats                                           | 500                                   |
 
-3 - **MCQ requirement:** The number of subscriptions at the renewal date on the anniversary date must be greater than or equal to the number of seats committed (MCQ). 
+3 - **MCQ requirement:** The number of subscriptions at the renewal date on the anniversary date must be greater than or equal to the number of seats committed (MCQ).
 
 <style>
 table, th, td {
