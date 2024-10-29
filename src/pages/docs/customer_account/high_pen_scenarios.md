@@ -15,9 +15,11 @@ The following list gives an overview of possible scenarios. You may encounter ot
 ### Example 1
 
 <style>
-table, th, table td {
-  border: 1px solid black;
-        }
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
 </style>
 
 | At AD                                                    | Next AD                                | Decision on providing MOQ offer                         |

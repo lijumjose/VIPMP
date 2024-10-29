@@ -19,9 +19,11 @@ You can run the `PreviewRenewal` API anytime during the current term to get the 
 ### Request header
 
 <style>
-table, th, table td {
-  border: 1px solid black;
-        }
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
 </style>
 
 | Parameter        | Description                                                                                                                                                                                                                      |
