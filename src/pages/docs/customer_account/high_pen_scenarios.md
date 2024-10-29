@@ -14,6 +14,12 @@ The following list gives an overview of possible scenarios. You may encounter ot
 
 ### Example 1
 
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+
 | At AD                                                    | Next AD                                | Decision on providing MOQ offer                         |
 |----------------------------------------------------------|----------------------------------------|---------------------------------------------------------|
 | - **Current quantity of Acrobat Pro:** 5 <br /> - **Renewal quantity:** MOQ 100 | - The customer renews subscriptions based on MOQ 100  | The customer gets the MOQ offer for the product.  |

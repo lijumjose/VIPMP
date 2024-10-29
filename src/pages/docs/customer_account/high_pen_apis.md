@@ -18,6 +18,12 @@ You can run the `PreviewRenewal` API anytime during the current term to get the 
 
 ### Request header
 
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+
 | Parameter        | Description                                                                                                                                                                                                                      |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | X-Request-Id     | A unique identifier for the call. The value should be reset for every single request. If this is not provided, then a request ID will be automatically generated. Using a duplicate request ID may return an error.              |
