@@ -14,9 +14,19 @@ Use the `PreviewRenwal` API to get the preview of the renewal order for the cust
 
 **Assumptions:**
 
+<<<<<<< HEAD
 You can run the `PreviewRenewal` API anytime during the current term to get the MOQ offer recommendations.
+=======
+You can run the `PreviewRenewal` API anytime during the current term to get the recommendations.
 
 ### Request header
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+>>>>>>> abd52259f5709ffdffad5d7e16afbadded28215e
 
 | Parameter        | Description                                                                                                                                                                                                                      |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
