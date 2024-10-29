@@ -1,6 +1,6 @@
 # Manage high growth offers through APIs
 
-As explained in the [High growth offer use cases](./high_volume_discounts.md#high-growth-offer-use-cases) section, a reseller and a customer need to perform various steps to provide MOQ offers to customers. This section identifies the APIs necessary to achieve this objective:
+As explained in the [High growth offer use cases](./high_volume_discounts.md#high-growth-offer-use-cases) section, various steps need to be performed to provide MOQ offers to customers. This section identifies the APIs necessary to achieve this objective:
 
 - [Preview renewal offers](#preview-renewal-offers)
 - [Update subscription](#update-subscription)
@@ -14,15 +14,9 @@ Use the `PreviewRenwal` API to get the preview of the renewal order for the cust
 
 **Assumptions:**
 
-You can run the `PreviewRenewal` API anytime during the current term to get the recommendations.
+You can run the `PreviewRenewal` API anytime during the current term to get the MOQ offer recommendations.
 
 ### Request header
-
-<style>
-table, th, td {
-  border: 1px solid black;
-}
-</style>
 
 | Parameter        | Description                                                                                                                                                                                                                      |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
