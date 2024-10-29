@@ -188,7 +188,7 @@ Failure response:
 
 Use the `PATCH /v3/customers/{customer-id}/subscriptions/{sub-id}?reset-renewal-code=false` API to update the renewal preferences for the customer's subscription with the MOQ offer details.
 
-You can use the optional query param `reset-renewal-code` in the request to remove the renewalCode after it has been opted by the customer. Possible values are:
+You can use the optional query param `reset-renewal-code` in the request to remove the `renewalCode` after it has been opted by the customer. Possible values are:
 
 - `true`
 - `false`
