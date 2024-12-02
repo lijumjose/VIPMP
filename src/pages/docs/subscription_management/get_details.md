@@ -16,6 +16,7 @@ Ensure that you are aware of the following before trying out this API:
 - `offerId` is the base discount level offer ID.
 - `renewalDate` will be the customer’s `cotermDate` for most subscriptions.
   - Stock Credit Pack subscriptions will have a `renewalDate` as 1 year from the order date.
+- `allowedActions` shows the actions allowed on a subscription.  Currently, only `MANUAL_RENEWAL` is available as the allowed action.
 
 ## Request header
 
@@ -52,6 +53,38 @@ None.
     "links" : {
     "self" : {},
 }
+```
+
+The `MANUAL_RENEWAL` value of the `allowedActions` field indicates whether a subscription can be selected for manual renewal. Sample response is as follows:
+
+```json
+
+{
+    "subscriptionId": "1c3a4517c44cfc925704fe942a79abNA",
+    "offerId": "65304479CA01A12",
+    "currentQuantity": 2,
+    "usedQuantity": 0,
+    "autoRenewal": {
+        "enabled": false,
+        "renewalQuantity": 2
+    },
+    "creationDate": "2024-09-13T09:22:13Z",
+    "renewalDate": "2025-09-13",
+    "status": "1004",
+    "currencyCode": "USD",
+    "allowedActions": [
+        "MANUAL_RENEWAL"
+    ] 
+
+    "links": {
+        "self": {
+            "uri": "/v3/customers/1005610729/subscriptions/1c3a4517c44cfc925704fe942a79abNA",
+            "method": "GET",
+            "headers": []
+        }
+    }
+}
+
 ```
 
 ## HTTP status codes

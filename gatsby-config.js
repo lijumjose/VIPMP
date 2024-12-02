@@ -25,104 +25,31 @@ module.exports = {
         menu: 
         [
           {
-            title: 'July 18, 2024',
+            title: '2024 releases',
             description: '',
-            path: '/docs/release_notes/07_18_24.md'
+            path: '/docs/release_notes/index.md'
           },
           {
-            title: 'June 20, 2024',
+            title: 'Upcoming releases',
             description: '',
-            path: '/docs/release_notes/06_20_24.md'
+            path: '/docs/release_notes/upcoming_releases.md'
           },
         ]
       },
       {
         title: 'Use Cases',
         path: '/docs/index.md',
-        menu: 
-        [
-          {
-            title: 'Introduction',
-            description: '',
-            path: '/docs/introduction.md'
-          },
-          {
-            title: 'Enable authentication and access',
-            description: '',
-            path: '/docs/authentication/index.md'
-          },
-          {
-            title: 'Manage reseller accounts',
-            description: '',
-            path: '/docs/reseller_account/index.md'
-          },
-          {
-            title: 'Manage customer accounts',
-            description: '',
-            path: '/docs/customer_account/index.md'
-          },
-          {
-            title: 'Manage deployments',
-            description: '',
-            path: '/docs/deployment_management/index.md'
-          },
-          {
-            title: 'Reseller change process',
-            description: '',
-            path: '/docs/reseller_change/index.md'
-          },
-          {
-            title: 'Manager orders',
-            description: '',
-            path: '/docs/order_management/index.md'
-          },
-          {
-            title: 'Manage subscriptions',
-            description: '',
-            path: '/docs/subscription_management/index.md'
-          },
-          {
-            title: 'Migrate to VIP Marketplace',
-            description: '',
-            path: '/docs/migration/index.md'
-          },
-          {
-            title: 'Manage notifications',
-            description: '',
-            path: 'docs/notification_management/index.md'
-          },
-          {
-            title: 'References',
-            description: '',
-            path: 'docs/references/index.md'
-          },
-          {
-            title: 'Support',
-            description: '',
-            path: 'docs/support.md'
-          },
-        ]
-      },
-      {
-        title: 'API Reference',
-        menu: [
-          {
-            title: 'Partner APIs',
-            description: '',
-            path: '/api/index.md'
-          }
-        ]
       },
       {
         title: 'Sandbox User Guide',
-        path: '/technical-assets'
+        path: 'sandbox/index.md'
       },
     ],
     subPages: 
     [
       {
         title: 'Introduction',
-        path: '/docs/introduction.md'
+        path: '/docs/index.md'
       },
       {
         title: 'API authentication and access ',
@@ -132,7 +59,7 @@ module.exports = {
           {
             title: 'Health check',
             path: '/docs/authentication/health_check.md'
-          },
+          }
         ]
       },
       {
@@ -151,7 +78,7 @@ module.exports = {
           {
             title: 'Update a reseller account',
             path: '/docs/reseller_account/update_reseller_account.md'
-          },
+          }
         ]
       },
       {
@@ -172,6 +99,20 @@ module.exports = {
             path: '/docs/customer_account/linked_membership.md'
           },
           {
+            title: 'Manage high growth offers',
+            path: '/docs/customer_account/high_volume_discounts.md',
+            pages: [
+              {
+                title: 'High growth offer scenarios',
+                path: '/docs/customer_account/high_pen_scenarios.md'
+              },
+              {
+                title: 'Manage high growth offers through APIs',
+                path: '/docs/customer_account/high_pen_apis.md'
+              }
+            ]
+          },
+          {
             title: 'Create customer account',
             path: '/docs/customer_account/create_customer_account.md'
           },
@@ -186,7 +127,7 @@ module.exports = {
           {
             title: 'Get licenses pending partner order',
             path: '/docs/customer_account/get_licenses.md'
-          },
+          }
         ]
       },
       {
@@ -205,7 +146,7 @@ module.exports = {
           {
             title: 'Update a deployment of a customer',
             path: '/docs/deployment_management/update_deployment.md'
-          },
+          }
         ]
       },
       {
@@ -224,7 +165,7 @@ module.exports = {
           {
             title: 'Get reseller transfer details',
             path: '/docs/reseller_change/get_transfer.md'
-          },
+          }
         ]
       },
       {
@@ -247,7 +188,7 @@ module.exports = {
           {
             title: ' Update order',
             path: '/docs/order_management/update_order.md'
-          },
+          }
         ]
       },
       {
@@ -266,7 +207,7 @@ module.exports = {
           {
             title: 'Update auto-renewal configuration of a subscription',
             path: '/docs/subscription_management/update_auto_renewal.md'
-          },
+          }
         ]
       },
       {
@@ -285,7 +226,7 @@ module.exports = {
           {
             title: 'Get transfer details',
             path: '/docs/migration/get_transfer_details.md'
-          },
+          }
         ]
       },
       {
@@ -325,7 +266,7 @@ module.exports = {
           {
             title: 'Validations and regular expressions',
             path: 'docs/references/validations.md'
-          },
+          }
         ]
       },
       {
@@ -333,6 +274,176 @@ module.exports = {
         description: '',
         path: 'docs/support.md'
       },
+      {
+        title: 'Sandbox User Guide',
+        description: '',
+        path: 'sandbox',
+        pages: [
+          {
+            title: 'API collection and interaction basics',
+            path: 'sandbox/api_collection.md'
+          },
+          {
+            title: 'Manage distributors',
+            path: 'sandbox/distributor_management'
+          },
+          {
+            title: 'Sandbox Use Cases',
+            path: 'sandbox/sandbox_portal',
+            header: true,
+          },
+          {
+            title: 'Manage resellers',
+            path: 'sandbox/sandbox_portal/reseller_management',
+            header: true,
+            pages: [
+              {
+              title: 'Create a reseller',
+              path: 'sandbox/sandbox_portal/reseller_management/create_reseller.md'
+              },
+              {
+              title: 'View reseller information',
+              path: 'sandbox/sandbox_portal/reseller_management/view_reseller_info.md'
+              },
+              {
+               title: 'Edit reseller status',
+               path: 'sandbox/sandbox_portal/reseller_management/view_reseller_info.md'
+              },
+              ]
+          },
+          {
+            title: 'Manage customers',
+            path: 'sandbox/sandbox_portal/customer_management',
+            header: true,
+            pages: [
+              {
+              title: 'Create a customer',
+              path: 'sandbox/sandbox_portal/customer_management/create_customer.md'
+              },
+              {
+              title: 'Create Product Arrangements for a customer',
+              path: 'sandbox/sandbox_portal/customer_management/create_pa_for_customer.md'
+              },
+              {
+               title: 'View customer details',
+               path: 'sandbox/sandbox_portal/customer_management/get_customer_details.md'
+              },
+              {
+                title: 'Update customer details',
+                path: 'sandbox/sandbox_portal/customer_management/update_customer.md'
+               },
+               {
+                title: 'Update reseller details of a customer',
+                path: 'sandbox/sandbox_portal/customer_management/update_reseller.md'
+               },
+              ]
+          },
+          {
+            title: 'Manage three-year commits (3YC)',
+            path: 'sandbox/sandbox_portal/3yc_management',
+            header: true,
+            pages: [
+              {
+              title: 'View 3YC benefits status',
+              path: 'sandbox/sandbox_portal/3yc_management/view_3yc_status.md'
+              },
+              ]
+          },
+          {
+            title: 'Manage linked memberships',
+            path: 'sandbox/sandbox_portal/linked_memberships',
+            header: true,
+            pages: [
+              {
+              title: 'Enroll in a linked membership',
+              path: 'sandbox/sandbox_portal/linked_memberships/enroll.md'
+              },
+              {
+              title: 'View linked membership details',
+              path: 'sandbox/sandbox_portal/linked_memberships/view_details.md'
+              },
+              ]
+          },
+          {
+            title: 'Management deployments',
+            path: 'sandbox/sandbox_portal/deployment_management',
+            header: true,
+          },
+          {
+            title: 'Manage orders',
+            path: 'sandbox/sandbox_portal/order_management',
+            header: true,
+            pages: [
+              {
+              title: 'Create order',
+              path: 'sandbox/sandbox_portal/order_management/create_order.md'
+              },
+              {
+              title: 'Search and view order details',
+              path: 'sandbox/sandbox_portal/order_management/view_order_details.md'
+              },
+              {
+               title: 'Edit the order status and creation date',
+               path: 'sandbox/sandbox_portal/order_management/edit_order_status.md'
+              },
+              {
+                title: 'Cancel an order',
+                path: 'sandbox/sandbox_portal/order_management/.md'
+              },
+              ]
+          },
+          {
+            title: 'Manage subscriptions',
+            path: 'sandbox/sandbox_portal/subscription_management',
+            header: true,
+            pages: [
+              {
+              title: 'View subscription details',
+              path: 'sandbox/sandbox_portal/subscription_management/view_subscription.md'
+              },
+              {
+              title: 'Update auto-renewal configuration',
+              path: 'sandbox/sandbox_portal/subscription_management/Update_auto_renwal.md'
+              },
+              ]
+          },
+          {
+            title: 'Managing membership transfers',
+            path: 'sandbox/sandbox_portal/transfer_memberships',
+            header: true,
+            pages: [
+              {
+              title: 'Create memberships',
+              path: 'sandbox/sandbox_portal/transfer_memberships/create_memberships.md'
+              },
+              {
+              title: 'View memberships',
+              path: 'sandbox/sandbox_portal/transfer_memberships/list_memberships.md'
+              },
+              ]
+          },
+          {
+            title: 'Portal resources',
+            path: 'sandbox/sandbox_portal/portal_resources',
+            header: true,
+          },
+          {
+            title: 'Other API tools',
+            path: 'sandbox/sandbox_portal/other_apis',
+            header: true,
+          },
+          {
+            title: 'Error codes',
+            path: 'sandbox/error_codes.md',
+            header: true,
+          },
+          {
+            title: 'Sandbox support',
+            path: 'sandbox/sandbox_support.md',
+            header: true,
+          }
+          ]
+       }
     ]
   },
   plugins: [`@adobe/gatsby-theme-aio`],
