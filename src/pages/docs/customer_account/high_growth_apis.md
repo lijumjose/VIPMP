@@ -24,7 +24,6 @@ Use the `PreviewRenwal` API to preview the renewal order for the customer. This 
 - The recommendations in the `PreviewRenewal` will be shown only to the customers who hold Acrobat Pro or Standard subscriptions. Also, the recommendation doesn’t consider the minimum commit quantity of 3YC.
 - Recommendations shown are the same for 3YC and non-3YC Acrobat customers.
 
-
 ### Request header
 
 | Parameter        | Description                                                                                                                                                                                                                      |
@@ -47,7 +46,6 @@ Use the `PreviewRenwal` API to preview the renewal order for the customer. This 
 In addition to the standard response of the Order API, the response of the Preview Renewal provides a list of MOQ offers that the customers can avail, under the eligibleOffers section.
 
 **Note:** The following code sample includes only the newly added parameters specific to High Growth Offers. For the complete response set, refer to the [Create Order API](../order_management/create_order.md).
-
 
 ```json
 {

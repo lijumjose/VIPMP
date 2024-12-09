@@ -171,6 +171,7 @@ Sample request:
     ]  
 }  
 ```
+
 The `discountCode` may be null, correct, or wrong offer ID. The new order will be created only if you provide a valid discount code.
 
 Sample response:
