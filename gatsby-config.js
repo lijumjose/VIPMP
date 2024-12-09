@@ -100,15 +100,15 @@ module.exports = {
           },
           {
             title: 'Manage high growth offers',
-            path: '/docs/customer_account/high_volume_discounts.md',
+            path: '/docs/customer_account/high_growth.md',
             pages: [
               {
                 title: 'High growth offer scenarios',
-                path: '/docs/customer_account/high_pen_scenarios.md'
+                path: '/docs/customer_account/high_growth_scenarios.md'
               },
               {
                 title: 'Manage high growth offers through APIs',
-                path: '/docs/customer_account/high_pen_apis.md'
+                path: '/docs/customer_account/high_growth_apis.md'
               }
             ]
           },
@@ -226,6 +226,10 @@ module.exports = {
           {
             title: 'Get transfer details',
             path: '/docs/migration/get_transfer_details.md'
+          },
+          {
+            title: 'Migrate High Volume Discount customers from VIP to VIP Marketplace',
+            path: '/docs/migration/migrate_hvd.md'
           }
         ]
       },

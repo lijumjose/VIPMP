@@ -1,6 +1,12 @@
 # Manage high growth offers through APIs
 
-As explained in the [High growth offer use cases](./high_volume_discounts.md#high-growth-offer-use-cases) section, various steps need to be performed to provide MOQ offers to customers. This section identifies the APIs necessary to achieve this objective:
+<style>
+table, th, table td {
+  border: 1px solid black;
+        }
+</style>
+
+As explained in the [High growth offer use cases](./high_volume_discounts.md#high-growth-offer-use-cases) section, a reseller and a customer need to perform various steps to provide MOQ offers to customers. This section identifies the APIs necessary to achieve this objective:
 
 - [Preview renewal offers](#preview-renewal-offers)
 - [Update subscription](#update-subscription)
@@ -10,11 +16,14 @@ As explained in the [High growth offer use cases](./high_volume_discounts.md#hig
 
 ## Preview renewal offers
 
-Use the `PreviewRenwal` API to get the preview of the renewal order for the customer. This is the same `POST v3/customers/{customer-id}/orders` API with `orderType` as _PREVIEW_RENEWAL_.
+Use the `PreviewRenwal` API to preview the renewal order for the customer. This is the same `POST v3/customers/{customer-id}/orders` API with `orderType` as _PREVIEW_RENEWAL_.
 
 **Assumptions:**
 
-You can run the `PreviewRenewal` API anytime during the current term to get the recommendations.
+- You can run the `PreviewRenewal` API anytime during the current term to get the recommendations.
+- The recommendations in the `PreviewRenewal` will be shown only to the customers who hold Acrobat Pro or Standard subscriptions. Also, the recommendation doesn’t consider the minimum commit quantity of 3YC.
+- Recommendations shown are the same for 3YC and non-3YC Acrobat customers.
+
 
 ### Request header
 
@@ -35,7 +44,10 @@ You can run the `PreviewRenewal` API anytime during the current term to get the 
 
 ### Response body
 
-In addition to the standard response of the Order API, the response of the Preview Renewal provides a list of MOQ offers that the customers can avail, under the `eligibleOffers` section:
+In addition to the standard response of the Order API, the response of the Preview Renewal provides a list of MOQ offers that the customers can avail, under the eligibleOffers section.
+
+**Note:** The following code sample includes only the newly added parameters specific to High Growth Offers. For the complete response set, refer to the [Create Order API](../order_management/create_order.md).
+
 
 ```json
 {
@@ -55,6 +67,7 @@ In addition to the standard response of the Order API, the response of the Previ
         "status": "",
       },
     ],
+
   "eligibleOffers":
     [
       {
@@ -89,13 +102,14 @@ In addition to the standard response of the Order API, the response of the Previ
     ],
   "creationDate": "2024-04-01T07:26:05Z",
 }
+
 ```
 
 Success response if the customer has already opted for 100 MOQ offer:
 
 ```json
 {
-
+ 
   "referenceOrderId": "",
   "orderId": "",
   "customerId": "1005388836",
@@ -147,11 +161,12 @@ Success response if the customer has already opted for 100 MOQ offer:
   ],
   "creationDate": "2024-04-01T07:26:05Z"
 }
+
 ```
 
 #### Response parameter details specific to eligible MOQ offers
 
-The full set of parameters of Order API are available in the [Order resource fields](../references/resources.md#order-top-level-resource) section. The following table lists the parameters specific to high growth offers:
+The full set of parameters of Order API are available in the [Order resource fields](../references/resources.md#order-top-level-resource) section. The following table lists the parameters specific to High Growth Offers:
 
 **Eligible offers**
 
@@ -160,7 +175,7 @@ The full set of parameters of Order API are available in the [Order resource fie
 |offerId |string  |The unique ID of the offer |Max: 40 characters  |
 |renewalCode |string  |Unique identifier of the Minimum Order Quantity Offer. Available values are: <br />- MOQ_100 <br />- MOQ_250 <br />- MOQ_500 |Max: 30 characters  |
 |eligibilityCriteria |Array |The eligibility criteria for availing the MOQ offer. | |
-|minQuantity |Integer |The minimum quantity for which this offer is applicable, also the minimum quantity that the customer needs to commit for a 3YC term to be eligible for this offer. |Min: 0 <br /> Max: 999999 |
+|minQuantity |Integer |The minimum quantity for which this offer is applicable, also the minimum quantity that the customer needs to commit for a 3YC term to be eligible for this offer. Supported values are: 100, 250, and 500.|Min: 0 <br /> Max: 999999 |
 |additionalCriteria |string  |The additional criteria list for availing the high growth offer. Currently, `THREE_YEAR_COMMIT` is the only supported value, indicating that 3YC is required to avail the high growth offers.  |Min: 1 item <br /> Max: 499 items |
 |deploymentId |string  |Unique ID for the deployment. | Max: 40 characters |
 
@@ -188,7 +203,7 @@ Failure response:
 
 Use the `PATCH /v3/customers/{customer-id}/subscriptions/{sub-id}?reset-renewal-code=false` API to update the renewal preferences for the customer's subscription with the MOQ offer details.
 
-You can use the optional query param `reset-renewal-code` in the request to remove the renewalCode after it has been opted by the customer. Possible values are:
+You can use the optional query param `reset-renewal-code` in the request to remove the `renewalCode` after it has been opted by the customer. Possible values are:
 
 - `true`
 - `false`
@@ -221,27 +236,27 @@ The response shows the `renewalCode` with the selected MOQ offer.
 
 ```json
 {
-    "subscriptionId": "a028303a454a168d6b824b6c0dfcc5NA",
-    "offerId": "65324918CA14A12",
-    "currentQuantity": 10,
-    "usedQuantity": 0,
-    "autoRenewal": {
-        "enabled": true,
-        "renewalQuantity": 100,
-        "renewalCode": "MOQ_100"
-    },
-    "creationDate": "2023-09-22T08:38:27Z",
-    "renewalDate": "2024-09-22",
-    "status": "1000",
-    "deployToId": "",
-    "currencyCode": "USD",
-    "links": {
-        "self": {
-            "uri": "/v3/customers/1005388836/subscriptions/a028303a454a168d6b824b6c0dfcc5NA",
-            "method": "GET",
-            "headers": []
-        }
-    }
+   "subscriptionId": "a028303a454a168d6b824b6c0dfcc5NA",
+   "offerId": "65324918CA14A12",
+   "currentQuantity": 10,
+   "usedQuantity": 0,
+   "autoRenewal": {
+       "enabled": true,
+       "renewalQuantity": 100,
+       "renewalCode": "MOQ_100"
+   },
+   "creationDate": "2023-09-22T08:38:27Z",
+   "renewalDate": "2024-09-22",
+   "status": "1000",
+   "deployToId": "",
+   "currencyCode": "USD",
+   "links": {
+       "self": {
+           "uri":                        "/v3/customers/1005388836/subscriptions/a028303a454a168d6b824b6c0dfcc5NA",
+           "method": "GET",
+           "headers": []
+       }
+   }
 }
 ```
 
@@ -282,27 +297,28 @@ Response:
 
 ```json
 {
-    "subscriptionId": "a028303a454a168d6b824b6c0dfcc5NA",
-    "offerId": "65324918CA02A12",
-    "currentQuantity": 10,
-    "usedQuantity": 0,
-    "autoRenewal": {
-        "enabled": true,
-        "renewalQuantity": 25
-    },
-    "creationDate": "2023-09-22T08:38:27Z",
-    "renewalDate": "2024-09-22",
-    "status": "1000",
-    "deployToId": "",
-    "currencyCode": "USD",
-    "links": {
-        "self": {
-            "uri": "/v3/customers/1005388836/subscriptions/a028303a454a168d6b824b6c0dfcc5NA",
-            "method": "GET",
-            "headers": []
-        }
-    }
+   "subscriptionId": "a028303a454a168d6b824b6c0dfcc5NA",
+   "offerId": "65324918CA02A12",
+   "currentQuantity": 10,
+   "usedQuantity": 0,
+   "autoRenewal": {
+       "enabled": true,
+       "renewalQuantity": 25
+   },
+   "creationDate": "2023-09-22T08:38:27Z",
+   "renewalDate": "2024-09-22",
+   "status": "1000",
+   "deployToId": "",
+   "currencyCode": "USD",
+   "links": {
+       "self": {
+           "uri": "/v3/customers/1005388836/subscriptions/a028303a454a168d6b824b6c0dfcc5NA",
+           "method": "GET",
+           "headers": []
+       }
+   }
 }
+
 ```
 
 ## Create subscription
@@ -321,7 +337,7 @@ For example, if the customer has only Acrobat Standard product and not Acrobat P
   - `currencyCode`
   - `deploymentId`
   
-  These are part of the Get Subscription API as well.
+  These are part of the [Get Subscription API](../subscription_management/get_details_for_customers.md) as well.
 
 ### Request header
 
