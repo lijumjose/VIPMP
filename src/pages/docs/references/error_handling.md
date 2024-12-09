@@ -114,7 +114,10 @@ Some error responses will include additionalDetails, an array of strings with mo
 |5128| Discount code not applicable for regular customer| Update Subscriptions| 400|
 |5129| Discount Code not applicable for 3yc committed quantity| Update Subscriptions| 400|
 |5131| TInvalid Order Quantity for Discount Code| Update Subscriptions| 400|
-|5132| Discount Code not applicable for the current term| Update Subscriptions| 400|
+|5132| Discount Code not applicable for the current term| Update Subscriptions| 400 <br /> Description: When the customer is opting for same MOQ offer in the new 3YC term.|
+|5133| Order cancellation not allowed below MOQ quantity| |400 <br /> Description: When the customer is trying to cancel the MOQ offer quantity that results in pushing the remaining qty below the MOQ offer quantity.|
+|5134| Could not turn off Auto Renewal for MOQ offer| |400 <br /> Description: When the customer is trying to turn off autorenewal for an MOQ offer.|
+|5135| Invalid Discount Code|Create Order | 400|
 
 ## 2129 Ineligible Purchase REASON_CODE List
 
@@ -149,3 +152,11 @@ These REASON_CODE values are included in the `additionalDetails` array for 5117 
 |NOT_A_FULL_RENEWAL_IN_RENEWAL_WINDOW| The customer is in the renewal window prior to their anniversary date, and they have partially renewed.| Customer must either renew all active licenses or wait until their anniversary date.|
 |LICENSE_WITHOUT_SALE_AQO_REFERENCED| There is some internal issue for the customer |Please reach out to support for assistance |
 |SRC_DST_OFFER_IDS_HAS_PA_MISMATCH| There is some internal issue for the customer |Please reach out to support for assistance|
+|3YC_LINKED_MEMBERSHIP | Customer is part of linked membership and has active 3YC. |Please reach out to support for assistance|
+|HVD_CUSTOMER| Customer is not eligible for transfer. |Please reach out to support for assistance|
+|INVALID_PRICE_LEVEL_LM_MIGRATION | Customer’s Price Level is greater than 04 and has Linked Membership. |Please reach out to support for assistance|
+|LM_OWNER_NOT_MIGRATED | Group member is trying to migrate to VMP prior to Group Owner migration. |Wait for the Group Owner to migrate first|
+|NOT_A_WORLDWIDE_PURCHASER| Customer is WorldWide, but Parnter is not tagged as WorldWide. |Please reach out to support for assistance|
+|3YC_DISCOUNT_LEVEL_MISMATCH | Customer’s discount level is greater than the level determined by MCQ. |Please reach out to support for assistance|
+|HVD_CUSTOMER| Customer is not eligible for transfer. |Please reach out to support for assistance|
+|MINIMUM_HVD_QTY_NOT_MET| Customer is not eligible for transfer. |Please reach out to support for assistance|

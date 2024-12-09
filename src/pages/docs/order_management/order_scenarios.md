@@ -78,7 +78,7 @@ This section lists the sample requests and responses of an order with `orderType
   - No partial line item cancellations.
 - Same 1000 | 1002 | 1004 statuses.
 - As line items from an order get cancelled, the line item status on the original order changes from 1000 to 1008.
-o When all line items for an order are cancelled, the status changes to 1008 for the original order.
+  - When all line items for an order are cancelled, the status changes to 1008 for the original order.
 
 ### Sample request
 
@@ -139,6 +139,7 @@ o When all line items for an order are cancelled, the status changes to 1008 for
   - If the Offer IDs in the request provides a better discount than customer is elligible for, then the correct lower-level Offer ID are returned.
     - For a NEW order, the request gets rejected if the customer is not eligible for an Offer ID.
 - If NEW order is rejected, then the PREVIEW order gets rejected with the same error.
+- The `discountCode` is applicable only to High Volume Discount customers who have migrated from VIP to VIP MP. You can use the discount code only if their discount level in VIP is between 17 and 22.
 
 ### Sample request
 
@@ -153,7 +154,8 @@ o When all line items for an order are cancelled, the status changes to 1008 for
             "offerId": "80004567EA01A12",
             "quantity": 1,
             "currencyCode": "USD",
-            "deploymentId": "12345"
+            "deploymentId": "12345",
+            "discountCode": "HVD_L18_PRE”
         }
     ]
 }
@@ -178,7 +180,8 @@ o When all line items for an order are cancelled, the status changes to 1008 for
             "subscriptionId": "",
             "status": "",
             "currencyCode": "USD",
-            "deploymentId": "12345"
+            "deploymentId": "12345",
+            "discountCode": "HVD_L18_PRE”,
         }
     ]
 }
@@ -193,6 +196,8 @@ o When all line items for an order are cancelled, the status changes to 1008 for
 - In case of `lineItems` in the request, the response indicates the RENEWAL order initiated after anniversary date for the selected line items.
 - If the customer does not have any subscriptions with autoRenewal enabled, then an error is  returned.
 - Returns the best available offer IDs for the renewal order.
+- The `eligibleOffers` section lists the High Growth Offers available for the customer. Read more about the [High Growth Offers](../customer_account/high_growth.md).
+- The `discountCode` indicates the discount code applicable to the HVD customers migrating from VIP to VIP Marketplace. This parameter does not apply to non-HVD customers.
 
 ### Sample request
 
@@ -210,6 +215,7 @@ OR
         {
             "extLineItemNumber": 1,
             "offerId": "80004567EA01A12",
+            "discountCode": “HVD_L18_PRE”,
             "subscriptionId": " e0b170437c4e96ac5428364f674dffNA"
         }
     ]
@@ -234,10 +240,44 @@ OR
             "offerId": "80004567EA01A12",
             "quantity": 1,
             "subscriptionId": " e0b170437c4e96ac5428364f674dffNA",
+            "discountCode": “HVD_L18_PRE”,
             "status": "",
             "currencyCode": "USD",
             "deploymentId": "12345"
         }
+    ],
+      "eligibleOffers":
+    [
+      {
+        "offerId": "65324918CA14X12",
+        "renewalCode": "MOQ_100",
+        "eligibilityCriteria":
+          {
+            "minQuantity": 100,
+            "additionalCriteria": ["THREE_YEAR_COMMIT"],
+            "deploymentId": "1450043516",
+          },
+      },
+      {
+        "offerId": "65324918CA14Y12",
+        "renewalCode": "MOQ_250",
+        "eligibilityCriteria":
+          {
+            "minQuantity": 250,
+            "additionalCriteria": ["THREE_YEAR_COMMIT"],
+            "deploymentId": "1450043516",
+          },
+      },
+      {
+        "offerId": "65324918CA14Z12",
+        "renewalCode": "MOQ_500",
+        "eligibilityCriteria":
+          { 
+            "minQuantity": 500, 
+            "additionalCriteria": ["THREE_YEAR_COMMIT"]
+          },
+      },
+    ],
     }
 ```
 

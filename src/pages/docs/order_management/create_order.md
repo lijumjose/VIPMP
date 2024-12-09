@@ -14,6 +14,7 @@ Ensure that you are aware of the following before creating an offer details:
 - `referenceOrderId` is required for RETURN orders and should not be included for other order types.
 - `currencyCode` should now be sent at the lineItem-level instead of order level.
   - For backwards compatability, `currencyCode` can still be sent at the order level.
+- The `discountCode` is applicable only to High Volume Discount customers who have migrated from VIP to VIP MP. You can use the discount code only if their discount level in VIP is between 17 and 22.
 
 ## Request header
 
@@ -42,7 +43,8 @@ Order resource without read-only fields:
             "offerId": "80004567EA01A12",
             "quantity": 1,
             "currencyCode": "USD",
-            "deploymentId": "12345"
+            "deploymentId": "12345",
+            “discountCode": "HVD_L18_PRE",
         }
     ]
 }

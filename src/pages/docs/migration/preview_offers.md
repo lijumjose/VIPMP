@@ -41,7 +41,8 @@ None.
     "totalCount": 1,
     "items": [
         {
-            "offerId": "12345678CA01A12", // Offer ID for marketplace to use "currencyCode" : "USD",
+            "offerId": "12345678CA01A12", // Offer ID for marketplace to use 
+            "currencyCode" : "USD",
             "quantity": 10
     "renewalDate": "2020-06-08"
         }
