@@ -1,11 +1,5 @@
 # Migrate High Volume Discount customers from VIP to VIP Marketplace
 
-<style>
-table, th, table td {
-  border: 1px solid black;
-        }
-</style>
-
 Three-year commitment (3YC) customers benefiting High Volume Discounts in the VIP buying program can migrate to the VIP Marketplace. Only the Acrobat customers in COM (commerce) and GOV (government) market segments and on discount level 17-22 can be migrated to VIP Marketplace. These customers will be reassigned to discount levels 13 or 14 in the VIP Marketplace to ensure consistency in discount offerings.
 
 The discount rates after migration depend on their current Acrobat subscription and pricing plan, as shown below:

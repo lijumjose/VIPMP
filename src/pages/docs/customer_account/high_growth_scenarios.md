@@ -1,11 +1,5 @@
 # High Growth Offer scenarios
 
-<style>
-table, th, table td {
-  border: 1px solid black;
-        }
-</style>
-
 Customers can add licenses or seats mid-term or at the anniversary date, benefiting from the same discount rate as their original MOQ.
 
 **Example scenario**
