@@ -1,11 +1,5 @@
 # Manage high growth offers
 
-<style>
-table, th, table td {
-  border: 1px solid black;
-        }
-</style>
-
 High growth offers are designed for customers who are either making new purchases or significantly expanding their existing Acrobat Pro seats. This will replace the current High Volume Discounting program (17-23 levels) that exists in VIP.
 
 ## What are high growth offers?
