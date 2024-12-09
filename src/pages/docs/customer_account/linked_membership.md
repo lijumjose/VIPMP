@@ -1,6 +1,6 @@
 # Manage Linked Memberships
 
-Linked Membership is an optional feature of the Adobe Value Incentive Plan Marketplace (VIP MP). This plan allows organizations affiliated with VIP MP to combine purchases across linked customer accounts to achieve [better volume discount levels](#how-to-attain-more-discounts-through-linked-membership) while still managing and purchasing licenses separately.
+Linked Membership is an optional feature of the Adobe Value Incentive Plan Marketplace (VIP MP). This plan allows organizations affiliated with VIP MP to combine purchases across linked customer accounts to achieve [better volume discount levels](#how-to-obtain-more-discounts-through-linked-membership) while still managing and purchasing licenses separately.
 
 You can provide Linked Memberships to customers from the following types of organizations:
 
