@@ -54,4 +54,4 @@ The APIs required to obtain MOQ offers differ depending on various scenarios. Th
 
 ![High Growth flow for Acro customers](../image/hg_flow.png)
 
-Read more about [High Growth Offer scenarios](./high_pen_scenarios.md).
+Read more about [High Growth Offer scenarios](./high_growth_scenarios.md).
