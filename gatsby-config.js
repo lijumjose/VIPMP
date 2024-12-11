@@ -441,6 +441,10 @@ module.exports = {
                 title: 'Migrate HVD customers to VIP Marketplace',
                 path: 'sandbox/sandbox_portal/migrate_hvd_customers/migrate_hvd_customers.md'
               },
+              {
+                title: 'View renewal status of memberships ',
+                path: 'sandbox/sandbox_portal/transfer_memberships/view_renewal_status.md'
+              },
               ]
           },
           {
