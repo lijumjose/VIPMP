@@ -5,10 +5,9 @@
 
 ## API changes
 
-
 ### December 03, 2024
 
-API Doc Version: 2024.12.1 
+API Doc Version: 2024.12.1
 
 Summary of changes:
 
@@ -29,10 +28,10 @@ Summary of changes:
 - Create and manage linked memberships
 
   Adding support for creating and managing linked memberships that facilitates combining purchases across linked customer accounts to achieve better volume discounts. See [Manage linked memberships](../customer_account/linked_membership.md) for more information.
- 
+
 - “Late renewals” or “Renewal” Order Type
 
-  Introducing a new Order Type for partners to place “late renewal” after anniversary date. See  [Create Order](../order_management/create_order.md) for more information. 
+  Introducing a new Order Type for partners to place “late renewal” after anniversary date. See  [Create Order](../order_management/create_order.md) for more information.
 
 - Create orders
 
@@ -42,8 +41,7 @@ Summary of changes:
 
   - Added ability to enable a customer for worldwide (global) sales
   - Added ability to create “Deployments” for a customer to purchase worldwide offers
-  - Added an optional currencyCode to the order lineItem level to 
-support global deployments
+  - Added an optional currencyCode to the order lineItem level to support global deployments
   - Added deploymentId to order lineItem (read/write)
   - Added deploymentId and currencyCode to subscription resource (read only)
   - Added deploymentId and currencyCode to transfer resource (read only)
@@ -54,7 +52,7 @@ support global deployments
 
   - Added ability to create future dated subscription that would become active on next anniversary date. See [Create Subscription](../subscription_management/create_subscription.md) for more information.
 
-- Added a new API to fetch all customers (under a given reseller) who have added seats via Adobe’s Admin console. 
+- Added a new API to fetch all customers (under a given reseller) who have added seats via Adobe’s Admin console.
 - Added a new API to fetch all seats/licenses added by a given customer via admin console.
 - These APIs will inform our partners to place corresponding orders backing the seats added by the customers via admin console.
 - Added new Error Code for Preview / Create Transfer response. See [Status Codes & Error Handling](../references/error_handling.md) for more information.
@@ -62,8 +60,7 @@ support global deployments
 
 ## Sandbox changes
 
- 
- - [Manage High Growth Offers](/src/pages/sandbox/sandbox_portal/high_growth_offer/high_growth.md)
- - [Migrate HVD customers from VIP to VIP Marketplace](/src/pages/sandbox/sandbox_portal/migrate_hvd_customers/migrate_hvd_customers.md)
- - [Manage Linked Memberships](/src/pages/sandbox/sandbox_portal/linked_memberships/index.md)
- - [View renewal status of memberships](/src/pages/sandbox/sandbox_portal/transfer_memberships/index.md)
+- [Manage High Growth Offers](/src/pages/sandbox/sandbox_portal/high_growth_offer/high_growth.md)
+- [Migrate HVD customers from VIP to VIP Marketplace](/src/pages/sandbox/sandbox_portal/migrate_hvd_customers/migrate_hvd_customers.md)
+- [Manage Linked Memberships](/src/pages/sandbox/sandbox_portal/linked_memberships/index.md)
+- [View renewal status of memberships](/src/pages/sandbox/sandbox_portal/transfer_memberships/index.md)
