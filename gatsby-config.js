@@ -369,6 +369,11 @@ module.exports = {
               ]
           },
           {
+            title: 'High Growth Offer for customers',
+            path: 'sandbox/sandbox_portal/high_growth_offer/high_growth.md',
+            header: true,
+          },
+          {
             title: 'Management deployments',
             path: 'sandbox/sandbox_portal/deployment_management',
             header: true,
@@ -392,7 +397,11 @@ module.exports = {
               },
               {
                 title: 'Cancel an order',
-                path: 'sandbox/sandbox_portal/order_management/.md'
+                path: 'sandbox/sandbox_portal/order_management/cancel_order.md'
+              },
+              {
+                title: 'Place manual renewal order',
+                path: 'sandbox/sandbox_portal/order_management/manual_renewal.md'
               },
               ]
           },
@@ -409,6 +418,10 @@ module.exports = {
               title: 'Update auto-renewal configuration',
               path: 'sandbox/sandbox_portal/subscription_management/Update_auto_renwal.md'
               },
+              {
+                title: 'Expire an active subscription',
+                path: 'sandbox/sandbox_portal/subscription_management/expire_subscription.md'
+              },
               ]
           },
           {
@@ -423,6 +436,10 @@ module.exports = {
               {
               title: 'View memberships',
               path: 'sandbox/sandbox_portal/transfer_memberships/list_memberships.md'
+              },
+              {
+                title: 'Migrate HVD customers to VIP Marketplace',
+                path: 'sandbox/sandbox_portal/migrate_hvd_customers/migrate_hvd_customers.md'
               },
               ]
           },
