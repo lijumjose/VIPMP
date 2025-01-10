@@ -9,8 +9,8 @@ description: Includes documentation, sample price list and reconciliation files,
 |---------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Documentation for generating OAuth credentials in CPAPI | [Adobe Commerce Partner API Credential Generation OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/#generating-access-tokens-using-standard-oauth2-libraries) |
 | Sandbox Three Year Commit documentation                 | [CPAPI Three Year Commit Sandbox documentation](https://developer-stage.adobe.com/vipmp/documents/developer-documentation/CPAPI%20Three%20Year%20Commit%20Sandbox%20Documentation.pdf)                                                   |
-| Sandbox User Guide                                      | [Sandbox User Guide v1.0](https://documentcloud.adobe.com/spodintegration/index.html?locale=en-us)                                                                                                                                       |
-| Sandbox documentation to enable global sales            | [Worldwide Sandbox documentation](https://documentcloud.adobe.com/spodintegration/index.html?locale=en-us)                                                                                                                               |
+| Sandbox User Guide                                      | [Sandbox User Guide](../sandbox/index.md)                                                                                                                                       |
+| Sandbox documentation to enable global sales            | [Worldwide Sandbox documentation](../sandbox/sandbox_portal/customer_management/update_customer.md)                                                                                                                               |
 
 ### Invoicing
 

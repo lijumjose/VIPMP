@@ -1,4 +1,4 @@
-# Manage high growth offers through APIs
+# Manage High Growth Offers through APIs
 
 As explained in the [High growth offer use cases](./high_growth_scenarios.md) section, a reseller and a customer need to perform various steps to provide MOQ offers to customers. This section identifies the APIs necessary to achieve this objective:
 
@@ -168,7 +168,7 @@ The full set of parameters of Order API are available in the [Order resource fie
 |renewalCode |string  |Unique identifier of the Minimum Order Quantity Offer. Available values are: <br />- MOQ_100 <br />- MOQ_250 <br />- MOQ_500 |Max: 30 characters  |
 |eligibilityCriteria |Array |The eligibility criteria for availing the MOQ offer. | |
 |minQuantity |Integer |The minimum quantity for which this offer is applicable, also the minimum quantity that the customer needs to commit for a 3YC term to be eligible for this offer. Supported values are: 100, 250, and 500.|Min: 0 <br /> Max: 999999 |
-|additionalCriteria |string  |The additional criteria list for availing the high growth offer. Currently, `THREE_YEAR_COMMIT` is the only supported value, indicating that 3YC is required to avail the high growth offers.  |Min: 1 item <br /> Max: 499 items |
+|additionalCriteria |string  |The additional criteria list for availing the High Growth Offer. Currently, `THREE_YEAR_COMMIT` is the only supported value, indicating that 3YC is required to avail the High Growth Offers.  |Min: 1 item <br /> Max: 499 items |
 |deploymentId |string  |Unique ID for the deployment. | Max: 40 characters |
 
 ### HTTP status codes
