@@ -95,19 +95,19 @@ module.exports = {
             path: '/docs/customer_account/three_year_commit.md'
           },
           {
-            title: 'Manage linked memberships',
+            title: 'Manage Linked Memberships',
             path: '/docs/customer_account/linked_membership.md'
           },
           {
-            title: 'Manage high growth offers',
+            title: 'Manage High Growth Offers',
             path: '/docs/customer_account/high_growth.md',
             pages: [
               {
-                title: 'High growth offer scenarios',
+                title: 'High Growth Offer scenarios',
                 path: '/docs/customer_account/high_growth_scenarios.md'
               },
               {
-                title: 'Manage high growth offers through APIs',
+                title: 'Manage High Growth Offers through APIs',
                 path: '/docs/customer_account/high_growth_apis.md'
               }
             ]
@@ -169,7 +169,12 @@ module.exports = {
         ]
       },
       {
-        title: 'Manager orders',
+        title: 'Manage Price Lists',
+        description: '',
+        path: '/docs/manage_pricing/index.md',
+      },
+      {
+        title: 'Manage orders',
         description: '',
         path: '/docs/order_management/index.md',
         pages: [

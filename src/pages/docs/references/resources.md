@@ -68,6 +68,79 @@ fields.
 |lastName | string | Last name of the contact | Max: 35 characters|
 |phoneNumber | string | Optional. Phone number of the contact | Max: 40 characters|
 
+## Price List (top-level resource)
+
+|Property | Type | Description | Range/Limits|
+|:----|:----|:----|:----|
+|region |String |The region where the product is sold. <br /> Examples: AP (Asia Pacific), JP (Japan), WE (Wesetern Europe), LA (Latin America), MX (Mexico), EE (Eastern Europe), PA, and NA (North Maerica) | |
+|marketSegment |String |Market where the product is sold. <br /> Possible values are: COM, EDU, and GOV. | |
+|currency |String |Currency for the currently selected market and region. <br />Examples: AUD, EUR, GBP, JPY, and USD | |
+|priceListMonth |String |The month in which the price is published. Specified in the YYYYMM format. | |
+|discountType |String |Define the volume discount level that can be applied for Standard or 3YC customers. <br /> Possible values are: `3YC` and `STANDARD`. The default value is `STANDARD`. | |
+|totalItemCount |String |The total number of items returned in the response. | |
+
+### Query parameters
+
+|Property | Type | Description | Range/Limits|
+|:----|:----|:----|:----|
+|offset |Integer |The offset parameter specifies the starting point for retrieving items in a paginated list. It indicates the number of items to skip before beginning to return results. If offset isn't provided, the default value is 0, meaning retrieval will start from the first item.| |
+|pageSize |String | The pageSize parameter specifies the number of items to be returned per page, enabling pagination. If pageSize isn't provided, the default value will be 50. | |
+
+### Filters
+
+You can use the following filter properties in the PriceListRequest schema allows you to narrow down the price list based on certain criteria:
+
+|Property | Type | Description | Range/Limits|
+|:----|:----|:----|:----|
+|productFamily |String |By passing the product family, the API will return the price list for the given product family. | |
+|sku |String |By passing the SKU, the API will return the price list for the given SKU. Since the SKU-based filter returns only one item in the response, offset-based pagination is not applicable for this filter. | |
+|partNumber |String |By passing the partNumber, the API will return the price list for the given part number. Since the part number filter returns only one item in the response, offset-based pagination is not applicable for this filter. | |
+|firstOrderDate |String |By passing the firstOrderDate, the API will return the price list for the given first order date. This date is in UTC.| |
+|lastOrderDate |String |By passing the lastOrderDate, the API will return the price list for the given last order date. This date is in UTC. | |
+|discountCode |String |By passing the discountCode (e.g. HVD_L17_PRE), the API will return the price list for the given discount code. | |
+
+### Product
+
+Array of the following objects:
+
+|Property | Type | Description | Range/Limits|
+|:----|:----|:----|:----|
+|sku |String |Product ID | |
+|productFamily |String |Grouping of products based on product code, product config, and so on. | |
+|productType |String |Identify if the product is consumable or license base. | |
+|productTypeDetail |String |Define if product is term base and if price is fixed or prorated. | |
+|additionalDetail |String |Additional details for product offer. | |
+|operatingSystem |String |The software that manages and controls the hardware and other software on a computer. <br /> Examples: `Multiple Platforms`, `Other`, and `Windows`. | |
+|language |String |Supported languages. <br /> Examples: `EU English`, `Japanese`, `Multi Asian Languages`, `Multi European Languages`, `Multi Language Australia`, `Multi Latin American Languages`, and `Multi NorthAmerican Language`. | |
+|version |String |Version of the product. | |
+|users |String |License type <br/> Examples: `1 User`, `Named`, `Per Credit Pack`, `Per Server`, `Per Transaction`, `Per Workstation`, and `Subscription`. | |
+|metric |String |Unit of measure <br /> Examples: 1000 10000 15000 20000 30000 "40 Images" "50 TRS INTRO NC" 5000 50000 "Transaction", and "USER" | |
+|bridge |String |Bridge | |
+|upcEanCode |String |Barcode formats used to identify products in retail sales. | |
+|gtinCode |String |13-digit code that identifies products for sale in retail stores or online. | |
+
+### Prices
+
+Array of the following objects:
+
+|Property | Type | Description | Range/Limits|
+|:----|:----|:----|:----|
+|partNumber |String |SKU + pricing extension key | |
+|acdIndicator |String |Used to indicate if the offer is new, changed, or deleted. Possible values are: Add, Change, and Delete. | |
+|acdEffectiveDate |String |Effective date for the ACD indicator (ADD, CHANGE, DELETE ). This date is in UTC format. | |
+|levelDetails |String |Level Description of Min and Max range for the price point | |
+|firstOrderDate |String |The first date from when the order can be placed against the partNumber. This date is in UTC format. | |
+|lastOrderDate |String |The last date from when the order can be placed against the partNumber. This date is in UTC format. | |
+|partnerPrice |String |List Price for Partner | |
+|estimatedStreetPrice |String |Estimated retail price | |
+|discountCode |String |High volume discount code will be provided here. When the discount code is available, the estimatedStreetPrice and partnerPrice will reflect the discounted price. | |
+|estimatedShipDate |String |Estimated Ship Date. This date is in UTC format. | |
+|publicAnnounceDate |String |Public Announce Date. This date is in UTC format. | |
+|rmaRequestDeadline |String |RMA Request Deadline. This date is in UTC format. | |
+|acdDescription |String |This field provides additional context or details about the ACD status of the offer. | |
+|pool |String |The category or grouping to which the offer belongs. This field helps in identifying the broader classification of the offer. | |
+|duration |String |The period for which the offer is valid or applicable. This field specifies the length of time the offer is effective. | |
+
 ## Order (top-level resource)
 
 |Property | Type | Description | Range/Limits|
@@ -83,6 +156,17 @@ fields.
 |status (read only, except for canceling)| string | Status code of the order | 4 characters|
 |links (read only)| `Links` resource | Deep links to get order details| |
 
+## <mark>Eligible offers</mark>
+
+|Property | Type | Description | Range/Limits|
+|:----|:----|:----|:----|
+|offerId |string |The unique ID of the offer. |Max: 40 characters |
+|renewalCode |string |Unique identifier of the Minimum Order Quantity Offer. Available values are: <br /> - MOQ_100 <br /> - MOQ_250 <br /> - MOQ_500 |Max: 30 characters |
+|eligibilityCriteria |Array |The eligibility criteria for availing the MOQ offer. | |
+|minQuantity |Integer |The minimum quantity for which this offer is applicable, also the minimum quantity that the customer needs to commit for a 3YC term to be eligible for this offer. |Min: 0 <br /> Max: 999999 |
+|additionalCriteria |string |The additional criteria list for availing the High Growth Offer. Currently, THREE_YEAR_COMMIT is the only supported value, indicating that 3YC is required to avail the High Growth Offers. |Min: 1 item <br /> Max: 499 items |
+|deploymentId |string |Unique ID of the deployment. |Max: 40 characters |
+
 ## LineItem
 
 |Property | Type | Description | Range/Limits|
@@ -90,6 +174,7 @@ fields.
 |extLineItemNumber| integer | Marketplace’s unique index for item in order| Min: 0 <br /> Max: 999999 <br /> Must be unique|
 |offerId | string | The ID of the offer being purchased| |
 |quantity | integer | Quantity of this offer purchased in this order| Min: 1 <br /> Max: 10,000 for Team / 599,000 for Enterprise|
+|<mark>discountCode</mark>|string|The discount code applicable to the HVD customers migrating from VIP to VIP Marketplace.|Max: 40 characters|
 |subscriptionId (read only)| string | ID of the Subscription resource associated with this line item.| Max: 40 characters|
 |status (read only)| string | Status code of the line item | 4 characters|
 
