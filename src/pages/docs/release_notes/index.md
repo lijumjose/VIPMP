@@ -5,17 +5,17 @@
 
 ## API changes
 
-### December 03, 2024
+### January 09, 2025
 
-API Doc Version: 2024.12.1
+API Doc Version: 2025.01.09
 
 Summary of changes:
 
 - Introduced High Growth Offers for existing Acrobat Pro customers. These offers will replace the current High Volume Discounting program that exists in VIP.  See [Manage High Growth Offers](../customer_account/high_growth.md) for more details.
-- Included customer's VIP renewal status within migration preview API response. See [Preview Offer](../migration/preview_offers.md) for more details.
 
 ### Earlier releases in 2024
 
+- Included customer's VIP renewal status within migration preview API response. See [Preview Offer](../migration/preview_offers.md) for more details.
 - Ability to place renewal orders after anniversary date
 
   Added allowedActions field in the Get All Subscriptions for a Customer API to indicate the subscriptions that can be selected for manual renewals. See [Get Subscription Details](../subscription_management/get_details.md) for more information.
