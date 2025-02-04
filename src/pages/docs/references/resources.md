@@ -1,7 +1,6 @@
 # Resources and fields
 
-Please see the Validations/Regular Expressions section for any regular expressions for specific
-fields.
+Please see the Validations/Regular Expressions section for any regular expressions for specific fields.
 
 ## Reseller (top-level resource)
 
@@ -22,11 +21,23 @@ fields.
 |externalReferenceId | string <br />Optional| Marketplace’s ID for customer. ID does not need to be unique.| Max: 35 characters|
 |customerId (read only)| string | Unique ID for customer created upon account creation| Max: 40 characters|
 |resellerId | string | ID of reseller tied to customer | Max: 40 characters|
+|globalSalesEnabled  | string | Global status of a customer  | Max: 40 characters|
+|linkedMembership  | `linkedMembership` resource  | Information about the linked membership  | |
 |companyProfile | `CompanyProfile` resource| Information about the customer | |
 |cotermDate (read only)| String (date) | Date that renewal order is to be placed. Should be one year after the first order is provisioned (if a 1-yr term) and gets updated upon each renewal order.| 10 characters|
 |creationDate (read only)| String (datetime)| Date and time of account creation in UTC| |
 |status (read only)| string | Status code of customer account | 4 characters|
 |links (read only)| **Links** resource | Deep links to get customer account details| |
+
+### linkedMembership
+
+|Property | Type | Description | Range/Limits|
+|:----|:----|:----|:----|
+|id |String  |Unique ID of the Linked Membership.  | |
+|name |String  |Name of the Linked Membership  | |
+|type  |String  |Linked Membership type. Possible Values are:  <br /> - `STANDARD` <br /> - `CONSORTIUM` | |
+|linkedMembershipType  |String  |Member type. Possible values are: <br /> - `MEMBER` <br />- `OWNER`  | |
+|creationDate  |Date  |Date of creation.  | |
 
 ## Deployment (top-level resource)
 

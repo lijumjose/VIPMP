@@ -20,6 +20,8 @@ Ensure that you are aware of the following before updating a customer account:
   - Request 3YC recommitment for customer with existing commitment.
     - Only allowed if the customer has a `COMMITTED` status for the commitment.
 
+**Note:** Details of the request and response parameters are available in the [Resources](../references/resources.md#customer-top-level-resource) section of this documentation.
+
 ## Request header
 
 | Parameter        | Description                                                                                                                                                                                                                      |

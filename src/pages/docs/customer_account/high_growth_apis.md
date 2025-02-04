@@ -229,7 +229,7 @@ The response shows the `renewalCode` with the selected MOQ offer.
 ```json
 {
    "subscriptionId": "a028303a454a168d6b824b6c0dfcc5NA",
-   "offerId": "65324918CA14A12",
+   "offerId": "65324918CA01A12",
    "currentQuantity": 10,
    "usedQuantity": 0,
    "autoRenewal": {
@@ -290,7 +290,7 @@ Response:
 ```json
 {
    "subscriptionId": "a028303a454a168d6b824b6c0dfcc5NA",
-   "offerId": "65324918CA02A12",
+   "offerId": "65324918CA01A12",
    "currentQuantity": 10,
    "usedQuantity": 0,
    "autoRenewal": {
@@ -339,7 +339,7 @@ Same as the [request header given in the previous endpoint](#request-header).
 
 ```json
 {
-    "offerId": "65322450CA14X12",
+    "offerId": "65322651CA14X12",
     "autoRenewal": {
         "renewalQuantity": 100,
         "renewalCode": "MOQ_100"
@@ -352,7 +352,7 @@ Same as the [request header given in the previous endpoint](#request-header).
 ```json
 {
     "subscriptionId": "e0b170437c4e96ac5428364f674dffNA",
-    "offerId": "65322450CA14X12",
+    "offerId": "65322651CA01A12",
     "currentQuantity": 0,
     "usedQuantity": 0,
     "autoRenewal": {
@@ -404,7 +404,7 @@ None.
     "items": [
         {
             "subscriptionId": "43b889db7b4e7aa2d42b54b9813eebNA",
-            "offerId": "65322651CA14X12",
+            "offerId": "65322651CA01A12",
             "currentQuantity": 10,
             "usedQuantity": 4,
             "autoRenewal": {

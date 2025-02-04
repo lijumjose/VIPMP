@@ -7,12 +7,12 @@ Use the following two APIs to see whether you have the required access to run th
 
 ## Ping
 
-Use the `GET /ping` endpoint to verify whether the resources are accessible.
+Use the `Ping` endpoint to verify whether the resources are accessible.
 
 Sample request:
 
 ```http
-GET /ping
+GET https://partners.adobe.io/partnerservice/ping
 X-Api-Key: <your-api-key>
 ```
 

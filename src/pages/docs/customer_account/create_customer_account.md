@@ -32,6 +32,8 @@ Ensure that you are aware of the following before creating a customer account:
 | Authorization    | **Required**. Authorization token in the form `Bearer <token>`                                                                                                                                                                   |
 | X-Api-Key        | **Required**. The API Key for your integration                                                                                                                                                                                   |
 
+**Note:** Details of the request and response parameters are available in the [Resources](../references/resources.md#customer-top-level-resource) section of this documentation.
+
 ## Request Body
 
 Customer resource without read-only fields:

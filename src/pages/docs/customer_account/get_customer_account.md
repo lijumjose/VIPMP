@@ -2,6 +2,8 @@
 
 Use the `GET /v3/customers/<customer-id>` API endpoint to get details of a specific customer account.
 
+**Note:** Details of the request and response parameters are available in the [Resources](../references/resources.md#customer-top-level-resource) section of this documentation.
+
 ## Request header
 
 | Parameter        | Description                                                                                                                                                                                                                      |
