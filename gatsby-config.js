@@ -87,10 +87,6 @@ module.exports = {
         path: '/docs/customer_account/index.md',
         pages: [
           {
-            title: 'Manage market segments',
-            path: '/docs/customer_account/market_segment.md'
-          },
-          {
             title: 'Manage Three-Year Commits',
             path: '/docs/customer_account/three_year_commit.md'
           },
@@ -129,6 +125,11 @@ module.exports = {
             path: '/docs/customer_account/get_licenses.md'
           }
         ]
+      },
+      {
+        title: 'Manage market segments',
+        description: '',
+        path: '/docs/market_segments/index.md',
       },
       {
         title: 'Manage deployments',
@@ -210,8 +211,8 @@ module.exports = {
             path: '/docs/subscription_management/get_details_for_customers.md'
           },
           {
-            title: 'Update auto-renewal configuration of a subscription',
-            path: '/docs/subscription_management/update_auto_renewal.md'
+            title: 'Update subscription',
+            path: '/docs/subscription_management/update_subscription.md'
           }
         ]
       },

@@ -6,7 +6,6 @@ Use the `POST /v3/resellers` API endpoint to create a reseller account.
 
 * Partner will present reseller with T&Cs and make this call after reseller agrees.
 * Reseller Account ID is created by this service and returned synchronously.
-* Market segment is only commercial for M1.
 * `externalReferenceId` should be used to pass in the marketplace’s identifier for the reseller.
   * Optional and does not need to be unique.
 * Distributor ID -> Reseller ID -> Customer ID relationship must be unique.
@@ -26,6 +25,8 @@ Use the `POST /v3/resellers` API endpoint to create a reseller account.
 | Content-Type | **Required**. Specifies the request type. Must be "application/json" for proper usage. |
 | Authorization | **Required**. Authorization token in the form `Bearer <token>` |
 | X-Api-Key | **Required**. The API Key for your integration|
+
+**Note:** Details of the request and response parameters are available in the [Resources](../references/resources.md#reseller-top-level-resource) section of this documentation.
 
 ## Request body
 
@@ -108,9 +109,9 @@ Reseller resource without read-only fields:
 
 ### HTTP status codes
 
-| Status code | Description                           |
-|-------------|---------------------------------------|
-| 201         | Reseller account successfully created |
-| 400         | Bad request                           |
-| 401         | Invalid Authorization token           |
-| 403         | Invalid API Key                       |
+| Status code | Description                               |
+|-------------|-------------------------------------------|
+| 201         | Reseller account is successfully created. |
+| 400         | Bad request                               |
+| 401         | Invalid Authorization token               |
+| 403         | Invalid API Key                           |

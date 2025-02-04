@@ -4,9 +4,9 @@ Use the `PATCH /v3/resellers/<reseller-id>` API endpoint to update a reseller ac
 
 ## Assumptions
 
-* The Update request replaces existing data.
-* Non-editable fields (in red) need to be passed in but need to match the original values. Otherwise, an error is returned.
-* `externalReferenceId` can now be updated.
+* The Update request replaces the existing data.
+* Non-editable fields such as `companyName`, `country`, and `region` need to be passed in but need to match the original values. Otherwise, an error is returned.
+* `externalReferenceId` can be updated.
 
 ## Request header
 
@@ -18,6 +18,8 @@ Use the `PATCH /v3/resellers/<reseller-id>` API endpoint to update a reseller ac
 | Content-Type     | **Required**. Specifies the request type. Must be "application/json" for proper usage.                                                                                                                                           |
 | Authorization    | **Required**. Authorization token in the form `Bearer <token>`                                                                                                                                                                   |
 | X-Api-Key        | **Required**. The API Key for your integration                                                                                                                                                                                   |
+
+**Note:** Details of the request and response parameters are available in the [Resources](../references/resources.md#customer-top-level-resource) section of this documentation.
 
 ## Request body
 
@@ -57,15 +59,53 @@ CompanyProfile for reseller with optional externalReferenceId:
 ## Response body
 
 ```json
-{ Reseller resource }
+{
+    "distributorId": "345434543",
+    "externalReferenceId": "888",
+    "resellerId": "5556667778",
+    "companyProfile": {
+        "companyName": "Fairmont",
+        "preferredLanguage": "en-US",
+        "marketSegments": [
+            "COM",
+            "EDU"
+        ],
+        "address": {
+            "country": "US",
+            "region": "CA",
+            "city": "San Jose",
+            "addressLine1": "200 Fairmont Ave",
+            "addressLine2": "Apt 123",
+            "postalCode": "95110-1234",
+            "phoneNumber": "800-123-4567"
+        },
+        "contacts": [
+            {
+                "firstName": "Mickey",
+                "lastName": "Mouse",
+                "email": "mickey@mouse.com",
+                "phoneNumber": "408-123-4567"
+            }
+        ]
+    },
+    "creationDate": "2019-05-02T22:49:52Z",
+    "status": "1000",
+    "links": {
+        "self": {
+            "uri": "/v3/resellers/5556667778",
+            "method": "GET",
+            "headers": []
+        }
+    }
+}
 ```
 
 ### HTTP status codes
 
-| Status code | Description                           |
-|-------------|---------------------------------------|
-| 20o         | Reseller account successfully updated |
-| 400         | Bad request                           |
-| 401         | Invalid Authorization token           |
-| 403         | Invalid API Key                       |
-| 404         | Ivalid reseller ID                    |
+| Status code | Description                               |
+|-------------|-------------------------------------------|
+| 200         | Reseller account is successfully updated. |
+| 400         | Bad request                               |
+| 401         | Invalid Authorization token               |
+| 403         | Invalid API Key                           |
+| 404         | Invalid reseller ID                        |

@@ -19,6 +19,8 @@ None.
 
 ## Response body
 
+**Note:** Details of the request and response parameters are available in the [Resources](../references/resources.md#customer-top-level-resource) section of this documentation.
+
 ```json
 {
     "distributorId": "345434543",
@@ -63,10 +65,10 @@ None.
 
 ### HTTP status codes
 
-| Status code | Description                                     |
-|-------------|-------------------------------------------------|
-| 200         | Reseller account details successfully returned. |
-| 400         | Bad request                                     |
-| 401         | Invalid Authorization token                     |
-| 403         | Invalid API Key                                 |
-| 404         | Invalid reseller ID                             |
+| Status code | Description                                         |
+|-------------|-----------------------------------------------------|
+| 200         | Reseller account details are successfully returned. |
+| 400         | Bad request                                         |
+| 401         | Invalid Authorization token                         |
+| 403         | Invalid API Key                                     |
+| 404         | Invalid reseller ID                                 |

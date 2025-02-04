@@ -13,7 +13,7 @@ You can manage the auto-renewal preferences for each subscription independently 
 } 
 ```
 
-You can update these preferences through the [Update Subscription Auto-Renewal](./update_auto_renewal.md) endpoint.
+You can update these preferences through the [Update Subscription](./update_subscription.md) endpoint.
 
 The `enabled` field specifies whether a subscription will be auto-renewed, and the `renewalQuantity` determines the quantity of the subscription that will be renewed.
 
@@ -36,4 +36,4 @@ The following API endpoints are available to manage subscriptions:
 
 - [Get details of a specific subscription](./get_details.md)
 - [Get details of all subscriptions of a customer](./get_details_for_customers.md)
-- [Update subscription auto-renewal configuration](./update_auto_renewal.md)
+- [Update subscription](./update_subscription.md)
