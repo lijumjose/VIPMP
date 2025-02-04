@@ -25,12 +25,12 @@ The education market segment mentioned in the above table is further divided int
 
 **Note:** The Additional Detail (Column P) in the price list file contains information on the sub-segment of an offer as well as the minimum purchase quantity, if applicable.
 
-* If the offer has a sub-segment, the Additional Detail text begins with that subsegment (K-12 or HED).
-* If the offer has a minimum purchase quantity, the Additional Detail text ends with that information.
+- If the offer has a sub-segment, the Additional Detail text begins with that subsegment (K-12 or HED).
+- If the offer has a minimum purchase quantity, the Additional Detail text ends with that information.
 
 **Example Additional Detail**: K-12 Shared Device Site Education License Lab and Classroom (100+)
 
-* This offer is associated with the K-12 sub-segment and has a minimum purchase quantity of 100.
+- This offer is associated with the K-12 sub-segment and has a minimum purchase quantity of 100.
 
 ## Market segment workflows
 
@@ -38,40 +38,40 @@ The following market segment workflows are available:
 
 1. Set market segments for resellers
 
-   * Reseller market segments can be set as part of a create or update request.
-   * A reseller’s market segments may be changed at any point, but removing a market segment may cause future orders or renewals to fail.
-   * All existing resellers with no market segment can be initialized with only the COM market segment.
-   * API endpoints for managing this workflow:
-     * [POST Create Reseller API](../reseller_account/create_reseller_account.md)
-     * [PATCH Update Reseller API](../reseller_account/update_reseller_account.md)
+   - Reseller market segments can be set as part of a create or update request.
+   - A reseller’s market segments may be changed at any point, but removing a market segment may cause future orders or renewals to fail.
+   - All existing resellers with no market segment can be initialized with only the COM market segment.
+   - API endpoints for managing this workflow:
+     - [POST Create Reseller API](../reseller_account/create_reseller_account.md)
+     - [PATCH Update Reseller API](../reseller_account/update_reseller_account.md)
 
 2. Set market segment for customers
 
-   * Customer market segment can be set as part of a create or update request.
-   * A customer’s market segments can only be changed if the customer has no active subscriptions.
-   * All existing customers with no market segment will be initialized to COM.
-   * API endpoints for managing this workflow:
-     * [POST Create Customer API](./create_customer_account.md)
-     * [PATCH Update Customer API](./update_customer_account.md)
+   - Customer market segment can be set as part of a create or update request.
+   - A customer’s market segments can only be changed if the customer has no active subscriptions.
+   - All existing customers with no market segment will be initialized to COM.
+   - API endpoints for managing this workflow:
+     - [POST Create Customer API](./create_customer_account.md)
+     - [PATCH Update Customer API](./update_customer_account.md)
 
 3. Set market sub-segment for customers
 
-   * A customer’s market sub-segment can only be set by the customer in the Adobe Admin Console.
-   * Sandbox for testing the sub-segment can be set in the sandbox partner portal. Read more about [Sandbox user guide](../../technical-assets/index.md).
-   * API endpoints avaialable to manage this workflow: [GET Customer API](./get_customer_account.md).
+   - A customer’s market sub-segment can only be set by the customer in the Adobe Admin Console.
+   - Sandbox for testing the sub-segment can be set in the sandbox partner portal. Read more about [Sandbox user guide](../../technical-assets/index.md).
+   - API endpoints avaialable to manage this workflow: [GET Customer API](./get_customer_account.md).
 
 4. Transfer customers to your marketplace (Customer only)
 
-   * Customers with any market segment can be transferred as long as the new reseller is enabled to sell into the customer’s market segment. API endpoints available to manage this workflow:
-     * [POST Create Transfer API](../reseller_change/commit_transfer.md)
-     * [GET Customer API](./get_customer_account.md)
+   - Customers with any market segment can be transferred as long as the new reseller is enabled to sell into the customer’s market segment. API endpoints available to manage this workflow:
+     - [POST Create Transfer API](../reseller_change/commit_transfer.md)
+     - [GET Customer API](./get_customer_account.md)
 
 5. Purchase  offers for a market segment or sub-segment
 
-   * Customers may only purchase offers in their market segment or subsegment.
-   * Resellers may only purchase offers in a market segment they are enabled for.
-   * Requests to purchase offers in a different segment returns the  error 2129 – Reason Code: `INELIGIBLE_MARKET_SEGMENT`.
-   * API endpoint to manage this workflow: [POST Create/Preview Order API](../migration/preview_offers.md)
+   - Customers may only purchase offers in their market segment or subsegment.
+   - Resellers may only purchase offers in a market segment they are enabled for.
+   - Requests to purchase offers in a different segment returns the  error 2129 – Reason Code: `INELIGIBLE_MARKET_SEGMENT`.
+   - API endpoint to manage this workflow: [POST Create/Preview Order API](../migration/preview_offers.md)
 
 New or updated error codes are listed in the following table:
 
@@ -84,20 +84,20 @@ New or updated error codes are listed in the following table:
 
 ### Changes to Reseller Resource
 
-* Market Segments: New field `companyProfile.marketSegments`
+- Market Segments: New field `companyProfile.marketSegments`
 
-  * Defines the list of market segments that the reseller can sell into.
-  * Can be set during the create reseller or update reseller processes.
-  * Default is `COM`.
+  - Defines the list of market segments that the reseller can sell into.
+  - Can be set during the create reseller or update reseller processes.
+  - Default is `COM`.
 
 ### Changes to Customer Resource
 
-* Market Segment: New field - `companyProfile.marketSegment`
-  * Can be set during Create Customer and Update Customer.
-  * A customer may only have a single market segment.
-  * Default is `COM`.
+- Market Segment: New field - `companyProfile.marketSegment`
+  - Can be set during Create Customer and Update Customer.
+  - A customer may only have a single market segment.
+  - Default is `COM`.
 
-* Market sub-segments: New field -  `companyProfile.marketSubSegments`
+- Market sub-segments: New field -  `companyProfile.marketSubSegments`
 
-  * Read-only: Market sub-segments are set by the customer in the Adobe Admin Console.
-  * Currently sub-segments are only applicable for the EDU market segment.
+  - Read-only: Market sub-segments are set by the customer in the Adobe Admin Console.
+  - Currently sub-segments are only applicable for the EDU market segment.

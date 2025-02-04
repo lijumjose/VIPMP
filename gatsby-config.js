@@ -129,7 +129,7 @@ module.exports = {
       {
         title: 'Manage market segments',
         description: '',
-        path: '/docs/customer_account/market_segment.md',
+        path: '/docs/market_segments/index.md',
       },
       {
         title: 'Manage deployments',
