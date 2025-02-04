@@ -51,20 +51,20 @@ The following market segment workflows are available:
    - A customer’s market segments can only be changed if the customer has no active subscriptions.
    - All existing customers with no market segment will be initialized to COM.
    - API endpoints for managing this workflow:
-     - [POST Create Customer API](./create_customer_account.md)
-     - [PATCH Update Customer API](./update_customer_account.md)
+     - [POST Create Customer API](../customer_account/create_customer_account.md)
+     - [PATCH Update Customer API](../customer_account/update_customer_account.md)
 
 3. Set market sub-segment for customers
 
    - A customer’s market sub-segment can only be set by the customer in the Adobe Admin Console.
    - Sandbox for testing the sub-segment can be set in the sandbox partner portal. Read more about [Sandbox user guide](../../technical-assets/index.md).
-   - API endpoints avaialable to manage this workflow: [GET Customer API](./get_customer_account.md).
+   - API endpoints avaialable to manage this workflow: [GET Customer API](../customer_account/get_customer_account.md).
 
 4. Transfer customers to your marketplace (Customer only)
 
    - Customers with any market segment can be transferred as long as the new reseller is enabled to sell into the customer’s market segment. API endpoints available to manage this workflow:
      - [POST Create Transfer API](../reseller_change/commit_transfer.md)
-     - [GET Customer API](./get_customer_account.md)
+     - [GET Customer API](../customer_account/get_customer_account.md)
 
 5. Purchase  offers for a market segment or sub-segment
 
