@@ -9,19 +9,19 @@ Using the Preview Order API to determine the correct discount level is important
 There are four ways for a customer to enroll in 3YC. In all scenarios, the customer must accept the commitment terms (the minimum quantities and commitment end date) in the Adobe Admin Console before receiving any discounts.
 
 1. New Customer (partner-initiated): During customer creation, partners may set the requested minimum quantities, which would start the 3YC customer acceptance workflow after the account becomes active. API endpoints:
-   - [POST Create Customer API](./index.md)
-   - [GET Get Customer API](./index.md)
+   - [POST Create Customer API](./create_customer_account.md)
+   - [GET Customer API](./get_customer_account.md)
 2. Existing Customer (partner-initiated): Existing customers (with active 3YC or not) can be updated with new requested minimum quantities, which would start the 3YC customer acceptance workflow once the account is updated from the request. API endpoints:
-   - [PATCH Update Customer API](./index.md)
-   - [GET Get Customer API](./index.md)
+   - [PATCH Update Customer API](./update_customer_account.md)
+   - [GET Customer API](./get_customer_account.md)
 3. Existing Customer (customer-initiated): Existing customers (not already in 3YC) that meet the 3YC requirements may be presented an offer in Adobe Admin Console to enter 3YC with the minimum quantities set to the customer’s current quantities. API endpoint:
 
-   - [GET Get Customer API](./index.md)
+   - [GET Customer API](./get_customer_account.md)
 
 4. Existing VIP Customer (partner-initiated): Existing VIP customers with active 3YC can be transferred to VIPMP and retain their 3YC commitment terms, which can be retrieved using the GET Customer API. API endpoints:
 
-   - [POST Transfer Subscriptions API](./index.md)
-   - [GET Get Customer API](./index.md)
+   - [POST Transfer Subscriptions API](../migration/transfer_subscription.md)
+   - [GET Customer API](./get_customer_account.md)
 
 ## 3YC API Changes
 

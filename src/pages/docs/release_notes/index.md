@@ -1,16 +1,17 @@
 # Release notes
 
-- API changes
-- Sandbox changes
+- [API changes](#api-changes)
+- [Sandbox changes](#sandbox-changes)
 
 ## API changes
 
-### January 09, 2025
+### January 23, 2025
 
-API Doc Version: 2025.01.09
+API Doc Version: 2025.01.23
 
 Summary of changes:
 
+- High Volume Discount (HVD) customers in VIP can now migrate to VIP Marketplace. See [Migrate High Volume Discount customers from VIP to VIP Marketplace](../migration/migrate_hvd.md) for more details.
 - Introduced High Growth Offers for existing Acrobat Pro customers. These offers will replace the current High Volume Discounting program that exists in VIP.  See [Manage High Growth Offers](../customer_account/high_growth.md) for more details.
 
 ### Earlier releases in 2024
