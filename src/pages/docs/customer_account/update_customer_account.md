@@ -10,14 +10,14 @@ Ensure that you are aware of the following before updating a customer account:
 - The `contacts` section specifies the admins for customer's account.
   - Any contacts that are removed will still remain admins. To remove admins, a customer admin must use the Adobe Admin Console.
   - The name of an existing contact cannot be changed through this API. Customer admin must use the Admin Console to update users' names.
-- Customer market segment can be changed, only if the customer has no active subscriptions.
+- Customer market segment can be changed if the customer has no active subscriptions.
 - Reseller must be enabled for the new market segment.
 - Customer `externalReferenceId` may now be changed.
 - Use either `commitmentRequest` or `recommitmentRequest`in the request to:
 
   - Request new 3YC for existing customers.
-  - Request 3YC quantity increase for customer with existing commitment.
-  - Request 3YC recommitment for customer with existing commitment.
+  - Request 3YC quantity increase for customers with existing commitment.
+  - Request 3YC recommitment for customers with existing commitment.
     - Only allowed if the customer has a `COMMITTED` status for the commitment.
 
 **Note:** Details of the request and response parameters are available in the [Resources](../references/resources.md#customer-top-level-resource) section of this documentation.
@@ -71,7 +71,60 @@ Ensure that you are aware of the following before updating a customer account:
 
 ## Response body
 
-Same as [Get Customer Account Details (Customer resource)](./get_customer_account.md).
+```json
+{
+    "externalReferenceId": "342""customerId": "9876543210",
+    "resellerId": "5556667778",
+    "globalSalesEnabled": false,
+    "companyProfile": {
+        "companyName": "Fairmont",
+        "preferredLanguage": "en-US",
+        "marketSegment": "EDU",
+        "marketSubSegments": [“K_12”
+        ],
+        "address": {
+            "country": "US",
+            "region": "CA",
+            "city": "San Jose",
+            "addressLine1": "200 Fairmont Ave",
+            "addressLine2": "Apt 123",
+            "postalCode": "95110-1234",
+            "phoneNumber": "800-123-4567"
+        },
+        "contacts": [
+            {
+                "firstName": "Mickey",
+                "lastName": "Mouse",
+                "email": "mickey@mouse.com",
+                "phoneNumber": "408-123-4567"
+            }
+        ]
+    },
+    "discounts": [
+        {
+            "offerType": "LICENSE",
+            "level": "02",
+        }
+    ],
+    "cotermDate": "2020-05-02",
+    "creationDate": "2019-05-02T22:49:52Z",
+    "status": "1000",
+    "linkedMembership": {
+        "id": "51001315",
+        "name": "This is the Group Created for 1005513636",
+        "type": "STANDARD",
+        "linkedMembershipType": "OWNER",
+        "creationDate": "2024-07-17T03:47:35"
+    },
+    "links": {
+        "self": {
+            "uri": "/v3/customers/9876543210",
+            "method": "GET",
+            "headers": []
+        }
+    }
+}
+```
 
 **Note:** Any contacts specified in this call will receive the admin welcome email. This can be resend if an end-user did not receive it.
 

@@ -13,6 +13,8 @@ Use `POST /v3/transfers` endpoint to preview a reseller transfer.
 | Authorization    | **Required**. Authorization token in the form `Bearer <token>`                                                                                                                                                                   |
 | X-Api-Key        | **Required**. The API Key for your integration                                                                                                                                                                                   |
 
+**Note:** Details of the request and response parameters are available in the [Resources](../references/resources.md#reseller-top-level-resource) section of this documentation.
+
 ## Request Body
 
 ```json
@@ -30,29 +32,46 @@ Use `POST /v3/transfers` endpoint to preview a reseller transfer.
 ```json
 {
     "transferId": "",
-    "action": "PREVIEW",
-    "approvalCode": "8318322",
-    "resellerId": "1000177552",
-    "customerId": "1000177552",
+    "customerId": "1005472660",
+    "resellerId": "1000187468",
     "approval": {
-        "code": "8318322",
-        "expiry": "2024-01-27T10:38:17Z"
+        "code": "62159861",
+        "expiry": "2024-07-06T06:04:01Z"
     },
-    "creationDate": "2024-01-24T10:38:17Z”,"totalCount": 2,
-    "items": [
+    "creationDate": "2024-07-03T06:04:01Z",
+    "status": "1002",
+    "totalCount": 1,
+    "lineItems": [
         {
             "lineItemNumber": 1,
             "offerId": "65304479CA01A12",
-            "quantity": 1560,
-            "subscriptionId": "",
-            "renewalDate": "2024-09-22"
-        },
+            "quantity": 110,
+            "subscriptionId": "9bec01597a466898af170a5a203bb1NA",
+            "renewalDate": "2025-06-10T16:22:08.000+00:00"
+        }
+    ],
+    "benefits": [
         {
-            "lineItemNumber": 2,
-            "offerId": "65304386CA01A12",
-            "quantity": 12,
-            "subscriptionId": "",
-            "renewalDate": "2024-09-22"
+            "type": "THREE_YEAR_COMMIT",
+            "commitment": {
+                "startDate": "2024-06-10",
+                "endDate": "2027-06-09",
+                "status": "COMMITTED",
+                "minimumQuantities": [
+                    {
+                        "offerType": "LICENSE",
+                        "quantity": 10
+                    }
+                ]
+            },
+            "commitmentRequest": null,
+            "recommitmentRequest": null
+        }
+    ],
+    "discounts": [
+        {
+            "level": "12",
+            "offerType": "LICENSE"
         }
     ]
 }
