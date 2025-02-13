@@ -1,11 +1,11 @@
 # Manage market segments
 
-Market segmentation is an internal convention used to inform the internal stakeholders about the product or business intent, to have one or more of the following differentiations:
+Market segmentation is an internal convention used to inform the internal stakeholders about the product or business intent to have one or more of the following differentiations:
 
-- **Price range** <br />**Example**: Pricing for the Education segment is typically lower than that for the Commercial pricing.
-- **Product certification** <br /> **Example**: Education-ready and Government-ready software and services are required to meet more stringent Adobe legal, safety, privacy, and trust requirements.
+- **Price range** <br />The price range available for a product. Pricing for the Education segment is typically lower than that for the Commercial pricing.
+- **Product certification** <br /> Certification required for product. For example, education-ready and Government-ready software and services must meet more stringent Adobe legal, safety, privacy, and trust requirements.
 - **Purchasing qualification** <br />
-    **Example:** Customers are typically required to prove their association with government-related agencies or educational institutions to buy the product at a different price range. For individuals buying education plans on Adobe Direct, Adobe verifies their education status with a third-party identity verification service.
+    Customers are typically required to prove their association with government-related agencies or educational institutions to buy the product at a different price range. For individuals buying education plans on Adobe Direct, Adobe verifies their education status with a third-party identity verification service.
 
 These are the three market segments available for Adobe products:
 
@@ -23,7 +23,7 @@ The education market segment mentioned in the above table is further divided int
 | HIGHER_ED  | Higher Education Institution              | - EDU offers without a sub-segment. <br /> - EDU offers with HED sub-segment.   |
 | NON_PROFIT | Nonprofit Organization                    | - EDU offers without a sub-segment.                                             |
 
-**Note:** The Additional Detail (Column P) in the price list file contains information on the sub-segment of an offer as well as the minimum purchase quantity, if applicable.
+**Note:** The Additional Detail (Column P) in the price list file contains information on the sub-segment of an offer and the minimum purchase quantity, if applicable.
 
 - If the offer has a sub-segment, the Additional Detail text begins with that subsegment (K-12 or HED).
 - If the offer has a minimum purchase quantity, the Additional Detail text ends with that information.
@@ -57,12 +57,12 @@ The following market segment workflows are available:
 3. Set market sub-segment for customers
 
    - A customer’s market sub-segment can only be set by the customer in the Adobe Admin Console.
-   - Sandbox for testing the sub-segment can be set in the sandbox partner portal. Read more about [Sandbox user guide](../../technical-assets/index.md).
-   - API endpoints avaialable to manage this workflow: [GET Customer API](../customer_account/get_customer_account.md).
+   - Sandbox for testing the sub-segment can be set in the sandbox partner portal. Read more about the [Sandbox user guide](../../technical-assets/index.md).
+   - API endpoints available to manage this workflow: [GET Customer API](../customer_account/get_customer_account.md).
 
 4. Transfer customers to your marketplace (Customer only)
 
-   - Customers with any market segment can be transferred as long as the new reseller is enabled to sell into the customer’s market segment. API endpoints available to manage this workflow:
+   - Customers with any market segment can be transferred as long as the new reseller can sell into the customer’s market segment. API endpoints available to manage this workflow:
      - [POST Create Transfer API](../reseller_change/commit_transfer.md)
      - [GET Customer API](../customer_account/get_customer_account.md)
 
@@ -70,7 +70,7 @@ The following market segment workflows are available:
 
    - Customers may only purchase offers in their market segment or subsegment.
    - Resellers may only purchase offers in a market segment they are enabled for.
-   - Requests to purchase offers in a different segment returns the  error 2129 – Reason Code: `INELIGIBLE_MARKET_SEGMENT`.
+   - Requests to purchase offers in a different segment return the  error 2129 – Reason Code: `INELIGIBLE_MARKET_SEGMENT`.
    - API endpoint to manage this workflow: [POST Create/Preview Order API](../migration/preview_offers.md)
 
 New or updated error codes are listed in the following table:
@@ -87,7 +87,7 @@ New or updated error codes are listed in the following table:
 - Market Segments: New field `companyProfile.marketSegments`
 
   - Defines the list of market segments that the reseller can sell into.
-  - Can be set during the create reseller or update reseller processes.
+  - This can be set during the create reseller or update reseller processes.
   - Default is `COM`.
 
 ### Changes to Customer Resource

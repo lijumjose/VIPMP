@@ -6,11 +6,11 @@ Reseller Change is a customer-initiated process where a customer organization's 
 
 ![Reseller change](../image/reseller_change_1.jpg)
 
-Account Manager from the Reseller Organization is available in the account details. To view the Reseller Organization name and the Distributor details, click the view button ![view](../image/view.jpg) next to the name. A dialog box is displayed, showing the Reseller and Distributor information.
+Account Manager from the Reseller Organization is available in the account details. To view the Reseller Organization name and the Distributor details, click the view button that is highlighted in the above screenshot. A dialog box is displayed, showing the Reseller and Distributor information.
 
 ![Reseller and distributor details](../image/reseller_info.jpg)
 
-The edit button ![edit](../image/edit.jpg) next to the view button allows the customer admin to opt for Reseller Change by generating an 8-digit unique code, which serves as an approval code for the new reseller to move the customer to his organization.
+The edit button next to the view button allows the customer admin to opt for Reseller Change by generating an 8-digit unique code, which serves as an approval code for the new reseller to move the customer to his organization.
 
 ![Generate code](../image/approval_code.jpg)
 

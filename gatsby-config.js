@@ -170,11 +170,6 @@ module.exports = {
         ]
       },
       {
-        title: 'Manage Price Lists',
-        description: '',
-        path: '/docs/manage_pricing/index.md',
-      },
-      {
         title: 'Manage orders',
         description: '',
         path: '/docs/order_management/index.md',

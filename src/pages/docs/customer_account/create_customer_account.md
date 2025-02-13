@@ -1,6 +1,6 @@
 # Create customer account
 
-Prior to placing an order, a reseller needs to create a customer account by using the `POST /v3/customers` endpoint. The API returns the customer resource with a link to the [Get Customer Account Details](./get_customer_account.md) endpoint.
+Before placing an order, a reseller needs to create a customer account by using the `POST /v3/customers` endpoint. The API returns the customer resource with a link to the [Get Customer Account Details](./get_customer_account.md) endpoint.
 
 ## Assumptions
 
@@ -8,14 +8,14 @@ Ensure that you are aware of the following before creating a customer account:
 
 * Customer account ID is created by this API and returned synchronously.
 * The customer payment instrument is managed on the partner marketplace.
-* `cotermDate` is normally calculated when a customer’s first order is placed.
-  * Most subscriptions will end or renew on the `cotermDate`, except for Stock Credit Packs.
-* Use `cotermDate`in the request to create an extended-term customer.
+* `cotermDate` is usually calculated when a customer’s first order is placed.
+  * Most subscriptions, except for Stock Credit Packs, will end or renew on the `cotermDate`.
+* Use `cotermDate` in the request to create an extended-term customer.
 * Use `externalReferenceId` to pass it to the marketplace’s Customer ID.
   * Optional and does not need to be unique.
 * `Contacts` specifies admins for the customer's account and receive an admin welcome email.
   * Contact names for existing email addresses cannot be changed. If you send a different name for an existing email, that name will be returned in the synchronous response, but it will not persist in the system. The existing first and last name of the contact will be used and returned in any GET calls.
-* The successful _Create Customer_ call always returns a customer with status 1002 (Pending) while the final validation happens asynchronously. The account may then become active or inactive. Pending customers can place orders, but they may not update their account using the _Update Customer_ API until the account becomes active or inactive. All orders placed for a pending customer fail if the customer becomes inactive.
+* The successful _Create Customer_ call returns a customer with status 1002 (Pending) while the final validation happens asynchronously. The account may then become active or inactive. Pending customers can place orders, but they may not update their accounts using the _Update Customer_ API until the account becomes active or inactive. All orders placed for a pending customer fail if the customer becomes inactive.
 * `discounts` contains a list of objects with the customer’s discount levels for each `offerType`.
 * Customers can be created with a specified market segment.
   * Reseller must be enabled for that market segment.

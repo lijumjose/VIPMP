@@ -1,4 +1,4 @@
-# Create deployment
+# Create deployments
 
 Use the `POST /v3/customers/<customer-id>/deployments` endpoint to create a deployment resource for a customer.
 
