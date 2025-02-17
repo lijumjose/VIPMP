@@ -25,7 +25,7 @@ module.exports = {
         menu: 
         [
           {
-            title: '2024 releases',
+            title: 'Recent updates',
             description: '',
             path: '/docs/release_notes/index.md'
           },

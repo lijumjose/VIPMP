@@ -167,7 +167,7 @@ Array of the following objects:
 |status (read only, except for canceling)| string | Status code of the order | 4 characters|
 |links (read only)| `Links` resource | Deep links to get order details| |
 
-## <mark>Eligible offers</mark>
+## Eligible offers
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
@@ -185,7 +185,7 @@ Array of the following objects:
 |extLineItemNumber| integer | Marketplace’s unique index for item in order| Min: 0 <br /> Max: 999999 <br /> Must be unique|
 |offerId | string | The ID of the offer being purchased| |
 |quantity | integer | Quantity of this offer purchased in this order| Min: 1 <br /> Max: 10,000 for Team / 599,000 for Enterprise|
-|<mark>discountCode</mark>|string|The discount code applicable to the HVD customers migrating from VIP to VIP Marketplace.|Max: 40 characters|
+|discountCode|string|The discount code applicable to the HVD customers migrating from VIP to VIP Marketplace.|Max: 40 characters|
 |subscriptionId (read only)| string | ID of the Subscription resource associated with this line item.| Max: 40 characters|
 |status (read only)| string | Status code of the line item | 4 characters|
 
