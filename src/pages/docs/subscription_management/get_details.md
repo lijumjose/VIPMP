@@ -66,7 +66,8 @@ The `MANUAL_RENEWAL` value of the `allowedActions` field indicates whether a sub
     "usedQuantity": 0,
     "autoRenewal": {
         "enabled": false,
-        "renewalQuantity": 2
+        "renewalQuantity": 2,
+        "renewalCode": "MOQ_100"
     },
     "creationDate": "2024-09-13T09:22:13Z",
     "renewalDate": "2025-09-13",
@@ -86,6 +87,8 @@ The `MANUAL_RENEWAL` value of the `allowedActions` field indicates whether a sub
 }
 
 ```
+
+**Note:** The `renewalCode` parameter will be available in the response only if the customer receives a High Growth Offer on the next Anniversary Date.
 
 ## HTTP status codes
 
