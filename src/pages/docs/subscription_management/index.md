@@ -34,6 +34,7 @@ Adobe will create a renewal order on a customer's `cotermDate` if the customer h
 
 The following API endpoints are available to manage subscriptions:
 
+- [Create subscription](./create_subscription.md)
 - [Get details of a specific subscription](./get_details.md)
 - [Get details of all subscriptions of a customer](./get_details_for_customers.md)
 - [Update subscription](./update_subscription.md)
