@@ -198,6 +198,10 @@ module.exports = {
         path: '/docs/subscription_management/index.md',
         pages: [
           {
+            title: 'Create subscription',
+            path: '/docs/subscription_management/create_subscription.md'
+          },
+          {
             title: 'Get details of a specific subscription',
             path: '/docs/subscription_management/get_details.md'
           },

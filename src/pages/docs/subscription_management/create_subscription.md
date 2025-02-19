@@ -31,7 +31,9 @@ Use the `POST /v3/customers/<customer-id>/subscriptions` endpoint to create new 
     "offerId": "65304470CA01012",
     "autoRenewal": {
         "enabled": true,
-        "renewalQuantity": 30
+        "renewalQuantity": 100,
+        "renewalCode": "MOQ_100"
+
     }
 }
 ```
@@ -46,7 +48,8 @@ For global customers to create subscriptions outside the customer’s home count
         "currencyCode": "USD",
         "deploymentId": "1400002289""autoRenewal": {
             "enabled": true,
-            "renewalQuantity": 30
+            "renewalQuantity": 100,
+            "renewalCode": "MOQ_100"
         }
     }
 ]
@@ -61,7 +64,8 @@ For global customers to create subscriptions outside the customer’s home count
     "currentQuantity": 0,
     "autoRenewal": {
         "enabled": true,
-        "renewalQuantity": 30
+        "renewalQuantity": 100,
+        "renewalCode": "MOQ_100"
     },
     "creationDate": "2024-07-11T02:42:15Z",
     "renewalDate": "2025-04-25",
