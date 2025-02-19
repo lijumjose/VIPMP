@@ -4,8 +4,7 @@ The following support resources are available in case of any issues.
 
 ## Contact information
 
-- For development and integration support, contact [partnerapi-integration-support@adobe.com](mailto:partnerapi-integration-support@adobe.com).
-- For production API support, contact [partnerapi-support@adobe.com](mailto:partnerapi-support@adobe.com).
+For details on the support path and contact information, refer to [VIP Marketplace support](https://cbconnection.adobe.com/en/vip-marketplace-guide/support-resources).
 
 ## References
 
