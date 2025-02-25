@@ -34,7 +34,7 @@ You can include offers for all volume discounted price levels and scaled pricing
 |50,000 to 99,999 |T6|
 |> 100K |T7|
 
-Resellers can create new Linked Memberships using the [Update Customer Account API](./update_customer_account.md). Each Linked Membership has one owner and multiple members. The owner of a Linked Membership and its members are B2B customer organizations. The owner must agree to the [terms and conditions](./index.md) in the Admin Console and enroll other members in the Linked Membership. The workflow for creating a Linked Membership and adding members is as follows:
+Resellers can create new Linked Memberships using the [Update Customer Account API](./update_customer_account.md). Each Linked Membership has one owner and multiple members. The owner of a Linked Membership and its members are B2B customer organizations. The owner must agree to the [terms and conditions](https://www.adobe.com/howtobuy/buying-programs/vipmp-linked-membership-terms.html) in the Admin Console and enroll other members in the Linked Membership. The workflow for creating a Linked Membership and adding members is as follows:
 
 ![Linked membership workflow](../image/linked_membership_workflow.png)
 
@@ -219,7 +219,7 @@ The Admin Console facilitates the following:
 - Facilitate a VIP customer to be a Linked Membership member.
 - Enroll in a Linked Membership by entering an authorization code provided by a Linked Membership owner.
 
-Read more about [how to manage Linked Memberships in the Admin Console](./index.md).
+Read more about [how to manage Linked Memberships in the Admin Console](https://helpx.adobe.com/enterprise/using/vip-marketplace-linked-membership.html).
 
 ## Migrate Linked Membership from VIP to VIP MP
 

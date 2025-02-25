@@ -57,12 +57,12 @@ List of Deployment resources:
             "headers": []
         },
         "next": {
-            "uri": "/v3/customers/<customer-id>/ deployments?offset=6&limit=3",
+            "uri": "/v3/customers/<customer-id>/deployments?offset=6&limit=3",
             "method": "GET",
             "headers": []
         },
         "prev": {
-            "uri": "/v3/customers/<customer-id>/ deployments?offset=0&limit=3",
+            "uri": "/v3/customers/<customer-id>/deployments?offset=0&limit=3",
             "method": "GET",
             "headers": []
         }
@@ -97,27 +97,29 @@ None.
 Deployment resource:
 
 ```json
-"deploymentId": "345434543",
-"companyProfile": {
-    "address": {
-        "country": "US",
-        "region": "CA",
-        "city": "San Jose",
-        "addressLine1": "200 Fairmont Ave",
-        "addressLine2": "Apt 123",
-        "postalCode": "95110-1234",
-        "phoneNumber": "800-123-4567"
-    }
-},
-"creationDate": "2019-05-02T22:49:52Z",
-"status": "1000",
-"links": {
-    "self": {
-        "uri": "/v3/customers/5556667778/deployments/345434543",
-        "method": "GET",
-        "headers": []
-    }
-}
+{ 
+    "deploymentId": "345434543", 
+    "companyProfile": { 
+        "address": { 
+            "country": "US", 
+            "region": "CA", 
+            "city": "San Jose", 
+            "addressLine1": "200 Fairmont Ave", 
+            "addressLine2": "Apt 123", 
+            "postalCode": "95110-1234", 
+            "phoneNumber": "800-123-4567" 
+        } 
+    }, 
+    "creationDate": "2019-05-02T22:49:52Z", 
+    "status": "1000", 
+    "links": { 
+        "self": 
+        { 
+            "uri": "/v3/customers/5556667778/deployments/345434543", 
+            "method": "GET", 
+            "headers": [] 
+        } 
+    } 
 }
 ```
 
