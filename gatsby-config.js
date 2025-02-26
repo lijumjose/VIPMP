@@ -25,12 +25,12 @@ module.exports = {
         menu: 
         [
           {
-            title: 'Recent updates',
+            title: 'Recent releases',
             description: '',
             path: '/docs/release_notes/index.md'
           },
           {
-            title: 'Upcoming releases',
+            title: 'VIP Marketplace roadmap',
             description: '',
             path: '/docs/release_notes/upcoming_releases.md'
           },

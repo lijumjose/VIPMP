@@ -1,6 +1,11 @@
-# Upcoming releases
+# VIP Marketplace roadmap
 
-Upcoming features to be released by January 30, 2025:
+Adobe is committed to enhancing marketplace capabilities to deliver greater value to both partners and customers. Below is a list of key features planned for 2025:
 
-- New Large Government Agencies (LGA) and LGAs migrated from VIP to VIP Marketplace can purchase products at a significantly discounted price.
-- Partners can now use the Retrieve Price List API to fetch real-time and 3YC pricing regardless of the country, SKUs, and currency. See [Manage price lists](../manage_pricing/index.md) for details.
+![Business Value](../image/business_value.png)
+
+Roadmap for FY2025 is depicted in the figure below:
+
+**Improtant:** This diagram is for illustrative purposes only. Formal dates and announcements will be provided later.
+
+![VIP Marketplace roadmap for FY2025](../image/roadmap_fy25.png)
