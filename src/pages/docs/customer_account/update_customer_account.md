@@ -39,90 +39,91 @@ Ensure that you are aware of the following before updating a customer account:
 
 ```json
 {
-    "externalReferenceId": "99999",
-    "globalSalesEnabled": true,
-    "linkedMembership": {
-        "type": "STANDARD",
-        "name": "This is the Group Created for 1005516130"
+  "externalReferenceId": "99999",
+  "globalSalesEnabled": true,
+  "linkedMembership": {
+    "type": "STANDARD",
+    "name": "This is the Group Created for 1005516130"
+  },
+  "companyProfile": {
+    "companyName": "Fairmont",
+    "preferredLanguage": "en-US",
+    "marketSegment": "COM",
+    "address": {
+      "country": "US",
+      "region": "CA",
+      "city": "San Jose",
+      "addressLine1": "200 Fairmont Ave",
+      "addressLine2": "Apt 123",
+      "postalCode": "95110-1234",
+      "phoneNumber": "800-123-4567"
     },
-    "companyProfile": {
-        "companyName": "Fairmont",
-        "preferredLanguage": "en-US",
-        "marketSegment": "COM",
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "San Jose",
-            "addressLine1": "200 Fairmont Ave",
-            "addressLine2": "Apt 123",
-            "postalCode": "95110-1234",
-            "phoneNumber": "800-123-4567"
-        },
-        "contacts": [
-            {
-                "firstName": "Mickey",
-                "lastName": "Mouse",
-                "email": "mickey@mouse.com",
-                "phoneNumber": "408-123-4567"
-            }
-        ]
-    }
+    "contacts": [
+      {
+        "firstName": "Mickey",
+        "lastName": "Mouse",
+        "email": "mickey@mouse.com",
+        "phoneNumber": "408-123-4567"
+      }
+    ]
+  }
+}
 ```
 
 ## Response body
 
 ```json
 {
-    "externalReferenceId": "342""customerId": "9876543210",
-    "resellerId": "5556667778",
-    "globalSalesEnabled": false,
-    "companyProfile": {
-        "companyName": "Fairmont",
-        "preferredLanguage": "en-US",
-        "marketSegment": "EDU",
-        "marketSubSegments": [“K_12”
-        ],
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "San Jose",
-            "addressLine1": "200 Fairmont Ave",
-            "addressLine2": "Apt 123",
-            "postalCode": "95110-1234",
-            "phoneNumber": "800-123-4567"
-        },
-        "contacts": [
-            {
-                "firstName": "Mickey",
-                "lastName": "Mouse",
-                "email": "mickey@mouse.com",
-                "phoneNumber": "408-123-4567"
-            }
-        ]
+  "externalReferenceId": "342",
+  "customerId": "9876543210",
+  "resellerId": "5556667778",
+  "globalSalesEnabled": false,
+  "companyProfile": {
+    "companyName": "Fairmont",
+    "preferredLanguage": "en-US",
+    "marketSegment": "EDU",
+    "marketSubSegments": ["K_12"],
+    "address": {
+      "country": "US",
+      "region": "CA",
+      "city": "San Jose",
+      "addressLine1": "200 Fairmont Ave",
+      "addressLine2": "Apt 123",
+      "postalCode": "95110-1234",
+      "phoneNumber": "800-123-4567"
     },
-    "discounts": [
-        {
-            "offerType": "LICENSE",
-            "level": "02",
-        }
-    ],
-    "cotermDate": "2020-05-02",
-    "creationDate": "2019-05-02T22:49:52Z",
-    "status": "1000",
-    "linkedMembership": {
-        "id": "51001315",
-        "name": "This is the Group Created for 1005513636",
-        "type": "STANDARD",
-        "linkedMembershipType": "OWNER",
-        "creationDate": "2024-07-17T03:47:35"
-    },
-    "links": {
-        "self": {
-            "uri": "/v3/customers/9876543210",
-            "method": "GET",
-            "headers": []
-        }
+    "contacts": [
+      {
+        "firstName": "Mickey",
+        "lastName": "Mouse",
+        "email": "mickey@mouse.com",
+        "phoneNumber": "408-123-4567"
+      }
+    ]
+  },
+  "discounts": [
+    {
+      "offerType": "LICENSE",
+      "level": "02"
     }
+  ],
+  "cotermDate": "2020-05-02",
+  "creationDate": "2019-05-02T22:49:52Z",
+  "status": "1000",
+  "linkedMembership": {
+    "id": "51001315",
+    "name": "This is the Group Created for 1005513636",
+    "type": "STANDARD",
+    "linkedMembershipType": "OWNER",
+    "creationDate": "2024-07-17T03:47:35"
+  },
+  "links": {
+    "self": {
+      "uri": "/v3/customers/9876543210",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 
@@ -131,7 +132,7 @@ Ensure that you are aware of the following before updating a customer account:
 ## HTTP status codes
 
 | Status code | Description                  |
-|-------------|------------------------------|
+| ----------- | ---------------------------- |
 | 200         | Account successfully updated |
 | 400         | Bad request                  |
 | 401         | Invalid Authorization token  |

@@ -34,83 +34,78 @@ Reseller resource without read-only fields:
 
 ```json
 {
-    "distributorId": "345434543",
-    "externalReferenceId": "888",
-    "companyProfile": {
-        "companyName": "Fairmont",
-        "preferredLanguage": "en-US",
-        "marketSegments": [
-            "COM",
-            "EDU"
-        ],
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "San Jose",
-            "addressLine1": "200 Fairmont Ave",
-            "addressLine2": "Apt 123",
-            "postalCode": "95110-1234",
-            "phoneNumber": "800-123-4567"
-        },
-        "contacts": [
-            {
-                "firstName": "Mickey",
-                "lastName": "Mouse",
-                "email": "mickey@mouse.com",
-                "phoneNumber": "408-123-4567"
-            }
-        ]
-    }
+  "distributorId": "345434543",
+  "externalReferenceId": "888",
+  "companyProfile": {
+    "companyName": "Fairmont",
+    "preferredLanguage": "en-US",
+    "marketSegments": ["COM", "EDU"],
+    "address": {
+      "country": "US",
+      "region": "CA",
+      "city": "San Jose",
+      "addressLine1": "200 Fairmont Ave",
+      "addressLine2": "Apt 123",
+      "postalCode": "95110-1234",
+      "phoneNumber": "800-123-4567"
+    },
+    "contacts": [
+      {
+        "firstName": "Mickey",
+        "lastName": "Mouse",
+        "email": "mickey@mouse.com",
+        "phoneNumber": "408-123-4567"
+      }
+    ]
+  }
+}
 ```
 
 ## Response body
 
 ```json
 {
-    "distributorId": "345434543",
-    "externalReferenceId": "888",
-    "resellerId": "5556667778",
-    "companyProfile": {
-        "companyName": "Fairmont",
-        "preferredLanguage": "en-US",
-        "marketSegments": [
-            "COM",
-            "EDU"
-        ],
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "San Jose",
-            "addressLine1": "200 Fairmont Ave",
-            "addressLine2": "Apt 123",
-            "postalCode": "95110-1234",
-            "phoneNumber": "800-123-4567"
-        },
-        "contacts": [
-            {
-                "firstName": "Mickey",
-                "lastName": "Mouse",
-                "email": "mickey@mouse.com",
-                "phoneNumber": "408-123-4567"
-            }
-        ]
+  "distributorId": "345434543",
+  "externalReferenceId": "888",
+  "resellerId": "5556667778",
+  "companyProfile": {
+    "companyName": "Fairmont",
+    "preferredLanguage": "en-US",
+    "marketSegments": ["COM", "EDU"],
+    "address": {
+      "country": "US",
+      "region": "CA",
+      "city": "San Jose",
+      "addressLine1": "200 Fairmont Ave",
+      "addressLine2": "Apt 123",
+      "postalCode": "95110-1234",
+      "phoneNumber": "800-123-4567"
     },
-    "creationDate": "2019-05-02T22:49:52Z",
-    "status": "1000",
-    "links": {
-        "self": {
-            "uri": "/v3/resellers/5556667778",
-            "method": "GET",
-            "headers": []
-        }
+    "contacts": [
+      {
+        "firstName": "Mickey",
+        "lastName": "Mouse",
+        "email": "mickey@mouse.com",
+        "phoneNumber": "408-123-4567"
+      }
+    ]
+  },
+  "creationDate": "2019-05-02T22:49:52Z",
+  "status": "1000",
+  "links": {
+    "self": {
+      "uri": "/v3/resellers/5556667778",
+      "method": "GET",
+      "headers": []
     }
+  }
 }
 ```
 
 ### HTTP status codes
 
 | Status code | Description                               |
-|-------------|-------------------------------------------|
+| ----------- | ----------------------------------------- |
 | 201         | Reseller account is successfully created. |
 | 400         | Bad request                               |
 | 401         | Invalid Authorization token               |

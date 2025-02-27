@@ -21,13 +21,11 @@ None.
 
 ```json
 {
-    "totalCount": 2,
-    "items": [
-        { Subscription resource
-        },
-        { Subscription resource
-        }
-    ]
+  "totalCount": 2,
+  "items": [
+    { Subscription resource },
+    { Subscription resource }
+  ]
 }
 ```
 
@@ -35,38 +33,38 @@ Example:
 
 ```json
 {
-   "totalCount": 1,
-   "items": [
-       {
-           "subscriptionId": "43b889db7b4e7aa2d42b54b9813eebNA",
-           "offerId": "65322651CA01A12",
-           "currentQuantity": 10,
-           "usedQuantity": 4,
-           "autoRenewal": {
-               "enabled": true,
-               "renewalQuantity": 10,
-               "renewalCode": "MOQ_100"
-           },
-           "creationDate": "2024-10-23T10:23:11Z",
-           "renewalDate": "2025-10-23",
-           "status": "1000",
-           "currencyCode": "USD",
-           "links": {
-               "self": {
-                   "uri": "/v3/customers/D1005038400/subscriptions/43b889db7b4e7aa2d42b54b9813eebNA",
-                   "method": "GET",
-                   "headers": []
-               }
-           }
-       }
-   ],
-   "links": {
-       "self": {
-           "uri": "/v3/customers/D1005038400/subscriptions",
-           "method": "GET",
-           "headers": []
-       }
-   }
+  "totalCount": 1,
+  "items": [
+    {
+      "subscriptionId": "43b889db7b4e7aa2d42b54b9813eebNA",
+      "offerId": "65322651CA01A12",
+      "currentQuantity": 10,
+      "usedQuantity": 4,
+      "autoRenewal": {
+        "enabled": true,
+        "renewalQuantity": 10,
+        "renewalCode": "MOQ_100"
+      },
+      "creationDate": "2024-10-23T10:23:11Z",
+      "renewalDate": "2025-10-23",
+      "status": "1000",
+      "currencyCode": "USD",
+      "links": {
+        "self": {
+          "uri": "/v3/customers/D1005038400/subscriptions/43b889db7b4e7aa2d42b54b9813eebNA",
+          "method": "GET",
+          "headers": []
+        }
+      }
+    }
+  ],
+  "links": {
+    "self": {
+      "uri": "/v3/customers/D1005038400/subscriptions",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 
@@ -79,7 +77,7 @@ Example:
 ## HTTP status codes
 
 | Status code | Description                                |
-|-------------|--------------------------------------------|
+| ----------- | ------------------------------------------ |
 | 200         | Subscription details successfully returned |
 | 400         | Bad request                                |
 | 401         | Invalid Authorization token                |

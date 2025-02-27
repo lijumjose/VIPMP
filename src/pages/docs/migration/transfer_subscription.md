@@ -24,7 +24,7 @@ Use the `POST /v3/memberships/<membership-id>/transfers` API endpoint to transfe
 
 ```json
 {
-"resellerId" : "999888777"
+  "resellerId": "999888777"
 }
 ```
 
@@ -32,35 +32,35 @@ Use the `POST /v3/memberships/<membership-id>/transfers` API endpoint to transfe
 
 ```json
 {
-    "transferId": "5555luaigdfads555",
-    "customerId": "",
-    "membershipId": "12345678",
-    "resellerId": "999888777",
-    "creationDate": "2019-12-10T22:49:55Z",
-    "status": "1002",
-    "lineItems": [
-        {
-            "lineItemNumber": 1,
-            "offerId": "12345678CA01A12",
-            "currencyCode": "USD",
-            "quantity": 10,
-            "subscriptionId": ""
-        }
-    ],
-    "links": {
-        "self": {
-            "uri": "/v3/memberships/12345678/transfers/5555luaigdfads555",
-            "method": "GET",
-            "headers": []
-        }
+  "transferId": "5555luaigdfads555",
+  "customerId": "",
+  "membershipId": "12345678",
+  "resellerId": "999888777",
+  "creationDate": "2019-12-10T22:49:55Z",
+  "status": "1002",
+  "lineItems": [
+    {
+      "lineItemNumber": 1,
+      "offerId": "12345678CA01A12",
+      "currencyCode": "USD",
+      "quantity": 10,
+      "subscriptionId": ""
     }
+  ],
+  "links": {
+    "self": {
+      "uri": "/v3/memberships/12345678/transfers/5555luaigdfads555",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 
 ## HTTP status codes
 
 | Status code | Description                            |
-|-------------|----------------------------------------|
+| ----------- | -------------------------------------- |
 | 202         | Transfer request received or initiated |
 | 400         | Bad request                            |
 | 401         | Invalid Authorization token            |

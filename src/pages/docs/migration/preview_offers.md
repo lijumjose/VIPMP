@@ -26,7 +26,7 @@ Ensure that you are aware of the following before fetching the offer details:
 ## Query parameters
 
 | Parameter           | Values        | Default | Description                                                                         |
-|---------------------|---------------|---------|-------------------------------------------------------------------------------------|
+| ------------------- | ------------- | ------- | ----------------------------------------------------------------------------------- |
 | ignore-order-return | true or false | false   | If true, customers with returnable purchases will be eligible for transfer.         |
 | expire-open-pas     | true or false | false   | If true, customers with open Purchase Authorizations will be eligible for transfer. |
 
@@ -38,55 +38,55 @@ None.
 
 ```json
 {
-    "totalCount": 1,
-    "items": [
-        {
-            "offerId": "12345678CA01A12", // Offer ID for marketplace to use 
-            "currencyCode" : "USD",
-            "quantity": 10
-    "renewalDate": "2020-06-08"
-        }
-    ],
-    "benefits": [
-        {
-            "type": "THREE_YEAR_COMMIT",
-            "commitment": {
-                "startDate": "2024-05-14",
-                "endDate": "2027-04-11",
-                "status": "ACTIVE",
-                "minimumQuantities": [
-                    {
-                        "offerType": "LICENSE",
-                        "quantity": 11
-                    }
-                ]
-            },
-            "commitmentRequest": {
-                "startDate": "2027-04-12",
-                "endDate": "2030-04-11",
-                "status": "ACCEPTED",
-                "minimumQuantities": [
-                    {
-                        "offerType": "LICENSE",
-                        "quantity": 11
-                    }
-                ]
-            },
-        }
-    ],
-    "discounts": [
-        {
-            "level": "12",
-            "offerType": "3YC"
-        }
-    ]
+  "totalCount": 1,
+  "items": [
+    {
+      "offerId": "12345678CA01A12", // Offer ID for marketplace to use
+      "currencyCode": "USD",
+      "quantity": 10,
+      "renewalDate": "2020-06-08"
+    }
+  ],
+  "benefits": [
+    {
+      "type": "THREE_YEAR_COMMIT",
+      "commitment": {
+        "startDate": "2024-05-14",
+        "endDate": "2027-04-11",
+        "status": "ACTIVE",
+        "minimumQuantities": [
+          {
+            "offerType": "LICENSE",
+            "quantity": 11
+          }
+        ]
+      },
+      "commitmentRequest": {
+        "startDate": "2027-04-12",
+        "endDate": "2030-04-11",
+        "status": "ACCEPTED",
+        "minimumQuantities": [
+          {
+            "offerType": "LICENSE",
+            "quantity": 11
+          }
+        ]
+      }
+    }
+  ],
+  "discounts": [
+    {
+      "level": "12",
+      "offerType": "3YC"
+    }
+  ]
 }
 ```
 
 ## HTTP status codes
 
 | Status code | Description                 |
-|-------------|-----------------------------|
+| ----------- | --------------------------- |
 | 200         | Preview returned            |
 | 400         | Bad request                 |
 | 401         | Invalid Authorization token |

@@ -8,9 +8,9 @@ You can manage the auto-renewal preferences for each subscription independently 
 
 ```json
 "autoRenewal": {
-    "enabled": true,
-    "renewalQuantity": 7
-} 
+  "enabled": true,
+  "renewalQuantity": 7
+}
 ```
 
 You can update these preferences through the [Update Subscription](./update_subscription.md) endpoint.

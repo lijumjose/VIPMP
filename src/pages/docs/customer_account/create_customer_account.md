@@ -40,30 +40,30 @@ Customer resource without read-only fields:
 
 ```json
 {
-    "resellerId": "5556667778",
-    "externalReferenceId": "342",
-    "companyProfile": {
-        "companyName": "Fairmont",
-        "preferredLanguage": "en-US",
-        "marketSegment": "EDU",
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "San Jose",
-            "addressLine1": "200 Fairmont Ave",
-            "addressLine2": "Apt 123",
-            "postalCode": "95110-1234",
-            "phoneNumber": "800-123-4567"
-        },
-        "contacts": [
-            {
-                "firstName": "Donald",
-                "lastName": "Duck",
-                "email": "donald@duck.com",
-                "phoneNumber": "408-123-4567"
-            }
-        ]
-    }
+  "resellerId": "5556667778",
+  "externalReferenceId": "342",
+  "companyProfile": {
+    "companyName": "Fairmont",
+    "preferredLanguage": "en-US",
+    "marketSegment": "EDU",
+    "address": {
+      "country": "US",
+      "region": "CA",
+      "city": "San Jose",
+      "addressLine1": "200 Fairmont Ave",
+      "addressLine2": "Apt 123",
+      "postalCode": "95110-1234",
+      "phoneNumber": "800-123-4567"
+    },
+    "contacts": [
+      {
+        "firstName": "Donald",
+        "lastName": "Duck",
+        "email": "donald@duck.com",
+        "phoneNumber": "408-123-4567"
+      }
+    ]
+  }
 }
 ```
 
@@ -71,55 +71,55 @@ Customer resource without read-only fields:
 
 ```json
 {
-    "externalReferenceId": "342",
-    "customerId": "9876543210",
-    "resellerId": "5556667778",
-    "globalSalesEnabled": false,
-    "companyProfile": {
-        "companyName": "Fairmont",
-        "preferredLanguage": "en-US",
-        "marketSegment": "EDU",
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "San Jose",
-            "addressLine1": "200 Fairmont Ave",
-            "addressLine2": "Apt 123",
-            "postalCode": "95110-1234",
-            "phoneNumber": "800-123-4567"
-        },
-        "contacts": [
-            {
-                "firstName": "Donald",
-                "lastName": "Duck",
-                "email": "donald@duck.com",
-                "phoneNumber": "408-123-4567"
-            }
-        ]
+  "externalReferenceId": "342",
+  "customerId": "9876543210",
+  "resellerId": "5556667778",
+  "globalSalesEnabled": false,
+  "companyProfile": {
+    "companyName": "Fairmont",
+    "preferredLanguage": "en-US",
+    "marketSegment": "EDU",
+    "address": {
+      "country": "US",
+      "region": "CA",
+      "city": "San Jose",
+      "addressLine1": "200 Fairmont Ave",
+      "addressLine2": "Apt 123",
+      "postalCode": "95110-1234",
+      "phoneNumber": "800-123-4567"
     },
-    "discounts": [
-        {
-            "offerType": "LICENSE",
-            "level": "02",
-        }
-    ],
-    "cotermDate": "",
-    "creationDate": "2019-05-02T22:49:52Z",
-    "status": "1002",
-    "links": {
-        "self": {
-            "uri": "/v3/customers/9876543210",
-            "method": "GET",
-            "headers": []
-        }
+    "contacts": [
+      {
+        "firstName": "Donald",
+        "lastName": "Duck",
+        "email": "donald@duck.com",
+        "phoneNumber": "408-123-4567"
+      }
+    ]
+  },
+  "discounts": [
+    {
+      "offerType": "LICENSE",
+      "level": "02"
     }
+  ],
+  "cotermDate": "",
+  "creationDate": "2019-05-02T22:49:52Z",
+  "status": "1002",
+  "links": {
+    "self": {
+      "uri": "/v3/customers/9876543210",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 
 ### HTTP status codes
 
 | Status code | Description                 |
-|-------------|-----------------------------|
+| ----------- | --------------------------- |
 | 201         | Customer account created    |
 | 400         | Bad request                 |
 | 401         | Invalid Authorization token |
