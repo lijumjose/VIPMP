@@ -23,11 +23,12 @@ Any Commerce Partner API status response with a 4xx or 5xx HTTP status code incl
 
 ```json
 {
-    "code": "1117",
-    "message": "Some Fields are Invalid""additionalDetails": [
-        "companyProfile.companyName",
-        "companyProfile.contacts[0].firstName"
-    ]
+  "code": "1117",
+  "message": "Some Fields are Invalid",
+  "additionalDetails": [
+    "companyProfile.companyName",
+    "companyProfile.contacts[0].firstName"
+  ]
 }
 ```
 

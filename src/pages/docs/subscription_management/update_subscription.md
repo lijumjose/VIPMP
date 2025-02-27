@@ -40,10 +40,10 @@ Ensure that you are aware of the following before updating the auto-renewal conf
 
 ```json
 {
-    "autoRenewal": {
-        "enabled": true,
-        "renewalQuantity": 7
-    }
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 7
+  }
 }
 ```
 
@@ -58,7 +58,7 @@ Ensure that you are aware of the following before updating the auto-renewal conf
 ## HTTP status codes
 
 | Status code | Description                         |
-|-------------|-------------------------------------|
+| ----------- | ----------------------------------- |
 | 200         | AutoRenewal updated                 |
 | 400         | Bad request                         |
 | 401         | Invalid Authorization token         |

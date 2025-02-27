@@ -46,37 +46,37 @@ Sample request:
 
 ```json
 {
-    "companyProfile": {
-        "companyName": "Fairmont",
-        "preferredLanguage": "en-US",
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "San Jose",
-            "addressLine1": "200 Fairmont Ave",
-            "addressLine2": "Apt 123",
-            "postalCode": "95110-1234",
-            "phoneNumber": "800-123-4567"
-        },
-        "contacts": []
+  "companyProfile": {
+    "companyName": "Fairmont",
+    "preferredLanguage": "en-US",
+    "address": {
+      "country": "US",
+      "region": "CA",
+      "city": "San Jose",
+      "addressLine1": "200 Fairmont Ave",
+      "addressLine2": "Apt 123",
+      "postalCode": "95110-1234",
+      "phoneNumber": "800-123-4567"
     },
-    "benefits": [
-        {
-            "type": "THREE_YEAR_COMMIT",
-            "commitmentRequest": {
-                "minimumQuantities": [
-                    {
-                        "offerType": "LICENSE",
-                        "quantity": 10
-                    },
-                    {
-                        "offerType": "CONSUMABLES",
-                        "quantity": 1000
-                    }
-                ]
-            }
-        }
-    ]
+    "contacts": []
+  },
+  "benefits": [
+    {
+      "type": "THREE_YEAR_COMMIT",
+      "commitmentRequest": {
+        "minimumQuantities": [
+          {
+            "offerType": "LICENSE",
+            "quantity": 10
+          },
+          {
+            "offerType": "CONSUMABLES",
+            "quantity": 1000
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
 
@@ -96,37 +96,37 @@ Sample request:
 
 ```json
 {
-    "companyProfile": {
-        "companyName": "Fairmont",
-        "preferredLanguage": "en-US",
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "San Jose",
-            "addressLine1": "200 Fairmont Ave",
-            "addressLine2": "Apt 123",
-            "postalCode": "95110-1234",
-            "phoneNumber": "800-123-4567"
-        },
-        "contacts": []
+  "companyProfile": {
+    "companyName": "Fairmont",
+    "preferredLanguage": "en-US",
+    "address": {
+      "country": "US",
+      "region": "CA",
+      "city": "San Jose",
+      "addressLine1": "200 Fairmont Ave",
+      "addressLine2": "Apt 123",
+      "postalCode": "95110-1234",
+      "phoneNumber": "800-123-4567"
     },
-    "benefits": [
-        {
-            "type": "THREE_YEAR_COMMIT",
-            "recommitmentRequest": {
-                "minimumQuantities": [
-                    {
-                        "offerType": "LICENSE",
-                        "quantity": 10
-                    },
-                    {
-                        "offerType": "CONSUMABLES",
-                        "quantity": 1000
-                    }
-                ]
-            }
-        }
-    ]
+    "contacts": []
+  },
+  "benefits": [
+    {
+      "type": "THREE_YEAR_COMMIT",
+      "recommitmentRequest": {
+        "minimumQuantities": [
+          {
+            "offerType": "LICENSE",
+            "quantity": 10
+          },
+          {
+            "offerType": "CONSUMABLES",
+            "quantity": 1000
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
 
@@ -137,28 +137,28 @@ The diagram below shows the lifecycle of the commitmentRequest object. The same 
 ![3YC flow diagram](../image/3yc_flow_diagram.jpg)
 
 ```json
-"benefits": [
+{
+  "benefits": [
     {
-        "type": "THREE_YEAR_COMMIT",
-        "commitment": {...
-        },
-        "commitmentRequest": {
-            "startDate": "2022-07-17",
-            "endDate": "2025-04-28",
-            "status": "REQUESTED",
-            "minimumQuantities": [
-                {
-                    "offerType": "LICENSE",
-                    "quantity": 10
-                },
-                {
-                    "offerType": "CONSUMABLES",
-                    "quantity": 1000
-                }
-            ]
-        },
-        "recommitmentRequest": {...
-        }
+      "type": "THREE_YEAR_COMMIT",
+      "commitment": { ... },
+      "commitmentRequest": {
+        "startDate": "2022-07-17",
+        "endDate": "2025-04-28",
+        "status": "REQUESTED",
+        "minimumQuantities": [
+          {
+            "offerType": "LICENSE",
+            "quantity": 10
+          },
+          {
+            "offerType": "CONSUMABLES",
+            "quantity": 1000
+          }
+        ]
+      },
+      "recommitmentRequest": { ... }
     }
-]
+  ]
+}
 ```
