@@ -30,7 +30,7 @@ module.exports = {
             path: '/docs/release_notes/index.md'
           },
           {
-            title: 'VIP Marketplace roadmap',
+            title: 'Upcoming releases',
             description: '',
             path: '/docs/release_notes/upcoming_releases.md'
           },

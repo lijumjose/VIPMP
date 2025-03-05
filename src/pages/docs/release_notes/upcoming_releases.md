@@ -1,11 +1,5 @@
-# VIP Marketplace roadmap
+# Upcoming releases
 
-Adobe is committed to enhancing marketplace capabilities to deliver greater value to both partners and customers. Below is a list of key features planned for 2025:
+The following feature will be released next:
 
-![Business Value](../image/business_value.png)
-
-Roadmap for FY2025 is depicted in the figure below:
-
-**Improtant:** This diagram is for illustrative purposes only. Formal dates and announcements will be provided later.
-
-![VIP Marketplace roadmap for FY2025](../image/roadmap_fy25.png)
+- New Large Government Agencies (LGA) and LGAs migrated from VIP to VIP Marketplace can purchase products at a significantly discounted price. For more details, refer to [Adobe CPAPI Documentation for Managing Large Government Agencies (LGA)](https://adobe.sharepoint.com/:b:/r/sites/VIPMarketplacePartners/PreRelease%20Materials/Technical%20Assets/Developer%20Documentation/LGA%20documentation_v1.0.pdf?csf=1&web=1&e=u2lyz5).
