@@ -25,21 +25,20 @@ The `POST /v1/pricelist` API retrieves the price list information from the Runti
 
 ```json
 {
-    "region": "AP",
-    "partnerType": "ALC",
-    "marketSegment": "COM",
-    "currency": "AUD",
-    "priceListMonth": "202406",
-    "discountType": "STANDARD",
-    "filters": 
-    {
+  "region": "AP",
+  "partnerType": "ALC",
+  "marketSegment": "COM",
+  "currency": "AUD",
+  "priceListMonth": "202406",
+  "discountType": "STANDARD",
+  "filters": {
     "productFamily": "string",
     "sku": "string",
     "partNumber": "string",
     "firstOrderDate": "string",
     "lastOrderDate": "string",
     "discountCode": "string"
-    }
+  }
 }
 ```
 
@@ -47,64 +46,56 @@ The `POST /v1/pricelist` API retrieves the price list information from the Runti
 
 ```json
 {
-    "priceListMonth": "202406",
-    "marketSegment": "COM",
-    "region": "NA",
-    "currency": "USD",
-    "partnerType": "ALC",
-    "discountType": "STANDARD",
-    "totalItemCount": "100",
-    "products": 
-
-        [
-
-          {
-
-           "sku": "65322650",
-           "productFamily": "Cloud Services",
-           "productType": "Subscription",
-           "productTypeDetail": "1y, monthly, indirect",
-           "additionalDetail": "some notes",
-           "operatingSystem": "Windows",
-           "language": "EU English",
-           "version": "ALL",
-           "users": "1 User",
-           "metric": "USER",
-           "bridge": "blank",
-           "upcEanCode": "123456789012",
-          "gtinCode": "987654321098",
-           "prices": 
-
-               [
-
-                {
-                    "partNumber": "65322650CA12A12",
-                    "acdIndicator": "ADD",
-                    "acdEffectiveDate": "'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
-                    "levelDetails": "Level 1 1 - 9",
-                    "firstOrderDate": "'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
-                    "lastOrderDate": "'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
-                    "partnerPrice": "18.99",
-                    "estimatedStreetPrice": "22.99",
-                    "discountCode": "HVD_L17_PRE",
-                    "estimatedShipDate": "'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
-                    "publicAnnounceDate": "'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
-                    "rmaRequestDeadline": "'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
-                    "acdDescription": "New Part Number",
-                    "pool": "Application",
-                    "duration": "12 Months"
-                }
-            ]
+  "priceListMonth": "202406",
+  "marketSegment": "COM",
+  "region": "NA",
+  "currency": "USD",
+  "partnerType": "ALC",
+  "discountType": "STANDARD",
+  "totalItemCount": "100",
+  "products": [
+    {
+      "sku": "65322650",
+      "productFamily": "Cloud Services",
+      "productType": "Subscription",
+      "productTypeDetail": "1y, monthly, indirect",
+      "additionalDetail": "some notes",
+      "operatingSystem": "Windows",
+      "language": "EU English",
+      "version": "ALL",
+      "users": "1 User",
+      "metric": "USER",
+      "bridge": "blank",
+      "upcEanCode": "123456789012",
+      "gtinCode": "987654321098",
+      "prices": [
+        {
+          "partNumber": "65322650CA12A12",
+          "acdIndicator": "ADD",
+          "acdEffectiveDate": "'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "levelDetails": "Level 1 1 - 9",
+          "firstOrderDate": "'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "lastOrderDate": "'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "partnerPrice": "18.99",
+          "estimatedStreetPrice": "22.99",
+          "discountCode": "HVD_L17_PRE",
+          "estimatedShipDate": "'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "publicAnnounceDate": "'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "rmaRequestDeadline": "'yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "acdDescription": "New Part Number",
+          "pool": "Application",
+          "duration": "12 Months"
         }
-    ]
-
+      ]
+    }
+  ]
 }
 ```
 
 ## HTTP status codes
 
 | Status code | Description                                       |
-|-------------|---------------------------------------------------|
+| ----------- | ------------------------------------------------- |
 | 200         | Successfully retrieved the price list.            |
 | 400         | Bad request                                       |
 | 401         | Invalid Authorization token                       |
@@ -115,4 +106,4 @@ The `POST /v1/pricelist` API retrieves the price list information from the Runti
 
 The `filters` property in the `PriceListRequest` schema allows you to narrow down the price list based on certain criteria. All filter fields work as AND operations, meaning if multiple filters are passed together, the result will be a combination that matches all those filters. Null or empty values will be ignored for the filters.
 
-Examples of filters that can be used in the API request include filtering by region (example:  AP, NA), currency (example: USD, EUR), product type (example: Photoshop), and discount codes (example:  `standard`, `3YC`).
+Examples of filters that can be used in the API request include filtering by region (example: AP, NA), currency (example: USD, EUR), product type (example: Photoshop), and discount codes (example: `standard`, `3YC`).

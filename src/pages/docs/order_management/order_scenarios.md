@@ -23,18 +23,18 @@ This section lists the sample requests and responses of an order with `orderType
 
 ```json
 {
-    "orderType": "NEW",
-    "externalReferenceId": "759",
-    "currencyCode": "USD",
-    "lineItems": [
-        {
-            "extLineItemNumber": 4,
-            "offerId": "80004567EA01A12",
-            "quantity": 1,
-            "currencyCode": "USD",
-            "deploymentId": "12345"
-        }
-    ]
+  "orderType": "NEW",
+  "externalReferenceId": "759",
+  "currencyCode": "USD",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "currencyCode": "USD",
+      "deploymentId": "12345"
+    }
+  ]
 }
 ```
 
@@ -42,27 +42,26 @@ This section lists the sample requests and responses of an order with `orderType
 
 ```json
 {
-    "referenceOrderId": "",
-    "orderType": "NEW",
-    "externalReferenceId": "759",
-    "customerId": "9876543210",
-    "orderId": "5120008001",
-    "currencyCode": "USD",
-    "creationDate": "2019-05-02T22:49:54Z",
-    "status": "1002",
-    "lineItems": [
-        {
-            "extLineItemNumber": 4,
-            "offerId": "80004567EA01A12",
-            "quantity": 1,
-            "status": "1002",
-            "subscriptionId": "",
-            "currencyCode": "USD",
-            "deploymentId": "12345"
-        }
-    ],
-    "links": {...
+  "referenceOrderId": "",
+  "orderType": "NEW",
+  "externalReferenceId": "759",
+  "customerId": "9876543210",
+  "orderId": "5120008001",
+  "currencyCode": "USD",
+  "creationDate": "2019-05-02T22:49:54Z",
+  "status": "1002",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "status": "1002",
+      "subscriptionId": "",
+      "currencyCode": "USD",
+      "deploymentId": "12345"
     }
+  ],
+  "links": { ... }
 }
 ```
 
@@ -84,19 +83,19 @@ This section lists the sample requests and responses of an order with `orderType
 
 ```json
 {
-    "referenceOrderId": "0123456789",
-    "orderType": "RETURN",
-    "externalReferenceId": "759",
-    "currencyCode": "USD",
-    "lineItems": [
-        {
-            "extLineItemNumber": 4,
-            "offerId": "80004567EA01A12",
-            "quantity": 1,
-            "currencyCode": "USD",
-            "deploymentId": "12345"
-        }
-    ]
+  "referenceOrderId": "0123456789",
+  "orderType": "RETURN",
+  "externalReferenceId": "759",
+  "currencyCode": "USD",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "currencyCode": "USD",
+      "deploymentId": "12345"
+    }
+  ]
 }
 ```
 
@@ -104,27 +103,26 @@ This section lists the sample requests and responses of an order with `orderType
 
 ```json
 {
-    "referenceOrderId": "0123456789",
-    "orderType": "RETURN",
-    "externalReferenceId": "759",
-    "orderId": "911000833",
-    "customerId": "9876543210",
-    "currencyCode": "USD",
-    "creationDate": "2019-05-02T22:49:54Z",
-    "status": "1002",
-    "lineItems": [
-        {
-            "extLineItemNumber": 4,
-            "offerId": "80004567EA01A12",
-            "quantity": 1,
-            "subscriptionId": "",
-            "status": "1002",
-            "currencyCode": "USD",
-            "deploymentId": "12345"
-        }
-    ],
-    "links": {...
+  "referenceOrderId": "0123456789",
+  "orderType": "RETURN",
+  "externalReferenceId": "759",
+  "orderId": "911000833",
+  "customerId": "9876543210",
+  "currencyCode": "USD",
+  "creationDate": "2019-05-02T22:49:54Z",
+  "status": "1002",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "subscriptionId": "",
+      "status": "1002",
+      "currencyCode": "USD",
+      "deploymentId": "12345"
     }
+  ],
+  "links": { ... }
 }
 ```
 
@@ -145,19 +143,19 @@ This section lists the sample requests and responses of an order with `orderType
 
 ```json
 {
-    "orderType": "PREVIEW",
-    "externalReferenceId": "759",
-    "currencyCode": "USD",
-    "lineItems": [
-        {
-            "extLineItemNumber": 4,
-            "offerId": "80004567EA01A12",
-            "quantity": 1,
-            "currencyCode": "USD",
-            "deploymentId": "12345",
-            "discountCode": "HVD_L18_PRE”
-        }
-    ]
+  "orderType": "PREVIEW",
+  "externalReferenceId": "759",
+  "currencyCode": "USD",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "currencyCode": "USD",
+      "deploymentId": "12345",
+      "discountCode": "HVD_L18_PRE"
+    }
+  ]
 }
 ```
 
@@ -165,25 +163,26 @@ This section lists the sample requests and responses of an order with `orderType
 
 ```json
 {
-    "referenceOrderId": "",
-    "orderType": "PREVIEW",
-    "externalReferenceId": "759",
-    "orderId": "",
-    "customerId": "9876543210",
-    "currencyCode": "USD",
-    "creationDate": "2019-05-02T22:49:54Z",
-    "status": """lineItems": [
-        {
-            "extLineItemNumber": 4,
-            "offerId": "80004567EA01A12",
-            "quantity": 1,
-            "subscriptionId": "",
-            "status": "",
-            "currencyCode": "USD",
-            "deploymentId": "12345",
-            "discountCode": "HVD_L18_PRE”,
-        }
-    ]
+  "referenceOrderId": "",
+  "orderType": "PREVIEW",
+  "externalReferenceId": "759",
+  "orderId": "",
+  "customerId": "9876543210",
+  "currencyCode": "USD",
+  "creationDate": "2019-05-02T22:49:54Z",
+  "status": "",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "subscriptionId": "",
+      "status": "",
+      "currencyCode": "USD",
+      "deploymentId": "12345",
+      "discountCode": "HVD_L18_PRE"
+    }
+  ]
 }
 ```
 
@@ -194,7 +193,7 @@ This section lists the sample requests and responses of an order with `orderType
 - No `orderId`, `status`, and `links` in the request.
 - In case of no `lineItems` in the request, the response indicates what would be in the RENEWAL order based on the auto-renewal preferences (`autoRenewal.enabled` and `autoRenewal.renewalQuantity`) on the customer’s subscriptions.
 - In case of `lineItems` in the request, the response indicates the RENEWAL order initiated after anniversary date for the selected line items.
-- If the customer does not have any subscriptions with autoRenewal enabled, then an error is  returned.
+- If the customer does not have any subscriptions with autoRenewal enabled, then an error is returned.
 - Returns the best available offer IDs for the renewal order.
 - The `eligibleOffers` section lists the High Growth Offers available for the customer. Read more about the [High Growth Offers](../customer_account/high_growth.md).
 - The `discountCode` indicates the discount code applicable to the HVD customers migrating from VIP to VIP Marketplace. This parameter does not apply to non-HVD customers.
@@ -203,7 +202,7 @@ This section lists the sample requests and responses of an order with `orderType
 
 ```json
 {
-    "orderType": "PREVIEW_RENEWAL"
+  "orderType": "PREVIEW_RENEWAL"
 }
 ```
 
@@ -211,14 +210,15 @@ OR
 
 ```json
 {
-    "orderType": "PREVIEW_RENEWAL""lineItems": [
-        {
-            "extLineItemNumber": 1,
-            "offerId": "80004567EA01A12",
-            "discountCode": “HVD_L18_PRE”,
-            "subscriptionId": " e0b170437c4e96ac5428364f674dffNA"
-        }
-    ]
+  "orderType": "PREVIEW_RENEWAL",
+  "lineItems": [
+    {
+      "extLineItemNumber": 1,
+      "offerId": "80004567EA01A12",
+      "discountCode": "HVD_L18_PRE",
+      "subscriptionId": " e0b170437c4e96ac5428364f674dffNA"
+    }
+  ]
 }
 ```
 
@@ -226,59 +226,55 @@ OR
 
 ```json
 {
-    "referenceOrderId": "",
-    "orderType": "PREVIEW_RENEWAL",
-    "externalReferenceId": "759",
-    "orderId": "",
-    "customerId": "9876543210",
-    "currencyCode": "USD",
-    "creationDate": "2019-05-02T22:49:54Z",
-    "status": ""
-    "lineItems": [
-        {
-            "extLineItemNumber": 4,
-            "offerId": "80004567EA01A12",
-            "quantity": 1,
-            "subscriptionId": " e0b170437c4e96ac5428364f674dffNA",
-            "discountCode": “HVD_L18_PRE”,
-            "status": "",
-            "currencyCode": "USD",
-            "deploymentId": "12345"
-        }
-    ],
-      "eligibleOffers":
-    [
-      {
-        "offerId": "65324918CA14X12",
-        "renewalCode": "MOQ_100",
-        "eligibilityCriteria":
-          {
-            "minQuantity": 100,
-            "additionalCriteria": ["THREE_YEAR_COMMIT"],
-            "deploymentId": "1450043516",
-          },
-      },
-      {
-        "offerId": "65324918CA14Y12",
-        "renewalCode": "MOQ_250",
-        "eligibilityCriteria":
-          {
-            "minQuantity": 250,
-            "additionalCriteria": ["THREE_YEAR_COMMIT"],
-            "deploymentId": "1450043516",
-          },
-      },
-      {
-        "offerId": "65324918CA14Z12",
-        "renewalCode": "MOQ_500",
-        "eligibilityCriteria":
-          { 
-            "minQuantity": 500, 
-            "additionalCriteria": ["THREE_YEAR_COMMIT"]
-          },
-      },
-    ],
+  "referenceOrderId": "",
+  "orderType": "PREVIEW_RENEWAL",
+  "externalReferenceId": "759",
+  "orderId": "",
+  "customerId": "9876543210",
+  "currencyCode": "USD",
+  "creationDate": "2019-05-02T22:49:54Z",
+  "status": "",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "subscriptionId": " e0b170437c4e96ac5428364f674dffNA",
+      "discountCode": "HVD_L18_PRE",
+      "status": "",
+      "currencyCode": "USD",
+      "deploymentId": "12345"
     }
+  ],
+  "eligibleOffers": [
+    {
+      "offerId": "65324918CA14X12",
+      "renewalCode": "MOQ_100",
+      "eligibilityCriteria": {
+        "minQuantity": 100,
+        "additionalCriteria": ["THREE_YEAR_COMMIT"],
+        "deploymentId": "1450043516"
+      }
+    },
+    {
+      "offerId": "65324918CA14Y12",
+      "renewalCode": "MOQ_250",
+      "eligibilityCriteria": {
+        "minQuantity": 250,
+        "additionalCriteria": ["THREE_YEAR_COMMIT"],
+        "deploymentId": "1450043516"
+      }
+    },
+    {
+      "offerId": "65324918CA14Z12",
+      "renewalCode": "MOQ_500",
+      "eligibilityCriteria": {
+        "minQuantity": 500,
+        "additionalCriteria": ["THREE_YEAR_COMMIT"]
+      }
+    }
+  ]
+}
 ```
 
 ## Renewal orders
@@ -290,23 +286,23 @@ OR
 - The license quantities must be less than or equal to customer’s current subscription current quantities.
 - Order ID is created by this service and returned synchronously.
 - Partner Marketplaces are expected to check the status of the order for success.
-- You can select the expired subscriptions for manual renewal by using the [Get All Subscriptions for a Customer](../subscription_management/get_details_for_customers.md) API. Subscriptions that can be selected for manual renewal are indicated by the `allowedActions`": `["MANUAL_RENEWAL"]` parameter of the Get All Subscriptions of a Customer API response.  
+- You can select the expired subscriptions for manual renewal by using the [Get All Subscriptions for a Customer](../subscription_management/get_details_for_customers.md) API. Subscriptions that can be selected for manual renewal are indicated by the `allowedActions`": `["MANUAL_RENEWAL"]` parameter of the Get All Subscriptions of a Customer API response.
 
 ### Sample request
 
 ```json
 {
-    "orderType": "RENEWAL",
-    "externalReferenceId": "759",
-    "currencyCode": "USD",
-    "lineItems": [
-        {
-            "extLineItemNumber": 1,
-            "offerId": "80004567EA01A12",
-            "subscriptionId": " e0b170437c4e96ac5428364f674dffNA ",
-            "quantity": 1
-        }
-    ]
+  "orderType": "RENEWAL",
+  "externalReferenceId": "759",
+  "currencyCode": "USD",
+  "lineItems": [
+    {
+      "extLineItemNumber": 1,
+      "offerId": "80004567EA01A12",
+      "subscriptionId": " e0b170437c4e96ac5428364f674dffNA ",
+      "quantity": 1
+    }
+  ]
 }
 ```
 
@@ -314,33 +310,32 @@ OR
 
 ```json
 {
-    "referenceOrderId": "",
-    "orderType": "RENEWAL",
-    "externalReferenceId": "759",
-    "customerId": "9876543210",
-    "orderId": "5120008001",
-    "currencyCode": "USD",
-    "creationDate": "2019-05-02T22:49:54Z",
-    "status": "1002",
-    "lineItems": [
-        {
-            "extLineItemNumber": 1,
-            "offerId": "80004567EA01A12",
-            "quantity": 1,
-            "status": "1002",
-            "subscriptionId": " e0b170437c4e96ac5428364f674dffNA ",
-        }
-    ],
-    "links": {...
+  "referenceOrderId": "",
+  "orderType": "RENEWAL",
+  "externalReferenceId": "759",
+  "customerId": "9876543210",
+  "orderId": "5120008001",
+  "currencyCode": "USD",
+  "creationDate": "2019-05-02T22:49:54Z",
+  "status": "1002",
+  "lineItems": [
+    {
+      "extLineItemNumber": 1,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "status": "1002",
+      "subscriptionId": " e0b170437c4e96ac5428364f674dffNA "
     }
+  ],
+  "links": { ... }
 }
 ```
 
 ## HTTP status codes
 
 | Status code | Description                 |
-|-------------|-----------------------------|
-| 201         | Deployment created    |
+| ----------- | --------------------------- |
+| 201         | Deployment created          |
 | 400         | Bad request                 |
 | 401         | Invalid Authorization token |
 | 403         | Invalid API Key             |

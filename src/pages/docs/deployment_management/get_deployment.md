@@ -23,7 +23,7 @@ Use the `GET /v3/customers/<customer-id>/deployments` API endpoint to get detail
 ## Query parameters
 
 | param  | values       | default | description                                |
-|--------|--------------|---------|--------------------------------------------|
+| ------ | ------------ | ------- | ------------------------------------------ |
 | status | 1000 or 1004 | All     |                                            |
 | limit  | 1…100        | 25      | Page size (max number of items to return). |
 | offset | 0…N          | 0       | Where to start the page.                   |
@@ -38,42 +38,39 @@ List of Deployment resources:
 
 ```json
 {
-    "totalCount": 9,
-    "count": 3,
-    "offset": 3,
-    "limit": 3,
-    "items": [
-        { Deployment resource
-        },
-        { Deployment resource
-        },
-        { Deployment resource
-        }
-    ],
-    "links": {
-        "self": {
-            "uri": "/v3/customers/<customer-id>/deployments?offset=3&limit=3",
-            "method": "GET",
-            "headers": []
-        },
-        "next": {
-            "uri": "/v3/customers/<customer-id>/deployments?offset=6&limit=3",
-            "method": "GET",
-            "headers": []
-        },
-        "prev": {
-            "uri": "/v3/customers/<customer-id>/deployments?offset=0&limit=3",
-            "method": "GET",
-            "headers": []
-        }
+  "totalCount": 9,
+  "count": 3,
+  "offset": 3,
+  "limit": 3,
+  "items": [
+    { Deployment resource },
+    { Deployment resource },
+    { Deployment resource }
+],
+  "links": {
+    "self": {
+      "uri": "/v3/customers/<customer-id>/deployments?offset=3&limit=3",
+      "method": "GET",
+      "headers": []
+    },
+    "next": {
+      "uri": "/v3/customers/<customer-id>/deployments?offset=6&limit=3",
+      "method": "GET",
+      "headers": []
+    },
+    "prev": {
+      "uri": "/v3/customers/<customer-id>/deployments?offset=0&limit=3",
+      "method": "GET",
+      "headers": []
     }
+  }
 }
 ```
 
 ### HTTP status codes
 
 | Status code | Description                              |
-|-------------|------------------------------------------|
+| ----------- | ---------------------------------------- |
 | 200         | Deployment details successfully returned |
 | 400         | Bad request                              |
 | 401         | Invalid Authorization token              |
@@ -97,38 +94,37 @@ None.
 Deployment resource:
 
 ```json
-{ 
-    "deploymentId": "345434543", 
-    "companyProfile": { 
-        "address": { 
-            "country": "US", 
-            "region": "CA", 
-            "city": "San Jose", 
-            "addressLine1": "200 Fairmont Ave", 
-            "addressLine2": "Apt 123", 
-            "postalCode": "95110-1234", 
-            "phoneNumber": "800-123-4567" 
-        } 
-    }, 
-    "creationDate": "2019-05-02T22:49:52Z", 
-    "status": "1000", 
-    "links": { 
-        "self": 
-        { 
-            "uri": "/v3/customers/5556667778/deployments/345434543", 
-            "method": "GET", 
-            "headers": [] 
-        } 
-    } 
+{
+  "deploymentId": "345434543",
+  "companyProfile": {
+    "address": {
+      "country": "US",
+      "region": "CA",
+      "city": "San Jose",
+      "addressLine1": "200 Fairmont Ave",
+      "addressLine2": "Apt 123",
+      "postalCode": "95110-1234",
+      "phoneNumber": "800-123-4567"
+    }
+  },
+  "creationDate": "2019-05-02T22:49:52Z",
+  "status": "1000",
+  "links": {
+    "self": {
+      "uri": "/v3/customers/5556667778/deployments/345434543",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 
 ### HTTP status codes
 
 | Status code | Description                             |
-|-------------|-----------------------------------------|
+| ----------- | --------------------------------------- |
 | 200         | Deplyment details successfully returned |
 | 400         | Bad request                             |
 | 401         | Invalid Authorization token             |
 | 403         | Invalid API Key                         |
-| 404         | Invalid customer ID   or deployment ID  |
+| 404         | Invalid customer ID or deployment ID    |

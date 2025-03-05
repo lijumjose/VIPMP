@@ -9,7 +9,7 @@
 
 #### Regular expression for contact
 
-```json
+```java
 ACCOUNT_ID_REGEX = "^[\\p{L}\\d\\-]{4,40}$";
 
 COMPANY_NAME_REGEX = "^[\\p{L}\\p{N}\\_ 　,.＆&・\\'()（）\\\"\\/-]{3,250}$";

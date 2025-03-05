@@ -21,36 +21,36 @@ None.
 
 ```json
 {
-    "transferId": "5555luaigdfads555",
-    "customerId": "10008675",
-    "membershipId": "12345678",
-    "resellerId": "999888777",
-    "creationDate": "2019-12-10T22:49:55Z",
-    "status": "1000",
-    "lineItems": [
-        {
-            "lineItemNumber": 1,
-            "offerId": "12345678CA01A12",
-            "quantity": 10,
-            "subscriptionId": "8675309",
-            "currencyCode": "USD",
-            "deploymentId": "12345"
-        }
-    ],
-    "links": {
-        "self": {
-            "uri": "/v3/memberships/12345678/transfers/5555luaigdfads555",
-            "method": "GET",
-            "headers": []
-        }
+  "transferId": "5555luaigdfads555",
+  "customerId": "10008675",
+  "membershipId": "12345678",
+  "resellerId": "999888777",
+  "creationDate": "2019-12-10T22:49:55Z",
+  "status": "1000",
+  "lineItems": [
+    {
+      "lineItemNumber": 1,
+      "offerId": "12345678CA01A12",
+      "quantity": 10,
+      "subscriptionId": "8675309",
+      "currencyCode": "USD",
+      "deploymentId": "12345"
     }
+  ],
+  "links": {
+    "self": {
+      "uri": "/v3/memberships/12345678/transfers/5555luaigdfads555",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 
 ## HTTP status codes
 
 | Status code | Description                            |
-|-------------|----------------------------------------|
+| ----------- | -------------------------------------- |
 | 202         | Transfer request received or initiated |
 | 400         | Bad request                            |
 | 401         | Invalid Authorization token            |

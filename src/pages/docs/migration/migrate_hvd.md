@@ -19,7 +19,7 @@ To migrate high-volume discounts from VIP to VIP MP, the following eligibility c
 - Adobe provides a price list with partners. Each HVD Acrobat Pro subscription in the price list includes a discount code, indicating the corresponding discount level for VIP customers. For instance, if the HVD customer migrating to VIP MP is at discount level 18, the partner must offer a corresponding price that ensures the same discount post-migration. The following discount codes are available:
 
 | Discount codes for customers on pre-price actions pricing | Discount codes for customers on post-price actions pricing |
-|-----------------------------------------------------------|------------------------------------------------------------|
+| --------------------------------------------------------- | ---------------------------------------------------------- |
 | HVD_L17_PRE                                               | HVD_L17_POST                                               |
 | HVD_L18_PRE                                               | HVD_L18_POST                                               |
 | HVD_L19_PRE                                               | HVD_L19_POST                                               |
@@ -43,17 +43,15 @@ Sample response:
 
 ```json
 {
-    ...
-    "benefits": [
-        ...
-    ],
-    "discounts": [
-        {
-            "level": "14",
-            "offerType": "LICENSE",
-            "discountCode": "HVD_L18_PRE"
-        }
-    ]
+  ...
+  "benefits": [ ... ],
+  "discounts": [
+    {
+      "level": "14",
+      "offerType": "LICENSE",
+      "discountCode": "HVD_L18_PRE"
+    }
+  ]
 }
 ```
 
@@ -74,16 +72,16 @@ Use the Transfer Subscription API (`POST /v3/memberships/<membership-id>/transfe
 Partners can use the GET Customer Details API to identify migrated HVD customers distinctly to offer them special pricing for their current and upcoming 3YC terms. The migrated customer consists of newly introduced tags and `discountCode` parameters indicating the customer type and discount level.
 
 ```json
-{ 
- ... 
- "tags": ["HVD_MIGRATED_CUSTOMER"] 
- "discounts": [ 
-     { 
-       "level": "12", 
-       "offerType": "LICENSE", 
-       "discountCode": "HVD_L18_PRE" 
-  } 
- ] 
+{
+  ...
+  "tags": ["HVD_MIGRATED_CUSTOMER"],
+  "discounts": [
+    {
+      "level": "12",
+      "offerType": "LICENSE",
+      "discountCode": "HVD_L18_PRE"
+    }
+  ]
 }
 ```
 
@@ -96,74 +94,74 @@ Use the Preview Offer API (POST /v3/orders) to get the offers available to the m
 Sample request:
 
 ```json
-{  
-    "orderType" : "PREVIEW",  
-    "externalReferenceId" : "759",  
-    "currencyCode" : "USD",  
-    "lineItems" : [  
-        {  
-            "extLineItemNumber" : 4,  
-            "offerId" : "80004567EA01A12",  
-            "quantity" : 1,  
-             "currencyCode" : "USD",  
-             "deploymentId" : "12345"  
-             “discountCode": "HVD_L18_PRE”, 
-        }  
-    ]  
+{
+  "orderType": "PREVIEW",
+  "externalReferenceId": "759",
+  "currencyCode": "USD",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "currencyCode": "USD",
+      "deploymentId": "12345",
+      "discountCode": "HVD_L18_PRE"
+    }
+  ]
 }
 ```
 
 The `discountCode` can be null, correct, or wrong. Irrespective of your entry, the Preview Offer API returns the correct offer ID as shown in the following sample response:
 
 ```json
-{  
-    "referenceOrderId" : "",  
-    "orderType" : "PREVIEW",  
-    "externalReferenceId" : "759",  
-    "orderId" : "",  
-    "customerId" : "9876543210",  
-    "currencyCode" : "USD",  
-    "creationDate" : "2019-05-02T22:49:54Z",  
-    "status" : ""  
-    "lineItems" : [  
-        {  
-            "extLineItemNumber" : 4,  
-            "offerId" : "80004567EA01A12",  
-            "quantity" : 1,  
-            "subscriptionId" : "",  
-            "status" : "",  
-            "currencyCode" : "USD",  
-            "deploymentId" : "12345"  
-            “discountCode": "HVD_L18_PRE”, 
-        }  
-    ]  
+{
+  "referenceOrderId": "",
+  "orderType": "PREVIEW",
+  "externalReferenceId": "759",
+  "orderId": "",
+  "customerId": "9876543210",
+  "currencyCode": "USD",
+  "creationDate": "2019-05-02T22:49:54Z",
+  "status": "",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "subscriptionId": "",
+      "status": "",
+      "currencyCode": "USD",
+      "deploymentId": "12345",
+      "discountCode": "HVD_L18_PRE"
+    }
+  ]
 }
 ```
 
 **Note:** Refer to the [Preview Order](../order_management/create_order.md) section for the full set of response.
 
-#### 3.3 Create Order  
+#### 3.3 Create Order
 
 Use the Create Order API (`POST /v3/orders`) to create an order with the discounted price for the migrated customer based on the current discount level.
 
 Sample request:
 
 ```json
-{  
-    "orderType" : "NEW",  
-    "externalReferenceId" : "759",  
-    "currencyCode" : "USD",  
-    "lineItems" : [  
-        {  
-            "extLineItemNumber" : 4,  
-             "offerId" : "80004567EA01A12",  
-             "quantity" : 1,  
-            "currencyCode" : "USD",  
-            "deploymentId" : "12345",
-            “discountCode": "HVD_L18_PRE”,
-        }  
-    ]  
-}  
+{
+  "orderType": "NEW",
+  "externalReferenceId": "759",
+  "currencyCode": "USD",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "currencyCode": "USD",
+      "deploymentId": "12345",
+      "discountCode": "HVD_L18_PRE"
+    }
+  ]
+}
 ```
 
 The `discountCode` may be null, correct, or wrong offer ID. The new order will be created only if you provide a valid discount code.
@@ -171,29 +169,29 @@ The `discountCode` may be null, correct, or wrong offer ID. The new order will b
 Sample response:
 
 ```json
-{  
-    "referenceOrderId" : "",  
-    "orderType" : "NEW",  
-    "externalReferenceId" : "759",  
-    "customerId" : "9876543210",  
-    "orderId" : "5120008001",  
-    "currencyCode" : "USD",  
-    "creationDate" : "2019-05-02T22:49:54Z",  
-    "status" : "1002",  
-    "lineItems" : [  
-        {  
-            "extLineItemNumber" : 4,  
-            "offerId" : "80004567EA01A12",  
-            "quantity" : 1,  
-            "status" : "1002",  
-            "subscriptionId" : "",  
-            "currencyCode" : "USD",  
-            "deploymentId" : "12345"  
-            “discountCode": "HVD_L17_PRE”, 
-        }  
-    ],  
-    "links" : {...}  
-} 
+{
+  "referenceOrderId": "",
+  "orderType": "NEW",
+  "externalReferenceId": "759",
+  "customerId": "9876543210",
+  "orderId": "5120008001",
+  "currencyCode": "USD",
+  "creationDate": "2019-05-02T22:49:54Z",
+  "status": "1002",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "status": "1002",
+      "subscriptionId": "",
+      "currencyCode": "USD",
+      "deploymentId": "12345",
+      "discountCode": "HVD_L17_PRE"
+    }
+  ],
+  "links": { ... }
+}
 ```
 
 Refer to the [Create Order](../order_management/create_order.md) section for the full set of response.
@@ -206,48 +204,47 @@ Sample request:
 
 ```json
 {
-    "referenceOrderId": "", 
-    "orderId": "", 
-    "customerId": "1005388836", 
-    "currencyCode": "USD", 
-    "orderType": "PREVIEW_RENEWAL", 
-    "status": "", 
-    "lineItems": [ 
-      { 
-        "extLineItemNumber": 1, 
-        "offerId": "65324918CA02A12", 
-        "quantity": 10, 
-        "discountCode": “HVD_L17_PRE”, 
-        "subscriptionId": "a5ea3c7a764545a711d2a153678f02NA", 
-        "status": ""
-        } 
-    ] 
-} 
+  "referenceOrderId": "",
+  "orderId": "",
+  "customerId": "1005388836",
+  "currencyCode": "USD",
+  "orderType": "PREVIEW_RENEWAL",
+  "status": "",
+  "lineItems": [
+    {
+      "extLineItemNumber": 1,
+      "offerId": "65324918CA02A12",
+      "quantity": 10,
+      "discountCode": "HVD_L17_PRE",
+      "subscriptionId": "a5ea3c7a764545a711d2a153678f02NA",
+      "status": ""
+    }
+  ]
+}
 ```
 
 Sample response:
 
 ```json
-{ 
-  "referenceOrderId": "", 
-  "orderId": "", 
-  "customerId": "1005388836", 
-  "currencyCode": "USD", 
-  "orderType": "PREVIEW_RENEWAL", 
-  "status": "", 
-  "lineItems": 
-    [ 
-      { 
-        "extLineItemNumber": 1, 
-        "offerId": "65324918CA02A12", 
-        "quantity": 10, 
-        "discountCode": “HVD_L17_POST”, 
-        "subscriptionId": "a5ea3c7a764545a711d2a153678f02NA", 
-        "status": "", 
-      }, 
-    ], 
-  "creationDate": "2024-04-01T07:26:05Z", 
-} 
+{
+  "referenceOrderId": "",
+  "orderId": "",
+  "customerId": "1005388836",
+  "currencyCode": "USD",
+  "orderType": "PREVIEW_RENEWAL",
+  "status": "",
+  "lineItems": [
+    {
+      "extLineItemNumber": 1,
+      "offerId": "65324918CA02A12",
+      "quantity": 10,
+      "discountCode": "HVD_L17_POST",
+      "subscriptionId": "a5ea3c7a764545a711d2a153678f02NA",
+      "status": ""
+    }
+  ],
+  "creationDate": "2024-04-01T07:26:05Z"
+}
 ```
 
 For example, if a customer on level 17 and on pre-pricing action pricing, this API provides HVD_L17_POST as the discount code for the second 3YC term. Read more about [Preview Renewal](../order_management/create_order.md) API.
