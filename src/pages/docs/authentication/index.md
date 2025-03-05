@@ -1,8 +1,6 @@
 # Identity management and authentication
 
-The Commerce Partner APIs use Adobe’s standard JWT (Service Account) Authentication method.
-
-**Note:** JWT will be deprecated and replaced by OAuth in an upcoming release.
+The Commerce Partner APIs use Adobe’s standard OAuth Authentication method.
 
 All API calls for a distributor originate from that distributor’s IMS Organization. After a direct partner signs the contract and provides the necessary onboarding information, Adobe creates an IMS Organization for that partner with admins that the partner specified. Admins can manage users and other admins using the Adobe Admin Console. Once the organization is created, production credentials can be generated self-service though the Adobe Developer Console. System admins and developers of the organization will have access to the Adobe Developer Console.
 
