@@ -216,6 +216,33 @@ module.exports = {
         ]
       },
       {
+        title: 'Manage Large Government Agencies',
+        description: '',
+        path: '/docs/lga/index.md',
+        pages: [
+          {
+            title: 'Create LGA customers',
+            path: '/docs/lga/create.md'
+          },
+          {
+            title: 'Migrate LGA customers from VIP to VIP Marketplace',
+            path: '/docs/lga/migrate.md'
+          },
+          {
+            title: 'Convert a government customer to an LGA customer',
+            path: '/docs/lga/convert.md'
+          },
+          {
+            title: 'Error codes specific to LGA',
+            path: '/docs/lga/error_codes.md'
+          },
+          {
+            title: 'References',
+            path: '/docs/lga/references.md'
+          }
+        ]
+      },
+      {
         title: 'Migrate to VIP Marketplace',
         description: '',
         path: '/docs/migration/index.md',
