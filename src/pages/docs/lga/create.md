@@ -11,14 +11,15 @@ You need to use the following APIs at various steps of the workflow to create an
 1. Create an LGA customer:
 
     - [POST /v3/customers](#create-an-lga-customer-1) to create an LGA customer.
-    - [GET/v3/customers/<customer-id>](#get-customer-details) to verify the customer details.
+    - [GET/v3/customers/{customer-id}](#get-customer-details) to verify the customer details.
+
 2. Add LGA customers to a Linked Membership group. You can select one of these two options:
 
     - **Option 1:** Add LGA customer to an existing Linked Membership Group:
         - Search Linked Membership Groups: [GET /v3/linked_membership_groups](#search-linked-membership-groups)
         - Add to an existing group: [POST /v3/customers/{customer_id}/linked_membership/enroll/{linked_membership_id}](#add-an-lga-customer-to-an-existing-linked-membership-without-needing-an-authorization-code)
     - **Option 2:** Create a Linked Membership for the LGA customer:
-        - [PATCH /v3/customers/<customer-id>](#create-a-new-linked-membership-for-lga-customers)
+        - [PATCH /v3/customers/{customer-id}](#create-a-new-linked-membership-for-lga-customers)
 
 3. Place an order:
 
@@ -151,7 +152,7 @@ For more details, see [Create Customer API](../customer_account/create_customer_
 
 ### Get customer details
 
-You can use the `GET: /v3/customers/<customer-id>` API to get the details of a customer and its LGA details.
+You can use the `GET: /v3/customers/{customer-id}` API to get the details of a customer and its LGA details.
 
 #### Request Body
 
@@ -361,7 +362,7 @@ None.
 
 ### Create a new Linked Membership for LGA customers
 
-Use the [Update Customer Details](../customer_account/update_customer_account.md) API (`PATCH : /v3/customers/<customer-id>`)  to create a new Linked Membership and to add the LGA customer to it.
+Use the [Update Customer Details](../customer_account/update_customer_account.md) API (`PATCH : /v3/customers/{customer-id}`)  to create a new Linked Membership and to add the LGA customer to it.
 
 **Notes:**
 
