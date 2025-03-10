@@ -11,7 +11,7 @@ You can provide Linked Memberships to customers from the following types of orga
 
 There are two types of Linked Memberships:
 
-- **Standard:** Suitable for departments or sub-organizations with separate budget or administrative requirements,  including business affiliates, school districts, state schools, government departments, and entities.
+- **Standard:** Suitable for departments or sub-organizations with separate budget or administrative requirements, including business affiliates, school districts, state schools, government departments, and entities.
 - **Consortiums:** An association or combination of organizations with similar interests and objectives, managed by a controlling entity.
 
 ## How to obtain more discounts through Linked Membership?
@@ -20,19 +20,19 @@ The Linked Membership feature helps organizations achieve better volume discount
 
 ![Volume discounts](../image/vol_discounts.png)
 
-With Linked Memberships, organizations affiliated with VIP MP  can combine or aggregate their licenses or transactions with their affiliates to secure better discounts. For example, _Organization A_ has 70 licenses and falls into Discount Level 3, as indicated in the previous table. _Organization B_ has 31 licenses and gets 5% discount defined for Level 2. By combining these organizations through Linked Membership, now they have 101 licenses and qualify for level 4 (15%) discounts.
+With Linked Memberships, organizations affiliated with VIP MP can combine or aggregate their licenses or transactions with their affiliates to secure better discounts. For example, _Organization A_ has 70 licenses and falls into Discount Level 3, as indicated in the previous table. _Organization B_ has 31 licenses and gets 5% discount defined for Level 2. By combining these organizations through Linked Membership, now they have 101 licenses and qualify for level 4 (15%) discounts.
 
 You can include offers for all volume discounted price levels and scaled pricing models. The following table lists the discount tiers for transactions of all consumable-based products, such as Adobe Sign:
 
-|Transaction range |Tier|
-|:----|:----|
-|1 to 999 |T1|
-|1000 to 2499 |T2|
-|2500 to 4999|T3|
-|5,000-14,999 |T4|
-|15,000 to 49,999|T5|
-|50,000 to 99,999 |T6|
-|> 100K |T7|
+| Transaction range | Tier |
+| :---------------- | :--- |
+| 1 to 999          | T1   |
+| 1000 to 2499      | T2   |
+| 2500 to 4999      | T3   |
+| 5,000-14,999      | T4   |
+| 15,000 to 49,999  | T5   |
+| 50,000 to 99,999  | T6   |
+| > 100K            | T7   |
 
 Resellers can create new Linked Memberships using the [Update Customer Account API](./update_customer_account.md). Each Linked Membership has one owner and multiple members. The owner of a Linked Membership and its members are B2B customer organizations. The owner must agree to the [terms and conditions](https://www.adobe.com/howtobuy/buying-programs/vipmp-linked-membership-terms.html) in the Admin Console and enroll other members in the Linked Membership. The workflow for creating a Linked Membership and adding members is as follows:
 
@@ -60,37 +60,39 @@ Partner marketplaces can create Linked Memberships using the [Update Customer AP
 The following example shows the parameters to be used in the request body of the [Update Customer API](./update_customer_account.md) endpoint to define a new Linked Membership:
 
 ```json
-"linkedMembership": {
-        "type": "STANDARD",
-        "name": "This is the Group Created for 1005516130"
+{
+  "linkedMembership": {
+    "type": "STANDARD",
+    "name": "This is the Group Created for 1005516130"
+  },
+  "companyProfile": {
+    "companyName": "Test Customer 33a0e0bc-e38f-4b65-a5a2-8ccad6ea0e8",
+    "preferredLanguage": "en-US",
+    "marketSegment": "COM",
+    "marketSubSegments": [],
+    "address": {
+      "country": "US",
+      "region": "CA",
+      "city": "San Jose",
+      "addressLine1": "345 Park Ave",
+      "addressLine2": "",
+      "postalCode": "95110",
+      "phoneNumber": ""
     },
-    "companyProfile": {
-        "companyName": "Test Customer 33a0e0bc-e38f-4b65-a5a2-8ccad6ea0e8",
-        "preferredLanguage": "en-US",
-        "marketSegment": "COM",
-        "marketSubSegments": [],
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "San Jose",
-            "addressLine1": "345 Park Ave",
-            "addressLine2": "",
-            "postalCode": "95110",
-            "phoneNumber": ""
-        },
-        "contacts": [
-            {
-                "firstName": "David",
-                "lastName": "John",
-                "email": "dave.j+LM-3YC-23@adobetest.com"
-            }
-        ]
-    }
+    "contacts": [
+      {
+        "firstName": "David",
+        "lastName": "John",
+        "email": "dave.j+LM-3YC-23@adobetest.com"
+      }
+    ]
+  }
+}
 ```
 
 You can use the following CURL command as a reference:
 
-```json
+```sh
 curl --location --request PATCH 'https://partners.adobe.io/v3/customers/1005513636' \
 --header 'x-api-key: <your-api-id>' \
 --header 'X-Request-Id: 2950f0f0-300993c3c261b9a' \
@@ -99,33 +101,32 @@ curl --location --request PATCH 'https://partners.adobe.io/v3/customers/10055136
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer XXXXX' \
 --data-raw '{
-    
-    "linkedMembership": {
-        "type": "STANDARD",
-        "name": "This is the Group Created for 1005516130"
+  "linkedMembership": {
+    "type": "STANDARD",
+    "name": "This is the Group Created for 1005516130"
+  },
+  "companyProfile": {
+    "companyName": "Test Customer 33a0e0bc-e38f-4b65-a5a2-8ccad6ea0e8",
+    "preferredLanguage": "en-US",
+    "marketSegment": "COM",
+    "marketSubSegments": [],
+    "address": {
+      "country": "US",
+      "region": "CA",
+      "city": "San Jose",
+      "addressLine1": "345 Park Ave",
+      "addressLine2": "",
+      "postalCode": "95110",
+      "phoneNumber": ""
     },
-    "companyProfile": {
-        "companyName": "Test Customer 33a0e0bc-e38f-4b65-a5a2-8ccad6ea0e8",
-        "preferredLanguage": "en-US",
-        "marketSegment": "COM",
-        "marketSubSegments": [],
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "San Jose",
-            "addressLine1": "345 Park Ave",
-            "addressLine2": "",
-            "postalCode": "95110",
-            "phoneNumber": ""
-        },
-        "contacts": [
-            {
-                "firstName": "David",
-                "lastName": "John",
-                "email": "dave.j+LM-3YC-23@adobetest.com"
-            }
-        ]
-    }
+    "contacts": [
+      {
+        "firstName": "David",
+        "lastName": "John",
+        "email": "dave.j+LM-3YC-23@adobetest.com"
+      }
+    ]
+  }
 }'
 ```
 
@@ -138,7 +139,7 @@ Same as [Get Customer Account Details (Customer resource)](./get_customer_accoun
 ### HTTP status codes
 
 | Status code | Description                  |
-|-------------|------------------------------|
+| ----------- | ---------------------------- |
 | 200         | Account successfully updated |
 | 400         | Bad request                  |
 | 401         | Invalid Authorization token  |
@@ -151,57 +152,57 @@ The [Get Customer API](./get_customer_account.md) returns details about Linked M
 
 ```json
 {
-    "externalReferenceId": "240715235148492799",
-    "customerId": "1005512199",
-    "resellerId": "1000250355",
-    "status": "1000",
-    "companyProfile": {
-        "companyName": "Test organization for Linked Membership",
-        "preferredLanguage": "en-US",
-        "marketSegment": "EDU",
-        "marketSubSegments": [],
-        "address": {
-            "country": "US",
-            "region": "CA",
-            "city": "SAN JOSE",
-            "addressLine1": "3453 Park Ave",
-            "addressLine2": "3453 Park Ave",
-            "postalCode": "95110",
-            "phoneNumber": ""
-        },
-        "contacts": [
-            {
-                "firstName": "ABC",
-                "lastName": "Corporation",
-                "email": "email@domain.com",
-                "phoneNumber": "28880-7323-8195"
-            }
-        ]
+  "externalReferenceId": "240715235148492799",
+  "customerId": "1005512199",
+  "resellerId": "1000250355",
+  "status": "1000",
+  "companyProfile": {
+    "companyName": "Test organization for Linked Membership",
+    "preferredLanguage": "en-US",
+    "marketSegment": "EDU",
+    "marketSubSegments": [],
+    "address": {
+      "country": "US",
+      "region": "CA",
+      "city": "SAN JOSE",
+      "addressLine1": "3453 Park Ave",
+      "addressLine2": "3453 Park Ave",
+      "postalCode": "95110",
+      "phoneNumber": ""
     },
-    "discounts": [
-        {
-            "offerType": "LICENSE",
-            "level": "01"
-        }
-    ],
-    "cotermDate": "2025-07-16",
-    "creationDate": "2024-07-15T23:51:49Z",
-    "benefits": [],
-    "globalSalesEnabled": false,
-    "linkedMembership": {
-        "id": "51001315",
-        "name": "This is the Group Created for 1005513636",
-        "type": "STANDARD",
-        "linkedMembershipType": "OWNER",
-        "creationDate": "2024-07-17T03:47:35"
-    },
-    "links": {
-        "self": {
-            "uri": "/v3/customers/1005512199",
-            "method": "GET",
-            "headers": []
-        }
+    "contacts": [
+      {
+        "firstName": "ABC",
+        "lastName": "Corporation",
+        "email": "email@domain.com",
+        "phoneNumber": "28880-7323-8195"
+      }
+    ]
+  },
+  "discounts": [
+    {
+      "offerType": "LICENSE",
+      "level": "01"
     }
+  ],
+  "cotermDate": "2025-07-16",
+  "creationDate": "2024-07-15T23:51:49Z",
+  "benefits": [],
+  "globalSalesEnabled": false,
+  "linkedMembership": {
+    "id": "51001315",
+    "name": "This is the Group Created for 1005513636",
+    "type": "STANDARD",
+    "linkedMembershipType": "OWNER",
+    "creationDate": "2024-07-17T03:47:35"
+  },
+  "links": {
+    "self": {
+      "uri": "/v3/customers/1005512199",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 

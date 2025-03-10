@@ -32,8 +32,8 @@ Use the `PreviewRenwal` API to preview the renewal order for the customer. This 
 ### Request body
 
 ```json
- { "orderType": "PREVIEW_RENEWAL" }
- ```
+{ "orderType": "PREVIEW_RENEWAL" }
+```
 
 ### Response body
 
@@ -49,59 +49,52 @@ In addition to the standard response of the Order API, the response of the Previ
   "currencyCode": "USD",
   "orderType": "PREVIEW_RENEWAL",
   "status": "",
-  "lineItems":
-    [
-      {
-        "extLineItemNumber": 1,
-        "offerId": "65324918CA02A12",
-        "quantity": 10,
-        "subscriptionId": "a5ea3c7a764545a711d2a153678f02NA",
-        "status": "",
-      },
-    ],
+  "lineItems": [
+    {
+      "extLineItemNumber": 1,
+      "offerId": "65324918CA02A12",
+      "quantity": 10,
+      "subscriptionId": "a5ea3c7a764545a711d2a153678f02NA",
+      "status": ""
+    }
+  ],
 
-  "eligibleOffers":
-    [
-      {
-        "offerId": "65324918CA14X12",
-        "renewalCode": "MOQ_100",
-        "eligibilityCriteria":
-          {
-            "minQuantity": 100,
-            "additionalCriteria": ["THREE_YEAR_COMMIT"],
-            "deploymentId": "1450043516",
-          },
-      },
-      {
-        "offerId": "65324918CA14Y12",
-        "renewalCode": "MOQ_250",
-        "eligibilityCriteria":
-          {
-            "minQuantity": 250,
-            "additionalCriteria": ["THREE_YEAR_COMMIT"],
-            "deploymentId": "1450043516",
-          },
-      },
-      {
-        "offerId": "65324918CA14Z12",
-        "renewalCode": "MOQ_500",
-        "eligibilityCriteria":
-          { 
-            "minQuantity": 500, 
-            "additionalCriteria": ["THREE_YEAR_COMMIT"]
-          },
-      },
-    ],
-  "creationDate": "2024-04-01T07:26:05Z",
+  "eligibleOffers": [
+    {
+      "offerId": "65324918CA14X12",
+      "renewalCode": "MOQ_100",
+      "eligibilityCriteria": {
+        "minQuantity": 100,
+        "additionalCriteria": ["THREE_YEAR_COMMIT"],
+        "deploymentId": "1450043516"
+      }
+    },
+    {
+      "offerId": "65324918CA14Y12",
+      "renewalCode": "MOQ_250",
+      "eligibilityCriteria": {
+        "minQuantity": 250,
+        "additionalCriteria": ["THREE_YEAR_COMMIT"],
+        "deploymentId": "1450043516"
+      }
+    },
+    {
+      "offerId": "65324918CA14Z12",
+      "renewalCode": "MOQ_500",
+      "eligibilityCriteria": {
+        "minQuantity": 500,
+        "additionalCriteria": ["THREE_YEAR_COMMIT"]
+      }
+    }
+  ],
+  "creationDate": "2024-04-01T07:26:05Z"
 }
-
 ```
 
 Success response if the customer has already opted for 100 MOQ offer:
 
 ```json
 {
- 
   "referenceOrderId": "",
   "orderId": "",
   "customerId": "1005388836",
@@ -123,9 +116,7 @@ Success response if the customer has already opted for 100 MOQ offer:
       "renewalCode": "MOQ_100",
       "eligibilityCriteria": {
         "minQuantity": 100,
-        "additionalCriteria": [
-          "THREE_YEAR_COMMIT"
-        ],
+        "additionalCriteria": ["THREE_YEAR_COMMIT"],
         "deploymentId": "1450043516"
       }
     },
@@ -134,9 +125,7 @@ Success response if the customer has already opted for 100 MOQ offer:
       "renewalCode": "MOQ_250",
       "eligibilityCriteria": {
         "minQuantity": 250,
-        "additionalCriteria": [
-          "THREE_YEAR_COMMIT"
-        ],
+        "additionalCriteria": ["THREE_YEAR_COMMIT"],
         "deploymentId": "1450043516"
       }
     },
@@ -145,15 +134,12 @@ Success response if the customer has already opted for 100 MOQ offer:
       "renewalCode": "MOQ_500",
       "eligibilityCriteria": {
         "minQuantity": 500,
-        "additionalCriteria": [
-          "THREE_YEAR_COMMIT"
-        ]
+        "additionalCriteria": ["THREE_YEAR_COMMIT"]
       }
     }
   ],
   "creationDate": "2024-04-01T07:26:05Z"
 }
-
 ```
 
 #### Response parameter details specific to eligible MOQ offers
@@ -175,7 +161,7 @@ The full set of parameters of Order API are available in the [Order resource fie
 
 | Status code | Description                     |
 |-------------|---------------------------------|
-| 200         | Preview Successful        |
+| 200         | Preview Successful              |
 | 400         | Bad request                     |
 | 401         | Invalid Authorization token     |
 | 403         | Invalid API Key                 |
@@ -212,11 +198,11 @@ You need to include the `renewalCode` parameter in the auto renewal configuratio
 
 ```json
 {
-    "autoRenewal": {
-        "enabled": true,
-        "renewalQuantity": 100,
-        "renewalCode": "MOQ_100"
-    }
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 100,
+    "renewalCode": "MOQ_100"
+  }
 }
 ```
 
@@ -228,35 +214,35 @@ The response shows the `renewalCode` with the selected MOQ offer.
 
 ```json
 {
-   "subscriptionId": "a028303a454a168d6b824b6c0dfcc5NA",
-   "offerId": "65324918CA01A12",
-   "currentQuantity": 10,
-   "usedQuantity": 0,
-   "autoRenewal": {
-       "enabled": true,
-       "renewalQuantity": 100,
-       "renewalCode": "MOQ_100"
-   },
-   "creationDate": "2023-09-22T08:38:27Z",
-   "renewalDate": "2024-09-22",
-   "status": "1000",
-   "deployToId": "",
-   "currencyCode": "USD",
-   "links": {
-       "self": {
-           "uri":                        "/v3/customers/1005388836/subscriptions/a028303a454a168d6b824b6c0dfcc5NA",
-           "method": "GET",
-           "headers": []
-       }
-   }
+  "subscriptionId": "a028303a454a168d6b824b6c0dfcc5NA",
+  "offerId": "65324918CA01A12",
+  "currentQuantity": 10,
+  "usedQuantity": 0,
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 100,
+    "renewalCode": "MOQ_100"
+  },
+  "creationDate": "2023-09-22T08:38:27Z",
+  "renewalDate": "2024-09-22",
+  "status": "1000",
+  "deployToId": "",
+  "currencyCode": "USD",
+  "links": {
+    "self": {
+      "uri": "/v3/customers/1005388836/subscriptions/a028303a454a168d6b824b6c0dfcc5NA",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 
 ### HTTP status codes
 
 | Status code | Description                     |
-|-------------|---------------------------------|
-| 200         | Preview Successful        |
+| ----------- | ------------------------------- |
+| 200         | Preview Successful              |
 | 400         | Bad request                     |
 | 401         | Invalid Authorization token     |
 | 403         | Invalid API Key                 |
@@ -278,10 +264,10 @@ Request body:
 
 ```json
 {
-    "autoRenewal" :{
-        "enabled" : true,
-        "renewalQuantity" : 25
-    }
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 25
+  }
 }
 ```
 
@@ -289,28 +275,27 @@ Response:
 
 ```json
 {
-   "subscriptionId": "a028303a454a168d6b824b6c0dfcc5NA",
-   "offerId": "65324918CA01A12",
-   "currentQuantity": 10,
-   "usedQuantity": 0,
-   "autoRenewal": {
-       "enabled": true,
-       "renewalQuantity": 25
-   },
-   "creationDate": "2023-09-22T08:38:27Z",
-   "renewalDate": "2024-09-22",
-   "status": "1000",
-   "deployToId": "",
-   "currencyCode": "USD",
-   "links": {
-       "self": {
-           "uri": "/v3/customers/1005388836/subscriptions/a028303a454a168d6b824b6c0dfcc5NA",
-           "method": "GET",
-           "headers": []
-       }
-   }
+  "subscriptionId": "a028303a454a168d6b824b6c0dfcc5NA",
+  "offerId": "65324918CA01A12",
+  "currentQuantity": 10,
+  "usedQuantity": 0,
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 25
+  },
+  "creationDate": "2023-09-22T08:38:27Z",
+  "renewalDate": "2024-09-22",
+  "status": "1000",
+  "deployToId": "",
+  "currencyCode": "USD",
+  "links": {
+    "self": {
+      "uri": "/v3/customers/1005388836/subscriptions/a028303a454a168d6b824b6c0dfcc5NA",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
-
 ```
 
 ## Create subscription
@@ -328,7 +313,7 @@ For example, if the customer has only Acrobat Standard product and not Acrobat P
 
   - `currencyCode`
   - `deploymentId`
-  
+
   These are part of the [Get Subscription API](../subscription_management/get_details_for_customers.md) as well.
 
 ### Request header
@@ -339,11 +324,11 @@ Same as the [request header given in the previous endpoint](#request-header).
 
 ```json
 {
-    "offerId": "65322651CA14X12",
-    "autoRenewal": {
-        "renewalQuantity": 100,
-        "renewalCode": "MOQ_100"
-    }
+  "offerId": "65322651CA14X12",
+  "autoRenewal": {
+    "renewalQuantity": 100,
+    "renewalCode": "MOQ_100"
+  }
 }
 ```
 
@@ -351,38 +336,38 @@ Same as the [request header given in the previous endpoint](#request-header).
 
 ```json
 {
-    "subscriptionId": "e0b170437c4e96ac5428364f674dffNA",
-    "offerId": "65322651CA01A12",
-    "currentQuantity": 0,
-    "usedQuantity": 0,
-    "autoRenewal": {
-        "enabled": true,
-        "renewalQuantity": 100,
-        "renewalCode": "MOQ_100"
-    },
-    "creationDate": "2023-07-18T05:20:19Z",
-    "renewalDate": "2024-07-18",
-    "status": "1009", // Scheduled
-    "currencyCode": "USD",
-    "links": {
-        "self": {
-            "uri": "/v3/customers/1005331016/subscriptions/e0b170437c4e96ac5428364f674dffNA",
-            "method": "GET",
-            "headers": []
-        }
+  "subscriptionId": "e0b170437c4e96ac5428364f674dffNA",
+  "offerId": "65322651CA01A12",
+  "currentQuantity": 0,
+  "usedQuantity": 0,
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 100,
+    "renewalCode": "MOQ_100"
+  },
+  "creationDate": "2023-07-18T05:20:19Z",
+  "renewalDate": "2024-07-18",
+  "status": "1009", // Scheduled
+  "currencyCode": "USD",
+  "links": {
+    "self": {
+      "uri": "/v3/customers/1005331016/subscriptions/e0b170437c4e96ac5428364f674dffNA",
+      "method": "GET",
+      "headers": []
     }
+  }
 }
 ```
 
 ### HTTP status codes
 
-| Status code | Description                        |
-|-------------|------------------------------------|
-| 200         | Created subscription successfully  |
-| 400         | Bad request                        |
-| 401         | Invalid Authorization token        |
-| 403         | Invalid API Key                    |
-| 404         | Invalid customer ID or Order ID    |
+| Status code | Description                       |
+| ----------- | --------------------------------- |
+| 200         | Created subscription successfully |
+| 400         | Bad request                       |
+| 401         | Invalid Authorization token       |
+| 403         | Invalid API Key                   |
+| 404         | Invalid customer ID or Order ID   |
 
 ## Get subscription
 
@@ -400,45 +385,45 @@ None.
 
 ```json
 {
-    "totalCount": 1,
-    "items": [
-        {
-            "subscriptionId": "43b889db7b4e7aa2d42b54b9813eebNA",
-            "offerId": "65322651CA01A12",
-            "currentQuantity": 10,
-            "usedQuantity": 4,
-            "autoRenewal": {
-                "enabled": true,
-                "renewalQuantity": 10,
-                "renewalCode": "MOQ_100"
-            },
-            "creationDate": "2024-10-23T10:23:11Z",
-            "renewalDate": "2025-10-23",
-            "status": "1000",
-            "currencyCode": "USD",
-            "links": {
-                "self": {
-                    "uri": "/v3/customers/D1005038400/subscriptions/43b889db7b4e7aa2d42b54b9813eebNA",
-                    "method": "GET",
-                    "headers": []
-                }
-            }
-        }
-    ],
-    "links": {
+  "totalCount": 1,
+  "items": [
+    {
+      "subscriptionId": "43b889db7b4e7aa2d42b54b9813eebNA",
+      "offerId": "65322651CA01A12",
+      "currentQuantity": 10,
+      "usedQuantity": 4,
+      "autoRenewal": {
+        "enabled": true,
+        "renewalQuantity": 10,
+        "renewalCode": "MOQ_100"
+      },
+      "creationDate": "2024-10-23T10:23:11Z",
+      "renewalDate": "2025-10-23",
+      "status": "1000",
+      "currencyCode": "USD",
+      "links": {
         "self": {
-            "uri": "/v3/customers/D1005038400/subscriptions",
-            "method": "GET",
-            "headers": []
+          "uri": "/v3/customers/D1005038400/subscriptions/43b889db7b4e7aa2d42b54b9813eebNA",
+          "method": "GET",
+          "headers": []
         }
+      }
     }
+  ],
+  "links": {
+    "self": {
+      "uri": "/v3/customers/D1005038400/subscriptions",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 
 ### HTTP status codes
 
 | Status code | Description                     |
-|-------------|---------------------------------|
+| ----------- | ------------------------------- |
 | 200         | Successful                      |
 | 400         | Bad request                     |
 | 401         | Invalid Authorization token     |

@@ -31,37 +31,38 @@ None.
 
 ```json
 {
-    "limit": 10,
-    "offset": 0,
-    "totalCount": 1,
-    "count": 1,
-    "items": [
-        {
-            "customerId": "1005379198",
-            "resellerId": "1000177552",
-            "notificationType": "LICENSES_PENDING_PARTNER_ORDER",
-            "links": {
-                "self": {
-                    "uri": "/v3/customers/1005379198/open-acquisitions",
-                    "method": "GET",
-                    "headers": []
-                }
-            }
-        }
-    ],
-    "links": {
+  "limit": 10,
+  "offset": 0,
+  "totalCount": 1,
+  "count": 1,
+  "items": [
+    {
+      "customerId": "1005379198",
+      "resellerId": "1000177552",
+      "notificationType": "LICENSES_PENDING_PARTNER_ORDER",
+      "links": {
         "self": {
-            "uri": "/v3/notifications?notification-type=LICENSES_PENDING_PARTNER_ORDER&resellerid=1000177552&limit=10&offset=0","method": "GET",
-            "headers": []
+          "uri": "/v3/customers/1005379198/open-acquisitions",
+          "method": "GET",
+          "headers": []
         }
+      }
     }
+  ],
+  "links": {
+    "self": {
+      "uri": "/v3/notifications?notification-type=LICENSES_PENDING_PARTNER_ORDER&resellerid=1000177552&limit=10&offset=0",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 
 ### HTTP status codes
 
 | Status code | Description                                 |
-|-------------|---------------------------------------------|
+| ----------- | ------------------------------------------- |
 | 200         | Successfully returned notification resource |
 | 400         | Bad request                                 |
 | 401         | Invalid Authorization token                 |
