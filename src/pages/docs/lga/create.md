@@ -10,31 +10,31 @@ You need to use the following APIs at various steps of the workflow to create an
 
 1. Create an LGA customer:
 
-    - [POST /v3/customers](#create-an-lga-customer-1) to create an LGA customer.
-    - [GET/v3/customers/{customer-id}](#get-customer-details) to verify the customer details.
+    - Create a customer: [POST /v3/customers](#1-create-an-lga-customer)
+    - Verify customer details: [GET/v3/customers/{customer-id}](#2-get-customer-details)
 
 2. Add LGA customers to a Linked Membership group. You can select one of these two options:
 
     - **Option 1:** Add LGA customer to an existing Linked Membership Group:
-        - Search Linked Membership Groups: [GET /v3/linked_membership_groups](#search-linked-membership-groups)
-        - Add to an existing group: [POST /v3/customers/{customer_id}/linked_membership/enroll/{linked_membership_id}](#add-an-lga-customer-to-an-existing-linked-membership-without-needing-an-authorization-code)
+        - Search Linked Membership Groups: [GET /v3/linked_membership_groups](#3-search-linked-membership-groups)
+        - Add to an existing group: [POST /v3/customers/{customer_id}/linked_membership/enroll/{linked_membership_id}](#4-add-an-lga-customer-to-an-existing-linked-membership-without-needing-an-authorization-code)
     - **Option 2:** Create a Linked Membership for the LGA customer:
-        - [PATCH /v3/customers/{customer-id}](#create-a-new-linked-membership-for-lga-customers)
+        - [PATCH /v3/customers/{customer-id}](#4-add-an-lga-customer-to-an-existing-linked-membership-without-needing-an-authorization-code)
 
 3. Place an order:
 
-    - Preview Order API: [POST /v3/orders](../order_management/order_scenarios.md), with `orderType` set to “`Preview`”
-    - Create Order API: [POST /v3/orders](../order_management/create_order.md), with `orderType` set to “`NEW`”
+    - Preview Order API: [POST /v3/orders](../order_management/order_scenarios.md), with `orderType` set to `Preview`
+    - Create Order API: [POST /v3/orders](../order_management/create_order.md), with `orderType` set to `NEW`
 
 The subsequent sections explain these APIs in detail.
 
-### Create an LGA customer
+### 1. Create an LGA customer
 
 Use the `POST /v3/customers` API to create an LGA customer. Here are the specifics that differ from the standard Create Customer request:
 
-- The `benefits` array must include `LARGE_GOVERNMENT_AGENCY` indicator for the LGA customer.
+- The `benefits` array must include the `LARGE_GOVERNMENT_AGENCY` indicator for the LGA customer.
 - The `marketSegment` should be set to `GOV` for LGA customers.
-- The `marketSubSegments` field is mandatory for LGA customer creation and should have one of the following values:  "`FEDERAL`" or "`STATE`".
+- The `marketSubSegments` field is mandatory for LGA customer creation and should have one of the following values:  `FEDERAL` or `STATE`.
 
 #### Request
 
@@ -150,7 +150,7 @@ The following table provides descriptions for the response parameters:
 
 For more details, see [Create Customer API](../customer_account/create_customer_account.md) and [Customer Account parameters](../references/resources.md#customer-top-level-resource).
 
-### Get customer details
+### 2. Get customer details
 
 You can use the `GET: /v3/customers/{customer-id}` API to get the details of a customer and its LGA details.
 
@@ -234,7 +234,7 @@ The following details are displayed in the respose body of an LGA customer:
 
 For more details, refer to [Get Customer Details API](../customer_account/get_customer_account.md).
 
-### Search Linked Membership Groups
+### 3. Search Linked Membership Groups
 
 To use an existing Linked Membership for the LGA customer, use the GET /v3/linked_membership_groups API to search for Linked Membership Groups that match your criteria. You can refine the search using query parameters.
 
@@ -322,7 +322,7 @@ None.
 |403|Forbidden|The API key is invalid|
 |404|Not Found|The requested resource does not exist|
 
-### Add an LGA customer to an existing Linked Membership without needing an authorization code
+### 4. Add an LGA customer to an existing Linked Membership without needing an authorization code
 
 The enroll customer API allows partners and distributors to use the distributor's auth token and add LGA customers to an existing Linked membership without needing an authorization code.
 
@@ -360,7 +360,7 @@ None.
 |403|Forbidden|The API key is invalid|
 |404|Not Found|Invalid Customer ID or Linked Membership ID|
 
-### Create a new Linked Membership for LGA customers
+### 5. Create a new Linked Membership for LGA customers
 
 Use the [Update Customer Details](../customer_account/update_customer_account.md) API (`PATCH : /v3/customers/{customer-id}`)  to create a new Linked Membership and to add the LGA customer to it.
 
@@ -407,5 +407,3 @@ Use the [Update Customer Details](../customer_account/update_customer_account.md
 #### Response
 
 Same response as that of [Get Customer Details](../customer_account/get_customer_account.md) API.
-
-For more details, refer to [Update Customer API](../customer_account/update_customer_account.md).
