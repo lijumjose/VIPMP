@@ -1,6 +1,6 @@
 # Manage Large Government Agencies
 
-Large government agencies (LGAs) in the US and Canada can get benefit from discounted Adobe licenses. To qualify for the best pricing, these agencies need at least 100 licenses. They can combine individual memberships through Linked Memberships to meet this minimum. Discount levels are based on the total number of licenses purchased, as listed in the following table:
+Large government agencies (LGAs) in the US and Canada can get benefit from discounted Adobe licenses. To qualify for the best pricing, these agencies need at least 100 licenses. They can also combine individual memberships through Linked Memberships to meet this minimum. Discount levels are based on the total number of licenses purchased, as listed in the following table:
 
 | Discount levels| Number of licenses|
 |--|--|

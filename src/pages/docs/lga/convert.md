@@ -6,7 +6,7 @@ You can convert an existing government customer to an LGA. An LGA-enabled distri
 - The customer should not be part of any active Linked Memberships. If required, the  customer can join an LGA-specific Linked Membership after the AD.
 - The customer should not be applied for or committed to Three-Year Commits (3YC).
 - The `marketSegment` of the customer must be `GOV`.
-- The `country` must be US or Canada.
+- The `country` must be the US or Canada.
 - `renewalQuantity` must be >100.
 
 The workflow is as follows:
