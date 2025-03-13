@@ -1,8 +1,14 @@
 # Create customer account
 
-Before placing an order, a reseller needs to create a customer account by using the `POST /v3/customers` endpoint. The API returns the customer resource with a link to the [Get Customer Account Details](./get_customer_account.md) endpoint.
+Before placing an order, a reseller needs to create a customer account by using the Create Customer Account API:
 
-## Assumptions
+| Endpoint | Method|
+|---|---|
+|/v3/customers| POST|
+
+The API returns the customer resource with a link to the [Get Customer Account Details](./get_customer_account.md) endpoint.
+
+## Usage instructions
 
 Ensure that you are aware of the following before creating a customer account:
 
@@ -32,7 +38,7 @@ Ensure that you are aware of the following before creating a customer account:
 | Authorization    | **Required**. Authorization token in the form `Bearer <token>`                                                                                                                                                                   |
 | X-Api-Key        | **Required**. The API Key for your integration                                                                                                                                                                                   |
 
-**Note:** Details of the request and response parameters are available in the [Resources](../references/resources.md#customer-top-level-resource) section of this documentation.
+**Note:** For details of the request and response parameters, see [Request and response parameters](#request-and-response-parameters).
 
 ## Request Body
 
@@ -115,6 +121,34 @@ Customer resource without read-only fields:
   }
 }
 ```
+
+## Request and response parameters
+
+Expand the following section for more details on the request and response parameters.
+
+<details>
+      <summary><b>Customer resource</b></summary>
+
+## Customer (top-level resource)
+
+|Property | Type | Description | Range/Limits|
+|:----|:----|:----|:----|
+|externalReferenceId | String <br />Optional| Marketplace’s ID for customer. ID does not need to be unique.| Max: 35 characters|
+|customerId (read only)| String | Unique ID for customer created upon account creation| Max: 40 characters|
+|resellerId | String | ID of reseller tied to customer | Max: 40 characters|
+|globalSalesEnabled  | String | Global status of a customer  | Max: 40 characters|
+|tags | String |Special label on thhe customer. Example: _HVD_MIGRATED_CUSTOMER_ | Max: 40 characters|
+|linkedMembership  | `linkedMembership` resource  | Information about the linked membership  | |
+|companyProfile | `CompanyProfile` resource| Information about the customer | |
+|discounts | `discounts` resource| Details of the discount applicable to the customer, including the discount level.  | |
+|benefits | `benefits` resource| Details of the benefits applied to the customer account and its corresponding status. For example, the type parameter indicates LARGE_GOVERNMENT_AGENCY if the customer is an LGA customer. | |
+|cotermDate (read only)| String (date) | Date that renewal order is to be placed. Should be one year after the first order is provisioned (if a 1-yr term) and gets updated upon each renewal order.| 10 characters|
+|creationDate (read only)| String (datetime)| Date and time of account creation in UTC| |
+|status (read only)| String | Status code of customer account | 4 characters|
+|links (read only)| **Links** resource | Deep links to get customer account details| |
+
+For more details, refer to [Resources and fields](../references/resources.md#customer-top-level-resource).
+</details>
 
 ### HTTP status codes
 
