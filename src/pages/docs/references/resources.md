@@ -6,27 +6,30 @@ Please see the Validations/Regular Expressions section for any regular expressio
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
-|externalReferenceId | string <br /> Optional| Marketplace’s ID for reseller. ID does not need to be unique.| Max: 35 characters|
-|distributorId | string | Adobe-generated unique ID for distributor tied to this reseller| Max: 40 characters|
-|resellerId (read only)| string | Unique ID for reseller created upon account creation |Max: 40 characters|
+|externalReferenceId | String <br /> Optional| Marketplace’s ID for reseller. ID does not need to be unique.| Max: 35 characters|
+|distributorId | String | Adobe-generated unique ID for distributor tied to this reseller| Max: 40 characters|
+|resellerId (read only)| String | Unique ID for reseller created upon account creation |Max: 40 characters|
 |companyProfile | CompanyProfile resource| Information about the reseller| |
 |creationDate (read only)| String (datetime)| Date and time of account creation in UTC| |
-|status (read only)| string | Status code for the reseller account  |4 characters |
+|status (read only)| String | Status code for the reseller account  |4 characters |
 |links (read only)| Links resource | Deep links to get customer account details| |
 
 ## Customer (top-level resource)
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
-|externalReferenceId | string <br />Optional| Marketplace’s ID for customer. ID does not need to be unique.| Max: 35 characters|
-|customerId (read only)| string | Unique ID for customer created upon account creation| Max: 40 characters|
-|resellerId | string | ID of reseller tied to customer | Max: 40 characters|
-|globalSalesEnabled  | string | Global status of a customer  | Max: 40 characters|
+|externalReferenceId | String <br />Optional| Marketplace’s ID for customer. ID does not need to be unique.| Max: 35 characters|
+|customerId (read only)| String | Unique ID for customer created upon account creation| Max: 40 characters|
+|resellerId | String | ID of reseller tied to customer | Max: 40 characters|
+|globalSalesEnabled  | String | Global status of a customer  | Max: 40 characters|
+|tags | String |Special label on thhe customer. Example: _HVD_MIGRATED_CUSTOMER_ | Max: 40 characters|
 |linkedMembership  | `linkedMembership` resource  | Information about the linked membership  | |
 |companyProfile | `CompanyProfile` resource| Information about the customer | |
+|discounts | `discounts` resource| Details of the discount applicable to the customer, including the discount level.  | |
+|benefits | `benefits` resource| Details of the benefits applied to the customer account and its corresponding status. For example, the type parameter indicates LARGE_GOVERNMENT_AGENCY if the customer is an LGA customer. | |
 |cotermDate (read only)| String (date) | Date that renewal order is to be placed. Should be one year after the first order is provisioned (if a 1-yr term) and gets updated upon each renewal order.| 10 characters|
 |creationDate (read only)| String (datetime)| Date and time of account creation in UTC| |
-|status (read only)| string | Status code of customer account | 4 characters|
+|status (read only)| String | Status code of customer account | 4 characters|
 |links (read only)| **Links** resource | Deep links to get customer account details| |
 
 ### linkedMembership
@@ -46,15 +49,15 @@ Please see the Validations/Regular Expressions section for any regular expressio
 |deploymentId |String | Unique ID for the deployment generated upon deployment creation| Max: 40 characters|
 |companyProfile | `CompanyProfile` resource| Information about the customer| |
 |creationDate (read only)| String (datetime)| Date and time of account creation in UTC| |
-|status | string | Status code of customer account | 4 characters|
+|status | String | Status code of customer account | 4 characters|
 |links (read only)| `Links` resource | Deep links to get customer account details| |
 
 ## CompanyProfile
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
-|companyName | string | Name of company| Min: 4 characters <br /> Max: 80 characters|
-|preferredLanguage | string | Preferred language for company (IETF hyphenated language tag)| Max: 40 characters|
+|companyName | String | Name of company| Min: 4 characters <br /> Max: 80 characters|
+|preferredLanguage | String | Preferred language for company (IETF hyphenated language tag)| Max: 40 characters|
 |address | `Address` resource| Address of company | |
 |contacts | Array of `Contact` resources| Points of contact for admin console | Min: One contact <br /> No limit|
 
@@ -62,22 +65,22 @@ Please see the Validations/Regular Expressions section for any regular expressio
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
-|country | string | Country of address  (ISO 3166 standard) | 2 or 3 characters|
-|region | string | State/region of the address (ISO 3166-2 <br /> standard – only send code after hyphen). <br /> Example: US-CA → CA| Max: 255 characters|
-|city | string | City | Max: 40 characters|
-|addressLine1 | string | Line 1 of the address | Max: 60 characters|
-|addressLine2 | string | Optional. Line 2 of the address | Max: 60 characters|
-|postalCode | string | Zip code/postal code of address. Must match city/region/country.| Max: 40 characters|
-|phoneNumber | string | Optional. Phone number associated with this address| Max: 40 characters|
+|country | String | Country of address  (ISO 3166 standard) | 2 or 3 characters|
+|region | String | State/region of the address (ISO 3166-2 <br /> standard – only send code after hyphen). <br /> Example: US-CA → CA| Max: 255 characters|
+|city | String | City | Max: 40 characters|
+|addressLine1 | String | Line 1 of the address | Max: 60 characters|
+|addressLine2 | String | Optional. Line 2 of the address | Max: 60 characters|
+|postalCode | String | Zip code/postal code of address. Must match city/region/country.| Max: 40 characters|
+|phoneNumber | String | Optional. Phone number associated with this address| Max: 40 characters|
 
 ## Contact
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
-|email | string | Email address of the contact | Max: 240 characters|
-|firstName | string | First name of the contact | Max: 35 characters|
-|lastName | string | Last name of the contact | Max: 35 characters|
-|phoneNumber | string | Optional. Phone number of the contact | Max: 40 characters|
+|email | String | Email address of the contact | Max: 240 characters|
+|firstName | String | First name of the contact | Max: 35 characters|
+|lastName | String | Last name of the contact | Max: 35 characters|
+|phoneNumber | String | Optional. Phone number of the contact | Max: 40 characters|
 
 ## Price List (top-level resource)
 
@@ -156,50 +159,51 @@ Array of the following objects:
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
-|externalReferenceId | string <br />Optional |Reconciliation ID for this order (Example: PO Number, Order ID, and so on). <br />ID does not need to be unique.| Max: 35 characters|
-|orderId <br /> (read only)| string | Unique identifier for order that is created upon order creation| Max: 40 characters|
-|customerId <br /> (read only)| string | ID of the customer that placed this order | Max: 40 characters|
-|referenceOrderId | string <br /> required for RETURN orders| The ID of the order being returned in a RETURN order.| Max: 40 characters|
+|externalReferenceId | String <br />Optional |Reconciliation ID for this order (Example: PO Number, Order ID, and so on). <br />ID does not need to be unique.| Max: 35 characters|
+|orderId <br /> (read only)| String | Unique identifier for order that is created upon order creation| Max: 40 characters|
+|customerId <br /> (read only)| String | ID of the customer that placed this order | Max: 40 characters|
+|referenceOrderId | String <br /> required for RETURN orders| The ID of the order being returned in a RETURN order.| Max: 40 characters|
 |orderType | String <br /> (enum)| Type of the order. Valid values: NEW, PREVIEW, RETURN, TRANSFER, RENEWAL| |
-|lineItems | Array of LineItem resources| Itemized list of the offers and their quantity for this order| Min: 1 item <br />Max: 499 items|
-|currencyCode | string | Currency used for placing the order (ISO 4217 format).| 3 characters|
+|lineItems | `LineItem` resources| Itemized list of the offers and their quantity for this order| Min: 1 item <br />Max: 499 items|
+|eligibleOffers | `eligibleOffers` resource | The details of High Growth Offers available to the customer.||
+|currencyCode | String | Currency used for placing the order (ISO 4217 format).| 3 characters|
 |creationDate <br /> (read only)| String (datetime)| Date and time the order was created in UTC| |
-|status (read only, except for canceling)| string | Status code of the order | 4 characters|
+|status (read only, except for canceling)| String | Status code of the order | 4 characters|
 |links (read only)| `Links` resource | Deep links to get order details| |
 
-## Eligible offers
+## eligibleOffers
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
-|offerId |string |The unique ID of the offer. |Max: 40 characters |
-|renewalCode |string |Unique identifier of the Minimum Order Quantity Offer. Available values are: <br /> - MOQ_100 <br /> - MOQ_250 <br /> - MOQ_500 |Max: 30 characters |
+|offerId |String |The unique ID of the offer. |Max: 40 characters |
+|renewalCode |String |Unique identifier of the Minimum Order Quantity Offer. Available values are: <br /> - MOQ_100 <br /> - MOQ_250 <br /> - MOQ_500 |Max: 30 characters |
 |eligibilityCriteria |Array |The eligibility criteria for availing the MOQ offer. | |
 |minQuantity |Integer |The minimum quantity for which this offer is applicable, also the minimum quantity that the customer needs to commit for a 3YC term to be eligible for this offer. |Min: 0 <br /> Max: 999999 |
-|additionalCriteria |string |The additional criteria list for availing the High Growth Offer. Currently, THREE_YEAR_COMMIT is the only supported value, indicating that 3YC is required to avail the High Growth Offers. |Min: 1 item <br /> Max: 499 items |
-|deploymentId |string |Unique ID of the deployment. |Max: 40 characters |
+|additionalCriteria |String |The additional criteria list for availing the High Growth Offer. Currently, THREE_YEAR_COMMIT is the only supported value, indicating that 3YC is required to avail the High Growth Offers. |Min: 1 item <br /> Max: 499 items |
+|deploymentId |String |Unique ID of the deployment. |Max: 40 characters |
 
 ## LineItem
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
 |extLineItemNumber| integer | Marketplace’s unique index for item in order| Min: 0 <br /> Max: 999999 <br /> Must be unique|
-|offerId | string | The ID of the offer being purchased| |
+|offerId | String | The ID of the offer being purchased| |
 |quantity | integer | Quantity of this offer purchased in this order| Min: 1 <br /> Max: 10,000 for Team / 599,000 for Enterprise|
-|discountCode|string|The discount code applicable to the HVD customers migrating from VIP to VIP Marketplace.|Max: 40 characters|
-|subscriptionId (read only)| string | ID of the Subscription resource associated with this line item.| Max: 40 characters|
-|status (read only)| string | Status code of the line item | 4 characters|
+|discountCode|String|The discount code applicable to the HVD customers migrating from VIP to VIP Marketplace.|Max: 40 characters|
+|subscriptionId (read only)| String | ID of the Subscription resource associated with this line item.| Max: 40 characters|
+|status (read only)| String | Status code of the line item | 4 characters|
 
 ## Subscription (top-level resource)
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
-|subscriptionId (read only)| string | Unique identifier of the subscription resource | Max: 40 characters|
+|subscriptionId (read only)| String | Unique identifier of the subscription resource | Max: 40 characters|
 |currentQuantity (read only)| integer | Total quantity of the subscription that a customer has |Max: 10,000 for Team <br /> 599,000 for Enterprise|
 |usedQuantity | integer | Total used quantity for the license or the consumable| |
-|offerId | string | The base discount level offer id. <br /> **Note:** This attribute is included for developers to identify the offer and NOT the discount level. Partners need to use “Get customer Account” and “Get Order history” APIs to see discount level information.| |
+|offerId | String | The base discount level offer id. <br /> **Note:** This attribute is included for developers to identify the offer and NOT the discount level. Partners need to use “Get customer Account” and “Get Order history” APIs to see discount level information.| |
 |autoRenewal | `AutoRenewal` object| Resource to manage auto-renewal flag and quantity| |
 |creationDate (read only)| String (datetime)| Date and time of subscription creation in UTC| |
-|status (read only)| string | Current status code of the subscription | 4 characters|
+|status (read only)| String | Current status code of the subscription | 4 characters|
 |links (read only)| `Links` resource | Deep links to get subscription details| |
 
 ## Notification (top-level resource)
@@ -217,9 +221,9 @@ Array of the following objects:
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
-|customerId | string | Customer id for the account where partner order is pending| Max: 40 characters|
-|resellerId | string | Reseller account id for the account whose partner order is still pending| Max: 40 characters|
-|notificationType | string | Type of notification response| Max: 40 characters|
+|customerId | String | Customer id for the account where partner order is pending| Max: 40 characters|
+|resellerId | String | Reseller account id for the account whose partner order is still pending| Max: 40 characters|
+|notificationType | String | Type of notification response| Max: 40 characters|
 |links | `Links` resource | Deep links to get notification item details| |
 
 ## AutoRenewal
@@ -236,6 +240,6 @@ Array of the following objects:
 |self | `Link` object | Link to get data about this resource |
 |next | `Link` object | Link to get data about the next resource |
 |prev | `Link` object | Link to get data about the previous resource |
-|uri |string |The URI to access this link|
-|method |string |The method used for the URI |
+|uri |String |The URI to access this link|
+|method |String |The method used for the URI |
 |headers|Array of Key:Value pairs |The headers for the link. <br /> **Note:** Any headers in this are in addition to the required headers specified in the Headers section above. |
