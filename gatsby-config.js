@@ -379,6 +379,11 @@ module.exports = {
             header: true,
           },
           {
+            title: 'Manage Large Government Agencies',
+            path: 'sandbox/sandbox_portal/lga',
+            header: true,
+          },
+          {
             title: 'Management deployments',
             path: 'sandbox/sandbox_portal/deployment_management',
             header: true,
