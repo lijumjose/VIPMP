@@ -1,8 +1,10 @@
 # Migrate LGA customers from VIP to VIP Marketplace
 
+VIP LGA customers with fewer than 100 licenses are not eligible for migration to VIP Marketplace, unless they possess FRL (Feature Restricted Licensing) offline offers.
+
 The standard migration workflow is as follows:
 
-![Workflow for migrating an LGA customer from VIP to VIP Marketplace](../image/lga_migrate.png)
+![Workflow for migrating an LGA customer from VIP to VIP Marketplace](../image/lga_migrate.png).
 
 ## 1. Preview Migration API (Preview Offers)
 
