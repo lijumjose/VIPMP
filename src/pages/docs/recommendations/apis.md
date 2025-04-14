@@ -51,14 +51,14 @@ The following table lists the request parameters and their corresponding descrip
 
 | **Parameter** | **Type** | **Description** | **Range/Limits** |
 |-----|----------|----|------------------------|
-| recommendationContext   | String   | The context in which recommendations are being requested. <br><br> Values: <ul><li>GENERIC: Fetches recommendations without any primary context, using all available information about a customer.</li><li>ORDER_PREVIEW: Fetches recommendations based on the products in the cart.</li><li>RENEWAL_ORDER_PREVIEW: <ul><li>For AutoRenewal, it fetches recommendations based on Subscription Renewal preference.</li><li>For ManualRenewal, it fetches the same recommendations as the ORDER_PREVIEW context.</li></ul></li></ul> The default value is GENERIC. | Max 40 characters |
+| recommendationContext   | String   | The context in which recommendations are being requested. <br /> Values: <br /> - GENERIC: Fetches recommendations without any primary context, using all available information about a customer.<br /> - ORDER_PREVIEW: Fetches recommendations based on the products in the cart.<br /> - RENEWAL_ORDER_PREVIEW:  For AutoRenewal, it fetches recommendations based on Subscription Renewal preference. For ManualRenewal, it fetches the same recommendations as the ORDER_PREVIEW context. <br /> <br />The default value is GENERIC. | Max 40 characters |
 | customerId  | String   | Unique identifier for the customer for whom recommendations are being requested. This is a mandatory parameter. |        |
 | offers                  | Object   | List of offers for which recommendations are being fetched.   |                        |
 | offerId                 | String   | Unique identifier for the offer (Part Number).     |    |
 | quantity                | Integer  | Number of units of products in the cart.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |                        |
 | country                 | String   | Requested country for which recommendations should be fetched. If not provided, the customer's country will be used.                                                                                                                                                                                                                                                                                                                                                                                  |                        |
-| recommendationType      | String   | Entity type for which recommendations are being requested. <br><br> Note: Currently, only the product recommendations are supported.                                                                                                                                                                                                                                                                                                                                                                   |                        |
-| includeBaseOfferId      | String   | Indicates whether the response should include the Base OfferIDs. <br> Possible values are: <br /> - true <br />- false <br /> The default value is false. <br> Note: The response will always contain the ProductId, but this parameter will determine whether to include the BaseOfferId. Only clients using PriceList ExcelSheet need this.                                                                       |                        |
+| recommendationType      | String   | Entity type for which recommendations are being requested. <br /><br /> Note: Currently, only the product recommendations are supported.                                                                                                                                                                                                                                                                                                                                                                   |                        |
+| includeBaseOfferId      | String   | Indicates whether the response should include the Base OfferIDs. <br /> Possible values are: <br /> - true <br />- false <br /> The default value is false. <br /> Note: The response will always contain the ProductId, but this parameter will determine whether to include the BaseOfferId. Only clients using PriceList ExcelSheet need this.                                                                       |                        |
 
 ## Response
 
@@ -179,7 +179,7 @@ You can use the following query parameters as shown in this request URL: `POST <
 
 | **Parameter Name**         | **Parameter Value** | **Is it Mandatory?** | **Default Value**       |
 |----------------------------|---------------------|----------------------|-------------------------|
-| fetch_recommendations      | - true <br> - false | No                   | false                   |
+| fetch_recommendations      | - true <br /> - false | No                   | false                   |
 | recommendation_country     | US, GB, and so on   | No                   | <Customer's country>    |
 
 ### Request header
@@ -254,7 +254,7 @@ You can use the following query parameters as shown in this request URL: `POST <
 
 | **Parameter Name**         | **Parameter Value** | **Is it Mandatory?** | **Default Value**       |
 |----------------------------|---------------------|----------------------|-------------------------|
-| fetch_recommendations      | - true <br> - false | No                   | false                   |
+| fetch_recommendations      | - true <br /> - false | No                   | false                   |
 | recommendation_country     | US, GB, and so on   | No                   | <Customer's country>    |
 
 ### Request header
@@ -332,7 +332,7 @@ You can use the following query parameters as shown in this request URL: `POST <
 
 | **Parameter Name**         | **Parameter Value** | **Is it Mandatory?** | **Default Value**       |
 |----------------------------|---------------------|----------------------|-------------------------|
-| fetch_recommendations      | - true <br> - false | No                   | false                   |
+| fetch_recommendations      | - true <br /> - false | No                   | false                   |
 | recommendation_country     | US, GB, and so on   | No                   | <Customer's country>    |
 
 ### Request header
@@ -427,7 +427,7 @@ You can use the following query parameters as shown in this request URL: `POST <
 
 | **Parameter Name**         | **Parameter Value** | **Is it Mandatory?** | **Default Value**       |
 |----------------------------|---------------------|----------------------|-------------------------|
-| fetch_recommendations      | - true <br> - false | No                   | false                   |
+| fetch_recommendations      | - true <br /> - false | No                   | false                   |
 | recommendation_country     | US, GB, and so on   | No                   | <Customer's country>    |
 
 #### Request header
