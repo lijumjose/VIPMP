@@ -539,7 +539,7 @@ None.
 
 ### HTTP Status Codes
 
-Same as the standard [GET Order API](../order_management/get_order.md). 
+Same as the standard [GET Order API](../order_management/get_order.md).
 
 ## Provide tracking data to Adobe to get improved recommendations
 
