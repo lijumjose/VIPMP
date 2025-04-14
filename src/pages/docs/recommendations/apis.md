@@ -209,7 +209,7 @@ No change to the standard request payload. For example:
 
 ### Response
 
-Response header: x-recommendation-tracker-id: <Some String identifier>
+Response header: `x-recommendation-tracker-id: <Some String identifier>`
 
 **Response body:**
 
