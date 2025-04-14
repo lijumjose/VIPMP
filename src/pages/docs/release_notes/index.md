@@ -5,11 +5,13 @@
 
 ## API changes
 
+### April 18, 2025
+
+API Doc Version: 2025.04.01
+
+- Recommendations API enables VIP Marketplace partners to deliver intelligent, personalized, and in-context product recommendations, enhancing customer experience through upsell, cross-sell, and add-on opportunities. Read more about [how to manage recommendations](../recommendations/index.md).
+
 ### January 23, 2025
-
-API Doc Version: 2025.01.23
-
-Summary of changes:
 
 - High Volume Discount (HVD) customers in VIP can now migrate to VIP Marketplace. See [Migrate High Volume Discount customers from VIP to VIP Marketplace](../migration/migrate_hvd.md) for more details.
 - Introduced High Growth Offers for existing Acrobat Pro customers. These offers will replace the current High Volume Discounting program that exists in VIP.  See [Manage High Growth Offers](../customer_account/high_growth.md) for more details.

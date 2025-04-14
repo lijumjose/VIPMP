@@ -216,6 +216,21 @@ module.exports = {
         ]
       },
       {
+        title: 'Manage Recommendations',
+        description: '',
+        path: '/docs/recommendations/index.md',
+        pages: [
+          {
+            title: 'Manage Recommendations using APIs',
+            path: '/docs/recommendations/apis.md'
+          },
+          {
+            title: 'Error codes specific to Recommendations',
+            path: '/docs/recommendations/error_codes.md'
+          },
+        ]
+      },
+      {
         title: 'Migrate to VIP Marketplace',
         description: '',
         path: '/docs/migration/index.md',
