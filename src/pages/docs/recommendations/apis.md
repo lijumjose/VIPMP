@@ -171,7 +171,7 @@ Use the `Preview Order API` to get the recommendations to display while previewi
 
 |**Endpoint** | **Method**|
 |--- | ---|
-|>/v3/customers/<customerId>/orders | POST|
+|`/v3/customers/<customerId>/orders` | POST|
 
 ### Query parameters
 
@@ -246,7 +246,7 @@ Use the `Preview Renewal` API call with appropriate query parameters to fetch re
 
 |**Endpoint** | **Method**|
 |--- | ---|
-|v3/customers/<customerId>/orders | POST|
+|`v3/customers/<customerId>/orders` | POST|
 
 ### Query Parameters
 
@@ -324,11 +324,11 @@ Use the `GET Subscriptions` API call with appropriate query parameters to fetch 
 
 |**Endpoint** | **Method**|
 |--- | ---|
-|/v3/customers/<customerId>/subscriptions | GET|
+|`/v3/customers/<customerId>/subscriptions` | GET|
 
 ### Query Parameters
 
-You can use the following query parameters as shown in this request URL: `POST <cpapi-host>/v3/customers/<customerId>/orders?fetch_recommendations=true&recommendation_country=US`
+You can use the following query parameters as shown in this request URL: `POST <cpapi-host>/v3/customers/<customerId>/subscriptions?fetch_recommendations=true&recommendation_country=US`
 
 | **Parameter Name**         | **Parameter Value** | **Is it Mandatory?** | **Default Value**       |
 |----------------------------|---------------------|----------------------|-------------------------|
@@ -419,7 +419,7 @@ Use the `GET Order API` call with appropriate query parameters to fetch relevant
 
 |**Endpoint** | **Method**|
 |--- | ---|
-|/v3/customers/<customerId>/orders | POST|
+|`/v3/customers/<customerId>/orders` | POST|
 
 ### Query Parameters
 
