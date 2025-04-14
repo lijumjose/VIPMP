@@ -545,4 +545,22 @@ Same as the standard [GET Order API](../order_management/get_order.md).
 
 The following response header that is added to all responses provides data to understand how recommendations are working: `x-recommendation-tracker-id: <Some String identifier>`.
 
-Adobe can get more insight and provide better recommendations based on the data collected from the tracker.
+Adobe can get more insight and provide better recommendations based on the data collected from the tracker. Partners need to send the `x-recommendation-tracker-id` as a header in the `Create Order` and `Create Subscription` APIs. A sample CURL command for `Create Order API` with tracker ID in the header is as follows:
+
+```json
+curl --location 'https: //partners-stage.adobe.io/v3/customers/1005513019/orders' \
+--header '.... Existing headers ....' \
+--header 'x-recommendation-tracker-id: 85v9S4NAv2eLKmJ11LY7yxDwGrIvU94S' \
+--data '{
+"externalReferenceId": "6a6023e0-7b11-470a-8444-be3d0099639",
+"orderType": "NEW",
+"currencyCode": "USD",
+"lineItems": [
+{
+"extLineItemNumber": 1,
+"offerId": "65304479CA01A12",
+"quantity": 20
+}
+]
+}'
+```
