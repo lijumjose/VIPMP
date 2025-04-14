@@ -543,6 +543,6 @@ Same as the standard [GET Order API](../order_management/get_order.md).
 
 ## Provide tracking data to Adobe to get improved recommendations
 
-The following response header that is added to all responses provides data to understand how recommendations are working: x-recommendation-tracker-id: <Some String identifier>.
+The following response header that is added to all responses provides data to understand how recommendations are working: `x-recommendation-tracker-id: <Some String identifier>`.
 
 Adobe can get more insight and provide better recommendations based on the data collected from the tracker.
