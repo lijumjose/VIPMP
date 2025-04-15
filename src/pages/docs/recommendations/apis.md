@@ -40,31 +40,33 @@ Here’s the sample request body:
     }
   ],
   "country": "JP",
-  "recommendationType": "PRODUCT",
-  "includeBaseOfferId": true
 }
 ```
 
-**Request parameters**
+#### Request parameters
 
 The following table lists the request parameters and their corresponding descriptions:
 
-| **Parameter** | **Type** | **Description** | **Range/Limits** |
-|-----|----------|----|------------------------|
-| recommendationContext   | String   | The context in which recommendations are being requested. <br /> Values: <br /> - GENERIC: Fetches recommendations without any primary context, using all available information about a customer.<br /> - ORDER_PREVIEW: Fetches recommendations based on the products in the cart.<br /> - RENEWAL_ORDER_PREVIEW:  For AutoRenewal, it fetches recommendations based on Subscription Renewal preference. For ManualRenewal, it fetches the same recommendations as the ORDER_PREVIEW context. <br /> <br />The default value is GENERIC. | Max 40 characters |
-| customerId  | String   | Unique identifier for the customer for whom recommendations are being requested. This is a mandatory parameter. |        |
-| offers                  | Object   | List of offers for which recommendations are being fetched.   |                        |
-| offerId                 | String   | Unique identifier for the offer (Part Number).     |    |
-| quantity                | Integer  | Number of units of products in the cart.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |                        |
-| country                 | String   | Requested country for which recommendations should be fetched. If not provided, the customer's country will be used.                                                                                                                                                                                                                                                                                                                                                                                  |                        |
-| recommendationType      | String   | Entity type for which recommendations are being requested. <br /><br /> Note: Currently, only the product recommendations are supported.                                                                                                                                                                                                                                                                                                                                                                   |                        |
-| includeBaseOfferId      | String   | Indicates whether the response should include the Base OfferIDs. <br /> Possible values are: <br /> - true <br />- false <br /> The default value is false. <br /> Note: The response will always contain the ProductId, but this parameter will determine whether to include the BaseOfferId. Only clients using PriceList ExcelSheet need this.                                                                       |                        |
+| Parameter             | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Is mandatory?                                      | Range/Limits      |
+|-----------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|-------------------|
+| recommendationContext | String | The context in which recommendations are being requested. <br /> Values: <br /> - **GENERIC**: Fetches recommendations without any primary context, using all available information about a customer.<br /> - **ORDER_PREVIEW**: Fetches recommendations based on the products in the cart.<br /> - **RENEWAL_ORDER_PREVIEW**:  For AutoRenewal, it fetches recommendations based on Subscription Renewal preference. For ManualRenewal, it fetches the same recommendations as the **ORDER_PREVIEW** context. <br /> <br /> | No <br /> <br /> The default value is **GENERIC**. | Max 40 characters |
+| customerId            | String | Unique identifier for the customer for whom recommendations are being requested. This is a mandatory parameter.                                                                                                                                                                                                                                                                                                                                                                                                              | Yes                                                |                   |
+| offers                | Object | List of offers for which recommendations are being fetched.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | No                                                 |                   |
+| country               | String | Requested country for which recommendations should be fetched. If not provided, the customer's country will be used. See [available country codes](../references/supported_locales.md).                                                                                                                                                                                                                                                                                                                                                                                                         | No                                                 |                   |
+| recommendationType    | String | Entity type for which recommendations are being requested. <br /><br /> **Note**: Currently, only the product recommendations are supported.                                                                                                                                                                                                                                                                                                                                                                                 | No                                                 |                   |
+
+##### Offers object
+
+| Parameter | Type    | Description                                    | Is mandatory? | Range/Limits |
+|-----------|---------|------------------------------------------------|---------------|--------------|
+| offerId   | String  | Unique identifier for the offer (Part Number). | No            |              |
+| quantity  | Integer | Number of units of products in the cart.       | No            |              |
 
 ## Response
 
 ### Response Header
 
-The following response header, added to all responses, provides data to understand how recommendations are working: `x-recommendation-tracker-id: <Some String identifier>`. Adobe can gain more insights and improve future recommendations based on the data collected from the tracker.
+The following response header, added to all responses, provides data to understand how recommendations are working: `x-recommendation-tracker-id: <Some String identifier>`. For more information, see [Provide recommendation tracking data to Adobe to improve future recommendations](#provide-tracking-data-to-adobe-to-get-improved-recommendations).
 
 ### Response Body
 
