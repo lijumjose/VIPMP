@@ -12,13 +12,13 @@ Adobe's recommendations are context-aware, tailored to the products the customer
 
 These recommendations provide details of the product available for the customer in the upsell, cross-sell, and add-on motions.
 
-## Partner integration process to provide recommendations
-
 In the VIP Marketplace, users can be either 'resellers' or 'end-customers,' depending on the partner's business strategy and marketplace design. A reseller places orders against the customer's business account, whereas the customer navigates the partner marketplace to find products to order against their business account.
 
 Regardless of the user type, the journey remains the same, as the recommendations API focuses on customer-centric recommendations. For example, a partner can use the Preview Order API to list the recommendations, as illustrated in the following example:
 
 ![Sample Recommendations displayed in UI](../image/recomendation_UI.png)
+
+## Partner integration process to provide recommendations
 
 Below is a high-level overview of the partner integration model for providing recommendations:
 
