@@ -27,7 +27,7 @@ Here’s the sample request body:
 
 ```json
 {
-  "recommendationContext": "RENEWAL_ORDER_PREVIEW, GENERIC, ORDERS_VIEW",
+  "recommendationContext": "RENEWAL_ORDER_PREVIEW | GENERIC | ORDERS_VIEW",
   "customerId": "<CustomerId>",
   "offers": [
     {
@@ -40,6 +40,7 @@ Here’s the sample request body:
     }
   ],
   "country": "JP",
+  "language": "MULT"
 }
 ```
 
@@ -52,8 +53,8 @@ The following table lists the request parameters and their corresponding descrip
 | recommendationContext | String | The context in which recommendations are being requested. <br /> Values: <br /> - **GENERIC**: Fetches recommendations without any primary context, using all available information about a customer.<br /> - **ORDER_PREVIEW**: Fetches recommendations based on the products in the cart.<br /> - **RENEWAL_ORDER_PREVIEW**:  For AutoRenewal, it fetches recommendations based on Subscription Renewal preference. For ManualRenewal, it fetches the same recommendations as the **ORDER_PREVIEW** context. <br /> <br /> | No <br /> <br /> The default value is **GENERIC**. | Max 40 characters |
 | customerId            | String | Unique identifier for the customer for whom recommendations are being requested. This is a mandatory parameter.                                                                                                                                                                                                                                                                                                                                                                                                              | Yes                                                |                   |
 | offers                | Object | List of offers for which recommendations are being fetched.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | No                                                 |                   |
-| country               | String | Requested country for which recommendations should be fetched. If not provided, the customer's country will be used. See [available country codes](../references/supported_locales.md).                                                                                                                                                                                                                                                                                                                                                                                                         | No                                                 |                   |
-| recommendationType    | String | Entity type for which recommendations are being requested. <br /><br /> **Note**: Currently, only the product recommendations are supported.                                                                                                                                                                                                                                                                                                                                                                                 | No                                                 |                   |
+| country               | String | The requested country for which recommendations should be fetched. If not provided, the customer's country will be used. See [available country codes](../references/supported_locales.md).                                                                                                                                                                                                                                                                                                                                      | No                                                 |                   |
+| language              | String |The requested language for which recommendations should be fetched. Possible values are: <br /> - `EN` <br /> - `MULT`  <br />**Note:** Use `EN` for Western Europe customers or global customers deploying in Europe. `MULT` is available for all other regions.                                                                                                                                                                                                                                                                | No                                                 |                   |
 
 ##### Offers object
 
@@ -84,7 +85,7 @@ The following response header, added to all responses, provides data to understa
           "sourceType": "OFFER",
           "offerIds": [
             "30005702CA01A12"
-          ]
+          ],
         },
       },
       {
@@ -98,9 +99,8 @@ The following response header, added to all responses, provides data to understa
           "offerIds": [
             "30005702CA01A12"
           ],
-          "subscriptionIds": []
         },
-      }
+      },
     ],
     "crossSells": [
       {
@@ -113,9 +113,9 @@ The following response header, added to all responses, provides data to understa
           "sourceType": "OFFER",
           "offerIds": [
             "30005702CA01A12"
-          ]
+          ],
         },
-      }
+      },
     ],
     "addOns": [
       {
@@ -129,13 +129,10 @@ The following response header, added to all responses, provides data to understa
           "offerIds": [
             "30005702CA01A12"
           ],
-          "subscriptionIds": []
         },
-        "benefits": "",
-        "tags": []
-      }
-    ]
-  }
+      },
+    ],
+  },
 }
 ```
 
@@ -146,7 +143,7 @@ The following response header, added to all responses, provides data to understa
 | productRecommendations    | Object                    | Contains different categories of recommended products.                                                                                                                                                          |                  |
 | upsells                   | Array of Recommendations  | List of recommended products that offer more value by providing a higher-tier, premium, or enhanced version of the selected product or offer. Example: Adobe Photoshop to Adobe Creative Cloud All Apps          |                  |
 | crossSells                | Array of Recommendations  | List of recommended products that complement the selected product by offering additional functionality or benefits. Example: Adobe Stock to Adobe Photoshop                                                      |                  |
-| addOns                    | Array of Recommendations  | List of recommended products to extend or enhance the functionality of a base product. These products are not standalone and must be used in conjunction with the base product. Example: AI Assistant for Adobe Acrobat |                  |
+| addOns                    | Array of Recommendations  | List of recommended products to extend or enhance the functionality of a base product. These products are not standalone and must be used with the base product. Example: AI Assistant for Adobe Acrobat |                  |
 | rank                      | Integer                   | The ranking position of the recommended product within its category.                                                                                                                                             |                  |
 | product                   | Object                    | Details about the recommended product.                                                                                                                                                                          |                  |
 | id                        | String                    | Unique identifier for the recommended product.                                                                                                                                                                  |                  |
@@ -154,18 +151,17 @@ The following response header, added to all responses, provides data to understa
 | source                    | Object                    | Indicates the source of the recommendation.                                                                                                                                                                     |                  |
 | sourceType                | String                    | Specifies the type of the source entity. Currently only OFFER is supported.                                                                                                                                      |                  |
 | offerIds                  | String Array              | List of offer IDs that contributed to this recommendation.                                                                                                                                                      |                  |
-| subscriptionIds           | String Array              | List of subscription IDs that contributed to this recommendation (if applicable).                                                                |                  |
 
 ### HTTP Status Codes
 
-| **Status Code** | **Description**                        |
-|-----------------|----------------------------------------|
-| 200             | Successfully fetched recommendations   |
-| 400             | Bad request                            |
-| 401             | Invalid Authorization token            |
-| 403             | Invalid API Key                        |
-| 429             | Too Many Requests                      |
-| 500             | Internal Server Error                  |
+| **Status Code** | **Description**                           |
+|-----------------|-------------------------------------------|
+| 200             | Success (with or without recommendations) |
+| 400             | Bad request                               |
+| 401             | Invalid Authorization token               |
+| 403             | Invalid API Key                           |
+| 429             | Too Many Requests                         |
+| 500             | Internal Server Error                     |
 
 ## Preview Order
 
@@ -177,12 +173,13 @@ Use the `Preview Order API` to get the recommendations to display while previewi
 
 ### Query parameters
 
-You can use the following query parameters as shown in this request URL: `POST <cpapi-host>/v3/customers/<customerId>/orders?fetch_recommendations=true&recommendation_country=US`
+You can use the following query parameters as shown in this request URL: `POST <cpapi-host>/v3/customers/<customerId>/orders?fetch-recommendations=true&recommendation-country=US&recommendation-language=EN`
 
-| **Parameter Name**         | **Parameter Value** | **Is it Mandatory?** | **Default Value**       |
-|----------------------------|---------------------|----------------------|-------------------------|
-| fetch_recommendations      | - true <br /> - false | No                   | false                   |
-| recommendation_country     | US, GB, and so on   | No                   | <Customer's country>    |
+| **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
+|-------------------------|-----------------------|----------------------|----------------------|
+| fetch-recommendations   | - true <br /> - false | No                   | false                |
+| recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
+| recommendation-language | MULT or EN            | No                   | MULT                 |
 
 ### Request header
 
@@ -238,13 +235,15 @@ Response header: `x-recommendation-tracker-id: <Some String identifier>`
 }
 ```
 
+**Note:** The `recommendations` block lists the available recommendations.
+
 #### HTTP Status Code
 
 No change from the standard [Preview Order API](../order_management/order_scenarios.md).
 
 ## Preview Order Renewal
 
-Use the `Preview Renewal` API call with appropriate query parameters to fetch relevant recommendations:
+Use the `Preview Renewal` API call with appropriate query parameters to fetch relevant recommendations for both auto and manual renewal scenarios:
 
 |**Endpoint** | **Method**|
 |--- | ---|
@@ -252,12 +251,13 @@ Use the `Preview Renewal` API call with appropriate query parameters to fetch re
 
 ### Query Parameters
 
-You can use the following query parameters as shown in this request URL: `POST <cpapi-host>/v3/customers/<customerId>/orders?fetch_recommendations=true&recommendation_country=US`
+You can use the following query parameters as shown in this request URL: `POST <cpapi-host>/v3/customers/<customerId>/orders?fetch-recommendations=true&recommendation-country=US&recommendation-language=EN`
 
-| **Parameter Name**         | **Parameter Value** | **Is it Mandatory?** | **Default Value**       |
-|----------------------------|---------------------|----------------------|-------------------------|
-| fetch_recommendations      | - true <br /> - false | No                   | false                   |
-| recommendation_country     | US, GB, and so on   | No                   | <Customer's country>    |
+| **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
+|-------------------------|-----------------------|----------------------|----------------------|
+| fetch-recommendations   | - true <br /> - false | No                   | false                |
+| recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
+| recommendation-language | MULT or EN            | No                   | MULT                 |
 
 ### Request header
 
@@ -275,6 +275,8 @@ No change to the standard request body. For example:
     "currencyCode": "USD"
 }
 ```
+
+**Note:** Manual renewal accepts OfferIds in the request payload.
 
 ### Response
 
@@ -310,6 +312,21 @@ No change to the standard request body. For example:
 }
 ```
 
+**Note:** The `recommendations` block lists the available recommendations.
+
+#### Response parameters
+
+| **Parameter Name** | **Description** |
+|--------------------|-----------------|
+| eligibleOffers     | List of eligible offers for the renewal order. |
+| discountCode       | Discount code available for the offer. |
+| eligibleCustomer   | The customer for whom the offer is available. |
+| rank               | The ranking position of the recommended product within its category. |
+| product            | Details about the recommended product. |
+| id                 | Unique identifier for the recommended product. |
+| baseOfferId        | The base offer ID associated with the product. |
+| source             | Indicates the source of the recommendation. |
+
 ### HTTP Status Code
 
 | **Status Code** | **Description**            |
@@ -330,12 +347,13 @@ Use the `GET Subscriptions` API call with appropriate query parameters to fetch 
 
 ### Query Parameters
 
-You can use the following query parameters as shown in this request URL: `POST <cpapi-host>/v3/customers/<customerId>/subscriptions?fetch_recommendations=true&recommendation_country=US`
+You can use the following query parameters as shown in this request URL: `POST <cpapi-host>/v3/customers/<customerId>/subscriptions?fetch-recommendations=true&recommendation-country=US&recommendation-language=EN`
 
-| **Parameter Name**         | **Parameter Value** | **Is it Mandatory?** | **Default Value**       |
-|----------------------------|---------------------|----------------------|-------------------------|
-| fetch_recommendations      | - true <br /> - false | No                   | false                   |
-| recommendation_country     | US, GB, and so on   | No                   | <Customer's country>    |
+| **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
+|-------------------------|-----------------------|----------------------|----------------------|
+| fetch-recommendations   | - true <br /> - false | No                   | false                |
+| recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
+| recommendation-language | MULT or EN            | No                   | MULT                 |
 
 ### Request header
 
@@ -411,6 +429,8 @@ None.
 }
 ```
 
+**Note:** The `recommendations` block lists the available recommendations.
+
 #### HTTP Status Code
 
 Same as the standard GET Subscriptions API.
@@ -425,12 +445,13 @@ Use the `GET Order API` call with appropriate query parameters to fetch relevant
 
 ### Query Parameters
 
-You can use the following query parameters as shown in this request URL: `POST <cpapi-host>/v3/customers/<customerId>/orders?fetch_recommendations=true&recommendation_country=US`
+You can use the following query parameters as shown in this request URL: `POST <cpapi-host>/v3/customers/<customerId>/orders?fetch-recommendations=true&recommendation-country=US&recommendation-language=EN`
 
-| **Parameter Name**         | **Parameter Value** | **Is it Mandatory?** | **Default Value**       |
-|----------------------------|---------------------|----------------------|-------------------------|
-| fetch_recommendations      | - true <br /> - false | No                   | false                   |
-| recommendation_country     | US, GB, and so on   | No                   | <Customer's country>    |
+| **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
+|-------------------------|-----------------------|----------------------|----------------------|
+| fetch-recommendations   | - true <br /> - false | No                   | false                |
+| recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
+| recommendation-language | MULT or EN            | No                   | MULT                 |
 
 #### Request header
 
@@ -538,6 +559,8 @@ None.
    }
 }
 ```
+
+**Note:** The `recommendations` block lists the available recommendations.
 
 ### HTTP Status Codes
 
