@@ -231,6 +231,21 @@ module.exports = {
         ]
       },
       {
+        title: 'Manage Flexible Promotions',
+        description: '',
+        path: '/docs/flex_promo/index.md',
+        pages: [
+          {
+            title: 'Manage Recommendations using APIs',
+            path: '/docs/flex_promo/apis.md'
+          },
+          {
+            title: 'Error codes specific to Recommendations',
+            path: '/docs/flex_promo/error_codes.md'
+          },
+        ]
+      },
+      {
         title: 'Migrate to VIP Marketplace',
         description: '',
         path: '/docs/migration/index.md',
