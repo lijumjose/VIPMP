@@ -1,4 +1,4 @@
-# Error Codes Specific to recommendations
+# Error codes specific to Recommendations
 
 The following scenarios are possible in terms of API response status:
 
