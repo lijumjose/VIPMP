@@ -1,6 +1,6 @@
 # Manage resources
 
-You can manage the following resources and features using APIs:
+You can utilize APIs to manage various resources and features, including:
 
 - [Reseller accounts](../reseller_account/index.md)
 - [Customer accounts](../customer_account/index.md)
