@@ -48,12 +48,11 @@ module.exports = {
     subPages: 
     [
       {
-        title: 'Introduction',
+        title: 'INTRODUCTION',
         path: '/docs/index.md'
       },
       {
-        title: 'API authentication and access ',
-        description: '',
+        title: 'API AUTHENTICATION AND ACCESS', 
         path: '/docs/authentication',
         pages: [
           {
@@ -63,10 +62,8 @@ module.exports = {
         ]
       },
       {
-        title: 'Manage resources',
-        description: '',
+        title: 'MANAGE RESOURCES',
         path: '/docs/resources',
-        header: true,
         pages: [
           {
           title: 'Reseller accounts',
@@ -116,7 +113,7 @@ module.exports = {
               ]
             },
             {
-              title: 'Manage market segments',
+              title: 'Market segments',
               description: '',
               path: '/docs/market_segments/index.md',
             },
@@ -247,10 +244,8 @@ module.exports = {
        ]
       },
       {
-          title: 'Manage business processes',
-          description: '',
+          title: 'MANAGE BUSINESS PROCESSES',
           path: '/docs/resources/processes.md',
-          header: true,
           pages: [
             {
             title: 'Reseller change process',
@@ -299,10 +294,9 @@ module.exports = {
         ]
       },
       {
-        title: 'References',
+        title: 'REFERENCES',
         description: '',
         path: 'docs/references/index.md',
-        header: true,
         pages: [
           {
             title: 'API request header',
@@ -335,10 +329,9 @@ module.exports = {
         ]
       },
       {
-        title: 'Support',
+        title: 'SUPPORT',
         description: '',
         path: 'docs/support.md',
-        header: true,
       },
       {
         title: 'Sandbox User Guide',
