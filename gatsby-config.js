@@ -63,220 +63,246 @@ module.exports = {
         ]
       },
       {
-        title: 'Manage reseller accounts',
+        title: 'Manage resources',
         description: '',
-        path: '/docs/reseller_account',
+        path: '/docs/resources',
+        header: true,
         pages: [
           {
-            title: 'Create a reseller account',
-            path: '/docs/reseller_account/create_reseller_account.md'
-          },
-          {
-            title: 'Get reseller account details',
-            path: '/docs/reseller_account/get_reseller_account.md'
-          },
-          {
-            title: 'Update a reseller account',
-            path: '/docs/reseller_account/update_reseller_account.md'
-          }
-        ]
+          title: 'Reseller accounts',
+          description: '',
+          path: '/docs/reseller_account',
+          pages: [
+            {
+              title: 'Create a reseller account',
+              path: '/docs/reseller_account/create_reseller_account.md'
+            },
+            {
+              title: 'Get reseller account details',
+              path: '/docs/reseller_account/get_reseller_account.md'
+            },
+            {
+              title: 'Update a reseller account',
+              path: '/docs/reseller_account/update_reseller_account.md'
+            }
+          ]
+         },
+         {
+          title: 'Customer accounts',
+          description: '',
+          path: '/docs/customer_account/index.md',
+          header: true,
+          pages: [
+            {
+              title: 'Manage Three-Year Commits',
+              path: '/docs/customer_account/three_year_commit.md'
+            },
+            {
+              title: 'Manage Linked Memberships',
+              path: '/docs/customer_account/linked_membership.md'
+            },
+            {
+              title: 'Manage High Growth Offers',
+              path: '/docs/customer_account/high_growth.md',
+              pages: [
+                {
+                  title: 'High Growth Offer scenarios',
+                  path: '/docs/customer_account/high_growth_scenarios.md'
+                },
+                {
+                  title: 'Manage High Growth Offers through APIs',
+                  path: '/docs/customer_account/high_growth_apis.md'
+                }
+              ]
+            },
+            {
+              title: 'Manage market segments',
+              description: '',
+              path: '/docs/market_segments/index.md',
+            },
+            {
+              title: 'Create customer account',
+              path: '/docs/customer_account/create_customer_account.md'
+            },
+            {
+              title: 'Get customer account details',
+              path: '/docs/customer_account/get_customer_account.md'
+            },
+            {
+              title: 'Update customer account',
+              path: '/docs/customer_account/update_customer_account.md'
+            },
+            {
+              title: 'Get licenses pending partner order',
+              path: '/docs/customer_account/get_licenses.md'
+            }
+          ]
+         },
+         {
+          title: 'Deployments',
+          description: '',
+          path: '/docs/deployment_management/index.md',
+          header: true,
+          pages: [
+            {
+              title: 'Create deployment',
+              path: '/docs/deployment_management/create_deployment.md'
+            },
+            {
+              title: 'Get deployment details',
+              path: '/docs/deployment_management/get_deployment.md'
+            },
+            {
+              title: 'Update a deployment of a customer',
+              path: '/docs/deployment_management/update_deployment.md'
+            }
+          ]
+         },
+         {
+          title: 'Orders',
+          description: '',
+          path: '/docs/order_management/index.md',
+          header: true,
+          pages: [
+            {
+              title: 'Create order',
+              path: '/docs/order_management/create_order.md'
+            },
+            {
+              title: 'Order creation scenarios',
+              path: '/docs/order_management/order_scenarios.md'
+            },
+            {
+              title: 'Get order details',
+              path: '/docs/order_management/get_order.md'
+            },
+            {
+              title: ' Update order',
+              path: '/docs/order_management/update_order.md'
+            }
+          ]
+         },
+         {
+          title: 'Subscriptions',
+          description: 'Embed high-fidelity PDFs in web apps with analytics',
+          path: '/docs/subscription_management/index.md',
+          header: true,
+          pages: [
+            {
+              title: 'Create subscription',
+              path: '/docs/subscription_management/create_subscription.md'
+            },
+            {
+              title: 'Get details of a specific subscription',
+              path: '/docs/subscription_management/get_details.md'
+            },
+            {
+              title: 'Get details of all subscriptions of a customer',
+              path: '/docs/subscription_management/get_details_for_customers.md'
+            },
+            {
+              title: 'Update subscription',
+              path: '/docs/subscription_management/update_subscription.md'
+            }
+          ]
+         },
+         {
+          title: 'Recommendations',
+          description: '',
+          path: '/docs/recommendations/index.md',
+          header: true,
+          pages: [
+            {
+              title: 'Manage Recommendations using APIs',
+              path: '/docs/recommendations/apis.md'
+            },
+            {
+              title: 'Error codes specific to Recommendations',
+              path: '/docs/recommendations/error_codes.md'
+            },
+          ]
+         },
+         {
+          title: 'Flexible Promotions',
+          description: '',
+          path: '/docs/flex_promo/index.md',
+          header: true,
+          pages: [
+            {
+              title: 'Manage Flexible Promotions using APIs',
+              path: '/docs/flex_promo/apis.md'
+            },
+            {
+              title: 'Error codes specific to Flexible Promotions',
+              path: '/docs/flex_promo/error_codes.md'
+            },
+          ]
+         },
+         {
+          title: 'Notifications',
+          description: '',
+          path: 'docs/notification_management/index.md',
+          header: true,
+         },
+       ]
       },
       {
-        title: 'Manage customer accounts',
-        description: '',
-        path: '/docs/customer_account/index.md',
-        pages: [
-          {
-            title: 'Manage Three-Year Commits',
-            path: '/docs/customer_account/three_year_commit.md'
-          },
-          {
-            title: 'Manage Linked Memberships',
-            path: '/docs/customer_account/linked_membership.md'
-          },
-          {
-            title: 'Manage High Growth Offers',
-            path: '/docs/customer_account/high_growth.md',
+          title: 'Manage business processes',
+          description: '',
+          path: '/docs/resources/processes.md',
+          header: true,
+          pages: [
+            {
+            title: 'Reseller change process',
+            description: '',
+            path: '/docs/reseller_change/index.md',
+            header: true,
             pages: [
               {
-                title: 'High Growth Offer scenarios',
-                path: '/docs/customer_account/high_growth_scenarios.md'
+                title: 'Preview a reseller transfer',
+                path: '/docs/reseller_change/preview_transfer.md'
               },
               {
-                title: 'Manage High Growth Offers through APIs',
-                path: '/docs/customer_account/high_growth_apis.md'
+                title: 'Commit a reseller transfer',
+                path: '/docs/reseller_change/commit_transfer.md'
+              },
+              {
+                title: 'Get reseller transfer details',
+                path: '/docs/reseller_change/get_transfer.md'
+              }
+           ]
+          },
+          {
+            title: 'Migrate to VIP Marketplace',
+            description: '',
+            path: '/docs/migration/index.md',
+            header: true,
+            pages: [
+              {
+                title: 'Preview offers',
+                path: '/docs/migration/preview_offers.md'
+              },
+              {
+                title: 'Transfer subscriptions',
+                path: '/docs/migration/transfer_subscription.md'
+              },
+              {
+                title: 'Get transfer details',
+                path: '/docs/migration/get_transfer_details.md'
+              },
+              {
+                title: 'Migrate High Volume Discount customers from VIP to VIP Marketplace',
+                path: '/docs/migration/migrate_hvd.md'
               }
             ]
-          },
-          {
-            title: 'Create customer account',
-            path: '/docs/customer_account/create_customer_account.md'
-          },
-          {
-            title: 'Get customer account details',
-            path: '/docs/customer_account/get_customer_account.md'
-          },
-          {
-            title: 'Update customer account',
-            path: '/docs/customer_account/update_customer_account.md'
-          },
-          {
-            title: 'Get licenses pending partner order',
-            path: '/docs/customer_account/get_licenses.md'
           }
         ]
-      },
-      {
-        title: 'Manage market segments',
-        description: '',
-        path: '/docs/market_segments/index.md',
-      },
-      {
-        title: 'Manage deployments',
-        description: '',
-        path: '/docs/deployment_management/index.md',
-        pages: [
-          {
-            title: 'Create deployment',
-            path: '/docs/deployment_management/create_deployment.md'
-          },
-          {
-            title: 'Get deployment details',
-            path: '/docs/deployment_management/get_deployment.md'
-          },
-          {
-            title: 'Update a deployment of a customer',
-            path: '/docs/deployment_management/update_deployment.md'
-          }
-        ]
-      },
-      {
-        title: 'Reseller change process',
-        description: '',
-        path: '/docs/reseller_change/index.md',
-        pages: [
-          {
-            title: 'Preview a reseller transfer',
-            path: '/docs/reseller_change/preview_transfer.md'
-          },
-          {
-            title: 'Commit a reseller transfer',
-            path: '/docs/reseller_change/commit_transfer.md'
-          },
-          {
-            title: 'Get reseller transfer details',
-            path: '/docs/reseller_change/get_transfer.md'
-          }
-        ]
-      },
-      {
-        title: 'Manage orders',
-        description: '',
-        path: '/docs/order_management/index.md',
-        pages: [
-          {
-            title: 'Create order',
-            path: '/docs/order_management/create_order.md'
-          },
-          {
-            title: 'Order creation scenarios',
-            path: '/docs/order_management/order_scenarios.md'
-          },
-          {
-            title: 'Get order details',
-            path: '/docs/order_management/get_order.md'
-          },
-          {
-            title: ' Update order',
-            path: '/docs/order_management/update_order.md'
-          }
-        ]
-      },
-      {
-        title: 'Manage subscriptions',
-        description: 'Embed high-fidelity PDFs in web apps with analytics',
-        path: '/docs/subscription_management/index.md',
-        pages: [
-          {
-            title: 'Create subscription',
-            path: '/docs/subscription_management/create_subscription.md'
-          },
-          {
-            title: 'Get details of a specific subscription',
-            path: '/docs/subscription_management/get_details.md'
-          },
-          {
-            title: 'Get details of all subscriptions of a customer',
-            path: '/docs/subscription_management/get_details_for_customers.md'
-          },
-          {
-            title: 'Update subscription',
-            path: '/docs/subscription_management/update_subscription.md'
-          }
-        ]
-      },
-      {
-        title: 'Manage Recommendations',
-        description: '',
-        path: '/docs/recommendations/index.md',
-        pages: [
-          {
-            title: 'Manage Recommendations using APIs',
-            path: '/docs/recommendations/apis.md'
-          },
-          {
-            title: 'Error codes specific to Recommendations',
-            path: '/docs/recommendations/error_codes.md'
-          },
-        ]
-      },
-      {
-        title: 'Manage Flexible Promotions',
-        description: '',
-        path: '/docs/flex_promo/index.md',
-        pages: [
-          {
-            title: 'Manage Recommendations using APIs',
-            path: '/docs/flex_promo/apis.md'
-          },
-          {
-            title: 'Error codes specific to Recommendations',
-            path: '/docs/flex_promo/error_codes.md'
-          },
-        ]
-      },
-      {
-        title: 'Migrate to VIP Marketplace',
-        description: '',
-        path: '/docs/migration/index.md',
-        pages: [
-          {
-            title: 'Preview offers',
-            path: '/docs/migration/preview_offers.md'
-          },
-          {
-            title: 'Transfer subscriptions',
-            path: '/docs/migration/transfer_subscription.md'
-          },
-          {
-            title: 'Get transfer details',
-            path: '/docs/migration/get_transfer_details.md'
-          },
-          {
-            title: 'Migrate High Volume Discount customers from VIP to VIP Marketplace',
-            path: '/docs/migration/migrate_hvd.md'
-          }
-        ]
-      },
-      {
-        title: 'Manage notifications',
-        description: '',
-        path: 'docs/notification_management/index.md'
       },
       {
         title: 'References',
         description: '',
         path: 'docs/references/index.md',
+        header: true,
         pages: [
           {
             title: 'API request header',
@@ -311,7 +337,8 @@ module.exports = {
       {
         title: 'Support',
         description: '',
-        path: 'docs/support.md'
+        path: 'docs/support.md',
+        header: true,
       },
       {
         title: 'Sandbox User Guide',
