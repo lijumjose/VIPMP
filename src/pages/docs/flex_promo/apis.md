@@ -24,7 +24,6 @@ Sample Request URL: `GET <ENV>/v3/promotions?market-segment=COM&country=US&offer
 
 **Note:** Request Query parameters such as Market segment and country will be validated against Partner's contract data.
 
-Here's your text converted into a Markdown table:
 
 | Parameter       | Type             | Mandatory | Description                                                                 | Range/Limits                                                                 |
 |-----------------|------------------|-----------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|
@@ -83,19 +82,25 @@ None.
   ], 
     "links": { 
         "self": { 
-            "uri": "/v3/promotions?market-segment=COM&country=US&start-date=2025-01-01T00%253A00%253A00Z&end-date=2028-01-01T00%253A00%253A00Z&limit=2&offset=2", 
+            "uri": "/v3/promotions?market-segment=COM&country=US&
+            start-date=2025-01-01T00%253A00%253A00Z&
+            end-date=2028-01-01T00%253A00%253A00Z&limit=2&offset=2", 
             "method": "GET", 
             "headers": [] 
         }, 
         // next link will be present only if next resource present 
         "next": { 
-            "uri": "/v3/promotions?market-segment=COM&country=US&start-date=2025-01-01T00%253A00%253A00Z&end-date=2028-01-01T00%253A00%253A00Z&limit=2&offset=4", 
+            "uri": "/v3/promotions?market-segment=COM&country=US&
+            start-date=2025-01-01T00%253A00%253A00Z&
+            end-date=2028-01-01T00%253A00%253A00Z&limit=2&offset=4", 
             "method": "GET", 
             "headers": [] 
         }, 
         // prev link will be present only if previous resource present 
         "prev": { 
-            "uri": "/v3/promotions?market-segment=COM&country=US&start-date=2025-01-01T00%253A00%253A00Z&end-date=2028-01-01T00%253A00%253A00Z&limit=2&offset=0", 
+            "uri": "/v3/promotions?market-segment=COM&country=US&
+            start-date=2025-01-01T00%253A00%253A00Z&
+            end-date=2028-01-01T00%253A00%253A00Z&limit=2&offset=0", 
             "method": "GET", 
             "headers": [] 
         } 
@@ -105,7 +110,6 @@ None.
 
 ### Response parameters
 
-Here's your text converted into a Markdown table:
 
 | Parameter                       | Type             | Description                                                                 |
 |---------------------------------|------------------|-----------------------------------------------------------------------------|
@@ -230,7 +234,7 @@ The following sample request shows how to apply a promotion code to a Create Ord
 
 | Name               | Type   | Description                                                   |
 |--------------------|--------|---------------------------------------------------------------|
-| promotions         | String | Details of the promotion applied to that lineItem             |
+| promotions         | Object | Details of the promotion applied to that lineItem             |
 | promotions[].code  | String | The promotion code that was applied to that lineItem          |
 | promotions[].result| String | The “SUCCESS" indicates that the promotion code applicability was successful. |
 

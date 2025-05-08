@@ -48,11 +48,11 @@ module.exports = {
     subPages: 
     [
       {
-        title: 'INTRODUCTION',
+        title: 'Introduction',
         path: '/docs/index.md'
       },
       {
-        title: 'API AUTHENTICATION AND ACCESS', 
+        title: 'API authentication and access', 
         path: '/docs/authentication',
         pages: [
           {
@@ -62,7 +62,7 @@ module.exports = {
         ]
       },
       {
-        title: 'MANAGE RESOURCES',
+        title: 'Manage resources',
         path: '/docs/resources',
         pages: [
           {
@@ -244,7 +244,7 @@ module.exports = {
        ]
       },
       {
-          title: 'MANAGE BUSINESS PROCESSES',
+          title: 'Manage business processes',
           path: '/docs/resources/processes.md',
           pages: [
             {
@@ -294,7 +294,7 @@ module.exports = {
         ]
       },
       {
-        title: 'REFERENCES',
+        title: 'References',
         description: '',
         path: 'docs/references/index.md',
         pages: [
@@ -329,7 +329,7 @@ module.exports = {
         ]
       },
       {
-        title: 'SUPPORT',
+        title: 'Support',
         description: '',
         path: 'docs/support.md',
       },
@@ -431,6 +431,11 @@ module.exports = {
           {
             title: 'Manage Large Government Agencies',
             path: 'sandbox/sandbox_portal/lga',
+            header: true,
+          },
+          {
+            title: 'Manage Recommendations',
+            path: 'sandbox/sandbox_portal/recommendations',
             header: true,
           },
           {
