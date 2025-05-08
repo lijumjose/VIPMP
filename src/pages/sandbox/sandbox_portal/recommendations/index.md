@@ -12,7 +12,6 @@ Specific, hardcoded recommendations have been configured to facilitate integrati
 
 **Note:** In production, recommendations will be context-aware and based on the customer's entitlements (products owned), and products that are already owned shall not be recommended.
 
-
 | APIs                    | Context         | Rules for showing recommendations in sandbox                                                                                                                                                                                                 | Comments                                                                 |
 |-------------------------|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
 | Recommendations API (new) | GENERIC         | **Upsell Recommendation**<br />1. CC All Apps - Pro for teams<br /><br />**Crosssell Recommendation**<br />1. Adobe Express for teams<br /><br />**AddOn Recommendation**<br />1. AI Assistant for Acrobat for enterprise                                  | These products will be recommended regardless of the customer and their current entitlements. |

@@ -24,7 +24,6 @@ Sample Request URL: `GET <ENV>/v3/promotions?market-segment=COM&country=US&offer
 
 **Note:** Request Query parameters such as Market segment and country will be validated against Partner's contract data.
 
-
 | Parameter       | Type             | Mandatory | Description                                                                 | Range/Limits                                                                 |
 |-----------------|------------------|-----------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|
 | market-segment  | string           | Yes       | Filter promotions by market segment. Example: "COM", "EDU".                 |                                                                              |
@@ -109,7 +108,6 @@ None.
 ```
 
 ### Response parameters
-
 
 | Parameter                       | Type             | Description                                                                 |
 |---------------------------------|------------------|-----------------------------------------------------------------------------|
