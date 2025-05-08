@@ -6,7 +6,7 @@ Distributors designated as Large Government Agencies (LGA) distributors can crea
 - Migrate existing LGA customers from VIP to VIP Marketplace
 - Convert a customer in the Government market segment to an LGA customer
 
-For more information on managing LGAs using APIs, refer to [Managing Large Government Agencies using APIs](.././lga/index.md).
+For more information on managing LGAs using APIs, refer to [Managing Large Government Agencies using APIs](/src/pages/docs/lga/index.md).
 
 Use this document to test how to create and manage LGAs in a Sandbox environment.
 
