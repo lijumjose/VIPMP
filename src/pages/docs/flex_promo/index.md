@@ -58,4 +58,4 @@ Flexible promotions are accessible to all VIP Marketplace customers, irrespectiv
 
 Partners need to facilitate the discovery and application of Flexible Promotions. Perform the steps illustrated in the following figure to get a discounted price using flexible promotions:
 
-![Partner integration process](../image/flex_3.png)
+![Partner integration process](../image/flex_5.png)
