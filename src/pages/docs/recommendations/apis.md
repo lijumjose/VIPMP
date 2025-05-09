@@ -225,7 +225,7 @@ Response header: `x-recommendation-tracker-id: <Some String identifier>`
       } 
    ], 
    "creationDate":"2025-02-18T13:02:50Z" 
-    "recommendations": { 
+   "recommendations": { 
       "productRecommendations": { 
           "upsells": [...], 
           "crossSells": [...], 
@@ -578,14 +578,14 @@ curl --location 'https: //partners-stage.adobe.io/v3/customers/1005513019/orders
 --header 'x-recommendation-tracker-id: 85v9S4NAv2eLKmJ11LY7yxDwGrIvU94S' \
 --data '{
 "externalReferenceId": "6a6023e0-7b11-470a-8444-be3d0099639",
-"orderType": "NEW",
-"currencyCode": "USD",
-"lineItems": [
-{
-"extLineItemNumber": 1,
-"offerId": "65304479CA01A12",
-"quantity": 20
-}
-]
+ "orderType": "NEW",
+ "currencyCode": "USD",
+ "lineItems": [
+  {
+   "extLineItemNumber": 1,
+   "offerId": "65304479CA01A12",
+   "quantity": 20
+  }
+ ]
 }'
 ```
