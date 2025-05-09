@@ -32,7 +32,7 @@ The following use case demonstrates how to obtain recommendations for a customer
 
 ### Scenario
 
-- Customer is in the AD-30 interval (renewal period)
+- Customer is in the AD-30 interval
 - Partner is ready to quote the reseller or customer and wants to explore recommended additional products.
 - Autorenewal is enabled.
 

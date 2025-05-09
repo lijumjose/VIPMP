@@ -171,7 +171,7 @@ Array of the following objects:
 |status (read only, except for canceling)| String | Status code of the order | 4 characters|
 |links (read only)| `Links` resource | Deep links to get order details| |
 
-## eligibleOffers
+### eligibleOffers
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
@@ -182,7 +182,7 @@ Array of the following objects:
 |additionalCriteria |String |The additional criteria list for availing the High Growth Offer. Currently, THREE_YEAR_COMMIT is the only supported value, indicating that 3YC is required to avail the High Growth Offers. |Min: 1 item <br /> Max: 499 items |
 |deploymentId |String |Unique ID of the deployment. |Max: 40 characters |
 
-## LineItem
+### LineItem
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
@@ -192,6 +192,15 @@ Array of the following objects:
 |discountCode|String|The discount code applicable to the HVD customers migrating from VIP to VIP Marketplace.|Max: 40 characters|
 |subscriptionId (read only)| String | ID of the Subscription resource associated with this line item.| Max: 40 characters|
 |status (read only)| String | Status code of the line item | 4 characters|
+
+### productRecommendations
+
+| Property               | Type                    | Description                                                                                                                                           |
+|------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| productRecommendations | Object                  | Contains different categories of recommended products.                                                                                                |
+| upsells                | Array of Recommendations| List of recommended products that offer more value by providing a higher-tier, premium, or enhanced version of the selected product or offer. Example: Adobe Photoshop to Adobe Creative Cloud All Apps |
+| crossSells             | Array of Recommendations| List of recommended products that complement the selected product by offering additional functionality or benefits. Example: Adobe Stock to Adobe Photoshop |
+| addOns                 | Array of Recommendations| List of recommended products to extend or enhance the functionality of a base product. These products are not standalone and must be used with the base product. Example: AI Assistant for Adobe Acrobat |
 
 ## Subscription (top-level resource)
 

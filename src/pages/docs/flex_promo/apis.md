@@ -3,7 +3,7 @@
 
 You can use the following APIs to get details of available promotions and apply them when placing an order:
 
-- [Get flexible promotions](#get-promotions)
+- [Get Flexible Promotions](#get-promotions)
 - [Create Order and Preview Order](#create-order-and-preview-order)
 - [Get Order](#get-order)
 - [Get Order History](#get-order-history-of-a-customer)
@@ -26,10 +26,10 @@ Sample Request URL: `GET <ENV>/v3/promotions?market-segment=COM&country=US&offer
 
 | Parameter       | Type             | Mandatory | Description                                                                 | Range/Limits                                                                 |
 |-----------------|------------------|-----------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| market-segment  | string           | Yes       | Filter promotions by market segment. Example: "COM", "EDU".                 |                                                                              |
-| country         | string           | Yes       | Filter promotions by country using the ISO 3166-1 alpha-2 code. Example: "US", "IN". |                                                                              |
-| offer-ids       | array of strings | No        | Provide a comma-separated list of Offer IDs to retrieve applicable promotions. Example: 65322535CA04A12, 86322535CA04A12 |                                                                              |
-| promo-code      | string           | No        | Filter promotions by code. Example: "DIWALI", "BLACK_FRIDAY"                |                                                                              |
+| market-segment  | string           | Yes       | Filter promotions by market segment. Example: "COM", "EDU".                 |      3 characters                                                                        |
+| country         | string           | Yes       | Filter promotions by country using the ISO 3166-1 alpha-2 code. Example: "US", "IN". |         2 or 3 characters                                                                     |
+| offer-ids       | array of strings | No        | Provide a comma-separated list of Offer IDs to retrieve applicable promotions. Example: 65322535CA04A12, 86322535CA04A12 |   Max: 40 characters                                                                           |
+| promo-code      | string           | No        | Filter promotions by code. Example: "DIWALI", "BLACK_FRIDAY"                |      Max: 40 characters                                                                        |
 | start-date      | string (date)    | No        | Specify the start date for searching for promotions. This date can be without timestamp or with timestamp in Zulu time format. For example, “2025-05-02" or "2025-05-02T22:49:54Z" |                                                                              |
 | end-date        | string (date)    | No        | Specify the end date for searching for promotions. This date can be without timestamp or with timestamp in Zulu time format. For example, “2025-05-02" or "2025-05-02T22:49:54Z" |                                                                              |
 | limit           | integer          |           | Define the number of items to be returned in the response. Default: 20, Max: 50. |                                                                              |
@@ -118,7 +118,7 @@ None.
 | startDate                       | String (Date)    | First date when the Promotion can be used                                   |
 | status                          | String Enum      | Status of promotion. Possible values: ACTIVE, EXPIRED                       |
 | qualification                   | Object           |                                                                             |
-| qualification.baseOfferIds      | Array of Strings | List of Base Offer IDs of products eligible for promotion. Example: ["offer ID 1", "Offer ID 2"] Note: The List of base offer IDs will be empty if the promotion applies to all products. |
+| qualification.baseOfferIds      | Array of Strings | List of Base Offer IDs of products eligible for promotion. Example: ["Offer ID 1", "Offer ID 2"] <br />**Note**: The list of base Offer IDs will be empty if the promotion applies to all products. |
 | outcomes[]                      | Array of Objects |                                                                             |
 | outcomes[] → type               | String           | Type of Promotion. Possible values are: PERCENTAGE_DISCOUNT, FIXED_DISCOUNT  |
 | outcomes[].discounts[]          | Array of Objects |                                                                             |

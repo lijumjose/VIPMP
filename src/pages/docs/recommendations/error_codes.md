@@ -2,11 +2,10 @@
 
 The following scenarios are possible in terms of API response status:
 
-|Error Codes | Description | Reason| HTTP Status Code |
-|--|--|--|--|
-|6001 |INVALID_COUNTRY <br /> <br />Not allowed to fetch Recommendations for Country  `<code>` |Failed to retrieve recommendations |400 |
-|6002 |INVALID_LANGUAGE <br /> <br />Not allowed to fetch Recommendations for language `<Code>` |Failed to retrieve recommendations |400 |
-|6003 |Server Error |Failed to fetch response |500 |
+|Error Codes | Description | HTTP Status Code |
+|--|--|--|
+|5136 |INVALID_COUNTRY <br /> <br />Not allowed to fetch Recommendations for Country  `<code>` |400 |
+|5137|INVALID_LANGUAGE <br /> <br />Not allowed to fetch Recommendations for language `<Code>` |400 |
 
 In addition to the above status or error codes, all the standard error codes supported will be returned to clients for various failure scenarios. For example:
 

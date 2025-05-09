@@ -91,28 +91,6 @@ module.exports = {
           header: true,
           pages: [
             {
-              title: 'Manage Three-Year Commits',
-              path: '/docs/customer_account/three_year_commit.md'
-            },
-            {
-              title: 'Manage Linked Memberships',
-              path: '/docs/customer_account/linked_membership.md'
-            },
-            {
-              title: 'Manage High Growth Offers',
-              path: '/docs/customer_account/high_growth.md',
-              pages: [
-                {
-                  title: 'High Growth Offer scenarios',
-                  path: '/docs/customer_account/high_growth_scenarios.md'
-                },
-                {
-                  title: 'Manage High Growth Offers through APIs',
-                  path: '/docs/customer_account/high_growth_apis.md'
-                }
-              ]
-            },
-            {
               title: 'Market segments',
               description: '',
               path: '/docs/market_segments/index.md',
@@ -204,44 +182,72 @@ module.exports = {
           ]
          },
          {
-          title: 'Recommendations',
-          description: '',
-          path: '/docs/recommendations/index.md',
-          header: true,
-          pages: [
-            {
-              title: 'Manage Recommendations using APIs',
-              path: '/docs/recommendations/apis.md'
-            },
-            {
-              title: 'Error codes specific to Recommendations',
-              path: '/docs/recommendations/error_codes.md'
-            },
-          ]
-         },
-         {
-          title: 'Flexible Promotions',
-          description: '',
-          path: '/docs/flex_promo/index.md',
-          header: true,
-          pages: [
-            {
-              title: 'Manage Flexible Promotions using APIs',
-              path: '/docs/flex_promo/apis.md'
-            },
-            {
-              title: 'Error codes specific to Flexible Promotions',
-              path: '/docs/flex_promo/error_codes.md'
-            },
-          ]
-         },
-         {
           title: 'Notifications',
           description: '',
           path: 'docs/notification_management/index.md',
           header: true,
          },
        ]
+      },
+      {
+        title: 'Manage operational workflows',
+        path: '/docs/resources/workflows.md',
+        pages: [
+          {
+            title: 'Three-Year Commits',
+            path: '/docs/customer_account/three_year_commit.md'
+          },
+          {
+            title: 'Linked Memberships',
+            path: '/docs/customer_account/linked_membership.md'
+          },
+          {
+            title: 'High Growth Offers',
+            path: '/docs/customer_account/high_growth.md',
+            pages: [
+              {
+                title: 'High Growth Offer scenarios',
+                path: '/docs/customer_account/high_growth_scenarios.md'
+              },
+              {
+                title: 'Manage High Growth Offers through APIs',
+                path: '/docs/customer_account/high_growth_apis.md'
+              }
+            ]
+          },
+          {
+            title: 'Recommendations',
+            description: '',
+            path: '/docs/recommendations/index.md',
+            header: true,
+            pages: [
+              {
+                title: 'Manage Recommendations using APIs',
+                path: '/docs/recommendations/apis.md'
+              },
+              {
+                title: 'Error codes specific to Recommendations',
+                path: '/docs/recommendations/error_codes.md'
+              },
+            ]
+           },
+           {
+            title: 'Flexible Promotions',
+            description: '',
+            path: '/docs/flex_promo/index.md',
+            header: true,
+            pages: [
+              {
+                title: 'Manage Flexible Promotions using APIs',
+                path: '/docs/flex_promo/apis.md'
+              },
+              {
+                title: 'Error codes specific to Flexible Promotions',
+                path: '/docs/flex_promo/error_codes.md'
+              },
+            ]
+           },
+        ]
       },
       {
           title: 'Manage business processes',

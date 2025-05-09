@@ -48,20 +48,20 @@ Here’s the sample request body:
 
 The following table lists the request parameters and their corresponding descriptions:
 
-| Parameter             | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Is mandatory?                                      | Range/Limits      |
-|-----------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|-------------------|
-| recommendationContext | String | The context in which recommendations are being requested. <br /> Values: <br /> - **GENERIC**: Fetches recommendations without any primary context, using all available information about a customer.<br /> - **ORDER_PREVIEW**: Fetches recommendations based on the products in the cart.<br /> - **RENEWAL_ORDER_PREVIEW**:  For AutoRenewal, it fetches recommendations based on Subscription Renewal preference. For ManualRenewal, it fetches the same recommendations as the **ORDER_PREVIEW** context. <br /> <br /> | No <br /> <br /> The default value is **GENERIC**. | Max 40 characters |
-| customerId            | String | Unique identifier for the customer for whom recommendations are being requested. This is a mandatory parameter.                                                                                                                                                                                                                                                                                                                                                                                                              | Yes                                                |                   |
-| offers                | Object | List of offers for which recommendations are being fetched.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | No                                                 |                   |
-| country               | String | The requested country for which recommendations should be fetched. If not provided, the customer's country will be used. See [available country codes](../references/supported_locales.md).                                                                                                                                                                                                                                                                                                                                      | No                                                 |                   |
-| language              | String |The requested language for which recommendations should be fetched. Possible values are: <br /> - `EN` <br /> - `MULT`  <br />**Note:** Use `EN` for Western Europe customers or global customers deploying in Europe. `MULT` is available for all other regions.                                                                                                                                                                                                                                                                | No                                                 |                   |
+| Parameter             | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Is mandatory?                                      |
+|-----------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| recommendationContext | String | The context in which recommendations are being requested. <br /> Values: <br /> - **GENERIC**: Fetches recommendations without any primary context, using all available information about a customer.<br /> - **ORDER_PREVIEW**: Fetches recommendations based on the products in the cart.<br /> - **RENEWAL_ORDER_PREVIEW**:  For AutoRenewal, it fetches recommendations based on Subscription Renewal preference. For ManualRenewal, it fetches the same recommendations as the **ORDER_PREVIEW** context. <br /> <br /> | No <br /> <br /> The default value is **GENERIC**. |
+| customerId            | String | Unique identifier for the customer for whom recommendations are being requested. This is a mandatory parameter.                                                                                                                                                                                                                                                                                                                                                                                                              | Yes                                                |
+| offers                | Object | List of offers for which recommendations are being fetched.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | No                                                 |
+| country               | String | The requested country for which recommendations should be fetched. If not provided, the customer's country will be used. See [available country codes](../references/supported_locales.md).                                                                                                                                                                                                                                                                                                                                      | No                                                 |
+| language              | String |The requested language for which recommendations should be fetched. Possible values are: <br /> - `EN` <br /> - `MULT`  <br />**Note:** Use `EN` for Western Europe customers or global customers deploying in Europe. `MULT` is available for all other regions.                                                                                                                                                                                                                                                                | No                                                 |
 
-##### Offers object
+#### Offers object
 
-| Parameter | Type    | Description                                    | Is mandatory? | Range/Limits |
-|-----------|---------|------------------------------------------------|---------------|--------------|
-| offerId   | String  | Unique identifier for the offer (Part Number). | No            |              |
-| quantity  | Integer | Number of units of products in the cart.       | No            |              |
+| Parameter | Type    | Description                                    | Is mandatory? |
+|-----------|---------|------------------------------------------------|---------------|
+| offerId   | String  | Unique identifier for the offer (Part Number). | No            |
+| quantity  | Integer | Number of units of products in the cart.       | No            |
 
 ## Response
 
@@ -78,7 +78,6 @@ The following response header, added to all responses, provides data to understa
       {
         "rank": 0,
         "product": {
-          "id": "30006208",
           "baseOfferId": "30006208CA01A12"
         },
         "source": {
@@ -91,7 +90,6 @@ The following response header, added to all responses, provides data to understa
       {
         "rank": 1,
         "product": {
-          "id": "65304921",
           "baseOfferId": "65304921CA01A12"
         },
         "source": {
@@ -106,7 +104,6 @@ The following response header, added to all responses, provides data to understa
       {
         "rank": 0,
         "product": {
-          "id": "30006208",
           "baseOfferId": "30006208CA01A12"
         },
         "source": {
@@ -121,7 +118,6 @@ The following response header, added to all responses, provides data to understa
       {
         "rank": 0,
         "product": {
-          "id": "65304921",
           "baseOfferId": "65304921CA01A12"
         },
         "source": {
@@ -138,19 +134,18 @@ The following response header, added to all responses, provides data to understa
 
 **Response parameters**
 
-| **Parameter**             | **Type**                  | **Description**                                                                                                                                                                                                 | **Range/Limits** |
-|---------------------------|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
-| productRecommendations    | Object                    | Contains different categories of recommended products.                                                                                                                                                          |                  |
-| upsells                   | Array of Recommendations  | List of recommended products that offer more value by providing a higher-tier, premium, or enhanced version of the selected product or offer. Example: Adobe Photoshop to Adobe Creative Cloud All Apps          |                  |
-| crossSells                | Array of Recommendations  | List of recommended products that complement the selected product by offering additional functionality or benefits. Example: Adobe Stock to Adobe Photoshop                                                      |                  |
-| addOns                    | Array of Recommendations  | List of recommended products to extend or enhance the functionality of a base product. These products are not standalone and must be used with the base product. Example: AI Assistant for Adobe Acrobat |                  |
-| rank                      | Integer                   | The ranking position of the recommended product within its category.                                                                                                                                             |                  |
-| product                   | Object                    | Details about the recommended product.                                                                                                                                                                          |                  |
-| id                        | String                    | Unique identifier for the recommended product.                                                                                                                                                                  |                  |
-| baseOfferId               | String                    | The base offer ID associated with the product.                                                                                                                                                                  |                  |
-| source                    | Object                    | Indicates the source of the recommendation.                                                                                                                                                                     |                  |
-| sourceType                | String                    | Specifies the type of the source entity. Currently only OFFER is supported.                                                                                                                                      |                  |
-| offerIds                  | String Array              | List of offer IDs that contributed to this recommendation.                                                                                                                                                      |                  |
+| **Parameter**          | **Type**                 | **Description**                                                                                                                                                                                          |
+|------------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| productRecommendations | Object                   | Contains different categories of recommended products.                                                                                                                                                   |
+| upsells                | Array of Recommendations | List of recommended products that offer more value by providing a higher-tier, premium, or enhanced version of the selected product or offer. Example: Adobe Photoshop to Adobe Creative Cloud All Apps  |
+| crossSells             | Array of Recommendations | List of recommended products that complement the selected product by offering additional functionality or benefits. Example: Adobe Stock to Adobe Photoshop                                              |
+| addOns                 | Array of Recommendations | List of recommended products to extend or enhance the functionality of a base product. These products are not standalone and must be used with the base product. Example: AI Assistant for Adobe Acrobat |
+| rank                   | Integer                  | The ranking position of the recommended product within its category.                                                                                                                                     |
+| product                | Object                   | Details about the recommended product.                                                                                                                                                                   |
+| baseOfferId            | String                   | The base offer ID associated with the product.                                                                                                                                                           |
+| source                 | Object                   | Indicates the source of the recommendation.                                                                                                                                                              |
+| sourceType             | String                   | Specifies the type of the source entity. Currently only `OFFER` is supported.                                                                                                                              |
+| offerIds               | String Array             | List of offer IDs that contributed to this recommendation.                                                                                                                                               |
 
 ### HTTP Status Codes
 
@@ -573,7 +568,7 @@ The following response header that is added to all responses provides data to un
 Adobe can get more insight and provide better recommendations based on the data collected from the tracker. Partners need to send the `x-recommendation-tracker-id` as a header in the `Create Order` and `Create Subscription` APIs. A sample CURL command for `Create Order API` with tracker ID in the header is as follows:
 
 ```json
-curl --location 'https: //partners-stage.adobe.io/v3/customers/1005513019/orders' \
+curl --location 'https: //partners.adobe.io/v3/customers/1005513019/orders' \
 --header '.... Existing headers ....' \
 --header 'x-recommendation-tracker-id: 85v9S4NAv2eLKmJ11LY7yxDwGrIvU94S' \
 --data '{
