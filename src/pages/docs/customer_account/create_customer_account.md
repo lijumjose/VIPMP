@@ -16,7 +16,7 @@ Ensure that you are aware of the following before creating a customer account:
 * The customer payment instrument is managed on the partner marketplace.
 * `cotermDate` is usually calculated when a customer’s first order is placed.
   * Most subscriptions, except for Stock Credit Packs, will end or renew on the `cotermDate`.
-* Use `cotermDate` in the request to create an extended-term customer.
+* Use `cotermDate` in your request to create an extended-term customer. For all market segments except EDU, the `cotermDate` can be set to a date that is more than 1 to 3 years from the current date. For EDU customers, the term can be extended up to 4 years from the current date.
 * Use `externalReferenceId` to pass it to the marketplace’s Customer ID.
   * Optional and does not need to be unique.
 * `Contacts` specifies admins for the customer's account and receive an admin welcome email.
