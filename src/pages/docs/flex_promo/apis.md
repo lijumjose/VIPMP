@@ -10,7 +10,7 @@ You can use the following APIs to get details of available promotions and apply 
 
 ## Get Promotions
 
-Use the `GET Promotions` API to fetch promotions applicable to a product
+Use the `GET Promotions` API to fetch promotions applicable to a product:
 
 | Endpoint       | Method |
 |----------------|--------|

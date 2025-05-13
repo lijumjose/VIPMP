@@ -26,7 +26,7 @@ The discounts applied based on these discount types are explained in the followi
 
 **Percentage Off Promotion – Example: 20% discount for Acrobat Pro**
 
-| SKU              | Original Price | Promo Price |
+| Part Number      | Original Price | Promo Price |
 |------------------|----------------|-------------|
 | 30006208CA01A12  | $89.99         | $71.99      |
 | 30006208CA02A12  | $87.99         | $70.39      |
@@ -38,7 +38,7 @@ The discounts applied based on these discount types are explained in the followi
 
 **Fixed Amount Discount – Example: $20 discount for Acrobat Express**
 
-| SKU              | Original Price | Discount Amount | Promo Price |
+| Part Number      | Original Price | Discount Amount | Promo Price |
 |------------------|----------------|-----------------|-------------|
 | 30006208CA01A12  | $89.99         | $20.00          | $69.99      |
 | 30006208CA02A12  | $87.99         | $20.00          | $67.99      |
