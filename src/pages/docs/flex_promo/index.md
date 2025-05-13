@@ -24,7 +24,7 @@ The following two types of discounts are available with flexible promotions:
 
 The discounts applied based on these discount types are explained in the following tables:
 
-**Percentage Off Promotion – Example: 20% discount for Acrobat Pro**
+**Percentage Off Discount – Example: 20% discount for Acrobat Pro**
 
 | Part Number      | Original Price | Promo Price |
 |------------------|----------------|-------------|
