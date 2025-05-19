@@ -1,5 +1,6 @@
 # Upcoming releases
 
-The following feature will be released next:
+The following features are scheduled for release:
 
-- New Large Government Agencies (LGA) and LGAs migrated from VIP to VIP Marketplace can purchase products at a significantly discounted price. For more details, refer to [Adobe CPAPI Documentation for Managing Large Government Agencies (LGA)](https://adobe.sharepoint.com/:b:/r/sites/VIPMarketplacePartners/PreRelease%20Materials/Technical%20Assets/Developer%20Documentation/LGA%20documentation_v1.0.pdf?csf=1&web=1&e=u2lyz5).
+- Partners can access flexible promotions tailored to specific products, market segments, and countries, and apply them during the order process. Read more about [how to manage flexible promotions](../flex_promo/index.md).
+- Recommendations API enables VIP Marketplace partners to deliver intelligent, personalized, and in-context product recommendations, enhancing customer experience through upsell, cross-sell, and add-on opportunities. Read more about [how to manage recommendations](../recommendations/index.md).
