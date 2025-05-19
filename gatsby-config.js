@@ -349,154 +349,169 @@ module.exports = {
             path: 'sandbox/api_collection.md'
           },
           {
-            title: 'Manage distributors',
-            path: 'sandbox/distributor_management'
-          },
-          {
-            title: 'Sandbox Use Cases',
+            title: 'Manage resources',
             path: 'sandbox/sandbox_portal',
             header: true,
+            pages: [
+              {
+                title: 'Distributors',
+                path: 'sandbox/distributor_management'
+              },
+              {
+                title: 'Resellers',
+                path: 'sandbox/sandbox_portal/reseller_management',
+                header: true,
+                pages: [
+                  {
+                  title: 'Create a reseller',
+                  path: 'sandbox/sandbox_portal/reseller_management/create_reseller.md'
+                  },
+                  {
+                  title: 'View reseller information',
+                  path: 'sandbox/sandbox_portal/reseller_management/view_reseller_info.md'
+                  },
+                  {
+                   title: 'Edit reseller status',
+                   path: 'sandbox/sandbox_portal/reseller_management/view_reseller_info.md'
+                  },
+                  ]
+              },
+              {
+                title: 'Customers',
+                path: 'sandbox/sandbox_portal/customer_management',
+                header: true,
+                pages: [
+                  {
+                  title: 'Create a customer',
+                  path: 'sandbox/sandbox_portal/customer_management/create_customer.md'
+                  },
+                  {
+                  title: 'Create Product Arrangements for a customer',
+                  path: 'sandbox/sandbox_portal/customer_management/create_pa_for_customer.md'
+                  },
+                  {
+                   title: 'View customer details',
+                   path: 'sandbox/sandbox_portal/customer_management/get_customer_details.md'
+                  },
+                  {
+                    title: 'Update customer details',
+                    path: 'sandbox/sandbox_portal/customer_management/update_customer.md'
+                   },
+                   {
+                    title: 'Update reseller details of a customer',
+                    path: 'sandbox/sandbox_portal/customer_management/update_reseller.md'
+                   },
+                  ]
+              },
+              {
+                title: 'Deployments',
+                path: 'sandbox/sandbox_portal/deployment_management',
+                header: true,
+              },
+              {
+                title: 'Orders',
+                path: 'sandbox/sandbox_portal/order_management',
+                header: true,
+                pages: [
+                  {
+                  title: 'Create order',
+                  path: 'sandbox/sandbox_portal/order_management/create_order.md'
+                  },
+                  {
+                  title: 'Search and view order details',
+                  path: 'sandbox/sandbox_portal/order_management/view_order_details.md'
+                  },
+                  {
+                   title: 'Edit the order status and creation date',
+                   path: 'sandbox/sandbox_portal/order_management/edit_order_status.md'
+                  },
+                  {
+                    title: 'Cancel an order',
+                    path: 'sandbox/sandbox_portal/order_management/cancel_order.md'
+                  },
+                  {
+                    title: 'Place manual renewal order',
+                    path: 'sandbox/sandbox_portal/order_management/manual_renewal.md'
+                  },
+                  ]
+              },
+              {
+                title: 'Subscriptions',
+                path: 'sandbox/sandbox_portal/subscription_management',
+                header: true,
+                pages: [
+                  {
+                  title: 'View subscription details',
+                  path: 'sandbox/sandbox_portal/subscription_management/view_subscription.md'
+                  },
+                  {
+                  title: 'Update auto-renewal configuration',
+                  path: 'sandbox/sandbox_portal/subscription_management/Update_auto_renwal.md'
+                  },
+                  {
+                    title: 'Expire an active subscription',
+                    path: 'sandbox/sandbox_portal/subscription_management/expire_subscription.md'
+                  },
+                  ]
+              },
+              {
+                title: 'Large Government Agencies',
+                path: 'sandbox/sandbox_portal/lga',
+                header: true,
+              },
+            ],
           },
           {
-            title: 'Manage resellers',
-            path: 'sandbox/sandbox_portal/reseller_management',
+            title: 'Test operational workflows',
+            path: 'sandbox/sandbox_portal/operations.md',
             header: true,
             pages: [
               {
-              title: 'Create a reseller',
-              path: 'sandbox/sandbox_portal/reseller_management/create_reseller.md'
+                title: 'Three-Year Commits (3YC)',
+                path: 'sandbox/sandbox_portal/3yc_management',
+                header: true,
+                pages: [
+                  {
+                  title: 'View 3YC benefits status',
+                  path: 'sandbox/sandbox_portal/3yc_management/view_3yc_status.md'
+                  },
+                  ]
               },
               {
-              title: 'View reseller information',
-              path: 'sandbox/sandbox_portal/reseller_management/view_reseller_info.md'
+                title: 'Linked Memberships',
+                path: 'sandbox/sandbox_portal/linked_memberships',
+                header: true,
+                pages: [
+                  {
+                  title: 'Enroll in a Linked Membership',
+                  path: 'sandbox/sandbox_portal/linked_memberships/enroll.md'
+                  },
+                  {
+                  title: 'View Linked Membership details',
+                  path: 'sandbox/sandbox_portal/linked_memberships/view_details.md'
+                  },
+                  ]
               },
               {
-               title: 'Edit reseller status',
-               path: 'sandbox/sandbox_portal/reseller_management/view_reseller_info.md'
+                title: 'High Growth Offers for customers',
+                path: 'sandbox/sandbox_portal/high_growth_offer/high_growth.md',
+                header: true,
               },
-              ]
+              
+              {
+                title: 'Recommendations',
+                path: 'sandbox/sandbox_portal/recommendations',
+                header: true,
+              },
+              {
+                title: 'Flexible Promotions',
+                path: 'sandbox/sandbox_portal/flex_promo',
+                header: true,
+              },
+            ],
           },
           {
-            title: 'Manage customers',
-            path: 'sandbox/sandbox_portal/customer_management',
-            header: true,
-            pages: [
-              {
-              title: 'Create a customer',
-              path: 'sandbox/sandbox_portal/customer_management/create_customer.md'
-              },
-              {
-              title: 'Create Product Arrangements for a customer',
-              path: 'sandbox/sandbox_portal/customer_management/create_pa_for_customer.md'
-              },
-              {
-               title: 'View customer details',
-               path: 'sandbox/sandbox_portal/customer_management/get_customer_details.md'
-              },
-              {
-                title: 'Update customer details',
-                path: 'sandbox/sandbox_portal/customer_management/update_customer.md'
-               },
-               {
-                title: 'Update reseller details of a customer',
-                path: 'sandbox/sandbox_portal/customer_management/update_reseller.md'
-               },
-              ]
-          },
-          {
-            title: 'Manage three-year commits (3YC)',
-            path: 'sandbox/sandbox_portal/3yc_management',
-            header: true,
-            pages: [
-              {
-              title: 'View 3YC benefits status',
-              path: 'sandbox/sandbox_portal/3yc_management/view_3yc_status.md'
-              },
-              ]
-          },
-          {
-            title: 'Manage linked memberships',
-            path: 'sandbox/sandbox_portal/linked_memberships',
-            header: true,
-            pages: [
-              {
-              title: 'Enroll in a linked membership',
-              path: 'sandbox/sandbox_portal/linked_memberships/enroll.md'
-              },
-              {
-              title: 'View linked membership details',
-              path: 'sandbox/sandbox_portal/linked_memberships/view_details.md'
-              },
-              ]
-          },
-          {
-            title: 'High Growth Offer for customers',
-            path: 'sandbox/sandbox_portal/high_growth_offer/high_growth.md',
-            header: true,
-          },
-          {
-            title: 'Manage Large Government Agencies',
-            path: 'sandbox/sandbox_portal/lga',
-            header: true,
-          },
-          {
-            title: 'Manage Recommendations',
-            path: 'sandbox/sandbox_portal/recommendations',
-            header: true,
-          },
-          {
-            title: 'Management deployments',
-            path: 'sandbox/sandbox_portal/deployment_management',
-            header: true,
-          },
-          {
-            title: 'Manage orders',
-            path: 'sandbox/sandbox_portal/order_management',
-            header: true,
-            pages: [
-              {
-              title: 'Create order',
-              path: 'sandbox/sandbox_portal/order_management/create_order.md'
-              },
-              {
-              title: 'Search and view order details',
-              path: 'sandbox/sandbox_portal/order_management/view_order_details.md'
-              },
-              {
-               title: 'Edit the order status and creation date',
-               path: 'sandbox/sandbox_portal/order_management/edit_order_status.md'
-              },
-              {
-                title: 'Cancel an order',
-                path: 'sandbox/sandbox_portal/order_management/cancel_order.md'
-              },
-              {
-                title: 'Place manual renewal order',
-                path: 'sandbox/sandbox_portal/order_management/manual_renewal.md'
-              },
-              ]
-          },
-          {
-            title: 'Manage subscriptions',
-            path: 'sandbox/sandbox_portal/subscription_management',
-            header: true,
-            pages: [
-              {
-              title: 'View subscription details',
-              path: 'sandbox/sandbox_portal/subscription_management/view_subscription.md'
-              },
-              {
-              title: 'Update auto-renewal configuration',
-              path: 'sandbox/sandbox_portal/subscription_management/Update_auto_renwal.md'
-              },
-              {
-                title: 'Expire an active subscription',
-                path: 'sandbox/sandbox_portal/subscription_management/expire_subscription.md'
-              },
-              ]
-          },
-          {
-            title: 'Managing membership transfers',
+            title: 'Manage membership transfers',
             path: 'sandbox/sandbox_portal/transfer_memberships',
             header: true,
             pages: [
