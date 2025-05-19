@@ -1,6 +1,6 @@
 # Manage Flexible Promotions
 
-The Flexible Promotion feature enables partners to easily adjust product prices, making them more attractive to different customer segments. These promotions primarily aim to boost customer retention or acquisition. You can access details about the flexible promotions available for a product in a specific market segment and region, and apply them when placing an order.
+The Flexible Promotion feature enables partners to easily adjust product prices, making them more attractive to different customer segments. These promotions primarily aim to boost customer retention or acquisition. You can access details about the flexible promotions available for a product in a specific market segment and country, and apply them when placing an order.
 
 Key advantages of Flexible Promotions include:
 

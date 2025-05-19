@@ -9,7 +9,7 @@
 
 API Doc Version 2025.05.01
 
-- Partners can get flexible promotions available for a product in a specific market segment and region and apply them when placing an order. Read more about [how to manage flexible promotions](../flex_promo/index.md).
+- Partners can access flexible promotions tailored to specific products, market segments, and countries, and apply them during the order process. Read more about [how to manage flexible promotions](../flex_promo/index.md).
 - Recommendations API enables VIP Marketplace partners to deliver intelligent, personalized, and in-context product recommendations, enhancing customer experience through upsell, cross-sell, and add-on opportunities. Read more about [how to manage recommendations](../recommendations/index.md).
 
 ### January 23, 2025
