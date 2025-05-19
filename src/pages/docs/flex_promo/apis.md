@@ -22,7 +22,7 @@ Sample Request URL: `GET <ENV>/v3/promotions?market-segment=COM&country=US&offer
 
 ### Query parameters  
 
-**Note:** Request Query parameters such as Market segment and country will be validated against Partner's contract data.
+**Note:** Request Query parameters such as Market segment and country will be validated against the Partner's contract data.
 
 | Parameter       | Type             | Mandatory | Description                                                                 | Range/Limits                                                                 |
 |-----------------|------------------|-----------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|
@@ -87,7 +87,7 @@ None.
             "method": "GET", 
             "headers": [] 
         }, 
-        // next link will be present only if next resource present 
+        // next link will be present only if the next resource is present 
         "next": { 
             "uri": "/v3/promotions?market-segment=COM&country=US&
             start-date=2025-01-01T00%253A00%253A00Z&
@@ -95,7 +95,7 @@ None.
             "method": "GET", 
             "headers": [] 
         }, 
-        // prev link will be present only if previous resource present 
+        // prev link will be present only if a previous resource is present 
         "prev": { 
             "uri": "/v3/promotions?market-segment=COM&country=US&
             start-date=2025-01-01T00%253A00%253A00Z&
