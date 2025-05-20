@@ -15,7 +15,7 @@ Use the `Fetch Recommendations` API call with appropriate query parameters to re
 
 |**Endpoint** | **Method**|
 |--- | ---|
-|/recommendations | POST|
+|/v3/recommendations | POST|
 
 ### Request Header
 
@@ -242,7 +242,7 @@ Use the `Preview Renewal` API call with appropriate query parameters to fetch re
 
 |**Endpoint** | **Method**|
 |--- | ---|
-|`v3/customers/<customerId>/orders` | POST|
+|`/v3/customers/<customerId>/orders` | POST|
 
 ### Query Parameters
 
@@ -436,7 +436,7 @@ Use the `GET Order API` call with appropriate query parameters to fetch relevant
 
 |**Endpoint** | **Method**|
 |--- | ---|
-|`/v3/customers/<customerId>/orders` | POST|
+|`/v3/customers/<customerId>/orders` | GET|
 
 ### Query Parameters
 
