@@ -342,7 +342,7 @@ Use the `GET Subscriptions` API call with appropriate query parameters to fetch 
 
 ### Query Parameters
 
-You can use the following query parameters as shown in this request URL: `POST <cpapi-host>/v3/customers/<customerId>/subscriptions?fetch-recommendations=true&recommendation-country=US&recommendation-language=EN`
+You can use the following query parameters as shown in this request URL: `GET <cpapi-host>/v3/customers/<customerId>/subscriptions?fetch-recommendations=true&recommendation-country=US&recommendation-language=EN`
 
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
@@ -440,7 +440,7 @@ Use the `GET Order API` call with appropriate query parameters to fetch relevant
 
 ### Query Parameters
 
-You can use the following query parameters as shown in this request URL: `POST <cpapi-host>/v3/customers/<customerId>/orders?fetch-recommendations=true&recommendation-country=US&recommendation-language=EN`
+You can use the following query parameters as shown in this request URL: `GET <cpapi-host>/v3/customers/<customerId>/orders?fetch-recommendations=true&recommendation-country=US&recommendation-language=EN`
 
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
