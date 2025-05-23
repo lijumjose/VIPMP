@@ -13,10 +13,6 @@ Key advantages of Flexible Promotions include:
 
 - Allows partners to activate discounts within days for timely seasonal promotions like Black Friday.
 
-**Targeted promotions for specific reseller tiers:**
-
-- Criteria-based options for exclusive discounts to high-value resellers.
-
 The following two types of discounts are available with flexible promotions:
 
 1. **Percentage Discount (% off Promo):** A percentage reduction is applied to the base price of the product.
@@ -52,7 +48,7 @@ These discounts are applied to an offer using a promotion code. Partners must us
 
 ## Eligibility criteria
 
-Flexible promotions are accessible to all VIP Marketplace customers, irrespective of their current discounts, including Linked Memberships or High-Volume Discounts. However, eligibility is determined by other factors, such as the customer's market segment and country.
+Flexible promotions are accessible to all VIP Marketplace customers, irrespective of their current volume discounts, including Linked Memberships. However, eligibility is determined by other factors, such as the customer's market segment and country.
 
 ## Partner integration process  
 

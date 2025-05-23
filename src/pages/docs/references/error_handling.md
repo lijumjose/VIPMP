@@ -84,6 +84,9 @@ Some error responses will include additionalDetails, an array of strings with mo
 |2138 | Invalid Deployment | Create Order |404|
 |2139| Deployment not allowed for this contract |Create Order | 400|
 |2140| Order contains order level currency and line-item level currency |Create Order | 400|
+| 2141       | Customer is not qualified for the promotion. <br /> Aadditional details: [ "Line Item: 1, Reason: MARKET_SEGMENT_MISMATCH" ]                                                                 |    Create Order <br /> Preview Order                  |    400              |
+| 2144       | Promo code cannot be applied in combination with other discounts. <br /> Aadditional details: [ "Line Item: 1, Reason: Promo code cannot be applied in combination with other discounts" ] |       Create Order <br /> Preview Order               |  400                |
+| 2145       | Promotional codes cannot be applied to non-base products.   <br /> Aadditional details: [ "Line Item: 1, Reason: Promotional codes cannot be applied to non-base products" ]                 |    Create Order <br /> Preview Order                  |    400              |
 |3115 | Invalid Customer or Subscription ID| Get Subscription Details, Update Subscription Auto-Renewal| 404|
 |3116 | renewalQuantity out of range |Update Subscription Auto-Renewal| 400|
 |3117 | currentQuantity out of range | | 400|
@@ -119,6 +122,8 @@ Some error responses will include additionalDetails, an array of strings with mo
 |5133| Order cancellation not allowed below MOQ quantity| |400 <br /> Description: When the customer is trying to cancel the MOQ offer quantity that results in pushing the remaining qty below the MOQ offer quantity.|
 |5134| Could not turn off Auto Renewal for MOQ offer| |400 <br /> Description: When the customer is trying to turn off autorenewal for an MOQ offer.|
 |5135| Invalid Discount Code|Create Order | 400|
+|5136 |INVALID_COUNTRY <br /> <br />Not allowed to fetch Recommendations for Country  `<code>` |Fetch Recommendations <br />Get Order <br />Preview Order |400 |
+|5137|INVALID_LANGUAGE <br /> <br />Not allowed to fetch Recommendations for language `<Code>` |Fetch Recommendations <br />Get Order <br />Preview Order | 400 |
 
 ## 2129 Ineligible Purchase REASON_CODE List
 
@@ -148,16 +153,23 @@ These REASON_CODE values are included in the `additionalDetails` array for 5117 
 |NO_TARGET_SKU| Customer has product(s) that are not valid VIPMP product(s)| Wait for products to be supported in VIPMP.|
 |UNBILLED_ORDER| Customer has unbilled order items| Customer must pay for all orders. If they have not received an invoice, then the customer needs to contact Adobe.|
 |UNPAID_INVOICE| Customer has open/unpaid invoice(s) |Customer must pay for open invoice(s).|
-|LINK_MEMBERSHIP_CHECK| Customer is part of linked membership |Wait for the Linked Membership transfer capability to be supported|
-|HAS_UNPROCESSED_ORDERS| There is some internal issue for the customer |Please reach out to support for assistance|
+|LINK_MEMBERSHIP_CHECK| Customer is part of linked membership |Wait for the Linked Membership transfer capability to be supported.|
+|HAS_UNPROCESSED_ORDERS| There is some internal issue for the customer |Reach out to support for assistance.|
 |NOT_A_FULL_RENEWAL_IN_RENEWAL_WINDOW| The customer is in the renewal window prior to their anniversary date, and they have partially renewed.| Customer must either renew all active licenses or wait until their anniversary date.|
-|LICENSE_WITHOUT_SALE_AQO_REFERENCED| There is some internal issue for the customer |Please reach out to support for assistance |
-|SRC_DST_OFFER_IDS_HAS_PA_MISMATCH| There is some internal issue for the customer |Please reach out to support for assistance|
-|3YC_LINKED_MEMBERSHIP | Customer is part of linked membership and has active 3YC. |Please reach out to support for assistance|
-|HVD_CUSTOMER| Customer is not eligible for transfer. |Please reach out to support for assistance|
-|INVALID_PRICE_LEVEL_LM_MIGRATION | Customer’s Price Level is greater than 04 and has Linked Membership. |Please reach out to support for assistance|
+|LICENSE_WITHOUT_SALE_AQO_REFERENCED| There is some internal issue for the customer |Reach out to support for assistance. |
+|SRC_DST_OFFER_IDS_HAS_PA_MISMATCH| There is some internal issue for the customer |Reach out to support for assistance.|
+|3YC_LINKED_MEMBERSHIP | Customer is part of linked membership and has active 3YC. |Reach out to support for assistance.|
+|HVD_CUSTOMER| Customer is not eligible for transfer. |Reach out to support for assistance.|
+|INVALID_PRICE_LEVEL_LM_MIGRATION | Customer’s Price Level is greater than 04 and has Linked Membership. |Reach out to support for assistance.|
 |LM_OWNER_NOT_MIGRATED | Group member is trying to migrate to VMP prior to Group Owner migration. |Wait for the Group Owner to migrate first|
-|NOT_A_WORLDWIDE_PURCHASER| Customer is WorldWide, but Parnter is not tagged as WorldWide. |Please reach out to support for assistance|
-|3YC_DISCOUNT_LEVEL_MISMATCH | Customer’s discount level is greater than the level determined by MCQ. |Please reach out to support for assistance|
-|HVD_CUSTOMER| Customer is not eligible for transfer. |Please reach out to support for assistance|
-|MINIMUM_HVD_QTY_NOT_MET| Customer is not eligible for transfer. |Please reach out to support for assistance|
+|NOT_A_WORLDWIDE_PURCHASER| Customer is WorldWide, but Parnter is not tagged as WorldWide. |Reach out to support for assistance.|
+|3YC_DISCOUNT_LEVEL_MISMATCH | Customer’s discount level is greater than the level determined by MCQ. |Reach out to support for assistance.|
+|HVD_CUSTOMER| Customer is not eligible for transfer. |Reach out to support for assistance.|
+|MINIMUM_HVD_QTY_NOT_MET| Customer is not eligible for transfer. |Reach out to support for assistance.|
+| INVALID_LM_MIGRATION_LEVEL     | Linked Member level is not equal to 01 - 04 or 06-09.                                     |Reach out to support for assistance. |
+| OWNER_MEMBER_COUNTRY_MISMATCH  | Member country in the Linked Membership (LM) is not same as that of the LM owner country. |Reach out to support for assistance. |
+| LGA_LM_MARKET_SEGMENT_MISMATCH | Customer market segment and Linked Membership market segment are not the same.            |Reach out to support for assistance. |
+| INVALID_LGA_MARKET_SEGMENT     | Linked Member Group Market Segment is not GOV.                                            |Reach out to support for assistance. |
+| NOT_LGA PARTNER                | Partner country is not US/CA.                                                             |Reach out to support for assistance. |
+| INSUFFICIENT_LGA_MOQ           | MOQ is < 100 and ( Considering FRL SKU's presence)                                        |Reach out to support for assistance |
+| LGA_QTY_LEVEL_MISMATCH         | MOQ does not fall between respective level cap quantities.                                |Reach out to support for assistance. |
