@@ -76,6 +76,11 @@ None.
 }
 ```
 
+**Note:** The following details are displayed in the respose body of an LGA customer:
+
+- The `benefits` array shows `LARGE_GOVERNMENT_AGENCY` if the customer is an LGA.
+- The `linkedMembership` array shows `benefitTypes` and `country` fields.
+
 ### HTTP status codes
 
 | Status code | Description                                    |

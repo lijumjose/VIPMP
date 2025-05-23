@@ -26,6 +26,7 @@ Ensure that you are aware of the following before creating a customer account:
 * Customers can be created with a specified market segment.
   * Reseller must be enabled for that market segment.
   * If no market segment is specified in the request, the customer becomes part of the commercial (COM) market segment by default.
+* The `benefits` array must include the `LARGE_GOVERNMENT_AGENCY` indicator for LGA customers.
 
 ## Request header
 

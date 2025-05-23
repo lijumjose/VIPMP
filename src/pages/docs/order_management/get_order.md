@@ -138,6 +138,52 @@ The request body is the same as mentioned in the [previous endpoint](#request-he
 }
 ```
 
+If `promotions` array indicates the promotions that are applied to the Order. For example:
+
+```json
+{ 
+   "referenceOrderId": "", 
+   "orderType": "NEW", 
+   "externalReferenceId": "759", 
+   "customerId": "9876543210", 
+   "orderId": "5120008001", 
+   "currencyCode": "USD", 
+   "creationDate": "2019-05-02T22:49:54Z", 
+   "status": "1000", 
+    
+"lineItems": [ 
+     { 
+       "extLineItemNumber": 1, 
+       "offerId": "80004567CA01A12", 
+       "quantity": 1, 
+       "status": "1002", 
+       "subscriptionId": "", 
+       "currencyCode": "USD", 
+       "promotions": [ 
+                  { 
+                      "code": "SUMMER_SALE_123", 
+                      "result": "SUCCESS", 
+                   } 
+         ] 
+    }, 
+     { 
+       "extLineItemNumber": 2, 
+       "offerId": "80004561CA02A12", 
+       "quantity": 11, 
+       "status": "1002", 
+       "subscriptionId": "", 
+       "currencyCode": "USD", 
+       "promotions": [ 
+                  { 
+                      "code": "WINTER_SALE_123", 
+                      "result": "SUCCESS", 
+                   } 
+         ] 
+    } 
+   ],  "links": { // As existing response fields } 
+ } 
+```
+
 ### HTTP status codes
 
 | Status code | Description                         |

@@ -215,6 +215,44 @@ Array of the following objects:
 |status (read only)| String | Current status code of the subscription | 4 characters|
 |links (read only)| `Links` resource | Deep links to get subscription details| |
 
+## Recommendations (top-level resource)
+
+| **Parameter**          | **Type**                 | **Description**                                                                                                                                                                                          |
+|------------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| productRecommendations | Object                   | Contains different categories of recommended products.                                                                                                                                                   |
+| upsells                | Array of Recommendations | List of recommended products that offer more value by providing a higher-tier, premium, or enhanced version of the selected product or offer. Example: Adobe Photoshop to Adobe Creative Cloud All Apps  |
+| crossSells             | Array of Recommendations | List of recommended products that complement the selected product by offering additional functionality or benefits. Example: Adobe Stock to Adobe Photoshop                                              |
+| addOns                 | Array of Recommendations | List of recommended products to extend or enhance the functionality of a base product. These products are not standalone and must be used with the base product. Example: AI Assistant for Adobe Acrobat |
+| rank                   | Integer                  | The ranking position of the recommended product within its category.                                                                                                                                     |
+| product                | Object                   | Details about the recommended product.                                                                                                                                                                   |
+| baseOfferId            | String                   | The base offer ID associated with the product.                                                                                                                                                           |
+| source                 | Object                   | Indicates the source of the recommendation.                                                                                                                                                              |
+| sourceType             | String                   | Specifies the type of the source entity. Currently only `OFFER` is supported.                                                                                                                              |
+| offerIds               | String Array             | List of offer IDs that contributed to this recommendation.                                                                                                                                               |
+
+## Promotions (top-level resource)
+
+| Parameter                       | Type             | Description                                                                 |
+|---------------------------------|------------------|-----------------------------------------------------------------------------|
+| limit                            | String           |  Number of items to be included in the current response.                 |
+| offset                            | 	String |Offset applied for the current response.                                                 |
+| count                            | String           | The count of promotion entities included in the current response.                                                       |
+| totalCount                            | String           |   Total count of promotion entities, if no limit was applied.                                                   |
+| name                            | String           | Name of the Promotion.                                                       |
+| description                     | String           | Description of the Promotion. It also provides additional details about the eligibility criteria for the promotion. For example, "Exclusive 20% off for Teams customers of CC All Apps in US"                                               |
+| code                            | String           | The code that needs to be used in the order and will reflect in the invoice. It will be unique across promotions. |
+| endDate                         | String (Date)    | Final date when the Promotion can be used                                   |
+| startDate                       | String (Date)    | First date when the Promotion can be used                                   |
+| status                          | String Enum      | Status of promotion. Possible values: ACTIVE, EXPIRED                       |
+| qualification                   | Object           |                                                                             |
+| qualification.baseOfferIds      | Array of Strings | List of Base Offer IDs of products eligible for promotion. Example: ["Offer ID 1", "Offer ID 2"] <br />**Note**: The list of base Offer IDs will be empty if the promotion applies to all products. |
+| outcomes[]                      | Array of Objects |                                                                             |
+| outcomes[] → type               | String           | Type of Promotion. Possible values are: PERCENTAGE_DISCOUNT, FIXED_DISCOUNT  |
+| outcomes[].discounts[]          | Array of Objects |                                                                             |
+| outcomes[].discounts[] → country| String           | Country Code: ISO 3166-1 alpha-2 code. Example: "US", "IN". Note: Not applicable for PERCENTAGE_DISCOUNT type. |
+| outcomes[].discounts[] → currency| String          | Currency Code: ISO 4217. Example: "USD", "EUR". Note: Not applicable for PERCENTAGE_DISCOUNT type. |
+| outcomes[].discounts[] → value  | Integer          | The discount value. For example, if the value is 15: 15% discount is applicable if the type is PERCENTAGE DISCOUNT. A discount of 15 USD, or any currency provided in the response, is applicable for the FIXED_DISCOUNT discount type. |
+
 ## Notification (top-level resource)
 
 |Property | Type | Description | Range/Limits|
@@ -226,7 +264,7 @@ Array of the following objects:
 |items | Array of `NotificationItem` resources| Itemized list of notifications| 0 to INTEGER_MAX|
 |links(read only)| `Links` resource | Deep links to get notification details | |
 
-## NotificationItem
+### NotificationItem
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
@@ -235,14 +273,14 @@ Array of the following objects:
 |notificationType | String | Type of notification response| Max: 40 characters|
 |links | `Links` resource | Deep links to get notification item details| |
 
-## AutoRenewal
+### AutoRenewal
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
 |enabled | boolean | Boolean flag denoting whether or not autoRenewal is enabled| true or false|
 |renewalQuantity | integer | Optional. Total quantity to be renewed at the end of the contract period (can be higher than the current subscription quantity)| Min: 1 <br /> Max: 10,000 for Team / 599,000 for Enterprise|
 
-## Links
+### Links
 
 |Property | Type | Description |
 |:----|:----|:----|

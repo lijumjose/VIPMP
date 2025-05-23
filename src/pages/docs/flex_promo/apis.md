@@ -18,20 +18,20 @@ Use the `GET Promotions` API to fetch promotions applicable to a product:
 
 ### Request
 
-Sample Request URL: `GET <ENV>/v3/promotions?market-segment=COM&country=US&offer-ids=65322535CA04A12,86322535CA04A12&promo-code=BLACK_FRIDAY&start-date=2025-03-01&end-date=2025-03-31&limit=20&offset=0`
+Sample Request URL: `GET <ENV>/v3/promotions?market-segment=COM&country=US`
 
 ### Query parameters  
 
-**Note:** Request Query parameters such as Market segment and country will be validated against the Partner's contract data.
+**Note:** Request Query parameters such as Market segment and country will be validated against the Partner's contract data. You can also use other query parameters that are listed in the following table:
 
 | Parameter       | Type             | Mandatory | Description                                                                 | Range/Limits                                                                 |
 |-----------------|------------------|-----------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| market-segment  | string           | Yes       | Filter promotions by market segment. Example: "COM", "EDU".                 |      3 characters                                                                        |
-| country         | string           | Yes       | Filter promotions by country using the ISO 3166-1 alpha-2 code. Example: "US", "IN". |         2 or 3 characters                                                                     |
+| market-segment  | string           | Yes       | Get promotions by market segment. Example: "COM", "EDU".                 |      3 characters                                                                        |
+| country         | string           | Yes       | Get promotions by country using the ISO 3166-1 alpha-2 code. Example: "US", "IN". |         2 or 3 characters                                                                     |
 | offer-ids       | array of strings | No        | Provide a comma-separated list of Offer IDs to retrieve applicable promotions. Example: 65322535CA04A12, 86322535CA04A12 |   Max: 40 characters                                                                           |
-| promo-code      | string           | No        | Filter promotions by code. Example: "DIWALI", "BLACK_FRIDAY"                |      Max: 40 characters                                                                        |
-| start-date      | string (date)    | No        | Specify the start date for searching for promotions. This date can be without timestamp or with timestamp in Zulu time format. For example, “2025-05-02" or "2025-05-02T22:49:54Z" |                                                                              |
-| end-date        | string (date)    | No        | Specify the end date for searching for promotions. This date can be without timestamp or with timestamp in Zulu time format. For example, “2025-05-02" or "2025-05-02T22:49:54Z" |                                                                              |
+| promo-code      | string           | No        | Filter promotions by promotion code. Example: "DIWALI", "BLACK_FRIDAY"                |      Max: 40 characters                                                                        |
+| start-date      | string (date)    | No        | Filter promotions created after a specified date. This date can be without timestamp or with timestamp in Zulu time format. For example, “2025-05-02" or "2025-05-02T22:49:54Z" |                                                                              |
+| end-date        | string (date)    | No        | Filter promotions that are created up to this date. This date can be without timestamp or with timestamp in Zulu time format. For example, “2025-05-02" or "2025-05-02T22:49:54Z" |                                                                              |
 | limit           | integer          |           | Define the number of items to be returned in the response. Default: 20, Max: 50. |                                                                              |
 | offset          | integer          |           | Set the start offset for the result items. Default: 0                        |                                                                              |
 
@@ -49,6 +49,8 @@ None.
 { 
   "limit": 20, 
   "offset": 0, 
+  "count": 1,
+  "totalCount": 1,
   "promotions": [ 
     { 
       "name": "Black Friday Promotion", 
@@ -111,8 +113,12 @@ None.
 
 | Parameter                       | Type             | Description                                                                 |
 |---------------------------------|------------------|-----------------------------------------------------------------------------|
-| name                            | String           | Name of the Promotion                                                       |
-| description                     | String           | Description of the Promotion                                                |
+| limit                            | String           |  Number of items to be included in the current response.                 |
+| offset                            | 	String |Offset applied for the current response.                                                 |
+| count                            | String           | The count of promotion entities included in the current response.                                                       |
+| totalCount                            | String           |   Total count of promotion entities, if no limit was applied.                                                   |
+| name                            | String           | Name of the Promotion.                                                       |
+| description                     | String           | Description of the Promotion. It also provides additional details about the eligibility criteria for the promotion. For example, "Exclusive 20% off for Teams customers of CC All Apps in US"                                               |
 | code                            | String           | The code that needs to be used in the order and will reflect in the invoice. It will be unique across promotions. |
 | endDate                         | String (Date)    | Final date when the Promotion can be used                                   |
 | startDate                       | String (Date)    | First date when the Promotion can be used                                   |
@@ -181,6 +187,8 @@ The following sample request shows how to apply a promotion code to a Create Ord
    ] 
  } 
  ```
+
+The `promotionCodes` parameter in the above request indicates the promotion codes applied to the Order.
 
 ### Response
 
@@ -299,7 +307,7 @@ None.
          ] 
     } 
    ],  "links": { // As existing response fields } 
- } 
+ },
 ```
 
 ### HTTP Status Codes

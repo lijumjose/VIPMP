@@ -15,6 +15,7 @@ Ensure that you are aware of the following before creating an offer details:
 - `currencyCode` should now be sent at the lineItem-level instead of order level.
   - For backwards compatability, `currencyCode` can still be sent at the order level.
 - The `discountCode` is applicable only to High Volume Discount customers who have migrated from VIP to VIP MP. You can use the discount code only if their discount level in VIP is between 17 and 22.
+- `promotionCodes` can be used in the request to apply Flexible Promotions for customers who meet the eligibility criteria. For additional details, see [Managing Flexible Promotions](../flex_promo/apis.md).
 
 ## Request header
 
