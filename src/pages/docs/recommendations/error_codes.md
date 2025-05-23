@@ -1,13 +1,24 @@
 # Error codes specific to Recommendations
 
-The following scenarios are possible in terms of API response status:
+The following error codes are returned if the API is unable to fetch recommendations:
 
-|Error Codes | Description | HTTP Status Code |
-|--|--|--|
-|5136 |INVALID_COUNTRY <br /> <br />Not allowed to fetch Recommendations for Country  `<code>` |400 |
-|5137|INVALID_LANGUAGE <br /> <br />Not allowed to fetch Recommendations for language `<Code>` |400 |
+|Error Codes | Description |Applicable APIs | HTTP Status Code |
+|--|--|--|--|
+|5136 |INVALID_COUNTRY <br /> <br />Not allowed to fetch recommendations for country  `<code>` |Fetch Recommendations  | 400 |
+|5137|INVALID_LANGUAGE <br /> <br />Not allowed to fetch recommendations for language `<Code>` |Fetch Recommendations  | 400 |
 
-In addition to the above status or error codes, all the standard error codes supported will be returned to clients for various failure scenarios. For example:
+A sample error code displayed in the response is as follows:
+
+```json
+{
+   "code": "5136",
+   "message": "Not allowed to fetch Recommendations for Country Code GB",
+   "additionalDetails": [],
+   "invalidFields": []
+}
+```
+
+In addition to these, standard error codes may also be returned for general failure scenarios:
 
 |Error Code | Description | HTTP Status Code|
 |--|--|--|
@@ -15,7 +26,21 @@ In addition to the above status or error codes, all the standard error codes sup
 |4117 |Forbidden |403 |
 |4118 |Too Many Requests |429 |
 
-Recommendations are fetched as part of existing APIs, such as GET Subscription, Order Preview, and so on. If the core functionality of these APIs fails, then only Error details relevant to the core functionality will be returned; no details of the Recommendations will be sent back to the customer. For example:
+## Error codes for other APIs that fetch recommendations
+
+Recommendations may also be returned as part of other APIs, such as GET Subscription, Order Preview, etc. Two key error scenarios can occur:
+
+1. Failure in the core API functionality
+2. Core API succeeds, but fetching recommendations fails
+
+The HTTP status code reflects the outcome of the core API:
+
+- If the core API fails, a 4xx or 5xx status code is returned.
+- If the core API succeeds but recommendations fail, a 2xx status code is returned, and the error is included in the `recommendations` section of the response.
+
+**Example: Core API functionality failure:**
+
+HTTP Code: 4xx or 5xx
 
 ```json
 {
@@ -23,5 +48,27 @@ Recommendations are fetched as part of existing APIs, such as GET Subscription, 
    "message": "Distributor not allowed to sell in the currency for the region",
    "additionalDetails": [],
    "invalidFields": []
+}
+```
+
+**Example: Core API succeeds, but recommendation retrieval fails**
+
+HTTP Code: 2xx, Success
+
+```json
+{
+   // Order Preview Details
+   "orderId": "ABCDORDER1",
+   "...":"...",
+   
+   // Recommendations - New Addition
+   "recommendations": {
+      "errorDetails": {
+         "code": "5136",
+         "message": "Not allowed to fetch Recommendations for Country Code GB",
+         "additionalDetails": [],
+         "invalidFields": []
+      }
+   }
 }
 ```
