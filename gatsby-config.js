@@ -58,7 +58,7 @@ module.exports = {
           {
             title: 'Health check',
             path: '/docs/authentication/health_check.md'
-          }
+          },
           {
             title: 'Generate OAuth credentials',
             path: '/docs/authentication/oauth_credentials.md'
