@@ -29,8 +29,26 @@ There are four ways for a customer to enroll in 3YC. In all scenarios, the custo
 
 - New benefits array of benefit objects.
 - New potential 3YC discount levels:
-  - LICENSE: 12, 13, 14
-  - CONSUMABLES: TA, TB, TC, TD, TE, TF, TG
+  - LICENSES:
+
+  |Discount Level | Number of Licenses |
+  |-------|---------------------|
+  | 12    | 1–9                 |
+  | 13    | 10–49               |
+  | 14    | 50–99               |
+  
+  - CONSUMABLES:
+  
+  |Discount Tier | Number of Transactions |
+  |------|-------------------------|
+  | TA   | 1–999                   |
+  | TB   | 1,000–2,499             |
+  | TC   | 2,500–4,999             |
+  | TD   | 5,000–14,999            |
+  | TE   | 15,000–49,999           |
+  | TF   | 50,000–99,999           |
+  | TG   | 100,000+                |
+
 - Discount levels will be updated whenever the commitment status changes (new commitment or expiration).
 - During order preview, if the customer has an ACCEPTED `commitmentRequest` for a quantity that would be reached in that order, the preview response use the discount level for that `commitmentRequest`.
   - Placing the order for that quantity would make the `commitmentRequest` COMMITTED as well as creating the `commitment` object.
