@@ -2,7 +2,27 @@
 
 Three-Year Commit (3YC) is a loyalty program that allows customers to get a greater discount level and a price lock for three terms (the current term and two additional terms). Customers commit to a minimum quantity they must purchase and maintain throughout the 3-year commitment period.
 
-Using the Preview Order API to determine the correct discount level is important. Preview Order uses the customer’s 3YC commitment as well as any accepted commitment requests to return the Offer ID with the best discount.
+Using the [Preview Order](../order_management/order_scenarios.md#preview-an-order) API to determine the correct discount level is important. Preview Order uses the customer’s 3YC commitment as well as any accepted commitment requests to return the Offer ID with the best discount.
+
+### Extended compliance window for 3YC commitments
+
+Effective Date: June 13, 2025
+
+The compliance window for fulfilling the 3-Year Commitment (3YC) license requirements has been extended. Previously, customers had 7 days from the date of accepting a 3YC agreement to meet their license commitment. This window has now been extended to 30 days.
+
+- Customers have up to 30 days from the acceptance date to ensure their contract reflects the agreed-upon minimum number of licenses.
+- If the customer fails to meet this requirement within the 30-day window, the 3YC agreement will become non-compliant, and the contract will no longer qualify for 3YC discounts.
+
+### Term length calculation for VIP Marketplace 3YC agreements
+
+Effective Date: June 1, 2025
+
+The end date of a 3YC term depends on when the customer opts into the agreement relative to their annual renewal cycle:
+
+- Customer enters a 3YC agreement between AD-30 and AD (that is, within the 30 days before their anniversary date): The 3YC term will end one day before the 4th anniversary of the original Join Date, thereby offering a full 3-year benefit.
+- Customer enters a 3YC agreement at any other time during their annual term: The 3YC term will end one day before the 3rd anniversary of the 3YC agreement's start date, which may provide slightly less than 3 full years of benefit.
+
+This distinction ensures fair benefit distribution while aligning with the annual contract renewal process.
 
 ## 3YC Workflows
 
@@ -27,9 +47,9 @@ There are four ways for a customer to enroll in 3YC. In all scenarios, the custo
 
 ### Customer Resource changes
 
-- New benefits array of benefit objects.
+- New `benefits` array of benefit objects.
 - New potential 3YC discount levels:
-  - LICENSES:
+  - Licenses of qualified products:
 
   |Discount Level | Number of Licenses |
   |-------|---------------------|
@@ -41,7 +61,6 @@ There are four ways for a customer to enroll in 3YC. In all scenarios, the custo
   
   |Discount Tier | Number of Transactions |
   |------|-------------------------|
-  | TA   | 1–999                   |
   | TB   | 1,000–2,499             |
   | TC   | 2,500–4,999             |
   | TD   | 5,000–14,999            |

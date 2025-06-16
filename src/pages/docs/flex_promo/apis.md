@@ -46,66 +46,82 @@ None.
 ### Response
 
 ```json
-{ 
-  "limit": 20, 
-  "offset": 0, 
-  "count": 1,
-  "totalCount": 1,
-  "promotions": [ 
-    { 
-      "name": "Black Friday Promotion", 
-      "description": "Exclusive 20% off on CC All Apps in US", 
-      "code": "BLACK_FRIDAY_20", 
-      "startDate": "2025-11-01", 
-      "endDate": "2025-12-31", 
-      "status": "ACTIVE", 
-      "qualification": { 
-        "baseOfferIds": [ 
-          "65322535CA01A12", 
-          "86322535CA01A12" 
-        ] 
-      }, 
-      "outcomes": [ 
-        { 
-          "type": "FIXED_DISCOUNT", 
-          "discounts": [ 
-            { 
-              "country": "US",  
-              "currency": "USD", 
-               "value": 15 
-            } 
-          ] 
-        } 
-      ] 
-    }, 
-    {}, 
-    {} 
-  ], 
-    "links": { 
-        "self": { 
-            "uri": "/v3/promotions?market-segment=COM&country=US&
-            start-date=2025-01-01T00%253A00%253A00Z&
-            end-date=2028-01-01T00%253A00%253A00Z&limit=2&offset=2", 
-            "method": "GET", 
-            "headers": [] 
-        }, 
-        // next link will be present only if the next resource is present 
-        "next": { 
-            "uri": "/v3/promotions?market-segment=COM&country=US&
-            start-date=2025-01-01T00%253A00%253A00Z&
-            end-date=2028-01-01T00%253A00%253A00Z&limit=2&offset=4", 
-            "method": "GET", 
-            "headers": [] 
-        }, 
-        // prev link will be present only if a previous resource is present 
-        "prev": { 
-            "uri": "/v3/promotions?market-segment=COM&country=US&
-            start-date=2025-01-01T00%253A00%253A00Z&
-            end-date=2028-01-01T00%253A00%253A00Z&limit=2&offset=0", 
-            "method": "GET", 
-            "headers": [] 
-        } 
-    } 
+{
+  "limit": 20,
+  "offset": 0,
+  "count": 2,
+  "totalCount": 2,
+  "promotions": [
+    {
+      "name": "Black Friday Promotion",
+      "description": "Exclusive fixed discount on CC All Apps in US",
+      "code": "BLACK_FRIDAY_15",
+      "startDate": "2025-06-01T00:00:01Z",
+      "endDate": "2025-12-31T23:59:59Z",
+      "status": "ACTIVE",
+      "qualification": {
+        "baseOfferIds": [
+          "65322535CA01A12",
+          "86322535CA01A12"
+        ]
+      },
+      "outcomes": [
+        {
+          "type": "FIXED_DISCOUNT",
+          "discounts": [
+            {
+              "country": "US",
+              "currency": "USD",
+              "value": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Christmas Promotion",
+      "description": "Exclusive 20% off on CC All Apps in US",
+      "code": "CHRISTMAS_2025_20",
+      "startDate": "2025-12-01T00:00:01Z",
+      "endDate": "2025-12-31T23:59:59Z",
+      "status": "ACTIVE",
+      "qualification": {
+        "baseOfferIds": [
+          "65322535CA01A12",
+          "86322535CA01A12"
+        ]
+      },
+      "outcomes": [
+        {
+          "type": "PERCENTAGE_DISCOUNT",
+          "discounts": [
+            {
+              "value": 20
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "links": {
+    "self": {
+      "uri": "/v3/promotions?market-segment=COM&country=US&limit=20&offset=0",
+      "method": "GET",
+      "headers": []
+    },
+    // next link will be present only if the next resource is present 
+    "next": {
+      "uri": "/v3/promotions?market-segment=COM&country=US&limit=20&offset=20",
+      "method": "GET",
+      "headers": []
+    },
+    // prev link will be present only if a previous resource is present
+    "prev": {
+      "uri": "/v3/promotions?market-segment=COM&country=US&limit=20&offset=0",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 
