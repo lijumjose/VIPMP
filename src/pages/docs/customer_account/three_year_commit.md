@@ -12,7 +12,7 @@ The compliance window for fulfilling the 3-Year Commitment (3YC) license require
 
 - Customers have up to 30 days from the acceptance date to ensure their contract reflects the agreed-upon minimum number of licenses.
 - If the customer fails to meet this requirement within the 30-day window, the 3YC agreement will become non-compliant, and the contract will no longer qualify for 3YC discounts.
- 
+
 ### Term length calculation for VIP Marketplace 3YC agreements
 
 Effective Date: June 1, 2025
