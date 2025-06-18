@@ -28,7 +28,7 @@ Partners will receive email notifications whenever updates are made to the Price
 
 2. Handle API errors
 
-   If the API returns an error, refer to the [Error Handling](#error-codes-specific-to-fetch-price-list-api) section for guidance on interpreting and resolving error codes.
+   If the API returns an error, refer to the [Error Handling](#http-status-codes) section for guidance on interpreting and resolving error codes.
 
 3. Parse the response
 
