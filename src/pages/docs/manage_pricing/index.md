@@ -54,7 +54,6 @@ Partners will receive email notifications whenever updates are made to the Price
    - `acdIndicator`: Indicates whether the offer is new, changed, or deleted.
    - `acdEffectiveDate`: The date on which the acdIndicator status was set.
 
-
 ## Request header
 
 | Parameter        | Description                                                                                                                                                                                                                      |
@@ -96,7 +95,6 @@ A sample request is as follows:
 
 ### Request parameters
 
-
 | **Field**                        | **Not Null** | **Type**           | **Description** |
 |----------------------------------|--------------|--------------------|-----------------|
 | `region`                         | Yes          | String (Enum)      | Specifies the region for which the Price List should be returned. For more details, see [supported countries and locales](../references/supported_locales.md). |
@@ -131,7 +129,6 @@ You can filter the data returned in the response in the following two ways:
   - `productType`
   - `productTypeDetail`
   - `language`
-
 
 ## Response body
 
@@ -212,7 +209,6 @@ The following is a sample output:
 
 ### Response parameters
 
-
 | **Field** | **Required** | **Type** | **Description** |
 |-----------|--------------|----------|-----------------|
 | `priceListMonth` | Yes | String | Price List published month |
@@ -262,11 +258,9 @@ The following is a sample output:
 | 403         | Invalid API Key                                   |
 | 404         | Price list not found for the given request/offset |
 
-
 ## <mark>Error codes specific to Fetch Price List API</mark>
 
 The following table lists the error codes that are speific to the Fetch Price List API:
-
 
 | Code | Message | Applicable API calls | HTTP Code |
 |--|--|--|--|
