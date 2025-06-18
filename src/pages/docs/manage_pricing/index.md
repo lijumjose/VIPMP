@@ -110,7 +110,7 @@ A sample request is as follows:
 | `filters → firstOrderDate`      | No           | Date               | Returns only offers matching the specified first order date. |
 | `filters → lastOrderDate`       | No           | Date               | Returns only offers matching the specified last order date. |
 | `filters → discountCode`        | No           | String             | Returns only offers matching the specified discount code. |
-| `includeOfferAttributes`        | No           | List<String>       | List of additional offer attributes to include in the response. Unknown attributes will result in an error. |
+| `includeOfferAttributes`        | No           | List  | List of additional offer attributes to include in the response. Unknown attributes will result in an error. |
 
 ### Filters
 
