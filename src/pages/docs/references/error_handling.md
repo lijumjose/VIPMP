@@ -102,6 +102,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 |4119 | Correlation ID is Invalid or Missing | All | 400|
 |4120| Duplicate request id, same requestId has already been processed |All | 400|
 |4121| You are not allowed to perform that action on this resource| All | 403|
+|4122|  This request is already being processed. Please wait a moment and try again.| Transfer Subscriptions, Create Order (Only For Manual Renewal), Cancel Order | 400|
 |5115 | Invalid Membership ID |Preview Offers, Transfer Subscriptions| 400|
 |5116 | Invalid Membership or Transfer ID | Get Transfer Details | 400|
 |5117| Customer is not eligible for transfer (see table below for REASON_CODE list)| Preview Offers, Transfer Subscriptions| 400|
