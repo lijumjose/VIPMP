@@ -170,7 +170,9 @@ The following is a sample output:
             "productFamily": "Acrobat Sign Solutions For Enterprise",
             "productType": "Transaction New",
             "productTypeDetail": "No Proration",
-            "additionalDetail": "Aws | First Order Date and Last Order Date=3-year commit accept. RMA Request Deadline=Last eligible order date.",
+            "additionalDetail": "Aws | First Order Date and 
+            Last Order Date=3-year commit accept. 
+             RMA Request Deadline=Last eligible order date.",
             "operatingSystem": "Other",
             "language": "Multi NorthAmerican Language",
             "version": "ALL",
@@ -199,7 +201,9 @@ The following is a sample output:
             "productFamily": "Ai Assistant For Acrobat For Enterprise",
             "productType": "Enterprise Hosted Subscription New",
             "productTypeDetail": "Annual",
-            "additionalDetail": "First Order Date and Last Order Date=3-year commit accept. RMA Request Deadline=Last eligible order date.",
+            "additionalDetail": "First Order Date and 
+            Last Order Date=3-year commit accept. 
+            RMA Request Deadline=Last eligible order date.",
             "operatingSystem": "Other",
             "language": "Multi NorthAmerican Language",
             "version": "ALL",
