@@ -181,7 +181,7 @@ The following is a sample output:
             "bridge": "Standard",
             "upcEanCode": "123456789012",
             "gtinCode": "987654321098",   
-            "acdIndicator": "ADD",
+            "acdIndicator": "Add",
             "acdEffectiveDate": "2024-01-01T00:00:00.000Z",
             "acdDescription": "ACD Desc",
             "levelDetails": "Tier 5 15,000 to 49,999 Transactions",
@@ -212,7 +212,7 @@ The following is a sample output:
             "bridge": "Enterprise",
             "upcEanCode": "234567890123",
             "gtinCode": "876543210987",
-            "acdIndicator": "CHANGE",
+            "acdIndicator": "Change",
             "acdEffectiveDate": "2024-02-01T00:00:00.000Z",
             "acdDescription": "ACD Desc",
             "levelDetails": "Level 1 1 - 9",
@@ -282,3 +282,17 @@ The following is a sample output:
 | 401         | Invalid Authorization token                       |
 | 403         | Invalid API Key                                   |
 | 404         | Price list not found for the given request/offset |
+
+## Error codes specific to Fetch Price List API
+
+The following table lists the error codes that are speific to the Fetch Price List API:
+
+| Code | Message | Applicable API calls | HTTP Code |
+|--|--|--|--|
+|1159 |Inactive Partner Contract |Fetch Price Lists |400 |
+|1160 |Invalid Market Segment for Partner |Fetch Price Lists |400 |
+|1161 |Invalid Currency/Region for Partner |Fetch Price Lists |400 |
+|1162 |Price List not found |Fetch Price Lists |404 |
+|5122 |Invalid Request |Fetch Price Lists |400 |
+
+For the complete set of error codes, see [Status codes and error handling](../references/error_handling.md).

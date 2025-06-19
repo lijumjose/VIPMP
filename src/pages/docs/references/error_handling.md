@@ -59,6 +59,10 @@ Some error responses will include additionalDetails, an array of strings with mo
 |1140 | Customer is not enabled for global sales |Update Customer, Reseller Change Commit, Create Deployment, Create order|400|
 |1141| Deployment and customer country cannot be the same |Create Deployment | 400|
 |1142| Market segment not allowed for global sales| Update Customer, Create Order| 400|
+|1159 |Inactive Partner Contract |Fetch Price Lists |400 |
+|1160 |Invalid Market Segment for Partner |Fetch Price Lists |400 |
+|1161 |Invalid Currency/Region for Partner |Fetch Price Lists |400 |
+|1162 |Price List not found |Fetch Price Lists |404 |
 |2115 | Invalid Customer or Order ID |Get Order Details, Cancel Order| 404|
 |2116 | Invalid status | Cancel Order | 400|
 |2117 | Cancellation window has closed | Cancel Order | 400|
@@ -110,7 +114,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 |5119| Customer cannot be transferred because reseller account is inactive |Transfer Subscriptions | 400|
 |5120| Customer cannot be transferred because there are no admin contacts |Preview Offers, Transfer Subscriptions| 400|
 |5121| Transfer currently in progress for this customer| Preview Offers, Transfer Subscriptions| 400|
-|5122| Order placement is currently unavailable. Please try again later. | Create Order| 400|
+|5122| Order placement is currently unavailable. Please try again later. <br /> Message for Fetch Price List API: Invaid Request| Create Order, Fetch Price List| 400|
 |5123| Invalid Discount Code| Update Subscriptions| 400|
 |5124| Invalid Renewal Quantity for Discount Code| Update Subscriptions| 400|
 |5125| Invalid Request for Discount Code| Update Subscriptions| 400|
