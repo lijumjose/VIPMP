@@ -186,6 +186,12 @@ module.exports = {
           ]
          },
          {
+          title: 'Price Lists',
+          description: '',
+          path: '/docs/manage_pricing/index.md',
+          header: true,
+         },
+         {
           title: 'Notifications',
           description: '',
           path: 'docs/notification_management/index.md',
