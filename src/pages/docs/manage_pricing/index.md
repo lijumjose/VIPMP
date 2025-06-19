@@ -151,7 +151,7 @@ To customize the offer details returned in the response, use the `includeOfferAt
 
 ## Response body
 
-The following is a sample output:
+A sample response is as follows:
 
 ```json
 {
