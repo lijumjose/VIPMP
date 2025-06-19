@@ -1,10 +1,10 @@
-# Manage Price Lists
+# Access Price Lists
 
 Partners can leverage the `Fetch Price List` API to retrieve up-to-date pricing information for Adobe products. This API not only modernizes Adobe’s price list distribution process but also delivers several key advantages:
 
 - **Real-time pricing access**
 
-  Partners can retrieve current pricing instantly, enabling them to confirm prices before placing an order, ensuring accuracy and reducing delays.
+  Partners can retrieve available price lists programmatically to always work with the latest version of VIP Marketplace price lists, ensuring accuracy and reducing delays.
 
 - **Historical pricing support (3YC)**
 
@@ -36,7 +36,7 @@ Partners will receive email notifications whenever updates are made to the Price
 
 4. Pagination support
 
-   The API supports pagination. Refer to the pagination guidelines to understand how to navigate through paged results efficiently. <mark>Comment: Pagination details are missing in the WIki. Please provide</mark>
+   The API supports pagination. Refer to the pagination guidelines to understand how to navigate through paged results efficiently.
 
 5. Store Price List data
 
@@ -95,28 +95,26 @@ A sample request is as follows:
 
 ### Request parameters
 
-| **Field**                        | **Not Null** | **Type**           | **Description** |
+| **Field**                        | **Required** | **Type**           | **Description** |
 |----------------------------------|--------------|--------------------|-----------------|
 | `region`                         | Yes          | String (Enum)      | Specifies the region for which the Price List should be returned. For more details, see [supported countries and locales](../references/supported_locales.md). |
 | `marketSegment`                  | Yes          | String (Enum)      | Specifies the market segment. Must be one of the supported segments, such as: <br /> - COM <br /> - EDU <br /> - GOV. |
 | `discountType`                   | No           | String (Enum)      | Indicates the discount type. Possible values: <br /> - STANDARD <br /> - 3YC |
 | `currency`                       | Yes          | String (Enum)      | Specifies the currency. Must be one of the supported currencies for the Partner. For more details, see [supported countries and locales](../references/supported_locales.md). |
 | `priceListMonth`                | Yes          | String             | Specifies the month you want the Price List for, in `YYYYMM` format. Example: `202410`. |
-| `limit` (Query Param)           | No           | Integer            | Number of items per page for pagination. Default: 20 <mark> Please see TBD in Wiki </mark>|
-| `offset` (Query Param)          | No           | Integer            | Starting point for pagination. Default: 0. <mark> Please see TBD in Wiki </mark> |
+| `limit` (Query Param)           | No           | Integer            | Specifies the number of items to be returned per page, enabling pagination. The default value is 20.|
+| `offset` (Query Param)          | No           | Integer            |  Specifies the starting point for retrieving items in a paginated list. It determines how many items to skip before beginning to return results. If not specified, the default value is 0, meaning the response will start from the first item. |
 | `filters`                        | No           | Object             | Filters to narrow down the Price List. All filters use AND logic. For example, if `offerId` and `productFamily` filters are included in the request, then API the response will include results that match `offerId` AND `productFamily` |
 | `filters → offerId`             | No           | String             | Returns only offers matching the specified `offerId`. |
 | `filters → productFamily`       | No           | String             | Returns only offers matching the exact, case-sensitive `productFamily`. |
-| `filters → firstOrderDate`      | No           | Date               | Returns only offers matching the specified first order date. |
-| `filters → lastOrderDate`       | No           | Date               | Returns only offers matching the specified last order date. |
+| `filters → firstOrderDate`      | No           | Date               | Returns only those offers whose first order date is later than the specified date. |
+| `filters → lastOrderDate`       | No           | Date               | Returns only those offers whose last order date is on or after the specified date. |
 | `filters → discountCode`        | No           | String             | Returns only offers matching the specified discount code. |
-| `includeOfferAttributes`        | No           | List  | List of additional offer attributes to include in the response. Unknown attributes will result in an error. |
+| `includeOfferAttributes`        | No           | List  | List of additional offer attributes to include in the response. Unknown attributes will result in an error. Read more about how to [define offer data to be displayed in the response](#define-offer-data-to-be-displayed-in-the-response). |
 
-### Filters
+### Filter
 
-You can filter the data returned in the response in the following two ways:
-
-- Using the `filters` property in the request body. It allows you to narrow down the price lists based on certain criteria. All filter fields work as AND operations, meaning if multiple filters are passed together, the result will be a combination that matches all those filters. Null or empty values will be ignored for the filters. You can filter the data based on the following parameterts:
+You can refine the data returned in the response by using the filters property in the request body. This allows you to narrow down the price lists based on specific criteria. All filter fields are combined using AND logic, meaning that only results matching all specified conditions will be returned if multiple filters are applied. Filters with null or empty values will be ignored. You can filter the data using the following parameters:
 
   - `offerId`
   - `productFamily`
@@ -124,11 +122,26 @@ You can filter the data returned in the response in the following two ways:
   - `lastOrderDate`
   - `discountCode`
 
-- Using the `includeOfferAttributes` parameter in the request body. This is the list of values that you want to include in the offer details returned in the response.  For example:
+### Define offer data to be displayed in the response
+
+To customize the offer details returned in the response, use the `includeOfferAttributes` parameter in the request body. This allows you to specify which offer attributes should be included in the response.  For example:
 
   - `productType`
   - `productTypeDetail`
   - `language`
+
+**Note:** The response will include only the attributes listed in `includeOfferAttributes`, along with the following default attributes:
+
+- `totalCount`
+- `limit`
+- `offset`
+- `offers`
+- `offer → offerId`
+- `offer → discountCode`
+- `offer → productFamily`
+- `offer → firstOrderDate`
+- `offer → lastOrderDate`
+- `offer → partnerPrice`
 
 ## Response body
 
@@ -141,7 +154,8 @@ The following is a sample output:
     "region": "NA",
     "currency": "USD",
     "discountType": "3YC",
-    "totalItemCount": "59",
+    "totalCount": 59,
+    "count": 59,
     "limit": 100,
     "offset": 0,
     "offers": [
@@ -159,7 +173,7 @@ The following is a sample output:
             "bridge": "Standard",
             "upcEanCode": "123456789012",
             "gtinCode": "987654321098",   
-            "acdIndicator": "Y",
+            "acdIndicator": "ADD",
             "acdEffectiveDate": "2024-01-01T00:00:00.000Z",
             "acdDescription": "ACD Desc",
             "levelDetails": "Tier 5 15,000 to 49,999 Transactions",
@@ -188,7 +202,7 @@ The following is a sample output:
             "bridge": "Enterprise",
             "upcEanCode": "234567890123",
             "gtinCode": "876543210987",
-            "acdIndicator": "N",
+            "acdIndicator": "CHANGE",
             "acdEffectiveDate": "2024-02-01T00:00:00.000Z",
             "acdDescription": "ACD Desc",
             "levelDetails": "Level 1 1 - 9",
@@ -209,16 +223,17 @@ The following is a sample output:
 
 ### Response parameters
 
-| **Field** | **Required** | **Type** | **Description** |
+| **Field** | **Not Null** | **Type** | **Description** |
 |-----------|--------------|----------|-----------------|
 | `priceListMonth` | Yes | String | Price List published month |
 | `marketSegment` | Yes | String (Enum) | Market segment applicable for the offers included in the response. Possible values: <br /> - COM <br /> - EDU <br /> - GOV |
 | `region` | Yes | String (Enum) | Region where offer is sold. <br /> Possible values: <br /> - NA <br /> - PA <br /> - EE <br /> - MX <br /> - LA <br /> - WE <br /> - JP <br /> - AP |
 | `currency` | Yes | String (Enum) | Currency applicable for the market segment and region. <br /> Possible Values: <br /> - AUD <br /> - EUR <br /> - GBP <br /> - JPY <br /> - USD |
 | `discountType` | Yes | String (Enum) | The volume discount type applicable for the offers included in the response. <br /> Possible values:<br /> - STANDARD <br /> - 3YC |
-| `totalItemCount` | Yes | Integer | Indicates the total items returned in the response. <mark>RPS has it as String </mark> |
-| `limit` | Yes | Integer | The number of offers returned in the response |
-| `offset` | Yes | Integer | Specifies the starting point for retrieving items in a paginated list. It indicates the number of items to skip before beginning to return results. If offset is not provided, the default value is 0, meaning retrieval will start from the first item. |
+| `totalCount` | Yes | Integer | Indicates the total items matched as per the search criteria. |
+| `count` | Yes | Integer | Indicates the total number of offers returned in the response. |
+| `limit` | Yes | Integer | The number of offers limited in the response. |
+| `offset` | Yes | Integer | Specifies the starting point for retrieving items in a paginated list. It determines how many items to skip before beginning to return results. If not specified, the default value is 0, meaning the response will start from the first item. |
 | `offers` | Yes | JSON List | List of Offers <br /> List will be empty if no Offers are available to return. |
 | `offer → offerId` | Yes | String | Unique identifier of the Offer. Used as Offer ID in Order APIs |
 | `offer → productFamily` | Yes | String | Indicates the grouping of products based on product code, product config, and so on. |
@@ -230,23 +245,23 @@ The following is a sample output:
 | `offer → version` | Yes | String | Possible values: <br /> - ALL |
 | `offer → users` | Yes | String (Enum) | License type <br /> The Following are the possible values: <br /> - 1 User <br /> - Named <br /> - Per Credit Pack <br /> - Per Server <br /> - Per Transaction <br /> - Per Workstation <br /> - Subscription |
 | `offer → metric` | No | String (Enum) | Unit of measure. The following are the possible values: <br /> - 1000 <br /> - 10000 <br /> - 15000 <br /> - 20000 <br /> - 30000 <br /> - 40 Images <br /> - 50 TRS INTRO NC <br /> - 5000 <br /> - 50000 <br /> - Transaction - USER |
-| `offer → bridge` | No | String | <mark>Need description </mark> |
-| `offer → upcEanCode` | No | String | Barcode formats used to identify products in retail sales |
-| `offer → gtinCode` | No | String | 13-digit code that identifies products for sale in retail stores or online |
+| `offer → bridge` | No | String |  |
+| `offer → upcEanCode` | No | String | Barcode formats used to identify products in retail sales. |
+| `offer → gtinCode` | No | String | 13-digit code that identifies products for sale in retail stores or online. |
 | `offer → acdIndicator` | No | String (Enum) | Used to indicate if the offer is NEW, CHANGED, or DELETED. <br /> Possible values: <br /> - Add <br /> - Change <br /> - Delete |
 | `offer → acdEffectiveDate` | No | Date | Effective date for the ACD indicator (ADD, CHANGE, and DELETE). This date is in UTC format. |
 | `offer → acdDescription` | No | String | This field provides additional context or details about the ACD status of the offer. |
-| `offer → levelDetails` | Yes | String | Level Description of Min and Max range for the price point |
-| `offer → firstOrderDate` | Yes | Date | The first date for the item's sale |
-| `offer → lastOrderDate` | Yes | Date | The last date for the item's sale |
-| `offer → partnerPrice` | Yes | String | List Price for Partner <br /> <mark> Please see TBD in Wiki </mark> |
-| `offer → estimatedStreetPrice` | Yes | String | Estimated retail price <br /> <mark> Please see TBD in Wiki </mark> |
+| `offer → levelDetails` | Yes | String | Level Description of Min and Max range for the price point. |
+| `offer → firstOrderDate` | Yes | Date | The first date for the item's sale. |
+| `offer → lastOrderDate` | Yes | Date | The last date for the item's sale. |
+| `offer → partnerPrice` | Yes | String | List Price for Partner <br /> |
+| `offer → estimatedStreetPrice` | Yes | String | Estimated retail price <br />  |
 | `offer → discountCode` | No | String | High volume discount code will be provided here. When the discount code is available, the estimatedStreetPrice and partnerPrice will reflect the discounted price. |
 | `offer → estimatedShipDate` | Yes | Date | Estimated Ship Date. This date is in UTC format. |
 | `offer → publicAnnounceDate` | Yes | Date | Public Announce Date. This date is in UTC format. |
 | `offer → rmaRequestDeadline` | Yes | Date | RMA Request Deadline. This date is in UTC format. |
-| `offer → pool` | Yes | String (Enum) | The category or grouping to which the offer belongs. This field helps in identifying the broader classification of the offer. Possible values are: <br /> - Application <br /> - Discount1 <br /> - Discount2 <br /> - Pricing Version 23 <br /> - Pricing Version 24 <br /> - Pricing Version 25 <br /> - <mark> Please see TBD in Wiki </mark> |
-| `offer → duration` | Yes | String | <mark> Please see TBD in Wiki </mark> <br /> The time period for which the offer is valid or applicable. This field specifies the length of time the offer is effective. |
+| `offer → pool` | Yes | String (Enum) | The category or grouping to which the offer belongs. This field helps in identifying the broader classification of the offer. Possible values are: <br /> - Application <br /> - Discount1 <br /> - Discount2 <br /> - Pricing Version 23 <br /> - Pricing Version 24 <br /> - Pricing Version 25 <br />|
+| `offer → duration` | Yes | String | The time period for which the offer is valid or applicable. This field specifies the length of time the offer is effective. |
 
 ## HTTP status codes
 
@@ -257,11 +272,3 @@ The following is a sample output:
 | 401         | Invalid Authorization token                       |
 | 403         | Invalid API Key                                   |
 | 404         | Price list not found for the given request/offset |
-
-## <mark>Error codes specific to Fetch Price List API</mark>
-
-The following table lists the error codes that are speific to the Fetch Price List API:
-
-| Code | Message | Applicable API calls | HTTP Code |
-|--|--|--|--|
-|A | B |C| D|
