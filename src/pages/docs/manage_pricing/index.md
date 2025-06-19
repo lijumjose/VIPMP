@@ -16,6 +16,12 @@ Partners can leverage the `Fetch Price List` API to retrieve up-to-date pricing 
 
 ## Fetch Price List API
 
+| Endpoint | Method|
+|--|--|
+|/v3/pricelist| POST|
+
+**Sample request URL:** `POST <env root url>/v3/pricelist?offset=0&limit=10`
+
 The `POST /v3/pricelist` API retrieves the price list information for the partners.
 
 ### Integration Guide
