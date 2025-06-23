@@ -5,6 +5,10 @@
 
 ## API changes
 
+### June 19, 2025
+
+- Partners can leverage the `Fetch Price List` API to retrieve up-to-date pricing information for Adobe products. This API modernizes Adobe’s price list distribution process. Read more about [how to access price lists using Fetch Price List API](../manage_pricing/index.md).
+
 ### May 09, 2025
 
 API Doc Version 2025.05.01
@@ -64,6 +68,8 @@ API Doc Version 2025.05.01
 
 ## Sandbox changes
 
+- [Manage Flexible Promotions](/src/pages/sandbox/sandbox_portal/flex_promo/index.md)
+- [Manage Product Recommendations](/src/pages/sandbox/sandbox_portal/recommendations/index.md)
 - [Manage High Growth Offers](/src/pages/sandbox/sandbox_portal/high_growth_offer/high_growth.md)
 - [Migrate HVD customers from VIP to VIP Marketplace](/src/pages/sandbox/sandbox_portal/migrate_hvd_customers/migrate_hvd_customers.md)
 - [Manage Linked Memberships](/src/pages/sandbox/sandbox_portal/linked_memberships/index.md)
