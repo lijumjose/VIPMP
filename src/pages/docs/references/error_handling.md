@@ -74,14 +74,15 @@ Some error responses will include additionalDetails, an array of strings with mo
 |2123 | extLineItemNumber out of range |Preview Order, Create Order| 400|
 |2124| Distributor not allowed to sell the program |Preview Order, Create Order| 400|
 |2125| Distributor not allowed to sell in the currency for the region |Preview Order, Create Order| 400|
-|2126| externalReferenceId exceeds maximum character limit | Create Order, Create Reseller, |Create Customer|
+|2125| Distributor not allowed to sell in the currency for the region |Preview Order, Create Order| 400|
+|2126| externalReferenceId exceeds maximum character limit | Create Order, Create Reseller, Create Customer|400|
 |2128 | Currency is not valid for Offer ID |Preview Order, Create Order| 400|
-|2129| Customer is not eligible to purchase Offer ID at line item: #| Create Order | 400|
+|2129| Customer is not eligible to purchase Offer ID| Create Order | 400|
 |2130| Line item Offer ID does not match original order| Create Return Order (V3) | 400|
 |2131| extLineItemNumber does not match original order |Create Return Order (V3) | 400|
 |2132| Line item quantity does not match original order |Create Return Order (V3) | 400|
 |2133 | Line item has already been returned | Create Return Order (V3) | 400|
-|2134| |Line item cannot be returned as the order already expired |Create Return Order (V3) |
+|2134|Line item cannot be returned as the order already expired |Create Return Order (V3) |400 |
 |2135| Invalid market segment used for customer |Create Reseller, Update Reseller, Create Customer, Update Customer| 400|
 |2136| Please review the renewal settings. Auto-renewal needs to be turned on for at least 1 quantity |Create PREVIEW_RENEWAL Order | 400|
 |2137 | Currency code not aligned | Create Order | 400|
@@ -114,7 +115,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 |5119| Customer cannot be transferred because reseller account is inactive |Transfer Subscriptions | 400|
 |5120| Customer cannot be transferred because there are no admin contacts |Preview Offers, Transfer Subscriptions| 400|
 |5121| Transfer currently in progress for this customer| Preview Offers, Transfer Subscriptions| 400|
-|5122| Order placement is currently unavailable. Please try again later. <br /> Message for Fetch Price List API: Invaid Request| Create Order, Fetch Price List| 400|
+|5122| - Message for Create Order: Order placement is currently unavailable. Please try again later. <br /> <br />- Message for Fetch Price List API: Invaid Request<br /><br /> - Message for Update Reseller: Invalid Request (Additional details: "Reseller is not permitted to remove existing market segments")| Create Order, Fetch Price List, Update Reseller| 400|
 |5123| Invalid Discount Code| Update Subscriptions| 400|
 |5124| Invalid Renewal Quantity for Discount Code| Update Subscriptions| 400|
 |5125| Invalid Request for Discount Code| Update Subscriptions| 400|
@@ -124,8 +125,8 @@ Some error responses will include additionalDetails, an array of strings with mo
 |5129| Discount Code not applicable for 3yc committed quantity| Update Subscriptions| 400|
 |5131| TInvalid Order Quantity for Discount Code| Update Subscriptions| 400|
 |5132| Discount Code not applicable for the current term| Update Subscriptions| 400 <br /> Description: When the customer is opting for same MOQ offer in the new 3YC term.|
-|5133| Order cancellation not allowed below MOQ quantity| |400 <br /> Description: When the customer is trying to cancel the MOQ offer quantity that results in pushing the remaining qty below the MOQ offer quantity.|
-|5134| Could not turn off Auto Renewal for MOQ offer| |400 <br /> Description: When the customer is trying to turn off autorenewal for an MOQ offer.|
+|5133| Order cancellation not allowed below MOQ quantity| Return Order |400 <br /> Description: When the customer is trying to cancel the MOQ offer quantity that results in pushing the remaining qty below the MOQ offer quantity.|
+|5134| Could not turn off Auto Renewal for MOQ offer|Update Subscriptions |400 <br /> Description: When the customer is trying to turn off autorenewal for an MOQ offer.|
 |5135| Invalid Discount Code|Create Order | 400|
 |5136 |INVALID_COUNTRY <br /> <br />Not allowed to fetch Recommendations for Country  `<code>` |Fetch Recommendations <br />Get Order <br />Preview Order |400 |
 |5137|INVALID_LANGUAGE <br /> <br />Not allowed to fetch Recommendations for language `<Code>` |Fetch Recommendations <br />Get Order <br />Preview Order | 400 |
@@ -140,6 +141,7 @@ These REASON_CODE values are included in the `additionalDetails` array for 2129 
 |INELIGIBLE_ADD_ON| Customer is attempting to purchase an add-on product without the base product.| Try placing the order again with the base product included.|
 |INELIGIBLE_CONSUMED| RETURN order only: customer is attempting to return a consumable product that has already been consumed. |Order cannot be returned if the transactions are consumed. |
 |INELIGIBLE_MARKET_SEGMENT| The order includes an item that belongs to a market segment that either the reseller or the customer do not belong to.| Ensure the correct offer is used for the customer and reseller’s market segment.|
+|CUSTOMER_NOT_ELIGIBLE_FOR_PURCHASE| Customer is purchasing the offer multiple times in the same term.| Retry order placement with a qualifying product.|
 
 ## 5117 Ineligible Transfer REASON_CODE List
 
