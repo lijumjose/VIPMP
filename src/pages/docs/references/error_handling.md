@@ -91,7 +91,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 |2140| Order contains order level currency and line-item level currency |Create Order | 400|
 | 2141       | Customer is not qualified for the promotion. <br /> Aadditional details: [ Reason: MARKET_SEGMENT_MISMATCH" ]                                                                 |    Create Order <br /> Preview Order                  |    400              |
 | 2144       | Promo code cannot be applied in combination with other discounts.|       Create Order <br /> Preview Order               |  400                |
-| 2145       | Promotional codes cannot be applied to non-base products.]                 |    Create Order <br /> Preview Order                  |    400              |
+| 2145       | Promotional codes cannot be applied to non-base products.               |    Create Order <br /> Preview Order                  |    400              |
 | 2146     | Invalid promo code   <br /> Additional details: [Reason: NOT_FOUND" ]|    Create Order <br /> Preview Order                  |    400              |
 | 2147      | Only one promo code is allowed per line item.   |    Create Order <br /> Preview Order                  |    400              |
 |3115 | Invalid Customer or Subscription ID| Get Subscription Details, Update Subscription Auto-Renewal| 404|

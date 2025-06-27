@@ -60,7 +60,9 @@ Partners will receive email notifications whenever updates are made to the Price
    - `acdIndicator`: Indicates whether the offer is new, changed, or deleted.
    - `acdEffectiveDate`: The date on which the acdIndicator status was set.
 
-## Request header
+## Request
+
+### Request header
 
 | Parameter        | Description                                                                                                                                                                                                                      |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -71,7 +73,16 @@ Partners will receive email notifications whenever updates are made to the Price
 | Authorization    | **Required**. Authorization token in the form `Bearer <token>`                                                                                                                                                                   |
 | X-Api-Key        | **Required**. The API Key for your integration                                                                                                                                                                                   |
 
-## Request body
+### Query parameters
+
+You can use the query parameters such as `limit` and `offset` in the request URL. For example: `POST <env root url>/v3/pricelist?offset=0&limit=10`
+
+| **Field**                        | **Required** | **Type**           | **Description** |
+|----------------------------------|--------------|--------------------|-----------------|
+| `limit`            | No           | Integer            | Specifies the number of items to be returned per page, enabling pagination. The default value is 20.|
+| `offset`       | No           | Integer            |  Specifies the starting point for retrieving items in a paginated list. It determines how many items to skip before beginning to return results. If not specified, the default value is 0, meaning the response will start from the first item. |
+
+### Request body
 
 A sample request is as follows:
 
@@ -81,9 +92,7 @@ A sample request is as follows:
   "marketSegment": "COM",
   "discountType": "STANDARD",
   "currency": "USD",
-  "month": "YYYYMM",
-  "limit": 20,
-  "offset": 20,
+  "priceListMonth": "YYYYMM",
   "filters": {
     "offerId": "65322650CA12A12",
     "productFamily": "Cloud Services",
@@ -99,7 +108,7 @@ A sample request is as follows:
 }
 ```
 
-### Request parameters
+#### Request parameters
 
 | **Field**                        | **Required** | **Type**           | **Description** |
 |----------------------------------|--------------|--------------------|-----------------|
@@ -108,8 +117,6 @@ A sample request is as follows:
 | `discountType`                   | No           | String (Enum)      | Indicates the discount type. Possible values: <br /> - STANDARD <br /> - 3YC |
 | `currency`                       | Yes          | String (Enum)      | Specifies the currency. Must be one of the supported currencies for the Partner. For more details, see [supported countries and locales](../references/supported_locales.md). |
 | `priceListMonth`                | Yes          | String             | Specifies the month you want the Price List for, in `YYYYMM` format. Example: `202410`. |
-| `limit` (Query Param)           | No           | Integer            | Specifies the number of items to be returned per page, enabling pagination. The default value is 20.|
-| `offset` (Query Param)          | No           | Integer            |  Specifies the starting point for retrieving items in a paginated list. It determines how many items to skip before beginning to return results. If not specified, the default value is 0, meaning the response will start from the first item. |
 | `filters`                        | No           | Object             | Filters to narrow down the Price List. All filters use AND logic. For example, if `offerId` and `productFamily` filters are included in the request, then API the response will include results that match `offerId` AND `productFamily` |
 | `filters → offerId`             | No           | String             | Returns only offers matching the specified `offerId`. |
 | `filters → productFamily`       | No           | String             | Returns only offers matching the exact, case-sensitive `productFamily`. |
@@ -122,19 +129,19 @@ A sample request is as follows:
 
 You can refine the data returned in the response by using the filters property in the request body. This allows you to narrow down the price lists based on specific criteria. All filter fields are combined using AND logic, meaning that only results matching all specified conditions will be returned if multiple filters are applied. Filters with null or empty values will be ignored. You can filter the data using the following parameters:
 
-  - `offerId`
-  - `productFamily`
-  - `firstOrderDate`
-  - `lastOrderDate`
-  - `discountCode`
+- `offerId`
+- `productFamily`
+- `firstOrderDate`
+- `lastOrderDate`
+- `discountCode`
 
 ### Define offer data to be displayed in the response
 
 To customize the offer details returned in the response, use the `includeOfferAttributes` parameter in the request body. This allows you to specify which offer attributes should be included in the response.  For example:
 
-  - `productType`
-  - `productTypeDetail`
-  - `language`
+- `productType`
+- `productTypeDetail`
+- `language`
 
 **Note:** The response will include only the attributes listed in `includeOfferAttributes`, along with the following default attributes:
 

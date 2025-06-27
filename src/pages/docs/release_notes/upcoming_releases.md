@@ -2,4 +2,4 @@
 
 The following features are scheduled for release:
 
-- Partners can leverage the `Fetch Price List` API to retrieve up-to-date pricing information for Adobe products. This API modernizes Adobe’s price list distribution process. Read more about [how to access price lists using Fetch Price List API](../manage_pricing/index.md).
+- Partners can access flexible promotions tailored to specific products, market segments, and countries, and apply them during the order process. Read more about [how to manage flexible promotions](../flex_promo/index.md).
