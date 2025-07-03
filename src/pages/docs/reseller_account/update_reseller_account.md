@@ -2,10 +2,11 @@
 
 Use the `PATCH /v3/resellers/<reseller-id>` API endpoint to update a reseller account.
 
-## Assumptions
+## Usage instructions
 
 * The Update request replaces the existing data.
 * Non-editable fields such as `companyName`, `country`, and `region` need to be passed in but need to match the original values. Otherwise, an error is returned.
+* `marketSegments` must be passed in the request. You may add new market segments, but existing ones must not be removed.
 * `externalReferenceId` can be updated.
 
 ## Request header
