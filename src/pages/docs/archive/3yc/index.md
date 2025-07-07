@@ -2,22 +2,22 @@
 
 The Three-Year Commit (3YC) loyalty program offers customers a higher discount level and a price lock for three terms (the current term plus two additional terms). Customers must commit to purchasing and maintaining a minimum quantity throughout the 3-year period.
 
-Using the Preview Order API to determine the appropriate discount level is crucial. The [Preview Order](../migration/preview_offers.md) API considers the customer's 3YC commitment and any accepted commitment requests to provide the Offer ID with the best discount.
+Using the Preview Order API to determine the appropriate discount level is crucial. The [Preview Order](../../migration/preview_offers.md) API considers the customer's 3YC commitment and any accepted commitment requests to provide the Offer ID with the best discount.
 
 ## 3YC Workflows
 
 There are four ways for a customer to enroll in 3YC. In all scenarios, the customer must accept the commitment terms (the minimum quantities and commitment end date) in the Adobe Admin Console before receiving any discounts.
 
 1. New Customer: During customer creation, partners may set the requested minimum quantities, which would start the 3YC customer acceptance workflow after the account becomes active. API endpoints:
-   - [POST Create Customer API](../customer_account/create_customer_account.md)
-   - [GET Customer API](../customer_account/get_customer_account.md)
+   - [POST Create Customer API](../../customer_account/create_customer_account.md)
+   - [GET Customer API](../../customer_account/get_customer_account.md)
 2. Existing Customer: Existing customers (with active 3YC or not) can be updated with new requested minimum quantities, which would start the 3YC customer acceptance workflow once the account is updated from the request. API endpoints:
-   - [PATCH Update Customer API](../customer_account/update_customer_account.md)
-   - [GET Customer API](../customer_account/get_customer_account.md)
+   - [PATCH Update Customer API](../../customer_account/update_customer_account.md)
+   - [GET Customer API](../../customer_account/get_customer_account.md)
 3. Existing VIP Customer: Existing VIP customers with active 3YC can be transferred to VIPMP and retain their 3YC commitment terms, which can be retrieved using the GET Customer API. API endpoints:
 
-   - [POST Transfer Subscriptions API](../migration/transfer_subscription.md)
-   - [GET Customer API](../customer_account/get_customer_account.md)
+   - [POST Transfer Subscriptions API](../../migration/transfer_subscription.md)
+   - [GET Customer API](../../customer_account/get_customer_account.md)
 
 ## 3YC API Changes
 
@@ -130,4 +130,4 @@ Sample request:
 
 The diagram below shows the lifecycle of the commitmentRequest object. The same lifecycle applies to the recommitmentRequest, with the difference being that recommitmentRequest can’t move to COMMITTED status until the current commitment ends.
 
-![3YC flow diagram](../image/3yc_flow_diagram.jpg)
+![3YC flow diagram](../../image/3yc_flow_diagram.jpg)
