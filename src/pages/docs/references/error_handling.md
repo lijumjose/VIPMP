@@ -54,7 +54,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 |1131 | Reseller Change is already complete |Reseller Change Preview, Reseller Change Commit| 400|
 |1132 | Invalid value for search parameter | Get Order History (V3) | 400|
 |1133 | Offset out of range | Get Order History (V3) | 400|
-|1134| Invalid operation on path [INVALID_RESELLER_ID : Reseller ID in the input is either invalid or same as the current reseller id]| Reseller Change Preview, Reseller Change Commit| 400|
+|1134| Invalid operation on path <br/> Possible scenarios: <br /> - INVALID_RESELLER_ID : Reseller ID in the input is either invalid or same as the current reseller id]<br/> - INVALID_CUSTOMER_MARKET_SEGMENT: Returns this if partner attempts to remove the market segment of the reseller. | Reseller Change Preview, Reseller Change Commit, Update Reseller| 400|
 |1139 | Partner is not enabled for global sales| Update Customer, Reseller Change Commit, Create Deployment, Create Order|400|
 |1140 | Customer is not enabled for global sales |Update Customer, Reseller Change Commit, Create Deployment, Create order|400|
 |1141| Deployment and customer country cannot be the same |Create Deployment | 400|
@@ -89,11 +89,11 @@ Some error responses will include additionalDetails, an array of strings with mo
 |2138 | Invalid Deployment | Create Order |404|
 |2139| Deployment not allowed for this contract |Create Order | 400|
 |2140| Order contains order level currency and line-item level currency |Create Order | 400|
-| 2141       | Customer is not qualified for the promotion. <br /> Aadditional details: [ Reason: MARKET_SEGMENT_MISMATCH" ]                                                                 |    Create Order <br /> Preview Order                  |    400              |
-| 2144       | Promo code cannot be applied in combination with other discounts.|       Create Order <br /> Preview Order               |  400                |
-| 2145       | Promotional codes cannot be applied to non-base products.               |    Create Order <br /> Preview Order                  |    400              |
-| 2146     | Invalid promo code   <br /> Additional details: [Reason: NOT_FOUND" ]|    Create Order <br /> Preview Order                  |    400              |
-| 2147      | Only one promo code is allowed per line item.   |    Create Order <br /> Preview Order                  |    400              |
+| 2141       | Customer is not qualified for the flexible discount. <br /> "additionalDetails": [ "Line Item: 1, Reason: Invalid Flexible Discount" ]                                                                 |    Create Order <br /> Preview Order                  |    400              |
+| 2144       | Flexible Discount cannot be applied in combination with other discounts. <br />  |       Create Order <br /> Preview Order               |  400                |
+| 2145       | Flexible discount codes cannot be applied to non-base products.                 |    Create Order <br /> Preview Order                  |    400              |
+| 2146     | Invalid Flexible Discount Code |    Create Order <br /> Preview Order                  |    400              |
+| 2147      | Only one Flexible Discount code is allowed per line item.   |    Create Order <br /> Preview Order                  |    400              |
 |3115 | Invalid Customer or Subscription ID| Get Subscription Details, Update Subscription Auto-Renewal| 404|
 |3116 | renewalQuantity out of range |Update Subscription Auto-Renewal| 400|
 |3117 | currentQuantity out of range | | 400|
