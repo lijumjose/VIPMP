@@ -2,7 +2,7 @@
 
 Three-Year Commit (3YC) is a loyalty program that allows customers to get a greater discount level and a price lock for three terms (the current and two additional terms). Customers commit to purchasing and maintaining a minimum quantity throughout the 3-year period.
 
-Using the [Preview Order](../order_management/order_scenarios.md#preview-an-order) API to determine the correct discount level is important. Preview Order uses the customer’s 3YC commitment and any accepted commitment requests to return the Offer ID with the best discount.
+Using the [Preview Order](../order_management/order_scenarios.md#preview-an-order) API to determine the correct discount level is important. The Preview Order API uses the customer’s 3YC commitment and any accepted commitment requests to return the Offer ID with the best discount.
 
 ### Extended compliance window for 3YC commitments
 
@@ -80,16 +80,22 @@ Volume discounts apply only to qualifying licenses.
 ## Commitment request considerations
 
 - Discount levels are updated whenever the commitment status changes, such as when a new commitment is made or an existing one expires.
-- During order preview, if the customer has  met the minimum committed quantity, the preview response returns the discount level for that `commitmentRequest`.
-  - Placing the order for that quantity changes the  `commitmentRequest` status to COMMITTED and creates the corresponding `commitment` object.
+- During the order preview, if the customer has met the minimum committed quantity, the preview response returns the discount level for that `commitmentRequest`.
+- Placing the order for that quantity changes the  `commitmentRequest` status to COMMITTED and creates the corresponding `commitment` object.
+  - If the order quantity exceeds the MPQ (Minimum Purchase Quantity):
+    - The `commitmentRequest` will be null.
+    - The `commitment` section will be populated with MPQ details.
+  - If the orders are placed multiple times with smaller quantities, until the sum of fulfilled order quantities exceeds the MPQ, then:
+    - The `commitmentRequest` will continue to have a value.
+    - The `commitment` section will remain null.
 
-- To apply, Customer can enroll in one `offerType` (LICENSE or CONSUMABLE) first, and then add the other later. The committed `offerType` and the new `offerType` must be included in the `commitmentRequest`.
+- To apply 3YC for multiple offer types, the customer can enroll in one `offerType` (LICENSE or CONSUMABLE) first, and then add the other later. The committed `offerType` and the new `offerType` must be included in the `commitmentRequest`.
 
 The following sections provide more details of the changes to the objects:
 
 #### commitmentRequest object
 
-Sample request:
+**Example 1:** Sample request before placing the order or if the total order quantity is less than the Minimum Purchase Quanity (MPQ):
 
 ```json
 {
@@ -124,6 +130,127 @@ Sample request:
       }
     }
   ]
+}
+```
+
+**Example 2:** Response where the net fulfilled order quantities is more than MPQ:
+
+```json
+
+{
+  "externalReferenceId": "18d9b63c-d81b-4e0a-b12c-9c3bc33f80d",
+  "customerId": "P1005229864",
+  "resellerId": "P1000086129",
+  "status": "1000",
+  "companyProfile": {
+    ...
+    ...
+  },
+  "discounts": [
+    {
+      "offerType": "LICENSE",
+      "level": "14"
+    }
+  ],
+  "tags": [],
+  "cotermDate": "2026-07-07",
+  "creationDate": "2025-07-07T04:58:17Z",
+  "benefits": [
+    {
+      "type": "THREE_YEAR_COMMIT",
+      "commitment": {
+        "startDate": "2025-07-07",
+        "endDate": "2028-07-05",
+        "status": "COMMITTED",
+        "minimumQuantities": [
+          {
+            "offerType": "LICENSE",
+            "quantity": 100
+          }
+        ]
+      },
+      "commitmentRequest": null,
+      "recommitmentRequest": null
+    }
+  ],
+  "globalSalesEnabled": false,
+  "links": {
+    "self": {
+      "uri": "/v3/customers/P1005229864",
+      "method": "GET",
+      "headers": []
+    }
+  }
+}
+```
+
+**Example 3:** MPQ for Multiple offer types
+
+If the total ordered quantity exceeds the MPQ for one offer type, for example, CONSUMABLES, while not exceeding the MPQ for another offer type (LICENSE), the system will behave as follows:
+
+- Both `commitment` and `commitmentRequest` parameteres will not be null.
+- The offer type that has satisfied the MPQ will be reflected in the `commitment` section.
+- The offer type that has not satisfied the MPQ will remain in the `commitmentRequest` section.
+
+```json
+{
+    "externalReferenceId": "14b783eb-ba91-4f3b-ba38-417e96c5c92",
+    "customerId": "P1005229895",
+    "resellerId": "P1000086129",
+    "status": "1000",
+    "companyProfile": {
+        ...
+        ...
+    },
+    "discounts": [
+        {
+            "offerType": "LICENSE",
+            "level": "13"
+        },
+        {
+            "offerType": "CONSUMABLES",
+            "level": "TC"
+        }
+    ],
+    "tags": [],
+    "cotermDate": "2026-07-07",
+    "creationDate": "2025-07-07T05:38:37Z",
+    "benefits": [
+        {
+            "type": "THREE_YEAR_COMMIT",
+            "commitment": {
+                "startDate": "2025-07-07",
+                "endDate": "2028-07-05",
+                "status": "COMMITTED",
+                "minimumQuantities": [
+                    {
+                        "offerType": "CONSUMABLES",
+                        "quantity": 1000
+                    }
+                ]
+            },
+            "commitmentRequest": {
+                "startDate": "2025-07-07",
+                "endDate": "2028-07-05",
+                "status": "ACCEPTED",
+                "minimumQuantities": [
+                    {
+                        "offerType": "LICENSE",
+                        "quantity": 100
+                    }
+                ]
+            },
+            "recommitmentRequest": null
+        }
+    ],
+    "globalSalesEnabled": false,
+    "links": {
+        "self": {
+            "uri": "/v3/customers/P1005229895",
+            "method": "GET",
+            "headers": []
+        }
+    }
 }
 ```
 

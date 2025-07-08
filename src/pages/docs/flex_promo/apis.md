@@ -14,28 +14,31 @@ Use the `GET Flexible Discounts` API to fetch flexible discounts applicable to a
 
 | Endpoint       | Method |
 |----------------|--------|
-| /v3/flex-dicounts | GET    |
+| /v3/flex-discounts | GET    |
 
 ### Request
 
-Sample Request URL: `GET <ENV>/v3/flex-dicounts?market-segment=COM&country=US`
+Sample Request URL: `GET <ENV>/v3/flex-discounts?market-segment=COM&country=US`
 
 ### Query parameters  
 
-**Note:** Request Query parameters such as Market segment and country will be validated against the Partner's contract data. You can also use other query parameters that are listed in the following table:
+**Note:** Request query parameters such as Market segment and country will be validated against the Partner's contract data. You can also use other query parameters that are listed in the following table:
 
 | Parameter       | Type             | Mandatory | Description                                                                 | Range/Limits                                                                 |
 |-----------------|------------------|-----------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|
 | market-segment  | String           | Yes       | Get flexible discounts by market segment. Example: "COM", "EDU".                 |      3 characters                                                                        |
 | country         | String           | Yes       | Get flexible discounts by country using the ISO 3166-1 alpha-2 code. Example: "US", "IN". |         2 or 3 characters                                                                     |
 | offer-ids       | Array of strings | No        | Provide a comma-separated list of Offer IDs to retrieve applicable flexible discounts. Example: 65322535CA04A12, 86322535CA04A12 |                                                                              |
-| flex-discount-id      | String           | No        | Retrieve a flexible discount by its unique ID. This endpoint returns a single, unique flexible discount object. <br /> If flex-discount-id query param is provided in the request, other non-mandatory params cannot be provided in the same request.       |      Max: 40 characters                                                                        |
+| flex-discount-id      | String           | No        | Retrieve a flexible discount by its unique ID. This endpoint returns a single, unique flexible discount object. <br /> If flex-discount-id query parameter is provided in the request, other non-mandatory params cannot be provided in the same request.       |      Max: 40 characters                                                                        |
 | start-date      | String (date)    | No        | Filter flexible discounts that were available on or after this moment in time. This date can be without timestamp or with timestamp in Zulu time format. For example, “2025-05-02" or "2025-05-02T22:49:54Z" |                                                                              |
 | end-date        | String (date)    | No        | Filter flexible discounts that were available on or before this moment in time. This date can be without timestamp or with timestamp in Zulu time format. For example, “2025-05-02" or "2025-05-02T22:49:54Z" |                                                                              |
 | limit           | Integer          |  No         | Define the number of items to be returned in the response. Default: 20, Max: 50. |                                                                              |
 | offset          | Integer          |  No         | Set the start offset for the result items. Default: 0                        |                                                                              |
 
-**Sample request URL with all query parameters:** `<ENV>/v3/flex-discounts?market-segment=COM&country=US&offer-ids=65322535CA04A12,86322535CA04A12&flex-discount-code=BLACK_FRIDAY&start-date=2025-03-01&end-date=2025-03-31&limit=20&offset=0`
+#### **Sample request URLs**
+
+- Sample request URL with all query parameters: `<ENV>/v3/flex-discounts?market-segment=COM&country=US&offer-ids=65322535CA04A12,86322535CA04A12&flex-discount-code=BLACK_FRIDAY&start-date=2025-03-01&end-date=2025-03-31&limit=20&offset=0`
+- Sample request URL where flex discount ID is used:  `<ENV>/v3/flex-discounts?country=US&market-segment=COM&flex-discount-id=55555555-1533-4564-ade1-cd6946a97f29`
 
 ### Request Header  
 
@@ -63,10 +66,7 @@ None.
       "endDate": "2025-12-31T23:59:59Z",
       "status": "ACTIVE",
       "qualification": {
-        "baseOfferIds": [
-          "65322535CA01A12",
-          "86322535CA01A12"
-        ]
+        "baseOfferIds": ["65322535CA01A12", "86322535CA01A12"]
       },
       "outcomes": [
         {
@@ -90,10 +90,7 @@ None.
       "endDate": "2025-12-31T23:59:59Z",
       "status": "ACTIVE",
       "qualification": {
-        "baseOfferIds": [
-          "65322535CA01A12",
-          "86322535CA01A12"
-        ]
+        "baseOfferIds": ["65322535CA01A12", "86322535CA01A12"]
       },
       "outcomes": [
         {
@@ -113,7 +110,7 @@ None.
       "method": "GET",
       "headers": []
     },
-    // next link will be present only if the next resource is present 
+    // next link will be present only if the next resource is present
     "next": {
       "uri": "/v3/flex-discounts?market-segment=COM&country=US&limit=20&offset=20",
       "method": "GET",
@@ -183,6 +180,8 @@ Pass the `flex-discount-code` at the lineItems level in the `Create Order` and `
 |----------------------------------------|--------|
 | `/v3/customers/<customer-id>/orders`     | POST   |
 
+**Note:** Order creation will fail even if one of the line items' flexible discount is invalid.
+
 ### Request Header
 
 See [Headers](../references/api_headers.md) section.
@@ -192,27 +191,27 @@ See [Headers](../references/api_headers.md) section.
 The following sample request shows how to apply a flexible discount code to a Create Order request to get a discounted price:
 
 ```json
-{ 
-   "orderType": "NEW", // NEW or PREVIEW   
-   "externalReferenceId": "759", 
-   "currencyCode": "USD", 
-   "lineItems": [ 
-     { 
-       "extLineItemNumber": 1, 
-       "offerId": "80004567CA01A12", 
-       "quantity": 1, 
-       "currencyCode": "USD", 
-       "flexDiscountCodes": ["SUMMER_SALE_123"] 
-     }, 
-     { 
-       "extLineItemNumber": 2, 
-       "offerId": "80004561CA02A12", 
-       "quantity": 11, 
-       "currencyCode": "USD", 
-       "flexDiscountCodes": ["WINTER_SALE_123"] 
-     } 
-   ] 
- } 
+{
+  "orderType": "NEW", // NEW or PREVIEW
+  "externalReferenceId": "759",
+  "currencyCode": "USD",
+  "lineItems": [
+    {
+      "extLineItemNumber": 1,
+      "offerId": "80004567CA01A12",
+      "quantity": 1,
+      "currencyCode": "USD",
+      "flexDiscountCodes": ["SUMMER_SALE_123"]
+    },
+    {
+      "extLineItemNumber": 2,
+      "offerId": "80004561CA02A12",
+      "quantity": 11,
+      "currencyCode": "USD",
+      "flexDiscountCodes": ["WINTER_SALE_123"]
+    }
+  ]
+} 
  ```
 
 The `flexDiscountCodes` parameter in the above request indicates the flexible discount codes applied to the Order.
@@ -220,49 +219,49 @@ The `flexDiscountCodes` parameter in the above request indicates the flexible di
 ### Response
 
 ```json
-{ 
-   "referenceOrderId": "", 
-   "orderType": "NEW", 
-   "externalReferenceId": "759", 
-   "customerId": "9876543210", 
-   "orderId": "5120008001", 
-   "currencyCode": "USD", 
-   "creationDate": "2019-05-02T22:49:54Z", 
-   "status": "1002", 
-   "lineItems": [ 
-     { 
-       "extLineItemNumber": 1, 
-       "offerId": "80004567CA01A12", 
-       "quantity": 1, 
-       "status": "1002", 
-       "subscriptionId": "", 
-       "currencyCode": "USD", 
-       "flexDiscounts": [ 
-                  { 
-                      "id": "55555555-313b-476c-9d0b-6a610d5b91e0",
-                      "code": "SUMMER_SALE_123", 
-                      "result": "SUCCESS", 
-                   } 
-         ] 
-     }, 
-     { 
-       "extLineItemNumber": 2, 
-       "offerId": "80004561CA02A12", 
-       "quantity": 11, 
-       "status": "1002", 
-       "subscriptionId": "", 
-       "currencyCode": "USD", 
-       "flexDiscounts": [ 
-                  { 
-                      "id": "55522355-313b-476c-9d0b-7a710f4h83s4",
-                      "code": "WINTER_SALE_123", 
-                      "result": "SUCCESS", 
-                   } 
-         ] 
-     } 
-   ], 
-   "links": { // As existing response fields } 
- } 
+{
+    "referenceOrderId": "",
+    "orderType": "NEW",
+    "externalReferenceId": "759",
+    "customerId": "9876543210",
+    "orderId": "5120008001",
+    "currencyCode": "USD",
+    "creationDate": "2019-05-02T22:49:54Z",
+    "status": "1002",
+    "lineItems": [
+        {
+            "extLineItemNumber": 1,
+            "offerId": "80004567CA01A12",
+            "quantity": 1,
+            "status": "1002",
+            "subscriptionId": "",
+            "currencyCode": "USD",
+            "flexDiscounts": [
+                {
+                    "id": "55555555-313b-476c-9d0b-6a610d5b91e0",
+                    "code": "SUMMER_SALE_123",
+                    "result": "SUCCESS"
+                }
+            ]
+        },
+        {
+            "extLineItemNumber": 2,
+            "offerId": "80004561CA02A12",
+            "quantity": 11,
+            "status": "1002",
+            "subscriptionId": "",
+            "currencyCode": "USD",
+            "flexDiscounts": [
+                {
+                    "id": "55522355-313b-476c-9d0b-7a710f4h83s4",
+                    "code": "WINTER_SALE_123",
+                    "result": "SUCCESS"
+                }
+            ]
+        }
+    ],
+    "links": { // As existing response fields } 
+    }
  ```
 
  The following table provides the flexible discount details included in the response:
@@ -297,49 +296,49 @@ None.
 ### Response
 
 ```json
-{ 
-   "referenceOrderId": "", 
-   "orderType": "NEW", 
-   "externalReferenceId": "759", 
-   "customerId": "9876543210", 
-   "orderId": "5120008001", 
-   "currencyCode": "USD", 
-   "creationDate": "2019-05-02T22:49:54Z", 
-   "status": "1000", 
-
-"lineItems": [ 
-     { 
-       "extLineItemNumber": 1, 
-       "offerId": "80004567CA01A12", 
-       "quantity": 1, 
-       "status": "1000", 
-       "subscriptionId": "", 
-       "currencyCode": "USD", 
-       "flexDiscounts": [ 
-                  { 
-                      "id": "55555555-313b-476c-9d0b-6a610d5b91e0",
-                      "code": "SUMMER_SALE_123", 
-                      "result": "SUCCESS", 
-                   } 
-         ] 
-    }, 
-     { 
-       "extLineItemNumber": 2, 
-       "offerId": "80004561CA02A12", 
-       "quantity": 11, 
-       "status": "1000", 
-       "subscriptionId": "", 
-       "currencyCode": "USD", 
-       "flexDiscounts": [ 
-                  { 
-                      "id": "55522355-313b-476c-9d0b-7a710f4h83s4",
-                      "code": "WINTER_SALE_123", 
-                      "result": "SUCCESS", 
-                   } 
-         ] 
-    } 
-   ],  "links": { // As existing response fields } 
- },
+{
+    "referenceOrderId": "",
+    "orderType": "NEW",
+    "externalReferenceId": "759",
+    "customerId": "9876543210",
+    "orderId": "5120008001",
+    "currencyCode": "USD",
+    "creationDate": "2019-05-02T22:49:54Z",
+    "status": "1000",
+    "lineItems": [
+        {
+            "extLineItemNumber": 1,
+            "offerId": "80004567CA01A12",
+            "quantity": 1,
+            "status": "1000",
+            "subscriptionId": "",
+            "currencyCode": "USD",
+            "flexDiscounts": [
+                {
+                    "id": "55555555-313b-476c-9d0b-6a610d5b91e0",
+                    "code": "SUMMER_SALE_123",
+                    "result": "SUCCESS"
+                }
+            ]
+        },
+        {
+            "extLineItemNumber": 2,
+            "offerId": "80004561CA02A12",
+            "quantity": 11,
+            "status": "1000",
+            "subscriptionId": "",
+            "currencyCode": "USD",
+            "flexDiscounts": [
+                {
+                    "id": "55522355-313b-476c-9d0b-7a710f4h83s4",
+                    "code": "WINTER_SALE_123",
+                    "result": "SUCCESS"
+                }
+            ]
+        }
+    ],
+    "links": { // As existing response fields } 
+    },
 ```
 
 ### HTTP Status Codes
@@ -365,54 +364,53 @@ None.
 ### Response
 
 ```json
-{ 
-   "items": [ 
-{ 
-   "referenceOrderId": "", 
-   "orderType": "NEW", 
-   "externalReferenceId": "759", 
-   "customerId": "9876543210", 
-   "orderId": "5120008001", 
-   "currencyCode": "USD", 
-   "creationDate": "2019-05-02T22:49:54Z", 
-   "status": "1000", 
-   "lineItems": [ 
-     { 
-       "extLineItemNumber": 1, 
-       "offerId": "80004567CA01A12", 
-       "quantity": 1, 
-       "status": "1000", 
-       "subscriptionId": "", 
-       "currencyCode": "USD", 
-       "flexDiscounts": [ 
-                  { 
-                       "id": "55555555-313b-476c-9d0b-6a610d5b91e0",
-                      "code": "SUMMER_SALE_123", 
-                      "result": "SUCCESS", 
-                   } 
-         ] 
-    }, 
-     { 
-       "extLineItemNumber": 2, 
-       "offerId": "80004561CA02A12", 
-       "quantity": 11, 
-       "status": "1000", 
-       "subscriptionId": "", 
-       "currencyCode": "USD", 
-       "flexDiscounts": [ 
-                  { 
-                       "id": "55522355-313b-476c-9d0b-7a710f4h83s4",
-                      "code": "WINTER_SALE_123", 
-                      "result": "SUCCESS", 
-                   } 
-         ] 
-
-    } 
-   ], 
-   "links": { // As existing response fields } 
- } 
-] 
-} 
+{
+    "items": [
+        {
+            "referenceOrderId": "",
+            "orderType": "NEW",
+            "externalReferenceId": "759",
+            "customerId": "9876543210",
+            "orderId": "5120008001",
+            "currencyCode": "USD",
+            "creationDate": "2019-05-02T22:49:54Z",
+            "status": "1000",
+            "lineItems": [
+                {
+                    "extLineItemNumber": 1,
+                    "offerId": "80004567CA01A12",
+                    "quantity": 1,
+                    "status": "1000",
+                    "subscriptionId": "",
+                    "currencyCode": "USD",
+                    "flexDiscounts": [
+                        {
+                            "id": "55555555-313b-476c-9d0b-6a610d5b91e0",
+                            "code": "SUMMER_SALE_123",
+                            "result": "SUCCESS"
+                        }
+                    ]
+                },
+                {
+                    "extLineItemNumber": 2,
+                    "offerId": "80004561CA02A12",
+                    "quantity": 11,
+                    "status": "1000",
+                    "subscriptionId": "",
+                    "currencyCode": "USD",
+                    "flexDiscounts": [
+                        {
+                            "id": "55522355-313b-476c-9d0b-7a710f4h83s4",
+                            "code": "WINTER_SALE_123",
+                            "result": "SUCCESS"
+                        }
+                    ]
+                }
+            ],
+            "links": { // As existing response fields } 
+            }
+        ]
+    }
 ```
 
 ### HTTP Status Codes

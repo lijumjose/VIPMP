@@ -1,6 +1,6 @@
 # Manage Flexible Discounts
 
-The Flexible Discount feature enables partners to easily adjust product prices, making them more attractive to different customer segments. These discounts primarily intended to boost customer retention or acquisition. You can access details about the flexible discounts available for a product in a specific market segment and country, and apply them when placing an order.
+The Flexible Discount feature enables partners to easily adjust product prices, making them more attractive to different customer segments. These discounts are primarily intended to boost customer retention or acquisition. You can access details about the flexible discounts available for a product in a specific market segment and country, and apply them when placing an order.
 
 Key advantages of flexible discounts include:
 
@@ -15,8 +15,8 @@ Key advantages of flexible discounts include:
 
 The following two types of discounts are available with flexible discounts:
 
-1. **Percentage Discount (% off discount):** A percentage reduction is applied to the base price of the product.
-2. **Fixed Amount Discount ($ off discount):** A fixed monetary reduction is applied to the base price of the product.
+1. **Percentage Discount (% discount):** A percentage reduction is applied to the base price of the product.
+2. **Fixed Amount Discount ($ discount):** A fixed monetary reduction is applied to the base price of the product.
 
 The discounts applied based on these discount types are explained in the following tables:
 

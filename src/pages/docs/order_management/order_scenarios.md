@@ -197,6 +197,10 @@ This section lists the sample requests and responses of an order with `orderType
 - Returns the best available offer IDs for the renewal order.
 - The `eligibleOffers` section lists the High Growth Offers available for the customer. Read more about the [High Growth Offers](../customer_account/high_growth.md).
 - The `discountCode` indicates the discount code applicable to the HVD customers migrating from VIP to VIP Marketplace. This parameter does not apply to non-HVD customers.
+- The `lineItems []  → status` parameter in the response adheres to standard status codes, for example, 1000 = Active, 1004 = Inactive, and so on. However, its interpretation is specific to the context of Preview Renewal Orders. For example:
+
+  - **1000** indicates that the subscription is either active or scheduled and is expected to renew successfully.
+  - **1004** indicates that the subscription is active or scheduled, but the associated product has expired, so the renewal will not proceed.
 
 ### Sample request
 
@@ -226,54 +230,70 @@ OR
 
 ```json
 {
-  "referenceOrderId": "",
-  "orderType": "PREVIEW_RENEWAL",
-  "externalReferenceId": "759",
-  "orderId": "",
-  "customerId": "9876543210",
-  "currencyCode": "USD",
-  "creationDate": "2019-05-02T22:49:54Z",
-  "status": "",
-  "lineItems": [
-    {
-      "extLineItemNumber": 4,
-      "offerId": "80004567EA01A12",
-      "quantity": 1,
-      "subscriptionId": " e0b170437c4e96ac5428364f674dffNA",
-      "discountCode": "HVD_L18_PRE",
-      "status": "",
-      "currencyCode": "USD",
-      "deploymentId": "12345"
-    }
-  ],
-  "eligibleOffers": [
-    {
-      "offerId": "65324918CA14X12",
-      "renewalCode": "MOQ_100",
-      "eligibilityCriteria": {
-        "minQuantity": 100,
-        "additionalCriteria": ["THREE_YEAR_COMMIT"],
-        "deploymentId": "1450043516"
-      }
-    },
-    {
-      "offerId": "65324918CA14Y12",
-      "renewalCode": "MOQ_250",
-      "eligibilityCriteria": {
-        "minQuantity": 250,
-        "additionalCriteria": ["THREE_YEAR_COMMIT"],
-        "deploymentId": "1450043516"
-      }
-    },
-    {
-      "offerId": "65324918CA14Z12",
-      "renewalCode": "MOQ_500",
-      "eligibilityCriteria": {
-        "minQuantity": 500,
-        "additionalCriteria": ["THREE_YEAR_COMMIT"]
-      }
-    }
-  ]
+    "referenceOrderId": "",
+    "orderType": "PREVIEW_RENEWAL",
+    "externalReferenceId": "759",
+    "orderId": "",
+    "customerId": "9876543210",
+    "currencyCode": "USD",
+    "creationDate": "2019-05-02T22:49:54Z",
+    "status": "",
+    "lineItems": [
+        {
+            "extLineItemNumber": 4,
+            "offerId": "80004567EA01A12",
+            "quantity": 1,
+            "subscriptionId": " e0b170437c4e96ac5428364f674dffNA",
+            "discountCode": "HVD_L18_PRE",
+            "status": "1000",
+            "currencyCode": "USD",
+            "deploymentId": "12345"
+        },
+        {
+            "extLineItemNumber": 1,
+            "offerId": "65322447CA01A12",
+            "quantity": 25,
+            "subscriptionId": "4392d721a543929afb871a4c140435NA",
+            "discountCode": "HVD_L18_PRE",
+            "status": "1004",
+            "currencyCode": "USD",
+            "deploymentId": "12345"
+        }
+    ],
+    "eligibleOffers": [
+        {
+            "offerId": "65324918CA14X12",
+            "renewalCode": "MOQ_100",
+            "eligibilityCriteria": {
+                "minQuantity": 100,
+                "additionalCriteria": [
+                    "THREE_YEAR_COMMIT"
+                ],
+                "deploymentId": "1450043516"
+            }
+        },
+        {
+            "offerId": "65324918CA14Y12",
+            "renewalCode": "MOQ_250",
+            "eligibilityCriteria": {
+                "minQuantity": 250,
+                "additionalCriteria": [
+                    "THREE_YEAR_COMMIT"
+                ],
+                "deploymentId": "1450043516"
+            }
+        },
+        {
+            "offerId": "65324918CA14Z12",
+            "renewalCode": "MOQ_500",
+            "eligibilityCriteria": {
+                "minQuantity": 500,
+                "additionalCriteria": [
+                    "THREE_YEAR_COMMIT"
+                ]
+            }
+        }
+    ]
 }
 ```
 
