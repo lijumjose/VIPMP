@@ -9,4 +9,4 @@ You can utilize APIs to manage various resources and features, including:
 - [Subscriptions](../subscription_management/index.md)
 - [Notifications](../notification_management/index.md)
 - [Recommendations](../recommendations/index.md)
-- [Flexible Promotions](../flex_promo/index.md)
+- [Flexible Discounts](../flex_discounts/index.md)
