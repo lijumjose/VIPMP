@@ -6,4 +6,4 @@ You can manage and test the following operational workflows in Sandbox:
 - [Linked Memberships](./linked_memberships/index.md)
 - [High Growth Offers for customers](./high_growth_offer/high_growth.md)
 - [Recommendations](./recommendations/index.md)
-- [Flexible Promotions](./flex_promo/)
+- [Flexible Discounts](./flex_discounts/index.md)

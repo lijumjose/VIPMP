@@ -1,6 +1,6 @@
 # Manage Flexible Discounts
 
-Partners can get flexible discounts for a product in a specific market segment and country. These discounts can be applied during the order placement process. For detailed guidance on managing Flexible Discounts through APIs, refer to [Manage Flexible Discounts using APIs](/src/pages/docs/flex_promo/index.md).
+Partners can get flexible discounts for a product in a specific market segment and country. These discounts can be applied during the order placement process. For detailed guidance on managing Flexible Discounts through APIs, refer to [Manage Flexible Discounts using APIs](/src/pages/docs/flex_discounts/apis.md).
 
 ## Testing flexible discounts in Sandbox
 

@@ -244,16 +244,16 @@ module.exports = {
            {
             title: 'Flexible Discounts',
             description: '',
-            path: '/docs/flex_promo/index.md',
+            path: '/docs/flex_discounts/index.md',
             header: true,
             pages: [
               {
                 title: 'Manage Flexible Discounts using APIs',
-                path: '/docs/flex_promo/apis.md'
+                path: '/docs/flex_discounts/apis.md'
               },
               {
                 title: 'Error codes specific to Flexible Discounts',
-                path: '/docs/flex_promo/error_codes.md'
+                path: '/docs/flex_discounts/error_codes.md'
               },
             ]
            },
@@ -515,7 +515,7 @@ module.exports = {
               },
               {
                 title: 'Flexible Discounts',
-                path: 'sandbox/sandbox_portal/flex_promo',
+                path: 'sandbox/sandbox_portal/flex_discounts',
                 header: true,
               },
             ],
