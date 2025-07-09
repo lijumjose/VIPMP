@@ -90,7 +90,7 @@ A sample request is as follows:
 {
   "region": "NA",
   "marketSegment": "COM",
-  "discountType": "STANDARD",
+  "priceListType": "STANDARD",
   "currency": "USD",
   "priceListMonth": "YYYYMM",
   "filters": {
@@ -114,7 +114,7 @@ A sample request is as follows:
 |----------------------------------|--------------|--------------------|-----------------|
 | `region`                         | Yes          | String (Enum)      | Specifies the region for which the Price List should be returned. For more details, see [supported countries and locales](../references/supported_locales.md). |
 | `marketSegment`                  | Yes          | String (Enum)      | Specifies the market segment. Must be one of the supported segments, such as: <br /> - COM <br /> - EDU <br /> - GOV. |
-| `discountType`                   | No           | String (Enum)      | Indicates the discount type. Possible values: <br /> - STANDARD <br /> - 3YC |
+| `priceListType`                   | No           | String (Enum)      | Indicates the price list type. Possible values: <br /> - STANDARD <br /> - 3YC |
 | `currency`                       | Yes          | String (Enum)      | Specifies the currency. Must be one of the supported currencies for the Partner. For more details, see [supported countries and locales](../references/supported_locales.md). |
 | `priceListMonth`                | Yes          | String             | Specifies the month you want the Price List for, in `YYYYMM` format. Example: `202410`. |
 | `filters`                        | No           | Object             | Filters to narrow down the Price List. All filters use AND logic. For example, if `offerId` and `productFamily` filters are included in the request, then API the response will include results that match `offerId` AND `productFamily` |
@@ -166,7 +166,7 @@ A sample response is as follows:
     "marketSegment": "COM",
     "region": "NA",
     "currency": "USD",
-    "discountType": "3YC",
+    "priceListType": "3YC",
     "totalCount": 59,
     "count": 59,
     "limit": 100,
@@ -246,7 +246,7 @@ A sample response is as follows:
 | `marketSegment` | Yes | String (Enum) | Market segment applicable for the offers included in the response. Possible values: <br /> - COM <br /> - EDU <br /> - GOV |
 | `region` | Yes | String (Enum) | Region where offer is sold. <br /> Possible values: <br /> - NA <br /> - PA <br /> - EE <br /> - MX <br /> - LA <br /> - WE <br /> - JP <br /> - AP |
 | `currency` | Yes | String (Enum) | Currency applicable for the market segment and region. <br /> Possible Values: <br /> - AUD <br /> - EUR <br /> - GBP <br /> - JPY <br /> - USD |
-| `discountType` | Yes | String (Enum) | The volume discount type applicable for the offers included in the response. <br /> Possible values:<br /> - STANDARD <br /> - 3YC |
+| `priceListType` | Yes | String (Enum) | The price list type. <br /> Possible values:<br /> - STANDARD <br /> - 3YC |
 | `totalCount` | Yes | Integer | Indicates the total items matched as per the search criteria. |
 | `count` | Yes | Integer | Indicates the total number of offers returned in the response. |
 | `limit` | Yes | Integer | The number of offers limited in the response. |

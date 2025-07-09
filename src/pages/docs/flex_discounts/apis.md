@@ -30,6 +30,7 @@ Sample Request URL: `GET <ENV>/v3/flex-discounts?market-segment=COM&country=US`
 | country         | String           | Yes       | Get flexible discounts by country using the ISO 3166-1 alpha-2 code. Example: "US", "IN". |         2 or 3 characters                                                                     |
 | offer-ids       | Array of strings | No        | Provide a comma-separated list of Offer IDs to retrieve applicable flexible discounts. Example: 65322535CA04A12, 86322535CA04A12 |                                                                              |
 | flex-discount-id      | String           | No        | Retrieve a flexible discount by its unique ID. This endpoint returns a single, unique flexible discount object. <br /> If flex-discount-id query parameter is provided in the request, other non-mandatory params cannot be provided in the same request.       |      Max: 40 characters                                                                        |
+| flex-discount-code      | String           | No        | Filter promotions by code. Examples: "DIWALI", "BLACK_FRIDAY".       |                                                                             |
 | start-date      | String (date)    | No        | Filter flexible discounts that were available on or after this moment in time. This date can be without timestamp or with timestamp in Zulu time format. For example, “2025-05-02" or "2025-05-02T22:49:54Z" |                                                                              |
 | end-date        | String (date)    | No        | Filter flexible discounts that were available on or before this moment in time. This date can be without timestamp or with timestamp in Zulu time format. For example, “2025-05-02" or "2025-05-02T22:49:54Z" |                                                                              |
 | limit           | Integer          |  No         | Define the number of items to be returned in the response. Default: 20, Max: 50. |                                                                              |
@@ -131,7 +132,7 @@ None.
 | Parameter                       | Type             | Description                                                                 |
 |---------------------------------|------------------|-----------------------------------------------------------------------------|
 | limit                            | String           |  Number of items to be included in the current response.                 |
-| offset                            | 	String |Offset applied for the current response.                                                 |
+| offset                            | String |Offset applied for the current response.                                                 |
 | count                            | String           | The count of flexible discount entities included in the current response.                                                       |
 | totalCount                            | String           |   Total count of flexible discount entities, if no limit was applied.                                                   |
 | flexDiscounts                            | Object           | Provides details of the available flexible discounts.                                                       |
@@ -140,10 +141,10 @@ None.
 
 | Parameter                       | Type             | Description                                                                 |
 |---------------------------------|------------------|-----------------------------------------------------------------------------|
-| id                            | String           | A unique identifier for the flexible discount. Used to retrieve or reference a specific flexible discount.                                                       |
+| id                            | String           | A unique system-generated identifier for a flexible discount. It should be used to retrieve or reference a specific flexible discount, especially when accessing detailed metadata of a flexible discount. It is also included in the order response.                                                 |
 | name                            | String           | Name of the flexible discount.                                                       |
 | description                     | String           | Description of the flexible discount. It also provides additional details about the eligibility criteria for the flexible discount. For example, "Exclusive 20% off for Teams customers of CC All Apps in US"                                               |
-| code                            | String           | The code that needs to be used in the order and will reflect in the invoice. It will be unique across flexible discounts. |
+| code                            | String           | A readable identifier used to apply a flexible discount during order placement. This code will appear on the invoice. For example, a discount code like BLACK_FRIDAY may be reused across different years such as 2025 and 2026. However, to ensure consistency and prevent duplication, only one active flexible discount can exist for a given code at any point in time. |
 | endDate                         | String (Date)    | Final date when the flexible discount can be used.                                   |
 | startDate                       | String (Date)    | First date when the flexible discount can be used                                   |
 | status                          | String Enum      | Status of flexible discount. Possible values: ACTIVE, EXPIRED                       |
@@ -174,13 +175,16 @@ On failure, the response includes the appropriate HTTP status code based on the 
 
 ## Create Order and Preview Order
 
-Pass the `flex-discount-code` at the lineItems level in the `Create Order` and `Preview Order` requests.
+Pass the `flexDiscountCodes` at the lineItems level in the `Create Order` and `Preview Order` requests.
 
 | Endpoint                               | Method |
 |----------------------------------------|--------|
 | `/v3/customers/<customer-id>/orders`     | POST   |
 
-**Note:** Order creation will fail even if one of the line items' flexible discount is invalid.
+**Notes:**
+
+- Order creation will fail even if one of the line items' flexible discount is invalid.
+- Currently, only one flexible discount code is allowed in Order Preview.
 
 ### Request Header
 
