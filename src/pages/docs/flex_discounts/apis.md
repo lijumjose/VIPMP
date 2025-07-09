@@ -132,7 +132,7 @@ None.
 | Parameter                       | Type             | Description                                                                 |
 |---------------------------------|------------------|-----------------------------------------------------------------------------|
 | limit                            | String           |  Number of items to be included in the current response.                 |
-| offset                            | 	String |Offset applied for the current response.                                                 |
+| offset                            | String |Offset applied for the current response.                                                 |
 | count                            | String           | The count of flexible discount entities included in the current response.                                                       |
 | totalCount                            | String           |   Total count of flexible discount entities, if no limit was applied.                                                   |
 | flexDiscounts                            | Object           | Provides details of the available flexible discounts.                                                       |
@@ -181,7 +181,7 @@ Pass the `flexDiscountCodes` at the lineItems level in the `Create Order` and `P
 |----------------------------------------|--------|
 | `/v3/customers/<customer-id>/orders`     | POST   |
 
-**Notes:** 
+**Notes:**
 
 - Order creation will fail even if one of the line items' flexible discount is invalid.
 - Currently, only one flexible discount code is allowed in Order Preview.
