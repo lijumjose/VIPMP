@@ -16,7 +16,7 @@ Key advantages of flexible discounts include:
 The following two types of discounts are available with flexible discounts:
 
 1. **Percentage Discount (% discount):** A percentage reduction is applied to the base price of the product.
-2. **Fixed Amount Discount ($ discount):** A fixed monetary reduction is applied to the base price of the product.
+2. **Fixed Discount ($ discount):** A fixed monetary reduction is applied to the base price of the product.
 
 The discounts applied based on these discount types are explained in the following tables:
 
@@ -48,7 +48,7 @@ These discounts are applied to a part number using a discount code. Partners mus
 
 ## Eligibility criteria
 
-Flexible discounts are available to all VIP Marketplace customers, regardless of their existing volume discounts, including those with Linked Memberships. However, eligibility is determined by other factors, such as the customer's market segment and country.
+Flexible discounts are available to all VIP Marketplace customers, regardless of their existing volume discounts, including those with Linked Memberships. However, eligibility is determined by other factors, such as the customer's market segment, country, and so on.
 
 ## Partner integration process  
 
