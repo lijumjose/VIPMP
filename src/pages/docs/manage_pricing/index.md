@@ -112,10 +112,10 @@ A sample request is as follows:
 
 | **Field**                        | **Required** | **Type**           | **Description** |
 |----------------------------------|--------------|--------------------|-----------------|
-| `region`                         | Yes          | String (Enum)      | Specifies the region for which the Price List should be returned. For more details, see [supported countries and locales](../references/supported_locales.md). |
+| `region`                         | Yes          | String (Enum)      | Specifies the region for which the Price List should be returned. This must be one of the regions supported for the Partner. The following requion codes are supported: <br /> AP, JP, WE, LA, MX, EE, PA, NA  |
 | `marketSegment`                  | Yes          | String (Enum)      | Specifies the market segment. Must be one of the supported segments, such as: <br /> - COM <br /> - EDU <br /> - GOV. |
 | `priceListType`                   | No           | String (Enum)      | Indicates the price list type. Possible values: <br /> - STANDARD <br /> - 3YC |
-| `currency`                       | Yes          | String (Enum)      | Specifies the currency. Must be one of the supported currencies for the Partner. For more details, see [supported countries and locales](../references/supported_locales.md). |
+| `currency`                       | Yes          | String (Enum)      | Specifies the currency. Must be one of the supported currencies for the Partner. <br />Possible Values: AUD, EUR, GBP, JPY, USD. |
 | `priceListMonth`                | Yes          | String             | Specifies the month you want the Price List for, in `YYYYMM` format. Example: `202410`. |
 | `filters`                        | No           | Object             | Filters to narrow down the Price List. All filters use AND logic. For example, if `offerId` and `productFamily` filters are included in the request, then API the response will include results that match `offerId` AND `productFamily` |
 | `filters → offerId`             | No           | String             | Returns only offers matching the specified `offerId`. |
