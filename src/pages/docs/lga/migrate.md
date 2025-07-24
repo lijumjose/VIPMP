@@ -59,13 +59,6 @@ A sample response is as follows:
       "renewalDate": "2025-06-10T16:22:08.000+00:00"
     }
   ],
-  "benefits": [
-    {
-      "type": "LARGE_GOVERNMENT_AGENCY",
-      "commitmentRequest": null,
-      "recommitmentRequest": null
-    }
-  ],
   "discounts": [
     ... // existing fields
   ],
