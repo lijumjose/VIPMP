@@ -77,6 +77,11 @@ Volume discounts apply only to qualifying licenses.
   | TF   | 50,000–99,999           |
   | TG   | 100,000+                |
 
+**Note:** When a 3-Year Commitment (3YC) contract expires after its designated end date, the volume discount levels are reset to the following defaults:
+
+- **Licenses:** Level 01
+- **Consumables:** Tier T1
+
 ## Commitment request considerations
 
 - Discount levels are updated whenever the commitment status changes, such as when a new commitment is made or an existing one expires.
