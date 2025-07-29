@@ -1,5 +1,7 @@
 # Introduction
 
+**📄 Click [here for release notes](../docs/release_notes/index.md)**.
+
 As a partner cloud marketplace administrator, you can use the Partner APIs to create and manage reseller and customer accounts, and place orders for select Adobe products for those customers. Before placing an order, both reseller and customer accounts must exist. Each customer must be linked to a reseller, and each reseller must be linked to a distributor.
 
 The Distributor → Reseller → Customer → Order relationships are unidirectionally one-to-many. That is, one distributor can have multiple  resellers, but each reseller may only belong to one distributor. Similarly, a reseller may have many customers, but a customer can only be tied to one reseller.
