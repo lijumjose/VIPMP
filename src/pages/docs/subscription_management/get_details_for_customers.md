@@ -70,7 +70,6 @@ Example:
 
 **Notes:**
 
-- Only the active subscriptions for VIP customers are included in the response.
 - No parameters or filters are available at this time.
 - The `renewalCode` parameter will be available in the response only if the customer receives a High Growth Offer on the next Anniversary Date.
 
