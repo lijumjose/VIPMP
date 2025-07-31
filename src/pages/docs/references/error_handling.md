@@ -63,6 +63,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 |1160 |Invalid Market Segment for Partner |Fetch Price Lists |400 |
 |1161 |Invalid Currency/Region for Partner |Fetch Price Lists |400 |
 |1162 |Price List not found |Fetch Price Lists |404 |
+|1178 | Invalid Country for Partner | Get Flexible Discounts | 400|
 |2115 | Invalid Customer or Order ID |Get Order Details, Cancel Order| 404|
 |2116 | Invalid status | Cancel Order | 400|
 |2117 | Cancellation window has closed | Cancel Order | 400|
