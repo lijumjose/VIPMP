@@ -28,6 +28,10 @@ The UI displays a list of current discounts, including the following details:
 
 You can use the discount code while placing an order using the Create Order API.
 
+**Note:** In the Sandbox environment, Flexible Discounts that include the term "FAILURE" in both the `name` and the `code` are specifically intended for validating failure scenarios. These codes are designed to always fail when used in PREVIEW and NEW order flows. All other discount codes can be used to validate successful application scenarios. Example:
+
+![Flex discounts with name and code with the term FAILURE in it](../image/flex_discount_failure.png)
+
 ### View flexible discounts applied to an Order
 
 If a Flexible Discount is applied during order placement, its details can be viewed from the Order screen. For example, in **Manage Records > Orders**, the discount information appears within the `lineItems` section, as illustrated in the following figure:
