@@ -86,43 +86,43 @@ Please see the Validations/Regular Expressions section for any regular expressio
 
 | **Field** | **Not Null** | **Type** | **Description** |
 |-----------|--------------|----------|-----------------|
-| `priceListMonth` | Yes | String | Price List published month |
-| `marketSegment` | Yes | String (Enum) | Market segment applicable for the offers included in the response. Possible values: <br /> - COM <br /> - EDU <br /> - GOV |
-| `region` | Yes | String (Enum) | Region where offer is sold. <br /> Possible values: <br /> - NA <br /> - PA <br /> - EE <br /> - MX <br /> - LA <br /> - WE <br /> - JP <br /> - AP |
-| `currency` | Yes | String (Enum) | Currency applicable for the market segment and region. <br /> Possible Values: <br /> - AUD <br /> - EUR <br /> - GBP <br /> - JPY <br /> - USD |
-| `discountType` | Yes | String (Enum) | The volume discount type applicable for the offers included in the response. <br /> Possible values:<br /> - STANDARD <br /> - 3YC |
-| `totalCount` | Yes | Integer | Indicates the total items matched as per the search criteria. |
-| `count` | Yes | Integer | Indicates the total number of offers returned in the response. |
-| `limit` | Yes | Integer | The number of offers limited in the response. |
-| `offset` | Yes | Integer | Specifies the starting point for retrieving items in a paginated list. It determines how many items to skip before beginning to return results. If not specified, the default value is 0, meaning the response will start from the first item. |
-| `offers` | Yes | JSON List | List of Offers <br /> List will be empty if no Offers are available to return. |
-| `offer → offerId` | Yes | String | Unique identifier of the Offer. Used as Offer ID in Order APIs |
-| `offer → productFamily` | Yes | String | Indicates the grouping of products based on product code, product config, and so on. |
-| `offer → productType` | Yes | String (Enum) | Possible values: <br /> - Enterprise Consumption (consumable) <br /> - Enterprise Hosted Subscription New <br /> - Feature Restricted Licensing Subscription New <br /> - Hosted Subscription <br /> - Subscription New <br /> - Team Consumption (consumable) <br /> - Transaction New (consumable) |
-| `offer → productTypeDetail` | Yes | String (Enum) | Indicates whether the product is term base and if price is fixed or prorated. <br /> Possible values: <br /> - 12-month, no proration (fixed price) <br /> - Annual (proration based on duration) <br /> - No Proration (fixed price, no term) |
-| `offer → additionalDetail` | No | String | Additional details for the product offer, such as the number of credits in a pack, the number of license bundles in a subscription, and so on. |
-| `offer → operatingSystem` | Yes | String (Enum) | Possible values: <br /> - Multiple Platforms <br /> - Other <br /> - Windows |
-| `offer → language` | Yes | String (Enum) | Language offered by Offer <br /> The following are the possible values: <br /> - EU English <br /> - Japanese <br /> - Multi Asian Languages <br /> - Multi European Languages <br /> - Multi Language Australia <br /> - Multi Latin American Languages <br /> - Multi NorthAmerican Language |
-| `offer → version` | Yes | String | Possible values: <br /> - ALL |
-| `offer → users` | Yes | String (Enum) | License type <br /> The Following are the possible values: <br /> - 1 User <br /> - Named <br /> - Per Credit Pack <br /> - Per Server <br /> - Per Transaction <br /> - Per Workstation <br /> - Subscription |
-| `offer → metric` | No | String (Enum) | Unit of measure. The following are the possible values: <br /> - 1000 <br /> - 10000 <br /> - 15000 <br /> - 20000 <br /> - 30000 <br /> - 40 Images <br /> - 50 TRS INTRO NC <br /> - 5000 <br /> - 50000 <br /> - Transaction - USER |
-| `offer → bridge` | No | String |  |
-| `offer → upcEanCode` | No | String | Barcode formats used to identify products in retail sales. |
-| `offer → gtinCode` | No | String | 13-digit code that identifies products for sale in retail stores or online. |
-| `offer → acdIndicator` | No | String (Enum) | Used to indicate if the offer is NEW, CHANGED, or DELETED. <br /> Possible values: <br /> - Add <br /> - Change <br /> - Delete |
-| `offer → acdEffectiveDate` | No | Date | Effective date for the ACD indicator (ADD, CHANGE, and DELETE). This date is in UTC format. |
-| `offer → acdDescription` | No | String | This field provides additional context or details about the ACD status of the offer. |
-| `offer → levelDetails` | Yes | String | Level Description of Min and Max range for the price point. |
-| `offer → firstOrderDate` | Yes | Date | The first date for the item's sale. |
-| `offer → lastOrderDate` | Yes | Date | The last date for the item's sale. |
-| `offer → partnerPrice` | Yes | String | List Price for Partner <br /> |
-| `offer → estimatedStreetPrice` | Yes | String | Estimated retail price <br />  |
-| `offer → discountCode` | No | String | High volume discount code will be provided here. When the discount code is available, the estimatedStreetPrice and partnerPrice will reflect the discounted price. |
-| `offer → estimatedShipDate` | Yes | Date | Estimated Ship Date. This date is in UTC format. |
-| `offer → publicAnnounceDate` | Yes | Date | Public Announce Date. This date is in UTC format. |
-| `offer → rmaRequestDeadline` | Yes | Date | RMA Request Deadline. This date is in UTC format. |
-| `offer → pool` | Yes | String (Enum) | The category or grouping to which the offer belongs. This field helps in identifying the broader classification of the offer. Possible values are: <br /> - Application <br /> - Discount1 <br /> - Discount2 <br /> - Pricing Version 23 <br /> - Pricing Version 24 <br /> - Pricing Version 25 <br />|
-| `offer → duration` | Yes | String | The time period for which the offer is valid or applicable. This field specifies the length of time the offer is effective. |
+| priceListMonth | Yes | String | Price List published month |
+| marketSegment | Yes | String (Enum) | Market segment applicable for the offers included in the response. Possible values: <br /> - COM <br /> - EDU <br /> - GOV |
+| region | Yes | String (Enum) | Region where offer is sold. <br /> Possible values: <br /> - NA <br /> - PA <br /> - EE <br /> - MX <br /> - LA <br /> - WE <br /> - JP <br /> - AP |
+| currency | Yes | String (Enum) | Currency applicable for the market segment and region. <br /> Possible Values: <br /> - AUD <br /> - EUR <br /> - GBP <br /> - JPY <br /> - USD |
+| discountType | Yes | String (Enum) | The volume discount type applicable for the offers included in the response. <br /> Possible values:<br /> - STANDARD <br /> - 3YC |
+| totalCount | Yes | Integer | Indicates the total items matched as per the search criteria. |
+| count | Yes | Integer | Indicates the total number of offers returned in the response. |
+| limit | Yes | Integer | The number of offers limited in the response. |
+| offset | Yes | Integer | Specifies the starting point for retrieving items in a paginated list. It determines how many items to skip before beginning to return results. If not specified, the default value is 0, meaning the response will start from the first item. |
+| offers | Yes | JSON List | List of Offers <br /> List will be empty if no Offers are available to return. |
+| offer → offerId | Yes | String | Unique identifier of the Offer. Used as Offer ID in Order APIs |
+| offer → productFamily | Yes | String | Indicates the grouping of products based on product code, product config, and so on. |
+| offer → productType | Yes | String (Enum) | Possible values: <br /> - Enterprise Consumption (consumable) <br /> - Enterprise Hosted Subscription New <br /> - Feature Restricted Licensing Subscription New <br /> - Hosted Subscription <br /> - Subscription New <br /> - Team Consumption (consumable) <br /> - Transaction New (consumable) |
+| offer → productTypeDetail | Yes | String (Enum) | Indicates whether the product is term base and if price is fixed or prorated. <br /> Possible values: <br /> - 12-month, no proration (fixed price) <br /> - Annual (proration based on duration) <br /> - No Proration (fixed price, no term) |
+| offer → additionalDetail | No | String | Additional details for the product offer, such as the number of credits in a pack, the number of license bundles in a subscription, and so on. |
+| offer → operatingSystem | Yes | String (Enum) | Possible values: <br /> - Multiple Platforms <br /> - Other <br /> - Windows |
+| offer → language | Yes | String (Enum) | Language offered by Offer <br /> The following are the possible values: <br /> - EU English <br /> - Japanese <br /> - Multi Asian Languages <br /> - Multi European Languages <br /> - Multi Language Australia <br /> - Multi Latin American Languages <br /> - Multi NorthAmerican Language |
+| offer → version | Yes | String | Possible values: <br /> - ALL |
+| offer → users | Yes | String (Enum) | License type <br /> The Following are the possible values: <br /> - 1 User <br /> - Named <br /> - Per Credit Pack <br /> - Per Server <br /> - Per Transaction <br /> - Per Workstation <br /> - Subscription |
+| offer → metric | No | String (Enum) | Unit of measure. The following are the possible values: <br /> - 1000 <br /> - 10000 <br /> - 15000 <br /> - 20000 <br /> - 30000 <br /> - 40 Images <br /> - 50 TRS INTRO NC <br /> - 5000 <br /> - 50000 <br /> - Transaction - USER |
+| offer → bridge | No | String |  |
+| offer → upcEanCode | No | String | Barcode formats used to identify products in retail sales. |
+| offer → gtinCode | No | String | 13-digit code that identifies products for sale in retail stores or online. |
+| offer → acdIndicator | No | String (Enum) | Used to indicate if the offer is NEW, CHANGED, or DELETED. <br /> Possible values: <br /> - Add <br /> - Change <br /> - Delete |
+| offer → acdEffectiveDate | No | Date | Effective date for the ACD indicator (ADD, CHANGE, and DELETE). This date is in UTC format. |
+| offer → acdDescription | No | String | This field provides additional context or details about the ACD status of the offer. |
+| offer → levelDetails | Yes | String | Level Description of Min and Max range for the price point. |
+| offer → firstOrderDate | Yes | Date | The first date for the item's sale. |
+| offer → lastOrderDate | Yes | Date | The last date for the item's sale. |
+| offer → partnerPrice | Yes | String | List Price for Partner <br /> |
+| offer → estimatedStreetPrice | Yes | String | Estimated retail price <br />  |
+| offer → discountCode | No | String | High volume discount code will be provided here. When the discount code is available, the estimatedStreetPrice and partnerPrice will reflect the discounted price. |
+| offer → estimatedShipDate | Yes | Date | Estimated Ship Date. This date is in UTC format. |
+| offer → publicAnnounceDate | Yes | Date | Public Announce Date. This date is in UTC format. |
+| offer → rmaRequestDeadline | Yes | Date | RMA Request Deadline. This date is in UTC format. |
+| offer → pool | Yes | String (Enum) | The category or grouping to which the offer belongs. This field helps in identifying the broader classification of the offer. Possible values are: <br /> - Application <br /> - Discount1 <br /> - Discount2 <br /> - Pricing Version 23 <br /> - Pricing Version 24 <br /> - Pricing Version 25 <br />|
+| offer → duration | Yes | String | The time period for which the offer is valid or applicable. This field specifies the length of time the offer is effective. |
 
 ## Order (top-level resource)
 
@@ -133,8 +133,10 @@ Please see the Validations/Regular Expressions section for any regular expressio
 |customerId <br /> (read only)| String | ID of the customer that placed this order | Max: 40 characters|
 |referenceOrderId | String <br /> required for RETURN orders| The ID of the order being returned in a RETURN order.| Max: 40 characters|
 |orderType | String <br /> (enum)| Type of the order. Valid values: NEW, PREVIEW, RETURN, TRANSFER, RENEWAL| |
-|lineItems | `LineItem` resources| Itemized list of the offers and their quantity for this order| Min: 1 item <br />Max: 499 items|
+|lineItems | `lineItem` resources| Itemized list of the offers and their quantity for this order| Min: 1 item <br />Max: 499 items|
+|pricingSummary | `pricingSummary` resources| A summary of prices of offers included in the line item.| |
 |eligibleOffers | `eligibleOffers` resource | The details of High Growth Offers available to the customer.||
+|recommendations | `recommendations` resource | Lists products available for the customer in the upsell, cross-sell, and add-on motions.||
 |currencyCode | String | Currency used for placing the order (ISO 4217 format).| 3 characters|
 |creationDate <br /> (read only)| String (datetime)| Date and time the order was created in UTC| |
 |status (read only, except for canceling)| String | Status code of the order | 4 characters|
@@ -151,7 +153,7 @@ Please see the Validations/Regular Expressions section for any regular expressio
 |additionalCriteria |String |The additional criteria list for availing the High Growth Offer. Currently, THREE_YEAR_COMMIT is the only supported value, indicating that 3YC is required to avail the High Growth Offers. |Min: 1 item <br /> Max: 499 items |
 |deploymentId |String |Unique ID of the deployment. |Max: 40 characters |
 
-### LineItem
+### lineItem
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
@@ -161,8 +163,26 @@ Please see the Validations/Regular Expressions section for any regular expressio
 |discountCode|String|The discount code applicable to the HVD customers migrating from VIP to VIP Marketplace.|Max: 40 characters|
 |subscriptionId (read only)| String | ID of the Subscription resource associated with this line item.| Max: 40 characters|
 |status (read only)| String | Status code of the line item | 4 characters|
+|currencyCode | String | Currency code applicable for the offer | 3 characters|
+|proratedDays | Integer |  The number of days for which order will be invoiced. This applies in the case of mid-term purchases.| |
+| flexDiscounts        | Object | Details of the flexible discount applied to that lineItem             | |
+| flexDiscounts[].id  | String | A unique identifier for the flexible discount. Used to retrieve or reference a specific flexible discount.          | |
+| flexDiscounts[].code  | String | The flexible discount code that was applied to that lineItem          | |
+| flexDiscount[].result| String | The “SUCCESS" indicates that the flexible discount code applicability was successful. | |
+| pricing       | Object |              | |
+| pricing[].partnerPrice                |Integer | Full-term unit price before any discount or prorating.| |
+| pricing[].discountedPartnerPrice     |Integer  | Unit price after applying discount. <br /> | |
+| pricing[].netPartnerPrice             | Integer    | Prorated unit price after discount. | |
+| pricing[].lineItemPrice   | Integer   | Prorated price of item after discount and before tax. This is the price partner need to pay to Adobe for this item.  | |
 
-### productRecommendations
+### pricingSummary
+
+| Field                       | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| totalLineItemPrice               | Sum of all line item prices in the order.                 |
+| currencyCode                 | Currency used for pricing. This is specified in ISO 4217 currency code. Examples: USD and EUR.                                    |
+
+### recommendations
 
 | Property               | Type                    | Description                                                                                                                                           |
 |------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -170,17 +190,6 @@ Please see the Validations/Regular Expressions section for any regular expressio
 | upsells                | Array of Recommendations| List of recommended products that offer more value by providing a higher-tier, premium, or enhanced version of the selected product or offer. Example: Adobe Photoshop to Adobe Creative Cloud All Apps |
 | crossSells             | Array of Recommendations| List of recommended products that complement the selected product by offering additional functionality or benefits. Example: Adobe Stock to Adobe Photoshop |
 | addOns                 | Array of Recommendations| List of recommended products to extend or enhance the functionality of a base product. These products are not standalone and must be used with the base product. Example: AI Assistant for Adobe Acrobat |
-
-### flexDiscounts
-
-The following table provides the flexible discount details:
-
-| Name               | Type   | Description                                                   |
-|--------------------|--------|---------------------------------------------------------------|
-| flexDiscounts        | Object | Details of the flexible discount applied to that lineItem             |
-| flexDiscounts[].id  | String | A unique identifier for the promotion. Used to retrieve or reference a specific flexible discount.          |
-| flexDiscounts[].code  | String | The flexible discount code that was applied to that lineItem          |
-| flexDiscount[].result| String | The “SUCCESS" indicates that the flexible discount code applicability was successful. |
 
 ## Subscription (top-level resource)
 
@@ -215,7 +224,7 @@ The following table provides the flexible discount details:
 | Parameter                       | Type             | Description                                                                 |
 |---------------------------------|------------------|-----------------------------------------------------------------------------|
 | limit                            | String           |  Number of items to be included in the current response.                 |
-| offset                            | 	String |Offset applied for the current response.                                                 |
+| offset                            | String |Offset applied for the current response.                                                 |
 | count                            | String           | The count of flexible discount entities included in the current response.                                                       |
 | totalCount                            | String           |   Total count of flexible discount entities, if no limit was applied.                                                   |
 | name                            | String           | Name of the flexible discount.                                                       |
