@@ -146,7 +146,7 @@ Automatically adjusts the offer ID if a better volume discount is available.
 
 **Preview Order with pricing**
 
-You can choose to include pricing in the Preview Order API response by setting the `fetch-price` query parameter to `true` in the request URL. This returns real-time partner pricing details for Adobe products, helping partners and resellers generate accurate quotes.
+You can choose to include pricing in the Preview Order API response by setting the `fetch-price` query parameter to `true` in the request URL. This returns real-time partner pricing details for Adobe products, helping partners and resellers better estimate how much Adobe will invoice for an order.
 
 Pricing data is sourced directly from Adobe’s systems, reflecting official price lists, discounts, and proration logic.
 
@@ -154,23 +154,32 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 
 - Prices returned in the `Preview Order` and `Preview Renewal` API calls are calculated based on the Pacific Standard Time (PST) time zone.
 - The pricing provided is an estimate based on the specific date and time of the request. Please note that placing an order at a different date or time may result in a different price.
-- The pricing returned via this API reflects the commercial agreement between Adobe and the direct partner. Any pricing presented to end customers is determined by the reseller serving the end customer.
+- The pricing returned through this API reflects the commercial agreement between Adobe and the direct partner. Any pricing presented to end customers is determined by the reseller serving the end customer.
 - Pricing details are not available in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.
 
-### Usage instructions for preview order API
+### Usage instructions for Preview Order API
 
 - Set `orderType` to PREVIEW
+- A successful response can be used to place a new order request, if the `orderType` is changed to NEW.
 - Include the query parameter `fetch-price=true` to retrieve pricing details.
 - Returns the best available offer ID for the customer and the order.
   - Input Offer ID can be any level representing the same product.
   - If the Offer IDs in the request provides a better discount than customer is eligible for, then the correct lower-level Offer IDs are returned.
-    - For a NEW order, the request gets rejected if the customer is not eligible for an Offer ID.
+    - For a PREVIEW order, the request gets rejected if the customer is not eligible for an Offer ID.
 - `proratedDays` in the response indicates the number of days for which order will be invoiced. This applies in the case of mid-term purchases.
+-  If the `PREVIEW` order is rejected, then the `NEW` order will also fail with the same error.
 - The `discountCode` is applicable only to High Volume Discount customers who have migrated from VIP to VIP MP. You can use the discount code only if their discount level in VIP is between 17 and 22.
 
 ### Request
 
 **Sample request URL:** `<ENV>/v3/customers/{customer-id}/orders?fetch-price=true`
+
+**Query parameters:**
+
+| Parameter | Description|
+|--|--|
+|customer-id |A unique identifier for the customer for whom the Order Preview request is being submitted. |
+|fetch-price |A flag indicating whether pricing details should be included in the response. Possible values are: `true` or `false`  |
 
 **Request body:**
 
