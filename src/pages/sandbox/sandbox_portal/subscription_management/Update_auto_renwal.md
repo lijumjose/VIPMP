@@ -40,8 +40,13 @@ Clicking on the EDIT button will bring up several fields that will allow you to 
 
 ## Manually trigger auto-renewal through Sandbox UI
 
-Triggering an auto-renewal is a function that can be performed through the Portal. To trigger the auto-renewal, navigate to the Manage Records -> Customers page, and expand the Customer view by clicking on the down arrowhead next to the desired Customer ID, which will reveal the Trigger Auto Renewal button.
+Triggering an auto-renewal is a function that can be performed through the Portal. To trigger the auto-renewal:
 
-Please, take note that there is a renewal job that runs automatically every hour that will trigger Auto-Renewals upon reaching the corresponding anniversary date and time. The Trigger Auto-Renewal function allows you to accelerate this process.
+1. Turn off the auto-renewal flag for the subscription through UI or API.
+2. Update the co-term date to today or the date it is eligible for manual-renewal.
+3. Select **Trigger Auto Renewal**:
+
+   1. Navigate to the Manage Records -> Customers page, and expand the Customer view by clicking on the down arrowhead next to the desired Customer ID, which will reveal the **Trigger Auto Renewal** button.
+   2. Note that there is a renewal job that runs automatically every hour that will trigger Auto-Renewals upon reaching the corresponding anniversary date and time. The Trigger Auto-Renewal function allows you to accelerate this process.
 
 ![Triggering auto-renewal](../image/trigger.png)

@@ -4,9 +4,9 @@ This topic provides details of the following scenarios related to order creation
 
 - [New order](#new-order)
 - [Return or cancellation of order](#return-or-cancellation-of-order)
-- [Renewal of order](#renewal-orders)
 - [Preview an order](#preview-an-order)
 - [Preview renewal orders](#preview-renewal-orders)
+- [Renewal of order](#renewal-orders)
 
 ## New order
 
@@ -128,21 +128,171 @@ This section lists the sample requests and responses of an order with `orderType
 
 ## Preview an order
 
+The  `Create Order` API with `orderType` PREVIEW is a simulated order request that helps partners validate and prepare an order before actually placing it.
+
+| Endpoint | Method |
+|----------|--------|
+| `/v3/customers/<customer-id>/orders`         |   `POST`     |
+
+The API returns structural and eligibility-related information about the order, but does not include pricing details unless explicitly requested.
+
+A few of the advantages for previewing an order before placing an order include:
+
+- Verifies customer eligibility for the requested offer.
+Automatically adjusts the offer ID if a better volume discount is available.
+- Prevents order failures by catching issues early, for example,  invalid discount codes, ineligible offers, and so on.
+- Helps partners prepare a quote structure (line items, quantities, deployment IDs) before calculating pricing.
+- Allows partners to test different configurations and offers.
+
+**Preview Order with pricing**
+
+You can choose to include pricing in the Preview Order API response by setting the `fetch-price` query parameter to `true` in the request URL. This returns real-time partner pricing details for Adobe products, helping partners and resellers better estimate how much Adobe will invoice for an order.
+
+Pricing data is sourced directly from Adobe’s systems, reflecting official price lists, discounts, and proration logic.
+
 **Notes:**
 
-- No `orderId`, `subscriptionId`, `status`, and `links` in the request.
-- Response can be used to place a new order request, if the `orderType` is changed to NEW.
+- Prices returned in the `Preview Order` and `Preview Renewal` API calls are calculated based on the Pacific Standard Time (PST) time zone.
+- The pricing provided is an estimate based on the specific date and time of the request. Please note that placing an order at a different date or time may result in a different price.
+- The pricing returned through this API reflects the commercial agreement between Adobe and the direct partner. Any pricing presented to end customers is determined by the reseller serving the end customer.
+- Pricing details are not available in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.
+
+### Usage instructions for Preview Order API
+
+- Set `orderType` to PREVIEW
+- A successful response can be used to place a new order request, if the `orderType` is changed to NEW.
+- Include the query parameter `fetch-price=true` to retrieve pricing details.
 - Returns the best available offer ID for the customer and the order.
   - Input Offer ID can be any level representing the same product.
-  - If the Offer IDs in the request provides a better discount than customer is elligible for, then the correct lower-level Offer ID are returned.
-    - For a NEW order, the request gets rejected if the customer is not eligible for an Offer ID.
-- If NEW order is rejected, then the PREVIEW order gets rejected with the same error.
+  - If the Offer IDs in the request provides a better discount than customer is eligible for, then the correct lower-level Offer IDs are returned.
+    - For a PREVIEW order, the request gets rejected if the customer is not eligible for an Offer ID.
+- `proratedDays` in the response indicates the number of days for which order will be invoiced. This applies in the case of mid-term purchases.
+-  If the `PREVIEW` order is rejected, then the `NEW` order will also fail with the same error.
 - The `discountCode` is applicable only to High Volume Discount customers who have migrated from VIP to VIP MP. You can use the discount code only if their discount level in VIP is between 17 and 22.
 
-### Sample request
+### Request
+
+**Sample request URL:** `<ENV>/v3/customers/{customer-id}/orders?fetch-price=true`
+
+**Query parameters:**
+
+| Parameter | Description|
+|--|--|
+|customer-id |A unique identifier for the customer for whom the Order Preview request is being submitted. |
+|fetch-price |A flag indicating whether pricing details should be included in the response. Possible values are: `true` or `false`  |
+
+**Request body:**
 
 ```json
 {
+  "externalReferenceId": "22739ace-0da5-41a4-b475-12f677a4cac",
+  "orderType": "PREVIEW",
+  "currencyCode": "USD",
+  "lineItems": [
+    {
+      "currencyCode": "USD",
+      "extLineItemNumber": 1,
+      "offerId": "11073058CA01A12",
+      "quantity": 10,
+      "flexDiscountCodes": [
+        "BLACK_FRIDAY"
+      ]
+    }
+  ]
+}
+```
+
+### Sample response
+
+```json
+{
+  "referenceOrderId": "",
+  "externalReferenceId": "aad516e6-8945-4531-8572-75bed01c445",
+  "orderId": "",
+  "customerId": "1006370764",
+  "currencyCode": "USD",
+  "orderType": "PREVIEW",
+  "status": "",
+  "lineItems": [
+    {
+      "extLineItemNumber": 1,
+      "offerId": "11073058CA02A12",
+      "quantity": 10,
+      "subscriptionId": "",
+      "status": "",
+      "currencyCode": "USD",
+      "flexDiscounts": [
+        {
+          "id": "55555555-5bb8-4476-bd3f-5562299ab3f5",
+          "code": "BLACK_FRIDAY_10_PERCENT_OFF",
+          "result": "SUCCESS"
+        }
+      ],
+      "proratedDays" : 90,
+      "pricing": {
+        "partnerPrice": 365.00,              
+        "discountedPartnerPrice": 328.50, 
+        "netPartnerPrice": 81.00,       
+        "lineItemPrice": 810.00,    
+      }
+    },
+    {
+      "extLineItemNumber": 2,
+      "offerId": "69804578CA02A12",
+      "quantity": 10,
+      "subscriptionId": "", 
+      "status": "", 
+      "currencyCode": "USD",
+      "flexDiscounts": [
+        {
+          "id": "55555555-5bb8-4476-bd3f-5562299ab3f5",
+          "code": "BLACK_FRIDAY_20_DOLLAR_OFF",
+          "result": "SUCCESS"
+        }
+      ],
+      "proratedDays" : 90,
+      "pricing": {
+        "partnerPrice": 365.00,      
+        "discountedPartnerPrice": 345.00,    
+        "netPartnerPrice": 85.068,     
+        "lineItemPrice": 850.68,    
+      }
+    }
+  ],
+  "pricingSummary": [
+    {
+      "totalLineItemPrice": 1660.68,        
+      "currencyCode": "USD"   
+    }
+  ]
+}
+```
+
+### Pricing details in lineitems (lineItems[].pricing)
+
+| Field                       | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| partnerPrice                | Full-term unit price before any discount or prorating.|
+| discountedPartnerPrice     | Unit price after applying discount. <br /> |
+| netPartnerPrice                 | Prorated unit price after discount. |
+| lineItemPrice      | Prorated price of item after discount and before tax. This is the price partner need to pay to Adobe for this item.  |
+
+### Pricing Summary (pricingSummary[])
+
+| Field                       | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| totalLineItemPrice               | Sum of all line item prices in the order.                 |
+| currencyCode                 | Currency used for pricing. This is specified in ISO 4217 currency code. Example, USD and EUR.                                    |
+
+For complete set of request and response parameter descriptions, refer to [Order resource](../references/resources.md#order-top-level-resource).
+
+#### Sample request and response for HVD customers
+
+**Request:**
+
+```json
+{
+
   "orderType": "PREVIEW",
   "externalReferenceId": "759",
   "currencyCode": "USD",
@@ -159,7 +309,7 @@ This section lists the sample requests and responses of an order with `orderType
 }
 ```
 
-### Sample response
+Response:
 
 ```json
 {
@@ -188,7 +338,19 @@ This section lists the sample requests and responses of an order with `orderType
 
 ## Preview renewal orders
 
-**Notes:**
+The `Create Order` API with `orderType` set to PREVIEW_RENEWAL allows partners to simulate a renewal order before the actual renewal is processed. This helps validate renewal eligibility, pricing, and offer availability in advance.
+
+| Endpoint | Method |
+|----------|--------|
+| `/v3/customers/<customer-id>/orders`         |   `POST`     |
+
+A few of the benefits of previewing a renewal order include:
+
+- Validates renewal eligibility for existing subscriptions based on auto-renewal preferences.
+- Returns the best available offer IDs for renewal, including High Growth Offers.
+- Provides accurate pricing details for renewal scenarios, including discounts and proration logic.
+
+### Usage instructions
 
 - No `orderId`, `status`, and `links` in the request.
 - In case of no `lineItems` in the request, the response indicates what would be in the RENEWAL order based on the auto-renewal preferences (`autoRenewal.enabled` and `autoRenewal.renewalQuantity`) on the customer’s subscriptions.
@@ -201,8 +363,63 @@ This section lists the sample requests and responses of an order with `orderType
 
   - **1000** indicates that the subscription is either active or scheduled and is expected to renew successfully.
   - **1004** indicates that the subscription is active or scheduled, but the associated product has expired, so the renewal will not proceed.
+- Include the query parameter `fetch-price=true` to retrieve pricing details. Pricing details are not available in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.
+- `proratedDays` in the response indicates the number of days for which order will be invoiced. This applies in the case of mid-term purchases.
 
 ### Sample request
+
+**Request URL:** `<ENV>/v3/customers/{customer-id}/orders?fetch-price=true`
+
+**Request sample:**
+
+```json
+{
+  "orderType" : "PREVIEW_RENEWAL"
+}
+```
+
+### Response
+
+```json
+{
+  "referenceOrderId": "",
+  "externalReferenceId": "",
+  "orderId": "",
+  "customerId": "1006370655",
+  "currencyCode": "USD",
+  "orderType": "PREVIEW_RENEWAL",
+  "status": "",
+  "lineItems": [
+    {
+      "extLineItemNumber": 1,
+      "offerId": "11083117CA03A12",
+      "quantity": 10,
+      "subscriptionId": "3d0630693446f8bdff9cbd08f4b68bNA",
+      "status": "1000",
+      "currencyCode": "USD",
+      "proratedDays": 90,
+      "pricing": {
+        "partnerPrice": 365.00,
+        "discountedPartnerPrice": 328.50,
+        "netPartnerPrice": 81.00,
+        "lineItemPrice": 810.00
+      }
+    }
+  ],
+  "pricingSummary": [
+    {
+      "totalLineItemPrice": 810.00,
+      "currencyCode": "USD"
+    }
+  ],
+}
+```
+
+For more information on the pricing details returned in the response, see [Preview Order](#preview-an-order).
+
+#### Sample request and response for HVD customers
+
+**Request:**
 
 ```json
 {
@@ -220,13 +437,13 @@ OR
       "extLineItemNumber": 1,
       "offerId": "80004567EA01A12",
       "discountCode": "HVD_L18_PRE",
-      "subscriptionId": " e0b170437c4e96ac5428364f674dffNA"
+      "subscriptionId": "e0b170437c4e96ac5428364f674dffNA"
     }
   ]
 }
 ```
 
-### Sample response
+**Response:**
 
 ```json
 {

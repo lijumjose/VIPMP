@@ -127,7 +127,9 @@ Ensure that you are aware of the following before updating a customer account:
 }
 ```
 
-**Note:** Any contacts specified in this call will receive the admin welcome email. This can be resend if an end-user did not receive it.
+## Sending welcome email
+
+Any contacts specified in the `Update Customer` call will receive the admin welcome email. If an end-user does not receive it, the partner should retry the `Update Customer` call, ensuring the admin contact’s email is included in the request.
 
 ## HTTP status codes
 

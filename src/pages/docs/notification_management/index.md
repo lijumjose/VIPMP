@@ -6,11 +6,11 @@ Currently, Adobe supports only `LICENSES_PENDING_PARTNER_ORDER` notification typ
 
 | Notification type              | Supported query parameters                                     | Description                                                                                                                                                                                                              |
 |--------------------------------|----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| LICENSES_PENDING_PARTNER_ORDER | 1. resellerid= 100022361 <br /> 2. limit=10 <br /> 3. offset=0 | The `LICENSES_PENDING_PARTNER_ORDER` notification type returns all customers under a given reseller who have at least one license created within the last 7 days for which order has not been placed yet by partner. |
+| LICENSES_PENDING_PARTNER_ORDER | 1. reseller-id= 100022361 <br /> 2. limit=10 <br /> 3. offset=0 | The `LICENSES_PENDING_PARTNER_ORDER` notification type returns all customers under a given reseller who have at least one license created within the last 7 days for which order has not been placed yet by partner. |
 
 ## Get licenses that are pending partner order notification
 
-Use the `GET /v3/notifications?notification-type=LICENSES_PENDING_PARTNER_ORDER&resellerid=<resellerId>&limit=10&offset=0` endpoint to get notifications for licenses that are pending partner orders.
+Use the `GET /v3/notifications?notification-type=LICENSES_PENDING_PARTNER_ORDER&reseller-id=<reseller-id>&limit=10&offset=0` endpoint to get notifications for licenses that are pending partner orders.
 
 ### Request header
 
@@ -38,7 +38,7 @@ None.
   "items": [
     {
       "customerId": "1005379198",
-      "resellerId": "1000177552",
+      "reseller-id": "1000177552",
       "notificationType": "LICENSES_PENDING_PARTNER_ORDER",
       "links": {
         "self": {
@@ -51,7 +51,7 @@ None.
   ],
   "links": {
     "self": {
-      "uri": "/v3/notifications?notification-type=LICENSES_PENDING_PARTNER_ORDER&resellerid=1000177552&limit=10&offset=0",
+      "uri": "/v3/notifications?notification-type=LICENSES_PENDING_PARTNER_ORDER&reseller-id=1000177552&limit=10&offset=0",
       "method": "GET",
       "headers": []
     }
