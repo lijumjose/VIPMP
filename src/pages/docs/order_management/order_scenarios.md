@@ -144,7 +144,7 @@ Automatically adjusts the offer ID if a better volume discount is available.
 - Helps partners prepare a quote structure (line items, quantities, deployment IDs) before calculating pricing.
 - Allows partners to test different configurations and offers.
 
-**Preview Order with pricing**
+<mark> **Preview Order with pricing** </mark>
 
 You can choose to include pricing in the Preview Order API response by setting the `fetch-price` query parameter to `true` in the request URL. This returns real-time partner pricing details for Adobe products, helping partners and resellers better estimate how much Adobe will invoice for an order.
 
@@ -161,12 +161,11 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 
 - Set `orderType` to PREVIEW
 - A successful response can be used to place a new order request, if the `orderType` is changed to NEW.
-- Include the query parameter `fetch-price=true` to retrieve pricing details.
+- <mark>Include the query parameter `fetch-price=true` to retrieve pricing details.</mark>
 - Returns the best available offer ID for the customer and the order.
   - Input Offer ID can be any level representing the same product.
   - If the Offer IDs in the request provides a better discount than customer is eligible for, then the correct lower-level Offer IDs are returned.
     - For a PREVIEW order, the request gets rejected if the customer is not eligible for an Offer ID.
-- `proratedDays` in the response indicates the number of days for which order will be invoiced. This applies in the case of mid-term purchases.
 -  If the `PREVIEW` order is rejected, then the `NEW` order will also fail with the same error.
 - The `discountCode` is applicable only to High Volume Discount customers who have migrated from VIP to VIP MP. You can use the discount code only if their discount level in VIP is between 17 and 22.
 
@@ -195,7 +194,16 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
       "offerId": "11073058CA01A12",
       "quantity": 10,
       "flexDiscountCodes": [
-        "BLACK_FRIDAY"
+        "BLACK_FRIDAY_10_PERCENT_OFF"
+      ]
+    },
+    {
+      "currencyCode": "USD",
+      "extLineItemNumber": 2,
+      "offerId": "69804578CA02A12",
+      "quantity": 10,
+      "flexDiscountCodes": [
+        "BLACK_FRIDAY_20_DOLLAR_OFF"
       ]
     }
   ]
@@ -268,16 +276,18 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 }
 ```
 
-### Pricing details in lineitems (lineItems[].pricing)
+### <mark> Pricing details in lineitems (lineItems[].pricing) </mark>
 
 | Field                       | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
-| partnerPrice                | Full-term unit price before any discount or prorating.|
+| partnerPrice                | Non-prorated full-term unit price for the given offer, including any applicable volume discounts, but before applying flexible discounts and taxes.|
 | discountedPartnerPrice     | Unit price after applying discount. <br /> |
 | netPartnerPrice                 | Prorated unit price after discount. |
 | lineItemPrice      | Prorated price of item after discount and before tax. This is the price partner need to pay to Adobe for this item.  |
 
-### Pricing Summary (pricingSummary[])
+**Note:** The `proratedDays` parameter in the response specifies the number of days for which the order will be invoiced. This parameter appears only when the `fetch-price` parameter is set to `true` in the request. It is relevant for mid-term purchases.
+
+### <mark>Pricing Summary (pricingSummary[])</mark>
 
 | Field                       | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
@@ -309,7 +319,9 @@ For complete set of request and response parameter descriptions, refer to [Order
 }
 ```
 
-Response:
+**Response:**
+
+**Note:** Pricing details is included in the response as the query parameter `fetch-price` was set to `true` in the request URL.
 
 ```json
 {
@@ -330,7 +342,20 @@ Response:
       "status": "",
       "currencyCode": "USD",
       "deploymentId": "12345",
-      "discountCode": "HVD_L18_PRE"
+      "discountCode": "HVD_L18_PRE",
+      "proratedDays": 30,
+      "pricing": {
+        "partnerPrice": 299.99,
+        "discountedPartnerPrice": 299.99,
+        "proratedPartnerPrice": 24.65,
+        "lineItemPrice": 24.65
+      }
+    }
+  ],
+  "pricingSummary": [
+    {
+      "totalLineItemPrice": 24.65,
+      "currencyCode": "USD"
     }
   ]
 }
@@ -363,8 +388,8 @@ A few of the benefits of previewing a renewal order include:
 
   - **1000** indicates that the subscription is either active or scheduled and is expected to renew successfully.
   - **1004** indicates that the subscription is active or scheduled, but the associated product has expired, so the renewal will not proceed.
-- Include the query parameter `fetch-price=true` to retrieve pricing details. Pricing details are not available in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.
-- `proratedDays` in the response indicates the number of days for which order will be invoiced. This applies in the case of mid-term purchases.
+- <mark>Include the query parameter `fetch-price=true` to retrieve pricing details. Pricing details are not available in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.</mark>
+- <mark>`proratedDays` in the response indicates the number of days for which order will be invoiced. This applies in the case of mid-term purchases. </mark>
 
 ### Sample request
 
@@ -415,7 +440,7 @@ A few of the benefits of previewing a renewal order include:
 }
 ```
 
-For more information on the pricing details returned in the response, see [Preview Order](#preview-an-order).
+<mark>For more information on the pricing details returned in the response, see [Preview Order](#preview-an-order).</mark>
 
 #### Sample request and response for HVD customers
 
@@ -445,72 +470,94 @@ OR
 
 **Response:**
 
+<mark>**Note:** Pricing details is included in the response as the query parameter `fetch-price` was set to `true` in the request URL.</mark>
+
 ```json
 {
-    "referenceOrderId": "",
-    "orderType": "PREVIEW_RENEWAL",
-    "externalReferenceId": "759",
-    "orderId": "",
-    "customerId": "9876543210",
-    "currencyCode": "USD",
-    "creationDate": "2019-05-02T22:49:54Z",
-    "status": "",
-    "lineItems": [
-        {
-            "extLineItemNumber": 4,
-            "offerId": "80004567EA01A12",
-            "quantity": 1,
-            "subscriptionId": " e0b170437c4e96ac5428364f674dffNA",
-            "discountCode": "HVD_L18_PRE",
-            "status": "1000",
-            "currencyCode": "USD",
-            "deploymentId": "12345"
-        },
-        {
-            "extLineItemNumber": 1,
-            "offerId": "65322447CA01A12",
-            "quantity": 25,
-            "subscriptionId": "4392d721a543929afb871a4c140435NA",
-            "discountCode": "HVD_L18_PRE",
-            "status": "1004",
-            "currencyCode": "USD",
-            "deploymentId": "12345"
-        }
-    ],
-    "eligibleOffers": [
-        {
-            "offerId": "65324918CA14X12",
-            "renewalCode": "MOQ_100",
-            "eligibilityCriteria": {
-                "minQuantity": 100,
-                "additionalCriteria": [
-                    "THREE_YEAR_COMMIT"
-                ],
-                "deploymentId": "1450043516"
-            }
-        },
-        {
-            "offerId": "65324918CA14Y12",
-            "renewalCode": "MOQ_250",
-            "eligibilityCriteria": {
-                "minQuantity": 250,
-                "additionalCriteria": [
-                    "THREE_YEAR_COMMIT"
-                ],
-                "deploymentId": "1450043516"
-            }
-        },
-        {
-            "offerId": "65324918CA14Z12",
-            "renewalCode": "MOQ_500",
-            "eligibilityCriteria": {
-                "minQuantity": 500,
-                "additionalCriteria": [
-                    "THREE_YEAR_COMMIT"
-                ]
-            }
-        }
-    ]
+  "referenceOrderId": "",
+  "orderType": "PREVIEW_RENEWAL",
+  "externalReferenceId": "759",
+  "orderId": "",
+  "customerId": "9876543210",
+  "currencyCode": "USD",
+  "creationDate": "2019-05-02T22:49:54Z",
+  "status": "",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "subscriptionId": " e0b170437c4e96ac5428364f674dffNA",
+      "discountCode": "HVD_L18_PRE",
+      "status": "1000",
+      "currencyCode": "USD",
+      "deploymentId": "12345",
+      "proratedDays": 365,
+      "pricing": {
+        "partnerPrice": 299.99,
+        "discountedPartnerPrice": 299.99,
+        "proratedPartnerPrice": 299.99,
+        "lineItemPrice": 299.99
+      }
+    },
+    {
+      "extLineItemNumber": 1,
+      "offerId": "65322447CA01A12",
+      "quantity": 25,
+      "subscriptionId": "4392d721a543929afb871a4c140435NA",
+      "discountCode": "HVD_L18_PRE",
+      "status": "1004",
+      "currencyCode": "USD",
+      "deploymentId": "12345",
+      "proratedDays": 365,
+      "pricing": {
+        "partnerPrice": 299.99,
+        "discountedPartnerPrice": 299.99,
+        "proratedPartnerPrice": 299.99,
+        "lineItemPrice": 7499.75
+      }
+    }
+  ],
+  "pricingSummary": [
+    {
+      "totalLineItemPrice": 7799.74,
+      "currencyCode": "USD"
+    }
+  ],
+  "eligibleOffers": [
+    {
+      "offerId": "65324918CA14X12",
+      "renewalCode": "MOQ_100",
+      "eligibilityCriteria": {
+        "minQuantity": 100,
+        "additionalCriteria": [
+          "THREE_YEAR_COMMIT"
+        ],
+        "deploymentId": "1450043516"
+      }
+    },
+    {
+      "offerId": "65324918CA14Y12",
+      "renewalCode": "MOQ_250",
+      "eligibilityCriteria": {
+        "minQuantity": 250,
+        "additionalCriteria": [
+          "THREE_YEAR_COMMIT"
+        ],
+        "deploymentId": "1450043516"
+      }
+    },
+    {
+      "offerId": "65324918CA14Z12",
+      "renewalCode": "MOQ_500",
+      "eligibilityCriteria": {
+        "minQuantity": 500,
+        "additionalCriteria": [
+          "THREE_YEAR_COMMIT"
+        ]
+      }
+    }
+  ]
 }
 ```
 

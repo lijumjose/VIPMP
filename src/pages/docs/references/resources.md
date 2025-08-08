@@ -169,8 +169,8 @@ Please see the Validations/Regular Expressions section for any regular expressio
 | flexDiscounts[].id  | String | A unique identifier for the flexible discount. Used to retrieve or reference a specific flexible discount.          | |
 | flexDiscounts[].code  | String | The flexible discount code that was applied to that lineItem          | |
 | flexDiscount[].result| String | The “SUCCESS" indicates that the flexible discount code applicability was successful. | |
-| pricing       | Object |              | |
-| pricing[].partnerPrice                |Integer | Full-term unit price before any discount or prorating.| |
+| pricing       | Object |  Pricing details.            | |
+| pricing[].partnerPrice                |Integer | Non-prorated full-term unit price for the given offer, including any applicable volume discounts, but before applying flexible discounts and taxes.| |
 | pricing[].discountedPartnerPrice     |Integer  | Unit price after applying discount. <br /> | |
 | pricing[].netPartnerPrice             | Integer    | Prorated unit price after discount. | |
 | pricing[].lineItemPrice   | Integer   | Prorated price of item after discount and before tax. This is the price partner need to pay to Adobe for this item.  | |
