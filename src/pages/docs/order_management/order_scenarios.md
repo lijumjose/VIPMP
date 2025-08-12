@@ -144,7 +144,7 @@ Automatically adjusts the offer ID if a better volume discount is available.
 - Helps partners prepare a quote structure (line items, quantities, deployment IDs) before calculating pricing.
 - Allows partners to test different configurations and offers.
 
-<mark> **Preview Order with pricing** </mark>
+ **<mark>Preview Order with pricing</mark>**
 
 You can choose to include pricing in the Preview Order API response by setting the `fetch-price` query parameter to `true` in the request URL. This returns real-time partner pricing details for Adobe products, helping partners and resellers better estimate how much Adobe will invoice for an order.
 
@@ -321,7 +321,7 @@ For complete set of request and response parameter descriptions, refer to [Order
 
 **Response:**
 
-**Note:** Pricing details is included in the response as the query parameter `fetch-price` was set to `true` in the request URL.
+**Note:** <mark>Pricing details is included in the response as the query parameter `fetch-price` was set to `true` in the request URL.</mark>
 
 ```json
 {
@@ -470,7 +470,7 @@ OR
 
 **Response:**
 
-<mark>**Note:** Pricing details is included in the response as the query parameter `fetch-price` was set to `true` in the request URL.</mark>
+**Note:** <mark>Pricing details is included in the response as the query parameter `fetch-price` was set to `true` in the request URL.</mark>
 
 ```json
 {
