@@ -83,6 +83,10 @@ module.exports = {
               path: '/docs/reseller_account/get_reseller_account.md'
             },
             {
+              title: 'Get reseller list',
+              path: '/docs/reseller_account/get_reseller_list.md'
+            },
+            {
               title: 'Update a reseller account',
               path: '/docs/reseller_account/update_reseller_account.md'
             }
@@ -106,6 +110,10 @@ module.exports = {
             {
               title: 'Get customer account details',
               path: '/docs/customer_account/get_customer_account.md'
+            },
+            {
+              title: 'Get customer list',
+              path: '/docs/customer_account/get_customer_list.md'
             },
             {
               title: 'Update customer account',
