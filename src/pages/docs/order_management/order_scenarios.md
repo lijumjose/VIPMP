@@ -175,10 +175,10 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 
 **Query parameters:**
 
-| Parameter | Description|
-|--|--|
-|customer-id |A unique identifier for the customer for whom the Order Preview request is being submitted. |
-|fetch-price |A flag indicating whether pricing details should be included in the response. Possible values are: `true` or `false`  |
+| Parameter | Type |Description|
+|--|--|--|
+|customer-id |String | A unique identifier for the customer for whom the Order Preview request is being submitted. |
+|fetch-price | Boolean| A flag indicating whether pricing details should be included in the response. Possible values are: `true` or `false`  |
 
 **Request body:**
 
@@ -388,7 +388,8 @@ A few of the benefits of previewing a renewal order include:
 
   - **1000** indicates that the subscription is either active or scheduled and is expected to renew successfully.
   - **1004** indicates that the subscription is active or scheduled, but the associated product has expired, so the renewal will not proceed.
-- <mark>Include the query parameter `fetch-price=true` to retrieve pricing details. Pricing details are not available in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.</mark>
+- <mark>Include the query parameter `fetch-price=true` to retrieve pricing details. </mark>
+- <mark>Pricing details are not available in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.</mark>
 - <mark>`proratedDays` in the response indicates the number of days for which order will be invoiced. This applies in the case of mid-term purchases. </mark>
 
 ### Sample request
@@ -422,18 +423,18 @@ A few of the benefits of previewing a renewal order include:
       "subscriptionId": "3d0630693446f8bdff9cbd08f4b68bNA",
       "status": "1000",
       "currencyCode": "USD",
-      "proratedDays": 90,
+      "proratedDays": 365,
       "pricing": {
         "partnerPrice": 365.00,
         "discountedPartnerPrice": 328.50,
-        "netPartnerPrice": 81.00,
-        "lineItemPrice": 810.00
+        "netPartnerPrice": 328.50,
+        "lineItemPrice": 32850.00
       }
     }
   ],
   "pricingSummary": [
     {
-      "totalLineItemPrice": 810.00,
+      "totalLineItemPrice": 32850.00,
       "currencyCode": "USD"
     }
   ],

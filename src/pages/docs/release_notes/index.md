@@ -107,7 +107,7 @@
 
 ## Sandbox changes
 
-- [Manage Flexible Promotions](/src/pages/sandbox/sandbox_portal/flex_promo/index.md)
+- [Manage Flexible Discounts](/src/pages/sandbox/sandbox_portal/flex_promo/index.md)
 - [Manage Product Recommendations](/src/pages/sandbox/sandbox_portal/recommendations/index.md)
 - [Manage High Growth Offers](/src/pages/sandbox/sandbox_portal/high_growth_offer/high_growth.md)
 - [Migrate HVD customers from VIP to VIP Marketplace](/src/pages/sandbox/sandbox_portal/migrate_hvd_customers/migrate_hvd_customers.md)
