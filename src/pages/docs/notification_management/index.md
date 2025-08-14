@@ -38,7 +38,7 @@ None.
   "items": [
     {
       "customerId": "1005379198",
-      "reseller-id": "1000177552",
+      "resellerId": "1000177552",
       "notificationType": "LICENSES_PENDING_PARTNER_ORDER",
       "links": {
         "self": {
@@ -51,7 +51,9 @@ None.
   ],
   "links": {
     "self": {
-      "uri": "/v3/notifications?notification-type=LICENSES_PENDING_PARTNER_ORDER&reseller-id=1000177552&limit=10&offset=0",
+      "uri": "/v3/notifications?notification-type=
+      LICENSES_PENDING_PARTNER_ORDER&
+      reseller-id=1000177552&limit=10&offset=0",
       "method": "GET",
       "headers": []
     }

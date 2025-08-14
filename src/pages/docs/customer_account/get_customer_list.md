@@ -19,7 +19,6 @@ This API supports:
 | Parameter        | Description                                                                                                                                                                                                                      |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | X-Request-Id     | **Required**. A unique identifier for the call. The value should be reset for every single request. If this is not provided, then a request ID will be automatically generated. Using a duplicate request ID may return an error.              |
-| X-Correlation-Id | **Required**. A unique identifier for the call. This is to ensure idempotency. In the case of a timeout, the retry call could include the same value. Upon receiving some response, the value should be reset for the next call. |
 | Accept           | **Required**. Specifies the response type. Must be "application/json" for proper usage.                                                                                                                                          |
 | Content-Type     | **Required**. Specifies the request type. Must be "application/json" for proper usage.                                                                                                                                           |
 | Authorization    | **Required**. Authorization token in the form `Bearer <token>`                                                                                                                                                                   |
@@ -37,8 +36,8 @@ A sample request is as follows:
 |----------------|----------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | status         | No       | String    | Status of the resellers. Default value is 1000. Supported values include 1000, 1002, 1004, and 1026.          |
 | name           | No       | String    | Name of the customer with support for wildcard matching. Default value is null.           |
-| fromCreatedDate| No       | Date      | Filters customers created from the specified date. Default value is null.                                                |
-| toCreatedDate  | No       | Date      | Filters customers created up to the specified date. Default value is null.                                                  |
+| from-created-date| No       | Date      | Filters customers created from the specified date. Default value is null.                                                |
+| to-created-date  | No       | Date      | Filters customers created up to the specified date. Default value is null.                                                  |
 | offset         | No       |           | Specifies the starting point for retrieving items in a paginated list. It determines how many items to skip before beginning to return results. If not specified, the default value is 0, meaning the response will start from the first item.                                                             |
 | limit          | No       |           | Number of results to return per page. Default value is 20. Must be between 1 and 50.                                                      |
 | sort-by        | No       | String    | Field used for sorting. Only one field is allowed. Supported values are creationDate and companyProfile.companyName. Default value is creationDate.        |
@@ -76,7 +75,7 @@ A sample request is as follows:
           {
             "firstName": "first_name",
             "lastName": "last_name",
-            "email": "knreddy+stage_3y1cuser@adobetest.com"
+            "email": "abc@xyz.com"
           }
         ]
       },
