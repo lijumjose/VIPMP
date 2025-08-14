@@ -425,16 +425,16 @@ A few of the benefits of previewing a renewal order include:
       "currencyCode": "USD",
       "proratedDays": 365,
       "pricing": {
-        "partnerPrice": 365.00,
-        "discountedPartnerPrice": 328.50,
-        "netPartnerPrice": 328.50,
-        "lineItemPrice": 32850.00
+        "partnerPrice": 350.50,
+        "discountedPartnerPrice": 350.50,
+        "netPartnerPrice": 350.50,
+        "lineItemPrice": 3505.00
       }
     }
   ],
   "pricingSummary": [
     {
-      "totalLineItemPrice": 32850.00,
+      "totalLineItemPrice": 3505.00,
       "currencyCode": "USD"
     }
   ],

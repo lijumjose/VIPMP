@@ -95,6 +95,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 | 2145       | Flexible discount codes cannot be applied to non-base products.                 |    Create Order <br /> Preview Order                  |    400              |
 | 2146     | Invalid Flexible Discount Code |    Create Order <br /> Preview Order                  |    400              |
 | 2147      | Only one Flexible Discount code is allowed per line item.   |    Create Order <br /> Preview Order                  |    400              |
+| 2148      | Invalid pricing request for multiple currencies.  |    Preview Order, Preview Renewal               |    400              |
 |3115 | Invalid Customer or Subscription ID| Get Subscription Details, Update Subscription Auto-Renewal| 404|
 |3116 | renewalQuantity out of range |Update Subscription Auto-Renewal| 400|
 |3117 | currentQuantity out of range | | 400|

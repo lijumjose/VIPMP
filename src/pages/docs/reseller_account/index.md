@@ -5,3 +5,4 @@ As a first step to enable VIP - Marketplace, the marketplace presents Adobe Term
 * [Create a reseller account](./create_reseller_account.md)
 * [Get reseller account details](./get_reseller_account.md)
 * [Update a reseller account](./update_reseller_account.md)
+* [Get reseller list](./get_reseller_list.md)

@@ -1,6 +1,6 @@
 # Get reseller list
 
-The Get Reseller List API enables partners to retrieve resellers linked to a distributor using advanced filtering, sorting, and pagination capabilities.
+The Get Reseller List API enables partners to retrieve resellers linked to a distributor using filtering, sorting, and pagination capabilities.
 
 | Endpoint | Method|
 |--|--|
@@ -8,7 +8,7 @@ The Get Reseller List API enables partners to retrieve resellers linked to a dis
 
 This API is designed to support partner operations by providing real-time access to reseller account data, enabling efficient reporting and account management workflows.
 
-The API supports filtering by reseller status and sorting by creation date or reseller name. Pagination is supported with a maximum of 50 results per request. The API is optimized for performance, targeting a global response time under 2 seconds, and ensures that the data returned reflects the most current state and is not cached.
+The API supports filtering by reseller status and sorting by creation date or reseller name.  It includes pagination with a limit of 50 results per request and ensures that the data returned reflects the most current state, without relying on the cache.
 
 This API is particularly useful for partners who need to:
 
@@ -21,7 +21,6 @@ This API is particularly useful for partners who need to:
 | Parameter        | Description                                                                                                                                                                                                                      |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | X-Request-Id     | **Required**. A unique identifier for the call. The value should be reset for every single request. If this is not provided, then a request ID will be automatically generated. Using a duplicate request ID may return an error.              |
-| X-Correlation-Id | **Required**. A unique identifier for the call. This is to ensure idempotency. In the case of a timeout, the retry call could include the same value. Upon receiving some response, the value should be reset for the next call. |
 | Accept           | **Required**. Specifies the response type. Must be "application/json" for proper usage.                                                                                                                                          |
 | Content-Type     | **Required**. Specifies the request type. Must be "application/json" for proper usage.                                                                                                                                           |
 | Authorization    | **Required**. Authorization token in the form `Bearer <token>`                                                                                                                                                                   |
