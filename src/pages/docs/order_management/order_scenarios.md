@@ -241,7 +241,7 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
         "partnerPrice": 365.00,              
         "discountedPartnerPrice": 328.50, 
         "netPartnerPrice": 81.00,       
-        "lineItemPrice": 810.00,    
+        "lineItemPartnerPrice": 810.00,    
       }
     },
     {
@@ -263,13 +263,13 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
         "partnerPrice": 365.00,      
         "discountedPartnerPrice": 345.00,    
         "netPartnerPrice": 85.068,     
-        "lineItemPrice": 850.68,    
+        "lineItemPartnerPrice": 850.68,    
       }
     }
   ],
   "pricingSummary": [
     {
-      "totalLineItemPrice": 1660.68,        
+      "totalLineItemPartnerPrice": 1660.68,        
       "currencyCode": "USD"   
     }
   ]
@@ -283,7 +283,7 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 | partnerPrice                | Non-prorated full-term unit price for the given offer, including any applicable volume discounts, but before applying flexible discounts and taxes.|
 | discountedPartnerPrice     | Unit price after applying discount. <br /> |
 | netPartnerPrice                 | Prorated unit price after discount. |
-| lineItemPrice      | Prorated price of item after discount and before tax. This is the price partner need to pay to Adobe for this item.  |
+| lineItemPartnerPrice      | Prorated price of item after discount and before tax. This is the price partner need to pay to Adobe for this item.  |
 
 **Note:** The `proratedDays` parameter in the response specifies the number of days for which the order will be invoiced. This parameter appears only when the `fetch-price` parameter is set to `true` in the request. It is relevant for mid-term purchases.
 
@@ -291,7 +291,7 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 
 | Field                       | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
-| totalLineItemPrice               | Sum of all line item prices in the order.                 |
+| totalLineItemPartnerPrice               | Sum of all line item prices in the order.                 |
 | currencyCode                 | Currency used for pricing. This is specified in ISO 4217 currency code. Example, USD and EUR.                                    |
 
 For complete set of request and response parameter descriptions, refer to [Order resource](../references/resources.md#order-top-level-resource).
@@ -348,13 +348,13 @@ For complete set of request and response parameter descriptions, refer to [Order
         "partnerPrice": 299.99,
         "discountedPartnerPrice": 299.99,
         "proratedPartnerPrice": 24.65,
-        "lineItemPrice": 24.65
+        "lineItemPartnerPrice": 24.65
       }
     }
   ],
   "pricingSummary": [
     {
-      "totalLineItemPrice": 24.65,
+      "totalLineItemPartnerPrice": 24.65,
       "currencyCode": "USD"
     }
   ]
@@ -428,13 +428,13 @@ A few of the benefits of previewing a renewal order include:
         "partnerPrice": 350.50,
         "discountedPartnerPrice": 350.50,
         "netPartnerPrice": 350.50,
-        "lineItemPrice": 3505.00
+        "lineItemPartnerPrice": 3505.00
       }
     }
   ],
   "pricingSummary": [
     {
-      "totalLineItemPrice": 3505.00,
+      "totalLineItemPartnerPrice": 3505.00,
       "currencyCode": "USD"
     }
   ],
@@ -498,7 +498,7 @@ OR
         "partnerPrice": 299.99,
         "discountedPartnerPrice": 299.99,
         "proratedPartnerPrice": 299.99,
-        "lineItemPrice": 299.99
+        "lineItemPartnerPrice": 299.99
       }
     },
     {
@@ -515,13 +515,13 @@ OR
         "partnerPrice": 299.99,
         "discountedPartnerPrice": 299.99,
         "proratedPartnerPrice": 299.99,
-        "lineItemPrice": 7499.75
+        "lineItemPartnerPrice": 7499.75
       }
     }
   ],
   "pricingSummary": [
     {
-      "totalLineItemPrice": 7799.74,
+      "totalLineItemPartnerPrice": 7799.74,
       "currencyCode": "USD"
     }
   ],
