@@ -40,7 +40,7 @@ A sample request is as follows:
 | to-created-date  | No       | Date      | Filters customers created up to the specified date. Default value is null.                                                  |
 | offset         | No       |           | Specifies the starting point for retrieving items in a paginated list. It determines how many items to skip before beginning to return results. If not specified, the default value is 0, meaning the response will start from the first item.                                                             |
 | limit          | No       |           | Number of results to return per page. Default value is 20. Must be between 1 and 50.                                                      |
-| sort-by        | No       | String    | Field used for sorting. Only one field is allowed. Supported values are creationDate and companyProfile.companyName. Default value is creationDate.        |
+| sort-by        | No       | String    | Field used for sorting. Only one field is allowed. Supported values are creationDate and companyName. Default value is creationDate.        |
 | order-by       | No       | String    | Direction of sorting. Supported values are asc and desc. Default value is desc.                                                         |
 
 ## Response
