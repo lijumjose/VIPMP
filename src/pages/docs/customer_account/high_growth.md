@@ -4,8 +4,6 @@ High growth offers are designed for customers who are either making new purchase
 
 ## What are High Growth Offers?
 
-High Growth Offers are designed for customers who are significantly expanding their existing Acrobat Pro seats. These offers will replace the current High Volume Discounting program (17-23 levels) that exists in VIP.
-
 High Growth Offers are based on the Minimum Order Quantity (MOQ), which defines the purchase quantity and the corresponding discount rates. Any subsequent purchases will adhere to the customer’s High Growth MOQ Offer price.
 
 The available High Growth Offers based on MOQ are:

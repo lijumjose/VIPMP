@@ -5,13 +5,59 @@
 
 ## API changes
 
+### August 14, 2025
+
+#### Preview with pricing
+
+- Partners can now retrieve the pricing details in the Preview Order and Preview Renewal APIs by setting the `fetch-price` query parameter to `true` in the request URL. This returns real-time partner pricing details for Adobe products, helping partners and resellers better estimate how much Adobe will invoice for an order.
+  - Introduced `pricing` object in the `lineItem` level of the Preview Order and Preview Renewal API responses.
+  - Added `pricingSummary` object to provide summarized pricing details of all line items.
+  - Introduced new `fetch-price` query parameter for both Preview Order and Preview Renewal scenarios.
+  - Introduced new `proratedDays` parameter in the response of Preview Order and Preview Renewal APIs to indicate the number of days for which the order will be invoiced. This parameter appears only when the `fetch-price` parameter is set to `true` in the request.
+
+  Read more about [preview with pricing](../order_management/order_scenarios.md).
+
+#### Get Customer List and Get Reseller List APIs
+
+- The [Get Reseller List API](../reseller_account/get_reseller_list.md) enables partners to retrieve a list of resellers linked to a distributor.
+  - The API supports filtering by reseller status and sorting by creation date or reseller name. <br />Read more about [Get Reseller List API](../reseller_account/get_reseller_list.md).
+- The [Get Customer List API](../customer_account/get_customer_list.md) enables partners to retrieve customer accounts associated with a specific reseller.
+  - This API is essential for partners who manage customer portfolios and require precise, real-time access to customer data for quoting, reporting, and renewal planning. <br />Read more about [Get Customer List API](../customer_account/get_customer_list.md).
+
+### June 19, 2025
+
+#### Fetch Price List
+
+- Partners can leverage the `Fetch Price List` API to retrieve up-to-date pricing information for Adobe products. This API modernizes Adobe’s price list distribution process. Read more about [how to access price lists using Fetch Price List API](../manage_pricing/index.md).
+  - Introduced new [error codes specific to the Price List API](../manage_pricing/index.md#error-codes-specific-to-fetch-price-list-api).
+
+### May 09, 2025
+
+#### Manage Flexible Discounts
+
+- Partners can access flexible discounts tailored to specific products, market segments, and countries, and apply them during the order process. Read more about [how to manage flexible discounts](../flex_discounts/index.md). <br />The major [API changes](../flex_discounts/apis.md) include:
+
+  - Introduced the `GET /v3/flex-discounts` API to get the list of available flexible discounts.
+  - Preview Order API returns the applicable flexible discounts for the customer.
+  - Partners can place the order by applying the  flexible discount code received.
+  - Introduced [new error codes specific to Flexible Discounts](../flex_discounts//error_codes.md).
+
+#### Fetch Recommendations
+
+- Recommendations API enables VIP Marketplace partners to deliver intelligent, personalized, and in-context product recommendations, enhancing customer experience through upsell, cross-sell, and add-on opportunities. Read more about [how to manage recommendations](../recommendations/index.md). <br /> Major [API changes](../recommendations/apis.md) include:
+  - Partners can use `POST /v3/recommendations` API to fetch the relevant product recommendations.
+  - Both Preview Order and Preview Renewal APIs fetch the applicable recommendations.
+  - Both Get Subscriptions and Get Order APIs can fetch recommendations.
+  - Introduced new [error codes specific to recommendations](../recommendations/error_codes.md).
+
 ### January 23, 2025
 
-API Doc Version: 2025.01.23
-
-Summary of changes:
+#### Migrate High Volume Discount (HVD) customers from VIP
 
 - High Volume Discount (HVD) customers in VIP can now migrate to VIP Marketplace. See [Migrate High Volume Discount customers from VIP to VIP Marketplace](../migration/migrate_hvd.md) for more details.
+
+#### Manage High Growth Offers
+
 - Introduced High Growth Offers for existing Acrobat Pro customers. These offers will replace the current High Volume Discounting program that exists in VIP.  See [Manage High Growth Offers](../customer_account/high_growth.md) for more details.
 
 ### Earlier releases in 2024
@@ -36,7 +82,7 @@ Summary of changes:
 
 - Create orders
 
-  Implemented a validation to prevent from placing new orders before the subscription’s anniversary date. If a partner attempts to place an order before this date, an error message will appear as the response.
+  Implemented a validation to prevent partners from placing new orders before the subscription’s anniversary date. If a partner attempts to place an order before this date, an error message will appear as the response.
 
 - Worldwide offers:
 
@@ -61,6 +107,8 @@ Summary of changes:
 
 ## Sandbox changes
 
+- [Manage Flexible Discounts](/src/pages/sandbox/sandbox_portal/flex_promo/index.md)
+- [Manage Product Recommendations](/src/pages/sandbox/sandbox_portal/recommendations/index.md)
 - [Manage High Growth Offers](/src/pages/sandbox/sandbox_portal/high_growth_offer/high_growth.md)
 - [Migrate HVD customers from VIP to VIP Marketplace](/src/pages/sandbox/sandbox_portal/migrate_hvd_customers/migrate_hvd_customers.md)
 - [Manage Linked Memberships](/src/pages/sandbox/sandbox_portal/linked_memberships/index.md)

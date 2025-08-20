@@ -8,9 +8,9 @@ You can manage the auto-renewal preferences for each subscription independently 
 
 ```json
 "autoRenewal": {
-    "enabled": true,
-    "renewalQuantity": 7
-} 
+  "enabled": true,
+  "renewalQuantity": 7
+}
 ```
 
 You can update these preferences through the [Update Subscription](./update_subscription.md) endpoint.
@@ -34,6 +34,7 @@ Adobe will create a renewal order on a customer's `cotermDate` if the customer h
 
 The following API endpoints are available to manage subscriptions:
 
+- [Create subscription](./create_subscription.md)
 - [Get details of a specific subscription](./get_details.md)
 - [Get details of all subscriptions of a customer](./get_details_for_customers.md)
 - [Update subscription](./update_subscription.md)

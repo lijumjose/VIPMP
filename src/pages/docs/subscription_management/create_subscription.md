@@ -28,58 +28,59 @@ Use the `POST /v3/customers/<customer-id>/subscriptions` endpoint to create new 
 
 ```json
 {
-    "offerId": "65304470CA01012",
-    "autoRenewal": {
-        "enabled": true,
-        "renewalQuantity": 30
-    }
+  "offerId": "65304470CA01012",
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 100,
+    "renewalCode": "MOQ_100"
+  }
 }
 ```
 
 For global customers to create subscriptions outside the customer’s home country, both `currencyCode` and `deploymentID` must be included in the request, as illustrated in the following example:
 
 ```json
-"lineItems": [
-    {
-        "extLineItemNumber": 1,
-        "offerId": "30008891CA01012",
-        "currencyCode": "USD",
-        "deploymentId": "1400002289""autoRenewal": {
-            "enabled": true,
-            "renewalQuantity": 30
-        }
-    }
-]
+{
+    "offerId": "65304481CA01A12",
+    "autoRenewal": {
+        "enabled": true,
+        "renewalQuantity": 20,
+        "renewalCode": "MOQ_100"
+    },
+    "deploymentId": "PR1400001758",
+    "currencyCode": "JPY"
+}
 ```
 
 ## Response body
 
 ```json
 {
-    "subscriptionId": "bb9daad8bc4354a4b38006b75704ceNA",
-    "offerId": "65304470CA01012",
-    "currentQuantity": 0,
-    "autoRenewal": {
-        "enabled": true,
-        "renewalQuantity": 30
-    },
-    "creationDate": "2024-07-11T02:42:15Z",
-    "renewalDate": "2025-04-25",
-    "status": "1009",
-    "links": {
-        "self": {
-            "uri": "/v3/customers/P1005053489/subscriptions/bb9daad8bc4354a4b38006b75704ceNA",
-            "method": "GET",
-            "headers": []
-        }
+  "subscriptionId": "bb9daad8bc4354a4b38006b75704ceNA",
+  "offerId": "65304470CA01012",
+  "currentQuantity": 0,
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 100,
+    "renewalCode": "MOQ_100"
+  },
+  "creationDate": "2024-07-11T02:42:15Z",
+  "renewalDate": "2025-04-25",
+  "status": "1009",
+  "links": {
+    "self": {
+      "uri": "/v3/customers/P1005053489/subscriptions/bb9daad8bc4354a4b38006b75704ceNA",
+      "method": "GET",
+      "headers": []
     }
+  }
 }
 ```
 
 ## HTTP status codes
 
 | Status code | Description                 |
-|-------------|-----------------------------|
+| ----------- | --------------------------- |
 | 200         | AutoRenewal updated         |
 | 400         | Bad request                 |
 | 401         | Invalid Authorization token |

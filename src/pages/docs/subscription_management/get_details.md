@@ -16,7 +16,7 @@ Ensure that you are aware of the following before trying out this API:
 - `offerId` is the base discount level offer ID.
 - `renewalDate` will be the customer’s `cotermDate` for most subscriptions.
   - Stock Credit Pack subscriptions will have a `renewalDate` as 1 year from the order date.
-- `allowedActions` shows the actions allowed on a subscription.  Currently, only `MANUAL_RENEWAL` is available as the allowed action.
+- `allowedActions` shows the actions allowed on a subscription. Currently, only `MANUAL_RENEWAL` is available as the allowed action.
 
 ## Request header
 
@@ -37,60 +37,61 @@ None.
 
 ```json
 {
-    "subscriptionId" : "8675309",
-    "currentQuantity" : 10,
-    "usedQuantity" : 2,
-    "offerId" : "65304470CA01012",
-    "autoRenewal" : {
-    "enabled" : true,
-    "renewalQuantity" : 5
-    },
-    "renewalDate" : "2020-05-20",
-    "creationDate" : "2019-05-20T22:49:55Z",
-    "deploymentId" : "12345",
-    "currencyCode" : "USD",
-    "status" : "1000",
-    "links" : {
-    "self" : {},
+  "subscriptionId": "8675309",
+  "currentQuantity": 10,
+  "usedQuantity": 2,
+  "offerId": "65304470CA01012",
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 5
+  },
+  "renewalDate": "2020-05-20",
+  "creationDate": "2019-05-20T22:49:55Z",
+  "deploymentId": "12345",
+  "currencyCode": "USD",
+  "status": "1000",
+
+  "links": {
+    "self": {}
+  }
 }
 ```
 
 The `MANUAL_RENEWAL` value of the `allowedActions` field indicates whether a subscription can be selected for manual renewal. Sample response is as follows:
 
 ```json
-
 {
-    "subscriptionId": "1c3a4517c44cfc925704fe942a79abNA",
-    "offerId": "65304479CA01A12",
-    "currentQuantity": 2,
-    "usedQuantity": 0,
-    "autoRenewal": {
-        "enabled": false,
-        "renewalQuantity": 2
-    },
-    "creationDate": "2024-09-13T09:22:13Z",
-    "renewalDate": "2025-09-13",
-    "status": "1004",
-    "currencyCode": "USD",
-    "allowedActions": [
-        "MANUAL_RENEWAL"
-    ] 
+  "subscriptionId": "1c3a4517c44cfc925704fe942a79abNA",
+  "offerId": "65304479CA01A12",
+  "currentQuantity": 2,
+  "usedQuantity": 0,
+  "autoRenewal": {
+    "enabled": false,
+    "renewalQuantity": 2,
+    "renewalCode": "MOQ_100"
+  },
+  "creationDate": "2024-09-13T09:22:13Z",
+  "renewalDate": "2025-09-13",
+  "status": "1004",
+  "currencyCode": "USD",
+  "allowedActions": ["MANUAL_RENEWAL"],
 
-    "links": {
-        "self": {
-            "uri": "/v3/customers/1005610729/subscriptions/1c3a4517c44cfc925704fe942a79abNA",
-            "method": "GET",
-            "headers": []
-        }
+  "links": {
+    "self": {
+      "uri": "/v3/customers/1005610729/subscriptions/1c3a4517c44cfc925704fe942a79abNA",
+      "method": "GET",
+      "headers": []
     }
+  }
 }
-
 ```
+
+**Note:** The `renewalCode` parameter will be available in the response only if the customer receives a High Growth Offer on the next Anniversary Date.
 
 ## HTTP status codes
 
 | Status code | Description                                |
-|-------------|--------------------------------------------|
+| ----------- | ------------------------------------------ |
 | 200         | Subscription details successfully returned |
 | 400         | Bad request                                |
 | 401         | Invalid Authorization token                |

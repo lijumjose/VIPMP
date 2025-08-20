@@ -15,6 +15,7 @@ Ensure that you are aware of the following before creating an offer details:
 - `currencyCode` should now be sent at the lineItem-level instead of order level.
   - For backwards compatability, `currencyCode` can still be sent at the order level.
 - The `discountCode` is applicable only to High Volume Discount customers who have migrated from VIP to VIP MP. You can use the discount code only if their discount level in VIP is between 17 and 22.
+- `flexDiscountCodes` can be used in the request to apply Flexible Discounts for customers who meet the eligibility criteria. For additional details, see [Managing Flexible Discounts](../flex_discounts/apis.md).
 
 ## Request header
 
@@ -33,20 +34,20 @@ Order resource without read-only fields:
 
 ```json
 {
-    "externalReferenceId": "759", (optional)
-    "currencyCode": "USD", (to be deprecated, use lineItem currencyCode)
-    "orderType": "NEW | RETURN | PREVIEW | PREVIEW_RENEWAL | RENEWAL",
-    "referenceOrderId": "", (for returns only)
-    "lineItems": [
-        {
-            "extLineItemNumber": 4,
-            "offerId": "80004567EA01A12",
-            "quantity": 1,
-            "currencyCode": "USD",
-            "deploymentId": "12345",
-            “discountCode": "HVD_L18_PRE",
-        }
-    ]
+  "externalReferenceId": "759", // (optional)
+  "currencyCode": "USD", // (to be deprecated, use lineItem currencyCode)
+  "orderType": "NEW | RETURN | PREVIEW | PREVIEW_RENEWAL | RENEWAL",
+  "referenceOrderId": "", // (for returns only)
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "currencyCode": "USD",
+      "deploymentId": "12345",
+      "discountCode": "HVD_L18_PRE",
+    },
+  ],
 }
 ```
 
@@ -54,40 +55,40 @@ Order resource without read-only fields:
 
 ```json
 {
-    "externalReferenceId": "759",
-    "orderId": "0123456789",
-    "customerId": "9876543210",
-    "orderType": "NEW",
-    "referenceOrderId": "",
-    "currencyCode": "USD",
-    "creationDate": "2019-05-02T22:49:54Z",
-    "status": "1002",
-    "lineItems": [
-        {
-            "extLineItemNumber": 4,
-            "offerId": "80004567EA01A12",
-            "quantity": 1,
-            "subscriptionId": "",
-            "status": "1002",
-            "currencyCode": "USD",
-            "deploymentId": "12345"
-        }
-    ],
-    "links": {
-        "self": {
-            "uri": "/v3/customers/9876543210/orders/0123456789",
-            "method": "GET",
-            "headers": []
-        }
+  "externalReferenceId": "759",
+  "orderId": "0123456789",
+  "customerId": "9876543210",
+  "orderType": "NEW",
+  "referenceOrderId": "",
+  "currencyCode": "USD",
+  "creationDate": "2019-05-02T22:49:54Z",
+  "status": "1002",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "subscriptionId": "",
+      "status": "1002",
+      "currencyCode": "USD",
+      "deploymentId": "12345"
     }
+  ],
+  "links": {
+    "self": {
+      "uri": "/v3/customers/9876543210/orders/0123456789",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 
 ## HTTP status codes
 
 | Status code | Description                 |
-|-------------|-----------------------------|
-| 201         | Order  created              |
+| ----------- | --------------------------- |
+| 201         | Order created               |
 | 400         | Bad request                 |
 | 401         | Invalid Authorization token |
 | 403         | Invalid API Key             |

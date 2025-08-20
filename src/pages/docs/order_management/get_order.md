@@ -28,39 +28,40 @@ None.
 
 ```json
 {
-    "externalReferenceId": "759",
-    "orderId": "0123456789",
-    "customerId": "9876543210",
-    "orderType": "NEW",
-    "referenceOrderId": "",
-    "referencedOrderId": "",
-    "currencyCode": "USD",
-    "creationDate": "2019-05-02T22:49:54Z",
-    "status": "1000",
-    "lineItems": [
-        {
-            "extLineItemNumber": 4,
-            "offerId": "80004567EA01A12",
-            "quantity": 1,
-            "subscriptionId": "86756309",
-            "status": "1000",
-            "currencyCode": "USD",
-            "deploymentId": "12345"
-        }
-    ],
-    "links": {
-        "self": {
-            "uri": "/v3/customers/9876543210/orders/0123456789",
-            "method": "GET",
-            "headers": []
-        }
+  "externalReferenceId": "759",
+  "orderId": "0123456789",
+  "customerId": "9876543210",
+  "orderType": "NEW",
+  "referenceOrderId": "",
+  "referencedOrderId": "",
+  "currencyCode": "USD",
+  "creationDate": "2019-05-02T22:49:54Z",
+  "status": "1000",
+  "lineItems": [
+    {
+      "extLineItemNumber": 4,
+      "offerId": "80004567EA01A12",
+      "quantity": 1,
+      "subscriptionId": "86756309",
+      "status": "1000",
+      "currencyCode": "USD",
+      "deploymentId": "12345"
+    }
+  ],
+  "links": {
+    "self": {
+      "uri": "/v3/customers/9876543210/orders/0123456789",
+      "method": "GET",
+      "headers": []
+    }
+  }
 }
 ```
 
 ### HTTP status codes
 
 | Status code | Description                         |
-|-------------|-------------------------------------|
+| ----------- | ----------------------------------- |
 | 200         | Order details successfully returned |
 | 400         | Bad request                         |
 | 401         | Invalid Authorization token         |
@@ -81,7 +82,7 @@ Ensure that you are aware of the following before trying out this API endpoint:
   - Dates with timestamps are only accepted in ISO-8601 format with "Zulu" (UTC) time zone. This is the same format that all dates and times are in CPAPI responses.
 - The `order-type`, `status`, and `offer-id` parameters can be included multiple times to specify multiple values. Including multiple values for a parameter results in an OR operation for those values in the query.
   - **Example:** To query for orders that are either status 1000 or 10002:
-`/v3/customers/<customer-id>?status=1000&status=1002`
+    `/v3/customers/<customer-id>?status=1000&status=1002`
 - Results will be sorted in descending order by `creationDate`.
 - The maximum value for offset is the total number of results. Values higher than the total count return an error.
 - If a `limit` greater than the maximum (100) is sent, it will default to the maximum value (100).
@@ -109,40 +110,84 @@ The request body is the same as mentioned in the [previous endpoint](#request-he
 
 ```json
 {
-    "totalCount": 9,
-    "count": 3,
-    "offset": 3,
-    "limit": 3,
-    "items": [
-        { Order resource
-        },
-        { Order resource
-        }
-    ],
-    "links": {
-        "self": {
-            "uri": "/v3/customers/<customer-id>/orders?offset=3&limit=3",
-            "method": "GET",
-            "headers": []
-        },
-        "next": {
-            "uri": "/v3/customers/<customer-id>/orders?offset=6&limit=3",
-            "method": "GET",
-            "headers": []
-        },
-        "prev": {
-            "uri": "/v3/customers/<customer-id>/orders?offset=0&limit=3",
-            "method": "GET",
-            "headers": []
-        }
+  "totalCount": 9,
+  "count": 3,
+  "offset": 3,
+  "limit": 3,
+  "items": [
+    { Order resource },
+    { Order resource }
+  ],
+  "links": {
+    "self": {
+      "uri": "/v3/customers/<customer-id>/orders?offset=3&limit=3",
+      "method": "GET",
+      "headers": []
+    },
+    "next": {
+      "uri": "/v3/customers/<customer-id>/orders?offset=6&limit=3",
+      "method": "GET",
+      "headers": []
+    },
+    "prev": {
+      "uri": "/v3/customers/<customer-id>/orders?offset=0&limit=3",
+      "method": "GET",
+      "headers": []
     }
+  }
 }
+```
+
+If `promotions` array indicates the promotions that are applied to the Order. For example:
+
+```json
+{ 
+   "referenceOrderId": "", 
+   "orderType": "NEW", 
+   "externalReferenceId": "759", 
+   "customerId": "9876543210", 
+   "orderId": "5120008001", 
+   "currencyCode": "USD", 
+   "creationDate": "2019-05-02T22:49:54Z", 
+   "status": "1000", 
+    
+"lineItems": [ 
+     { 
+       "extLineItemNumber": 1, 
+       "offerId": "80004567CA01A12", 
+       "quantity": 1, 
+       "status": "1002", 
+       "subscriptionId": "", 
+       "currencyCode": "USD", 
+       "promotions": [ 
+                  { 
+                      "code": "SUMMER_SALE_123", 
+                      "result": "SUCCESS", 
+                   } 
+         ] 
+    }, 
+     { 
+       "extLineItemNumber": 2, 
+       "offerId": "80004561CA02A12", 
+       "quantity": 11, 
+       "status": "1002", 
+       "subscriptionId": "", 
+       "currencyCode": "USD", 
+       "promotions": [ 
+                  { 
+                      "code": "WINTER_SALE_123", 
+                      "result": "SUCCESS", 
+                   } 
+         ] 
+    } 
+   ],  "links": { // As existing response fields } 
+ } 
 ```
 
 ### HTTP status codes
 
 | Status code | Description                         |
-|-------------|-------------------------------------|
+| ----------- | ----------------------------------- |
 | 200         | Order history successfully returned |
 | 400         | Bad request                         |
 | 401         | Invalid Authorization token         |
