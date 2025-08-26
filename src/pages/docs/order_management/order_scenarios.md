@@ -152,10 +152,11 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 
 **Notes:**
 
-- Prices returned in the `Preview Order` and `Preview Renewal` API calls are calculated based on the Pacific Standard Time (PST) time zone.
-- The pricing provided is an estimate based on the specific date and time of the request. Please note that placing an order at a different date or time may result in a different price.
-- The pricing returned through this API reflects the commercial agreement between Adobe and the direct partner. Any pricing presented to end customers is determined by the reseller serving the end customer.
-- Pricing details are not available in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.
+- The partner pricing returned in the `Preview Order` and `Preview Renewal` API calls are calculated based on the Pacific Standard Time (PST) time zone. Prices returned to partner are the estimated prices at the time of the request. Placing an order at a different date or time may result in a different price.
+- The pricing returned through these APIs reflects the commercial agreement between Adobe and the direct partner. The reseller serving the end customer determines any pricing presented to end customers.
+- Prices are subject to daily proration, which is also based on the PST time zone.
+- Pricing details are unavailable in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.
+- Any partner pricing shown is direct partner pricing. Ensure that the visibility of partner pricing is adjusted as appropriate for your marketplace.
 
 ### Usage instructions for Preview Order API
 
@@ -166,7 +167,7 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
   - Input Offer ID can be any level representing the same product.
   - If the Offer IDs in the request provides a better discount than customer is eligible for, then the correct lower-level Offer IDs are returned.
     - For a PREVIEW order, the request gets rejected if the customer is not eligible for an Offer ID.
--  If the `PREVIEW` order is rejected, then the `NEW` order will also fail with the same error.
+- If the `PREVIEW` order is rejected, then the `NEW` order will also fail with the same error.
 - The `discountCode` is applicable only to High Volume Discount customers who have migrated from VIP to VIP MP. You can use the discount code only if their discount level in VIP is between 17 and 22.
 
 ### Request
@@ -220,6 +221,7 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
   "customerId": "1006370764",
   "currencyCode": "USD",
   "orderType": "PREVIEW",
+  "creationDate": "2025-05-02T22:49:54Z",
   "status": "",
   "lineItems": [
     {
@@ -414,6 +416,7 @@ A few of the benefits of previewing a renewal order include:
   "customerId": "1006370655",
   "currencyCode": "USD",
   "orderType": "PREVIEW_RENEWAL",
+  "creationDate": "2025-05-02T22:49:54Z",
   "status": "",
   "lineItems": [
     {

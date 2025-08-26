@@ -14,6 +14,7 @@
   - Added `pricingSummary` object to provide summarized pricing details of all line items.
   - Introduced new `fetch-price` query parameter for both Preview Order and Preview Renewal scenarios.
   - Introduced new `proratedDays` parameter in the response of Preview Order and Preview Renewal APIs to indicate the number of days for which the order will be invoiced. This parameter appears only when the `fetch-price` parameter is set to `true` in the request.
+  - A [new error code (2148)](../references/error_handling.md) has been introduced for the `Preview Order` and `Preview Renewal` APIs to handle pricing requests involving multiple currencies.
 
   Read more about [preview with pricing](../order_management/order_scenarios.md).
 
