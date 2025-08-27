@@ -152,11 +152,10 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 
 **Notes:**
 
-- The partner pricing returned in the `Preview Order` and `Preview Renewal` API calls are calculated based on the Pacific Standard Time (PST) time zone. Prices returned to partner are the estimated prices at the time of the request. Placing an order at a different date or time may result in a different price.
-- The pricing returned through these APIs reflects the commercial agreement between Adobe and the direct partner. The reseller serving the end customer determines any pricing presented to end customers.
-- Prices are subject to daily proration, which is also based on the PST time zone.
-- Pricing details are unavailable in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.
-- Any partner pricing shown is direct partner pricing. Ensure that the visibility of partner pricing is adjusted as appropriate for your marketplace.
+- Please be aware that prices returned in the  `Preview Order` and `Preview Renewal` calls are calculated based on the Pacific Standard Time (PST) time zone.
+- Please also be aware that prices returned in the `Preview Order` and `Preview Renewal` calls are an estimate based on the request made at that date and time. Orders placed at a later date and time may not result in the same return amount.
+- Pricing returned via this API is pricing between Adobe and the direct partner. Any pricing presented to end customers is set by end customer’s reseller.
+- Pricing details are unavailable in `Preview Order` and `Preview Renewal` scenarios for global sales involving multiple currencies.
 
 ### Usage instructions for Preview Order API
 
