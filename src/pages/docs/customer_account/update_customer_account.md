@@ -2,14 +2,33 @@
 
 You can modify certain attributes of a customer account by using the `PATCH /v3/customers/<customer-id>` endpoint.
 
-## Assumptions
+## Contact management rules
+
+1. Minimum contact requirement
+   - Each customer must have at least one contact maintained through the API.
+2. Sync with Admin Console
+   - Every contact created or updated via the API will automatically reflect in the customer’s Admin Console as a System Admin.
+3. Additional admins through Admin Console
+   - Customers can add more admins directly in the Admin Console to manage their contract.
+   - These additional admins will not sync back to the API.
+4. Contact removal
+   - Contacts can be removed through the API by omitting them from the list of contacts. However, once a contact has synced to the Admin Console, it will remain there unless the customer manually removes it in the Admin Console.
+5. Contact updates
+   - Email ID and phone number of a contact can be updated through the Update Customer API.
+   - Contact name cannot be updated through API.
+   - To change a contact’s name (like updating the company name), a support ticket must be raised along with a business justification.
+
+## Sending a welcome email
+
+Any contacts specified in the `Update Customer` call will receive the admin welcome email. If an end-user does not receive it, the partner should retry the `Update Customer` call, ensuring the admin contact’s email is included in the request.
+
+## Usage instructions
 
 Ensure that you are aware of the following before updating a customer account:
 
 - Do not alter values for the mandatory fields such as `companyName, country,` and `region`. Otherwise, an error is returned.
-- The `contacts` section specifies the admins for customer's account.
-  - Any contacts that are removed will still remain admins. To remove admins, a customer admin must use the Adobe Admin Console.
-  - The name of an existing contact cannot be changed through this API. Customer admin must use the Admin Console to update users' names.
+- The `contacts` section specifies the admins for the customer's account.
+  - Any contacts that are removed will remain admins. To remove admins, a customer admin must use the Adobe Admin Console.
 - Customer market segment can be changed if the customer has no active subscriptions.
 - Reseller must be enabled for the new market segment.
 - Customer `externalReferenceId` may now be changed.
@@ -126,10 +145,6 @@ Ensure that you are aware of the following before updating a customer account:
   }
 }
 ```
-
-## Sending welcome email
-
-Any contacts specified in the `Update Customer` call will receive the admin welcome email. If an end-user does not receive it, the partner should retry the `Update Customer` call, ensuring the admin contact’s email is included in the request.
 
 ## HTTP status codes
 
