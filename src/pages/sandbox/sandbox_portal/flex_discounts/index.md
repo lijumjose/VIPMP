@@ -15,6 +15,10 @@ Go to **Portal Resources > View Available Flex Discouts** to view the available 
 
 ![Available Flexible Discounts](../image/flex_available.png)
 
+You can view Flexible Discounts applicable for all countries by selecting **All Countries**, as shown in the folllowing figure:
+
+![All countries option](../image/flex_all_countries.png)
+
 The UI displays a list of current discounts, including the following details:
 
 - Applicable market segments
