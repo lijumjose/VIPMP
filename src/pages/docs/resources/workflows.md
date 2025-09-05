@@ -7,3 +7,4 @@ You can utilize APIs to manage these features and operation workflows:
 - [High Growth Offers](../customer_account/high_growth.md)
 - [Recommendations](../recommendations/index.md)
 - [Flexible Discounts](../flex_discounts/index.md)
+- [Mid-term upgrades](../mid_term/index.md)

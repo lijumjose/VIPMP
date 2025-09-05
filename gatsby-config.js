@@ -265,6 +265,26 @@ module.exports = {
               },
             ]
            },
+           {
+            title: 'Mid-term upgrades',
+            description: '',
+            path: '/docs/mid_term/index.md',
+            header: true,
+            pages: [
+              {
+                title: 'Overview of mid-term upgrades',
+                path: '/docs/mid_term/index.md'
+              },
+              {
+                title: 'Manage mid-term upgrades through APIs',
+                path: '/docs/mid_term/apis.md'
+              },
+              {
+                title: 'Error codes specific to mid-term upgrades',
+                path: '/docs/mid_term/error_codes.md'
+              },
+            ]
+           },
         ]
       },
       {
