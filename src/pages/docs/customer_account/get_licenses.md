@@ -30,14 +30,16 @@ None.
       "creationDate": "2024-03-28T06:03:50Z",
       "expiryDate": "2024-04-04T06:03:50Z",
       "quantity": 1,
-      "productName": "Audition"
+      "productName": "Audition",
+      "baseOfferId": "30006208CA01A12"
     },
     {
       "referenceId": "PO281097476551717943",
       "creationDate": "2024-03-28T06:03:51Z",
       "expiryDate": "2024-04-04T06:03:51Z",
       "quantity": 1,
-      "productName": "Acrobat Pro"
+      "productName": "Acrobat Pro",
+      "baseOfferId": "65304921CA01A12"
     }
   ]
 }
