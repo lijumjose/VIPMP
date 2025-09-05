@@ -360,13 +360,13 @@ The newly introduced `Preview Switch` option in the `OrderType` parameter of the
 |referenceOrderId|Optional(Required for revert switch)|String|Original order id of switch order, in case of revert |
 |orderType|Required|String (Enum)|Indicates the order type customer is trying to place. Possible values corresponding to the mid-term upgrade: PREVIEW_SWITCH or SWITCH|
 |currencyCode                      | Required                            | String (Enum)           | Currency code for order, must be supported by the partner.                      |
-| lineItems                         | Required                            | List&lt;LineItem&gt;     | Specifies the line items the customer intends to switch.                     |
+| lineItems                         | Required                            | List     | Specifies the line items the customer intends to switch.                     |
 | lineItems.extLineItemNumber       | Required                            | String                   | Unique index for line item.                                                 |
 | lineItems.subscriptionId          | Required                            | String                   | Indicates which subscription customer is trying to switch.                  |
 | lineItems.offerId                 | Required                            | String                   | Indicates which product customer is switching to                           |
 | lineItems.quantity                | Required                            | String                   | Quantity from subscription to be switched.                                  |
 | lineItems.discountCode            | Optional                            | String                   | Discount code applied to the line item                                     |
-| cancellingItems                   | Required for Switch type Order      | List&lt;CancellingItem&gt;| List of items the customer intends to cancel as part of the switch.                                |
+| cancellingItems                   | Required for Switch type Order      | List | List of items the customer intends to cancel as part of the switch.                                |
 | cancellingItems.extLineItemNumber | Required                            | String                   | Unique index for cancelling line item                                      |
 | cancellingItems.referenceLineItemNumber | Required                     | String                   | Reference line item number being canceled                                 |
 | cancellingItems.subscriptionId    | Required                            | String                   | Indicates subscription to cancel                                           |
