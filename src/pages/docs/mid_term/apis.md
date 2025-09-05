@@ -19,8 +19,8 @@ The Adobe Commerce Partner API provides comprehensive support for mid-term upgra
 
 The following steps are involved in the upgrade process:
 
-- [Discover upgrade paths and preview switch plan](#discover-upgrade-path)
-- [Apply Switch plan](#apply-switch-plan)
+- [Discover upgrade paths and preview switch order](#discover-upgrade-path)
+- [Create switch order](#apply-switch-plan)
 - [Verify the upgrade](#verify-switch-order)
 - [Revert switch order](#revert-switch-order)
 

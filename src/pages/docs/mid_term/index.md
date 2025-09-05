@@ -57,7 +57,7 @@ The following figure illustrates the upgrade process:
 
 For more information:
 
-- [Discover switch plans](./apis.md#discover-upgrade-path)
-- [Apply switch plans](./apis.md#apply-switch-plan)
-- [Validate switch plans applied](./apis.md#verify-switch-order)
-- [Revert Switch Orders](./apis.md#revert-swith-order)
+- [Discover upgrade paths](./apis.md#discover-upgrade-path)
+- [Create switch order](./apis.md#apply-switch-plan)
+- [Validate switch order](./apis.md#verify-switch-order)
+- [Revert switch orders](./apis.md#revert-switch-order)
