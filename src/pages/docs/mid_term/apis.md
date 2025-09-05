@@ -293,8 +293,8 @@ Response parameters:
 |productUpgrades|No|Object|Contains the list of available upgrade paths.|
 |productUpgrades[].source                 | No       | Object             | Defines the source subscription or offer from which the customer can upgrade.                                |
 | productUpgrades[].source.sourceType     | Yes      | String (enum)      | Specifies whether the source is a subscription or an offer.                                                     |
-| productUpgrades[].source.offerIds       | No       | List<String>       | The offerIds from which customer can upgrade from; can be null if subscription ID is passed in the query. |
-| productUpgrades[].target                       | Yes      | List<Target>       | Lists the possible target part numbers to which the customer can upgrade from a given source.|
+| productUpgrades[].source.offerIds       | No       | List       | The offerIds from which customer can upgrade from; can be null if subscription ID is passed in the query. |
+| productUpgrades[].target                       | Yes      | List      | Lists the possible target part numbers to which the customer can upgrade from a given source.|
 | productUpgrades[].target.entityType            | Yes      | String (enum)      | Indicates whether the target is a subscription or an offer.                                                     |
 | productUpgrades[].target.scope                | Yes      | String (enum)      | Defines the scope of the target items (example: PRODUCT_LIST).                                                     |
 | productUpgrades[].target.family                | Yes      | String (enum)      | Specifies the product family of the target offers.                                                     |
