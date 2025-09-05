@@ -7,6 +7,10 @@ This topic provides details of the following scenarios related to order creation
 - [Preview an order](#preview-an-order)
 - [Preview renewal orders](#preview-renewal-orders)
 - [Renewal of order](#renewal-orders)
+- [Preview switch order](#order-scenarios-corresponding-to-mid-term-upgrade)
+- [Create switch order](#order-scenarios-corresponding-to-mid-term-upgrade)
+- [Preview revert switch order](#order-scenarios-corresponding-to-mid-term-upgrade)
+- [Revert switch order](#order-scenarios-corresponding-to-mid-term-upgrade)
 
 ## New order
 
@@ -647,3 +651,16 @@ OR
   - 35 characters
 - Maximum `extLineItemNumber`:
   - 999999
+
+## Order scenarios corresponding to mid-term upgrade
+
+The Mid-Term Upgrade capability in VIP Marketplace enables partners to upgrade a  customer's product subscriptions during the active term rather than waiting for the renewal cycle. It allows transitions to higher-tier offerings such as moving from Teams to Enterprise products. Read more about [mid-term upgrade](../mid_term/index.md).
+
+Depending upon the corresponding values for the `orderType` parameter of the `Create Order` API, the following  mid-term upgrade and reversal scenarios are supported:
+
+| Scenario | orderType | Description | Link to Request and Response |
+|--|--|--|--|
+|Preview switch order |PREVIEW_SWITCH | Generates a quote for the upgrade, including pricing and eligibility details.|[Preview switch order](../mid_term/apis.md#4-preview-switch-order) |
+| Create switch order|SWITCH |Places the actual upgrade order. | [Create switch order](../mid_term/apis.md#apply-switch-plan)|
+| Preview revert switch order|PREVIEW_REVERT_SWITCH|Previews the reversal of a previously placed upgrade order. | [Preview revert switch order](../mid_term/apis.md#4-preview-switch-order)|
+|Revert switch order|REVERT_SWITCH |Executes the reversal of an upgrade order and restores the original subscription. | [Revert switch order](../mid_term/apis.md#revert-switch-order)|
