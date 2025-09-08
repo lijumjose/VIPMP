@@ -30,12 +30,6 @@ Upgrade paths include a `switchType` indicator that defines whether the upgrade 
 
 **Note:** After a full switch, only the new product renews. After a partial switch, both products renew. Anniversary date remains unchanged.
 
-### Reassigning users
-
-During the mid-term upgrade process in VIP Marketplace, partners have the option to automatically reassign users from the original subscription to the upgraded product. To enable this, partners should include the query parameter `reassign-users=true` when submitting the switch order request.
-
-Reassigning users follows a LIFO (Last-In-First-Out) strategy, meaning the most recently assigned users are reassigned first.
-
 ## Advantages of mid-term upgrade
 
 - **Customer Flexibility**: Customers can access advanced features and higher-value products when needed, without waiting for the end of their subscription term.

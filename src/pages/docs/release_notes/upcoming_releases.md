@@ -4,11 +4,11 @@ The following features are scheduled for release:
 
 ## Base part number in the GET Open Acquisitions API response
 
-  - Introduced the `baseOfferId` parameter in the response payload of the GET Open Acquisitions (aka GET Licenses Pending Partner Order) API. This parameter in the API response allows partners to match the correct part number using product name details from notification emails and proceed with order placement.
+- Introduced the `baseOfferId` parameter in the response payload of the GET Open Acquisitions (aka GET Licenses Pending Partner Order) API. This parameter in the API response allows partners to match the correct part number using product name details from notification emails and proceed with order placement.
 
   Read more about [Get licenses pending partner order API](../customer_account/get_licenses.md).
 
-## Mid-Term Upgrades
+## Mid-term upgrades
 
 The **VIP Marketplace – Mid-Term Upgrades** capability introduces a comprehensive set of APIs that allow Adobe partners to upgrade customer subscriptions **during the active term**, without waiting for the renewal date.
 
