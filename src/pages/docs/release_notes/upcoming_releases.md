@@ -8,7 +8,7 @@ The following features are scheduled for release:
 
   Read more about [Get licenses pending partner order API](../customer_account/get_licenses.md).
 
-## Mid-Term Upgrades
+## Mid-term upgrades
 
 The **VIP Marketplace – Mid-Term Upgrades** capability introduces a comprehensive set of APIs that allow Adobe partners to upgrade customer subscriptions **during the active term**, without waiting for the renewal date.
 

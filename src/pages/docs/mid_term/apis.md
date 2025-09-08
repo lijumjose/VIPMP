@@ -11,9 +11,6 @@ The Adobe Commerce Partner API provides comprehensive support for mid-term upgra
 - **Upgrade path discovery by market segment, country, and language**  
   Partners can list all valid upgrade paths, filtered by market segment, country, and language.
 
-- **Automatic user assignment**  
-  A dedicated query parameter enables automatic reassignment of users to upgraded products during switch operations.
-
 - **Switch order reversion**  
   Partners can initiate reversal of switch orders to restore the original subscription state.
 
@@ -231,81 +228,62 @@ None.
 
 ```json
 {
-    "productUpgrades":[
-        {
-            "source": {
-               "sourceType":"OFFER",
-               "offerIds":[
-                  "78342921CA01A12 "
-               ],
+  "productUpgrades": [
+    {
+         "sourceBaseOfferId":"82736423CA01A12",
+         "targetType":"PRODUCT_LIST",
+         "targetList":[
+            {
+               "sequence":1,
+               "targetBaseOfferId":"65345876CA01A12",
+               "switchType":"FULL_ONLY"
             },
-            "target":{
-                "entityType": "OFFER",
-                "scope": "PRODUCT_LIST",
-                "family": "SIGN",
-                "items":[
-                            {
-                                "sequence": 0,
-                                "baseOfferId": "30006208CA01A12",
-                                "switchType": "FULL/PARTIALLY_ALLOWED"
-                            },
-                            {
-                                "sequence": 1,
-                                "baseOfferId": "8734728CA01A12",
-                                "switchType": "FULL/PARTIALLY_ALLOWED"
-                            }
-                        ]
- 
-                },
-        {
-            "source": {
-               "sourceType":"OFFER",
-               "offerIds":[
-                  "783321921CA01A12 "
-               ],
+            {
+               "sequence":2,
+               "targetBaseOfferId":"98765345CA01A12",
+               "switchType":"FULL_ONLY"
+            }
+         ]
+      },
+    {
+         "sourceBaseOfferId":"8734728CA01A12",
+         "targetType":"PRODUCT_LIST",
+         "targetList":[
+            {
+               "sequence":1,
+               "targetBaseOfferId":"12345678CA01A12",
+               "switchType":"FULL_ONLY"
             },
-            "target":{
-                "entityType": "OFFER",
-                "scope": "PRODUCT_LIST",
-                "family": "SIGN",
-                "items":[
-                            {
-                                "sequence": 0,
-                                "baseOfferId": "432106208CA01A12",
-                                "switchType": "FULL/PARTIALLY_ALLOWED"
-                            },
-                            {
-                                "sequence": 1,
-                                "baseOfferId": "54324728CA01A12",
-                                "switchType": "FULL/PARTIALLY_ALLOWED"
-                            }
-                        ]
- 
-                }
-    ]
+            {
+               "sequence":2,
+               "targetBaseOfferId":"76543454CA01A12",
+               "switchType":"FULL_ONLY"
+            }
+         ]
+      }
+  ],
+  "totalCount": 1,
+  "count": 1,
+  "offset": 0,
+  "limit": 1
 }
 ```
 
 Response parameters:
 
-| Parameter|Required|Type|Description|
-|--|--|--|--|
-|productUpgrades|No|Object|Contains the list of available upgrade paths.|
-|productUpgrades[].source                 | No       | Object             | Defines the source subscription or offer from which the customer can upgrade.                                |
-| productUpgrades[].source.sourceType     | Yes      | String (enum)      | Specifies whether the source is a subscription or an offer.                                                     |
-| productUpgrades[].source.offerIds       | No       | List       | The offerIds from which customer can upgrade from; can be null if subscription ID is passed in the query. |
-| productUpgrades[].target                       | Yes      | List      | Lists the possible target part numbers to which the customer can upgrade from a given source.|
-| productUpgrades[].target.entityType            | Yes      | String (enum)      | Indicates whether the target is a subscription or an offer.                                                     |
-| productUpgrades[].target.scope                | Yes      | String (enum)      | Defines the scope of the target items (example: PRODUCT_LIST).                                                     |
-| productUpgrades[].target.family                | Yes      | String (enum)      | Specifies the product family of the target offers.                                                     |
-| productUpgrades[].target.items                 | Yes         |   Object   |  Contains the list of target offers and their details.           |
-| productUpgrades[].target.items[].sequence    |   Yes      | Integer            | Defines the order in which upgrade paths should be presented.          |
-| productUpgrades[].target.items[].baseOfferId   | Yes      | String             | The base offerId to which customer can upgrade.                                                           |
-| productUpgrades[].target.items[].switchType   |  Yes      | String             | Indicates whether the entire quantity of the original subscription can be upgraded to the new product or only a portion of it.                                                           |
-| totalCount                                     |  Yes        |  Integer    |   The total number of items matching the query across all pages. Reflects the full dataset size regardless of pagination.          |
-| count                                          |  Yes        |  Integer    |  The number of items included in the current response. Typically equals or is less than the limit          |
-| offset                                         |  Yes        |  Integer    |   The zero-based index of the first item in this response within the total result set. Indicates how many items were skipped.          |
-| limit                                         |  Yes        |  Integer    |   The maximum number of items requested per response (page size). Defines how many items should be returned per request.          |
+| Parameter               | Required | Type    | Description |
+|------------------------|----------|---------|-------------|
+| productUpgrades        | No       | Object  | Contains the list of available upgrade paths. |
+| sourceBaseOfferId      | Yes      | String  | The base offerId from which the customer can upgrade. |
+| targetType             | Yes      | String  | Defines the scope of the target items (example: PRODUCT_LIST). |
+| targetList             | Yes      | List    | Contains the list of target offers and their details. |
+| targetList[].sequence  | Yes      | Integer | Defines the order in which upgrade paths should be presented. |
+| targetList[].targetBaseOfferId | Yes | String | The base offerId to which customer can upgrade. |
+| targetList[].switchType| Yes      | String  | Indicates whether the entire quantity of the original subscription can be upgraded to the new product or only a portion of it. |
+| totalCount             | Yes      | Integer | The total number of items matching the query across all pages. Reflects the full dataset size regardless of pagination. |
+| count                  | Yes      | Integer | The number of items included in the current response. Typically equals or is less than the limit. |
+| offset                 | Yes      | Integer | The zero-based index of the first item in this response within the total result set. Indicates how many items were skipped. |
+| limit                  | Yes      | Integer | The maximum number of items requested per response (page size). Defines how many items should be returned per request. |
 
 ### 4. Preview Switch Order
 
@@ -321,10 +299,9 @@ The newly introduced `Preview Switch` option in the `OrderType` parameter of the
 
 | Parameter | Required | Description |
 |---|--|--|
-|reassign-users|Optional |Specifies whether to automatically reassign users from the original subscription to the upgraded product. |
 |fetch-price|Optional| Specifies whether to fetch pricing details while previewing the mid-term upgrade offers.|
 
-**Sample Request URL:** `POST https://partners-stage.adobe.io/v3/customers/1005944528/orders?reassign-users=true&fetch-price=true`
+**Sample Request URL:** `POST https://partners-stage.adobe.io/v3/customers/1005944528/orders?fetch-price=true`
 
 **Request body**
 
@@ -446,11 +423,11 @@ The `cancellingItems` object lists the switch plan with corresponding pricing de
 
 Use the `Create Order` API with `orderType` as SWITCH to switch from the current order to a new one. Creating a switch order is functionally similar to a preview request, but it does not include pricing details in the response. Once placed, the order appears in the order history, and the same logic applies for tracking and managing orders.
 
-This API facilitates upgrade orders with "From" and "To" product details. It also supports automatic user reassignment through the `reassign-users=true` query parameter.
+This API facilitates upgrade orders with "From" and "To" product details.
 
 #### Request
 
-Sample request URL: `POST https://partners-stage.adobe.io/v3/customers/1005944528/orders?reassign-users=true`
+Sample request URL: `POST https://partners-stage.adobe.io/v3/customers/1005944528/orders?`
 
 Request body:
 
@@ -635,7 +612,7 @@ Use `PREVIEW_REVERT_SWITCH` as the `orderType` in the Create Order API to get th
 
 #### Request
 
-Sample request URL: POST `https://partners-stage.adobe.io/v3/customers/1005944528/orders?reassign-users=true&fetch-price=true`
+Sample request URL: POST `https://partners-stage.adobe.io/v3/customers/1005944528/orders?fetch-price=true`
 
 Request body:
 
