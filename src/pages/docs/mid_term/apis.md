@@ -23,7 +23,7 @@ The following steps are involved in the upgrade process:
 
 ## Discover upgrade path
 
-You can use the following APIs to get the available switch plans for customers:
+You can use the following APIs to get the available switch plans and preview them before applying:
 
 - [Retrieve product recommendations using the Get Subscriptions API](#1-retrieve-product-recommendations-using-the-get-subscriptions-api)
 - [Get Product Switch Paths](#3-retrieve-upgrade-path)
@@ -390,10 +390,10 @@ The newly introduced `Preview Switch` option in the `OrderType` parameter of the
                 "discountCode": "HVD_L17PRE"
                 "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
                 "pricing": {
-                    "partnerPrice": -300.00,
+                    "partnerPrice": 300.00,
                     "discountedPartnerPrice": 0.00,
                     "netPartnerPrice": -300.00,
-                    "lineItemPrice": -300.00
+                    "lineItemPrice": 300.00
                 },
                 "referenceLineItemNumber": 1,
         }
@@ -478,14 +478,15 @@ Request body:
         }
     ],
     "cancellingItems":[
-        {
-                "offerId": "65322651CA02A12",
-                "quantity": 15,
-                "discountCode": "HVD_L17PRE"
-                "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
-                "referenceLineItemNumber": 1,
-        }
-    ]
+		{
+				"offerId": "65322651CA02A12",
+				"extLineItemNumber": 1,
+                "quantity": 15,,
+				"discountCode": "HVD_L17PRE",
+                "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
+				"referenceLineItemNumber": 1,
+		}
+	],
     "creationDate": "2025-03-17T11:42:29Z"
 }
 ```
@@ -532,15 +533,16 @@ Sample response:
                 "subscriptionId": "asdfewaw1879af7204c7daee1NA"
         }
     ],
-    "cancellingItems":[
-        {
-                "offerId": "65322651CA02A12",
-                "quantity": 15,
-                "discountCode": "HVD_L17PRE"
-                "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
-                "referenceLineItemNumber": 1,
-        }
-    ],
+  "cancellingItems":[
+		{
+				"offerId": "65322651CA02A12",
+				"extLineItemNumber": 1,
+                "quantity": 15,,
+				"discountCode": "HVD_L17PRE",
+                "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
+				"referenceLineItemNumber": 1,
+		}
+	],
     "creationDate": "2025-03-17T11:42:29Z"
 }
 ],
@@ -584,13 +586,15 @@ Sample response:
         }
     ],
     "cancellingItems":[
-        {
-                "offerId": "65322651CA02A12",
-                "quantity": 15,
-                "discountCode": "HVD_L17PRE"
-                "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA"
-        }
-    ],
+		{
+				"offerId": "65322651CA02A12",
+				"extLineItemNumber": 1,
+                "quantity": 15,,
+				"discountCode": "HVD_L17PRE",
+                "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
+				"referenceLineItemNumber": 1,
+		}
+	],
     "creationDate": "2025-03-17T11:42:29Z"
 }
 ```
