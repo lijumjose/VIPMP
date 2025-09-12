@@ -96,6 +96,11 @@ Some error responses will include additionalDetails, an array of strings with mo
 | 2146     | Invalid Flexible Discount Code |    Create Order <br /> Preview Order                  |    400              |
 | 2147      | Only one Flexible Discount code is allowed per line item.   |    Create Order <br /> Preview Order                  |    400              |
 | 2148      | Invalid pricing request for multiple currencies.  |    Preview Order, Preview Renewal               |    400              |
+| 2149       | Switch plan error: Requested quantity and cancel quantity must be equal. |   Preview Switch Order,   Create Switch Order                  |           400       |
+| 2150       | Switch path validity check failed.                                       |    Preview Switch Order,   Create Switch Order                    |      400            |
+| 2151       | Requested quantity must be less than or equal to the active subscription quantity. |    Preview Switch Order,   Create Switch Order            |     400             |
+| 2152       | Only one item supported for switch |    Preview Switch Order,   Create Switch Order.            |     400             |
+| 2153       | Line item and cancelling line item mismatch. |    Preview Switch Order,   Create Switch Order            |     400             |
 |3115 | Invalid Customer or Subscription ID| Get Subscription Details, Update Subscription Auto-Renewal| 404|
 |3116 | renewalQuantity out of range |Update Subscription Auto-Renewal| 400|
 |3117 | currentQuantity out of range | | 400|

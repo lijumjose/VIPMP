@@ -1,47 +1,43 @@
 # Mid-term upgrade
 
-The Mid-Term Upgrade capability in VIP Marketplace enables partners to upgrade customer's product subscriptions during the active term rather than waiting for the renewal cycle.  It allows transitions to higher-tier offerings such as moving from Teams to Enterprise products.
+The Mid-Term Upgrade capability in VIP Marketplace enables a partner to upgrade a customer's product subscription to a higher-tier product, like from Teams to Enterprise, at any point during their current term. This means a customer no longer has to wait until the renewal cycle to make changes.
 
 ### Upgrade path
 
-Upgrade Paths are a foundational element of mid-term upgrades. They define valid transitions between products and are used to guide partners and customers through structured upgrade journeys. A simple one to one upgrade path is supported. For example:
+Customers can choose from a set of pre-defined upgrade paths for their product subscriptions at any point during their current term. A few examples:
 
-- Teams to Enterprise
-  - Acrobat Standard Teams to Acrobat Standard Enterprise
-  - Acrobat Standard to Pro
-  - Acrobat Pro Teams to Acrobat Studio Enterprise
-- Adobe Creative Cloud Teams to Adobe Creative Cloud Pro Teams
-- Adobe Creative Cloud Single App (for example, Photoshop for Teams) to Adobe Creative Cloud All Apps for Teams
-- CCE Edition 3 to CCE Edition 4
+- Acrobat Pro Teams to Acrobat Studio Teams
+- Acrobat Studio Teams to Acrobat Studio Enterprise
+- Acrobat Creative Cloud Teams to Acrobat Creative Cloud Pro Teams
 
-Upgrade paths include a `switchType` indicator that defines whether the upgrade must be full or can be partial:
+You can use the [GET Product Switch Paths](./apis.md#3-retrieve-upgrade-path) API to retrieve the upgrade paths that are available. Upgrade paths include a `switchType` indicator that defines whether the upgrade must be full or can be partial:
 
 - **Full switch**  
-  The entire quantity of the original subscription is upgraded to the new product.
+  The entire quantity of the original subscription needs to be upgraded to the new product.
 
   **Example:** All 100 seats of Acrobat Standard Teams need to be switched to Acrobat Standard Enterprise.
   The upgrade path will be marked as FULL_ONLY.
 
 - **Partial switch**  
-  Only a portion of the original subscription quantity is upgraded.  
+  You can either switch the entire quantity or a certain number of the original subscription quantity.
 
   **Example:** Out of 100 seats, only 40 are switched to Acrobat Standard Enterprise, and the remaining 60 stay on the original product.
-  If upgrade path is marked PARTIALLY_ALLOWED, partner can upgrade partially also along with full.
+  If upgrade path is marked PARTIALLY_ALLOWED, the partner can perform either a partial or full upgrade.
 
-**Note:** After a full switch, only the new product renews. After a partial switch, both products renew. Anniversary date remains unchanged.
+**Note:** After a full switch, only the new product renews. After a partial switch, both products renew. The subscription's anniversary date remains unchanged.
 
 ## Advantages of mid-term upgrade
 
-- **Customer Flexibility**: Customers can access advanced features and higher-value products when needed, without waiting for the end of their subscription term.
-- **Revenue Acceleration**: Adobe and its partners can capture upsell opportunities immediately, which improves annual recurring revenue and reduces deferred income.
-- **Simplified Partner Workflow**: Upgrade flows are streamlined through API support and preview functionality, making it easier for resellers to manage transitions.
-- **Reversal Support**: Upgrades can be reverted within a 14-day window, which provides operational safety and customer assurance.
-- **Pricing Transparency**: Provides prorated pricing, corrected discount levels, and refund estimates.
+- **Customer flexibility**: Customers can access advanced features and higher-value products when needed, without waiting for the end of their subscription term.
+- **Revenue acceleration**: Partners can capture upsell opportunities immediately, which improves annual recurring revenue and reduces deferred income.
+- **Pricing transparency**: Provides prorated pricing, corrected discount levels, and refund estimates.
 
 ## Limitations
 
-- **Complex Upgrades Excluded**: Combining multiple single apps into All Apps is not supported due to complexity in license mapping and pricing.
-- **Partial Upgrade Restrictions**: Certain partial upgrades may be limited based on product eligibility or financial viability. Subscriptions tagged as high growth offers or certain global customer products are excluded from switch eligibility.
+The following limitations are present in this release:
+
+- **Complex upgrades excluded**: Combining multiple single apps into All Apps is not supported due to complexity in license mapping and pricing.
+- **Partial upgrade restrictions**: Certain partial upgrades may be limited based on product eligibility or financial viability. Subscriptions tagged as high-growth offers or specific global customer products are excluded from switch eligibility.
 
 ## Mid-term upgrade process
 
