@@ -660,7 +660,395 @@ Depending upon the corresponding values for the `orderType` parameter of the `Cr
 
 | Scenario | orderType | Description | Link to Request and Response |
 |--|--|--|--|
-|Preview switch order |PREVIEW_SWITCH | Generates a quote for the upgrade, including pricing and eligibility details.|[Preview switch order](../mid_term/apis.md#4-preview-switch-order) |
-| Create switch order|SWITCH |Places the actual upgrade order. | [Create switch order](../mid_term/apis.md#apply-switch-plan)|
-| Preview revert switch order|PREVIEW_REVERT_SWITCH|Previews the reversal of a previously placed upgrade order. | [Preview revert switch order](../mid_term/apis.md#4-preview-switch-order)|
-|Revert switch order|REVERT_SWITCH |Executes the reversal of an upgrade order and restores the original subscription. | [Revert switch order](../mid_term/apis.md#revert-switch-order)|
+|Preview switch order |PREVIEW_SWITCH | Generates a quote for the upgrade, including pricing and eligibility details.|[Preview switch order](#preview-switch-order) |
+| Create switch order|SWITCH |Places the actual upgrade order. | [Create switch order](#create-switch-order)|
+| Preview revert switch order|PREVIEW_REVERT_SWITCH|Previews the reversal of a previously placed upgrade order. | [Preview revert switch order](#preview-revert-switch-order)|
+|Revert switch order|REVERT_SWITCH |Executes the reversal of an upgrade order and restores the original subscription. | [Revert switch order](#revert-switch-order)|
+
+### Preview switch order
+
+The newly introduced `Preview Switch` option in the `OrderType` parameter of the Create Order API helps partners to generate upgrade quotes prior to placing a switch order.
+
+|Endpoint | Method |
+|--|--|
+|`<env root url>/v3/customers/{{customerId}}/orders` | POST|
+
+### Request
+
+**Query parameters**
+
+| Parameter | Required | Description |
+|---|--|--|
+|reassign-users|Optional |Specifies whether to automatically reassign users from the original subscription to the upgraded product. <br />**Note:** Automatic user reassignment is not supported for upgrades from Teams to Enterprise or between Enterprise subscriptions. |
+|fetch-price|Optional| Specifies whether to fetch pricing details while previewing the mid-term upgrade offers.|
+
+**Sample Request URL:** `POST https://partners-stage.adobe.io/v3/customers/1005944528/orders?fetch-price=true`
+
+**Request body**
+
+```json
+{
+    "orderType" : "PREVIEW_SWITCH",
+    "currencyCode" : "USD",
+    "lineItems" : [
+        {
+            "extLineItemNumber" : 1,
+            "offerId" : "65322651CA02A12",
+            "quantity" : 15,
+            "discountCode": "HVD_L17PRE"
+        }
+    ],
+    "cancellingItems":[
+        {
+            "extLineItemNumber": 1,
+            "referenceLineItemNumber": 1,
+            "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
+            "discountCode": "HVD_L17PRE",
+            "quantity" : 15,
+        }
+    ]   
+}
+```
+
+**Request parameters:**
+
+|Parameter|Required|Data Type|Description|
+|--|--|--|--|
+|externalReferenceId|Not Required|String|This is used to link the order with partner passed id|
+|referenceOrderId|Optional(Required for revert switch)|String|Original order id of switch order, in case of revert |
+|orderType|Required|String (Enum)|Indicates the order type customer is trying to place. Possible values corresponding to the mid-term upgrade: PREVIEW_SWITCH or SWITCH|
+|currencyCode                      | Required                            | String (Enum)           | Currency code for order, must be supported by the partner.                      |
+| lineItems                         | Required                            | List     | Specifies the line items the customer intends to switch.                     |
+| lineItems.extLineItemNumber       | Required                            | String                   | Unique index for line item.                                                 |
+| lineItems.subscriptionId          | Required                            | String                   | Indicates which subscription customer is trying to switch.                  |
+| lineItems.offerId                 | Required                            | String                   | Indicates which product customer is switching to                           |
+| lineItems.quantity                | Required                            | String                   | Quantity from subscription to be switched.                                  |
+| lineItems.discountCode            | Optional                            | String                   | Discount code applied to the line item                                     |
+| cancellingItems                   | Required for Switch type Order      | List | List of items the customer intends to cancel as part of the switch process.                                |
+| cancellingItems.extLineItemNumber | Required                            | String                   | A unique identifier for the line item being canceled.                                      |
+| cancellingItems.referenceLineItemNumber | Required                     | String                   | Reference line item number of the item being canceled.                                 |
+| cancellingItems.subscriptionId    | Required                            | String                   | Indicates subscription to be canceled.                                           |
+| cancellingItems.discountCode      | Optional                            | String                   | The discount code applied to the item being canceled, if any.                                   |
+
+### Response
+
+```json
+{
+    "referenceOrderId": "",
+    "externalReferenceId": "a96ee8fe-c440-4d1c-ae5b-a90e1825aef",
+    "orderId": "",
+    "customerId": "1005944528",
+    "currencyCode": "USD",
+    "orderType": "PREVIEW_SWITCH",
+    "status": "",
+    "pricingSummary": [
+    {
+        "totalLineItemPrice": 810.00,
+        "currencyCode": "USD"
+        }
+    ],
+    "lineItems": [
+        {
+ 
+                "extLineItemNumber": 1,
+                "offerId": "65304479CA02A12",
+                "quantity": 15,
+                "discountCode": "HVD_L17PRE",
+                "subscriptionId": "",
+                "proratedDays": 90,
+                "pricing": {
+                    "partnerPrice": 365.00,
+                    "discountedPartnerPrice": 328.50,
+                    "netPartnerPrice": 81.00,
+                    "lineItemPrice": 810.00
+                }
+        }
+    ],
+    "cancellingItems":[
+        {
+                "offerId": "65322651CA02A12",
+                "quantity": 15,
+                "discountCode": "HVD_L17PRE",
+                "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
+                "pricing": {
+                    "partnerPrice": 300.00,
+                    "discountedPartnerPrice": 0.00,
+                    "netPartnerPrice": -300.00,
+                    "lineItemPrice": 300.00
+                },
+                "referenceLineItemNumber": 1,
+        }
+    ]
+    "creationDate": "2025-03-17T11:42:29Z"
+}
+```
+
+**Response parameters:**
+
+The `cancellingItems` object lists the switch plan with corresponding pricing details. The following table lists the parameters in the cancellingItems object. For more details on the entire parameters of the Order source, refer to [Order object](../references/resources.md#order-top-level-resource).
+
+|Parameter|Not Null|Data Type|Description|Included in Response by Default|
+|--|--|--|--|--|
+| cancellingItems.offerId               | YES      | String                   | Part number of the item being canceled.                          | Yes                              |
+| cancellingItems.quantity              | YES      | Integer                  | Quantity being canceled.                                        | Yes                              |
+| cancellingItems.discountCode          | NO       | String                   | Discount code applied to the item being canceled.                   | Yes                              |
+| cancellingItems.subscriptionId        | YES      | String                   | Subscription ID associated with the item being canceled.                             | Yes                              |
+| cancellingItems.pricing.partnerPrice | YES      | Decimal                  | Partner price of the item being canceled.                         | Yes                              |
+| cancellingItems.pricing.discountedPartnerPrice | YES | Decimal          | Partner price after applying discounts.                      | Yes                              |
+| cancellingItems.pricing.netPartnerPrice | YES    | Decimal                  | Net partner price of the item being canceled after discounts.                               | Yes                              |
+| cancellingItems.pricing.lineItemPrice | YES      | Decimal                  | Final price of the item being canceled.                                | Yes                              |
+| cancellingItems.referenceLineItemNumber | YES    | Integer                  | Reference line item number.                                | Yes                              |
+| creationDate                          | YES      | DateTime                 | Timestamp of the order creation.                               | Yes                              |
+
+### Create switch order
+
+Use the `Create Order` API with `orderType` as SWITCH to switch from the current order to a new one. Creating a switch order is functionally similar to a preview request, but it does not include pricing details in the response. Once placed, the order appears in the order history, and the same logic applies for tracking and managing orders.
+
+This API facilitates upgrade orders with "From" and "To" product details.
+
+#### Request
+
+Sample request URL: `POST https://partners-stage.adobe.io/v3/customers/1005944528/orders?`
+
+Request body:
+
+```json
+{
+    "orderType" : "SWITCH",
+    "currencyCode" : "USD",
+    "lineItems" : [
+        {
+            "extLineItemNumber" : 1,
+            "offerId" : "65322651CA02A12",
+            "quantity" : 15,
+            "discountCode": "HVD_L17PRE"
+        }
+    ],
+    "cancellingItems":[
+        {
+            "extLineItemNumber": 1,
+            "referenceLineItemNumber": 1,
+            "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
+            "discountCode": "HVD_L17PRE",
+            "quantity" : 15,
+        }
+    ]
+}
+```
+
+#### Response
+
+```json
+{
+    "referenceOrderId": "",
+    "externalReferenceId": "a96ee8fe-c440-4d1c-ae5b-a90e1825aef",
+    "orderId": "123432123",
+    "customerId": "1005944528",
+    "currencyCode": "USD",
+    "orderType": "SWITCH",
+    "status": "",
+    "lineItems": [
+        {
+ 
+                "extLineItemNumber": 1,
+                "offerId": "65304479CA02A12",
+                "quantity": 15,
+                "discountCode": "HVD_L17PRE",
+                "subscriptionId": ""
+                 
+        }
+    ],
+    "cancellingItems":[
+		{
+				"offerId": "65322651CA02A12",
+				"extLineItemNumber": 1,
+                "quantity": 15,
+				"discountCode": "HVD_L17PRE",
+                "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
+				"referenceLineItemNumber": 1,
+		}
+	],
+    "creationDate": "2025-03-17T11:42:29Z"
+}
+```
+
+### Preview Revert Switch Order
+
+Use `PREVIEW_REVERT_SWITCH` as the `orderType` in the Create Order API to get the required details and to check the validity of the reversal.
+
+#### Request
+
+**Query parameters**
+
+| Parameter | Required | Description |
+|---|--|--|
+|reassign-users|Optional |Specifies whether to automatically reassign users from the original subscription to the upgraded product. <br />**Note:** Automatic user reassignment is not supported for upgrades from Teams to Enterprise or between Enterprise subscriptions.|
+|fetch-price|Optional| Specifies whether to fetch pricing details while previewing the mid-term upgrade offers.|
+
+**Sample request URL:** POST `https://partners-stage.adobe.io/v3/customers/1005944528/orders?fetch-price=true`
+
+Request body:
+
+```json
+{
+    "orderType" : "PREVIEW_REVERT_SWITCH",
+    "currencyCode" : "USD",
+    "referenceOrderId": "987654334",
+    "lineItems" : [
+        {
+            "extLineItemNumber" : 1,
+            "offerId" : "65322651CA02A12",
+            "quantity" : 15,
+            "discountCode": "HVD_L17PRE",
+        }
+    ],
+    "cancellingItems":[
+        {
+            "extLineItemNumber": 1,
+            "referenceLineItemNumber": 1,
+            "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
+            "discountCode": "HVD_L17PRE",
+            "quantity" : 15,
+        }
+    ]   
+}
+```
+
+#### Response
+
+```json
+{
+    "referenceOrderId": "",
+    "externalReferenceId": "a96ee8fe-c440-4d1c-ae5b-a90e1825aef",
+    "orderId": "",
+    "customerId": "1005944528",
+    "currencyCode": "USD",
+    "orderType": "PREVIEW_REVERT_SWITCH",
+    "referenceOrderId": "987654334",
+    "status": "",
+    "pricingSummary": [
+    {
+        "totalLineItemPrice": 810.00,
+        "currencyCode": "USD"
+        }
+    ],
+    "lineItems": [
+        {
+ 
+                "extLineItemNumber": 1,
+                "offerId": "65304479CA02A12",
+                "quantity": 15,
+                "discountCode": "HVD_L17PRE",
+                "subscriptionId": "werb5a4ctrew879af7204c7daee1NA",
+                "proratedDays": 90,
+                "pricing": {
+                    "partnerPrice": 365.00,
+                    "discountedPartnerPrice": 328.50,
+                    "netPartnerPrice": 81.00,
+                    "lineItemPrice": 810.00
+                }
+        }
+    ],
+    "cancellingItems":[
+        {
+                "offerId": "65322651CA02A12",
+                "quantity": 15,
+                "discountCode": "HVD_L17PRE",
+                "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
+                "pricing": {
+                    "partnerPrice": -300.00,
+                    "discountedPartnerPrice": 0.00,
+                    "netPartnerPrice": -300.00,
+                    "lineItemPrice": -300.00
+                },
+                "referenceLineItemNumber": 1,
+        }
+    ]
+    "creationDate": "2025-03-17T11:42:29Z"
+}
+```
+
+### Revert Switch Order
+
+Use `REVERT_SWITCH` as the `orderType` in the Create Order API to revert to the plan from which you upgraded.
+
+#### Request
+
+```json
+{
+    "orderType" : "REVERT_SWITCH",
+    "currencyCode" : "USD",
+    "referenceOrderId": "987654334",
+    "lineItems" : [
+        {
+            "extLineItemNumber" : 1,
+            "offerId" : "65322651CA02A12",
+            "quantity" : 15,
+            "discountCode": "HVD_L17PRE"
+        }
+    ],
+    "cancellingItems":[
+        {
+            "extLineItemNumber": 1,
+            "referenceLineItemNumber": 1,
+            "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
+            "discountCode": "HVD_L17PRE",
+            "quantity" : 15,
+        }
+    ]   
+}
+```
+
+#### Response
+
+```json
+{
+    "referenceOrderId": "",
+    "externalReferenceId": "a96ee8fe-c440-4d1c-ae5b-a90e1825aef",
+    "orderId": "",
+    "customerId": "1005944528",
+    "currencyCode": "USD",
+    "orderType": "REVERT_SWITCH",
+    "referenceOrderId": "987654334",
+    "status": "",
+    "pricingSummary": [
+    {
+        "totalLineItemPrice": 810.00,
+        "currencyCode": "USD"
+        }
+    ],
+    "lineItems": [
+        {
+ 
+                "extLineItemNumber": 1,
+                "offerId": "65304479CA02A12",
+                "quantity": 15,
+                "discountCode": "HVD_L17PRE",
+                "subscriptionId": "werb5a4ctrew879af7204c7daee1NA",
+                "proratedDays": 90,
+                "pricing": {
+                    "partnerPrice": 365.00,
+                    "discountedPartnerPrice": 328.50,
+                    "netPartnerPrice": 81.00,
+                    "lineItemPrice": 810.00
+                }
+        }
+    ],
+    "cancellingItems":[
+        {
+                "offerId": "65322651CA02A12",
+                "quantity": 15,
+                "discountCode": "HVD_L17PRE",
+                "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
+                "pricing": {
+                    "partnerPrice": -300.00,
+                    "discountedPartnerPrice": 0.00,
+                    "netPartnerPrice": -300.00,
+                    "lineItemPrice": -300.00
+                },
+                "referenceLineItemNumber": 1,
+        }
+    ]
+    "creationDate": "2025-03-17T11:42:29Z"
+}
+```

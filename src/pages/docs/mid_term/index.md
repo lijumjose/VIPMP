@@ -1,8 +1,14 @@
-# Mid-term upgrade
+# Mid-term upgrades
 
 The Mid-Term Upgrade capability in VIP Marketplace enables a partner to upgrade a customer's product subscription to a higher-tier product, like from Teams to Enterprise, at any point during their current term. This means a customer no longer has to wait until the renewal cycle to make changes.
 
-### Upgrade path
+## Advantages of mid-term upgrade
+
+- **Customer flexibility**: Customers can access advanced features and higher-value products when needed, without waiting for the end of their subscription term.
+- **Revenue acceleration**: Partners can capture upsell opportunities immediately, which improves annual recurring revenue and reduces deferred income.
+- **Pricing transparency**: Provides prorated pricing, corrected discount levels, and refund estimates.
+
+## Upgrade path
 
 Customers can choose from a set of pre-defined upgrade paths for their product subscriptions at any point during their current term. A few examples:
 
@@ -26,11 +32,13 @@ You can use the [GET Product Switch Paths](./apis.md#3-retrieve-upgrade-path) AP
 
 **Note:** After a full switch, only the new product renews. After a partial switch, both products renew. The subscription's anniversary date remains unchanged.
 
-## Advantages of mid-term upgrade
+## Reassigning users
 
-- **Customer flexibility**: Customers can access advanced features and higher-value products when needed, without waiting for the end of their subscription term.
-- **Revenue acceleration**: Partners can capture upsell opportunities immediately, which improves annual recurring revenue and reduces deferred income.
-- **Pricing transparency**: Provides prorated pricing, corrected discount levels, and refund estimates.
+During a mid-term upgrade from one Teams subscription to another, partners can automatically reassign users from the original subscription to the upgraded product. To enable this feature, include the query parameter `reassign-users=true` when submitting the switch order request.
+
+User reassignment follows a Last-In-First-Out (LIFO) strategy, meaning the most recently assigned users are reassigned first.
+
+**Note:** Automatic user reassignment is not supported for upgrades from Teams to Enterprise or between Enterprise subscriptions.
 
 ## Limitations
 
