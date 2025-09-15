@@ -26,7 +26,7 @@ The following steps are involved in the upgrade process:
 You can use the following APIs to get the available switch plans and preview them before applying:
 
 - [Retrieve product recommendations using the Get Subscriptions API](#1-retrieve-product-recommendations-using-the-get-subscriptions-api)
-- [Get Product Switch Paths](#3-retrieve-upgrade-path)
+- [Get Product Switch Paths](#3-retrieve-upgrade-paths)
 - [Preview Switch Order](#4-preview-switch-order)
 
 ### 1. Retrieve product recommendations using the Get Subscriptions API
