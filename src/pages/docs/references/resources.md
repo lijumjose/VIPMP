@@ -132,7 +132,7 @@ Please see the Validations/Regular Expressions section for any regular expressio
 |orderId <br /> (read only)| String | Unique identifier for order that is created upon order creation| Max: 40 characters|
 |customerId <br /> (read only)| String | ID of the customer that placed this order | Max: 40 characters|
 |referenceOrderId | String <br /> required for RETURN orders| The ID of the order being returned in a RETURN order.| Max: 40 characters|
-|orderType | String <br /> (enum)| Type of the order. Valid values: NEW, PREVIEW, RETURN, TRANSFER, RENEWAL| |
+|orderType | String <br /> (enum)| Type of the order. Valid values: NEW, PREVIEW, PREVIEW_RENEWAL, RETURN, TRANSFER, RENEWAL, PREVIEW_SWITCH, SWITCH, PREVIEW_REVERT_SWITCH, REVERT_SWITCH | |
 |lineItems | `lineItem` resources| Itemized list of the offers and their quantity for this order| Min: 1 item <br />Max: 499 items|
 |pricingSummary | `pricingSummary` resources| A summary of prices of offers included in the line item.| |
 |eligibleOffers | `eligibleOffers` resource | The details of High Growth Offers available to the customer.||
@@ -191,6 +191,21 @@ Please see the Validations/Regular Expressions section for any regular expressio
 | crossSells             | Array of Recommendations| List of recommended products that complement the selected product by offering additional functionality or benefits. Example: Adobe Stock to Adobe Photoshop |
 | addOns                 | Array of Recommendations| List of recommended products to extend or enhance the functionality of a base product. These products are not standalone and must be used with the base product. Example: AI Assistant for Adobe Acrobat |
 
+### cancellingItems
+
+|Parameter|Not Null|Data Type|Description|Included in Response by Default|
+|--|--|--|--|--|
+| cancellingItems.offerId               | YES      | String                   | Part number of the item being canceled.                          | Yes                              |
+| cancellingItems.quantity              | YES      | Integer                  | Quantity being canceled.                                        | Yes                              |
+| cancellingItems.discountCode          | NO       | String                   | Discount code applied to the item being canceled.                   | Yes                              |
+| cancellingItems.subscriptionId        | YES      | String                   | Subscription ID associated with the item being canceled.                             | Yes                              |
+| cancellingItems.pricing.partnerPrice | YES      | Decimal                  | Partner price of the item being canceled.                         | Yes                              |
+| cancellingItems.pricing.discountedPartnerPrice | YES | Decimal          | Partner price after applying discounts.                      | Yes                              |
+| cancellingItems.pricing.netPartnerPrice | YES    | Decimal                  | Net partner price of the item being canceled after discounts.                               | Yes                              |
+| cancellingItems.pricing.lineItemPrice | YES      | Decimal                  | Final price of the item being canceled.                                | Yes                              |
+| cancellingItems.referenceLineItemNumber | YES    | Integer                  | Reference line item number.                                | Yes                              |
+| creationDate                          | YES      | DateTime                 | Timestamp of the order creation.                               | Yes                              |
+
 ## Subscription (top-level resource)
 
 |Property | Type | Description | Range/Limits|
@@ -241,6 +256,22 @@ Please see the Validations/Regular Expressions section for any regular expressio
 | outcomes[].discountValues[] → country| String           | Country Code: ISO 3166-1 alpha-2 code. Example: "US", "IN". Note: Not applicable for PERCENTAGE_DISCOUNT type. |
 | outcomes[].discountValues[] → currency| String          | Currency Code: ISO 4217. Example: "USD", "EUR". Note: Not applicable for PERCENTAGE_DISCOUNT type. |
 | outcomes[].discountValues[] → value  | Integer          | The discount value. For example, if the value is 15: 15% discount is applicable if the type is PERCENTAGE DISCOUNT. A discount of 15 USD, or any currency provided in the response, is applicable for the FIXED_DISCOUNT discount type. |
+
+## productUpgrades (top-level resurce)
+
+| Parameter               | Required | Type    | Description |
+|------------------------|----------|---------|-------------|
+| productUpgrades        | No       | Object  | Contains the list of available upgrade paths. |
+| sourceBaseOfferId      | Yes      | String  | The base offerId from which the customer can upgrade. |
+| targetType             | Yes      | String  | Defines the scope of the target items (example: PRODUCT_LIST). |
+| targetList             | Yes      | List    | Contains the list of target offers and their details. |
+| targetList[].sequence  | Yes      | Integer | Defines the order in which upgrade paths should be presented. |
+| targetList[].targetBaseOfferId | Yes | String | The base offerId to which customer can upgrade. |
+| targetList[].switchType| Yes      | String  | Indicates whether the entire quantity of the original subscription can be upgraded to the new product or only a portion of it. |
+| totalCount             | Yes      | Integer | The total number of items matching the query across all pages. Reflects the full dataset size regardless of pagination. |
+| count                  | Yes      | Integer | The number of items included in the current response. Typically equals or is less than the limit. |
+| offset                 | Yes      | Integer | The zero-based index of the first item in this response within the total result set. Indicates how many items were skipped. |
+| limit                  | Yes      | Integer | The maximum number of items requested per response (page size). Defines how many items should be returned per request. |
 
 ## Notification (top-level resource)
 
