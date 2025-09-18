@@ -10,7 +10,7 @@ This API is essential for partners who manage large customer portfolios and requ
 
 This API supports:
 
-- Filtering by reseller ID (mandatory), customer ID, name with wildcard support, status, and created date range.
+- Filtering by reseller ID (mandatory), customer ID, company name with wildcard support, status, and created date range.
 - Sorting by customer name or creation date.
 - Pagination with up to 50 results per request.
 
@@ -28,14 +28,14 @@ This API supports:
 
 A sample request is as follows:
 
-`GET <env>/v3/resellers/<reseller_id>/customers?status=1000&name=INGRAM&offset=3&limit=3&sort-by=creationDate&order-by=desc`
+`GET <env>/v3/resellers/<reseller_id>/customers?status=1000&company-name=INGRAM&offset=3&limit=3&sort-by=creationDate&order-by=desc`
 
 **Request  parameters:**
 
 | Parameter            | Required | Data Type | Description                                                                                                                                       |
 |----------------|----------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | status         | No       | String    | Status of the resellers. Default value is 1000. Supported values include 1000, 1002, 1004, and 1026.          |
-| name           | No       | String    | Name of the customer with support for wildcard matching. Default value is null.           |
+| company-name           | No       | String    | Name of the customer with support for wildcard matching. Default value is null.           |
 | from-created-date| No       | Date      | Filters customers created from the specified date. Default value is null.                                                |
 | to-created-date  | No       | Date      | Filters customers created up to the specified date. Default value is null.                                                  |
 | offset         | No       |           | Specifies the starting point for retrieving items in a paginated list. It determines how many items to skip before beginning to return results. If not specified, the default value is 0, meaning the response will start from the first item.                                                             |
