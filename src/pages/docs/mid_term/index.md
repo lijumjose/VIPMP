@@ -16,7 +16,7 @@ Customers can choose from a set of pre-defined upgrade paths for their product s
 - Acrobat Studio Teams to Acrobat Studio Enterprise
 - Acrobat Creative Cloud Teams to Acrobat Creative Cloud Pro Teams
 
-You can use the [GET Product Switch Paths](./apis.md#3-retrieve-upgrade-paths) API to retrieve the upgrade paths that are available. Upgrade paths include a `switchType` indicator that defines whether the upgrade must be full or can be partial:
+You can use the [GET Product Switch Paths](./apis.md#1-retrieve-upgrade-paths) API to retrieve the upgrade paths that are available. Upgrade paths include a `switchType` indicator that defines whether the upgrade must be full or can be partial:
 
 - **Full switch**  
   The entire quantity of the original subscription needs to be upgraded to the new product.
