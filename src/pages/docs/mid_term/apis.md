@@ -25,168 +25,10 @@ The following steps are involved in the upgrade process:
 
 You can use the following APIs to get the available switch plans and preview them before applying:
 
-- [Retrieve product recommendations using the Get Subscriptions API](#1-retrieve-product-recommendations-using-the-get-subscriptions-api)
-- [Get Product Switch Paths](#3-retrieve-upgrade-paths)
-- [Preview Switch Order](#4-preview-switch-order)
+- [Get Product Switch Paths](#1-retrieve-upgrade-paths)
+- [Preview Switch Order](#2-preview-switch-order)
 
-### 1. Retrieve product recommendations using the Get Subscriptions API
-
-You can use the `/v3/customers/{{customerId}}/subscriptions?fetch-recommendations=true` to get product recommendations.
-
-The response lists the product recommendations and `switchType` parameter, which indicates whether the full quantity or only a portion of the original subscription can be upgraded to the new product.
-
-Response sample:
-
-```json
-[...
-...
-{
-   "productRecommendations":{
-      "upsells":[
-         {
-            "rank":0,
-            "product":{
-               "baseOfferId":"30006208CA01A12"
-            },
-            "switchType": "FULL_ONLY/PARTIALLY_ALLOWED",
-            "source":{
-               "sourceType":"SUBSCRIPTION",
-               "subscriptionIds":[
-                  "AAAABBBB30005702CA01A12XXXX"
-               ]
-            }
-         },
-         {
-            "rank":1,
-            "product":{
-               "baseOfferId":"65304921CA01A12"
-            },
-            "switchType": "FULL_ONLY/PARTIALLY_ALLOWED", 
-            "source":{
-               "sourceType":"SUBSCRIPTION",
-               "subscriptionIds":[
-                  "AAAABBBB30005702CA01A12XXXX"
-               ]
-            }
-         }
-      ],
-      "crossSells":[
-         {
-            "rank":0,
-            "product":{
-               "baseOfferId":"30006208CA01A12"
-            },
-              
-            "source":{
-               "sourceType":"OFFER",
-               "offerIds":[
-                  "30005702CA01A12"
-               ]
-            }
-         }
-      ],
-      "addOns":[
-         {
-            "rank":0,
-            "product":{
-               "baseOfferId":"65304921CA01A12"
-            },
-  
-            "source":{
-               "sourceType":"OFFER/SUBSCRIPTION",
-               "offerIds":[
-                  "30005702CA01A12"
-               ]
-            }
-         }
-      ]
-   }
-}
-...
-...
-]
-```
-
-For more information on product recommendations, see [Managing product recommendations](../recommendations/index.md).
-
-### 2. Get product recommendations for a specific Subscription
-
-Use the `/v3/customers/{{customerId}}/subscriptions/:subscriptionId?fetch-recommendations=true` API to get subscription details by ID.
-
-The response lists the product recommendations and `switchType` parameter, which indicates whether the full quantity or only a portion of the original subscription can be upgraded to the new product.
-
-Sample response:
-
-```json
-{
-...
-   {
-   "productRecommendations":{
-      "upsells":[
-         {
-            "rank":0,
-            "product":{
-               "baseOfferId":"30006208CA01A12"
-            },
-            "switchType": "FULL_ONLY/PARTIALLY_ALLOWED", 
-            "source":{
-               "sourceType":"SUBSCRIPTION",
-               "subscriptionIds":[
-                  "AAAABBBB30005702CA01A12XXXX"
-               ]
-            }
-         },
-         {
-            "rank":1,
-            "product":{
-               "baseOfferId":"65304921CA01A12"
-            },
-            "switchType": "FULL_ONLY/PARTIALLY_ALLOWED", 
-            "source":{
-               "sourceType":"SUBSCRIPTION",
-               "subscriptionIds":[
-                  "AAAABBBB30005702CA01A12XXXX"
-               ]
-            }
-         }
-      ],
-      "crossSells":[
-         {
-            "rank":0,
-            "product":{
-               "baseOfferId":"30006208CA01A12"
-            },
-              
-            "source":{
-               "sourceType":"OFFER",
-               "offerIds":[
-                  "30005702CA01A12"
-               ]
-            }
-         }
-      ],
-      "addOns":[
-         {
-            "rank":0,
-            "product":{
-               "baseOfferId":"65304921CA01A12"
-            },
-  
-            "source":{
-               "sourceType":"OFFER/SUBSCRIPTION",
-               "offerIds":[
-                  "30005702CA01A12"
-               ]
-            }
-         }
-      ]
-   }
-}
-...
-}
-```
-
-### 3. Retrieve upgrade paths
+### 1. Retrieve upgrade paths
 
 The `GET Product Switch Paths` API enables Adobe partners to programmatically retrieve valid upgrade paths for customer subscriptions or offers, based on key business filters such as market segment, country, and language.
 
@@ -216,7 +58,11 @@ This API  helps partners enable customers to upgrade their product subscriptions
 | market-segment | Yes      | The market segment for which the upgrade path is applicable. |
 | country        | Yes      | Specifies the country for which the upgrade path is applicable.                                        |
 | offer-id       | No       | Fetches all upgrade paths available for the specified offer.                                               |
+| subscription-id      | No       | See description corresponding to `customer-id`                                               |
+| customer-id     | No       | If `subscription-id` and `customer-id`  query parameters are provided: <br /> - Partners do not need to pass other fields. <br /> - By default, the country will be taken from the customer’s country, or from the deployment’s country if the subscription has deployment details unless explicitly overridden by the partner. <br /> - The customer segment will be same as customer market segment. <br /> - The language will default to MULT, unless explicitly overridden by the partner by passing the corresponding query parameter.                                              |
 | language       | Yes      | Language for which they want upgrade paths.                                                            |
+| limit | No      | Specifies the maximum number of records (items) to return in a single response. Default value is 20. |
+| offset | No     | Specifies the starting position in the dataset from which to return results. Default value is 0. |
 
 **Request body**
 
@@ -285,7 +131,7 @@ Response parameters:
 | offset                 | Yes      | Integer | The zero-based index of the first item in this response within the total result set. Indicates how many items were skipped. |
 | limit                  | Yes      | Integer | The maximum number of items requested per response (page size). Defines how many items should be returned per request. |
 
-### 4. Preview Switch Order
+### 2. Preview Switch Order
 
 The newly introduced `Preview Switch` option in the `OrderType` parameter of the Create Order API helps partners to generate upgrade quotes prior to placing a switch order.
 
@@ -380,7 +226,7 @@ The newly introduced `Preview Switch` option in the `OrderType` parameter of the
                     "partnerPrice": 365.00,
                     "discountedPartnerPrice": 328.50,
                     "netPartnerPrice": 81.00,
-                    "lineItemPrice": 810.00
+                    "lineItemPartnerPrice": 810.00
                 }
         }
     ],
@@ -394,7 +240,7 @@ The newly introduced `Preview Switch` option in the `OrderType` parameter of the
                     "partnerPrice": 300.00,
                     "discountedPartnerPrice": 0.00,
                     "netPartnerPrice": -300.00,
-                    "lineItemPrice": 300.00
+                    "lineItemPartnerPrice": 300.00
                 },
                 "referenceLineItemNumber": 1,
         }
@@ -416,7 +262,7 @@ The `cancellingItems` object lists the switch plan with corresponding pricing de
 | cancellingItems.pricing.partnerPrice | YES      | Decimal                  | Partner price of the item being canceled.                         | Yes                              |
 | cancellingItems.pricing.discountedPartnerPrice | YES | Decimal          | Partner price after applying discounts.                      | Yes                              |
 | cancellingItems.pricing.netPartnerPrice | YES    | Decimal                  | Net partner price of the item being canceled after discounts.                               | Yes                              |
-| cancellingItems.pricing.lineItemPrice | YES      | Decimal                  | Final price of the item being canceled.                                | Yes                              |
+| cancellingItems.pricing.lineItemPartnerPrice | YES      | Decimal                  | Final price of the item being canceled.                                | Yes                              |
 | cancellingItems.referenceLineItemNumber | YES    | Integer                  | Reference line item number.                                | Yes                              |
 | creationDate                          | YES      | DateTime                 | Timestamp of the order creation.                               | Yes                              |
 
@@ -684,7 +530,7 @@ Request body:
                     "partnerPrice": 365.00,
                     "discountedPartnerPrice": 328.50,
                     "netPartnerPrice": 81.00,
-                    "lineItemPrice": 810.00
+                    "lineItemPartnerPrice": 810.00
                 }
         }
     ],
@@ -698,7 +544,7 @@ Request body:
                     "partnerPrice": -300.00,
                     "discountedPartnerPrice": 0.00,
                     "netPartnerPrice": -300.00,
-                    "lineItemPrice": -300.00
+                    "lineItemPartnerPrice": -300.00
                 },
                 "referenceLineItemNumber": 1,
         }
@@ -769,7 +615,7 @@ Use `REVERT_SWITCH` as the `orderType` in the Create Order API to revert to the 
                     "partnerPrice": 365.00,
                     "discountedPartnerPrice": 328.50,
                     "netPartnerPrice": 81.00,
-                    "lineItemPrice": 810.00
+                    "lineItemPartnerPrice": 810.00
                 }
         }
     ],
@@ -783,7 +629,7 @@ Use `REVERT_SWITCH` as the `orderType` in the Create Order API to revert to the 
                     "partnerPrice": -300.00,
                     "discountedPartnerPrice": 0.00,
                     "netPartnerPrice": -300.00,
-                    "lineItemPrice": -300.00
+                    "lineItemPartnerPrice": -300.00
                 },
                 "referenceLineItemNumber": 1,
         }
