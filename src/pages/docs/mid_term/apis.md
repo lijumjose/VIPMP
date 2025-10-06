@@ -145,7 +145,6 @@ The newly introduced `Preview Switch` option in the `OrderType` parameter of the
 
 | Parameter | Required | Description |
 |---|--|--|
-|reassign-users|Optional |Specifies whether to automatically reassign users from the original subscription to the upgraded product. <br />**Note:** Automatic user reassignment is not supported for upgrades from Teams to Enterprise or between Enterprise subscriptions. |
 |fetch-price|Optional| Specifies whether to fetch pricing details while previewing the mid-term upgrade offers.|
 
 **Sample Request URL:** `POST https://partners-stage.adobe.io/v3/customers/1005944528/orders?fetch-price=true`
@@ -274,7 +273,13 @@ This API facilitates upgrade orders with "From" and "To" product details.
 
 #### Request
 
-Sample request URL: `POST https://partners-stage.adobe.io/v3/customers/1005944528/orders?`
+**Query parameter**
+
+|Parameter |Required | Description|
+|--|--|--|
+|reassign-users|Optional |Specifies whether to automatically reassign users from the original Teams subscription to the upgraded one. <br />**Note:** Automatic user reassignment is not supported for upgrades from Teams to Enterprise or between Enterprise subscriptions.|
+
+Sample request URL: `POST https://partners-stage.adobe.io/v3/customers/1005944528/orders?reassign-users=true`
 
 Request body:
 
@@ -467,7 +472,6 @@ Use `PREVIEW_REVERT_SWITCH` as the `orderType` in the Create Order API to get th
 
 | Parameter | Required | Description |
 |---|--|--|
-|reassign-users|Optional |Specifies whether to automatically reassign users from the original subscription to the upgraded product. <br />**Note:** Automatic user reassignment is not supported for upgrades from Teams to Enterprise or between Enterprise subscriptions.|
 |fetch-price|Optional| Specifies whether to fetch pricing details while previewing the mid-term upgrade offers.|
 
 **Sample request URL:** POST `https://partners-stage.adobe.io/v3/customers/1005944528/orders?fetch-price=true`
@@ -556,6 +560,8 @@ Request body:
 ### Revert Switch Order
 
 Use `REVERT_SWITCH` as the `orderType` in the Create Order API to revert to the plan from which you upgraded.
+
+**Note:** You can use the `reassign-user=true` parameter in the request URL to automatically reassign users from the upgraded Teams subscription to the original Teams subscription.
 
 #### Request
 
