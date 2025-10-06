@@ -48,42 +48,38 @@ GET <env>/v3/resellers?status=1000&offset=3&limit=3&sort-by=creationDate&order-b
 
 ```json
 {
-  "totalCount": 9,
-  "count": 3,
-  "offset": 3,
-  "limit": 3,
-  "resellers": [
-    {
-      "externalReferenceId": "63ad9457-09a1-49e2-8379-f864a8e7c63",
-      "distributorId": "1652673",
-      "resellerId": "1000361686",
-      "status": "1000",
-      "companyProfile": {
-        "companyName": "Reseller Name 63ad9457-09a1-49e2-8379-f864a8e7c63",
-        "preferredLanguage": "en-US",
-        "marketSegments": [],
-        "address": {
-          "country": "US",
-          "region": "CA",
-          "city": "San Jose",
-          "addressLine1": "345 Park Ave",
-          "addressLine2": "",
-          "postalCode": "95110",
-          "phoneNumber": ""
+    "totalCount": 487,
+    "count": 2,
+    "offset": 0,
+    "limit": 2,
+    "accounts": [
+        {
+            "externalReferenceId": "250730223347637328",
+            "resellerId": "1000396138",
+            "distributorId": "0dda7462-d82e-4174-847d-e2439e54ceb2",
+            "status": "1000",
+            "creationDate": "2025-07-30T22:33:48Z",
+            "links": {
+                "self": {
+                    "uri": "/v3/resellers/1000396138",
+                    "method": "GET",
+                    "headers": []
+            }
         },
-        "contacts": [
-          {
-            "firstName": "Kevin",
-            "lastName": "Gregor",
-            "email": "testname@adobe.com",
-            "phoneNumber": "39 041 2708311"
-          }
-        ]
-      },
-      "creationDate": "2025-05-26T09:33:28Z"
-    },
-    {}, {}
-  ]
+        {
+            "externalReferenceId": "250730224431435791",
+            "resellerId": "1000396139",
+            "distributorId": "0dda7462-d82e-4174-847d-e2439e54ceb2",
+            "status": "1000",
+            "creationDate": "2025-07-30T22:44:32Z",
+            "links": {
+                "self": {
+                    "uri": "/v3/resellers/1000396139",
+                    "method": "GET",
+                    "headers": []
+            }
+        }
+    ]
 }
 ```
 
@@ -95,7 +91,18 @@ GET <env>/v3/resellers?status=1000&offset=3&limit=3&sort-by=creationDate&order-b
 | count         | Integer           | Yes          | Number of resellers returned in the current page items.                        |
 | offset        | Integer           | Yes          | Start of the page.                                                             |
 | limit         | Integer           | Yes          | Requested page size. Number of reseller items limited in the response.         |
-| resellers     | Array of Resellers | Yes          | Reseller resource. Refer to [Get Reseller Account](./get_reseller_account.md). |
+| resellers     | Array of Resellers | Yes          | Reseller object.  |
+
+**Reseller object**
+
+| **Parameter**       | **Type**           | **Required** | **Description**                                                                                                                                             |
+|---------------------|--------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| externalReferenceId | String             | Yes          | External Reference ID                                                                                                                                       |
+| distributorId       | String             | Yes          | Unique ID of the distributor                                                                                                                                |
+| resellerId          | String             | Yes          | Unique ID of the reseller                                                                                                                                   |
+| status              | String             | Yes          | Status of reseller                                                                                                                                          |
+| creationDate        | String  (ISO Date) | Yes          | Creation Date                                                                                                                                               |
+| links               | Object             | Yes          | Link to get Reseller details. <br /> `GET /v3/resellers/<reseller-id>` |
 
 ### Status codes
 
