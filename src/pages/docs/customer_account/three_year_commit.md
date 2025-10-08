@@ -82,6 +82,14 @@ Volume discounts apply only to qualifying licenses.
 - **Licenses:** Level 01
 - **Consumables:** Tier T1
 
+## Partner pricing for 3YC customers
+
+The diagram illustrates the decision-making process for determining partner pricing for 3YC customers.
+
+![Partner pricing for 3YC customers](../image/3yc_pricing.png)
+
+The flow ensures accurate pricing by considering factors such as customer type, offer matches, and applicable discounts before arriving at the final price charged by Adobe.
+
 ## Commitment request considerations
 
 - Discount levels are updated whenever the commitment status changes, such as when a new commitment is made or an existing one expires.
