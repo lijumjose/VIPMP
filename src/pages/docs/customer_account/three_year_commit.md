@@ -82,7 +82,7 @@ Volume discounts apply only to qualifying licenses.
 - **Licenses:** Level 01
 - **Consumables:** Tier T1
 
-## Partner pricing for 3YC customers
+## Arriving at partner price for 3YC customers
 
 The diagram illustrates the decision-making process for determining partner pricing for 3YC customers.
 
