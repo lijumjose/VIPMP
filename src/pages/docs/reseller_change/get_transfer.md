@@ -33,16 +33,20 @@ None.
     {
       "lineItemNumber": 1,
       "offerId": "65304479CA01A12",
-      "quantity": 1560,
+      "quantity": 15,
       "subscriptionId": "abcdefg",
-      "renewalDate": "2024-09-22"
+      "renewalDate": "2024-09-22",
+      "deploymentId": "345434543",
+      "currencyCode": "USD"
     },
     {
       "lineItemNumber": 2,
       "offerId": "65304386CA01A12",
       "quantity": 12,
       "subscriptionId": "hijklmnop",
-      "renewalDate": "2024-09-22"
+      "renewalDate": "2024-09-22",
+      "deploymentId": "345434546",
+      "currencyCode": "USD"
     }
   ]
 }

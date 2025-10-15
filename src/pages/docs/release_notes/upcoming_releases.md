@@ -2,6 +2,14 @@
 
 The following features are scheduled for release:
 
+## Changes to Get Customer List and Get Reseller List APIs
+
+- Added the `companyProfile.companyName` parameter to [Get Customer List](../customer_account/get_customer_list.md) and [Get Reseller List](../reseller_account/get_reseller_list.md) API responses to display the customer name and reseller name, respectively.
+
+## Display deploymentID and currencyCode in Reseller Transfer API responses
+
+- Added `deploymentId` and `currencyCode` parameters to the responses of [Preview Reseller Transfer](../reseller_change/preview_transfer.md) and [Get Reseller Transfer](../reseller_change/get_transfer.md) APIs.
+
 ## Base part number in the GET Open Acquisitions API response
 
 - Introduced the `baseOfferId` parameter in the response payload of the GET Open Acquisitions (aka GET Licenses Pending Partner Order) API. This parameter in the API response allows partners to match the correct part number using product name details from notification emails and proceed with order placement.

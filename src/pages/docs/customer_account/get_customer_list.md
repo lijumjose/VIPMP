@@ -56,6 +56,9 @@ A sample request is as follows:
             "customerId": "1006500792",
             "resellerId": "1000396138",
             "status": "1000",
+            "companyProfile": {
+                "companyName": "Customer Name 1"
+            },
             "creationDate": "2025-08-27T12:57:22Z",
             "links": {
                 "self": {
@@ -70,6 +73,9 @@ A sample request is as follows:
             "customerId": "1006500806",
             "resellerId": "1000396138",
             "status": "1000",
+            "companyProfile": {
+                "companyName": "Customer Name 2"
+            },
             "creationDate": "2025-08-27T12:57:18Z",
             "links": {
                 "self": {
@@ -101,6 +107,7 @@ A sample request is as follows:
 | customerId       | String             | Yes          | Unique ID of the customer                                                                                                                                |
 | resellerId          | String             | Yes          | Unique ID of the reseller                                                                                                                                   |
 | status              | String             | Yes          | Status of reseller                                                                                                                                          |
+| companyProfile.companyName              | String             | Yes          | Name of the customer.                                                                                                                                          |
 | creationDate        | String  (ISO Date) | Yes          | Customer creation timestamp                                                                                                                                               |
 | links               | Object             | Yes          | Link to get customer details. <br /> `GET /v3/customers/<customer-id>` <br />  |
 
