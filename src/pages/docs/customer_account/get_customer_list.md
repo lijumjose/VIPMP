@@ -28,7 +28,7 @@ This API supports:
 
 A sample request is as follows:
 
-`GET <env>/v3/resellers/<reseller_id>/customers?status=1000&offset=3&limit=3&sort-by=creationDate&order-by=desc`
+`GET <env>/v3/resellers/1000404757/customers?company-name=Test*&status=1000&limit=50&offset=0&sort-by=companyName`
 
 **Request  parameters:**
 
@@ -38,6 +38,7 @@ A sample request is as follows:
 | from-created-date| No       | Date      | Filters customers created from the specified date. Default value is null.                                                |
 | to-created-date  | No       | Date      | Filters customers created up to the specified date. Default value is null.                                                  |
 | offset         | No       |           | Specifies the starting point for retrieving items in a paginated list. It determines how many items to skip before beginning to return results. If not specified, the default value is 0, meaning the response will start from the first item.                                                             |
+| company-name  | No       | String    | Name of the customer with wildcard support. |
 | limit          | No       |           | Number of results to return per page. Default value is 20. Must be between 1 and 50.                                                      |
 | sort-by        | No       | String    | Field used for sorting. Only one field is allowed. Supported values are creationDate and companyName. Default value is creationDate.        |
 | order-by       | No       | String    | Direction of sorting. Supported values are asc and desc. Default value is desc.                                                         |

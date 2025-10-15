@@ -31,7 +31,7 @@ This API is particularly useful for partners who need to:
 A sample request is as follows:
 
 ```json
-GET <env>/v3/resellers?status=1000&offset=3&limit=3&sort-by=creationDate&order-by=desc
+GET <env>/v3/resellers?status=1000&company-name=Reseller*&sort-by=creationDate&order-by=ASC&limit=50&offset=0
 ```
 
 **Request  parameters:**
@@ -41,6 +41,7 @@ GET <env>/v3/resellers?status=1000&offset=3&limit=3&sort-by=creationDate&order-b
 | status   | No       | String    | Status of the resellers. Supported values: 1000, 1002, 1004, or 1026. Default: 1000. Must match one of the supported values. |
 | offset   | No       |           | Starting point for paginated results. Default: 0.                                                                            |
 | limit    | No       |           | Number of results per page. Default: 20. Must be between 1 and 50.                                                           |
+| company-name  | No       | String    | Name of the Reseller with wildcard support. |
 | sort-by  | No       | String    | Field to sort by. Only one field allowed. Supported values: creationDate, companyName. Default: creationDate.                |
 | order-by | No       | String    | Sort direction. Supported values: asc, desc. Default: desc.                                                                  |
 
