@@ -58,6 +58,9 @@ GET <env>/v3/resellers?status=1000&offset=3&limit=3&sort-by=creationDate&order-b
             "resellerId": "1000396138",
             "distributorId": "0dda7462-d82e-4174-847d-e2439e54ceb2",
             "status": "1000",
+            "companyProfile": {
+                "companyName": "Reseller Name A"
+            },
             "creationDate": "2025-07-30T22:33:48Z",
             "links": {
                 "self": {
@@ -71,6 +74,9 @@ GET <env>/v3/resellers?status=1000&offset=3&limit=3&sort-by=creationDate&order-b
             "resellerId": "1000396139",
             "distributorId": "0dda7462-d82e-4174-847d-e2439e54ceb2",
             "status": "1000",
+            "companyProfile": {
+                "companyName": "Reseller Name B"
+            },
             "creationDate": "2025-07-30T22:44:32Z",
             "links": {
                 "self": {
@@ -101,6 +107,7 @@ GET <env>/v3/resellers?status=1000&offset=3&limit=3&sort-by=creationDate&order-b
 | distributorId       | String             | Yes          | Unique ID of the distributor                                                                                                                                |
 | resellerId          | String             | Yes          | Unique ID of the reseller                                                                                                                                   |
 | status              | String             | Yes          | Status of reseller                                                                                                                                          |
+| companyProfile.companyName              | String             | Yes          | Name of the reseller.                                                                                                                                          |
 | creationDate        | String  (ISO Date) | Yes          | Creation Date                                                                                                                                               |
 | links               | Object             | Yes          | Link to get Reseller details. <br /> `GET /v3/resellers/<reseller-id>` |
 
