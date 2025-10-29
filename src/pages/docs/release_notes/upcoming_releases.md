@@ -2,11 +2,11 @@
 
 The following features are scheduled for release:
 
-## Display source of the Order in Create Order and Get Order APIs
+## Display source of the Order in Create Order and Get Order API responses
 
-- Added the `source` parameter in the responses of [Create Order](../order_management/create_order.md) and [Get Order](../order_management/get_order.md) APIs, indicating the origin of the Order. Possible values are: `API`, `Bridge`, and `System`.
+- Added the `source` parameter in the responses of [Create Order](../order_management/create_order.md) and [Get Order](../order_management/get_order.md) APIs to indicate the origin of the order. Possible values are: `API`, `Bridge`, and `System`.
 
-  With the upcoming Bridge UI, partners will have the ability to place orders both APIs and directly through the Bridge UI. This new field ensures transparency and help partners distinguish the origin of their orders.
+  With the upcoming Bridge UI, partners will be able to place orders through APIs or directly through the Bridge interface. This new field improves transparency and helps partners identify the origin of their orders.
 
 ## Changes to Get Customer List and Get Reseller List APIs
 
