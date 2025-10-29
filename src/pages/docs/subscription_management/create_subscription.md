@@ -2,6 +2,8 @@
 
 Use the `POST /v3/customers/<customer-id>/subscriptions` endpoint to create new subscriptions.
 
+**Note:** Adobe Commerce Partner APIs do not allow creating subscriptions for consumable items, including Adobe Stock credit packs and Adobe Sign transactions.
+
 ## Assumptions
 
 - `Enabled` flag can only be set to true
