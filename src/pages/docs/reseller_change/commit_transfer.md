@@ -43,7 +43,9 @@ Use the `POST /v3/transfers` endpoint to commit a reseller transfer.
       "offerId": "65304479CA01A12",
       "quantity": 110,
       "subscriptionId": "9bec01597a466898af170a5a203bb1NA",
-      "renewalDate": "2025-06-10T16:22:08.000+00:00"
+      "renewalDate": "2025-06-10T16:22:08.000+00:00",
+      "deploymentId": "345434541",
+      "currencyCode": "USD"
     }
   ],
   "benefits": [

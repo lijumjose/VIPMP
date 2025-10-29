@@ -2,13 +2,19 @@
 
 The following features are scheduled for release:
 
+## Display source of the Order in Create Order and Get Order API responses
+
+- Added the `source` parameter in the responses of [Create Order](../order_management/create_order.md) and [Get Order](../order_management/get_order.md) APIs to indicate the origin of the order. Possible values are: `API`, `Bridge`, and `System`.
+
+  With the upcoming Bridge UI, partners will be able to place orders through APIs or directly through the Bridge interface. This new field improves transparency and helps partners identify the origin of their orders.
+
 ## Changes to Get Customer List and Get Reseller List APIs
 
 - Added the `companyProfile.companyName` parameter to [Get Customer List](../customer_account/get_customer_list.md) and [Get Reseller List](../reseller_account/get_reseller_list.md) API responses to display the customer name and reseller name, respectively.
 
 ## Display deploymentID and currencyCode in Reseller Transfer API responses
 
-- Added `deploymentId` and `currencyCode` parameters to the responses of [Preview Reseller Transfer](../reseller_change/preview_transfer.md) and [Get Reseller Transfer](../reseller_change/get_transfer.md) APIs.
+- Added `deploymentId` and `currencyCode` parameters to the responses of [Preview Reseller Transfer](../reseller_change/preview_transfer.md), [Commit Transfer](../reseller_change/commit_transfer.md), and [Get Reseller Transfer](../reseller_change/get_transfer.md) APIs.
 
 ## Base part number in the GET Open Acquisitions API response
 
