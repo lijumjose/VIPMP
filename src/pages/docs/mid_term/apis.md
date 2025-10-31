@@ -25,18 +25,18 @@ The following steps are involved in the upgrade process:
 
 You can use the following APIs to get the available switch plans and preview them before applying:
 
-- [Get Product Switch Paths](#1-retrieve-upgrade-paths)
+- [Get Offer Switch Paths](#1-retrieve-upgrade-paths)
 - [Preview Switch Order](#2-preview-switch-order)
 
 ### 1. Retrieve upgrade paths
 
-The `GET Product Switch Paths` API enables Adobe partners to programmatically retrieve valid upgrade paths for customer subscriptions or offers, based on key business filters such as market segment, country, and language.
+The `GET Offer Switch Paths` API enables Adobe partners to programmatically retrieve valid upgrade paths for customer subscriptions or offers, based on key business filters such as market segment, country, and language.
 
 This API  helps partners enable customers to upgrade their product subscriptions mid-term, rather than waiting until the subscription anniversary. This capability unlocks immediate access to higher-tier products and features, while allowing Adobe and its partners to capture revenue opportunities without delay.
 
 | Path                                                                 | Request Method |
 |----------------------------------------------------------------------|----------------|
-| `<env root url>/v3/product-switch-paths` | GET            |
+| `<env root url>/v3/offer-switch-paths` | GET            |
 
 #### Request
 
@@ -68,50 +68,68 @@ This API  helps partners enable customers to upgrade their product subscriptions
 
 None.
 
-**Request URL:** `/v3/product-switch-paths?market-segment=COM&country=US&language=MULT`
+**Request URL:** `/v3/offer-switch-paths?market-segment=COM&country=US&language=MULT`
 
 #### Response
 
 ```json
 {
-  "productUpgrades": [
-    {
-         "sourceBaseOfferId":"82736423CA01A12",
-         "targetType":"PRODUCT_LIST",
-         "targetList":[
-            {
-               "sequence":1,
-               "targetBaseOfferId":"65345876CA01A12",
-               "switchType":"FULL_ONLY"
-            },
-            {
-               "sequence":2,
-               "targetBaseOfferId":"98765345CA01A12",
-               "switchType":"FULL_ONLY"
-            }
-         ]
-      },
-    {
-         "sourceBaseOfferId":"8734728CA01A12",
-         "targetType":"PRODUCT_LIST",
-         "targetList":[
-            {
-               "sequence":1,
-               "targetBaseOfferId":"12345678CA01A12",
-               "switchType":"FULL_ONLY"
-            },
-            {
-               "sequence":2,
-               "targetBaseOfferId":"76543454CA01A12",
-               "switchType":"FULL_ONLY"
-            }
-         ]
-      }
-  ],
-  "totalCount": 1,
-  "count": 1,
-  "offset": 0,
-  "limit": 1
+    "totalCount": 3,
+    "count": 3,
+    "offset": 0,
+    "limit": 20,
+    "productUpgrades": [
+        {
+            "sourceBaseOfferId": "30002139CC01A12",
+            "targetList": [
+                {
+                    "targetBaseOfferId": "30002125CC01A12",
+                    "sequence": 1,
+                    "switchType": "PARTIAL_ALLOWED"
+                },
+                {
+                    "targetBaseOfferId": "30013365CC01A12",
+                    "sequence": 2,
+                    "switchType": "PARTIAL_ALLOWED"
+                },
+                {
+                    "targetBaseOfferId": "30002230CC01A12",
+                    "sequence": 3,
+                    "switchType": "PARTIAL_ALLOWED"
+                }
+            ]
+        },
+        {
+            "sourceBaseOfferId": "30002994CC01A12",
+            "targetList": [
+                {
+                    "targetBaseOfferId": "30005695CC01A12",
+                    "sequence": 1,
+                    "switchType": "PARTIAL_ALLOWED"
+                },
+                {
+                    "targetBaseOfferId": "30002245CC01A12",
+                    "sequence": 2,
+                    "switchType": "PARTIAL_ALLOWED"
+                },
+                {
+                    "targetBaseOfferId": "30002230CC01A12",
+                    "sequence": 3,
+                    "switchType": "PARTIAL_ALLOWED"
+                }
+            ]
+        },
+        {
+            "sourceBaseOfferId": "30002125CC01A12",
+            "targetList": [
+                {
+                    "targetBaseOfferId": "30002168CC01A12",
+                    "sequence": 3,
+                    "switchType": "PARTIAL_ALLOWED"
+                }
+            ]
+        }
+    ]
 }
 ```
 
@@ -345,7 +363,7 @@ Request body:
 
 ## Verify Switch Order
 
-You can use the following APIs to verify the upgrade:
+You can use the following APIs to verify the upgrade and rversal of the upgrade:
 
 - [Get order history](#get-order-history)
 - [Get details of a specific order](#get-details-of-a-specific-order)
