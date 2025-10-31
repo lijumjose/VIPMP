@@ -63,6 +63,7 @@ Order resource without read-only fields:
   "currencyCode": "USD",
   "creationDate": "2019-05-02T22:49:54Z",
   "status": "1002",
+  "source": "API",
   "lineItems": [
     {
       "extLineItemNumber": 4,
