@@ -37,7 +37,7 @@ None.
   "currencyCode": "USD",
   "creationDate": "2019-05-02T22:49:54Z",
   "status": "1000",
-  "source": "Bridge",
+  "source": "API",
   "lineItems": [
     {
       "extLineItemNumber": 4,
@@ -151,7 +151,7 @@ If `promotions` array indicates the promotions that are applied to the Order. Fo
    "currencyCode": "USD", 
    "creationDate": "2019-05-02T22:49:54Z", 
    "status": "1000", 
-   "source": "Bridge",
+   "source": "API",
     
 "lineItems": [ 
      { 
