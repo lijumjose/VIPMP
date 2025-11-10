@@ -177,8 +177,7 @@ The newly introduced `Preview Switch` option in the `OrderType` parameter of the
         {
             "extLineItemNumber" : 1,
             "offerId" : "65322651CA02A12",
-            "quantity" : 15,
-            "discountCode": "HVD_L17PRE"
+            "quantity" : 15
         }
     ],
     "cancellingItems":[
@@ -186,8 +185,7 @@ The newly introduced `Preview Switch` option in the `OrderType` parameter of the
             "extLineItemNumber": 1,
             "referenceLineItemNumber": 1,
             "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
-            "discountCode": "HVD_L17PRE",
-            "quantity" : 15,
+            "quantity" : 15
         }
     ]   
 }
@@ -206,12 +204,10 @@ The newly introduced `Preview Switch` option in the `OrderType` parameter of the
 | lineItems.subscriptionId          | Required                            | String                   | Indicates which subscription customer is trying to switch.                  |
 | lineItems.offerId                 | Required                            | String                   | Indicates which product customer is switching to                           |
 | lineItems.quantity                | Required                            | String                   | Quantity from subscription to be switched.                                  |
-| lineItems.discountCode            | Optional                            | String                   | Discount code applied to the line item                                     |
 | cancellingItems                   | Required for Switch type Order      | List | List of items the customer intends to cancel as part of the switch process.                                |
 | cancellingItems.extLineItemNumber | Required                            | String                   | A unique identifier for the line item being canceled.                                      |
 | cancellingItems.referenceLineItemNumber | Required                     | String                   | Reference line item number of the item being canceled.                                 |
 | cancellingItems.subscriptionId    | Required                            | String                   | Indicates subscription to be canceled.                                           |
-| cancellingItems.discountCode      | Optional                            | String                   | The discount code applied to the item being canceled, if any.                                   |
 
 ### Response
 
@@ -236,7 +232,6 @@ The newly introduced `Preview Switch` option in the `OrderType` parameter of the
                 "extLineItemNumber": 1,
                 "offerId": "65304479CA02A12",
                 "quantity": 15,
-                "discountCode": "HVD_L17PRE",
                 "subscriptionId": "",
                 "proratedDays": 90,
                 "pricing": {
@@ -251,7 +246,6 @@ The newly introduced `Preview Switch` option in the `OrderType` parameter of the
         {
                 "offerId": "65322651CA02A12",
                 "quantity": 15,
-                "discountCode": "HVD_L17PRE",
                 "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
                 "pricing": {
                     "partnerPrice": 300.00,
@@ -274,7 +268,6 @@ The `cancellingItems` object lists the switch plan with corresponding pricing de
 |--|--|--|--|--|
 | cancellingItems.offerId               | YES      | String                   | Part number of the item being canceled.                          | Yes                              |
 | cancellingItems.quantity              | YES      | Integer                  | Quantity being canceled.                                        | Yes                              |
-| cancellingItems.discountCode          | NO       | String                   | Discount code applied to the item being canceled.                   | Yes                              |
 | cancellingItems.subscriptionId        | YES      | String                   | Subscription ID associated with the item being canceled.                             | Yes                              |
 | cancellingItems.pricing.partnerPrice | YES      | Decimal                  | Partner price of the item being canceled.                         | Yes                              |
 | cancellingItems.pricing.discountedPartnerPrice | YES | Decimal          | Partner price after applying discounts.                      | Yes                              |
@@ -310,7 +303,6 @@ Request body:
             "extLineItemNumber" : 1,
             "offerId" : "65322651CA02A12",
             "quantity" : 15,
-            "discountCode": "HVD_L17PRE"
         }
     ],
     "cancellingItems":[
@@ -318,7 +310,6 @@ Request body:
             "extLineItemNumber": 1,
             "referenceLineItemNumber": 1,
             "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
-            "discountCode": "HVD_L17PRE",
             "quantity" : 15,
         }
     ]
@@ -342,7 +333,6 @@ Request body:
             "extLineItemNumber": 1,
             "offerId": "65304479CA02A12",
             "quantity": 15,
-            "discountCode": "HVD_L17PRE",
             "subscriptionId": ""
                  
         }
@@ -352,7 +342,6 @@ Request body:
 			"offerId": "65322651CA02A12",
 			"extLineItemNumber": 1,
             "quantity": 15,
-			"discountCode": "HVD_L17PRE",
             "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
 			"referenceLineItemNumber": 1,
 		}
@@ -399,7 +388,6 @@ Sample response:
                 "extLineItemNumber": 1,
                 "offerId": "65304479CA02A12",
                 "quantity": 15,
-                "discountCode": "HVD_L17PRE",
                 "subscriptionId": "asdfewaw1879af7204c7daee1NA"
         }
     ],
@@ -408,7 +396,6 @@ Sample response:
 				"offerId": "65322651CA02A12",
 				"extLineItemNumber": 1,
                 "quantity": 15,
-				"discountCode": "HVD_L17PRE",
                 "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
 				"referenceLineItemNumber": 1,
 		}
@@ -451,7 +438,6 @@ Sample response:
                 "extLineItemNumber": 1,
                 "offerId": "65304479CA02A12",
                 "quantity": 15,
-                "discountCode": "HVD_L17PRE",
                 "subscriptionId": "drger4cb14561879af7204c7daee1NA"
         }
     ],
@@ -460,7 +446,6 @@ Sample response:
 				"offerId": "65322651CA02A12",
 				"extLineItemNumber": 1,
                 "quantity": 15,
-				"discountCode": "HVD_L17PRE",
                 "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
 				"referenceLineItemNumber": 1,
 		}
@@ -505,8 +490,7 @@ Request body:
         {
             "extLineItemNumber" : 1,
             "offerId" : "65322651CA02A12",
-            "quantity" : 15,
-            "discountCode": "HVD_L17PRE",
+            "quantity" : 15
         }
     ],
     "cancellingItems":[
@@ -514,8 +498,7 @@ Request body:
             "extLineItemNumber": 1,
             "referenceLineItemNumber": 1,
             "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
-            "discountCode": "HVD_L17PRE",
-            "quantity" : 15,
+            "quantity" : 15
         }
     ]   
 }
@@ -545,7 +528,6 @@ Request body:
                 "extLineItemNumber": 1,
                 "offerId": "65304479CA02A12",
                 "quantity": 15,
-                "discountCode": "HVD_L17PRE",
                 "subscriptionId": "werb5a4ctrew879af7204c7daee1NA",
                 "proratedDays": 90,
                 "pricing": {
@@ -560,7 +542,6 @@ Request body:
         {
                 "offerId": "65322651CA02A12",
                 "quantity": 15,
-                "discountCode": "HVD_L17PRE",
                 "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
                 "pricing": {
                     "partnerPrice": -300.00,
@@ -592,8 +573,7 @@ Use `REVERT_SWITCH` as the `orderType` in the Create Order API to revert to the 
         {
             "extLineItemNumber" : 1,
             "offerId" : "65322651CA02A12",
-            "quantity" : 15,
-            "discountCode": "HVD_L17PRE"
+            "quantity" : 15
         }
     ],
     "cancellingItems":[
@@ -601,7 +581,6 @@ Use `REVERT_SWITCH` as the `orderType` in the Create Order API to revert to the 
             "extLineItemNumber": 1,
             "referenceLineItemNumber": 1,
             "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
-            "discountCode": "HVD_L17PRE",
             "quantity" : 15,
         }
     ]   
@@ -632,7 +611,6 @@ Use `REVERT_SWITCH` as the `orderType` in the Create Order API to revert to the 
                 "extLineItemNumber": 1,
                 "offerId": "65304479CA02A12",
                 "quantity": 15,
-                "discountCode": "HVD_L17PRE",
                 "subscriptionId": "werb5a4ctrew879af7204c7daee1NA",
                 "proratedDays": 90,
                 "pricing": {
@@ -647,7 +625,6 @@ Use `REVERT_SWITCH` as the `orderType` in the Create Order API to revert to the 
         {
                 "offerId": "65322651CA02A12",
                 "quantity": 15,
-                "discountCode": "HVD_L17PRE",
                 "subscriptionId": "abfb5a4cb14561879af7204c7daee1NA",
                 "pricing": {
                     "partnerPrice": -300.00,
