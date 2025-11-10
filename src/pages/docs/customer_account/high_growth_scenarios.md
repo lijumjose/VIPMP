@@ -46,13 +46,13 @@ The following list gives an overview of possible scenarios. You may encounter ot
 |----------------------------------------------------------|----------------------------------------|
 | - Quantity of Acrobat Pro: 120 <br /> - Renewal quantity: 30 | The customer does not opt for MOQ offers. <br /> The base offer of Acrobat Pro will get renewed with the renewal quantity 30. |
 
-### Scenario 4: Customer purchases MOQ offer in the mid-term, after setting renewalQuantity to a lower value
+### Scenario 4: Customer purchases MOQ offer in the mid-term, after setting renewalQuantity to a lower value (Customer needs to set renewalQuantity to a higher value before purchasing MOQ)
 
 **Example:**
 
 |Before AD      |AD-7 | At AD |
 |-------------------------------------------------------------|---------------------------------------------------------|--|
-|- Quantity of Acrobat Pro: 30 <br /> - Renewal quantity: 25  | Mid-term purchase: MOQ 100 <br /> - Number of licenses of Acro Pro becomes 130 <br />- Renewal quantity: 100 (based on the MOQ purchased) |  100 licenses of Acro Pro with MOQ 100 discount are renewed and invoiced. <br /> The customer will be renewed with 100 MOQ because the renewal quantity earlier opted will be overridden by the MOQ quantity because the earlier opted renewal quantity is not sufficient to maintain the MOQ.|
+|- Quantity of Acrobat Pro: 30 <br /> - Renewal quantity: 25  |Renewal quantity needs to be updated to 100 <br /> <br />- Mid-term purchase: MOQ 100  <br /> - Number of licenses of Acro Pro becomes 130 <br />- Renewal quantity: 100 (based on the MOQ purchased) |  100 licenses of Acro Pro with MOQ 100 discount are renewed and invoiced. <br /> <br /> The customer will be renewed with 100 MOQ because the renewal quantity earlier opted will be overridden by the MOQ quantity because the earlier opted renewal quantity is not sufficient to maintain the MOQ.|
 
 ### Scenario 5: Customer purchases MOQ offer in the mid-term after setting renewalQuantity to a higher value
 
