@@ -9,4 +9,5 @@ The following error codes are specific to mid-term upgrades:
 | 2151       | Requested quantity must be less than or equal to the active subscription quantity. |    Preview Switch Order,   Create Switch Order            |     400             |
 | 2152       | Only one item supported for switch. |    Preview Switch Order,   Create Switch Order            |     400             |
 | 2153       | Line item and cancelling line item mismatch. |    Preview Switch Order,   Create Switch Order            |     400             |
+| 2154       | Upgrade not supported |    Preview Switch Order,   Create Switch Order.            |     400             |
 | 3115      | Invalid Subscription or Customer ID |   Preview Switch Order, Create Switch Order, Preview Revert Switch, Create Revert Switch Order            |     400             |
