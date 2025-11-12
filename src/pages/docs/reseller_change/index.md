@@ -12,13 +12,13 @@ Account Manager from the Reseller Organization is available in the account detai
 
 The edit button next to the view button allows the customer admin to opt for Reseller Change by generating an 8-digit unique code, which serves as an approval code for the new reseller to move the customer to his organization.
 
-![Generate code](../image/approval_code.jpg)
+![Generate code](../image/approval_code.png)
 
 Click **Generate Code** to generate a new approval code.
 
-![Approval code](../image/approval_code_2.jpg)
+![Approval code](../image/approval_code_2.png)
 
-This code is valid for 72 hours. The same code is sent to all the customer administrators through email. The customer administrator then shares the approval code with the new reseller for transfer authorizations.
+This code is valid for 7 hours. The same code is sent to all the customer administrators through email. The customer administrator then shares the approval code with the new reseller for transfer authorizations.
 
 ![Reseller change process](../image/reseller_change_process.jpg)
 
