@@ -18,7 +18,7 @@ Click **Generate Code** to generate a new approval code.
 
 ![Approval code](../image/approval_code_2.png)
 
-This code is valid for 7 hours. The same code is sent to all the customer administrators through email. The customer administrator then shares the approval code with the new reseller for transfer authorizations.
+This code is valid for 7 days. The same code is sent to all the customer administrators through email. The customer administrator then shares the approval code with the new reseller for transfer authorizations.
 
 ![Reseller change process](../image/reseller_change_process.jpg)
 
