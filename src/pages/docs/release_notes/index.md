@@ -9,7 +9,7 @@
 
 #### Change to reseller change approval code validity
 
-- The reseller approval code is now valid for 7 hours, reduced from the previous 72 hours. This code is emailed to all customer administrators, who then share it with the new reseller to authorize the transfer. Read more about [Reseller change process](../reseller_change/index.md).
+- The reseller approval code is now valid for 7 days, an increase from the previous 72 hours. This code is emailed to all customer administrators, who then share it with the new reseller to authorize the transfer. Read more about [Reseller change process](../reseller_change/index.md).
 
 #### Display source of the Order in Create Order and Get Order API responses
 
