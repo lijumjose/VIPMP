@@ -5,7 +5,31 @@
 
 ## API changes
 
-### August 14, 2025
+### November 11, 2025
+
+#### Change to reseller change approval code validity
+
+- The reseller approval code is now valid for 7 hours, reduced from the previous 72 hours. This code is emailed to all customer administrators, who then share it with the new reseller to authorize the transfer. Read more about [Reseller change process](../reseller_change/index.md).
+
+#### Display source of the Order in Create Order and Get Order API responses
+
+- Added the `source` parameter in the responses of [Create Order](../order_management/create_order.md) and [Get Order](../order_management/get_order.md) APIs to indicate the origin of the order. Possible values are: `API` or `System`.
+
+#### Changes to Get Customer List and Get Reseller List APIs
+
+- Added the `companyProfile.companyName` parameter to [Get Customer List](../customer_account/get_customer_list.md) and [Get Reseller List](../reseller_account/get_reseller_list.md) API responses to display the customer name and reseller name, respectively.
+
+#### Display deploymentID and currencyCode in Reseller Transfer API responses
+
+- Added `deploymentId` and `currencyCode` parameters to the responses of [Preview Reseller Transfer](../reseller_change/preview_transfer.md), [Commit Transfer](../reseller_change/commit_transfer.md), and [Get Reseller Transfer](../reseller_change/get_transfer.md) APIs.
+
+#### Base part number in the GET Open Acquisitions API response
+
+- Introduced the `baseOfferId` parameter in the response payload of the GET Open Acquisitions (aka GET Licenses Pending Partner Order) API. This parameter in the API response allows partners to match the correct part number using product name details from notification emails and proceed with order placement.
+
+  Read more about [Get licenses pending partner order API](../customer_account/get_licenses.md).
+
+### August 22, 2025
 
 #### Preview with pricing
 
