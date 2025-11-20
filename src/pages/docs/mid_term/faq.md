@@ -267,7 +267,7 @@ GET `/v3/customers/{customerId}/subscriptions/{subscriptionId}`
 *Verify:* status, currentQuantity, and offer ID.
 - **Step 3:** Create preview (recommended).  
 
-```json 
+```json
 POST /v3/customers/{customerId}/orders?fetch-price=true
 {
     "orderType": "PREVIEW_SWITCH",
