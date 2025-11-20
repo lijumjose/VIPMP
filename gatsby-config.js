@@ -283,6 +283,10 @@ module.exports = {
                 title: 'Error codes specific to mid-term upgrades',
                 path: '/docs/mid_term/error_codes.md'
               },
+              {
+                title: 'Frequently asked questions',
+                path: '/docs/mid_term/faq.md'
+              },
             ]
            },
         ]
