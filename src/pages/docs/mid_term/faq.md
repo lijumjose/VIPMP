@@ -100,7 +100,7 @@ This detailed FAQ covers common questions about Adobe’s mid-term upgrade featu
 
 - **Method 1: By market segment (general discovery).**
 
-  GET `{CPAPI_BASE_URL}/v3/offer-switch-paths?market-segment=COM&country=US&language=MULT`
+  GET `{env root url}/v3/offer-switch-paths?market-segment=COM&country=US&language=MULT`
 
   Returns all possible switch paths for the specified market segment.
 
@@ -112,7 +112,7 @@ This detailed FAQ covers common questions about Adobe’s mid-term upgrade featu
 
 - **Method 2: By subscription (specific customer).**
 
-  GET `{CPAPI_BASE_URL}/v3/offer-switch-paths?subscription-id={{subscriptionId}}&customer-id={{customerId}}`
+  GET `{env root url}/v3/offer-switch-paths?subscription-id={{subscriptionId}}&customer-id={{customerId}}`
 
   Returns valid switch targets for a specific customer's subscription.
 
@@ -124,7 +124,7 @@ This detailed FAQ covers common questions about Adobe’s mid-term upgrade featu
 
 - **Example request:**
 
-  GET `{CPAPI_BASE_URL}/v3/offer-switch-paths?offer-id=65304479CA01A12&market-segment=COM&country=US&language=MULT`
+  GET `{env root url}/v3/offer-switch-paths?offer-id=65304479CA01A12&market-segment=COM&country=US&language=MULT`
 
 - **Example response:**
 
@@ -214,10 +214,10 @@ This detailed FAQ covers common questions about Adobe’s mid-term upgrade featu
 **Resolution:**
 
 - **Step 1:** Verify with subscription-based API.  
-GET `{CPAPI_BASE_URL}/v3/customers/{customerId}/subscriptions/{subscriptionId}/offer-switch-paths`
+GET `{env root url}/v3/customers/{customerId}/subscriptions/{subscriptionId}/offer-switch-paths`
 
 - **Step 2:** If no paths returned, check general paths.  
-GET `{CPAPI_BASE_URL}/v3/offer-switch-paths?market-segment=COM&country=US&language=MULT`
+GET `{env root url}/v3/offer-switch-paths?market-segment=COM&country=US&language=MULT`
 
 - **Step 3:** If path exists in general but not for subscription.  
 → Review subscription status, discount level, and market segment.
@@ -378,7 +378,7 @@ Subscription A (100 licenses):
 - Switch quantity ≤ Current subscription quantity  
   - Cannot switch more licenses than you have  
   - Error 2151: "Quantity exceeded"
-- lineItemsquantity = cancellingItemsquantity  
+- lineItems.quantity = cancellingItems.quantity
   - Must be equal (1:1 switch)  
   - Error 2149: "Quantity mismatch"
 - Minimum quantity: 1  
@@ -890,7 +890,7 @@ Verify `currentQuantity` restored to pre-switch value.
 |------------------------|-------|-------------------------------------------|------------------------|
 | extLineItemNumber      | lineItems     | Identifies the line item in the current order     | Always 1               |
 | extLineItemNumber      | cancellingItems        | Identifies the cancelling item               | Always 1               |
-| referenceLineItemNumber| cancellingItems        | References which line item is being cancelled | Must match lineItemsextLineItemNumber (1) |
+| referenceLineItemNumber| cancellingItems        | References which line item is being cancelled | Must match lineItems.extLineItemNumber |
 
 **For switch orders:** All three must be 1 (since only one line item is allowed).
 
@@ -900,7 +900,7 @@ Verify `currentQuantity` restored to pre-switch value.
 
 | Parameter         | For            | Purpose                                       | Value       |
 |-------------------|----------------|-----------------------------------------------|-------------|
-| fetch-price       | PREVIEW_SWITCH | Get detailed pricing information              | true, false |
+| fetch-price       | PREVIEW_SWITCH <br/>PREVIEW_REVERT_SWITCH  | Get detailed pricing information              | true, false |
 | reassign-users    | SWITCH         | Automatically reassign users (Teams only)     | true, false |
 
 **Examples:**
@@ -915,8 +915,6 @@ POST /v3/customers/{customerId}/orders?reassign-users=true
 # Both parameters
 POST /v3/customers/{customerId}/orders?fetch-price=true&reassign-users=true
 ```
-
-**Note:** PREVIEW_REVERT_SWITCH returns pricing by default (fetch-price parameter not needed).
 
 ## Error handling
 
@@ -956,8 +954,8 @@ POST /v3/customers/{customerId}/orders?fetch-price=true&reassign-users=true
 
 **Example:**
 
-- Acrobat Pro L02 (High Growth Offer) → Acrobat Sign: Not allowed.
-- Acrobat Pro (standard) → Acrobat Pro L02 (High Growth Offer): May be allowed.
+- Acrobat Pro (High Growth Offer) → Acrobat Sign: Not allowed.
+- Acrobat Pro (standard) → Acrobat Pro (High Growth Offer): May be allowed.
 
 ### Can I switch products across different regions?
 
