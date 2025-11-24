@@ -378,7 +378,7 @@ Subscription A (100 licenses):
 - Switch quantity ≤ Current subscription quantity  
   - Cannot switch more licenses than you have  
   - Error 2151: "Quantity exceeded"
-- lineItems.quantity = cancellingItems.quantity 
+- lineItems.quantity = cancellingItems.quantity
   - Must be equal (1:1 switch)  
   - Error 2149: "Quantity mismatch"
 - Minimum quantity: 1  
