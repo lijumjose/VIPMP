@@ -428,7 +428,7 @@ module.exports = {
                   path: 'sandbox/sandbox_portal/customer_management/create_customer.md'
                   },
                   {
-                  title: 'Create Product Arrangements for a customer',
+                  title: 'Create Purchase Authorizations for a customer',
                   path: 'sandbox/sandbox_portal/customer_management/create_pa_for_customer.md'
                   },
                   {
