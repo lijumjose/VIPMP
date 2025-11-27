@@ -1,6 +1,6 @@
-# Create Product Arrangements for a customer
+# Create Purchase Authorizations for a customer
 
-Adding products in the Admin Console will create Product Arrangements (PAs) that remain open for seven days. Orders must be placed before the PAs expire. You can create PAs for each customer in the Sandbox UI by following these steps:
+Adding products in the Admin Console will create Purchase Authorization (PAs) that remain open for seven days. Orders must be placed before the PAs expire. You can create PAs for each customer in the Sandbox UI by following these steps:
 
 1. Navigate to **Manage Records > Csutomers**.
 
