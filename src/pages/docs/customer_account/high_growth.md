@@ -16,7 +16,7 @@ The available High Growth Offers based on MOQ are:
 
 ## Who is eligible for High Growth Offers?
 
-Enterprise and Team customers of Acrobat Pro in the commerce and government market segments can take advantage of High Growth Offers if they meet the following criteria:
+Enterprise and Team customers of Acrobat Pro in the commerce, government, and education market segments can take advantage of High Growth Offers if they meet the following criteria:
 
 1. **Enrollment:** Customers must be enrolled in the [3YC program](./three_year_commit.md).
 2. **MOQ requirement:** Customers require a minimum order quantity (MOQ) of 100 or more.
