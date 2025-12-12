@@ -583,7 +583,7 @@ Use the `POST /v3/customers/<customer-id>/orders` API with the `orderType` as `P
 
 ### Create a scheduled subscription with flexible discount
 
-You can use the `POST /v3/customers/<customer-id>/subscriptions` API with `flexDiscountCodes` in the request to create a subscription for a specific customer. 
+You can use the `POST /v3/customers/<customer-id>/subscriptions` API with `flexDiscountCodes` in the request to create a subscription for a specific customer.
 
 **Note:**
 

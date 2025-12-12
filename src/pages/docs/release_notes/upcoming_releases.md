@@ -17,4 +17,4 @@ New capabilities:
 **Sanbox changes:**
 
 - In **Manage Records > Customers**, you can now view the subscription details, including any flexible discounts that have been applied.
- - For more information, see [Manage Flexible Discounts](../../sandbox/sandbox_portal/flex_discounts/index.md#view-flexible-discounts-applied-to-a-subscription).
+- For more information, see [Manage Flexible Discounts](../../sandbox/sandbox_portal/flex_discounts/index.md#view-flexible-discounts-applied-to-a-subscription).
