@@ -1,6 +1,6 @@
 # Manage Flexible Discounts
 
-Partners can get flexible discounts for a product in a specific market segment and country. These discounts can be applied during the order placement process. For detailed guidance on managing Flexible Discounts through APIs, refer to [Manage Flexible Discounts using APIs](/src/pages/docs/flex_discounts/apis.md).
+Partners can get flexible discounts for a product in a specific market segment and country. These discounts can be applied while placing the order or creating a subscription. For detailed guidance on managing Flexible Discounts through APIs, refer to [Manage Flexible Discounts using APIs](/src/pages/docs/flex_discounts/apis.md).
 
 ## Testing flexible discounts in Sandbox
 
@@ -8,6 +8,7 @@ You can explore and test the Flexible Discounts feature in the Sandbox environme
 
 - [View the available flexible discounts](#view-the-available-flexible-discounts)
 - [View flexible discounts applied to an Order](#view-flexible-discounts-applied-to-an-order)
+- [View flexible discounts applied to a subscription](#view-flexible-discounts-applied-to-a-subscription)
 
 ### View the available flexible discounts
 
@@ -21,8 +22,9 @@ You can view Flexible Discounts applicable for all countries by selecting **All 
 
 The UI displays a list of current discounts, including the following details:
 
-- Applicable market segments
-- Applicable country
+- Option to filter flexible discounts based on the applicable market segments
+- Option to filter flexible discounts based on the applicable country
+- Option to filter flexible discounts applicable for renewal or for new purchases
 - Name and description of the discount
 - Discount `code` to identify the discount. Use this code to apply the discounted price.
 - Start and end date of discount
@@ -43,3 +45,9 @@ If a Flexible Discount is applied during order placement, its details can be vie
 ![View Flexible Discounts applied to an order](../image/flex_view.png)
 
 The **flexDiscounts** section displays the discount code and indicates whether it was successfully applied to the order.
+
+### View flexible discounts applied to a Subscription
+
+In **Manage Records > Customers**,  the subscription details include any flexible discounts that have been applied. If no flexible discount is applied, the **FlexDiscountCode** field remains empty.  For example:
+
+![Flex Discount details in Subscription details](../image/flex_subscription.png)
