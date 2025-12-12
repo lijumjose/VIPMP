@@ -2,37 +2,19 @@
 
 The following features are scheduled for release:
 
-## Mid-term upgrades
+## On-demand Flexible Discounts
 
-The **VIP Marketplace – Mid-Term Upgrades** capability introduces a comprehensive set of APIs that allow Adobe partners to upgrade customer subscriptions during the active term, without waiting for the renewal date.
+Partners can now access details about the flexible discounts available for a customer, and apply them while creating or modifying a subscription.
 
-**New capabilities**
+New capabilities:
 
-- [Upgrade path discovery](../mid_term/apis.md#discover-upgrade-path)
-  Partners can retrieve valid upgrade paths using the new [GET Offer Switch Paths](../mid_term/apis.md#discover-upgrade-path) API, filtered by market segment, country, and language.
+- [Preview Renewal with flexible discount code](../flex_discounts/apis.md#preview-renewal-with-flexible-discount-code)
+- [Manual preview renewal with flexible discount code](../flex_discounts/apis.md#manual-preview-renewal-order-with-flexible-discount-code)
+- [Create Scheduled Subscription with flexible discount](../flex_discounts/apis.md#create-a-scheduled-subscription-with-flexible-discount)
+- [Update Subscription with a flexible discount code](../flex_discounts/apis.md#update-a-subscription-with-flexible-discount-code)
+- [Remove  flexible discount from a subscription](../flex_discounts/apis.md#remove-a-flexible-discount-from-a-subscription)
 
-- [Preview switch order](../mid_term/apis.md#2-preview-switch-order)
-  A new `orderType` value, **`PREVIEW_SWITCH`**, has been added to the **Create Order API**. This allows partners to generate upgrade quotes before placing a switch order.
+**Sanbox changes:**
 
-- [Switch order execution](../mid_term/apis.md#apply-switch-plan)
-  Partners can place upgrade orders using the `SWITCH` order type, specifying both the "From" and "To" product details. The API supports automatic user reassignment via the `reassign-users=true` query parameter.
-
-- [Upgrade reversion](../mid_term/apis.md#revert-switch-order)
-  Partners can revert a switch order within 14 days using the new `REVERT_SWITCH` and `PREVIEW_REVERT_SWITCH` order types. This restores the original subscription and de-provisions the upgraded product.
-
-- [Partial and full upgrades](../mid_term/apis.md#discover-upgrade-path)
-  The system supports both full and partial upgrades, including seat expansions and product transitions (example: Acrobat Standard to Acrobat Pro).
-
-- [Enhanced Error Handling](../mid_term/error_codes.md)
-
-  Several new error codes have been introduced to provide clear feedback for mid-term upgrade scenarios, including:
-
-  - 2149: Quantity mismatch
-  - 2150: Switch path validity check failed
-  - 2151: Quantity exceeded
-  - 2152: Multiple line items not supported
-  - 2153: Line item and cancelling line item mismatch
-  - 2154: Upgrade not supported
-  - 3115: Invalid subscription
-
-Read more about [Mid-term upgrades](../mid_term/index.md).
+- In **Manage Records > Customers**, you can now view the subscription details, including any flexible discounts that have been applied.
+ - For more information, see [Manage Flexible Discounts](../../sandbox/sandbox_portal/flex_discounts/index.md#view-flexible-discounts-applied-to-a-subscription).

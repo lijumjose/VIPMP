@@ -1,17 +1,19 @@
 # Manage Flexible Discounts
 
-The Flexible Discount feature enables partners to easily adjust product prices, making them more attractive to different customer segments. These discounts are primarily intended to boost customer retention or acquisition. You can access details about the flexible discounts available for a product in a specific market segment and country, and apply them when placing an order.
+The Flexible Discount feature enables partners to easily adjust product prices, making them more attractive to different customer segments. These discounts are primarily intended to boost customer retention or acquisition. You can access details about the flexible discounts available for a product in a specific market segment and country, and apply them while placing an order or when creating or modifying a subscription.
 
 Key advantages of flexible discounts include:
 
-**Discount offers to increase new product adoption:**
+- **Discounts to drive new product adoption:**
 
-- Selective discounts for enterprise accounts to encourage early adoption of new products.
-- Facilitates faster market penetration.
+  - Selective discounts for enterprise accounts to encourage early adoption of new products.
+  - Facilitates faster market penetration.
 
-**Quick flexible discount launches for seasonal sales:**
+- **Quick flexible discount launches for seasonal sales:**
 
-- Allows partners to activate discounts within days for timely seasonal discounts like Black Friday.
+  - Allows partners to activate discounts within days for timely seasonal discounts like Black Friday.
+
+## Flexible discount types
 
 The following two types of discounts are available with flexible discounts:
 

@@ -1,12 +1,16 @@
 
 # Manage Flexible Discounts using APIs
 
-You can use the following APIs to get details of available flexible discounts and apply them when placing an order:
+You can use the following APIs to get details of available flexible discounts and apply them while placing an order or creating or modifying a subscription:
 
 - [Get Flexible Discounts](#get-flexible-discounts)
 - [Create Order and Preview Order](#create-order-and-preview-order)
 - [Get Order](#get-order)
-- [Get Order History](#get-order-history-of-a-customer)
+- [Get Order History of a customer](#get-order-history-of-a-customer)
+- [Preview Renewal](#preview-renewal-with-flexible-discount-code)
+- [Create a subscription with flexible discount](#create-a-scheduled-subscription-with-flexible-discount)
+- [Update subscription with a flexible discount code](#update-a-subscription-with-flexible-discount-code)
+- [Remove a flexible discount from a subscription](#remove-a-flexible-discount-from-a-subscription)
 
 ## Get Flexible Discounts
 
@@ -275,7 +279,7 @@ The `flexDiscountCodes` parameter in the above request indicates the flexible di
 | flexDiscounts        | Object | Details of the flexible discount applied to that lineItem             |
 | flexDiscounts[].id  | String | A unique identifier for the promotion. Used to retrieve or reference a specific flexible discount.          |
 | flexDiscounts[].code  | String | The flexible discount code that was applied to that lineItem          |
-| flexDiscount[].result| String | The “SUCCESS" indicates that the flexible discount code applicability was successful. |
+| flexDiscounts[].result| String | The “SUCCESS" indicates that the flexible discount code applicability was successful. |
 
 ### HTTP Status Codes
 
@@ -347,11 +351,11 @@ None.
 
 ### HTTP Status Codes
 
-The same as the standard Get Order API.
+The same as the standard [Get Order API](../order_management/get_order.md).
 
 ## Get Order History of a Customer
 
-The `Get Order History` API to fetch flexible discounts applicable to a product:
+The `Get Order History` API retrieves past orders for a customer, including any applied flexible discounts.
 
 | Endpoint                             | Method |
 |--------------------------------------|--------|
@@ -420,3 +424,288 @@ None.
 ### HTTP Status Codes
 
 The same as the standard [Get Order History API](../order_management/get_order.md).
+
+## Apply flexible discounts on subscriptions
+
+- [Preview Renewal with flexible discount code](#preview-renewal-with-flexible-discount-code)
+- [Manual preview renewal with flexible discount code](#manual-preview-renewal-order-with-flexible-discount-code)
+- [Create Scheduled Subscription with flexible discount](#create-a-scheduled-subscription-with-flexible-discount)
+- [Update Subscription with a flexible discount code](#update-a-subscription-with-flexible-discount-code)
+- [Remove  flexible discount from a subscription](#remove-a-flexible-discount-from-a-subscription)
+
+### Preview renewal with flexible discount code
+
+Eligibility for flexible discounts is validated in both automated preview renewal
+and manual preview renewals.
+
+**Note:** The flexible discount codes included in the response apply only to renewal scenarios. They cannot be used when creating a new order.
+
+#### Automated preview renewal
+
+The `POST /v3/customers/<customer-id>/orders` API with the `orderType` as `PREVIEW_RENEWAL` is used in the request to verify the order eligibility, including the eligibility of the customer for the flexible discount code that is currently applied on the subscription.
+
+**Request**
+
+```json
+{
+  "orderType": "PREVIEW_RENEWAL"
+}
+```
+
+**Response**
+
+```json
+{
+    "referenceOrderId": "",
+    "orderType": "PREVIEW_RENEWAL",
+    "externalReferenceId": "759",
+    "customerId": "9876543210",
+    "orderId": "5120008001",
+    "currencyCode": "USD",
+    "creationDate": "2019-05-02T22:49:54Z",
+    "status": "",
+    "lineItems": [
+        {
+            "extLineItemNumber": 1,
+            "offerId": "80004567CA01A12",
+            "quantity": 1,
+            "status": "1000",
+            "subscriptionId": "",
+            "currencyCode": "USD",
+            "flexDiscounts": [
+                {
+                    "id": "55555555-313b-476c-9d0b-6a610d5b91e0",
+                    "code": "ABCD-XV54-HG34-78YT",
+                    "result": "SUCCESS"
+                }
+            ]
+        },
+        {
+            "extLineItemNumber": 2,
+            "offerId": "80004561CA02A12",
+            "quantity": 11,
+            "status": "1000",
+            "subscriptionId": "",
+            "currencyCode": "USD",
+            "flexDiscounts": [
+                {
+                    "id": "55522355-313b-476c-9d0b-7a710f4h83s4",
+                    "code": "ABCD-XV54-HG34-78YT",
+                    "result": "SUCCESS"
+                }
+            ]
+        }
+    ],
+    "links": { // As existing response fields }
+}
+```
+
+#### Manual Preview Renewal Order with flexible discount code
+
+Use the `POST /v3/customers/<customer-id>/orders` API with the `orderType` as `PREVIEW_RENEWAL` to manually preview the renewal order, including the eligibility of the customer for the flexible discount code included in the request.
+
+**Request**
+
+```json
+
+{
+  "orderType": "PREVIEW_RENEWAL",
+  "externalReferenceId": "759",
+  "currencyCode": "USD",
+  "lineItems": [
+    {
+      "extLineItemNumber": 1,
+      "offerId": "80004567CA01A12",
+      "quantity": 1,
+      "currencyCode": "USD",
+      "subscriptionId": " e0b170437c4e96ac5428364f674dffNA",
+      "flexDiscountCodes": ["ABCD-XV54-HG34-78YT"]
+    },
+    {
+      "extLineItemNumber": 2,
+      "offerId": "80004561CA02A12",
+      "quantity": 11,
+      "currencyCode": "USD",
+      "subscriptionId": " fff170437c4e96ac5428364f674dfggg",
+      "flexDiscountCodes": ["ABCD-XV54-HG34-78YT"]
+    }
+  ]
+}
+```
+
+**Response**
+
+```json
+{
+    "referenceOrderId": "",
+    "orderType": "PREVIEW_RENEWAL",
+    "externalReferenceId": "759",
+    "customerId": "9876543210",
+    "orderId": "5120008001",
+    "currencyCode": "USD",
+    "creationDate": "2019-05-02T22:49:54Z",
+    "status": "1002",
+    "lineItems": [
+        {
+            "extLineItemNumber": 1,
+            "offerId": "80004567CA01A12",
+            "quantity": 1,
+            "status": "1002",
+            "subscriptionId": "",
+            "currencyCode": "USD",
+            "flexDiscounts": [
+                {
+                    "id": "55555555-313b-476c-9d0b-6a610d5b91e0",
+                    "code": "ABCD-XV54-HG34-78YT",
+                    "result": "SUCCESS"
+                }
+            ]
+        },
+        {
+            "extLineItemNumber": 2,
+            "offerId": "80004561CA02A12",
+            "quantity": 11,
+            "status": "1002",
+            "subscriptionId": "",
+            "currencyCode": "USD",
+            "flexDiscounts": [
+                {
+                    "id": "55522355-313b-476c-9d0b-7a710f4h83s4",
+                    "code": "ABCD-XV54-HG34-78YT",
+                    "result": "SUCCESS"
+                }
+            ]
+        }
+    ],
+    "links": { // As existing response fields }
+}
+```
+
+### Create a scheduled subscription with flexible discount
+
+You can use the `POST /v3/customers/<customer-id>/subscriptions` API with `flexDiscountCodes` in the request to create a subscription for a specific customer. 
+
+**Note:**
+
+- Flexible discount codes are not validated while creating a subscription. Verification of customer eligibility occurs exclusively through the Preview Renewal API.
+- A flexible discount code can be redeemed only once for a customer, thereby reducing the risk of unwanted code redemptions and thus preventing abuse.
+
+#### Request
+
+```json
+
+{
+  "offerId": "65304470CA01012",
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 100,
+    "flexDiscountCodes": ["ABCD-XV54-HG34-78YT"]
+  }
+}
+```
+
+#### Response
+
+```json
+{
+  "subscriptionId": "cc8efgh8bc4354a4b38006c87804ceNA",
+  "currentQuantity": 0,
+  "offerId": "65304470CA01012",
+ 
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 5,
+    "flexDiscountCodes": ["ABCD-XV54-HG34-78YT"]
+  },
+  "renewalDate": "2026-05-20",
+  "creationDate": "2025-10-20T22:49:55Z",
+  "status": "1009",
+ 
+  "links": {
+    "self": {
+      "uri": "/v3/customers/P1005053489/subscriptions/cc8efgh8bc4354a4b38006c87804ceNA",
+      "method": "GET",
+      "headers": []
+    }
+  }
+}
+```
+
+### Update a subscription with flexible discount code
+
+Use the `PATCH /v3/customers/<customer-id>/subscriptions/<subscription-id>` API with `flexDiscountCodes` in the request to update a subscription with the corresponding flexible discount.
+
+**Note:** Flexible discount codes are not validated while updating a subscription. Verification of customer eligibility occurs exclusively through the Preview Renewal API.
+
+#### Request
+
+The `flexDiscountCodes` parameter indicates the flexible discounts applicable for the subscription.
+
+```json
+{
+  "autoRenewal": {
+    "enabled": true, // If Auto Renew is OFF, it must be turned ON to apply PromoCode. If it is already ON, this field is OPTIONAL.
+    "flexDiscountCodes": ["ABCD-XV54-HG34-78YT"]
+  }
+}
+```
+
+#### Response
+
+```json
+{
+  "subscriptionId": "8675309",
+  "currentQuantity": 10,
+  "usedQuantity": 2,
+  "offerId": "65304470CA01012",
+ 
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 5,
+    "flexDiscountCodes": ["ABCD-XV54-HG34-78YT"]
+  },
+  "renewalDate": "2020-05-20",
+  "creationDate": "2019-05-20T22:49:55Z",
+  "deploymentId": "12345",
+  "currencyCode": "USD",
+  "status": "1000",
+ 
+  "links": {
+    "self": {}
+  }
+}
+```
+
+### Remove a flexible discount from a subscription
+
+Use the `PATCH /v3/customers/<customer-id>/subscriptions/<subscription-id>` with the query parameter `reset-flex-discount-codes=true` to remove a flexible discount from a subscription
+
+#### Request
+
+- **Request URL:** `PATCH /v3/customers/<customer-id>/subscriptions/<subscription-id>?reset-flex-discount-codes=true`
+- **Request body:** None.
+
+#### Response
+
+```json
+{
+  "subscriptionId": "8675309",
+  "currentQuantity": 10,
+  "usedQuantity": 2,
+  "offerId": "65304470CA01012",
+ 
+  "autoRenewal": {
+    "enabled": true,
+    "renewalQuantity": 5
+  },
+  "renewalDate": "2020-05-20",
+  "creationDate": "2019-05-20T22:49:55Z",
+  "deploymentId": "12345",
+  "currencyCode": "USD",
+  "status": "1000",
+ 
+  "links": {
+    "self": {}
+  }
+}
+```
