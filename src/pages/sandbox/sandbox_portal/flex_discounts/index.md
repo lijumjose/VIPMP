@@ -24,7 +24,7 @@ The UI displays a list of current discounts, including the following details:
 
 - Option to filter flexible discounts based on the applicable market segments
 - Option to filter flexible discounts based on the applicable country
-- Option to filter flexible discounts applicable for renewal or for new purchases 
+- Option to filter flexible discounts applicable for renewal or for new purchases
 - Name and description of the discount
 - Discount `code` to identify the discount. Use this code to apply the discounted price.
 - Start and end date of discount
