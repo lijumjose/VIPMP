@@ -48,6 +48,14 @@ The **flexDiscounts** section displays the discount code and indicates whether i
 
 ### View flexible discounts applied to a Subscription
 
-In **Manage Records > Customers**,  the subscription details include any flexible discounts that have been applied. If no flexible discount is applied, the **FlexDiscountCode** field remains empty.  For example:
+In **Manage Records > Customers**,  the subscription details display any flexible discounts applied for the upcoming renewal.
+Points to note:
 
-![Flex Discount details in Subscription details](../image/flex_subscription.png)
+- Flexible discounts are shown only if the customer has opted for them for the next renewal via the Update Subscription or Create Subscription API. For example:
+
+  ![Flex Discount details in Subscription details](../image/flex_subscription_with_codes.png)
+
+- Flexible discounts that were applied to past orders are not reflected in the subscription details.
+- If no flexible discount is applied for renewal, the FlexDiscountCode field remains empty. For example:
+
+  ![Flex Discount details in Subscription details](../image/flex_subscription.png)

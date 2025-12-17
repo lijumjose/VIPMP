@@ -90,11 +90,12 @@ Some error responses will include additionalDetails, an array of strings with mo
 |2138 | Invalid Deployment | Create Order |404|
 |2139| Deployment not allowed for this contract |Create Order | 400|
 |2140| Order contains order level currency and line-item level currency |Create Order | 400|
-| 2141       | Customer is not qualified for the flexible discount. <br /> "additionalDetails": [ "Line Item: 1, Reason: Invalid Flexible Discount" ]                                                                 |    Create Order <br /> Preview Order                  |    400              |
-| 2144       | Flexible Discount cannot be applied in combination with other discounts. <br />  |       Create Order <br /> Preview Order               |  400                |
-| 2145       | Flexible discount codes cannot be applied to non-base products.                 |    Create Order <br /> Preview Order                  |    400              |
-| 2146     | Invalid Flexible Discount Code |    Create Order <br /> Preview Order                  |    400              |
-| 2147      | Only one Flexible Discount code is allowed per line item.   |    Create Order <br /> Preview Order                  |    400              |
+| 2141       | Customer is not qualified for the flexible discount. <br /> "additionalDetails": [ "Line Item: 1, Reason: Invalid Flexible Discount" ]                                                                 |    Create Order <br /> Preview Order  <br />  Update Subscription <br />  Create Subscription               |    400              |
+| 2142     | This Flexible Discount is for one time use and is no longer availabe.                                                                 |    Get Flexible Discounts               |    400              |
+| 2144       | Flexible Discount cannot be applied in combination with other discounts. <br />  |       Create Order <br /> Preview Order  <br />  Update Subscription <br />  Create Subscription             |  400                |
+| 2145       | Flexible discount codes cannot be applied to non-base products.                 |    Create Order <br /> Preview Order  <br />  Update Subscription <br />  Create Subscription                |    400              |
+| 2146     | Invalid Flexible Discount Code |    Create Order <br /> Preview Order  <br />  Update Subscription <br />  Create Subscription                |    400              |
+| 2147      | Only one Flexible Discount code is allowed per line item.   |    Create Order <br /> Preview Order   <br />  Update Subscription <br />  Create Subscription               |    400              |
 | 2148      | Invalid pricing request for multiple currencies.  |    Preview Order, Preview Renewal               |    400              |
 | 2149       | Switch plan error: Requested quantity and cancel quantity must be equal. |   Preview Switch Order,   Create Switch Order                  |           400       |
 | 2150       | Switch path validity check failed.                                       |    Preview Switch Order,   Create Switch Order                    |      400            |
