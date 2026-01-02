@@ -6,7 +6,6 @@ You can seamlessly transfer existing customers from VIP to VIP-MP. Customer cons
 
 **Products**
 
-- Customers must have at least one active VIP product.
 - For a customer, each existing VIP product must have an equivalent VIP-MP product.
 
 **Three-Year Commit (3YC)**
