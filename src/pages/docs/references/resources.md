@@ -220,6 +220,15 @@ Please see the Validations/Regular Expressions section for any regular expressio
 |status (read only)| String | Current status code of the subscription | 4 characters|
 |links (read only)| `Links` resource | Deep links to get subscription details| |
 
+### autoRenewal
+
+|Property | Type | Description | Range/Limits|
+|:----|:----|:----|:----|
+|enabled| Boolean | Indicates whether the auto renewal is enabled. Set `enabled` to `false` to disable auto renewal. | Max: 40 characters|
+|renewalQuantity | Integer | If the `renewalQuantity` is higher than `currentQuantity` at the renewal time, then the additional licenses will be included in renewal. If it is lower, then licenses will be removed at renewal. | Max: 40 characters|
+|renewalCode| String | Unique identifier of the Minimum Order Quantity Offer. Available values are: <br /> - MOQ_100 <br /> - MOQ_250 <br /> - MOQ_500 | Max: 40 characters|
+|flexDiscountCodes| String | Indicates the flexible discounts applicable for the subscription. | Max: 40 characters|
+
 ## Recommendations (top-level resource)
 
 | **Parameter**          | **Type**                 | **Description**                                                                                                                                                                                          |
