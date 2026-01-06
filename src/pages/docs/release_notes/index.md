@@ -5,6 +5,12 @@
 
 ## API changes
 
+### January 06, 2026
+
+#### The Fetch Price List API now supports price lists for Large Government Agencies (LGA)
+
+To retrieve LGA price lists, use the `priceListType` request parameter with the value `STD-LGA`, which specifies that the Price List is intended for LGA customers. Read More about [Fetch Price List API](../manage_pricing/index.md).
+
 ### December 11, 2025
 
 #### Mid-term upgrades
