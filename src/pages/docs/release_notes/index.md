@@ -5,11 +5,35 @@
 
 ## API changes
 
+### January 08, 2026
+
+#### Flexible Discounts for subscription renewals
+
+Partners can now access details about flexible discounts for a customer and apply them in the subscription’s auto-renewal settings while creating or updating the subscription.
+
+**New capabilities:**
+
+- [Preview Renewal with flexible discount code](../flex_discounts/apis.md#preview-renewal-with-flexible-discount-code)
+- [Manual preview renewal with flexible discount code](../flex_discounts/apis.md#manual-preview-renewal-order-with-flexible-discount-code)
+- [Create a scheduled Subscription with flexible discount](../flex_discounts/apis.md#create-a-scheduled-subscription-with-flexible-discount)
+- [Update Subscription with a flexible discount code](../flex_discounts/apis.md#update-a-subscription-with-flexible-discount-code)
+- [Remove  flexible discount from a subscription](../flex_discounts/apis.md#remove-a-flexible-discount-from-a-subscription)
+
+**Other API documentation changes:**
+
+- Updated [Create Subscription](../subscription_management/create_subscription.md) and [Update Subscription](../subscription_management/update_subscription.md) endpoint documentation to include the newly introduced `flexDiscountCodes` parameter in request and response.
+- Updated [Subscription (top-level resource)](../references/resources.md#subscription-top-level-resource) section to include the `flexDiscountCodes` parameter.
+
+**Sandbox changes:**
+
+- In **Manage Records > Customers**, you can now view the subscription details, including any flexible discounts that have been applied.
+- For more information, see [Manage Flexible Discounts](../../sandbox/sandbox_portal/flex_discounts/index.md#view-flexible-discounts-applied-to-a-subscription).
+
 ### January 06, 2026
 
 #### The Fetch Price List API now supports price lists for Large Government Agencies (LGA)
 
-To retrieve LGA price lists, use the `priceListType` request parameter with the value `STD-LGA`, which specifies that the Price List is intended for LGA customers. Read More about [Fetch Price List API](../manage_pricing/index.md).
+To retrieve LGA price lists, use the `priceListType` request parameter with the value `STD-LGA`, which specifies that the Price List is intended for LGA customers. Read more about [Fetch Price List API](../manage_pricing/index.md).
 
 ### December 11, 2025
 
@@ -128,7 +152,7 @@ Read more about [Mid-term upgrades](../mid_term/index.md).
 
 - Introduced High Growth Offers for existing Acrobat Pro customers. These offers will replace the current High Volume Discounting program that exists in VIP.  See [Manage High Growth Offers](../customer_account/high_growth.md) for more details.
 
-### Earlier releases in 2024
+### Earlier releases from 2024
 
 - Included customer's VIP renewal status within migration preview API response. See [Preview Offer](../migration/preview_offers.md) for more details.
 - Ability to place renewal orders after anniversary date
@@ -174,6 +198,15 @@ Read more about [Mid-term upgrades](../mid_term/index.md).
 - Added self-service capability for a customer and partner to move between resellers/partners. See [Reseller Change Process](../reseller_change/index.md) for more information.
 
 ## Sandbox changes
+
+### January 08, 2026
+
+Changes to support on-demand flexible discount release:
+
+- In **Manage Records > Customers**, you can now view the subscription details, including any flexible discounts that have been applied.
+- For more information, see [Manage Flexible Discounts](../../sandbox/sandbox_portal/flex_discounts/index.md#view-flexible-discounts-applied-to-a-subscription).
+
+### Earlier releases
 
 - [Manage Flexible Discounts](/src/pages/sandbox/sandbox_portal/flex_promo/index.md)
 - [Manage Product Recommendations](/src/pages/sandbox/sandbox_portal/recommendations/index.md)

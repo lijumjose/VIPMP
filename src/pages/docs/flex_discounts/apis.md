@@ -644,7 +644,7 @@ The `flexDiscountCodes` parameter indicates the flexible discounts applicable fo
 ```json
 {
   "autoRenewal": {
-    "enabled": true, // If Auto Renew is OFF, it must be turned ON to apply PromoCode. If it is already ON, this field is OPTIONAL.
+    "enabled": true, // If Auto Renew is OFF, it must be turned ON to apply Discount Code. If it is already ON, this field is OPTIONAL.
     "flexDiscountCodes": ["ABCD-XV54-HG34-78YT"]
   }
 }
