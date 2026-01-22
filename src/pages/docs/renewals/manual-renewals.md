@@ -39,22 +39,22 @@ Instead, AD is rolled over only after renewal is processed, ensuring that the ne
 
 #### Impact of early renewal on anniversary date and renewal date
 
-| Attribute            | Changes After Early Renewal? | Description                                                                 |
-|----------------------|------------------------------|-----------------------------------------------------------------------------|
-| Anniversary Date (AD) | ✔ Yes                        | Updated (“rolled over”) to next AD after first early renewal order.         |
-| Renewal Date          | ✖ No                         | Remains unchanged; continues to trigger auto-renewal attempts.              |
+| Attribute             | Changes After Early Renewal? | Description                                                         |
+|-----------------------|------------------------------|---------------------------------------------------------------------|
+| Anniversary Date (AD) | ✔ Yes                        | Updated (“rolled over”) to next AD after first early renewal order. |
+| Renewal Date          | ✖ No                         | Remains unchanged; continues to trigger auto-renewal attempts.      |
 
 ### Examples: Early Renewal, Auto‑Renewal, and AD Behavior
 
-| Example | Scenario Description | Initial State | Partner or System Action | System Behavior | Renewal Result |
-|--------|-----------------------|---------------|---------------------------|------------------|--------------------------|
-| **1** | Early renewal before AD (AD rolls over immediately) | AD = Nov 30, 2025<br>Renewal Date = Nov 30, 2025<br>Current quantity = 100 | Partner renews 100 seats on Nov 10, 2025 | AD updates to Nov 30, 2026<br>Renewal Date stays Nov 30, 2025<br>renewed_quantity = 100 | Auto‑renewal finds no remaining seats. <br /><br />AD changes. Renewal Date does not change. |
-| **2** | Early renewal of partial quantities | AD = Oct 1, 2025<br>Renewal Date = Oct 1, 2025<br>Current quantity = 100 | Partner early‑renews 40 seats on Sep 10 | AD is updated to Oct 1, 2026<br>renewed_quantity = 40 | On Renewal Date, remaining 60 seats are auto‑renewed. <br /><br /> Early renewal covers part; auto‑renewal completes the rest. |
-| **3** | Multiple early renewal orders | AD = Jan 31, 2026<br>Renewal Date = Jan 31, 2026<br>Current quantity = 200 | Jan 1: Renew 120 seats early<br>Jan 5: Renew remaining 80 seats early | After first: AD is updated to Feb 1, 2027, renewed_quantity = 120<br>After second: renewed_quantity = 200 | On Renewal Date, no remaining seats. <br /> <br />AD rolls over only once, after the first early renewal. |
-| **4** | Return order after early renewal | Customer early renews 100 seats, AD rolls over. | Partner returns 20 seats | renewed_quantity = 80<br>AD does not roll back | On Renewal Date, system renews 20 remaining seats.<br /> <br />Returns reduce renewed_quantity, not AD. |
-| **5** | Auto‑renewal without early renewal | AD = Apr 15, 2026<br>Renewal Date = Apr 15, 2026<br>renewal_quantity = 50 | No early renewal; auto‑renew runs on Renewal Date | System renews 50 seats | AD rolls to Apr 15, 2027. <br /><br /> Auto‑renew always rolls AD when it completes. |
-| **6** | Late renewal (after AD) | AD = July 10, 2026 | Partner renews on July 20 | System processes renewal immediately | AD rolls to July 10, 2027 as part of renewal completion | <br /><br /> Late renewal behaves like normal renewal: AD rolls when renewal completes. |
-| **7** | AD and Renewal Date divergence | AD = Dec 1, 2025<br>Renewal Date = Dec 1, 2025 | Early renewal on Nov 15, 2025 | AD is updated to Dec 1, 2026<br>Renewal Date stays Dec 1, 2025 | Auto‑renew runs but finds everything renewed; next year dates align | <br /> <br />Early renewal can cause dates to diverge temporarily, but they align again in the next cycle. |
+| Example | Scenario Description                                | Initial State                                                              | Partner or System Action                                              | System Behavior                                                                                           | Renewal Result                                                                                                                 |
+|---------|-----------------------------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| **1**   | Early renewal before AD (AD rolls over immediately) | AD = Nov 30, 2025<br>Renewal Date = Nov 30, 2025<br>Current quantity = 100 | Partner renews 100 seats on Nov 10, 2025                              | AD updates to Nov 30, 2026<br>Renewal Date stays Nov 30, 2025<br>renewed_quantity = 100                   | Auto‑renewal finds no remaining seats. <br /><br />AD changes. Renewal Date does not change.                                   |
+| **2**   | Early renewal of partial quantities                 | AD = Oct 1, 2025<br>Renewal Date = Oct 1, 2025<br>Current quantity = 100   | Partner early‑renews 40 seats on Sep 10                               | AD is updated to Oct 1, 2026<br>renewed_quantity = 40                                                     | On Renewal Date, remaining 60 seats are auto‑renewed. <br /><br /> Early renewal covers part; auto‑renewal completes the rest. |
+| **3**   | Multiple early renewal orders                       | AD = Jan 31, 2026<br>Renewal Date = Jan 31, 2026<br>Current quantity = 200 | Jan 1: Renew 120 seats early<br>Jan 5: Renew remaining 80 seats early | After first: AD is updated to Feb 1, 2027, renewed_quantity = 120<br>After second: renewed_quantity = 200 | On Renewal Date, no remaining seats. <br /> <br />AD rolls over only once, after the first early renewal.                      |
+| **4**   | Return order after early renewal                    | Customer early renews 100 seats, AD rolls over.                            | Partner returns 20 seats                                              | renewed_quantity = 80<br>AD does not roll back                                                            | On Renewal Date, system renews 20 remaining seats.<br /> <br />Returns reduce renewed_quantity, not AD.                        |
+| **5**   | Auto‑renewal without early renewal                  | AD = Apr 15, 2026<br>Renewal Date = Apr 15, 2026<br>renewal_quantity = 50  | No early renewal; auto‑renew runs on Renewal Date                     | System renews 50 seats                                                                                    | AD rolls to Apr 15, 2027. <br /><br /> Auto‑renew always rolls AD when it completes.                                           |
+| **6**   | Late renewal (after AD)                             | AD = July 10, 2026                                                         | Partner renews on July 20                                             | System processes renewal immediately                                                                      | AD rolls to July 10, 2027 as part of renewal completion                                                                        |
+| **7**   | AD and Renewal Date divergence                      | AD = Dec 1, 2025<br>Renewal Date = Dec 1, 2025                             | Early renewal on Nov 15, 2025                                         | AD is updated to Dec 1, 2026<br>Renewal Date stays Dec 1, 2025                                            | Auto‑renew runs but finds everything renewed; next year dates align                                                            |
 
 ### Early renewal workflow using APIs
 
@@ -68,7 +68,7 @@ The `Create Order` API with `orderType` set to `PREVIEW_RENEWAL` allows partners
 
 - `subscriptionId` is necessary when the order is for an existing subscription
 - If the intention is to renew a new offer, then it is optional.
-   - Optionally, in this case, `deploymentId` and `currency` can be included as valid properties.
+  - Optionally, in this case, `deploymentId` and `currency` can be included as valid properties.
 - The order request will be rejected if a subscriptionId is found for the offerId included in the request.
 
 **Request**
@@ -127,13 +127,13 @@ The `Create Order` API with `orderType` set to `PREVIEW_RENEWAL` allows partners
 
 #### 2. Create renewal order
 
-Use the `POST /v3/customers/<customer-id>/orders` endpoint with `orderType` `RENEWAL` to place a renewal order. 
+Use the `POST /v3/customers/<customer-id>/orders` endpoint with `orderType` `RENEWAL` to place a renewal order.
 
 **Notes:**
 
 - `subscriptionId` is necessary when the order is for an existing subscription
 - If the intention is to create a subscription for a new offer, then it is optional.
-   - Optionally, in this case, `deploymentId` and `currency` can be included as valid properties.
+  - Optionally, in this case, `deploymentId` and `currency` can be included as valid properties.
 - The order request will be rejected if a subscriptionId is found for the offerId included in the request.
 
 **Request:**
@@ -182,7 +182,7 @@ Use the `POST /v3/customers/<customer-id>/orders` endpoint with `orderType` `REN
 
 #### 3. Verify renewed quantity details using GET Subscriptions API
 
-Use the `<ENV> /v3/customers/<customer-id>/subscriptions/<subscription-id> ` or `<ENV> /v3/customers/<customer-id>/subscriptions` API to verify renewed quantity for the subscription.
+Use the `<ENV> /v3/customers/<customer-id>/subscriptions/<subscription-id>` or `<ENV> /v3/customers/<customer-id>/subscriptions` API to verify renewed quantity for the subscription.
 
 The `renewedQuantity` parameter in the response indicates the quantity that was manually renewed before the Anniversary Date.
 
