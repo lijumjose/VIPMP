@@ -28,7 +28,7 @@ To ensure whether all subscriptions are renewed in accordance with the autorenew
 
 If the `renewalQuantity` is higher than the current ordered quantity, then additional licenses will be provisioned after renewal. If the `renewalQuantity` is less than the current ordered quantity, then some licenses will be revoked upon renewal.
 
-Adobe will create a renewal order on a customer's `cotermDate` if the customer has subscriptions set to autorenew. The renewal order details and Order ID can be retrieved by parsing the response from the [Get Order History](../order_management/get_order.md) API. This ID can then be used in subsequent Get Order calls.
+If the customer has subscriptions set to auto-renew, Adobe will create renewal order on renewal date of subscription. The renewal order details and Order ID can be retrieved by parsing the response from the [Get Order History](../order_management/get_order.md) API. This ID can then be used in subsequent Get Order calls.
 
 ## APIs to manage subscriptions
 

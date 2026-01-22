@@ -289,6 +289,26 @@ module.exports = {
               },
             ]
            },
+           {
+            title: 'Renewals',
+            description: '',
+            path: '/docs/renewals/overview.md',
+            header: true,
+            pages: [
+              {
+                title: 'Overview',
+                path: '/docs/renewals/overview.md',
+              },
+               {
+                title: 'Manage manual renewals using APIs',
+                path: '/docs/renewals/manual-renewals.md',
+              },
+               {
+                title: 'Manage auto-renewals using APIs',
+                path: '/docs/renewals/auto-renewals.md',
+              },
+            ],
+          },
         ]
       },
       {
