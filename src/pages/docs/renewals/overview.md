@@ -4,7 +4,7 @@ Adobe supports three types of renewals:
 
 1. **Auto‑renewal (system‑initiated)**
 
-   - These renewals are triggered automatically by Adobe systems based on the renewal configuration. 
+   - These renewals are triggered automatically by Adobe systems based on the renewal configuration.
    - Occurs each year on the renewal date of the subscription.
    - The renewal maintains the products, while the quantity is updated according to the customer’s preferred renewal quantity.
    - Does not require partner action unless the customer chooses to opt out.
@@ -43,10 +43,10 @@ Adobe supports three types of renewals:
 
 #### Relationship after early renewal
 
-| Attribute             | Changes after early renewal? | Description                                                                 |
-|-----------------------|-----------------------------|-----------------------------------------------------------------------------|
-| Anniversary date (AD) | ✔ Yes                       | Updated (“rolled over”) to next AD after first early renewal order.         |
-| Renewal date          | ✖ No                        | Remains unchanged; continues to trigger auto-renewal attempts.              |
+| Attribute             | Changes after early renewal? | Description                                                         |
+|-----------------------|------------------------------|---------------------------------------------------------------------|
+| Anniversary date (AD) | ✔ Yes                        | Updated (“rolled over”) to next AD after first early renewal order. |
+| Renewal date          | ✖ No                         | Remains unchanged; continues to trigger auto-renewal attempts.      |
 
 ## Define auto-renewal and manual renewal
 

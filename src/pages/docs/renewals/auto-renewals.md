@@ -2,15 +2,15 @@
 
 Use the following APIs to configure auto-renewals for a subscription:
 
-| Endpoint | Method| Description|
-| --- | --- | ---|
-| `/v3/customers/<customer-id>/subscriptions` | POST | Create a new subscription|
-| `/v3/customers/<customer-id>/subscriptions/<subscription-id>` | PATCH | Update a subscription |
+| Endpoint                                                      | Method | Description               |
+|---------------------------------------------------------------|--------|---------------------------|
+| `/v3/customers/<customer-id>/subscriptions`                   | POST   | Create a new subscription |
+| `/v3/customers/<customer-id>/subscriptions/<subscription-id>` | PATCH  | Update a subscription     |
 
 The system picks up the subscription on the Renewal Date.  Subscriptions are renewed based on the configured renewal quantity and the customer’s renewal preferences. If early renewal was previously applied:
 
-  - Auto‑renewal may renew the remaining quantities (if any).
-  - If all quantities were already renewed, auto‑renewal updates subscription states but does not add new line items.
+- Auto‑renewal may renew the remaining quantities (if any).
+- If all quantities were already renewed, auto‑renewal updates subscription states but does not add new line items.
 
 Auto‑renewal process outcomes:
 
