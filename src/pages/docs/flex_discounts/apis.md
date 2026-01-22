@@ -14,11 +14,11 @@ You can use the following APIs to get details of available flexible discounts an
 
 ## Get Flexible Discounts
 
-Use the `GET Flexible Discounts` API to fetch flexible discounts applicable to a product:
+Use the `GET Flexible Discounts` API to fetch flexible discounts that are applicable to a product:
 
-| Endpoint       | Method |
-|----------------|--------|
-| /v3/flex-discounts | GET    |
+| Endpoint           | Method |
+|--------------------|--------|
+| /v3/flex-discounts | GET    |
 
 ### Request
 
@@ -28,22 +28,23 @@ Sample Request URL: `GET <ENV>/v3/flex-discounts?market-segment=COM&country=US`
 
 **Note:** Request query parameters such as Market segment and country will be validated against the Partner's contract data. You can also use other query parameters that are listed in the following table:
 
-| Parameter       | Type             | Mandatory | Description                                                                 | Range/Limits                                                                 |
-|-----------------|------------------|-----------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| market-segment  | String           | Yes       | Get flexible discounts by market segment. Example: "COM", "EDU".                 |      3 characters                                                                        |
-| country         | String           | Yes       | Get flexible discounts by country using the ISO 3166-1 alpha-2 code. Example: "US", "IN". |         2 or 3 characters                                                                     |
-| offer-ids       | Array of strings | No        | Provide a comma-separated list of Offer IDs to retrieve applicable flexible discounts. Example: 65322535CA04A12, 86322535CA04A12 |                                                                              |
-| flex-discount-id      | String           | No        | Retrieve a flexible discount by its unique ID. This endpoint returns a single, unique flexible discount object. <br /> If flex-discount-id query parameter is provided in the request, other non-mandatory params cannot be provided in the same request.       |      Max: 40 characters                                                                        |
-| flex-discount-code      | String           | No        | Filter promotions by code. Examples: "DIWALI", "BLACK_FRIDAY".       |                                                                             |
-| start-date      | String (date)    | No        | Filter flexible discounts that were available on or after this moment in time. This date can be without timestamp or with timestamp, for example, “2025-05-02" or "2025-05-02T22:49:54Z. Dates with timestamps are only accepted in ISO-8601 format with "Zulu" (UTC) time zone. This is the same format that all dates and times are in Adobe Commerce Partner API (CPAI) responses. |                                                                              |
-| end-date        | String (date)    | No        | Filter flexible discounts that were available on or before this moment in time. This date can be without timestamp or with timestamp, for example, “2025-05-02" or "2025-05-02T22:49:54Z. Dates with timestamps are only accepted in ISO-8601 format with "Zulu" (UTC) time zone. This is the same format that all dates and times are in Adobe Commerce Partner API (CPAI) responses. |                                                                              |
-| limit           | Integer          |  No         | Define the number of items to be returned in the response. Default: 20, Max: 50. |                                                                              |
-| offset          | Integer          |  No         | Set the start offset for the result items. Default: 0                        |                                                                              |
+| Parameter          | Type             | Mandatory | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Range/Limits       |
+|--------------------|------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
+| category           | String           | No        | Filter promotions by category. Possible values are: <br /><br />  - **STANDARD:** Represents all regular Flexible Discounts available in the VIP Marketplace. These discounts can be applied to eligible orders as long as they meet the defined qualification criteria. These discounts are not restricted to new customers or first-time purchases. <br /> **Example:** Seasonal discounts like Black Friday or volume-based discounts for enterprise accounts.<br /> <br /> - **INTRO:** Represents Introductory Offers designed to help acquire new customers or encourage existing customers to adopt products that are new to their subscription. These discounts are typically limited to a customer’s first purchase or first-time use of a specific product.  <br /> **Example:** Launch offer for Adobe Express at $39.99 for new customers. |                    |
+| market-segment     | String           | Yes       | Get flexible discounts by market segment. Example: "COM", "EDU".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | 3 characters       |
+| country            | String           | Yes       | Get flexible discounts by country using the ISO 3166-1 alpha-2 code. Example: "US", "IN".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | 2 or 3 characters  |
+| offer-ids          | Array of strings | No        | Provide a comma-separated list of Offer IDs to retrieve applicable flexible discounts. Example: 65322535CA04A12, 86322535CA04A12                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |                    |
+| flex-discount-id   | String           | No        | Retrieve a flexible discount by its unique ID. This endpoint returns a single, unique flexible discount object. <br /> If flex-discount-id query parameter is provided in the request, other non-mandatory params cannot be provided in the same request.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Max: 40 characters |
+| flex-discount-code | String           | No        | Filter promotions by code. Examples: "DIWALI", "BLACK_FRIDAY".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                    |
+| start-date         | String (date)    | No        | Filter flexible discounts that were available on or after the specified date and time. This date can be without timestamp or with timestamp, for example, “2025-05-02" or "2025-05-02T22:49:54Z. Dates with timestamps are only accepted in ISO-8601 format with "Zulu" (UTC) time zone. This is the same format that all dates and times are in Adobe Commerce Partner API (CPAI) responses.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |                    |
+| end-date           | String (date)    | No        | Filter flexible discounts that were available on or before this moment in time. This date can be without timestamp or with timestamp, for example, “2025-05-02" or "2025-05-02T22:49:54Z. Dates with timestamps are only accepted in ISO-8601 format with "Zulu" (UTC) time zone. This is the same format that all dates and times are in Adobe Commerce Partner API (CPAI) responses.                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                    |
+| limit              | Integer          | No        | Define the number of items to be returned in the response. Default: 20, Max: 50.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |                    |
+| offset             | Integer          | No        | Set the start offset for the result items. Default: 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                    |
 
 #### **Sample request URLs**
 
-- Sample request URL with all query parameters: `<ENV>/v3/flex-discounts?market-segment=COM&country=US&offer-ids=65322535CA04A12,86322535CA04A12&flex-discount-code=BLACK_FRIDAY&start-date=2025-03-01&end-date=2025-03-31&limit=20&offset=0`
-- Sample request URL where flex discount ID is used:  `<ENV>/v3/flex-discounts?country=US&market-segment=COM&flex-discount-id=55555555-1533-4564-ade1-cd6946a97f29`
+- Sample request URL with all query parameters: `<ENV>/v3/flex-discounts?category=STANDARD&market-segment=COM&country=US&offer-ids=65322535CA04A12,86322535CA04A12&flex-discount-code=BLACK_FRIDAY&start-date=2025-03-01&end-date=2025-03-31&limit=20&offset=0`
+- Sample request URL where flexible discount ID is used:  `<ENV>/v3/flex-discounts?country=US&market-segment=COM&flex-discount-id=55555555-1533-4564-ade1-cd6946a97f29`
 
 ### Request Header  
 
@@ -59,19 +60,47 @@ None.
 {
   "limit": 20,
   "offset": 0,
-  "count": 2,
-  "totalCount": 2,
+  "count": 3,
+  "totalCount": 3,
   "flexDiscounts": [
     {
-      "id": "55555555-313b-476c-9d0b-6a610d5b91e0",
-      "name": "Black Friday Flexible Discount",
-      "description": "Exclusive fixed discount on CC All Apps in US",
-      "code": "BLACK_FRIDAY_15",
-      "startDate": "2025-06-01T00:00:01Z",
-      "endDate": "2025-12-31T23:59:59Z",
-      "status": "ACTIVE",
+      "id": "55555555-313b-476c-9d0b-6a610d5b91e0",   // INTRO - Fixed Price
+      "category": "INTRO",
+      "code": "INTRO-PHSP",
+      "name": "Intro Discount - Photoshop",
+      "description": "Intro Discount - Photoshop - 15.99", 
+      "startDate": "2025-11-30T23:59:59Z", 
+      "endDate": "2026-12-31T23:59:59Z", 
       "qualification": {
-        "baseOfferIds": ["65322535CA01A12", "86322535CA01A12"]
+        "baseOfferIds": [
+          "11083117CA01A12"
+        ]
+      },
+      "outcomes": [
+        {
+          "type": "FIXED_PRICE",
+          "discountValues": [
+            {
+              "country": "US",
+              "currency": "USD",
+              "value": 15.99
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "55555555-313b-476c-9d0b-6a610d5b91e0",   // STANDARD - Fixed Discount
+      "category": "STANDARD",
+      "code": "BLACK_FRIDAY",
+      "name": "BLACK_FRIDAY",
+      "description": "BLACK_FRIDAY - 10 USD off PHSP",
+      "startDate": "2025-11-01T23:59:59Z", 
+      "endDate": "2025-12-31T23:59:59Z",
+      "qualification": {
+        "baseOfferIds": [
+          "11083117CA01A12"
+        ]
       },
       "outcomes": [
         {
@@ -80,23 +109,20 @@ None.
             {
               "country": "US",
               "currency": "USD",
-              "value": 15
+              "value": 10.00
             }
           ]
         }
       ]
     },
     {
-      "id": "55555555-313b-476c-9d0b-6a610d5dpe567",
-      "name": "Christmas Flexible Discount",
-      "description": "Exclusive 20% off on CC All Apps in US",
-      "code": "CHRISTMAS_2025_20",
-      "startDate": "2025-12-01T00:00:01Z",
-      "endDate": "2025-12-31T23:59:59Z",
-      "status": "ACTIVE",
-      "qualification": {
-        "baseOfferIds": ["65322535CA01A12", "86322535CA01A12"]
-      },
+      "id": "55555555-313b-476c-9d0b-6a610d5b91e0",   // STANDARD - Percentage Discount
+      "category": "STANDARD",
+      "code": "NEW YEAR",
+      "name": "NEW YEAR",
+      "description": "NEW YEAR - 20% off on all Products",
+      "startDate": "2025-12-01T23:59:59Z", 
+      "endDate": "2026-01-31T23:59:59Z",
       "outcomes": [
         {
           "type": "PERCENTAGE_DISCOUNT",
@@ -111,19 +137,19 @@ None.
   ],
   "links": {
     "self": {
-      "uri": "/v3/flex-discounts?market-segment=COM&country=US&limit=20&offset=0",
+      "uri": "/v3/flex-discounts?customer-id=<>&categories=ONDEMAND&limit=20&offset=20",
       "method": "GET",
       "headers": []
     },
     // next link will be present only if the next resource is present
     "next": {
-      "uri": "/v3/flex-discounts?market-segment=COM&country=US&limit=20&offset=20",
+      "uri": "/v3/flex-discounts?customer-id=<>&categories=ONDEMAND&limit=20&offset=40",
       "method": "GET",
       "headers": []
     },
     // prev link will be present only if a previous resource is present
     "prev": {
-      "uri": "/v3/flex-discounts?market-segment=COM&country=US&limit=20&offset=0",
+      "uri": "/v3/flex-discounts?customer-id=<>&categories=ONDEMAND&limit=20&offset=0",
       "method": "GET",
       "headers": []
     }
@@ -133,33 +159,34 @@ None.
 
 ### Response parameters
 
-| Parameter                       | Type             | Description                                                                 |
-|---------------------------------|------------------|-----------------------------------------------------------------------------|
-| limit                            | String           |  Number of items to be included in the current response.                 |
-| offset                            | String |Offset applied for the current response.                                                 |
-| count                            | String           | The count of flexible discount entities included in the current response.                                                       |
-| totalCount                            | String           |   Total count of flexible discount entities, if no limit was applied.                                                   |
-| flexDiscounts                            | Object           | Provides details of the available flexible discounts.                                                       |
+| Parameter     | Type   | Description                                                               |
+|---------------|--------|---------------------------------------------------------------------------|
+| limit         | String | Number of items to be included in the current response.                   |
+| offset        | String | Offset applied for the current response.                                  |
+| count         | String | The count of flexible discount entities included in the current response. |
+| totalCount    | String | Total count of flexible discount entities, if no limit was applied.       |
+| flexDiscounts | Object | Provides details of the available flexible discounts.                     |
 
 #### flexDiscounts object
 
-| Parameter                       | Type             | Description                                                                 |
-|---------------------------------|------------------|-----------------------------------------------------------------------------|
-| id                            | String           | A unique system-generated identifier for a flexible discount. It should be used to retrieve or reference a specific flexible discount, especially when accessing detailed metadata of a flexible discount. It is also included in the order response.                                                 |
-| name                            | String           | Name of the flexible discount.                                                       |
-| description                     | String           | Description of the flexible discount. It also provides additional details about the eligibility criteria for the flexible discount. For example, "Exclusive 20% off for Teams customers of CC All Apps in US"                                               |
-| code                            | String           | A readable identifier used to apply a flexible discount during order placement. This code will appear on the invoice. For example, a discount code like BLACK_FRIDAY may be reused across different years such as 2025 and 2026. However, to ensure consistency and prevent duplication, only one active flexible discount can exist for a given code at any point in time. |
-| endDate                         | String (Date)    | The final date when the flexible discount can be used. Dates with timestamps are only accepted in ISO-8601 format with "Zulu" (UTC) time zone. This is the same format that all dates and times are in Adobe Commerce Partner API (CPAI) responses.                                   |
-| startDate                       | String (Date)    | The date from which  the flexible discount can be used. Dates with timestamps are only accepted in ISO-8601 format with "Zulu" (UTC) time zone. This is the same format that all dates and times are in Adobe Commerce Partner API (CPAI) responses.                                   |
-| status                          | String Enum      | Status of flexible discount. Possible values: ACTIVE, EXPIRED                       |
-| qualification                   | Object           |                                                                             |
-| qualification.baseOfferIds      | Array of Strings | List of Base Offer IDs of products eligible for flexible discount. Example: ["Offer ID 1", "Offer ID 2"] <br />**Note**: The list of base Offer IDs will be empty if the flexible discount applies to all products. |
-| outcomes[]                      | Array of Objects |                                                                             |
-| outcomes[] → type               | String           | Type of flexible discount. Possible values are: PERCENTAGE_DISCOUNT, FIXED_DISCOUNT  |
-| outcomes[].discountValues[]          | Array of Objects |                                                                             |
-| outcomes[].discountValues[] → country| String           | Country Code: ISO 3166-1 alpha-2 code. Example: "US", "IN". Note: Not applicable for PERCENTAGE_DISCOUNT type. |
-| outcomes[].discountValues[] → currency| String          | Currency Code: ISO 4217. Example: "USD", "EUR". Note: Not applicable for PERCENTAGE_DISCOUNT type. |
-| outcomes[].discountValues[] → value  | Integer          | The discount value. For example, if the value is 15: 15% discount is applicable if the type is PERCENTAGE DISCOUNT. A discount of 15 USD, or any currency provided in the response, is applicable for the FIXED_DISCOUNT discount type. |
+| Parameter                              | Type             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|----------------------------------------|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| category                               | String           | Filter promotions by category. Possible values are: <br /><br />  - **STANDARD:** Represents all regular Flexible Discounts available in the VIP Marketplace. These discounts can be applied to eligible orders as long as they meet the defined qualification criteria. These discounts are not restricted to new customers or first-time purchases. <br /> **Example:** Seasonal discounts like Black Friday or volume-based discounts for enterprise accounts.<br /> <br /> - **INTRO:** Represents Introductory Offers designed to help acquire new customers or encourage existing customers to adopt products that are new to their subscription. These discounts are typically limited to a customer's first purchase or first-time use of a specific product.  <br /> **Example:** Launch offer for Adobe Express at $39.99 for new customers. |
+| id                                     | String           | A unique system-generated identifier for a flexible discount. It should be used to retrieve or reference a specific flexible discount, especially when accessing detailed metadata of a flexible discount. It is also included in the order response.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| name                                   | String           | Name of the flexible discount.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| description                            | String           | Description of the flexible discount. It also provides additional details about the eligibility criteria for the flexible discount. For example, "Exclusive 20% off for Teams customers of CC All Apps in US"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| code                                   | String           | A readable identifier used to apply a flexible discount during order placement. This code will appear on the invoice. For example, a discount code like BLACK_FRIDAY may be reused across different years such as 2025 and 2026. However, to ensure consistency and prevent duplication, only one active flexible discount can exist for a given code at any point in time.                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| endDate                                | String (Date)    | The final date when the flexible discount can be used. Dates with timestamps are only accepted in ISO-8601 format with "Zulu" (UTC) time zone. This is the same format that all dates and times are in Adobe Commerce Partner API (CPAI) responses.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| startDate                              | String (Date)    | The date from which  the flexible discount can be used. Dates with timestamps are only accepted in ISO-8601 format with "Zulu" (UTC) time zone. This is the same format that all dates and times are in Adobe Commerce Partner API (CPAI) responses.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| status                                 | String Enum      | Status of flexible discount. Possible values: ACTIVE, EXPIRED                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| qualification                          | Object           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| qualification.baseOfferIds             | Array of Strings | List of Base Offer IDs of products eligible for flexible discount. Example: ["Offer ID 1", "Offer ID 2"] <br />**Note**: The list of base Offer IDs will be empty if the flexible discount applies to all products.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| outcomes[]                             | Array of Objects |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| outcomes[] → type                      | String           | Type of flexible discount. Possible values are: PERCENTAGE_DISCOUNT, FIXED_DISCOUNT, FIXED_PRICE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| outcomes[].discountValues[]            | Array of Objects |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| outcomes[].discountValues[] → country  | String           | Country Code: ISO 3166-1 alpha-2 code. Example: "US", "IN". Note: Not applicable for PERCENTAGE_DISCOUNT type.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| outcomes[].discountValues[] → currency | String           | Currency Code: ISO 4217. Example: "USD", "EUR". Note: Not applicable for PERCENTAGE_DISCOUNT type.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| outcomes[].discountValues[] → value    | Integer          | The discount value. For example, if the value is 15: 15% discount is applicable if the type is PERCENTAGE_DISCOUNT. A discount of 15 USD, or any currency provided in the response, is applicable for the FIXED_DISCOUNT discount type.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
 ### Sample Response (Failure)
 
@@ -181,14 +208,14 @@ On failure, the response includes the appropriate HTTP status code based on the 
 
 Pass the `flexDiscountCodes` at the lineItems level in the `Create Order` and `Preview Order` requests.
 
-| Endpoint                               | Method |
-|----------------------------------------|--------|
-| `/v3/customers/<customer-id>/orders`     | POST   |
+| Endpoint                             | Method |
+|--------------------------------------|--------|
+| `/v3/customers/<customer-id>/orders` | POST   |
 
 **Notes:**
 
-- Order creation will fail even if one of the line items' flexible discount is invalid.
-- Currently, only one flexible discount code is allowed in Order Preview.
+- Order creation will fail even if any line item contains an invalid flexible discount code.
+- Currently, only one flexible discount code is allowed per line item in Order Preview.
 
 ### Request Header
 
@@ -220,7 +247,7 @@ The following sample request shows how to apply a flexible discount code to a Cr
     }
   ]
 } 
- ```
+```
 
 The `flexDiscountCodes` parameter in the above request indicates the flexible discount codes applied to the Order.
 
@@ -274,12 +301,12 @@ The `flexDiscountCodes` parameter in the above request indicates the flexible di
 
  The following table provides the flexible discount details included in the response:
 
-| Name               | Type   | Description                                                   |
-|--------------------|--------|---------------------------------------------------------------|
-| flexDiscounts        | Object | Details of the flexible discount applied to that lineItem             |
-| flexDiscounts[].id  | String | A unique identifier for the promotion. Used to retrieve or reference a specific flexible discount.          |
-| flexDiscounts[].code  | String | The flexible discount code that was applied to that lineItem          |
-| flexDiscounts[].result| String | The “SUCCESS" indicates that the flexible discount code applicability was successful. |
+| Name                   | Type   | Description                                                                                        |
+|------------------------|--------|----------------------------------------------------------------------------------------------------|
+| flexDiscounts          | Object | Details of the flexible discount applied to that lineItem                                          |
+| flexDiscounts[].id     | String | A unique identifier for the promotion. Used to retrieve or reference a specific flexible discount. |
+| flexDiscounts[].code   | String | The flexible discount code that was applied to that lineItem                                       |
+| flexDiscounts[].result | String | The “SUCCESS" indicates that the flexible discount code applicability was successful.              |
 
 ### HTTP Status Codes
 
@@ -440,9 +467,9 @@ and manual preview renewals.
 
 **Note:** The flexible discount codes included in the response apply only to renewal scenarios. They cannot be used when creating a new order.
 
-#### Automated preview renewal
+#### Preview automated renewal
 
-The `POST /v3/customers/<customer-id>/orders` API with the `orderType` as `PREVIEW_RENEWAL` is used in the request to verify the order eligibility, including the eligibility of the customer for the flexible discount code that is currently applied on the subscription.
+The `POST /v3/customers/<customer-id>/orders` API with the `orderType` as `PREVIEW_RENEWAL` is used in the request to verify the eligibility of the order, including validation of customer eligibility for the flexible discount code that is currently applied on the subscription.
 
 **Request**
 
