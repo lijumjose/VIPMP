@@ -1,6 +1,6 @@
 # Manage auto-renewals using APIs
 
-Use the following APIs to configure auto-renewals for a subscription:
+Managing auto‑renewals through APIs allows you to programmatically control how subscriptions renew based on customer preferences and configured quantities. Partners can use the following APIs to configure auto-renewals for a subscription:
 
 | Endpoint                                                      | Method | Description               |
 |---------------------------------------------------------------|--------|---------------------------|

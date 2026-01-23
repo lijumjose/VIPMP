@@ -1,6 +1,6 @@
 # Manage renewals
 
-Adobe supports three types of renewals:
+Managing subscription renewals helps partners ensure uninterrupted service for customers and maintain accurate subscription configurations throughout the contract lifecycle. Adobe supports multiple renewal paths that allow partners to renew subscriptions automatically or manually:
 
 1. **Auto‑renewal (system‑initiated)**
 
@@ -22,9 +22,9 @@ Adobe supports three types of renewals:
 
    2. Early renewal
 
+      - Allows partners to renew a customer’s existing subscriptions ahead of time.
       - Allows subscribing to new products and adding more seats to the existing subscription.
       - Occurs before anniversary date (within AD‑30).
-      - Allows partners to renew a customer’s existing subscriptions ahead of time.
       - Allows enabling earlier billing, service continuation, and workload distribution.
 
 ## Important dates in the renewal model
@@ -40,13 +40,6 @@ Adobe supports three types of renewals:
 - Represents the date on which the system attempts the auto‑renewal.
 - Renewal date does not change, even if early renewal happens.
 - Renewal date continues to drive system‑initiated renewal workflows.
-
-#### Relationship after early renewal
-
-| Attribute             | Changes after early renewal? | Description                                                         |
-|-----------------------|------------------------------|---------------------------------------------------------------------|
-| Anniversary date (AD) | ✔ Yes                        | Updated (“rolled over”) to next AD after first early renewal order. |
-| Renewal date          | ✖ No                         | Remains unchanged; continues to trigger auto-renewal attempts.      |
 
 ## Define auto-renewal and manual renewal
 
