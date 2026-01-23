@@ -1,6 +1,8 @@
 # Manage manual renewals using APIs
 
-The following two renewal types are supported:
+Partners can submit renewal orders before or after the Anniversary Date, validate pricing and eligibility, and manage quantities and offer rules for each subscription. This capability provides partners with flexibility to maintain service continuity, adjust renewal timing, and ensure that subscription terms and quantities align with customer needs throughout the renewal cycle.
+
+The following two manual renewal types are supported:
 
 - [Early renewals](#early-renewals)
 - [Late renewals](#late-renewals)
@@ -21,8 +23,7 @@ The following are the key capabilities and rules that define how early renewal w
 
 - **Price effective date**
   - **For non-3YC customers:**  The price effective date is based on the order placement date.
-  - **For 3YC customers:** Based on the license commitment start date. Early renewal does not modify the customer’s commitment cycle. When a customer under 3YC attempts to renew early (before AD), the system preserves the integrity of the 3‑year commitment. In 3YC, AD is not reset to the early renewal date.
-Instead, AD is rolled over only after renewal is processed, ensuring that the next renewal cycle remains aligned with the original 3YC structure.
+  - **For 3YC customers:** The price effective date is based on the license commitment start date. Early renewal does not modify the customer’s commitment cycle. When a customer under 3YC attempts to renew early (before AD), the system preserves the integrity of the 3‑year commitment. In 3YC, AD is not reset to the early renewal date. Instead, AD is rolled over only after renewal is processed, ensuring that the next renewal cycle remains aligned with the original 3YC structure.
 
 - **Quantity and product rules**  
   - The first early renewal order must include only existing products and quantities.
@@ -40,9 +41,9 @@ Instead, AD is rolled over only after renewal is processed, ensuring that the ne
 #### Impact of early renewal on anniversary date and renewal date
 
 | Attribute             | Changes After Early Renewal? | Description                                                         |
-|-----------------------|------------------------------|---------------------------------------------------------------------|
-| Anniversary Date (AD) | ✔ Yes                        | Updated (“rolled over”) to next AD after first early renewal order. |
-| Renewal Date          | ✖ No                         | Remains unchanged; continues to trigger auto-renewal attempts.      |
+|-----------------------|:-----------------------------:|---------------------------------------------------------------------|
+| Anniversary Date (AD) | Yes                        | Updated (“rolled over”) to next AD after first early renewal order. |
+| Renewal Date          | No                         | Remains unchanged; continues to trigger auto-renewal attempts.      |
 
 ### Examples: Early Renewal, Auto‑Renewal, and AD Behavior
 
@@ -126,7 +127,7 @@ The `Create Order` API with `orderType` set to `PREVIEW_RENEWAL` allows partners
 
 #### 2. Create renewal order
 
-Use the `POST /v3/customers/<customer-id>/orders` endpoint with `orderType` `RENEWAL` to place a renewal order.
+Use the `POST /v3/customers/<customer-id>/orders` endpoint with `orderType` as  `RENEWAL` to place a renewal order.
 
 **Notes:**
 
