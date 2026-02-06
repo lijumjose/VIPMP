@@ -293,7 +293,6 @@ The pricing data is returned only when:
 
 For complete set of request and response parameter descriptions, refer to [Order resource](../references/resources.md#order-top-level-resource).
 
-
 ### Pricing data in GET Order History API
 
 **Sample request URL:**

@@ -39,7 +39,7 @@ Facilitates partners to renew customer subscriptions before the Anniversary Date
 
 - **Pricing based on date of renewal**
 
-  The customers can benefit from the old price if they renew before a price change. 
+  The customers can benefit from the old price if they renew before a price change.
 
 - **Three-year commitment (3YC) support**  
   For three-year commitment customers, price continues to be based on the 3YC commitment start date. Early renewals maintain compliance and may help non-compliant customers regain compliant status. Early renewals are not supported if the 3YC customer is in the last term.
@@ -49,7 +49,7 @@ Facilitates partners to renew customer subscriptions before the Anniversary Date
 
 - **Auto-renew compatibility**  
   
-  - Customers with auto-renewal enabled can still renew early. On the renewal date, any remaining quantities not covered by early renewals are automatically renewed. 
+  - Customers with auto-renewal enabled can still renew early. On the renewal date, any remaining quantities not covered by early renewals are automatically renewed.
   - Early renewing customers are not expected to turn off their auto-renewal configuration. Adobe intelligently handles the auto renewals accordingly and subscription states and attributes are updated as part of the standard renewal cycle.
 
 For more information, see:
