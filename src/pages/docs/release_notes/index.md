@@ -5,6 +5,14 @@
 
 ## API changes
 
+### February 11, 2026
+
+#### Modified Price List documentation
+
+- Added a disclaimer in the Price List documentation, stating that using the `includeOfferAttributes` parameter in the request, the API will attempt to return the specified attributes for each offer. However, it is not guaranteed that every offer in the response will contain all the requested attributes. The availability of each attribute depends on the underlying data applicability and validity for the specific offer. If an attribute is not relevant or does not have a valid (non-null) value for a given offer, it may be omitted from that offer’s attribute section in the response.
+
+  For more information, see [Manage Price Lists](../manage_pricing/index.md).
+
 ### January 08, 2026
 
 #### Flexible Discounts for subscription renewals

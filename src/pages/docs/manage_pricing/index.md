@@ -161,7 +161,7 @@ To customize the offer details returned in the response, use the `includeOfferAt
 - `productTypeDetail`
 - `language`
 
-**Notes:** 
+**Notes:**
 
 - The response will include only the attributes listed in `includeOfferAttributes`, plus these default attributes:
 
@@ -183,7 +183,7 @@ To customize the offer details returned in the response, use the `includeOfferAt
 
 - When using the `includeOfferAttributes` parameter in the request, the API will attempt to return the specified attributes for each offer. However, it is not guaranteed that every offer in the response will contain all the requested attributes.
 - The availability of each attribute depends on the underlying data applicability and validity for the specific offer. If an attribute is not relevant or does not have a valid (non-null) value for a given offer, it may be omitted from that offer’s attribute section in the response.
-- Requesting all available includeOfferAttributes does not ensure that all attributes will be present for every offer. Consumers of the API should design their integrations to handle missing or null attribute values gracefully.
+- Requesting all available `includeOfferAttributes` does not ensure that all attributes will be present for every offer. Consumers of the API should design their integrations to handle missing or null attribute values gracefully.
 
 A sample response is as follows:
 
