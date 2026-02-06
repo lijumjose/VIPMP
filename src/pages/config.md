@@ -1,0 +1,129 @@
+- pathPrefix:
+    - /vipmp/
+
+- pages:
+    - [Home](/index.md)
+    - Release Notes
+        - [Recent releases](/docs/release_notes/index.md)
+        - [Upcoming releases](/docs/release_notes/upcoming_releases.md)
+    - [Use Cases](/docs/index.md)
+    - [Sandbox User Guide](sandbox/index.md)
+
+- subPages:
+    - [Introduction](/docs/index.md)
+    - [API authentication and access](/docs/authentication/index.md)
+        - [Health check](/docs/authentication/health_check.md)
+        - [Generate OAuth credentials](/docs/authentication/oauth_credentials.md)
+    - [Manage resources](/docs/resources/index.md)
+        - [Reseller accounts](/docs/reseller_account/index.md)
+            - [Create a reseller account](/docs/reseller_account/create_reseller_account.md)
+            - [Get reseller account details](/docs/reseller_account/get_reseller_account.md)
+            - [Get reseller list](/docs/reseller_account/get_reseller_list.md)
+            - [Update a reseller account](/docs/reseller_account/update_reseller_account.md)
+        - Customer accounts header
+        - [Market segments](/docs/market_segments/index.md)
+        - [Create customer account](/docs/customer_account/create_customer_account.md)
+        - [Get customer account details](/docs/customer_account/get_customer_account.md)
+        - [Get customer list](/docs/customer_account/get_customer_list.md)
+        - [Update customer account](/docs/customer_account/update_customer_account.md)
+        - [Get licenses pending partner order](/docs/customer_account/get_licenses.md)
+        - Deployments header
+        - [Create deployment](/docs/deployment_management/create_deployment.md)
+        - [Get deployment details](/docs/deployment_management/get_deployment.md)
+        - [Update a deployment of a customer](/docs/deployment_management/update_deployment.md)
+        - Orders header
+        - [Create order](/docs/order_management/create_order.md)
+        - [Order creation scenarios](/docs/order_management/order_scenarios.md)
+        - [Get order details](/docs/order_management/get_order.md)
+        - [ Update order](/docs/order_management/update_order.md)
+        - Subscriptions header
+        - [Create subscription](/docs/subscription_management/create_subscription.md)
+        - [Get details of a specific subscription](/docs/subscription_management/get_details.md)
+        - [Get details of all subscriptions of a customer](/docs/subscription_management/get_details_for_customers.md)
+        - [Update subscription](/docs/subscription_management/update_subscription.md)
+        - Price Lists header
+        - Notifications header
+    - [Manage operational workflows](/docs/resources/workflows.md)
+        - [Three-Year Commits](/docs/customer_account/three_year_commit.md)
+        - [Linked Memberships](/docs/customer_account/linked_membership.md)
+        - [High Growth Offers](/docs/customer_account/high_growth.md)
+            - [High Growth Offer scenarios](/docs/customer_account/high_growth_scenarios.md)
+            - [Manage High Growth Offers through APIs](/docs/customer_account/high_growth_apis.md)
+        - Recommendations header
+        - [Manage Recommendations using APIs](/docs/recommendations/apis.md)
+        - [Error codes specific to Recommendations](/docs/recommendations/error_codes.md)
+        - Flexible Discounts header
+        - [Manage Flexible Discounts using APIs](/docs/flex_discounts/apis.md)
+        - [Error codes specific to Flexible Discounts](/docs/flex_discounts/error_codes.md)
+        - Mid-term upgrades header
+        - [Overview of mid-term upgrades](/docs/mid_term/index.md)
+        - [Manage mid-term upgrades through APIs](/docs/mid_term/apis.md)
+        - [Error codes specific to mid-term upgrades](/docs/mid_term/error_codes.md)
+        - [Frequently asked questions](/docs/mid_term/faq.md)
+        - Renewals header
+        - [Overview](/docs/renewals/overview.md)
+        - [Manage manual renewals using APIs](/docs/renewals/manual-renewals.md)
+        - [Manage auto-renewals using APIs](/docs/renewals/auto-renewals.md)
+    - [Manage business processes](/docs/resources/processes.md)
+        - Reseller change process header
+        - [Preview a reseller transfer](/docs/reseller_change/preview_transfer.md)
+        - [Commit a reseller transfer](/docs/reseller_change/commit_transfer.md)
+        - [Get reseller transfer details](/docs/reseller_change/get_transfer.md)
+        - Migrate to VIP Marketplace header
+        - [Preview offers](/docs/migration/preview_offers.md)
+        - [Transfer subscriptions](/docs/migration/transfer_subscription.md)
+        - [Get transfer details](/docs/migration/get_transfer_details.md)
+        - [Migrate High Volume Discount customers from VIP to VIP Marketplace](/docs/migration/migrate_hvd.md)
+    - [References](docs/references/index.md)
+        - [API request header](docs/references/api_headers.md)
+        - [Idempotency – Correlation ID Header](docs/references/idempotency.md)
+        - [HTTP status codes](docs/references/status_codes.md)
+        - [Status codes and error handling](docs/references/error_handling.md)
+        - [Supported Countries and Locales](docs/references/supported_locales.md)
+        - [Resources and fields](docs/references/resources.md)
+        - [Validations and regular expressions](docs/references/validations.md)
+    - [Support](docs/support.md)
+    - [Sandbox User Guide](sandbox/index.md)
+        - [API collection and interaction basics](sandbox/api_collection.md)
+        - Manage resources header
+        - [Distributors](sandbox/distributor_management/index.md)
+        - Resellers header
+        - [Create a reseller](sandbox/sandbox_portal/reseller_management/create_reseller.md)
+        - [View reseller information](sandbox/sandbox_portal/reseller_management/view_reseller_info.md)
+        - [Edit reseller status](sandbox/sandbox_portal/reseller_management/view_reseller_info.md)
+        - Customers header
+        - [Create a customer](sandbox/sandbox_portal/customer_management/create_customer.md)
+        - [Create Purchase Authorizations for a customer](sandbox/sandbox_portal/customer_management/create_pa_for_customer.md)
+        - [View customer details](sandbox/sandbox_portal/customer_management/get_customer_details.md)
+        - [Update customer details](sandbox/sandbox_portal/customer_management/update_customer.md)
+        - [Update reseller details of a customer](sandbox/sandbox_portal/customer_management/update_reseller.md)
+        - Deployments header
+        - Orders header
+        - [Create order](sandbox/sandbox_portal/order_management/create_order.md)
+        - [Search and view order details](sandbox/sandbox_portal/order_management/view_order_details.md)
+        - [Edit the order status and creation date](sandbox/sandbox_portal/order_management/edit_order_status.md)
+        - [Cancel an order](sandbox/sandbox_portal/order_management/cancel_order.md)
+        - [Place manual renewal order](sandbox/sandbox_portal/order_management/manual_renewal.md)
+        - Subscriptions header
+        - [View subscription details](sandbox/sandbox_portal/subscription_management/view_subscription.md)
+        - [Update auto-renewal configuration](sandbox/sandbox_portal/subscription_management/Update_auto_renwal.md)
+        - [Expire an active subscription](sandbox/sandbox_portal/subscription_management/expire_subscription.md)
+        - Large Government Agencies header
+        - Test operational workflows header
+        - Three-Year Commits (3YC) header
+        - [View 3YC benefits status](sandbox/sandbox_portal/3yc_management/view_3yc_status.md)
+        - Linked Memberships header
+        - [Enroll in a Linked Membership](sandbox/sandbox_portal/linked_memberships/enroll.md)
+        - [View Linked Membership details](sandbox/sandbox_portal/linked_memberships/view_details.md)
+        - High Growth Offers for customers header
+        - Recommendations header
+        - Flexible Discounts header
+        - Manage membership transfers header
+        - [Create memberships](sandbox/sandbox_portal/transfer_memberships/create_memberships.md)
+        - [View memberships](sandbox/sandbox_portal/transfer_memberships/list_memberships.md)
+        - [Migrate HVD customers to VIP Marketplace](sandbox/sandbox_portal/migrate_hvd_customers/migrate_hvd_customers.md)
+        - [View renewal status of memberships ](sandbox/sandbox_portal/transfer_memberships/view_renewal_status.md)
+        - Portal resources header
+        - Other API tools header
+        - Error codes header
+        - Sandbox support header
