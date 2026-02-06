@@ -16,9 +16,9 @@ Partners can leverage the `Fetch Price List` API to retrieve up-to-date pricing 
 
 ## Fetch Price List API
 
-| Endpoint | Method|
-|--|--|
-|/v3/pricelist| POST|
+| Endpoint      | Method |
+|---------------|--------|
+| /v3/pricelist | POST   |
 
 **Sample request URL:** `POST <env root url>/v3/pricelist?offset=0&limit=10`
 
@@ -88,23 +88,41 @@ A sample request is as follows:
 
 ```json
 {
-  "region": "NA",
-  "marketSegment": "COM",
-  "priceListType": "STANDARD",
-  "currency": "USD",
-  "priceListMonth": "YYYYMM",
-  "filters": {
-    "offerId": "65322650CA12A12",
-    "productFamily": "Cloud Services",
-    "firstOrderDate": "",
-    "lastOrderDate": "",
-    "discountCode": ""
-  },
-  "includeOfferAttributes": [
-    "productType",
-    "productTypeDetail",
-    "language"
-  ]
+    "region": "NA",
+    "marketSegment": "GOV",
+    "priceListType": "3YC",
+    "currency": "USD",
+    "priceListMonth": "202601",
+    "filters": {
+        "offerId": "30001475CC01A12"
+    },
+    "includeOfferAttributes": [
+        "productFamily",
+        "productType",
+        "productTypeDetail",
+        "operatingSystem",
+        "language",
+        "version",
+        "users",
+        "metric",
+        "bridge",
+        "partNumber",
+        "acdIndicator",
+        "acdEffectiveDate",
+        "levelDetails",
+        "firstOrderDate",
+        "lastOrderDate",
+        "partnerPrice",
+        "estimatedStreetPrice",
+        "discountCode",
+        "estimatedShipDate",
+        "publicAnnounceDate",
+        "rmaRequestDeadline",
+        "acdDescription",
+        "pool",
+        "duration",
+        "additionalDetail"
+    ]
 }
 ```
 
@@ -143,94 +161,77 @@ To customize the offer details returned in the response, use the `includeOfferAt
 - `productTypeDetail`
 - `language`
 
-**Note:** The response will include only the attributes listed in `includeOfferAttributes`, along with the following default attributes:
+**Notes:** 
 
-- `totalCount`
-- `limit`
-- `offset`
-- `offers`
-- `offer → offerId`
-- `offer → discountCode`
-- `offer → productFamily`
-- `offer → firstOrderDate`
-- `offer → lastOrderDate`
-- `offer → partnerPrice`
+- The response will include only the attributes listed in `includeOfferAttributes`, plus these default attributes:
+
+  - `totalCount`
+  - `limit`
+  - `offset`
+  - `offers`
+  - `offer → offerId`
+  - `offer → discountCode`
+  - `offer → productFamily`
+  - `offer → firstOrderDate`
+  - `offer → lastOrderDate`
+  - `offer → partnerPrice`
+- Any request parameter that has no value is omitted from the response.
 
 ## Response body
+
+**Disclaimer – Offer Attributes in Response**
+
+- When using the `includeOfferAttributes` parameter in the request, the API will attempt to return the specified attributes for each offer. However, it is not guaranteed that every offer in the response will contain all the requested attributes.
+- The availability of each attribute depends on the underlying data applicability and validity for the specific offer. If an attribute is not relevant or does not have a valid (non-null) value for a given offer, it may be omitted from that offer’s attribute section in the response.
+- Requesting all available includeOfferAttributes does not ensure that all attributes will be present for every offer. Consumers of the API should design their integrations to handle missing or null attribute values gracefully.
 
 A sample response is as follows:
 
 ```json
 {
-    "priceListMonth": "202412",
-    "marketSegment": "COM",
+    "priceListMonth": "202601",
+    "marketSegment": "GOV",
     "region": "NA",
     "currency": "USD",
     "priceListType": "3YC",
-    "totalCount": 59,
-    "count": 59,
+    "totalCount": 2,
+    "count": 2,
     "limit": 100,
     "offset": 0,
     "offers": [
         {
-            "offerId": "65322435CAT5012",           
-            "productFamily": "Acrobat Sign Solutions For Enterprise",
-            "productType": "Transaction New",
-            "productTypeDetail": "No Proration",
-            "additionalDetail": "Aws | First Order Date and 
-            Last Order Date=3-year commit accept. 
-             RMA Request Deadline=Last eligible order date.",
-            "operatingSystem": "Other",
-            "language": "Multi NorthAmerican Language",
-            "version": "ALL",
-            "users": "Per Transaction",
-            "metric": "Transaction",
-            "bridge": "Standard",
-            "upcEanCode": "123456789012",
-            "gtinCode": "987654321098",   
-            "acdIndicator": "Add",
-            "acdEffectiveDate": "2024-01-01T00:00:00.000Z",
-            "acdDescription": "ACD Desc",
-            "levelDetails": "Tier 5 15,000 to 49,999 Transactions",
-            "firstOrderDate": "2023-10-19T00:00:00.000Z",
-            "lastOrderDate": "2023-10-20T00:00:00.000Z",
-            "partnerPrice": "3456.78",
-            "estimatedStreetPrice": "3456.78",
-            "discountCode": "ACD2024",
-            "estimatedShipDate": "2024-01-15T00:00:00.000Z",
-            "publicAnnounceDate": "2023-12-01T00:00:00.000Z",
-            "rmaRequestDeadline": "2024-01-31T00:00:00.000Z",
-            "pool": "Discount 1",
-            "duration": "12 Months"
-        },
-        {
-            "offerId": "30005893CA01A12",
-            "productFamily": "Ai Assistant For Acrobat For Enterprise",
-            "productType": "Enterprise Hosted Subscription New",
+            "offerId": "30001475CC01A12",
+            "productFamily": "Creative Cloud For Enterprise All Apps",
+            "productType": "Subscription New",
             "productTypeDetail": "Annual",
-            "additionalDetail": "First Order Date and 
-            Last Order Date=3-year commit accept. 
-            RMA Request Deadline=Last eligible order date.",
-            "operatingSystem": "Other",
+            "additionalDetail": "GOV | First Order Date and Last Order Date=3-year commit accept. RMA Request Deadline=Last eligible order date.",
+            "operatingSystem": "Multiple Platforms",
             "language": "Multi NorthAmerican Language",
             "version": "ALL",
             "users": "1 User",
-            "metric": "User",
-            "bridge": "Enterprise",
-            "upcEanCode": "234567890123",
-            "gtinCode": "876543210987",
-            "acdIndicator": "Change",
-            "acdEffectiveDate": "2024-02-01T00:00:00.000Z",
-            "acdDescription": "ACD Desc",
             "levelDetails": "Level 1 1 - 9",
-            "firstOrderDate": "2024-03-28T00:00:00.000Z",
-            "lastOrderDate": "2024-05-31T00:00:00.000Z",
-            "partnerPrice": "1234.56",
-            "estimatedStreetPrice": "1234.56",
-            "discountCode": "ENT2024",
-            "estimatedShipDate": "2024-02-15T00:00:00.000Z",
-            "publicAnnounceDate": "2024-01-15T00:00:00.000Z",
-            "rmaRequestDeadline": "2024-02-28T00:00:00.000Z",
+            "firstOrderDate": "2022-05-03T00:00:00.000+00:00",
+            "lastOrderDate": "2023-11-01T00:00:00.000+00:00",
+            "partnerPrice": "1206.84",
+            "estimatedStreetPrice": "1283.88",
+            "pool": "Application",
+            "duration": "12 Months"
+        },
+        {
+            "offerId": "30001475CC01A12",
+            "productFamily": "Creative Cloud For Enterprise All Apps",
+            "productType": "Subscription New",
+            "productTypeDetail": "Annual",
+            "additionalDetail": "GOV | First Order Date and Last Order Date=3-year commit accept. RMA Request Deadline=Last eligible order date.",
+            "operatingSystem": "Multiple Platforms",
+            "language": "Multi NorthAmerican Language",
+            "version": "ALL",
+            "users": "1 User",
+            "levelDetails": "Level 1 1 - 9",
+            "firstOrderDate": "2023-11-02T00:00:00.000+00:00",
+            "lastOrderDate": "2024-08-01T00:00:00.000+00:00",
+            "partnerPrice": "1263.24",
+            "estimatedStreetPrice": "1343.88",
             "pool": "Application",
             "duration": "12 Months"
         }
@@ -261,22 +262,11 @@ A sample response is as follows:
 | `offer → language` | Yes | String (Enum) | Language offered by Offer <br /> The following are the possible values: <br /> - EU English <br /> - Japanese <br /> - Multi Asian Languages <br /> - Multi European Languages <br /> - Multi Language Australia <br /> - Multi Latin American Languages <br /> - Multi NorthAmerican Language |
 | `offer → version` | Yes | String | Possible values: <br /> - ALL |
 | `offer → users` | Yes | String (Enum) | License type <br /> The Following are the possible values: <br /> - 1 User <br /> - Named <br /> - Per Credit Pack <br /> - Per Server <br /> - Per Transaction <br /> - Per Workstation <br /> - Subscription |
-| `offer → metric` | No | String (Enum) | Unit of measure. The following are the possible values: <br /> - 1000 <br /> - 10000 <br /> - 15000 <br /> - 20000 <br /> - 30000 <br /> - 40 Images <br /> - 50 TRS INTRO NC <br /> - 5000 <br /> - 50000 <br /> - Transaction - USER |
-| `offer → bridge` | No | String |  |
-| `offer → upcEanCode` | No | String | Barcode formats used to identify products in retail sales. |
-| `offer → gtinCode` | No | String | 13-digit code that identifies products for sale in retail stores or online. |
-| `offer → acdIndicator` | No | String (Enum) | Used to indicate if the offer is NEW, CHANGED, or DELETED. <br /> Possible values: <br /> - Add <br /> - Change <br /> - Delete |
-| `offer → acdEffectiveDate` | No | Date | Effective date for the ACD indicator (ADD, CHANGE, and DELETE). This date is in UTC format. |
-| `offer → acdDescription` | No | String | This field provides additional context or details about the ACD status of the offer. |
 | `offer → levelDetails` | Yes | String | Level Description of Min and Max range for the price point. |
 | `offer → firstOrderDate` | Yes | Date | The first date for the item's sale. |
 | `offer → lastOrderDate` | Yes | Date | The last date for the item's sale. |
 | `offer → partnerPrice` | Yes | String | List Price for Partner <br /> |
 | `offer → estimatedStreetPrice` | Yes | String | Estimated retail price <br />  |
-| `offer → discountCode` | No | String | High volume discount code will be provided here. When the discount code is available, the estimatedStreetPrice and partnerPrice will reflect the discounted price. |
-| `offer → estimatedShipDate` | Yes | Date | Estimated Ship Date. This date is in UTC format. |
-| `offer → publicAnnounceDate` | Yes | Date | Public Announce Date. This date is in UTC format. |
-| `offer → rmaRequestDeadline` | Yes | Date | RMA Request Deadline. This date is in UTC format. |
 | `offer → pool` | Yes | String (Enum) | The category or grouping to which the offer belongs. This field helps in identifying the broader classification of the offer. Possible values are: <br /> - Application <br /> - Discount1 <br /> - Discount2 <br /> - Pricing Version 23 <br /> - Pricing Version 24 <br /> - Pricing Version 25 <br />|
 | `offer → duration` | Yes | String | The time period for which the offer is valid or applicable. This field specifies the length of time the offer is effective. |
 
