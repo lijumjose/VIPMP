@@ -2,10 +2,10 @@
 
 The following topics are available for your reference:
 
-- [API header](api_headers.md)
+- [API header](api-headers.md)
 - [Idempotency – Correlation ID header](idempotency.md)
-- [HTTP status codes](status_codes.md)
-- [Status codes and error handling](error_handling.md)
-- [Supported countries and locales](supported_locales.md)
+- [HTTP status codes](status-codes.md)
+- [Status codes and error handling](error-handling.md)
+- [Supported countries and locales](supported-locales.md)
 - [Resource and fields](resources.md)
 - [Validations and regular expressions](validations.md)

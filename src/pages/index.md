@@ -18,7 +18,7 @@ VIP Marketplace is a subscription-based licensing program designed to simplify t
 
 * [Partner API use cases](docs/index.md)
 * [Technical Assets](technical-assets/index.md)
-* [Release Notes](docs/release_notes/index.md)
+* [Release Notes](docs/release-notes/index.md)
 
 ## Overview
 
@@ -38,4 +38,4 @@ Read more about [Sandbox user guide](sandbox/index.md).
 
 ### Release Notes
 
-For more information about recent releases, see [Release Notes](docs/release_notes/index.md).
+For more information about recent releases, see [Release Notes](docs/release-notes/index.md).

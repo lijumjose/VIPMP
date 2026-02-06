@@ -27,7 +27,7 @@ The workflow is as follows:
 
 The detailed steps are as follows:
 
-1. Use the [Update Subscription API](../subscription_management/update_subscription.md) (`PATCH /v3/customers/{customer-id}/subscriptions/{subscription-id}`) to disable `autoRenewal`. A sample request body is as follows:
+1. Use the [Update Subscription API](../subscription-management/update-subscription.md) (`PATCH /v3/customers/{customer-id}/subscriptions/{subscription-id}`) to disable `autoRenewal`. A sample request body is as follows:
 
    ```json
    {
@@ -38,8 +38,8 @@ The detailed steps are as follows:
    }
    ```
 
-2. Use the [GET Customer Details API](../customer_account/get_customer_account.md) (`GET: /v3/customers/{customer-id}`) to verify other aspects such as 3YC, Linked Membership, market segment, country, region, and renewal quantity.
-3. Use the [Update Customer Details API](../customer_account/update_customer_account.md) (`PATCH : /v3/customers/{customer-id}`) to specify the customer as an LGA customer and marketSubSegments as FEDERAL or STATE. The request body is as follows:
+2. Use the [GET Customer Details API](../customer-account/get-customer-account.md) (`GET: /v3/customers/{customer-id}`) to verify other aspects such as 3YC, Linked Membership, market segment, country, region, and renewal quantity.
+3. Use the [Update Customer Details API](../customer-account/update-customer-account.md) (`PATCH : /v3/customers/{customer-id}`) to specify the customer as an LGA customer and marketSubSegments as FEDERAL or STATE. The request body is as follows:
 
    ```json
    {
@@ -53,7 +53,7 @@ The detailed steps are as follows:
    }
    ```
 
-4. Use the [GET Customer Details API](../customer_account/get_customer_account.md) (`GET: /v3/customers/{customer-id}`) to view the LGA status and other details. The status field shows `"status":  "PENDING_UPGRADE”` to indicate that the customer will be upgraded to LGA at the AD. Sample response of the Get Customer Details API before AD:
+4. Use the [GET Customer Details API](../customer-account/get-customer-account.md) (`GET: /v3/customers/{customer-id}`) to view the LGA status and other details. The status field shows `"status":  "PENDING_UPGRADE”` to indicate that the customer will be upgraded to LGA at the AD. Sample response of the Get Customer Details API before AD:
 
    ```json
    {

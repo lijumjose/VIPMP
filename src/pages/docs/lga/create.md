@@ -23,8 +23,8 @@ You need to use the following APIs at various steps of the workflow to create an
 
 3. Place an order:
 
-    - Preview Order API: [POST /v3/orders](../order_management/order_scenarios.md), with `orderType` set to `Preview`
-    - Create Order API: [POST /v3/orders](../order_management/create_order.md), with `orderType` set to `NEW`
+    - Preview Order API: [POST /v3/orders](../order-management/order-scenarios.md), with `orderType` set to `Preview`
+    - Create Order API: [POST /v3/orders](../order-management/create-order.md), with `orderType` set to `NEW`
 
 The subsequent sections explain these APIs in detail.
 
@@ -148,7 +148,7 @@ The following table provides descriptions for the response parameters:
 |status <br /> (read only)|string|Status code of customer account.|4 characters|
 |links <br /> (read only)|Links resource|Deep links to get customer account details.| |
 
-For more details, see [Create Customer API](../customer_account/create_customer_account.md) and [Customer Account parameters](../references/resources.md#customer-top-level-resource).
+For more details, see [Create Customer API](../customer-account/create-customer-account.md) and [Customer Account parameters](../references/resources.md#customer-top-level-resource).
 
 ### 2. Get customer details
 
@@ -232,7 +232,7 @@ The following details are displayed in the respose body of an LGA customer:
 - The `benefits` array shows `LARGE_GOVERNMENT_AGENCY` if the customer is an LGA.
 - The `linkedMembership` array shows `benefitTypes` and `country` fields.
 
-For more details, refer to [Get Customer Details API](../customer_account/get_customer_account.md).
+For more details, refer to [Get Customer Details API](../customer-account/get-customer-account.md).
 
 ### 3. Search Linked Membership Groups
 
@@ -254,7 +254,7 @@ Sample request with query parameters: `GET <ENV>/v3/linked_membership_groups?cou
 
 #### Request Header
 
-See [Headers Section](../references/api_headers.md)
+See [Headers Section](../references/api-headers.md)
 
 #### Request Body
 
@@ -332,7 +332,7 @@ The enroll customer API allows partners and distributors to use the distributor'
 
 #### Request Header
 
-See [API Headers](../references/api_headers.md).
+See [API Headers](../references/api-headers.md).
 
 #### Request Body
 
@@ -362,7 +362,7 @@ None.
 
 ### 5. Create a new Linked Membership for LGA customers
 
-Use the [Update Customer Details](../customer_account/update_customer_account.md) API (`PATCH : /v3/customers/{customer-id}`)  to create a new Linked Membership and to add the LGA customer to it.
+Use the [Update Customer Details](../customer-account/update-customer-account.md) API (`PATCH : /v3/customers/{customer-id}`)  to create a new Linked Membership and to add the LGA customer to it.
 
 **Notes:**
 
@@ -406,4 +406,4 @@ Use the [Update Customer Details](../customer_account/update_customer_account.md
 
 #### Response
 
-Same response as that of [Get Customer Details](../customer_account/get_customer_account.md) API.
+Same response as that of [Get Customer Details](../customer-account/get-customer-account.md) API.

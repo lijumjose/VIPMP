@@ -24,5 +24,5 @@ Learn more about:
 - [Create LGA customers](create.md)
 - [Migrate existing LGA customers from VIP to VIP Marketplace](migrate.md)
 - [Convert a customer in the Government market segment to an LGA customer](convert.md)
-- [Error codes specific to LGA](error_codes.md)
+- [Error codes specific to LGA](error-codes.md)
 - [References](references.md)
