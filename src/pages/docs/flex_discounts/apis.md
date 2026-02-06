@@ -30,7 +30,7 @@ Sample Request URL: `GET <ENV>/v3/flex-discounts?market-segment=COM&country=US`
 
 | Parameter          | Type             | Mandatory | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Range/Limits       |
 |--------------------|------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
-| category           | String           | No        | Filter promotions by category. Possible values are: <br /><br />  - **STANDARD:** Represents all regular Flexible Discounts available in the VIP Marketplace. These discounts can be applied to eligible orders as long as they meet the defined qualification criteria. These discounts are not restricted to new customers or first-time purchases. <br /> **Example:** Seasonal discounts like Black Friday or volume-based discounts for enterprise accounts.<br /> <br /> - **INTRO:** Represents Introductory Offers designed to help acquire new customers or encourage existing customers to adopt products that are new to their subscription. These discounts are typically limited to a customer’s first purchase or first-time use of a specific product.  <br /> **Example:** Launch offer for Adobe Express at $39.99 for new customers. |                    |
+| categories           | String           | No        | Filter promotions by category. Possible values are: <br /><br />  - **STANDARD:** Represents all regular Flexible Discounts available in the VIP Marketplace. These discounts can be applied to eligible orders as long as they meet the defined qualification criteria. These discounts are not restricted to new customers or first-time purchases. <br /> **Example:** Seasonal discounts like Black Friday or volume-based discounts for enterprise accounts.<br /> <br /> - **INTRO:** Represents Introductory Offers designed to help acquire new customers or encourage existing customers to adopt products that are new to their subscription. These discounts are typically limited to a customer’s first purchase or first-time use of a specific product.  <br /> **Example:** Launch offer for Adobe Express at $39.99 for new customers. <br /> <br />**Note:**  If not specified, both Intro and Standard discounts will be returned. |                    |
 | market-segment     | String           | Yes       | Get flexible discounts by market segment. Example: "COM", "EDU".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | 3 characters       |
 | country            | String           | Yes       | Get flexible discounts by country using the ISO 3166-1 alpha-2 code. Example: "US", "IN".                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | 2 or 3 characters  |
 | offer-ids          | Array of strings | No        | Provide a comma-separated list of Offer IDs to retrieve applicable flexible discounts. Example: 65322535CA04A12, 86322535CA04A12                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |                    |
@@ -43,7 +43,7 @@ Sample Request URL: `GET <ENV>/v3/flex-discounts?market-segment=COM&country=US`
 
 #### **Sample request URLs**
 
-- Sample request URL with all query parameters: `<ENV>/v3/flex-discounts?category=STANDARD&market-segment=COM&country=US&offer-ids=65322535CA04A12,86322535CA04A12&flex-discount-code=BLACK_FRIDAY&start-date=2025-03-01&end-date=2025-03-31&limit=20&offset=0`
+- Sample request URL with all query parameters: `<ENV>/v3/flex-discounts?categories=STANDARD&market-segment=COM&country=US&offer-ids=65322535CA04A12,86322535CA04A12&flex-discount-code=BLACK_FRIDAY&start-date=2025-03-01&end-date=2025-03-31&limit=20&offset=0`
 - Sample request URL where flexible discount ID is used:  `<ENV>/v3/flex-discounts?country=US&market-segment=COM&flex-discount-id=55555555-1533-4564-ade1-cd6946a97f29`
 
 ### Request Header  
@@ -137,19 +137,19 @@ None.
   ],
   "links": {
     "self": {
-      "uri": "/v3/flex-discounts?customer-id=<>&categories=ONDEMAND&limit=20&offset=20",
+      "uri": "/v3/flex-discounts?customer-id=<>&categories=STANDARD,INTRO&limit=20&offset=20",
       "method": "GET",
       "headers": []
     },
     // next link will be present only if the next resource is present
     "next": {
-      "uri": "/v3/flex-discounts?customer-id=<>&categories=ONDEMAND&limit=20&offset=40",
+      "uri": "/v3/flex-discounts?customer-id=<>&categories=STANDARD,INTRO&limit=20&offset=40",
       "method": "GET",
       "headers": []
     },
     // prev link will be present only if a previous resource is present
     "prev": {
-      "uri": "/v3/flex-discounts?customer-id=<>&categories=ONDEMAND&limit=20&offset=0",
+      "uri": "/v3/flex-discounts?customer-id=<>&categories=STANDARD,INTRO&limit=20&offset=0",
       "method": "GET",
       "headers": []
     }
@@ -705,7 +705,7 @@ The `flexDiscountCodes` parameter indicates the flexible discounts applicable fo
 
 ### Remove a flexible discount from a subscription
 
-Use the `PATCH /v3/customers/<customer-id>/subscriptions/<subscription-id>` with the query parameter `reset-flex-discount-codes=true` to remove a flexible discount from a subscription
+Use the `PATCH /v3/customers/<customer-id>/subscriptions/<subscription-id>` with the query parameter `reset-flex-discount-codes=true` to remove a flexible discount from a subscription.
 
 #### Request
 

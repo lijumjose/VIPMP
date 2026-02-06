@@ -1,6 +1,6 @@
 # Manage renewals
 
-Managing subscription renewals helps partners ensure uninterrupted service for customers and maintain accurate subscription configurations throughout the contract lifecycle. Adobe supports multiple renewal paths that allow partners to renew subscriptions automatically or manually:
+Managing subscription renewals helps partners ensure uninterrupted service for customers and maintain accurate subscription configurations throughout the contract lifecycle. Adobe supports these renewal paths:
 
 1. **Auto‑renewal (system‑initiated)**
 

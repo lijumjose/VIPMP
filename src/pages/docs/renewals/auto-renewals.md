@@ -2,10 +2,10 @@
 
 Managing auto‑renewals through APIs allows you to programmatically control how subscriptions renew based on customer preferences and configured quantities. Partners can use the following APIs to configure auto-renewals for a subscription:
 
-| Endpoint                                                      | Method | Description               |
-|---------------------------------------------------------------|--------|---------------------------|
-| `/v3/customers/<customer-id>/subscriptions`                   | POST   | Create a new subscription |
-| `/v3/customers/<customer-id>/subscriptions/<subscription-id>` | PATCH  | Update a subscription     |
+| Endpoint                                                      | Description               |
+|---------------------------------------------------------------|----------------------------|
+| `/v3/customers/<customer-id>/subscriptions`                   | POST   |
+| `/v3/customers/<customer-id>/subscriptions/<subscription-id>` | PATCH  |
 
 The system picks up the subscription on the Renewal Date.  Subscriptions are renewed based on the configured renewal quantity and the customer’s renewal preferences. If early renewal was previously applied:
 
@@ -15,7 +15,7 @@ The system picks up the subscription on the Renewal Date.  Subscriptions are ren
 Auto‑renewal process outcomes:
 
 - Renew the subscription if auto‑renew is enabled.
-- Expire thebsubscription if auto‑renew is turned off.
+- Expire the subscription if auto‑renew is turned off.
 - Update the subscription attributes even when all seats were already early renewed.
 
 For more information, see:

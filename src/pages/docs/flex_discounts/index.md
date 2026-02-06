@@ -25,19 +25,19 @@ The discounts applied based on these discount types are explained in the followi
 
 **Percentage Off Discount – Example: 20% discount for Acrobat Pro**
 
-| Part Number      | Original Price | Discount Price |
-|------------------|----------------|----------------|
-| 30006208CA01A12  | $89.99         | $71.99         |
-| 30006208CA02A12  | $87.99         | $70.39         |
-| 30006208CA03A12  | $85.99         | $68.79         |
-| 30006208CA04A12  | $83.99         | $67.19         |
-| 30006208CA012A12 | $79.99         | $63.99         |
-| 30006208CA013A12 | $77.99         | $62.39         |
-| 30006208CA014A12 | $75.99         | $60.79         |
+| Part Number      | Original Price | Discounted Price |
+|------------------|----------------|------------------|
+| 30006208CA01A12  | $89.99         | $71.99           |
+| 30006208CA02A12  | $87.99         | $70.39           |
+| 30006208CA03A12  | $85.99         | $68.79           |
+| 30006208CA04A12  | $83.99         | $67.19           |
+| 30006208CA012A12 | $79.99         | $63.99           |
+| 30006208CA013A12 | $77.99         | $62.39           |
+| 30006208CA014A12 | $75.99         | $60.79           |
 
 **Fixed Amount Discount – Example: $20 discount for Acrobat Express**
 
-| Part Number      | Original Price | Discount Amount | Discount Price |
+| Part Number      | Original Price | Discount Amount | Discounted Price |
 |------------------|----------------|-----------------|----------------|
 | 30006208CA01A12  | $89.99         | $20.00          | $69.99         |
 | 30006208CA02A12  | $87.99         | $20.00          | $67.99         |

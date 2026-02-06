@@ -156,8 +156,8 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 
 **Notes:**
 
-- Please be aware that prices returned in the  `Preview Order` and `Preview Renewal` calls are calculated based on the Pacific Standard Time (PST) time zone.
-- Please also be aware that prices returned in the `Preview Order` and `Preview Renewal` calls are an estimate based on the request made at that date and time. Orders placed at a later date and time may not result in the same return amount.
+- Prices returned in the  `Preview Order` and `Preview Renewal` calls are calculated based on the Pacific Standard Time (PST) time zone.
+- Prices returned in the `Preview Order` and `Preview Renewal` calls are an estimate based on the request made at that date and time. Orders placed at a later date and time may not result in the same return amount.
 - Pricing returned via this API is pricing between Adobe and the direct partner. Any pricing presented to end customers is set by end customer’s reseller.
 - Pricing details are unavailable in `Preview Order` and `Preview Renewal` scenarios for global sales involving multiple currencies.
 
@@ -281,7 +281,7 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 }
 ```
 
-### <mark> Pricing details in lineitems (lineItems[].pricing) </mark>
+### Pricing details in lineitems (lineItems[].pricing)
 
 | Field                       | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
@@ -292,7 +292,7 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 
 **Note:** The `proratedDays` parameter in the response specifies the number of days for which the order will be invoiced. This parameter appears only when the `fetch-price` parameter is set to `true` in the request. It is relevant for mid-term purchases.
 
-### <mark>Pricing Summary (pricingSummary[])</mark>
+### Pricing Summary (pricingSummary[])
 
 | Field                       | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
