@@ -6,7 +6,7 @@ Before placing an order, a reseller needs to create a customer account by using 
 |---|---|
 |/v3/customers| POST|
 
-The API returns the customer resource with a link to the [Get Customer Account Details](./get_customer_account.md) endpoint.
+The API returns the customer resource with a link to the [Get Customer Account Details](get_customer_account.md) endpoint.
 
 ## Usage instructions
 

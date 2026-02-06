@@ -140,7 +140,7 @@ Read more about [Mid-term upgrades](../mid_term/index.md).
   - Introduced the `GET /v3/flex-discounts` API to get the list of available flexible discounts.
   - Preview Order API returns the applicable flexible discounts for the customer.
   - Partners can place the order by applying the  flexible discount code received.
-  - Introduced [new error codes specific to Flexible Discounts](../flex_discounts//error_codes.md).
+  - Introduced [new error codes specific to Flexible Discounts](../flex_discounts/error_codes.md).
 
 #### Fetch Recommendations
 
@@ -217,8 +217,8 @@ Changes to support on-demand flexible discount release:
 ### Earlier releases
 
 - [Manage Flexible Discounts](/src/pages/sandbox/sandbox_portal/flex_promo/index.md)
-- [Manage Product Recommendations](/src/pages/sandbox/sandbox_portal/recommendations/index.md)
-- [Manage High Growth Offers](/src/pages/sandbox/sandbox_portal/high_growth_offer/high_growth.md)
-- [Migrate HVD customers from VIP to VIP Marketplace](/src/pages/sandbox/sandbox_portal/migrate_hvd_customers/migrate_hvd_customers.md)
-- [Manage Linked Memberships](/src/pages/sandbox/sandbox_portal/linked_memberships/index.md)
-- [View renewal status of memberships](/src/pages/sandbox/sandbox_portal/transfer_memberships/index.md)
+- [Manage Product Recommendations](../../sandbox/sandbox_portal/recommendations/index.md)
+- [Manage High Growth Offers](../../sandbox/sandbox_portal/high_growth_offer/high_growth.md)
+- [Migrate HVD customers from VIP to VIP Marketplace](../../sandbox/sandbox_portal/migrate_hvd_customers/migrate_hvd_customers.md)
+- [Manage Linked Memberships](../../sandbox/sandbox_portal/linked_memberships/index.md)
+- [View renewal status of memberships](../../sandbox/sandbox_portal/transfer_memberships/index.md)

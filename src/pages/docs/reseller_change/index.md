@@ -26,6 +26,6 @@ This code is valid for 7 days. The same code is sent to all the customer adminis
 
 Use the following API endpoints to manage the reseller change processes:
 
-- [Preview transfer](./preview_transfer.md)
-- [Commit transfer](./commit_transfer.md)
-- [Get transfer](./get_transfer.md)
+- [Preview transfer](preview_transfer.md)
+- [Commit transfer](commit_transfer.md)
+- [Get transfer](get_transfer.md)

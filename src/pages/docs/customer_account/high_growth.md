@@ -18,7 +18,7 @@ The available High Growth Offers based on MOQ are:
 
 Enterprise and Team customers of Acrobat Pro in the commerce, government, and education market segments can take advantage of High Growth Offers if they meet the following criteria:
 
-1. **Enrollment:** Customers must be enrolled in the [3YC program](./three_year_commit.md).
+1. **Enrollment:** Customers must be enrolled in the [3YC program](three_year_commit.md).
 2. **MOQ requirement:** Customers require a minimum order quantity (MOQ) of 100 or more.
 
    - Customers can select from the available MOQ offers based on their seat requirements. For example, a customer with 110 seats can opt for either the 250 or 500 MOQ offer option, as shown in the following table.
@@ -46,4 +46,4 @@ The APIs required to obtain MOQ offers differ depending on various scenarios. Th
 
 ![High Growth flow for Acro customers](../image/hg_flow.png)
 
-Read more about [High Growth Offer scenarios](./high_growth_scenarios.md).
+Read more about [High Growth Offer scenarios](high_growth_scenarios.md).

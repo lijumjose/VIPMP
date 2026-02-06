@@ -4,6 +4,6 @@ For a global customer to purchase offers outside their home country, they must c
 
 Use the following APIs to manage your deployments:
 
-- [Create deployment](./create_deployment.md)
-- [Get details of deployment](./get_deployment.md)
-- [Update deployment](./update_deployment.md)
+- [Create deployment](create_deployment.md)
+- [Get details of deployment](get_deployment.md)
+- [Update deployment](update_deployment.md)

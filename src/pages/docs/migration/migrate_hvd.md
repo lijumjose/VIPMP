@@ -55,13 +55,13 @@ Sample response:
 }
 ```
 
-**Note:** Refer to the [Migration Preview](./preview_offers.md) section for the full set of response.
+**Note:** Refer to the [Migration Preview](preview_offers.md) section for the full set of response.
 
 The newly introduced discount code parameter indicates the discount level and whether the existing subscription is based on the pre-price action pricing or post-price action pricing. For example, HVD_L18_PRE specifies that the HVD customer is at discount level 18 and received the pre-price action pricing for the current subscription.
 
 ### 2. Transfer subscription
 
-Use the Transfer Subscription API (`POST /v3/memberships/<membership-id>/transfers`) to migrate the subscription from VIP to VIP MP. Read more about [Transfer Subscription API](./transfer_subscription.md).
+Use the Transfer Subscription API (`POST /v3/memberships/<membership-id>/transfers`) to migrate the subscription from VIP to VIP MP. Read more about [Transfer Subscription API](transfer_subscription.md).
 
 ### 3. Post migration steps
 

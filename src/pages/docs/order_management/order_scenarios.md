@@ -19,7 +19,7 @@ This section lists the sample requests and responses of an order with `orderType
 **Notes:**
 
 - The `subscriptionId` may be blank while the order is processing. Once the order is complete (status 1000), then all `subscriptionIds` will be populated and will not change.
-- The [Create Order](./create_order.md) call is used to add seats for the current term.
+- The [Create Order](create_order.md) call is used to add seats for the current term.
 - Order ID is created by this service and returned synchronously.
 - Order may fail asynchronously, and status will be updated to reflect the failure.
 
@@ -634,7 +634,7 @@ OR
 
 ## Assumptions
 
-- Renewals are managed at the subscription level. No new order is expected from the marketplace. If a customer has subscriptions set to auto-renew, Adobe creates a renewal order on the customer's `cotermDate`. The renewal Order ID can be retrieved by parsing the response from the [Get Order History](./get_order.md) API with `orderType` as RENEWAL.
+- Renewals are managed at the subscription level. No new order is expected from the marketplace. If a customer has subscriptions set to auto-renew, Adobe creates a renewal order on the customer's `cotermDate`. The renewal Order ID can be retrieved by parsing the response from the [Get Order History](get_order.md) API with `orderType` as RENEWAL.
 - Offer IDs are defined and communicated in published price lists.
 - Each Offer ID is valid only for certain currencies. The currency code sent in the request must match the Offer IDs as well as the currency for which the distributor is configured.
 - `externalReferenceId` is used to pass in an ID for financial reconciliation.

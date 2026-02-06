@@ -1,7 +1,7 @@
 
 # Pricing and invoicing data
 
-Partners in the VIP Marketplace can view invoicing and pricing details for customer orders through the [Preview Order](../order_management/order_scenarios.md#preview-an-order), [Preview Renewal](../order_management/order_scenarios.md#preview-renewal-orders), and [Get Order APIs](../order_management/get_order.md).
+Partners in the VIP Marketplace can view invoicing and pricing details for customer orders through the [Preview Order](order_scenarios.md#preview-an-order), [Preview Renewal](order_scenarios.md#preview-renewal-orders), and [Get Order APIs](get_order.md).
 
 Pricing data returned through these APIs reflects partner pricing, discounts, proration logic, and totals as stored in Adobe systems. Pricing is available only for single‑currency orders and for orders with completed status (1000).
 
@@ -17,9 +17,9 @@ The Preview and Get Order APIs return a defined subset of pricing fields, includ
 
 The functionality allows partners to:
 
-- View invoicing details for a specific order by calling the [Get Order by ID](../order_management/get_order.md#get-details-of-a-specific-order) API with the required query parameter.
-- View invoicing details across a customer’s order history by calling the [Get Order History](../order_management/get_order.md#get-the-order-history-of-a-customer) API with the required query parameter.
-- Retrieve pricing during order preview and renewal preview by using the [Preview Order](../order_management/order_scenarios.md) and [Preview Renewal](../order_management/order_scenarios.md#preview-renewal-orders) APIs with the pricing parameter.
+- View invoicing details for a specific order by calling the [Get Order by ID](get_order.md#get-details-of-a-specific-order) API with the required query parameter.
+- View invoicing details across a customer’s order history by calling the [Get Order History](get_order.md#get-the-order-history-of-a-customer) API with the required query parameter.
+- Retrieve pricing during order preview and renewal preview by using the [Preview Order](order_scenarios.md) and [Preview Renewal](order_scenarios.md#preview-renewal-orders) APIs with the pricing parameter.
 
 ## Preview with pricing
 

@@ -8,7 +8,7 @@ Organizations benefit from a linked membership when their aggregated license qua
 
 Linked memberships can be created in one of the two ways:
 
-- When a Partner (or support) initiates the creation of a linked membership with a specified customer as the owner through the [Update Customer API](/src/pages/docs/customer_account/update_customer_account.md).
+- When a Partner (or support) initiates the creation of a linked membership with a specified customer as the owner through the [Update Customer API](../../../docs/customer_account/update_customer_account.md).
 - When the owner of a linked membership transfers from VIP to VIP MP.
 
 **Note:** Linked membership owners and members are not qualified for the three-year commitment benefits.

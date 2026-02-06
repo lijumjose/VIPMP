@@ -6,7 +6,7 @@ Orders can be created either through the Sandbox UI or Commerce Partner API call
 
 Learn more about:
 
-- [Create order](./create_order.md)
-- [View orders](./view_order_details.md)
-- [Edit order](./edit_order_status.md)
-- [Cancel an order](./cancel_order.md)
+- [Create order](create_order.md)
+- [View orders](view_order_details.md)
+- [Edit order](edit_order_status.md)
+- [Cancel an order](cancel_order.md)

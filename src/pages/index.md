@@ -16,9 +16,9 @@ VIP Marketplace is a subscription-based licensing program designed to simplify t
 
 #### Resources
 
-* [Partner API use cases](./docs/index.md)
+* [Partner API use cases](docs/index.md)
 * [Technical Assets](technical-assets/index.md)
-* [Release Notes](./docs/release_notes/index.md)
+* [Release Notes](docs/release_notes/index.md)
 
 ## Overview
 
@@ -28,14 +28,14 @@ The VIP Marketplace enables resellers to purchase the necessary Adobe licenses f
 
 ### API Reference
 
-Learn more about [VIP MP Partner APIs](./docs/index.md).
+Learn more about [VIP MP Partner APIs](docs/index.md).
 
 <DiscoverBlock slots="heading, link, text"/>
 
 ### Sandbox User Guide
 
-Read more about [Sandbox user guide](./sandbox/index.md).
+Read more about [Sandbox user guide](sandbox/index.md).
 
 ### Release Notes
 
-For more information about recent releases, see [Release Notes](./docs/release_notes/index.md).
+For more information about recent releases, see [Release Notes](docs/release_notes/index.md).

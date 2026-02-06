@@ -198,7 +198,7 @@ If `promotions` array indicates the promotions applied to the Order. For example
 
 ## Pricing and invoicing data in order details
 
-Partners can view invoicing and pricing details for customer orders through the [Get Order](../order_management/get_order.md), [Preview Order](../order_management/order_scenarios.md#preview-an-order), and [Preview Renewal APIs](../order_management/order_scenarios.md#preview-renewal-orders).
+Partners can view invoicing and pricing details for customer orders through the [Get Order](get_order.md), [Preview Order](order_scenarios.md#preview-an-order), and [Preview Renewal APIs](order_scenarios.md#preview-renewal-orders).
 
 Pricing data returned through these APIs reflects partner pricing, discounts, proration logic, and totals as priced and stored in Adobe systems.
 

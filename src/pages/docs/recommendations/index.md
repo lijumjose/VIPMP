@@ -40,4 +40,4 @@ The following figure illustrates how recommendations are fetched to assist custo
 
 ![Recommendations Use Case sample](../image/reco_usecase.png)
 
-Read more about [how to manage recommendations using APIs](./apis.md).
+Read more about [how to manage recommendations using APIs](apis.md).

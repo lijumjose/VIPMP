@@ -11,7 +11,7 @@ For global customers to purchase offers outside their home country, they must cr
 
 You can create deployments using the [Commerce Partner API Postman Collection](https://adobe.sharepoint.com/sites/VIPMarketplacePartners/PreRelease%20Materials/Forms/AllItems.aspx?csf=1&web=1&e=YyIk9K&CID=711c91d7-47d9-4d68-b83b-c15c1abbd860&FolderCTID=0x01200089886E87F1725140BF9E471CF714C925&id=%2Fsites%2FVIPMarketplacePartners%2FPreRelease+Materials%2FTechnical+Assets). Select the **Deployment Management** folder and select the `POST Create Deployment` request.
 
-For more details on the API, refer to  [External API documentation](/src/pages/docs/index.md).
+For more details on the API, refer to  [External API documentation](../../../docs/index.md).
 
 ## Update a deployment
 
@@ -33,7 +33,7 @@ Follow these steps to edit a deployment in the Sandbox Portal:
 A deployment can be deactivated through the Sandbox Portal or through an  API call.
 
 - To deactivate through the Sandbox Portal, follow the steps provided in the section ‘Updating a Deployment’ and update the status field to ‘1004’.
-- To deactivate through an API call, refer to [deactivate a deployment](/src/pages/docs/deployment_management/update_deployment.md).
+- To deactivate through an API call, refer to [deactivate a deployment](../../../docs/deployment_management/update_deployment.md).
 
 ## View deployments
 

@@ -29,16 +29,16 @@ This distinction ensures fair benefit distribution while aligning with the annua
 Customers can enroll in 3YC through one of three workflows. In all cases, customers must accept the commitment terms (minimum quantities and end date) in the Adobe Admin Console before receiving discounts.
 
 1. New Customer: Partners can set the requested minimum quantities during customer creation. Once the account becomes active, this triggers the 3YC customer acceptance workflow. API endpoints:
-   - [POST Create Customer API](./create_customer_account.md)
-   - [GET Customer API](./get_customer_account.md)
+   - [POST Create Customer API](create_customer_account.md)
+   - [GET Customer API](get_customer_account.md)
 2. Existing Customer: Partners can update existing customers (with or without an active 3YC) with new requested minimum quantities. This triggers the 3YC customer acceptance workflow once the update is processed. API endpoints:
-   - [PATCH Update Customer API](./update_customer_account.md)
-   - [GET Customer API](./get_customer_account.md)
+   - [PATCH Update Customer API](update_customer_account.md)
+   - [GET Customer API](get_customer_account.md)
 
 3. Existing VIP Customer: Existing VIP customers with active 3YC can be transferred to VIP Marketplace and retain their 3YC commitment terms, which can be retrieved using the GET Customer API. API endpoints:
 
    - [POST Transfer Subscriptions API](../migration/transfer_subscription.md)
-   - [GET Customer API](./get_customer_account.md)
+   - [GET Customer API](get_customer_account.md)
 
 ## 3YC discount levels
 

@@ -34,7 +34,7 @@ You can include offers for all volume discounted price levels and scaled pricing
 | 50,000 to 99,999  | T6   |
 | > 100K            | T7   |
 
-Resellers can create new Linked Memberships using the [Update Customer Account API](./update_customer_account.md). Each Linked Membership has one owner and multiple members. The owner of a Linked Membership and its members are B2B customer organizations. The owner must agree to the [terms and conditions](https://www.adobe.com/howtobuy/buying-programs/vipmp-linked-membership-terms.html) in the Admin Console and enroll other members in the Linked Membership. The workflow for creating a Linked Membership and adding members is as follows:
+Resellers can create new Linked Memberships using the [Update Customer Account API](update_customer_account.md). Each Linked Membership has one owner and multiple members. The owner of a Linked Membership and its members are B2B customer organizations. The owner must agree to the [terms and conditions](https://www.adobe.com/howtobuy/buying-programs/vipmp-linked-membership-terms.html) in the Admin Console and enroll other members in the Linked Membership. The workflow for creating a Linked Membership and adding members is as follows:
 
 ![Linked membership workflow](../image/linked_membership_workflow.png)
 
@@ -53,11 +53,11 @@ The following list provides certain important aspects related to Linked Membersh
 - The calculated discount level will be propagated to all the participating linked members and the owner.
 - A Linked Membership owner and members are not qualified for the three-year commit benefits.
 
-Partner marketplaces can create Linked Memberships using the [Update Customer API](./update_customer_account.md).
+Partner marketplaces can create Linked Memberships using the [Update Customer API](update_customer_account.md).
 
 ### Request
 
-The following example shows the parameters to be used in the request body of the [Update Customer API](./update_customer_account.md) endpoint to define a new Linked Membership:
+The following example shows the parameters to be used in the request body of the [Update Customer API](update_customer_account.md) endpoint to define a new Linked Membership:
 
 ```json
 {
@@ -132,7 +132,7 @@ curl --location --request PATCH 'https://partners.adobe.io/v3/customers/10055136
 
 ### Response body
 
-Same as [Get Customer Account Details (Customer resource)](./get_customer_account.md).
+Same as [Get Customer Account Details (Customer resource)](get_customer_account.md).
 
 **Note:** Any contacts specified in this call will receive the admin welcome email. This can be resent if an end-user did not receive it.
 
@@ -148,7 +148,7 @@ Same as [Get Customer Account Details (Customer resource)](./get_customer_accoun
 
 ## Get details of Linked Membership
 
-The [Get Customer API](./get_customer_account.md) returns details about Linked Memberships associated with a customer (owner/member). The API returns the subscription details, including the Linked Membership details. The following response sample shows details fetched for a customer with a Linked Membership:
+The [Get Customer API](get_customer_account.md) returns details about Linked Memberships associated with a customer (owner/member). The API returns the subscription details, including the Linked Membership details. The following response sample shows details fetched for a customer with a Linked Membership:
 
 ```json
 {

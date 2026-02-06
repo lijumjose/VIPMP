@@ -4,6 +4,6 @@ Creating a reseller is one of the first steps when using the CPAPI as many furth
 
 You can perform the following reseller management operations:
 
-- [Create a reseller](./create_reseller.md)
-- [View reseller information](./view_reseller_info.md)
-- [Edit reseller status](./edit_reseller_status.md)
+- [Create a reseller](create_reseller.md)
+- [View reseller information](view_reseller_info.md)
+- [Edit reseller status](edit_reseller_status.md)

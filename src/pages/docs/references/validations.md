@@ -5,7 +5,7 @@
 |companyName | CompanyProfile | `^[\\p{L}\\p{N}_ ,.＆&・\\'()（）\\\"\\/-]{4,80}$`| Full Unicode letter and number support – no normalization is done.|
 |firstName | Contact | `^[\\p{L}\\p{N}-_ ,.＆&'\\\"]{1,35}$`| Full Unicode letter and number support – no normalization is done.|
 |lastName | Contact | See the [regular expression given in the following section](#regular-expression-for-contact). |Source: [emailregex.com](https://emailregex.com/)|
-|postalCode | Address | Varies based on country. Please see the [Supported Countries and Locales](./supported_locales.md) section| |
+|postalCode | Address | Varies based on country. Please see the [Supported Countries and Locales](supported_locales.md) section| |
 
 #### Regular expression for contact
 

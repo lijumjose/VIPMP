@@ -1,6 +1,6 @@
 # Create order
 
-Use the `POST /v3/customers/<customer-id>/orders` endpoint to place an order for a customer. Read more about [scenarios where an order is created](./order_scenarios.md).
+Use the `POST /v3/customers/<customer-id>/orders` endpoint to place an order for a customer. Read more about [scenarios where an order is created](order_scenarios.md).
 
 ## Assumptions
 

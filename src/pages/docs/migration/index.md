@@ -1,6 +1,6 @@
 # Migrate from VIP to VIP-MP
 
-You can seamlessly transfer existing customers from VIP to VIP-MP. Customer consent can be obtained by sending the customer’s VIP Membership ID in the transfer request. You can use the [Preview Offers](./preview_offers.md) endpoint to check a customer’s eligibility for transfer and to preview the offers that need to be transferred for their existing VIP subscriptions.
+You can seamlessly transfer existing customers from VIP to VIP-MP. Customer consent can be obtained by sending the customer’s VIP Membership ID in the transfer request. You can use the [Preview Offers](preview_offers.md) endpoint to check a customer’s eligibility for transfer and to preview the offers that need to be transferred for their existing VIP subscriptions.
 
 ## Eligibility rules for migration
 
@@ -50,6 +50,6 @@ You can seamlessly transfer existing customers from VIP to VIP-MP. Customer cons
 
 The following APIs are available to enable migration from VIP to VIP-MP:
 
-- [Preview offers](./preview_offers.md)
-- [Transfer subscriptions](./transfer_subscription.md)
-- [Get transfer details](./transfer_subscription.md)
+- [Preview offers](preview_offers.md)
+- [Transfer subscriptions](transfer_subscription.md)
+- [Get transfer details](transfer_subscription.md)

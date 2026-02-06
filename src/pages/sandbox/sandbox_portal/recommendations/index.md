@@ -1,6 +1,6 @@
 # Product Recommendations
 
-The Recommendations API empowers VIP Marketplace partners to provide intelligent, personalized, and context-aware product suggestions, enhancing the customer experience through upsell, cross-sell, and add-on opportunities. For more details, see [Manage recommendations using APIs](/src/pages/docs/recommendations/apis.md) section in the Adobe Commerce Partner API documentation.
+The Recommendations API empowers VIP Marketplace partners to provide intelligent, personalized, and context-aware product suggestions, enhancing the customer experience through upsell, cross-sell, and add-on opportunities. For more details, see [Manage recommendations using APIs](../../../docs/recommendations/apis.md) section in the Adobe Commerce Partner API documentation.
 
 ## Testing Recommendations in Sandbox
 

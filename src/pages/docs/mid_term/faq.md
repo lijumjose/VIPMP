@@ -79,7 +79,7 @@ This detailed FAQ covers common questions about Adobe’s mid-term upgrade featu
 - **Key points:**
 
   - Switch paths are one-way (A→B doesn't mean B→A is valid).
-  - Use the [GET Product Switch Paths API](./apis.md#discover-upgrade-path) to discover valid paths.
+  - Use the [GET Product Switch Paths API](apis.md#discover-upgrade-path) to discover valid paths.
   - Paths vary by market segment (COM, GOV, EDU), country, and language.
   - Some products (like High Growth Offers) have restricted switch eligibility.
 
@@ -120,7 +120,7 @@ This detailed FAQ covers common questions about Adobe’s mid-term upgrade featu
 
 ### How do I discover available upgrade paths for an offer?
 
-**Answer:** Use the [GET Offer Switch Paths](./apis.md#discover-upgrade-path) API to discover upgrade paths at the product level using the base offer ID.
+**Answer:** Use the [GET Offer Switch Paths](apis.md#discover-upgrade-path) API to discover upgrade paths at the product level using the base offer ID.
 
 - **Example request:**
 
@@ -244,7 +244,7 @@ GET `{env root url}/v3/offer-switch-paths?market-segment=COM&country=US&language
 
 ### Is PREVIEW_SWITCH required before executing a SWITCH?
 
-**Answer:** No, [PREVIEW_SWITCH](./apis.md#2-preview-switch-order) is optional but highly recommended.
+**Answer:** No, [PREVIEW_SWITCH](apis.md#2-preview-switch-order) is optional but highly recommended.
 
 **Benefits of using PREVIEW_SWITCH:**
 

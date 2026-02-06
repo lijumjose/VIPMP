@@ -11,9 +11,9 @@ Large government agencies (LGAs) in the US and Canada can get benefit from disco
 
 Only distributors enabled as LGA distributors for government customers can create and manage LGA customers. An LGA-enabled distributor can:
 
-- [Create LGA customers](./create.md)
-- [Migrate existing LGA customers from VIP to VIP Marketplace](./migrate.md)
-- [Convert a customer in the Government market segment to an LGA customer](./convert.md)
+- [Create LGA customers](create.md)
+- [Migrate existing LGA customers from VIP to VIP Marketplace](migrate.md)
+- [Convert a customer in the Government market segment to an LGA customer](convert.md)
 
 **Note:** 3YC customers are not eligible for LGA discounts.
 
@@ -21,8 +21,8 @@ Only distributors enabled as LGA distributors for government customers can creat
 
 Learn more about:
 
-- [Create LGA customers](./create.md)
-- [Migrate existing LGA customers from VIP to VIP Marketplace](./migrate.md)
-- [Convert a customer in the Government market segment to an LGA customer](./convert.md)
-- [Error codes specific to LGA](./error_codes.md)
-- [References](./references.md)
+- [Create LGA customers](create.md)
+- [Migrate existing LGA customers from VIP to VIP Marketplace](migrate.md)
+- [Convert a customer in the Government market segment to an LGA customer](convert.md)
+- [Error codes specific to LGA](error_codes.md)
+- [References](references.md)

@@ -15,7 +15,7 @@ Customers can choose from a set of pre-defined upgrade paths for their product s
 - Acrobat Pro Teams to Acrobat Studio Teams
 - Acrobat Studio Teams to Acrobat Studio Enterprise
 
-You can use the [GET Offer Switch Paths](./apis.md#1-retrieve-upgrade-paths) API to retrieve the upgrade paths that are available. Upgrade paths include a `switchType` indicator that defines whether the upgrade must be full or can be partial:
+You can use the [GET Offer Switch Paths](apis.md#1-retrieve-upgrade-paths) API to retrieve the upgrade paths that are available. Upgrade paths include a `switchType` indicator that defines whether the upgrade must be full or can be partial:
 
 - **Full switch**  
   The entire quantity of the original subscription needs to be upgraded to the new product.
@@ -54,7 +54,7 @@ The following figure illustrates the upgrade process:
 
 For more information:
 
-- [Discover upgrade paths](./apis.md#discover-upgrade-path)
-- [Create switch order](./apis.md#apply-switch-plan)
-- [Validate switch order](./apis.md#verify-switch-order)
-- [Revert switch orders](./apis.md#revert-switch-order)
+- [Discover upgrade paths](apis.md#discover-upgrade-path)
+- [Create switch order](apis.md#apply-switch-plan)
+- [Validate switch order](apis.md#verify-switch-order)
+- [Revert switch orders](apis.md#revert-switch-order)

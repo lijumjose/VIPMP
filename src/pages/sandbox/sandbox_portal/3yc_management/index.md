@@ -2,7 +2,7 @@
 
 The 3-Year Commit (3YC) program is a loyalty initiative that offers customers greater discounts and a price lock for three terms (the current term plus two additional terms). Customers must commit to purchasing and maintaining a minimum quantity throughout the 3-year period.
 
-To determine the correct discount level, use the [Preview Order API](/src/pages/docs/migration/preview_offers.md). This API considers the customer’s 3YC commitment and any accepted commitment requests to return the Offer ID with the best discount.
+To determine the correct discount level, use the [Preview Order API](../../../docs/migration/preview_offers.md). This API considers the customer’s 3YC commitment and any accepted commitment requests to return the Offer ID with the best discount.
 
 ## 3YC enrollment methods for 3YC
 
