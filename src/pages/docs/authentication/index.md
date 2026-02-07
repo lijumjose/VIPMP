@@ -13,6 +13,6 @@ Adobe provides credentials to users for accessing the Sandbox environment. The a
 
 |                          | Sandbox                                 | Production                       |
 |--------------------------|-----------------------------------------|----------------------------------|
-| **Partner API Base URL** | <https://partnersandbox-stage.adobe.io> | <https://partners.adobe.io>      |
-| **IMS Base URL**         | <https://ims-na1-stg1.adobelogin.com>   | <https://ims-na1.adobelogin.com> |
+| **Partner API Base URL** | [https://partnersandbox-stage.adobe.io](https://partnersandbox-stage.adobe.io) | [https://partners.adobe.io](https://partners.adobe.io)      |
+| **IMS Base URL**         | [https://ims-na1-stg1.adobelogin.com](https://ims-na1-stg1.adobelogin.com)   | [https://ims-na1.adobelogin.com](https://ims-na1.adobelogin.com) |
 | **Metascope**            | ent_partners_sdk                        | ent_partners_sdk                 |
