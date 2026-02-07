@@ -4,7 +4,7 @@ description: Overview of Adobe VIP MarketPlace
 contributors:
   - https://github.com/sparecycles
 ---
-<Hero slots="image, heading, text" background="rgb(64, 34, 138)" hideBreadcrumbNav={false}/>
+<Superhero slots="image, heading, text" background="rgb(64, 34, 138)" />
 
 ![Hero image](./image/illustration.png)
 
