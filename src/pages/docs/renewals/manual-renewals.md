@@ -59,7 +59,7 @@ The following are the key capabilities and rules that define how early renewal w
 
 ### Early renewal workflow using APIs
 
-<img src="renewal_workflow.png" width="400" />
+![renewal workflow](renewal_workflow.png)
 
 #### 1. Preview Renewal
 
