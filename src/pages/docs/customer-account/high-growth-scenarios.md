@@ -30,13 +30,13 @@ The following list gives an overview of possible scenarios. You may encounter ot
 
 |Before AD                                                    | At  AD                                | Next AD                         |
 |----------------------------------------------------------|----------------------------------------|---------------------------------------------------------|
-|- Quantity of Acrobat Pro: 5 <br />- Opted for: MOQ 100 using Update Subscription API | MOQ 100 of Acro Pro will get renewed  | MOQ 100 of Acro Pro will get renewed until the 3YC term ends.  |
+|- Quantity of Acrobat Pro: 5 \<br /\>- Opted for: MOQ 100 using Update Subscription API | MOQ 100 of Acro Pro will get renewed  | MOQ 100 of Acro Pro will get renewed until the 3YC term ends.  |
 
 ### Scenario 2: Customer adds Acro Pro seats after opting for MOQ 100
 
 | Before AD                  | At AD - 7                                                                        | AD - 3                                                                               | At AD                                  | At next AD                                                    |
 |----------------------------|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|----------------------------------------|---------------------------------------------------------------|
-| Quantity of Acrobat Pro: 5 | Opted for MOQ 100 by using the Update Subscription API with renewalQuantity 100. | The customer added 50 Acrobat Pro base offer seats. The current quantity becomes 55. | MOQ 100 of Acro Pro will get renewed. <br />The customer will still receive the MOQ offer and will not be penalized for adding Acro Pro seats after opting for MOQ.   | MOQ 100 of Acro Pro will get renewed until the 3YC term ends. |
+| Quantity of Acrobat Pro: 5 | Opted for MOQ 100 by using the Update Subscription API with renewalQuantity 100. | The customer added 50 Acrobat Pro base offer seats. The current quantity becomes 55. | MOQ 100 of Acro Pro will get renewed. \<br /\>The customer will still receive the MOQ offer and will not be penalized for adding Acro Pro seats after opting for MOQ.   | MOQ 100 of Acro Pro will get renewed until the 3YC term ends. |
 
 ### Scenario 3: Customer does not opt for Acrobat Pro MOQ
 
@@ -44,7 +44,7 @@ The following list gives an overview of possible scenarios. You may encounter ot
 
 | Before AD                                               | At AD                                |
 |----------------------------------------------------------|----------------------------------------|
-| - Quantity of Acrobat Pro: 120 <br /> - Renewal quantity: 30 | The customer does not opt for MOQ offers. <br /> The base offer of Acrobat Pro will get renewed with the renewal quantity 30. |
+| - Quantity of Acrobat Pro: 120 \<br /\> - Renewal quantity: 30 | The customer does not opt for MOQ offers. \<br /\> The base offer of Acrobat Pro will get renewed with the renewal quantity 30. |
 
 ### Scenario 4: Customer purchases MOQ offer in the mid-term, after setting renewalQuantity to a lower value (Customer needs to set renewalQuantity to a higher value before purchasing MOQ)
 
@@ -52,7 +52,7 @@ The following list gives an overview of possible scenarios. You may encounter ot
 
 |Before AD      |AD-7 | At AD |
 |-------------------------------------------------------------|---------------------------------------------------------|--|
-|- Quantity of Acrobat Pro: 30 <br /> - Renewal quantity: 25  |Renewal quantity needs to be updated to 100 <br /> <br />- Mid-term purchase: MOQ 100  <br /> - Number of licenses of Acro Pro becomes 130 <br />- Renewal quantity: 100 (based on the MOQ purchased) |  100 licenses of Acro Pro with MOQ 100 discount are renewed and invoiced. <br /> <br /> The customer will be renewed with 100 MOQ because the renewal quantity earlier opted will be overridden by the MOQ quantity because the earlier opted renewal quantity is not sufficient to maintain the MOQ.|
+|- Quantity of Acrobat Pro: 30 \<br /\> - Renewal quantity: 25  |Renewal quantity needs to be updated to 100 \<br /\> \<br /\>- Mid-term purchase: MOQ 100  \<br /\> - Number of licenses of Acro Pro becomes 130 \<br /\>- Renewal quantity: 100 (based on the MOQ purchased) |  100 licenses of Acro Pro with MOQ 100 discount are renewed and invoiced. \<br /\> \<br /\> The customer will be renewed with 100 MOQ because the renewal quantity earlier opted will be overridden by the MOQ quantity because the earlier opted renewal quantity is not sufficient to maintain the MOQ.|
 
 ### Scenario 5: Customer purchases MOQ offer in the mid-term after setting renewalQuantity to a higher value
 
@@ -60,7 +60,7 @@ The following list gives an overview of possible scenarios. You may encounter ot
 
 |Before AD      |Before AD (For example, last AD+6 months) | At AD |
 |-------------------------------------------------------------|---------------------------------------------------------|--|
-|- Quantity of Acrobat Pro: 30 <br /> - Renewal quantity: 105 |- Mid-term purchase: MOQ 100 <br /> - Number of licenses of Acrobat Pro becomes: 130| 105 licenses of Acrobat Pro with MOQ 100 discount are renewed and invoiced. <br /> The customer will be renewed with 105 licenses of MOQ100 because the renewal quantity of 105 is sufficient for the MOQ offer. |
+|- Quantity of Acrobat Pro: 30 \<br /\> - Renewal quantity: 105 |- Mid-term purchase: MOQ 100 \<br /\> - Number of licenses of Acrobat Pro becomes: 130| 105 licenses of Acrobat Pro with MOQ 100 discount are renewed and invoiced. \<br /\> The customer will be renewed with 105 licenses of MOQ100 because the renewal quantity of 105 is sufficient for the MOQ offer. |
 
 ### Scenario 6: Customer purchases MOQ offer in the mid-term and later again purchases higher MOQ before renewal
 
@@ -70,4 +70,4 @@ Customers can purchase MOQ offers mid-term, even if they don’t already hold MO
 
 |Before AD      |Mid-term purchase 1 (Last AD +3 months) | Mid-term purchase 2 (Last AD + 6 months) | At AD |
 |-------------------------------------------------------------|---------------------------------------------------------|--|--|
-|Customer does not have Acrobat Pro |- Purchased MOQ 100 <br /> - Number of Acro Pro licenses: 100 <br /> - Renewal quantity: 100 |- Purchased MOQ 250 <br /> - Number of licenses: 350 <br /> - Renewal quantity: 250 |- 250 licenses will be renewed for the customer with MOQ 250 offer discount. |
+|Customer does not have Acrobat Pro |- Purchased MOQ 100 \<br /\> - Number of Acro Pro licenses: 100 \<br /\> - Renewal quantity: 100 |- Purchased MOQ 250 \<br /\> - Number of licenses: 350 \<br /\> - Renewal quantity: 250 |- 250 licenses will be renewed for the customer with MOQ 250 offer discount. |

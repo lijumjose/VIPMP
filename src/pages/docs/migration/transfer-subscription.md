@@ -17,7 +17,7 @@ Use the `POST /v3/memberships/<membership-id>/transfers` API endpoint to transfe
 
 | Parameter           | Values        | Default | Description                                                                         |
 |---------------------|---------------|---------|-------------------------------------------------------------------------------------|
-| ignore-order-return | true or false | false   | If `true`, customers with returnable purchases can be transferred. <br /> **Note:** Setting it to `true` will disable rollback to VIP and the “returnable” purchase can no longer be returned.         |
+| ignore-order-return | true or false | false   | If `true`, customers with returnable purchases can be transferred. \<br /\> **Note:** Setting it to `true` will disable rollback to VIP and the “returnable” purchase can no longer be returned.         |
 | expire-open-pas     | true or false | false   | If `true`, customers with open purchase authorizations can be transferred. Any open purchase authorizations will expire during the async portion of the transfer. |
 
 ## Request body

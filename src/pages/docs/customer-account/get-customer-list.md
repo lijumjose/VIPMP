@@ -110,7 +110,7 @@ A sample request is as follows:
 | status              | String             | Yes          | Status of reseller                                                                                                                                          |
 | companyProfile.companyName              | String             | Yes          | Name of the customer.                                                                                                                                          |
 | creationDate        | String  (ISO Date) | Yes          | Customer creation timestamp                                                                                                                                               |
-| links               | Object             | Yes          | Link to get customer details. <br /> `GET /v3/customers/<customer-id>` <br />  |
+| links               | Object             | Yes          | Link to get customer details. \<br /\> `GET /v3/customers/<customer-id>` \<br /\>  |
 
 ### Status codes
 

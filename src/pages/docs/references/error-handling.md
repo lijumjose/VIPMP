@@ -2,18 +2,18 @@
 
 |Status Code | Description | Applicable Resources |
 |:----|:----|:----|
-|1000| **Resource Status:** Green <br />Account - Active <br /> Order - Complete/Filled <br /> Subscription - Active| Reseller Account, Customer Account, Order, Subscription Transfer, Deployment|
-|1002 | **Resource Status:** Yellow <br /> Account - Pending <br /> Order - Open <br /> Subscription - Pending | Reseller Account, Customer Account, Order, Subscription Transfer|
-|1004| **Resource Status: Red** <br /> Account - Inactive <br /> Order - Failed <br />  Subscription - Inactive <br /> If there is another status code that describes the status better, that code will be used instead.| Reseller Account, Customer Account, Order, Subscription |Transfer, Deployment|
+|1000| **Resource Status:** Green \<br /\>Account - Active \<br /\> Order - Complete/Filled \<br /\> Subscription - Active| Reseller Account, Customer Account, Order, Subscription Transfer, Deployment|
+|1002 | **Resource Status:** Yellow \<br /\> Account - Pending \<br /\> Order - Open \<br /\> Subscription - Pending | Reseller Account, Customer Account, Order, Subscription Transfer|
+|1004| **Resource Status: Red** \<br /\> Account - Inactive \<br /\> Order - Failed \<br /\>  Subscription - Inactive \<br /\> If there is another status code that describes the status better, that code will be used instead.| Reseller Account, Customer Account, Order, Subscription |Transfer, Deployment|
 |1008 | **Order Status:** Cancelled | Order|
 |1009 |**Subscription Status:** Scheduled | Subscription|
-|1010| Account Status: Inactive <br /> **Reason:** Invalid Address| Reseller Account, Customer Account|
-|1012| **Account Status:** Inactive <br /> Reason: Account is blocked| Reseller Account, Customer Account|
-|1014| **Account Status:** Inactive <br /> **Reason:** Customer already exists with the same Company Name and primary admin|Customer Account|
+|1010| Account Status: Inactive \<br /\> **Reason:** Invalid Address| Reseller Account, Customer Account|
+|1012| **Account Status:** Inactive \<br /\> Reason: Account is blocked| Reseller Account, Customer Account|
+|1014| **Account Status:** Inactive \<br /\> **Reason:** Customer already exists with the same Company Name and primary admin|Customer Account|
 |1020| **Order Status:** Failed |**Reason:** Distributor is inactive|
-|1022| **Order Status:** Failed <br /> **Reason:** Reseller is inactive| Order|
-|1024| **Order Status:** Failed <br /> Reason: Customer is inactive| Order|
-|1026|**Order Status:** Failed <br /> **Reason:** Customer ID is invalid|Order|
+|1022| **Order Status:** Failed \<br /\> **Reason:** Reseller is inactive| Order|
+|1024| **Order Status:** Failed \<br /\> Reason: Customer is inactive| Order|
+|1026|**Order Status:** Failed \<br /\> **Reason:** Customer ID is invalid|Order|
 
 ## Error handling
 
@@ -39,8 +39,8 @@ Some error responses will include additionalDetails, an array of strings with mo
 |1114 | Invalid Distributor | Create Reseller Account | 400|
 |1115 | Invalid Reseller|Create Customer Account, Get Reseller Account, Update Reseller Account, Reseller Change Preview, Reseller Change Commit| 404|
 |1116 | Invalid Customer| Get Customer Account, Update Customer Account, Get Order History, Get All Subscriptions |404|
-|1117| Some fields are invalid <br /> For debugging purposes, the names of the fields will be included in the invalidFields array in the response body.| Create Reseller, Update Reseller, Create Customer, Update Customer, Create Order, Update Subscription Auto-Renewal|400|
-|1118| Invalid Address <br /> **Note:** If address and other fields are invalid, then 1117 will be used. |Create Reseller, Update Reseller, Create Customer, Update Customer |400|
+|1117| Some fields are invalid \<br /\> For debugging purposes, the names of the fields will be included in the invalidFields array in the response body.| Create Reseller, Update Reseller, Create Customer, Update Customer, Create Order, Update Subscription Auto-Renewal|400|
+|1118| Invalid Address \<br /\> **Note:** If address and other fields are invalid, then 1117 will be used. |Create Reseller, Update Reseller, Create Customer, Update Customer |400|
 |1119 | Some fields are not editable| Update Customer, Update Reseller, Cancel Order, Update Subscription Auto-Renewal| 400|
 |1121| Request contains additional unexpected fields.| All | 400|
 |1122 | Request is missing required fields | All (except for GETs) | 400|
@@ -54,7 +54,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 |1131 | Reseller Change is already complete |Reseller Change Preview, Reseller Change Commit| 400|
 |1132 | Invalid value for search parameter | Get Order History (V3) | 400|
 |1133 | Offset out of range | Get Order History (V3) | 400|
-|1134| Invalid operation on path <br/> Possible scenarios: <br /> - INVALID_RESELLER_ID : Reseller ID in the input is either invalid or same as the current reseller id]<br/> - INVALID_CUSTOMER_MARKET_SEGMENT: Returns this if partner attempts to remove the market segment of the reseller. | Reseller Change Preview, Reseller Change Commit, Update Reseller| 400|
+|1134| Invalid operation on path \<br /\> Possible scenarios: \<br /\> - INVALID_RESELLER_ID : Reseller ID in the input is either invalid or same as the current reseller id]\<br /\> - INVALID_CUSTOMER_MARKET_SEGMENT: Returns this if partner attempts to remove the market segment of the reseller. | Reseller Change Preview, Reseller Change Commit, Update Reseller| 400|
 |1139 | Partner is not enabled for global sales| Update Customer, Reseller Change Commit, Create Deployment, Create Order|400|
 |1140 | Customer is not enabled for global sales |Update Customer, Reseller Change Commit, Create Deployment, Create order|400|
 |1141| Deployment and customer country cannot be the same |Create Deployment | 400|
@@ -90,12 +90,12 @@ Some error responses will include additionalDetails, an array of strings with mo
 |2138 | Invalid Deployment | Create Order |404|
 |2139| Deployment not allowed for this contract |Create Order | 400|
 |2140| Order contains order level currency and line-item level currency |Create Order | 400|
-| 2141       | Customer is not qualified for the flexible discount. <br /> "additionalDetails": [ "Line Item: 1, Reason: Invalid Flexible Discount" ]                                                                 |    Create Order <br /> Preview Order  <br />  Update Subscription <br />  Create Subscription               |    400              |
+| 2141       | Customer is not qualified for the flexible discount. \<br /\> "additionalDetails": [ "Line Item: 1, Reason: Invalid Flexible Discount" ]                                                                 |    Create Order \<br /\> Preview Order  \<br /\>  Update Subscription \<br /\>  Create Subscription               |    400              |
 | 2142     | This Flexible Discount is for one time use and is no longer availabe.                                                                 |    Get Flexible Discounts               |    400              |
-| 2144       | Flexible Discount cannot be applied in combination with other discounts. <br />  |       Create Order <br /> Preview Order  <br />  Update Subscription <br />  Create Subscription             |  400                |
-| 2145       | Flexible discount codes cannot be applied to non-base products.                 |    Create Order <br /> Preview Order  <br />  Update Subscription <br />  Create Subscription                |    400              |
-| 2146     | Invalid Flexible Discount Code |    Create Order <br /> Preview Order  <br />  Update Subscription <br />  Create Subscription                |    400              |
-| 2147      | Only one Flexible Discount code is allowed per line item.   |    Create Order <br /> Preview Order   <br />  Update Subscription <br />  Create Subscription               |    400              |
+| 2144       | Flexible Discount cannot be applied in combination with other discounts. \<br /\>  |       Create Order \<br /\> Preview Order  \<br /\>  Update Subscription \<br /\>  Create Subscription             |  400                |
+| 2145       | Flexible discount codes cannot be applied to non-base products.                 |    Create Order \<br /\> Preview Order  \<br /\>  Update Subscription \<br /\>  Create Subscription                |    400              |
+| 2146     | Invalid Flexible Discount Code |    Create Order \<br /\> Preview Order  \<br /\>  Update Subscription \<br /\>  Create Subscription                |    400              |
+| 2147      | Only one Flexible Discount code is allowed per line item.   |    Create Order \<br /\> Preview Order   \<br /\>  Update Subscription \<br /\>  Create Subscription               |    400              |
 | 2148      | Invalid pricing request for multiple currencies.  |    Preview Order, Preview Renewal               |    400              |
 | 2149       | Switch plan error: Requested quantity and cancel quantity must be equal. |   Preview Switch Order,   Create Switch Order                  |           400       |
 | 2150       | Switch path validity check failed.                                       |    Preview Switch Order,   Create Switch Order                    |      400            |
@@ -126,7 +126,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 |5119| Customer cannot be transferred because reseller account is inactive |Transfer Subscriptions | 400|
 |5120| Customer cannot be transferred because there are no admin contacts |Preview Offers, Transfer Subscriptions| 400|
 |5121| Transfer currently in progress for this customer| Preview Offers, Transfer Subscriptions| 400|
-|5122| - Message for Create Order: Order placement is currently unavailable. Please try again later. <br /> <br />- Message for Fetch Price List API: Invaid Request<br /><br /> - Message for Update Reseller: Invalid Request (Additional details: "Reseller is not permitted to remove existing market segments")| Create Order, Fetch Price List, Update Reseller| 400|
+|5122| - Message for Create Order: Order placement is currently unavailable. Please try again later. \<br /\> \<br /\>- Message for Fetch Price List API: Invaid Request\<br /\>\<br /\> - Message for Update Reseller: Invalid Request (Additional details: "Reseller is not permitted to remove existing market segments")| Create Order, Fetch Price List, Update Reseller| 400|
 |5123| Invalid Discount Code| Update Subscriptions| 400|
 |5124| Invalid Renewal Quantity for Discount Code| Update Subscriptions| 400|
 |5125| Invalid Request for Discount Code| Update Subscriptions| 400|
@@ -135,12 +135,12 @@ Some error responses will include additionalDetails, an array of strings with mo
 |5128| Discount code not applicable for regular customer| Update Subscriptions| 400|
 |5129| Discount Code not applicable for 3yc committed quantity| Update Subscriptions| 400|
 |5131| TInvalid Order Quantity for Discount Code| Update Subscriptions| 400|
-|5132| Discount Code not applicable for the current term| Update Subscriptions| 400 <br /> Description: When the customer is opting for same MOQ offer in the new 3YC term.|
-|5133| Order cancellation not allowed below MOQ quantity| Return Order |400 <br /> Description: When the customer is trying to cancel the MOQ offer quantity that results in pushing the remaining qty below the MOQ offer quantity.|
-|5134| Could not turn off Auto Renewal for MOQ offer|Update Subscriptions |400 <br /> Description: When the customer is trying to turn off autorenewal for an MOQ offer.|
+|5132| Discount Code not applicable for the current term| Update Subscriptions| 400 \<br /\> Description: When the customer is opting for same MOQ offer in the new 3YC term.|
+|5133| Order cancellation not allowed below MOQ quantity| Return Order |400 \<br /\> Description: When the customer is trying to cancel the MOQ offer quantity that results in pushing the remaining qty below the MOQ offer quantity.|
+|5134| Could not turn off Auto Renewal for MOQ offer|Update Subscriptions |400 \<br /\> Description: When the customer is trying to turn off autorenewal for an MOQ offer.|
 |5135| Invalid Discount Code|Create Order | 400|
-|5136 |INVALID_COUNTRY <br /> <br />Not allowed to fetch Recommendations for Country  `<code>` |Fetch Recommendations <br />Get Order <br />Preview Order |400 |
-|5137|INVALID_LANGUAGE <br /> <br />Not allowed to fetch Recommendations for language `<Code>` |Fetch Recommendations <br />Get Order <br />Preview Order | 400 |
+|5136 |INVALID_COUNTRY \<br /\> \<br /\>Not allowed to fetch Recommendations for Country  `<code>` |Fetch Recommendations \<br /\>Get Order \<br /\>Preview Order |400 |
+|5137|INVALID_LANGUAGE \<br /\> \<br /\>Not allowed to fetch Recommendations for language `<Code>` |Fetch Recommendations \<br /\>Get Order \<br /\>Preview Order | 400 |
 
 ## 2129 Ineligible Purchase REASON_CODE List
 
@@ -164,10 +164,10 @@ These REASON_CODE values are included in the `additionalDetails` array for 5117 
 |BAD_MARKET_SEGMENT| Customer’s market segment is either not supported for this distributor or for VIPMP |Try a different distributor that supports customer’s market segment or wait for a VIPMP change to allow the market segment.|
 |INACTIVE | VIP Account is inactive| Customer/reseller must reactivate VIP account.|
 |EXTENDED_TERM_3YC| Customer’s contract term length is not supported by VIPMP| Wait for terms to be supported by VIPMP or wait until current term ends.|
-|OPEN_PURCHASE_AUTH| Customer has open purchase authorization(s)| Open PAs must be cancelled/returned if possible) or converted to order and paid for. <br /> Can also be bypassed with the `expire-open-pas` query parameter|
+|OPEN_PURCHASE_AUTH| Customer has open purchase authorization(s)| Open PAs must be cancelled/returned if possible) or converted to order and paid for. \<br /\> Can also be bypassed with the `expire-open-pas` query parameter|
 |CONTRACT_NOT_ACCEPTED| Customer’s VIP contract has not been accepted| Customer must set up an administrator to accept VIP contract.|
 |IN_WINDOW_PARTIAL_RENEWAL| Customer is in the renewal window prior to their anniversary date and they have partially renewed.| Customer must either renew all active licenses or wait until their anniversary date.|
-|RETURNABLE_PURCHASE| Customer has order(s) still in the return window |Wait until return window has closed (14 days after last order). <br /> It can also be bypassed with `ignore-order-return` query parameter.|
+|RETURNABLE_PURCHASE| Customer has order(s) still in the return window |Wait until return window has closed (14 days after last order). \<br /\> It can also be bypassed with `ignore-order-return` query parameter.|
 |NO_TARGET_SKU| Customer has product(s) that are not valid VIPMP product(s)| Wait for products to be supported in VIPMP.|
 |UNBILLED_ORDER| Customer has unbilled order items| Customer must pay for all orders. If they have not received an invoice, then the customer needs to contact Adobe.|
 |UNPAID_INVOICE| Customer has open/unpaid invoice(s) |Customer must pay for open invoice(s).|

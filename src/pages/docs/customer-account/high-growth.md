@@ -24,7 +24,7 @@ Enterprise and Team customers of Acrobat Pro in the commerce, government, and ed
    - Customers can select from the available MOQ offers based on their seat requirements. For example, a customer with 110 seats can opt for either the 250 or 500 MOQ offer option, as shown in the following table.
    - MOQ offers are available to both new and existing customers with a certain number of licenses for specific product groups. For example, Acrobat Standard and Acrobat Pro are part of the Acrobat group, and customers with a combined quantity that falls into the range mentioned in the following table become eligible for the corresponding MOQ offers.
 
-    | Current seats at renewal <br/> Acrobat Pro + Standard | Eligible Minimum Order Quantity (MOQ) |
+    | Current seats at renewal \<br/\> Acrobat Pro + Standard | Eligible Minimum Order Quantity (MOQ) |
     |-------------------------------------------------------|---------------------------------------|
     | ≤ 50 seats                                            | 100, 250, or 500             |
     | ≤ 125 seats                                           | 250 or 500                        |
@@ -32,10 +32,10 @@ Enterprise and Team customers of Acrobat Pro in the commerce, government, and ed
 
 3 - **MCQ requirement:** The number of seats committed (MCQ) must be greater than or equal to the number of subscriptions at the renewal date.
 
-  | Current seats at renewal <br/> Acrobat Pro + Standard | Eligible Minimum Order Quantity (MOQ) | 3YC Minimum Commit Quantities (MCQ) - Needs to be increased based on the MOQ) |
+  | Current seats at renewal \<br /\> Acrobat Pro + Standard | Eligible Minimum Order Quantity (MOQ) | 3YC Minimum Commit Quantities (MCQ) - Needs to be increased based on the MOQ) |
   |-------------------------------------------------------|---------------------------------------|-------------------------------------------------------------------------------|
-  | ≤ 50 seats                                            | 100 <br /> 250 <br /> 500             | 100+                                                                          |
-  | ≤ 125 seats                                           | 250 <br /> 500                        | 250+                                                                          |
+  | ≤ 50 seats                                            | 100 \<br /\> 250 \<br /\> 500             | 100+                                                                          |
+  | ≤ 125 seats                                           | 250 \<br /\> 500                        | 250+                                                                          |
   | ≤ 250 seats                                           | 500                                   | 500+                                                                          |
 
 ## High Growth Offer workflows

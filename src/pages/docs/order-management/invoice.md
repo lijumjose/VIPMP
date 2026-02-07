@@ -137,7 +137,7 @@ Partners can retrieve the pricing details in the `Preview Order` and `Preview Re
 | Field                  | Description                                                                                                                                         |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | partnerPrice           | Non-prorated full-term unit price for the given offer, including any applicable volume discounts, but before applying flexible discounts and taxes. |
-| discountedPartnerPrice | Unit price after applying discount. <br />                                                                                                          |
+| discountedPartnerPrice | Unit price after applying discount. \<br /\>                                                                                                          |
 | netPartnerPrice        | Prorated unit price after discount.                                                                                                                 |
 | lineItemPartnerPrice   | Prorated price of the item after discount and before tax. This is the price that the partner needs to pay to Adobe for this item.                   |
 

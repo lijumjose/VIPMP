@@ -134,7 +134,7 @@ Expand the following section for more details on the request and response parame
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
-|externalReferenceId | String <br />Optional| Marketplace’s ID for customer. ID does not need to be unique.| Max: 35 characters|
+|externalReferenceId | String \<br /\>Optional| Marketplace’s ID for customer. ID does not need to be unique.| Max: 35 characters|
 |customerId (read only)| String | Unique ID for customer created upon account creation| Max: 40 characters|
 |resellerId | String | ID of reseller tied to customer | Max: 40 characters|
 |globalSalesEnabled  | String | Global status of a customer  | Max: 40 characters|

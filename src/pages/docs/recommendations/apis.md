@@ -50,11 +50,11 @@ The following table lists the request parameters and their corresponding descrip
 
 | Parameter             | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Is mandatory?                                      |
 |-----------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
-| recommendationContext | String | The context in which recommendations are being requested. <br /> Values: <br /> - **GENERIC**: Fetches recommendations without any primary context, using all available information about a customer.<br /> - **ORDER_PREVIEW**: Fetches recommendations based on the products in the cart.<br /> - **RENEWAL_ORDER_PREVIEW**:  For AutoRenewal, it fetches recommendations based on Subscription Renewal preference. For ManualRenewal, it fetches the same recommendations as the **ORDER_PREVIEW** context. <br /> <br /> | No <br /> <br /> The default value is **GENERIC**. |
+| recommendationContext | String | The context in which recommendations are being requested. \<br /\> Values: \<br /\> - **GENERIC**: Fetches recommendations without any primary context, using all available information about a customer.\<br /\> - **ORDER_PREVIEW**: Fetches recommendations based on the products in the cart.\<br /\> - **RENEWAL_ORDER_PREVIEW**:  For AutoRenewal, it fetches recommendations based on Subscription Renewal preference. For ManualRenewal, it fetches the same recommendations as the **ORDER_PREVIEW** context. \<br /\> \<br /\> | No \<br /\> \<br /\> The default value is **GENERIC**. |
 | customerId            | String | Unique identifier for the customer for whom recommendations are being requested. This is a mandatory parameter.                                                                                                                                                                                                                                                                                                                                                                                                              | Yes                                                |
 | offers                | Object | List of offers for which recommendations are being fetched.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | No                                                 |
 | country               | String | The requested country for which recommendations should be fetched. If not provided, the customer's country will be used. See [available country codes](../references/supported-locales.md).                                                                                                                                                                                                                                                                                                                                      | No                                                 |
-| language              | String |The requested language for which recommendations should be fetched. Possible values are: <br /> - `EN` <br /> - `MULT`  <br />**Note:** Use `EN` for Western Europe customers or global customers deploying in Europe. `MULT` is available for all other regions.                                                                                                                                                                                                                                                                | No                                                 |
+| language              | String |The requested language for which recommendations should be fetched. Possible values are: \<br /\> - `EN` \<br /\> - `MULT`  \<br /\>**Note:** Use `EN` for Western Europe customers or global customers deploying in Europe. `MULT` is available for all other regions.                                                                                                                                                                                                                                                                | No                                                 |
 
 #### Offers object
 
@@ -172,7 +172,7 @@ You can use the following query parameters as shown in this request URL: `POST <
 
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
-| fetch-recommendations   | - true <br /> - false | No                   | false                |
+| fetch-recommendations   | - true \<br /\> - false | No                   | false                |
 | recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
 | recommendation-language | MULT or EN            | No                   | MULT                 |
 
@@ -250,7 +250,7 @@ You can use the following query parameters as shown in this request URL: `POST <
 
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
-| fetch-recommendations   | - true <br /> - false | No                   | false                |
+| fetch-recommendations   | - true \<br /\> - false | No                   | false                |
 | recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
 | recommendation-language | MULT or EN            | No                   | MULT                 |
 
@@ -346,7 +346,7 @@ You can use the following query parameters as shown in this request URL: `GET <c
 
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
-| fetch-recommendations   | - true <br /> - false | No                   | false                |
+| fetch-recommendations   | - true \<br /\> - false | No                   | false                |
 | recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
 | recommendation-language | MULT or EN            | No                   | MULT                 |
 
@@ -444,7 +444,7 @@ You can use the following query parameters as shown in this request URL: `GET <c
 
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
-| fetch-recommendations   | - true <br /> - false | No                   | false                |
+| fetch-recommendations   | - true \<br /\> - false | No                   | false                |
 | recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
 | recommendation-language | MULT or EN            | No                   | MULT                 |
 

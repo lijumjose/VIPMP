@@ -286,7 +286,7 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 | Field                       | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
 | partnerPrice                | Non-prorated full-term unit price for the given offer, including any applicable volume discounts, but before applying flexible discounts and taxes.|
-| discountedPartnerPrice     | Unit price after applying discount. <br /> |
+| discountedPartnerPrice     | Unit price after applying discount. \<br /\> |
 | netPartnerPrice                 | Prorated unit price after discount. |
 | lineItemPartnerPrice      | Prorated price of item after discount and before tax. This is the price partner need to pay to Adobe for this item.  |
 
@@ -679,7 +679,7 @@ The newly introduced `Preview Switch` option in the `OrderType` parameter of the
 
 | Parameter | Required | Description |
 |---|--|--|
-|reassign-users|Optional |Specifies whether to automatically reassign users from the original subscription to the upgraded product. <br />**Note:** Automatic user reassignment is not supported for upgrades from Teams to Enterprise or between Enterprise subscriptions. |
+|reassign-users|Optional |Specifies whether to automatically reassign users from the original subscription to the upgraded product. \<br /\>**Note:** Automatic user reassignment is not supported for upgrades from Teams to Enterprise or between Enterprise subscriptions. |
 |fetch-price|Optional| Specifies whether to fetch pricing details while previewing the mid-term upgrade offers.|
 
 **Sample Request URL:** `POST https://partners-stage.adobe.io/v3/customers/1005944528/orders?fetch-price=true`
@@ -882,7 +882,7 @@ Use `PREVIEW_REVERT_SWITCH` as the `orderType` in the Create Order API to get th
 
 | Parameter | Required | Description |
 |---|--|--|
-|reassign-users|Optional |Specifies whether to automatically reassign users from the original subscription to the upgraded product. <br />**Note:** Automatic user reassignment is not supported for upgrades from Teams to Enterprise or between Enterprise subscriptions.|
+|reassign-users|Optional |Specifies whether to automatically reassign users from the original subscription to the upgraded product. \<br /\>**Note:** Automatic user reassignment is not supported for upgrades from Teams to Enterprise or between Enterprise subscriptions.|
 |fetch-price|Optional| Specifies whether to fetch pricing details while previewing the mid-term upgrade offers.|
 
 **Sample request URL:** POST `https://partners-stage.adobe.io/v3/customers/1005944528/orders?fetch-price=true`

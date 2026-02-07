@@ -6,7 +6,7 @@ Currently, Adobe supports only `LICENSES_PENDING_PARTNER_ORDER` notification typ
 
 | Notification type              | Supported query parameters                                     | Description                                                                                                                                                                                                              |
 |--------------------------------|----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| LICENSES_PENDING_PARTNER_ORDER | 1. reseller-id= 100022361 <br /> 2. limit=10 <br /> 3. offset=0 | The `LICENSES_PENDING_PARTNER_ORDER` notification type returns all customers under a given reseller who have at least one license created within the last 7 days for which order has not been placed yet by partner. |
+| LICENSES_PENDING_PARTNER_ORDER | 1. reseller-id= 100022361 \<br /\> 2. limit=10 \<br /\> 3. offset=0 | The `LICENSES_PENDING_PARTNER_ORDER` notification type returns all customers under a given reseller who have at least one license created within the last 7 days for which order has not been placed yet by partner. |
 
 ## Get licenses that are pending partner order notification
 

@@ -4,8 +4,8 @@ The following error codes are returned if the API is unable to fetch recommendat
 
 |Error Codes | Description |Applicable APIs | HTTP Status Code |
 |--|--|--|--|
-|5136 |INVALID_COUNTRY <br /> <br />Not allowed to fetch recommendations for country  `<code>` |Fetch Recommendations  | 400 |
-|5137|INVALID_LANGUAGE <br /> <br />Not allowed to fetch recommendations for language `<Code>` |Fetch Recommendations  | 400 |
+|5136 |INVALID_COUNTRY \<br /\> \<br /\>Not allowed to fetch recommendations for country  `<code>` |Fetch Recommendations  | 400 |
+|5137|INVALID_LANGUAGE \<br /\> \<br /\>Not allowed to fetch recommendations for language `<Code>` |Fetch Recommendations  | 400 |
 
 A sample error code displayed in the response is as follows:
 

@@ -16,7 +16,7 @@ These are the three market segments available for Adobe products:
 
 | Value | Description                 |
 |-------|-----------------------------|
-| COM   | Commercial <br /> (default) |
+| COM   | Commercial \<br /\> (default) |
 | EDU   | Education                   |
 | GOV   | Government                  |
 
@@ -24,8 +24,8 @@ The education market segment mentioned in the above table is further divided int
 
 | Value      | Description                               | Offers available to purchase                                                    |
 |------------|-------------------------------------------|---------------------------------------------------------------------------------|
-| K_12       | K-12 School (Primary or Secondary School) | - EDU offers without a sub-segment.  <br /> - EDU offers with K-12 sub-segment. |
-| HIGHER_ED  | Higher Education Institution              | - EDU offers without a sub-segment. <br /> - EDU offers with HED sub-segment.   |
+| K_12       | K-12 School (Primary or Secondary School) | - EDU offers without a sub-segment.  \<br /\> - EDU offers with K-12 sub-segment. |
+| HIGHER_ED  | Higher Education Institution              | - EDU offers without a sub-segment. \<br /\> - EDU offers with HED sub-segment.   |
 | NON_PROFIT | Non-profit Organization                   | - EDU offers without a sub-segment.                                             |
 
 **Note:** The Additional Detail (Column P) in the price list file contains information on the sub-segment of an offer as well as the minimum purchase quantity, if applicable.
@@ -82,8 +82,8 @@ New or updated error codes are listed in the following table:
 
 | Error Code                        | Error Message                                 | Applicable APIs                  | Change Details                                                  |
 |-----------------------------------|-----------------------------------------------|----------------------------------|-----------------------------------------------------------------|
-| 2135 <br/> (new error code)       | Invalid market segment is used for the customer.      | Create Customer, Update Customer | New Error Code                                                  |
-| 2129 <br /> (existing error code) | Customer is not eligible to purchase an offer.  | Preview Order, Create Order      | New Additional Details Reason Code: `INELIGIBLE_MARKET_SEGMENT` |
+| 2135 \<br /\> (new error code)       | Invalid market segment is used for the customer.      | Create Customer, Update Customer | New Error Code                                                  |
+| 2129 \<br /\> (existing error code) | Customer is not eligible to purchase an offer.  | Preview Order, Create Order      | New Additional Details Reason Code: `INELIGIBLE_MARKET_SEGMENT` |
 
 ## Market segment API changes
 

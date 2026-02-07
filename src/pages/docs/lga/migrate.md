@@ -38,7 +38,7 @@ Read more about [Preview Transfer API](../migration/preview-offers.md).
 
 ## 2. Transfer API (Migration)
 
-Use the [POST /v3/memberships/{membership-id}/transfers](../migration/transfer-subscription.md) API to migrate. Different error codes will be returned for LGA ineligible cases during migration.
+Use the [POST /v3/memberships/\{membership-id\}/transfers](../migration/transfer-subscription.md) API to migrate. Different error codes will be returned for LGA ineligible cases during migration.
 
 A sample response is as follows:
 

@@ -120,9 +120,9 @@ Read more about [Mid-term upgrades](../mid-term/index.md).
 #### Get Customer List and Get Reseller List APIs
 
 - The [Get Reseller List API](../reseller-account/get-reseller-list.md) enables partners to retrieve a list of resellers linked to a distributor.
-  - The API supports filtering by reseller status and sorting by creation date or reseller name. <br />Read more about [Get Reseller List API](../reseller-account/get-reseller-list.md).
+  - The API supports filtering by reseller status and sorting by creation date or reseller name. \<br /\>Read more about [Get Reseller List API](../reseller-account/get-reseller-list.md).
 - The [Get Customer List API](../customer-account/get-customer-list.md) enables partners to retrieve customer accounts associated with a specific reseller.
-  - This API is essential for partners who manage customer portfolios and require precise, real-time access to customer data for quoting, reporting, and renewal planning. <br />Read more about [Get Customer List API](../customer-account/get-customer-list.md).
+  - This API is essential for partners who manage customer portfolios and require precise, real-time access to customer data for quoting, reporting, and renewal planning. \<br /\>Read more about [Get Customer List API](../customer-account/get-customer-list.md).
 
 ### June 19, 2025
 
@@ -135,7 +135,7 @@ Read more about [Mid-term upgrades](../mid-term/index.md).
 
 #### Manage Flexible Discounts
 
-- Partners can access flexible discounts tailored to specific products, market segments, and countries, and apply them during the order process. Read more about [how to manage flexible discounts](../flex-discounts/index.md). <br />The major [API changes](../flex-discounts/apis.md) include:
+- Partners can access flexible discounts tailored to specific products, market segments, and countries, and apply them during the order process. Read more about [how to manage flexible discounts](../flex-discounts/index.md). \<br /\>The major [API changes](../flex-discounts/apis.md) include:
 
   - Introduced the `GET /v3/flex-discounts` API to get the list of available flexible discounts.
   - Preview Order API returns the applicable flexible discounts for the customer.
@@ -144,7 +144,7 @@ Read more about [Mid-term upgrades](../mid-term/index.md).
 
 #### Fetch Recommendations
 
-- Recommendations API enables VIP Marketplace partners to deliver intelligent, personalized, and in-context product recommendations, enhancing customer experience through upsell, cross-sell, and add-on opportunities. Read more about [how to manage recommendations](../recommendations/index.md). <br /> Major [API changes](../recommendations/apis.md) include:
+- Recommendations API enables VIP Marketplace partners to deliver intelligent, personalized, and in-context product recommendations, enhancing customer experience through upsell, cross-sell, and add-on opportunities. Read more about [how to manage recommendations](../recommendations/index.md). \<br /\> Major [API changes](../recommendations/apis.md) include:
   - Partners can use `POST /v3/recommendations` API to fetch the relevant product recommendations.
   - Both Preview Order and Preview Renewal APIs fetch the applicable recommendations.
   - Both Get Subscriptions and Get Order APIs can fetch recommendations.

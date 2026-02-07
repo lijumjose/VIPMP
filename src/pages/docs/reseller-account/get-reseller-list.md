@@ -110,7 +110,7 @@ GET <env>/v3/resellers?status=1000&company-name=Reseller*&sort-by=creationDate&o
 | status              | String             | Yes          | Status of reseller                                                                                                                                          |
 | companyProfile.companyName              | String             | Yes          | Name of the reseller.                                                                                                                                          |
 | creationDate        | String  (ISO Date) | Yes          | Creation Date                                                                                                                                               |
-| links               | Object             | Yes          | Link to get Reseller details. <br /> `GET /v3/resellers/<reseller-id>` |
+| links               | Object             | Yes          | Link to get Reseller details. \<br /\> `GET /v3/resellers/<reseller-id>` |
 
 ### Status codes
 

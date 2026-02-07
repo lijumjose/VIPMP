@@ -17,9 +17,9 @@ Ensure that you are aware of the following before updating the auto-renewal conf
 
 - The following three states are possible for autorenewal:
   - **Disabled**
-    <br /> You can achieve this by setting `enabled` to `false`.
-  - **Enabled with renewal quantity** <br />If the `renewalQuantity` has been explicitly set, the `renewalQuantity` will remain unchanged by additional orders or cancellations until subscription becomes inactive.
-  - **Enabled without explicit renewal quantity** <br />In this case, all active licenses in the subscription will be renewed. The `renewalQuantity` will still be returned with the number of purchased licenses.
+    \<br /\> You can achieve this by setting `enabled` to `false`.
+  - **Enabled with renewal quantity** \<br /\>If the `renewalQuantity` has been explicitly set, the `renewalQuantity` will remain unchanged by additional orders or cancellations until subscription becomes inactive.
+  - **Enabled without explicit renewal quantity** \<br /\>In this case, all active licenses in the subscription will be renewed. The `renewalQuantity` will still be returned with the number of purchased licenses.
 
 **Restrictions:**
 

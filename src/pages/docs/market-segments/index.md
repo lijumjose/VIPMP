@@ -2,16 +2,16 @@
 
 Market segmentation is an internal convention used to inform the internal stakeholders about the product or business intent to have one or more of the following differentiations:
 
-- **Price range** <br />The price range available for a product. Pricing for the Education segment is typically lower than that for the Commercial pricing.
-- **Product certification** <br /> Certification required for product. For example, education-ready and Government-ready software and services must meet more stringent Adobe legal, safety, privacy, and trust requirements.
-- **Purchasing qualification** <br />
+- **Price range** \<br /\>The price range available for a product. Pricing for the Education segment is typically lower than that for the Commercial pricing.
+- **Product certification** \<br /\> Certification required for product. For example, education-ready and Government-ready software and services must meet more stringent Adobe legal, safety, privacy, and trust requirements.
+- **Purchasing qualification** \<br /\>
     Customers are typically required to prove their association with government-related agencies or educational institutions to buy the product at a different price range. For individuals buying education plans on Adobe Direct, Adobe verifies their education status with a third-party identity verification service.
 
 These are the three market segments available for Adobe products:
 
 | Value | Description                 |
 |-------|-----------------------------|
-| COM   | Commercial <br /> (default) |
+| COM   | Commercial \<br /\> (default) |
 | EDU   | Education                   |
 | GOV   | Government                  |
 
@@ -19,8 +19,8 @@ The education market segment mentioned in the above table is further divided int
 
 | Value      | Description                               | Offers available to purchase                                                    |
 |------------|-------------------------------------------|---------------------------------------------------------------------------------|
-| K_12       | K-12 School (Primary or Secondary School) | - EDU offers without a sub-segment.  <br /> - EDU offers with K-12 sub-segment. |
-| HIGHER_ED  | Higher Education Institution              | - EDU offers without a sub-segment. <br /> - EDU offers with HED sub-segment.   |
+| K_12       | K-12 School (Primary or Secondary School) | - EDU offers without a sub-segment.  \<br /\> - EDU offers with K-12 sub-segment. |
+| HIGHER_ED  | Higher Education Institution              | - EDU offers without a sub-segment. \<br /\> - EDU offers with HED sub-segment.   |
 | NON_PROFIT | Nonprofit Organization                    | - EDU offers without a sub-segment.                                             |
 
 **Note:** The Additional Detail (Column P) in the price list file contains information on the sub-segment of an offer and the minimum purchase quantity, if applicable.
@@ -77,8 +77,8 @@ New or updated error codes are listed in the following table:
 
 | Error Code                        | Error Message                                 | Applicable APIs                  | Change Details                                                  |
 |-----------------------------------|-----------------------------------------------|----------------------------------|-----------------------------------------------------------------|
-| 2135 <br/> (new error code)       | Invalid market segment is used for the customer.      | Create Customer, Update Customer | New Error Code                                                  |
-| 2129 <br /> (existing error code) | Customer is not eligible to purchase an offer.  | Preview Order, Create Order      | New Additional Details Reason Code: `INELIGIBLE_MARKET_SEGMENT` |
+| 2135 \<br /\> (new error code)       | Invalid market segment is used for the customer.      | Create Customer, Update Customer | New Error Code                                                  |
+| 2129 \<br /\> (existing error code) | Customer is not eligible to purchase an offer.  | Preview Order, Create Order      | New Additional Details Reason Code: `INELIGIBLE_MARKET_SEGMENT` |
 
 ## Market segment API changes
 

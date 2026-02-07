@@ -900,7 +900,7 @@ Verify `currentQuantity` restored to pre-switch value.
 
 | Parameter         | For            | Purpose                                       | Value       |
 |-------------------|----------------|-----------------------------------------------|-------------|
-| fetch-price       | PREVIEW_SWITCH <br/>PREVIEW_REVERT_SWITCH  | Get detailed pricing information              | true, false |
+| fetch-price       | PREVIEW_SWITCH \<br /\>PREVIEW_REVERT_SWITCH  | Get detailed pricing information              | true, false |
 | reassign-users    | SWITCH         | Automatically reassign users (Teams only)     | true, false |
 
 **Examples:**
@@ -924,13 +924,13 @@ POST /v3/customers/{customerId}/orders?fetch-price=true&reassign-users=true
 
 | Code  | Error     | Cause/resolution                                   |
 |-------|-----------|----------------------------------------------------|
-| 2149  | Quantity mismatch | lineItems.quantity ≠ cancellingItems.quantity. <br /> Ensure quantities match exactly. |
-| 2150  | Switch path validity check failed. | Invalid switch path. <br /> Verify path exists with GET switch-paths API. |
-| 2151  | Quantity exceeded. | Switch quantity > subscription quantity. <br />Check subscription currentQuantity. |
-| 2152  | Multiple line items not supported. | More than 1 line item. <br /> Use single line item only. |
-| 2153  | Line item and cancelling line item mismatch. | extLineItemNumber ≠ referenceLineItemNumber. <br /> Set both to 1. |
-| 2154 | Upgrade not supported. | High Growth Offer restrictions, net refund scenario, or restricted product. <br /> Check product eligibility and pricing. |
-| 3115 | Invalid subscription. | Subscription expired/cancelled. <br /> Verify subscription status. |
+| 2149  | Quantity mismatch | lineItems.quantity ≠ cancellingItems.quantity. \<br /\> Ensure quantities match exactly. |
+| 2150  | Switch path validity check failed. | Invalid switch path. \<br /\> Verify path exists with GET switch-paths API. |
+| 2151  | Quantity exceeded. | Switch quantity > subscription quantity. \<br /\>Check subscription currentQuantity. |
+| 2152  | Multiple line items not supported. | More than 1 line item. \<br /\> Use single line item only. |
+| 2153  | Line item and cancelling line item mismatch. | extLineItemNumber ≠ referenceLineItemNumber. \<br /\> Set both to 1. |
+| 2154 | Upgrade not supported. | High Growth Offer restrictions, net refund scenario, or restricted product. \<br /\> Check product eligibility and pricing. |
+| 3115 | Invalid subscription. | Subscription expired/cancelled. \<br /\> Verify subscription status. |
 
 **General troubleshooting:**
 

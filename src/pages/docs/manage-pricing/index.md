@@ -130,10 +130,10 @@ A sample request is as follows:
 
 | **Field**                        | **Required** | **Type**           | **Description** |
 |----------------------------------|--------------|--------------------|-----------------|
-| `region`                         | Yes          | String (Enum)      | Specifies the region for which the Price List should be returned. This must be one of the regions supported for the Partner. The following region codes are supported: <br /> AP, JP, WE, LA, MX, EE, PA, NA  |
-| `marketSegment`                  | Yes          | String (Enum)      | Specifies the market segment. Must be one of the supported segments, such as: <br /> - COM <br /> - EDU <br /> - GOV. |
-| `priceListType`                   | No           | String (Enum)      | Indicates the price list type. Possible values: <br /> - STANDARD <br /> - 3YC <br /> - STD-LGA (Standard Price List for Large Government Agencies)|
-| `currency`                       | Yes          | String (Enum)      | Specifies the currency. Must be one of the supported currencies for the Partner. <br />Possible Values: AUD, EUR, GBP, JPY, USD. |
+| `region`                         | Yes          | String (Enum)      | Specifies the region for which the Price List should be returned. This must be one of the regions supported for the Partner. The following region codes are supported: \<br /\> AP, JP, WE, LA, MX, EE, PA, NA  |
+| `marketSegment`                  | Yes          | String (Enum)      | Specifies the market segment. Must be one of the supported segments, such as: \<br /\> - COM \<br /\> - EDU \<br /\> - GOV. |
+| `priceListType`                   | No           | String (Enum)      | Indicates the price list type. Possible values: \<br /\> - STANDARD \<br /\> - 3YC \<br /\> - STD-LGA (Standard Price List for Large Government Agencies)|
+| `currency`                       | Yes          | String (Enum)      | Specifies the currency. Must be one of the supported currencies for the Partner. \<br /\>Possible Values: AUD, EUR, GBP, JPY, USD. |
 | `priceListMonth`                | Yes          | String             | Specifies the month you want the Price List for, in `YYYYMM` format. Example: `202410`. |
 | `filters`                        | No           | Object             | Filters to narrow down the Price List. All filters use AND logic. For example, if `offerId` and `productFamily` filters are included in the request, then API the response will include results that match `offerId` AND `productFamily` |
 | `filters → offerId`             | No           | String             | Returns only offers matching the specified `offerId`. |
@@ -244,30 +244,30 @@ A sample response is as follows:
 | **Field** | **Not Null** | **Type** | **Description** |
 |-----------|--------------|----------|-----------------|
 | `priceListMonth` | Yes | String | Price List published month |
-| `marketSegment` | Yes | String (Enum) | Market segment applicable for the offers included in the response. Possible values: <br /> - COM <br /> - EDU <br /> - GOV |
-| `region` | Yes | String (Enum) | Region where offer is sold. <br /> Possible values: <br /> - NA <br /> - PA <br /> - EE <br /> - MX <br /> - LA <br /> - WE <br /> - JP <br /> - AP |
-| `currency` | Yes | String (Enum) | Currency applicable for the market segment and region. <br /> Possible Values: <br /> - AUD <br /> - EUR <br /> - GBP <br /> - JPY <br /> - USD |
-| `priceListType` | Yes | String (Enum) | The price list type. <br /> Possible values:<br /> - STANDARD <br /> - 3YC <br /> - STD-LGA (Standard Price List for Large Government Agencies) |
+| `marketSegment` | Yes | String (Enum) | Market segment applicable for the offers included in the response. Possible values: \<br /\> - COM \<br /\> - EDU \<br /\> - GOV |
+| `region` | Yes | String (Enum) | Region where offer is sold. \<br /\> Possible values: \<br /\> - NA \<br /\> - PA \<br /\> - EE \<br /\> - MX \<br /\> - LA \<br /\> - WE \<br /\> - JP \<br /\> - AP |
+| `currency` | Yes | String (Enum) | Currency applicable for the market segment and region. \<br /\> Possible Values: \<br /\> - AUD \<br /\> - EUR \<br /\> - GBP \<br /\> - JPY \<br /\> - USD |
+| `priceListType` | Yes | String (Enum) | The price list type. \<br /\> Possible values:\<br /\> - STANDARD \<br /\> - 3YC \<br /\> - STD-LGA (Standard Price List for Large Government Agencies) |
 | `totalCount` | Yes | Integer | Indicates the total items matched as per the search criteria. |
 | `count` | Yes | Integer | Indicates the total number of offers returned in the response. |
 | `limit` | Yes | Integer | The number of offers limited in the response. |
 | `offset` | Yes | Integer | Specifies the starting point for retrieving items in a paginated list. It determines how many items to skip before beginning to return results. If not specified, the default value is 0, meaning the response will start from the first item. |
-| `offers` | Yes | JSON List | List of Offers <br /> List will be empty if no Offers are available to return. |
+| `offers` | Yes | JSON List | List of Offers \<br /\> List will be empty if no Offers are available to return. |
 | `offer → offerId` | Yes | String | Unique identifier of the Offer. Used as Offer ID in Order APIs |
 | `offer → productFamily` | Yes | String | Indicates the grouping of products based on product code, product config, and so on. |
-| `offer → productType` | Yes | String (Enum) | Possible values: <br /> - Enterprise Consumption (consumable) <br /> - Enterprise Hosted Subscription New <br /> - Feature Restricted Licensing Subscription New <br /> - Hosted Subscription <br /> - Subscription New <br /> - Team Consumption (consumable) <br /> - Transaction New (consumable) |
-| `offer → productTypeDetail` | Yes | String (Enum) | Indicates whether the product is term base and if price is fixed or prorated. <br /> Possible values: <br /> - 12-month, no proration (fixed price) <br /> - Annual (proration based on duration) <br /> - No Proration (fixed price, no term) |
+| `offer → productType` | Yes | String (Enum) | Possible values: \<br /\> - Enterprise Consumption (consumable) \<br /\> - Enterprise Hosted Subscription New \<br /\> - Feature Restricted Licensing Subscription New \<br /\> - Hosted Subscription \<br /\> - Subscription New \<br /\> - Team Consumption (consumable) \<br /\> - Transaction New (consumable) |
+| `offer → productTypeDetail` | Yes | String (Enum) | Indicates whether the product is term base and if price is fixed or prorated. \<br /\> Possible values: \<br /\> - 12-month, no proration (fixed price) \<br /\> - Annual (proration based on duration) \<br /\> - No Proration (fixed price, no term) |
 | `offer → additionalDetail` | No | String | Additional details for the product offer, such as the number of credits in a pack, the number of license bundles in a subscription, and so on. |
-| `offer → operatingSystem` | Yes | String (Enum) | Possible values: <br /> - Multiple Platforms <br /> - Other <br /> - Windows |
-| `offer → language` | Yes | String (Enum) | Language offered by Offer <br /> The following are the possible values: <br /> - EU English <br /> - Japanese <br /> - Multi Asian Languages <br /> - Multi European Languages <br /> - Multi Language Australia <br /> - Multi Latin American Languages <br /> - Multi NorthAmerican Language |
-| `offer → version` | Yes | String | Possible values: <br /> - ALL |
-| `offer → users` | Yes | String (Enum) | License type <br /> The Following are the possible values: <br /> - 1 User <br /> - Named <br /> - Per Credit Pack <br /> - Per Server <br /> - Per Transaction <br /> - Per Workstation <br /> - Subscription |
+| `offer → operatingSystem` | Yes | String (Enum) | Possible values: \<br /\> - Multiple Platforms \<br /\> - Other \<br /\> - Windows |
+| `offer → language` | Yes | String (Enum) | Language offered by Offer \<br /\> The following are the possible values: \<br /\> - EU English \<br /\> - Japanese \<br /\> - Multi Asian Languages \<br /\> - Multi European Languages \<br /\> - Multi Language Australia \<br /\> - Multi Latin American Languages \<br /\> - Multi NorthAmerican Language |
+| `offer → version` | Yes | String | Possible values: \<br /\> - ALL |
+| `offer → users` | Yes | String (Enum) | License type \<br /\> The Following are the possible values: \<br /\> - 1 User \<br /\> - Named \<br /\> - Per Credit Pack \<br /\> - Per Server \<br /\> - Per Transaction \<br /\> - Per Workstation \<br /\> - Subscription |
 | `offer → levelDetails` | Yes | String | Level Description of Min and Max range for the price point. |
 | `offer → firstOrderDate` | Yes | Date | The first date for the item's sale. |
 | `offer → lastOrderDate` | Yes | Date | The last date for the item's sale. |
-| `offer → partnerPrice` | Yes | String | List Price for Partner <br /> |
-| `offer → estimatedStreetPrice` | Yes | String | Estimated retail price <br />  |
-| `offer → pool` | Yes | String (Enum) | The category or grouping to which the offer belongs. This field helps in identifying the broader classification of the offer. Possible values are: <br /> - Application <br /> - Discount1 <br /> - Discount2 <br /> - Pricing Version 23 <br /> - Pricing Version 24 <br /> - Pricing Version 25 <br />|
+| `offer → partnerPrice` | Yes | String | List Price for Partner \<br /\> |
+| `offer → estimatedStreetPrice` | Yes | String | Estimated retail price \<br /\>  |
+| `offer → pool` | Yes | String (Enum) | The category or grouping to which the offer belongs. This field helps in identifying the broader classification of the offer. Possible values are: \<br /\> - Application \<br /\> - Discount1 \<br /\> - Discount2 \<br /\> - Pricing Version 23 \<br /\> - Pricing Version 24 \<br /\> - Pricing Version 25 \<br /\>|
 | `offer → duration` | Yes | String | The time period for which the offer is valid or applicable. This field specifies the length of time the offer is effective. |
 
 ## HTTP status codes

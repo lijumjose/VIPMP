@@ -59,7 +59,7 @@ This API  helps partners enable customers to upgrade their product subscriptions
 | country        | Yes      | Specifies the country for which the upgrade path is applicable.                                        |
 | offer-id       | No       | Fetches all upgrade paths available for the specified offer.                                               |
 | subscription-id      | No       | See description corresponding to `customer-id`                                               |
-| customer-id     | No       | If `subscription-id` and `customer-id`  query parameters are provided: <br /> - Partners do not need to pass other fields. <br /> - By default, the country will be taken from the customer’s country, or from the deployment’s country if the subscription has deployment details unless explicitly overridden by the partner. <br /> - The customer segment will be same as customer market segment. <br /> - The language will default to MULT, unless explicitly overridden by the partner by passing the corresponding query parameter.                                              |
+| customer-id     | No       | If `subscription-id` and `customer-id`  query parameters are provided: \<br /\> - Partners do not need to pass other fields. \<br /\> - By default, the country will be taken from the customer’s country, or from the deployment’s country if the subscription has deployment details unless explicitly overridden by the partner. \<br /\> - The customer segment will be same as customer market segment. \<br /\> - The language will default to MULT, unless explicitly overridden by the partner by passing the corresponding query parameter.                                              |
 | language       | Yes      | Language for which they want upgrade paths.                                                            |
 | limit | No      | Specifies the maximum number of records (items) to return in a single response. Default value is 20. |
 | offset | No     | Specifies the starting position in the dataset from which to return results. Default value is 0. |
@@ -288,7 +288,7 @@ This API facilitates upgrade orders with "From" and "To" product details.
 
 |Parameter |Required | Description|
 |--|--|--|
-|reassign-users|Optional |Specifies whether to automatically reassign users from the original Teams subscription to the upgraded one. <br />**Note:** Automatic user reassignment is not supported for upgrades from Teams to Enterprise or between Enterprise subscriptions.|
+|reassign-users|Optional |Specifies whether to automatically reassign users from the original Teams subscription to the upgraded one. \<br /\>**Note:** Automatic user reassignment is not supported for upgrades from Teams to Enterprise or between Enterprise subscriptions.|
 
 Sample request URL: `POST https://partners-stage.adobe.io/v3/customers/1005944528/orders?reassign-users=true`
 
