@@ -173,7 +173,7 @@ You can use the following query parameters as shown in this request URL: `POST <
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
 | fetch-recommendations   | - true \<br /\> - false | No                   | false                |
-| recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
+| recommendation-country  | US, GB, and so on     | No                   | \<Customer's country\> |
 | recommendation-language | MULT or EN            | No                   | MULT                 |
 
 ### Request header
@@ -251,7 +251,7 @@ You can use the following query parameters as shown in this request URL: `POST <
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
 | fetch-recommendations   | - true \<br /\> - false | No                   | false                |
-| recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
+| recommendation-country  | US, GB, and so on     | No                   | \<Customer's country\> |
 | recommendation-language | MULT or EN            | No                   | MULT                 |
 
 ### Request header
@@ -347,7 +347,7 @@ You can use the following query parameters as shown in this request URL: `GET <c
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
 | fetch-recommendations   | - true \<br /\> - false | No                   | false                |
-| recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
+| recommendation-country  | US, GB, and so on     | No                   | \<Customer's country\> |
 | recommendation-language | MULT or EN            | No                   | MULT                 |
 
 ### Request header
@@ -445,7 +445,7 @@ You can use the following query parameters as shown in this request URL: `GET <c
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
 | fetch-recommendations   | - true \<br /\> - false | No                   | false                |
-| recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
+| recommendation-country  | US, GB, and so on     | No                   | \<Customer's country\> |
 | recommendation-language | MULT or EN            | No                   | MULT                 |
 
 #### Request header
