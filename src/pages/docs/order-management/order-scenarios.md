@@ -148,7 +148,7 @@ Automatically adjusts the offer ID if a better volume discount is available.
 - Helps partners prepare a quote structure (line items, quantities, deployment IDs) before calculating pricing.
 - Allows partners to test different configurations and offers.
 
- **<mark>Preview Order with pricing</mark>**
+ **Preview Order with pricing**
 
 You can choose to include pricing in the Preview Order API response by setting the `fetch-price` query parameter to `true` in the request URL. This returns real-time partner pricing details for Adobe products, helping partners and resellers better estimate how much Adobe will invoice for an order.
 
@@ -165,7 +165,7 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 
 - Set `orderType` to PREVIEW
 - A successful response can be used to place a new order request, if the `orderType` is changed to NEW.
-- <mark>Include the query parameter `fetch-price=true` to retrieve pricing details.</mark>
+- Include the query parameter `fetch-price=true` to retrieve pricing details.
 - Returns the best available offer ID for the customer and the order.
   - Input Offer ID can be any level representing the same product.
   - If the Offer IDs in the request provides a better discount than customer is eligible for, then the correct lower-level Offer IDs are returned.
@@ -326,7 +326,7 @@ For complete set of request and response parameter descriptions, refer to [Order
 
 **Response:**
 
-**Note:** <mark>Pricing details is included in the response as the query parameter `fetch-price` was set to `true` in the request URL.</mark>
+**Note:** Pricing details is included in the response as the query parameter `fetch-price` was set to `true` in the request URL.
 
 ```json
 {
@@ -393,9 +393,9 @@ A few of the benefits of previewing a renewal order include:
 
   - **1000** indicates that the subscription is either active or scheduled and is expected to renew successfully.
   - **1004** indicates that the subscription is active or scheduled, but the associated product has expired, so the renewal will not proceed.
-- <mark>Include the query parameter `fetch-price=true` to retrieve pricing details. </mark>
-- <mark>Pricing details are not available in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.</mark>
-- <mark>`proratedDays` in the response indicates the number of days for which order will be invoiced. This applies in the case of mid-term purchases. </mark>
+- Include the query parameter `fetch-price=true` to retrieve pricing details. 
+- Pricing details are not available in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.
+- `proratedDays` in the response indicates the number of days for which order will be invoiced. This applies in the case of mid-term purchases. 
 
 ### Sample request
 
@@ -447,7 +447,7 @@ A few of the benefits of previewing a renewal order include:
 }
 ```
 
-<mark>For more information on the pricing details returned in the response, see [Preview Order](#preview-an-order).</mark>
+For more information on the pricing details returned in the response, see [Preview Order](#preview-an-order).
 
 #### Sample request and response for HVD customers
 
@@ -477,7 +477,7 @@ OR
 
 **Response:**
 
-**Note:** <mark>Pricing details is included in the response as the query parameter `fetch-price` was set to `true` in the request URL.</mark>
+**Note:** Pricing details is included in the response as the query parameter `fetch-price` was set to `true` in the request URL.
 
 ```json
 {
