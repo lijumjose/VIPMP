@@ -125,12 +125,7 @@ Customer resource without read-only fields:
 
 ## Request and response parameters
 
-Expand the following section for more details on the request and response parameters.
-
-<details>
-      <summary><b>Customer resource</b></summary>
-
-## Customer (top-level resource)
+### Customer (top-level resource)
 
 |Property | Type | Description | Range/Limits|
 |:----|:----|:----|:----|
@@ -149,7 +144,6 @@ Expand the following section for more details on the request and response parame
 |links (read only)| **Links** resource | Deep links to get customer account details| |
 
 For more details, refer to [Resources and fields](../references/resources.md#customer-top-level-resource).
-</details>
 
 ### HTTP status codes
 
