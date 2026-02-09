@@ -216,7 +216,7 @@ Changes to support on-demand flexible discount release:
 
 ### Earlier releases
 
-- [Manage Flexible Discounts](/src/pages/sandbox/sandbox-portal/flex-promo/index.md)
+- [Manage Flexible Discounts](../../sandbox/sandbox-portal/flex-promo/index.md)
 - [Manage Product Recommendations](../../sandbox/sandbox-portal/recommendations/index.md)
 - [Manage High Growth Offers](../../sandbox/sandbox-portal/high-growth-offer/high-growth.md)
 - [Migrate HVD customers from VIP to VIP Marketplace](../../sandbox/sandbox-portal/migrate-hvd-customers/migrate-hvd-customers.md)
