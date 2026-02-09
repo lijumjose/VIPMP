@@ -4,7 +4,7 @@
 |:----|:----|:----|
 |1000| **Resource Status:** Green \<br /\>Account - Active \<br /\> Order - Complete/Filled \<br /\> Subscription - Active| Reseller Account, Customer Account, Order, Subscription Transfer, Deployment|
 |1002 | **Resource Status:** Yellow \<br /\> Account - Pending \<br /\> Order - Open \<br /\> Subscription - Pending | Reseller Account, Customer Account, Order, Subscription Transfer|
-|1004| **Resource Status: Red** \<br /\> Account - Inactive \<br /\> Order - Failed \<br /\>  Subscription - Inactive \<br /\> If there is another status code that describes the status better, that code will be used instead.| Reseller Account, Customer Account, Order, Subscription |Transfer, Deployment|
+|1004| **Resource Status: Red** \<br /\> Account - Inactive \<br /\> Order - Failed \<br /\>  Subscription - Inactive \<br /\> If there is another status code that describes the status better, that code will be used instead.| Reseller Account, Customer Account, Order, Subscription, Transfer, Deployment|
 |1008 | **Order Status:** Cancelled | Order|
 |1009 |**Subscription Status:** Scheduled | Subscription|
 |1010| Account Status: Inactive \<br /\> **Reason:** Invalid Address| Reseller Account, Customer Account|
