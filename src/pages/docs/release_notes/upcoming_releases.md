@@ -36,7 +36,6 @@ For more information, see:
 
 **Expected release:** April, 2026.
 
-
 Facilitates the renewal of customer subscriptions before the Anniversary Date (AD). This capability enables customers to renew early while maintaining uninterrupted access to their existing subscription.
 
 ### New capabilities
@@ -68,7 +67,6 @@ For more information, see:
 ## Pricing and invoicing data available in GET Order APIs
 
 **Expected release:** March, 2026.
-
 
 The VIP Marketplace now provides partners with enhanced access to pricing and invoicing information through the `GET Order by ID` and `GET Order History` APIs.
 
