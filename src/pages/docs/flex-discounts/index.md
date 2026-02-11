@@ -1,6 +1,6 @@
 # Manage Flexible Discounts
 
-The Flexible Discount feature enables partners to easily adjust product prices, making them more attractive to different customer segments. These discounts are primarily intended to boost customer retention or acquisition. You can access details about the flexible discounts available for a product in a specific market segment and country, and apply them while placing an order or when creating or modifying a subscription.
+The Flexible Discount feature enables partners to easily adjust product prices, making them more attractive to different customer segments. These discounts are primarily intended to boost customer retention or acquisition. You can view flexible discount details for a product in a specific market segment and country, and apply them while placing an order or while creating or modifying a subscription.
 
 Key advantages of flexible discounts include:
 
@@ -23,7 +23,7 @@ The following three types of flexible discounts are available:
 
 The discounts applied based on these discount types are explained in the following tables:
 
-**Percentage Off Discount – Example: 20% discount for Acrobat Pro**
+**Percentage Discount – Example: 20% discount for Acrobat Pro**
 
 | Part Number      | Original Price | Discounted Price |
 |------------------|----------------|------------------|
@@ -54,7 +54,7 @@ The discounts applied based on these discount types are explained in the followi
 | 65322535CA04A12 | $89.99         | $49.99           |
 | 86322535CA04A12 | $87.99         | $45.00           |
 
-These discounts are applied to a part number using a discount code. Partners must use this discount code while placing the order to prvide a discounted price for their customers.
+These discounts are applied to a part number using a discount code. Partners must use this discount code while placing an order to provide a discounted price for their customers.
 
 ## Eligibility criteria
 
@@ -67,3 +67,10 @@ Introductory offers apply only to customers who are purchasing a product for the
 Partners need to facilitate the discovery and application of flexible discounts. Follow the steps illustrated in the figure below to apply flexible discounts and obtain the discounted price:
 
 ![Partner integration process](../image/flex_6.png)
+
+## What's next?
+
+Read more about:
+
+- [Managing Flexible Discounts using APIs](./apis.md)
+- [Error codes specific to Flexible Discounts](./error_codes.md)

@@ -5,7 +5,7 @@ Managing subscription renewals helps partners ensure uninterrupted service for c
 1. **Auto‑renewal (system‑initiated)**
 
    - These renewals are triggered automatically by Adobe systems based on the renewal configuration.
-   - Occurs each year on the renewal date of the subscription.
+   - Occurs each year on the subscription renewal date.
    - The renewal maintains the products, while the quantity is updated according to the customer’s preferred renewal quantity.
    - Does not require partner action unless the customer chooses to opt out.
 
@@ -17,15 +17,15 @@ Managing subscription renewals helps partners ensure uninterrupted service for c
 
       - Occurs after anniversary date (AD) up to the allowed grace period (typically 14 days).
       - Partners can renew subscriptions manually during this window.
-      - Valid only for products and quantities previously owned in the prior term.
+      - Valid only for products and quantities owned in the prior term.
       - Additional quantities or new products must be purchased in a separate new order.
 
    2. Early renewal
 
       - Allows partners to renew a customer’s existing subscriptions ahead of time.
-      - Allows subscribing to new products and adding more seats to the existing subscription.
+      - Allows partners to subscribe to new products and adding more seats to the existing subscription.
       - Occurs before anniversary date (within AD‑30).
-      - Allows enabling earlier billing, service continuation, and workload distribution.
+      - Enables earlier billing, service continuation, and workload distribution.
 
 ## Important dates in the renewal model
 
