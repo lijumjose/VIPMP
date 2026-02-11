@@ -2,14 +2,18 @@
 
 The following features are scheduled for release:
 
+**Important:** The release timelines stated herein are indicative only and are provided for guidance purposes. Actual release dates may vary.
+
 ## Flexible Discounts – Introductory offers support
 
-Enhanced the Flexible Discounts capability in VIP Marketplace to support Introductory Offers as a new discount category. The introductory offer is a type of discount that helps partners apply a fixed-price discount to a customer’s first purchase or first-time use of a specific product. Some benefits include:
+**Expected release:** March, 2026.
 
-- Incentivising early onboarding of new Adobe products
+This release enhances the Flexible Discounts capability in VIP Marketplace to support Introductory Offers as a new discount category. The introductory offer is a type of discount that helps partners apply a fixed-price discount to a customer’s first purchase or first-time use of a specific product. Some benefits include:
+
+- Incentivizing early onboarding of new Adobe products
 - Transition from SKU-based promotions to promotional codes
 
-### New capabailities
+### New capabilities
 
 - **Category filtering:**  
   The newly introduced `categories` query parameter of the [Fetch Flexible Discounts](../flex_discounts/apis.md#get-flexible-discounts) endpoint supports filtering by category. Supported values:
@@ -17,7 +21,7 @@ Enhanced the Flexible Discounts capability in VIP Marketplace to support Introdu
   - `INTRO`: Introductory Offers
 
 - **New discount type:**  
-  The `type` parameter with value `FIXED_PRICE` allows to offer a product at a fixed price, regardless of its original price.
+  The `type` parameter with value `FIXED_PRICE` allows partners to offer a product at a fixed price, regardless of its original price.
   *Example:* Adobe Express at $39.99 for new customers.
 
 - **Eligibility enhancements:**  
@@ -30,16 +34,18 @@ For more information, see:
 
 ## Early Renewals – Subscription renewal ahead of anniversary date
 
-Facilitates partners to renew customer subscriptions before the Anniversary Date (AD). This capability enables customers to renew early while maintaining uninterrupted access to their existing subscription.
+**Expected release:** April, 2026.
 
-### New capabailities
+Facilitates the renewal of customer subscriptions before the Anniversary Date (AD). This capability enables customers to renew early while maintaining uninterrupted access to their existing subscription.
+
+### New capabilities
 
 - **Early renewal window (AD‑30 to AD)**  
   Partners can now place renewal orders up to 30 days before the subscription’s anniversary date. Orders placed within this window are treated as renewal orders and are invoiced immediately.
 
 - **Pricing based on date of renewal**
 
-  The customers can benefit from the old price if they renew before a price change.
+  Customers can benefit from the old price if they renew before a price change.
 
 - **Three-year commitment (3YC) support**  
   For three-year commitment customers, price continues to be based on the 3YC commitment start date. Early renewals maintain compliance and may help non-compliant customers regain compliant status. Early renewals are not supported if the 3YC customer is in the last term.
@@ -60,11 +66,13 @@ For more information, see:
 
 ## Pricing and invoicing data available in GET Order APIs
 
+**Expected release:** March, 2026.
+
 The VIP Marketplace now provides partners with enhanced access to pricing and invoicing information through the `GET Order by ID` and `GET Order History` APIs.
 
 These enhancements allow partners to view the same pricing elements that appear in the invoice spreadsheets, which improves transparency and reconciliation accuracy.
 
-### New capabailities
+### New capabilities
 
 - Pricing is now available in the following APIs when the `fetch-price=true` query parameter is included in the request:
 
