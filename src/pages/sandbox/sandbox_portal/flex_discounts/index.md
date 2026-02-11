@@ -22,12 +22,13 @@ You can view Flexible Discounts applicable for all countries by selecting **All 
 
 The UI displays a list of current discounts, including the following details:
 
-- Option to filter flexible discounts based on the applicable market segments
-- Option to filter flexible discounts based on the applicable country
-- Option to filter flexible discounts applicable for renewal or for new purchases
-- Name and description of the discount
+- Option to filter flexible discounts based on the applicable market segments.
+- Option to filter flexible discounts based on the applicable country.
+- Option to filter flexible discounts applicable for renewal or for new purchases.
+- Name and description of the discount.
 - Discount `code` to identify the discount. Use this code to apply the discounted price.
-- Start and end date of discount
+- <mark>`category` of the discount. Possible values are: `STANDARD` and `INTRO`. </mark>
+- Start and end date of discount.
 - Status of the discount. Only discounts with **ACTIVE** status are eligible.
 - Offer IDs the discount applies to.
 - Type and value of discount. A discount can have either fixed discount or a percentage discount on the price. For example, if the `type` is **FIXED DISCOUNT** and `value` is **20**, and `currency` is **USD**, means a flat discount of $20 on the offer price.
