@@ -73,4 +73,4 @@ Partners need to facilitate the discovery and application of flexible discounts.
 Read more about:
 
 - [Managing Flexible Discounts using APIs](./apis.md)
-- [Error codes specific to Flexible Discounts](./error_codes.md)
+- [Error codes specific to Flexible Discounts](./error-codes.md)
