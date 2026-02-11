@@ -27,7 +27,7 @@ The UI displays a list of current discounts, including the following details:
 - Option to filter flexible discounts applicable for renewal or for new purchases.
 - Name and description of the discount.
 - Discount `code` to identify the discount. Use this code to apply the discounted price.
-- <mark>`category` of the discount. Possible values are: `STANDARD` and `INTRO`. </mark>
+- `category` of the discount. Possible values are: `STANDARD` and `INTRO`.
 - Start and end date of discount.
 - Status of the discount. Only discounts with **ACTIVE** status are eligible.
 - Offer IDs the discount applies to.
