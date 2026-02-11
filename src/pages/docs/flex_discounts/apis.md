@@ -710,7 +710,7 @@ Use the `PATCH /v3/customers/<customer-id>/subscriptions/<subscription-id>` with
 #### Request
 
 - **Request URL:** `PATCH /v3/customers/<customer-id>/subscriptions/<subscription-id>?reset-flex-discount-codes=true`
-- **Request body:** Empty or applicable body for update subscription 
+- **Request body:** Empty or applicable body for update subscription
 
 Sample empty request body:
 
