@@ -19,7 +19,7 @@ Use the `Fetch Recommendations` API call with appropriate query parameters to re
 
 ### Request Header
 
-See [Headers section](../references/api_headers.md).
+See [Headers section](../references/api-headers.md).
 
 ### Request Body
 
@@ -50,11 +50,11 @@ The following table lists the request parameters and their corresponding descrip
 
 | Parameter             | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Is mandatory?                                      |
 |-----------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
-| recommendationContext | String | The context in which recommendations are being requested. <br /> Values: <br /> - **GENERIC**: Fetches recommendations without any primary context, using all available information about a customer.<br /> - **ORDER_PREVIEW**: Fetches recommendations based on the products in the cart.<br /> - **RENEWAL_ORDER_PREVIEW**:  For AutoRenewal, it fetches recommendations based on Subscription Renewal preference. For ManualRenewal, it fetches the same recommendations as the **ORDER_PREVIEW** context. <br /> <br /> | No <br /> <br /> The default value is **GENERIC**. |
+| recommendationContext | String | The context in which recommendations are being requested. \<br /\> Values: \<br /\> - **GENERIC**: Fetches recommendations without any primary context, using all available information about a customer.\<br /\> - **ORDER_PREVIEW**: Fetches recommendations based on the products in the cart.\<br /\> - **RENEWAL_ORDER_PREVIEW**:  For AutoRenewal, it fetches recommendations based on Subscription Renewal preference. For ManualRenewal, it fetches the same recommendations as the **ORDER_PREVIEW** context. \<br /\> \<br /\> | No \<br /\> \<br /\> The default value is **GENERIC**. |
 | customerId            | String | Unique identifier for the customer for whom recommendations are being requested. This is a mandatory parameter.                                                                                                                                                                                                                                                                                                                                                                                                              | Yes                                                |
 | offers                | Object | List of offers for which recommendations are being fetched.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | No                                                 |
-| country               | String | The requested country for which recommendations should be fetched. If not provided, the customer's country will be used. See [available country codes](../references/supported_locales.md).                                                                                                                                                                                                                                                                                                                                      | No                                                 |
-| language              | String |The requested language for which recommendations should be fetched. Possible values are: <br /> - `EN` <br /> - `MULT`  <br />**Note:** Use `EN` for Western Europe customers or global customers deploying in Europe. `MULT` is available for all other regions.                                                                                                                                                                                                                                                                | No                                                 |
+| country               | String | The requested country for which recommendations should be fetched. If not provided, the customer's country will be used. See [available country codes](../references/supported-locales.md).                                                                                                                                                                                                                                                                                                                                      | No                                                 |
+| language              | String |The requested language for which recommendations should be fetched. Possible values are: \<br /\> - `EN` \<br /\> - `MULT`  \<br /\>**Note:** Use `EN` for Western Europe customers or global customers deploying in Europe. `MULT` is available for all other regions.                                                                                                                                                                                                                                                                | No                                                 |
 
 #### Offers object
 
@@ -172,13 +172,13 @@ You can use the following query parameters as shown in this request URL: `POST <
 
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
-| fetch-recommendations   | - true <br /> - false | No                   | false                |
-| recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
+| fetch-recommendations   | - true \<br /\> - false | No                   | false                |
+| recommendation-country  | US, GB, and so on     | No                   | \<Customer's country\> |
 | recommendation-language | MULT or EN            | No                   | MULT                 |
 
 ### Request header
 
-See [Headers section](../references/api_headers.md).
+See [Headers section](../references/api-headers.md).
 
 ### Request body
 
@@ -234,7 +234,7 @@ Response header: `x-recommendation-tracker-id: <Some String identifier>`
 
 #### HTTP Status Code
 
-No change from the standard [Preview Order API](../order_management/order_scenarios.md).
+No change from the standard [Preview Order API](../order-management/order-scenarios.md).
 
 ## Preview Order Renewal
 
@@ -250,13 +250,13 @@ You can use the following query parameters as shown in this request URL: `POST <
 
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
-| fetch-recommendations   | - true <br /> - false | No                   | false                |
-| recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
+| fetch-recommendations   | - true \<br /\> - false | No                   | false                |
+| recommendation-country  | US, GB, and so on     | No                   | \<Customer's country\> |
 | recommendation-language | MULT or EN            | No                   | MULT                 |
 
 ### Request header
 
-See [Headers section](../references/api_headers.md).
+See [Headers section](../references/api-headers.md).
 
 ### Request body
 
@@ -346,13 +346,13 @@ You can use the following query parameters as shown in this request URL: `GET <c
 
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
-| fetch-recommendations   | - true <br /> - false | No                   | false                |
-| recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
+| fetch-recommendations   | - true \<br /\> - false | No                   | false                |
+| recommendation-country  | US, GB, and so on     | No                   | \<Customer's country\> |
 | recommendation-language | MULT or EN            | No                   | MULT                 |
 
 ### Request header
 
-See [Headers section](../references/api_headers.md).
+See [Headers section](../references/api-headers.md).
 
 ### Request body
 
@@ -444,13 +444,13 @@ You can use the following query parameters as shown in this request URL: `GET <c
 
 | **Parameter Name**      | **Parameter Value**   | **Is it Mandatory?** | **Default Value**    |
 |-------------------------|-----------------------|----------------------|----------------------|
-| fetch-recommendations   | - true <br /> - false | No                   | false                |
-| recommendation-country  | US, GB, and so on     | No                   | <Customer's country> |
+| fetch-recommendations   | - true \<br /\> - false | No                   | false                |
+| recommendation-country  | US, GB, and so on     | No                   | \<Customer's country\> |
 | recommendation-language | MULT or EN            | No                   | MULT                 |
 
 #### Request header
 
-See [Headers section](../references/api_headers.md).
+See [Headers section](../references/api-headers.md).
 
 #### Request body
 
@@ -559,7 +559,7 @@ None.
 
 ### HTTP Status Codes
 
-Same as the standard [GET Order API](../order_management/get_order.md).
+Same as the standard [GET Order API](../order-management/get-order.md).
 
 ## Provide tracking data to Adobe to get improved recommendations
 

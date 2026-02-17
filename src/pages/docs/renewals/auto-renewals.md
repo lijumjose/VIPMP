@@ -20,5 +20,5 @@ Auto‑renewal process outcomes:
 
 For more information, see:
 
-- [Create Subscription](../subscription_management/create_subscription.md)
-- [Update subscription](../subscription_management/update_subscription.md)
+- [Create Subscription](../subscription-management/create-subscription.md)
+- [Update subscription](../subscription-management/update-subscription.md)

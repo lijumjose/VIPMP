@@ -43,6 +43,6 @@ Managing subscription renewals helps partners ensure uninterrupted service for c
 
 ## Define auto-renewal and manual renewal
 
-You can use [Create Subscription](../subscription_management/create_subscription.md) and [Update Subscription](../subscription_management/update_subscription.md) APIs to create or modify a subscription to define the auto-renewal configuration. If the auto-renewal configuration is enabled, subscriptions are renewed using current quantities and renewal preferences. For more information on how to define auto-renewal, see [managing auto-renewals using APIs](./auto-renewals.md).
+You can use [Create Subscription](../subscription-management/create-subscription.md) and [Update Subscription](../subscription-management/update-subscription.md) APIs to create or modify a subscription to define the auto-renewal configuration. If the auto-renewal configuration is enabled, subscriptions are renewed using current quantities and renewal preferences. For more information on how to define auto-renewal, see [managing auto-renewals using APIs](auto-renewals.md).
 
-Partners can perform manual renewals using APIs. For more information, see [managing manual renewals using APIs](./manual-renewals.md).
+Partners can perform manual renewals using APIs. For more information, see [managing manual renewals using APIs](manual-renewals.md).

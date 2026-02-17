@@ -8,7 +8,7 @@ The standard migration workflow is as follows:
 
 ## 1. Preview Migration API (Preview Offers)
 
-Use the [Migration Preview](../migration/preview_offers.md) (`GET /v3/memberships/{{membershipId}}/offers`) API to verify whether the customer is eligible for migration. For LGA customers, the benefits array shows the type as `LARGE_GOVERNMENT_AGENCY`, as shown in the following example:
+Use the [Migration Preview](../migration/preview-offers.md) (`GET /v3/memberships/{{membershipId}}/offers`) API to verify whether the customer is eligible for migration. For LGA customers, the benefits array shows the type as `LARGE_GOVERNMENT_AGENCY`, as shown in the following example:
 
 ```json
 {
@@ -34,11 +34,11 @@ Use the [Migration Preview](../migration/preview_offers.md) (`GET /v3/membership
 }
 ```
 
-Read more about [Preview Transfer API](../migration/preview_offers.md).
+Read more about [Preview Transfer API](../migration/preview-offers.md).
 
 ## 2. Transfer API (Migration)
 
-Use the [POST /v3/memberships/{membership-id}/transfers](../migration/transfer_subscription.md) API to migrate. Different error codes will be returned for LGA ineligible cases during migration.
+Use the [POST /v3/memberships/\{membership-id\}/transfers](../migration/transfer-subscription.md) API to migrate. Different error codes will be returned for LGA ineligible cases during migration.
 
 A sample response is as follows:
 
@@ -65,4 +65,4 @@ A sample response is as follows:
 }
 ```
 
-For more information, see [Transfer API](../migration/transfer_subscription.md).
+For more information, see [Transfer API](../migration/transfer-subscription.md).

@@ -11,20 +11,20 @@ You need to use the following APIs at various steps of the workflow to create an
 1. Create an LGA customer:
 
     - Create a customer: [POST /v3/customers](#1-create-an-lga-customer)
-    - Verify customer details: [GET/v3/customers/{customer-id}](#2-get-customer-details)
+    - Verify customer details: [GET/v3/customers/\{customer-id\}](#2-get-customer-details)
 
 2. Add LGA customers to a Linked Membership group. You can select one of these two options:
 
     - **Option 1:** Add LGA customer to an existing Linked Membership Group:
         - Search Linked Membership Groups: [GET /v3/linked_membership_groups](#3-search-linked-membership-groups)
-        - Add to an existing group: [POST /v3/customers/{customer_id}/linked_membership/enroll/{linked_membership_id}](#4-add-an-lga-customer-to-an-existing-linked-membership-without-needing-an-authorization-code)
+        - Add to an existing group: [POST /v3/customers/\{customer_id\}/linked_membership/enroll/\{linked_membership_id\}](#4-add-an-lga-customer-to-an-existing-linked-membership-without-needing-an-authorization-code)
     - **Option 2:** Create a Linked Membership for the LGA customer:
-        - [PATCH /v3/customers/{customer-id}](#4-add-an-lga-customer-to-an-existing-linked-membership-without-needing-an-authorization-code)
+        - [PATCH /v3/customers/\{customer-id\}](#4-add-an-lga-customer-to-an-existing-linked-membership-without-needing-an-authorization-code)
 
 3. Place an order:
 
-    - Preview Order API: [POST /v3/orders](../order_management/order_scenarios.md), with `orderType` set to `Preview`
-    - Create Order API: [POST /v3/orders](../order_management/create_order.md), with `orderType` set to `NEW`
+    - Preview Order API: [POST /v3/orders](../order-management/order-scenarios.md), with `orderType` set to `Preview`
+    - Create Order API: [POST /v3/orders](../order-management/create-order.md), with `orderType` set to `NEW`
 
 The subsequent sections explain these APIs in detail.
 
@@ -135,20 +135,20 @@ The following table provides descriptions for the response parameters:
 
 |Property|Type|Description| Range/Limits|
 |:----|:----|:----|:----|
-|externalReferenceId|string| Optional <br /> Marketplace’s ID for customer. ID does not need to be unique.|Max: 35 characters|
-|customerId <br /> (read only)|string|Unique ID for customer created upon account creation.|Max: 40 characters|
+|externalReferenceId|string| Optional \<br /\> Marketplace’s ID for customer. ID does not need to be unique.|Max: 35 characters|
+|customerId \<br /\> (read only)|string|Unique ID for customer created upon account creation.|Max: 40 characters|
 |resellerId|string|ID of reseller tied to customer.|Max: 40 characters|
 |globalSalesEnabled|String|Global status of a customer.| |
 |linkedMembership|linkedMembership resource| Information about the Linked Membership.| |
 |companyProfile|companyProfile resource|Information about the customer.| |
 |discounts|discounts resource|Details of the discount applicable to the customer, including the discount level.| |
 |benefits|benefits resource|Details of the benefits applied to the customer account and its corresponding status. For example, the type parameter indicates `LARGE_GOVERNMENT_AGENCY` if the customer is an LGA customer.| |
-|cotermDate <br /> (read only)|String (date)|Date that renewal order is to be placed. This should be one year after first order is provisioned (if a 1-year term) and gets updated upon each renewal order.|10 characters|
-|creationDate <br />(read only)|String (datetime)|Date and time of account creation | Date and time in UTC. |
-|status <br /> (read only)|string|Status code of customer account.|4 characters|
-|links <br /> (read only)|Links resource|Deep links to get customer account details.| |
+|cotermDate \<br /\> (read only)|String (date)|Date that renewal order is to be placed. This should be one year after first order is provisioned (if a 1-year term) and gets updated upon each renewal order.|10 characters|
+|creationDate \<br /\>(read only)|String (datetime)|Date and time of account creation | Date and time in UTC. |
+|status \<br /\> (read only)|string|Status code of customer account.|4 characters|
+|links \<br /\> (read only)|Links resource|Deep links to get customer account details.| |
 
-For more details, see [Create Customer API](../customer_account/create_customer_account.md) and [Customer Account parameters](../references/resources.md#customer-top-level-resource).
+For more details, see [Create Customer API](../customer-account/create-customer-account.md) and [Customer Account parameters](../references/resources.md#customer-top-level-resource).
 
 ### 2. Get customer details
 
@@ -232,7 +232,7 @@ The following details are displayed in the respose body of an LGA customer:
 - The `benefits` array shows `LARGE_GOVERNMENT_AGENCY` if the customer is an LGA.
 - The `linkedMembership` array shows `benefitTypes` and `country` fields.
 
-For more details, refer to [Get Customer Details API](../customer_account/get_customer_account.md).
+For more details, refer to [Get Customer Details API](../customer-account/get-customer-account.md).
 
 ### 3. Search Linked Membership Groups
 
@@ -250,11 +250,11 @@ Sample request with query parameters: `GET <ENV>/v3/linked_membership_groups?cou
 |Query Params Name|Type|Mandatory?|Description|Range/Limits|
 |:----|:----|:----|:----|:----|
 |country|String|Yes|Country of linked membership to search. It is a mandatory parameter for searching LGA Linked Memberships.|US", "CA" for LGA Linked Memberships. |
-| name | String |No | Name or part of the name of the Linked Membership to search. |Min: 0 characters <br /> Max: 80 characters|
+| name | String |No | Name or part of the name of the Linked Membership to search. |Min: 0 characters \<br /\> Max: 80 characters|
 
 #### Request Header
 
-See [Headers Section](../references/api_headers.md)
+See [Headers Section](../references/api-headers.md)
 
 #### Request Body
 
@@ -298,7 +298,7 @@ None.
 |marketSegment|string|Market segment of the Linked Membership.|GOV", "COM", "EDU"; only " GOV" is applicable for LARGE_GOVERNMENT_AGENCY |
 |country | string |Country for which the Linked Membership is applicable. |Min: 2 characters, Max: 2 characters |
 |membersCount |Integer| Number of members in a Linked Membership. | Min: 0 Max: 999999 |
-| benefitTypes |Array of strings |An array of benefit types. <br /> LARGE_GOVERNMENT_AGENCY| Max: 40 characters |
+| benefitTypes |Array of strings |An array of benefit types. \<br /\> LARGE_GOVERNMENT_AGENCY| Max: 40 characters |
 |discounts|Discounts resource array|Applicable discounts for Linked Membership.| |
 
 **Discounts resource in linkedMembership**
@@ -332,7 +332,7 @@ The enroll customer API allows partners and distributors to use the distributor'
 
 #### Request Header
 
-See [API Headers](../references/api_headers.md).
+See [API Headers](../references/api-headers.md).
 
 #### Request Body
 
@@ -362,7 +362,7 @@ None.
 
 ### 5. Create a new Linked Membership for LGA customers
 
-Use the [Update Customer Details](../customer_account/update_customer_account.md) API (`PATCH : /v3/customers/{customer-id}`)  to create a new Linked Membership and to add the LGA customer to it.
+Use the [Update Customer Details](../customer-account/update-customer-account.md) API (`PATCH : /v3/customers/{customer-id}`)  to create a new Linked Membership and to add the LGA customer to it.
 
 **Notes:**
 
@@ -406,4 +406,4 @@ Use the [Update Customer Details](../customer_account/update_customer_account.md
 
 #### Response
 
-Same response as that of [Get Customer Details](../customer_account/get_customer_account.md) API.
+Same response as that of [Get Customer Details](../customer-account/get-customer-account.md) API.
