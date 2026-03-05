@@ -110,7 +110,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 |3118 | orderQuantity out of range | | 400|
 |3119 |Inactive Subscription is not Editable |Update Subscription Auto-Renewal|400|
 |3120| Update could not be performed because it would create an invalid renewal order |Update Subscription Auto-Renewal| 400|
-|3121 | Subscription is Active <br> Subscription Not allowed for Renewal. |Preview Renewal, Create Renewal Order| 400 |
+|3121 | Subscription is Active \<br /\> Subscription Not allowed for Renewal. |Preview Renewal, Create Renewal Order| 400 |
 |3122 | Not within Renewal Window |Renewal Order attempted 30 days after Anniversary Date| |
 | 3131       |  Early renewal in progress. Invalid order type.                                     | Create Order, Create Switch Order, Revert Switch Order, Preview Switch Order, Preview Revert Switch                                         | 400                                                                    |
 | 3132       | Ineligible product for orderType.                                                  | Preview Renewal, Create Renewal Order, Preview Switch Order, Create Switch Order,  Preview Revert Switch Order, Create Revert Switch Order | 400                                                                                                                                                                               |
