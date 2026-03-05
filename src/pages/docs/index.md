@@ -1,11 +1,9 @@
 # Introduction
 
-📄 **Important:** For details about recent rleases and upcoming releases, see:
+**Important:** For details about recent rleases and upcoming releases, see:
 
 - [Release notes](./release-notes/index.md)
 - [Upcoming releases](./release-notes/upcoming-releases.md)
-
----
 
 As a partner cloud marketplace administrator, you can use the Partner APIs to create and manage reseller and customer accounts, and place orders for select Adobe products for those customers. Before placing an order, both reseller and customer accounts must exist. Each customer must be linked to a reseller, and each reseller must be linked to a distributor.
 
