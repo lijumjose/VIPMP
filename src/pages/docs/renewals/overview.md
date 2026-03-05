@@ -24,8 +24,8 @@ Managing subscription renewals helps partners ensure uninterrupted service for c
 
       - Allows partners to renew a customer’s existing subscriptions ahead of time.
       - Allows partners to subscribe to new products and adding more seats to the existing subscription.
-      - Occurs before anniversary date (within AD‑30).
-      - Enables earlier billing, service continuation, and workload distribution.
+      - Occurs before anniversary date (within AD‑30 and AD-1).
+      - Enables earlier billing and service continuation.
 
 ## Important dates in the renewal model
 

@@ -1,7 +1,10 @@
 # Release notes
 
+
 - [API changes](#api-changes)
 - [Sandbox changes](#sandbox-changes)
+
+**Important:** This section lists only features that are currently available in production. For planned enhancements and upcoming changes, see [Upcoming releases](./upcoming-releases.md).
 
 ## API changes
 

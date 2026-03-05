@@ -84,7 +84,7 @@ Facilitates the renewal of customer subscriptions before the Anniversary Date (A
 
 ### New capabilities
 
-- **Early renewal window (AD‑30 to AD)**  
+- **Early renewal window (AD‑30 to AD-1)**  
   Partners can now place renewal orders up to 30 days before the subscription’s anniversary date. Orders placed within this window are treated as renewal orders and are invoiced immediately.
 
 - **Pricing based on date of renewal**
@@ -107,6 +107,7 @@ For more information, see:
 - [Renewals - Overview](../renewals/overview.md)
 - [Managing early renewals using APIs](../renewals/manual-renewals.md)
 - [Managing auto-renewals using APIs](../renewals/auto-renewals.md)
+- [Error codes specific to early renewals](../renewals/error-codes.md)
 
 **Sandbox changes**
 

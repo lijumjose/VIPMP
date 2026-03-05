@@ -103,14 +103,18 @@ Some error responses will include additionalDetails, an array of strings with mo
 | 2152       | Only one item supported for switch |    Preview Switch Order,   Create Switch Order.            |     400             |
 | 2153       | Line item and cancelling line item mismatch. |    Preview Switch Order,   Create Switch Order            |     400             |
 | 2154       | Upgrade not supported |    Preview Switch Order,   Create Switch Order.            |     400             |
+| 2164       |  All subscriptions are already renewed.                                             | Preview Renewal, Create Renewal Order              | 400                                                                                                                                                                      |
 |3115 | Invalid Customer or Subscription ID| Get Subscription Details, Update Subscription Auto-Renewal, Preview Switch Order, Create Switch Order, Preview Revert Switch, Create Revert Switch Order| 404|
 |3116 | renewalQuantity out of range |Update Subscription Auto-Renewal| 400|
 |3117 | currentQuantity out of range | | 400|
 |3118 | orderQuantity out of range | | 400|
 |3119 |Inactive Subscription is not Editable |Update Subscription Auto-Renewal|400|
 |3120| Update could not be performed because it would create an invalid renewal order |Update Subscription Auto-Renewal| 400|
-|3121 | Subscription is Active |Renewal Order after Anniversary Date| |
+|3121 | Subscription is Active <br> Subscription Not allowed for Renewal. |Preview Renewal, Create Renewal Order| 400 |
 |3122 | Not within Renewal Window |Renewal Order attempted 30 days after Anniversary Date| |
+| 3131       |  Early renewal in progress. Invalid order type.                                     | Create Order, Create Switch Order, Revert Switch Order, Preview Switch Order, Preview Revert Switch                                         | 400                                                                    |
+| 3132       | Ineligible product for orderType.                                                  | Preview Renewal, Create Renewal Order, Preview Switch Order, Create Switch Order,  Preview Revert Switch Order, Create Revert Switch Order | 400                                                                                                                                                                               |
+| 3135       |  Early renewal is not allowed for customers in final 3YC term without recommitment. | Preview Renewal Order, Create Renewal Order)`                                                                                                                                           | 400                                                                                                                                                   |
 |4115 | API key is invalid or missing | All [Adobe I/O] | 403|
 |4116 | Authorization token is invalid | All [Adobe I/O] | 401|
 |4117 | Authorization token is missing | All [Adobe I/O] | 403|
