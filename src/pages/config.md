@@ -124,7 +124,7 @@
             - [Create memberships](sandbox/sandbox-portal/transfer-memberships/create-memberships.md)
             - [View memberships](sandbox/sandbox-portal/transfer-memberships/list-memberships.md)
             - [Migrate HVD customers to VIP Marketplace](sandbox/sandbox-portal/migrate-hvd-customers/migrate-hvd-customers.md)
-            - [View renewal status of memberships ](sandbox/sandbox-portal/transfer-memberships/view-renewal-status.md)
+            - [View renewal status of memberships](sandbox/sandbox-portal/transfer-memberships/view-renewal-status.md)
         - [Portal resources](sandbox/sandbox-portal/portal-resources/index.md)
         - [Other API tools](sandbox/sandbox-portal/other-apis/index.md)
         - [Error codes](sandbox/error-codes.md)
