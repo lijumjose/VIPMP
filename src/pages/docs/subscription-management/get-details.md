@@ -68,14 +68,16 @@ The `MANUAL_RENEWAL` value of the `allowedActions` field indicates whether a sub
   "autoRenewal": {
     "enabled": false,
     "renewalQuantity": 2,
-    "renewalCode": "MOQ_100"
+    "renewalCode": "MOQ_100",
+    "flexDiscountCodes": [
+            "SUMMER_SALE_12"
+        ]
   },
   "creationDate": "2024-09-13T09:22:13Z",
   "renewalDate": "2025-09-13",
   "status": "1004",
   "currencyCode": "USD",
   "allowedActions": ["MANUAL_RENEWAL"],
-
   "links": {
     "self": {
       "uri": "/v3/customers/1005610729/subscriptions/1c3a4517c44cfc925704fe942a79abNA",

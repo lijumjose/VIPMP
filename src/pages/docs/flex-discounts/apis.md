@@ -10,6 +10,8 @@ You can use the following APIs to get details of available flexible discounts an
 - [Preview Renewal](#preview-renewal-with-flexible-discount-code)
 - [Apply flexible discounts when placing manual renewal orders](#apply-flexible-discounts-when-placing-manual-renewal-orders)
 - [Create a subscription with flexible discount](#create-a-scheduled-subscription-with-flexible-discount)
+- [Get details of a specific subscription](#get-details-of-a-specific-subscription)
+- [Get details of all subscriptions of a customer](#get-details-of-all-subscriptions-of-a-customer)
 - [Update subscription with a flexible discount code](#update-a-subscription-with-flexible-discount-code)
 - [Remove a flexible discount from a subscription](#remove-a-flexible-discount-from-a-subscription)
 
@@ -715,6 +717,101 @@ You can use the `POST /v3/customers/<customer-id>/subscriptions` API with `flexD
       "headers": []
     }
   }
+}
+```
+
+### Get details of a specific subscription
+
+The `GET /v3/customers/<customer-id>/subscriptions/<subscription-id>` API response returns the flexible discount applied to the subscription:
+
+```json
+{
+    "subscriptionId": "341d08f3084f89a1d33d2e8390c0a2NA",
+    "offerId": "11073058CA01A12",
+    "currentQuantity": 11,
+    "usedQuantity": 0,
+    "autoRenewal": {
+        "enabled": true,
+        "renewalQuantity": 11,
+        "flexDiscountCodes": [
+            "SUMMER_SALE_12"
+        ]
+    },
+    "creationDate": "2026-01-22T09:03:34Z",
+    "renewalDate": "2027-01-22",
+    "status": "1000",
+    "currencyCode": "USD",
+    "links": {
+        "self": {
+            "uri": "/v3/customers/1007049449/subscriptions/341d08f3084f89a1d33d2e8390c0a2NA",
+            "method": "GET",
+            "headers": []
+        }
+    }
+}
+```
+
+### Get details of all subscriptions of a customer
+
+The `GET /v3/customers/<customer-id>/subscriptions` API response lists the flexible discounts applied to all the subscriptions of a customer:
+
+```json
+{
+    "totalCount": 2,
+    "items": [
+        {
+            "subscriptionId": "341d08f3084f89a1d33d2e8390c0a2NA",
+            "offerId": "11073058CA01A12",
+            "currentQuantity": 11,
+            "usedQuantity": 0,
+            "autoRenewal": {
+                "enabled": true,
+                "renewalQuantity": 11,
+                "flexDiscountCodes": [
+                    "SUMMER_SALE_12"
+                ]
+            },
+            "creationDate": "2026-01-22T09:03:34Z",
+            "renewalDate": "2027-01-22",
+            "status": "1000",
+            "currencyCode": "USD",
+            "links": {
+                "self": {
+                    "uri": "/v3/customers/1007049449/subscriptions/341d08f3084f89a1d33d2e8390c0a2NA",
+                    "method": "GET",
+                    "headers": []
+                }
+            }
+        },
+        {
+            "subscriptionId": "de9e41b397450ba402e0b15a1b1cf3NA",
+            "offerId": "65304839CA01A12",
+            "currentQuantity": 12,
+            "usedQuantity": 0,
+            "autoRenewal": {
+                "enabled": true,
+                "renewalQuantity": 12
+            },
+            "creationDate": "2026-01-22T09:03:34Z",
+            "renewalDate": "2027-01-22",
+            "status": "1000",
+            "currencyCode": "USD",
+            "links": {
+                "self": {
+                    "uri": "/v3/customers/1007049449/subscriptions/de9e41b397450ba402e0b15a1b1cf3NA",
+                    "method": "GET",
+                    "headers": []
+                }
+            }
+        }
+    ],
+    "links": {
+        "self": {
+            "uri": "/v3/customers/1007049449/subscriptions?fetch-recommendations=false&recommendation-language=MULT",
+            "method": "GET",
+            "headers": []
+        }
+    }
 }
 ```
 

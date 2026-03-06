@@ -66,7 +66,7 @@ Introductory offers apply only to customers who are purchasing a product for the
 
 Partners need to facilitate the discovery and application of flexible discounts. Follow the steps illustrated in the figure below to apply flexible discounts and obtain the discounted price:
 
-![Partner integration process](../image/flex_6.png)
+![Partner integration process](../image/flex_7.png)
 
 ## What's next?
 
