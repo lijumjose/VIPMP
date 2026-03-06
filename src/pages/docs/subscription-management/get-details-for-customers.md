@@ -43,7 +43,10 @@ Example:
       "autoRenewal": {
         "enabled": true,
         "renewalQuantity": 10,
-        "renewalCode": "MOQ_100"
+        "renewalCode": "MOQ_100",
+        "flexDiscountCodes": [
+                    "SUMMER_SALE_12"
+                ]
       },
       "creationDate": "2024-10-23T10:23:11Z",
       "renewalDate": "2025-10-23",
