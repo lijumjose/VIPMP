@@ -22,16 +22,16 @@ Key advantages of flexible discounts include:
   - Customers can review the reusable discount using the Preview Renewal API call.
   - Eliminates the need for customers to reapply a discount by using Update Subscription when it is already associated with an eligible subscription.
 
-  **How reusable and non-reusable discounts work:**
+**How reusable and non-reusable discounts work:**
 
-  In general, promotions and discounts are available only between their configured start and end dates. Reusable discounts extend this model by allowing continued application beyond the original end date, subject to prior use and configuration.
+In general, promotions and discounts are available only between their configured start and end dates. Reusable discounts extend this model by allowing continued application beyond the original end date, subject to prior use and configuration.
 
-  | Aspect | Standard (Non-reusable) discount | Reusable discount |
-  |------|----------------------------------|------------------|
-  | Availability | Only between the discount start and end dates. | Between the start date and beyond the end date until the discount lock end date. |
-  | Renewal usage | Not allowed after the discount end date. | Allowed if the discount was used at least once before the end date. |
-  | Seat additions after end date | Not supported. | Supported until the discount lock end date. |
-  | Customer action required | Must opt in again with **Update Subscription** if applicable. | No additional opt-in required once applied. |
+| Aspect                        | Standard (Non-reusable) discount                              | Reusable discount                                                                |
+|-------------------------------|---------------------------------------------------------------|----------------------------------------------------------------------------------|
+| Availability                  | Only between the discount start and end dates.                | Between the start date and beyond the end date until the discount lock end date. |
+| Renewal usage                 | Not allowed after the discount end date.                      | Allowed if the discount was used at least once before the end date.              |
+| Seat additions after end date | Not supported.                                                | Supported until the discount lock end date.                                      |
+| Customer action required      | Must opt in again with **Update Subscription** if applicable. | No additional opt-in required once applied.                                      |
 
 ## Flexible discount types
 
@@ -58,14 +58,14 @@ The discounts applied based on these discount types are explained in the followi
 **Fixed Amount Discount – Example: $20 discount for Acrobat Express**
 
 | Part Number      | Original Price | Discount Amount | Discounted Price |
-|------------------|----------------|-----------------|----------------|
-| 30006208CA01A12  | $89.99         | $20.00          | $69.99         |
-| 30006208CA02A12  | $87.99         | $20.00          | $67.99         |
-| 30006208CA03A12  | $85.99         | $20.00          | $65.99         |
-| 30006208CA04A12  | $83.99         | $20.00          | $63.99         |
-| 30006208CA012A12 | $79.99         | $20.00          | $59.99         |
-| 30006208CA013A12 | $77.99         | $20.00          | $57.99         |
-| 30006208CA014A12 | $75.99         | $20.00          | $55.99         |
+|------------------|----------------|-----------------|------------------|
+| 30006208CA01A12  | $89.99         | $20.00          | $69.99           |
+| 30006208CA02A12  | $87.99         | $20.00          | $67.99           |
+| 30006208CA03A12  | $85.99         | $20.00          | $65.99           |
+| 30006208CA04A12  | $83.99         | $20.00          | $63.99           |
+| 30006208CA012A12 | $79.99         | $20.00          | $59.99           |
+| 30006208CA013A12 | $77.99         | $20.00          | $57.99           |
+| 30006208CA014A12 | $75.99         | $20.00          | $55.99           |
 
 **Fixed Price – Examples**
 
