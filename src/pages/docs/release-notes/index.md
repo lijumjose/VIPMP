@@ -24,6 +24,17 @@ The discount reusability allows eligible discounts to be reused beyond their ini
   - The newly introduced `REUSABLE` value of the `status` parameter indicates whether a flexible discount is reusable.
   - The `discountLockEndDate` parameter in the response indicates the date through which a flexible discount may continue to be applied beyond its initial offering period (start/end date). Reusable discounts are identified by the presence of the discountLockEndDate field in the response.
 
+**How reusable and non-reusable discounts work:**
+
+In general, promotions and discounts are available only between their configured start and end dates. Reusable discounts extend this model by allowing continued application beyond the original end date, subject to prior use and configuration.
+
+| Aspect | Standard (Non-reusable) discount | Reusable discount |
+|------|----------------------------------|------------------|
+| Availability | Only between the discount start and end dates. | Between the start date and beyond the end date until the discount lock end date. |
+| Renewal usage | Not allowed after the discount end date. | Allowed if the discount was used at least once before the end date. |
+| Seat additions after the end date | Not supported. | Supported until the discount lock end date .|
+| Customer action required | Must opt in again with **Update Subscription** if applicable. | No additional opt-in required once applied. |
+
 For more information, see [Manage Flexible Discounts](../flex-discounts/index.md).
 
 **Sandbox changes**
