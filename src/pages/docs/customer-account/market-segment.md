@@ -63,7 +63,7 @@ The following market segment workflows are available:
 
    * A customer’s market sub-segment can only be set by the customer in the Adobe Admin Console.
    * Sandbox for testing the sub-segment can be set in the sandbox partner portal. Read more about [Sandbox user guide](../../technical-assets/index.md).
-   * API endpoints avaialable to manage this workflow: [GET Customer API](get-customer-account.md).
+   * API endpoints available to manage this workflow: [GET Customer API](get-customer-account.md).
 
 4. Transfer customers to your marketplace (Customer only)
 

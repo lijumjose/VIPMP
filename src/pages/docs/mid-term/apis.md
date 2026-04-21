@@ -32,7 +32,7 @@ You can use the following APIs to get the available switch plans and preview the
 
 The `GET Offer Switch Paths` API enables Adobe partners to programmatically retrieve valid upgrade paths for customer subscriptions or offers, based on key business filters such as market segment, country, and language.
 
-This API  helps partners enable customers to upgrade their product subscriptions mid-term, rather than waiting until the subscription anniversary. This capability unlocks immediate access to higher-tier products and features, while allowing Adobe and its partners to capture revenue opportunities without delay.
+This API helps partners enable customers to upgrade their product subscriptions mid-term, rather than waiting until the subscription anniversary. This capability unlocks immediate access to higher-tier products and features, while allowing Adobe and its partners to capture revenue opportunities without delay.
 
 | Path                                                                 | Request Method |
 |----------------------------------------------------------------------|----------------|
@@ -352,7 +352,7 @@ Request body:
 
 ## Verify Switch Order
 
-You can use the following APIs to verify the upgrade and rversal of the upgrade:
+You can use the following APIs to verify the upgrade and reversal of the upgrade:
 
 - [Get order history](#get-order-history)
 - [Get details of a specific order](#get-details-of-a-specific-order)

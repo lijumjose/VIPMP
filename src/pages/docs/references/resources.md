@@ -22,7 +22,7 @@ Please see the Validations/Regular Expressions section for any regular expressio
 |customerId (read only)| String | Unique ID for customer created upon account creation| Max: 40 characters|
 |resellerId | String | ID of reseller tied to customer | Max: 40 characters|
 |globalSalesEnabled  | String | Global status of a customer  | Max: 40 characters|
-|tags | String |Special label on thhe customer. Example: _HVD_MIGRATED_CUSTOMER_ | Max: 40 characters|
+|tags | String |Special label on the customer. Example: _HVD_MIGRATED_CUSTOMER_ | Max: 40 characters|
 |linkedMembership  | `linkedMembership` resource  | Information about the linked membership  | |
 |companyProfile | `CompanyProfile` resource| Information about the customer | |
 |discounts | `discounts` resource| Details of the discount applicable to the customer, including the discount level.  | |
@@ -268,7 +268,7 @@ Please see the Validations/Regular Expressions section for any regular expressio
 | outcomes[].discountValues[] → currency| String          | Currency Code: ISO 4217. Example: "USD", "EUR". Note: Not applicable for PERCENTAGE_DISCOUNT type. |
 | outcomes[].discountValues[] → value  | Integer          | The discount value. For example, if the value is 15: 15% discount is applicable if the type is PERCENTAGE DISCOUNT. A discount of 15 USD, or any currency provided in the response, is applicable for the FIXED_DISCOUNT discount type. |
 
-## productUpgrades (top-level resurce)
+## productUpgrades (top-level resource)
 
 | Parameter               | Required | Type    | Description |
 |------------------------|----------|---------|-------------|

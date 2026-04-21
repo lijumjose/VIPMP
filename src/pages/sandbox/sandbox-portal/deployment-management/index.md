@@ -1,4 +1,4 @@
-# Management deployments
+# Manage deployments
 
 For global customers to purchase offers outside their home country, they must create and use deployment resources. This topic will help you to:
 

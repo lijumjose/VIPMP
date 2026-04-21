@@ -79,7 +79,7 @@ List of Deployment resources:
 
 ## Get details of a specific deployment
 
-Use the `GET /v3/customers/<customer-id>/deployments/<deployment-id` endpoint to get details of a specific deployment resource of a customer account.
+Use the `GET /v3/customers/<customer-id>/deployments/<deployment-id>` endpoint to get details of a specific deployment resource of a customer account.
 
 ## Request header
 
@@ -123,7 +123,7 @@ Deployment resource:
 
 | Status code | Description                             |
 | ----------- | --------------------------------------- |
-| 200         | Deplyment details successfully returned |
+| 200         | Deployment details successfully returned |
 | 400         | Bad request                             |
 | 401         | Invalid Authorization token             |
 | 403         | Invalid API Key                         |

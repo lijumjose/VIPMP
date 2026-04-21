@@ -9,7 +9,7 @@ To view order details:
 
 ![Viewing created orders in the Sandbox Portal](../image/view_order.png)
 2. Expand the view by clicking on the down arrowhead to view the detailed information about an Order.
-3. Expand the lineItem field for more additional information on the Order can be viewed by expanding the lineItem field.
+3. Expand the `lineItem` field for more additional information.
 
 ![Viewing created orders in the Sandbox Portal](../image/view_order2.png)
 

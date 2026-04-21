@@ -23,7 +23,7 @@ Please find a description of the fields below:
 Before a linked owner can accept other members into the linked membership, he must accept the terms and conditions. To perform this action, follow the below steps:
 
 1. Go to the customer’s tab and expand the desired linked membership owner’s details.
-2. Select **Linked Membership Terms**’
+2. Select **Linked Membership Terms**
 3. Accept or reject the terms.
 
 ![View linked memberships](../image/lm2.png)

@@ -11,7 +11,7 @@ You need to use the following APIs at various steps of the workflow to create an
 1. Create an LGA customer:
 
     - Create a customer: [POST /v3/customers](#1-create-an-lga-customer)
-    - Verify customer details: [GET/v3/customers/\{customer-id\}](#2-get-customer-details)
+    - Verify customer details: [GET /v3/customers/\{customer-id\}](#2-get-customer-details)
 
 2. Add LGA customers to a Linked Membership group. You can select one of these two options:
 
@@ -227,7 +227,7 @@ No change to the request body of the standard GET customer API request.
 }
 ```
 
-The following details are displayed in the respose body of an LGA customer:
+The following details are displayed in the response body of an LGA customer:
 
 - The `benefits` array shows `LARGE_GOVERNMENT_AGENCY` if the customer is an LGA.
 - The `linkedMembership` array shows `benefitTypes` and `country` fields.
@@ -249,7 +249,7 @@ Sample request with query parameters: `GET <ENV>/v3/linked_membership_groups?cou
 
 |Query Params Name|Type|Mandatory?|Description|Range/Limits|
 |:----|:----|:----|:----|:----|
-|country|String|Yes|Country of linked membership to search. It is a mandatory parameter for searching LGA Linked Memberships.|US", "CA" for LGA Linked Memberships. |
+|country|String|Yes|Country of linked membership to search. It is a mandatory parameter for searching LGA Linked Memberships.|"US", "CA" for LGA Linked Memberships. |
 | name | String |No | Name or part of the name of the Linked Membership to search. |Min: 0 characters \<br /\> Max: 80 characters|
 
 #### Request Header
@@ -293,9 +293,9 @@ None.
 |:----|:----|:----|:----|
 |id|string|The unique ID of the Linked Membership.|Max: 40 characters|
 |name|string|Name of the Linked Membership.|Max: 80 characters|
-|type|string|Type of the Linked Membership.|STANDARD", "CONSORTIUM|
+|type|string|Type of the Linked Membership.|"STANDARD", "CONSORTIUM"|
 |creationDate|string|Date and time when Linked Membership was created.|Time in UTC|
-|marketSegment|string|Market segment of the Linked Membership.|GOV", "COM", "EDU"; only " GOV" is applicable for LARGE_GOVERNMENT_AGENCY |
+|marketSegment|string|Market segment of the Linked Membership.|"GOV", "COM", "EDU"; only "GOV" is applicable for LARGE_GOVERNMENT_AGENCY |
 |country | string |Country for which the Linked Membership is applicable. |Min: 2 characters, Max: 2 characters |
 |membersCount |Integer| Number of members in a Linked Membership. | Min: 0 Max: 999999 |
 | benefitTypes |Array of strings |An array of benefit types. \<br /\> LARGE_GOVERNMENT_AGENCY| Max: 40 characters |

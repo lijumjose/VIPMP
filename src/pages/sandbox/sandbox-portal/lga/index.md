@@ -66,7 +66,7 @@ To view LGA customer details:
 
 ![View customer details](../image/customer_get.png)
 
-LGA Customers contain a `LARGE_GOVERNEMENT_AGENCY` section in `benefits`. This section shows the type of benefits applicable to the customer and its status.
+LGA Customers contain a `LARGE_GOVERNMENT_AGENCY` section in `benefits`. This section shows the type of benefits applicable to the customer and its status.
 
 ### View Linked Membership details of an LGA customer
 

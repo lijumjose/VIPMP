@@ -135,7 +135,7 @@ A sample request is as follows:
 | `priceListType`                   | No           | String (Enum)      | Indicates the price list type. Possible values: \<br /\> - STANDARD \<br /\> - 3YC \<br /\> - STD-LGA (Standard Price List for Large Government Agencies)|
 | `currency`                       | Yes          | String (Enum)      | Specifies the currency. Must be one of the supported currencies for the Partner. \<br /\>Possible Values: AUD, EUR, GBP, JPY, USD. |
 | `priceListMonth`                | Yes          | String             | Specifies the month you want the Price List for, in `YYYYMM` format. Example: `202410`. |
-| `filters`                        | No           | Object             | Filters to narrow down the Price List. All filters use AND logic. For example, if `offerId` and `productFamily` filters are included in the request, then API the response will include results that match `offerId` AND `productFamily` |
+| `filters`                        | No           | Object             | Filters to narrow down the Price List. All filters use AND logic. For example, if `offerId` and `productFamily` filters are included in the request, then the API response will include results that match `offerId` AND `productFamily` |
 | `filters → offerId`             | No           | String             | Returns only offers matching the specified `offerId`. |
 | `filters → productFamily`       | No           | String             | Returns only offers matching the exact, case-sensitive `productFamily`. |
 | `filters → firstOrderDate`      | No           | Date               | Returns only those offers whose first order date is later than the specified date. |

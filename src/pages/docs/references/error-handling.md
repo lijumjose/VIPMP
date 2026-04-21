@@ -91,7 +91,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 |2139| Deployment not allowed for this contract |Create Order | 400|
 |2140| Order contains order level currency and line-item level currency |Create Order | 400|
 | 2141       | Customer is not qualified for the flexible discount. \<br /\> "additionalDetails": [ "Line Item: 1, Reason: Invalid Flexible Discount" ]                                                                 |    Create Order \<br /\> Preview Order  \<br /\>  Update Subscription \<br /\>  Create Subscription               |    400              |
-| 2142     | This Flexible Discount is for one time use and is no longer availabe.                                                                 |    Get Flexible Discounts               |    400              |
+| 2142     | This Flexible Discount is for one time use and is no longer available.                                                                 |    Get Flexible Discounts               |    400              |
 | 2144       | Flexible Discount cannot be applied in combination with other discounts. \<br /\>  |       Create Order \<br /\> Preview Order  \<br /\>  Update Subscription \<br /\>  Create Subscription             |  400                |
 | 2145       | Flexible discount codes cannot be applied to non-base products.                 |    Create Order \<br /\> Preview Order  \<br /\>  Update Subscription \<br /\>  Create Subscription                |    400              |
 | 2146     | Invalid Flexible Discount Code |    Create Order \<br /\> Preview Order  \<br /\>  Update Subscription \<br /\>  Create Subscription                |    400              |
@@ -131,7 +131,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 |5119| Customer cannot be transferred because reseller account is inactive |Transfer Subscriptions | 400|
 |5120| Customer cannot be transferred because there are no admin contacts |Preview Offers, Transfer Subscriptions| 400|
 |5121| Transfer currently in progress for this customer| Preview Offers, Transfer Subscriptions| 400|
-|5122| - Message for Create Order: Order placement is currently unavailable. Please try again later. \<br /\> \<br /\>- Message for Fetch Price List API: Invaid Request\<br /\>\<br /\> - Message for Update Reseller: Invalid Request (Additional details: "Reseller is not permitted to remove existing market segments")| Create Order, Fetch Price List, Update Reseller| 400|
+|5122| - Message for Create Order: Order placement is currently unavailable. Please try again later. \<br /\> \<br /\>- Message for Fetch Price List API: Invalid Request\<br /\>\<br /\> - Message for Update Reseller: Invalid Request (Additional details: "Reseller is not permitted to remove existing market segments")| Create Order, Fetch Price List, Update Reseller| 400|
 |5123| Invalid Discount Code| Update Subscriptions| 400|
 |5124| Invalid Renewal Quantity for Discount Code| Update Subscriptions| 400|
 |5125| Invalid Request for Discount Code| Update Subscriptions| 400|
@@ -139,7 +139,7 @@ Some error responses will include additionalDetails, an array of strings with mo
 |5127| Discount Code is not valid for the current time period| Update Subscriptions| 400|
 |5128| Discount code not applicable for regular customer| Update Subscriptions| 400|
 |5129| Discount Code not applicable for 3yc committed quantity| Update Subscriptions| 400|
-|5131| TInvalid Order Quantity for Discount Code| Update Subscriptions| 400|
+|5131| Invalid Order Quantity for Discount Code| Update Subscriptions| 400|
 |5132| Discount Code not applicable for the current term| Update Subscriptions| 400 \<br /\> Description: When the customer is opting for same MOQ offer in the new 3YC term.|
 |5133| Order cancellation not allowed below MOQ quantity| Return Order |400 \<br /\> Description: When the customer is trying to cancel the MOQ offer quantity that results in pushing the remaining qty below the MOQ offer quantity.|
 |5134| Could not turn off Auto Renewal for MOQ offer|Update Subscriptions |400 \<br /\> Description: When the customer is trying to turn off autorenewal for an MOQ offer.|
@@ -169,7 +169,7 @@ These REASON_CODE values are included in the `additionalDetails` array for 5117 
 |BAD_MARKET_SEGMENT| Customer’s market segment is either not supported for this distributor or for VIPMP |Try a different distributor that supports customer’s market segment or wait for a VIPMP change to allow the market segment.|
 |INACTIVE | VIP Account is inactive| Customer/reseller must reactivate VIP account.|
 |EXTENDED_TERM_3YC| Customer’s contract term length is not supported by VIPMP| Wait for terms to be supported by VIPMP or wait until current term ends.|
-|OPEN_PURCHASE_AUTH| Customer has open purchase authorization(s)| Open PAs must be cancelled/returned if possible) or converted to order and paid for. \<br /\> Can also be bypassed with the `expire-open-pas` query parameter|
+|OPEN_PURCHASE_AUTH| Customer has open purchase authorization(s)| Open PAs must be cancelled/returned if possible, or converted to order and paid for. \<br /\> Can also be bypassed with the `expire-open-pas` query parameter|
 |CONTRACT_NOT_ACCEPTED| Customer’s VIP contract has not been accepted| Customer must set up an administrator to accept VIP contract.|
 |IN_WINDOW_PARTIAL_RENEWAL| Customer is in the renewal window prior to their anniversary date and they have partially renewed.| Customer must either renew all active licenses or wait until their anniversary date.|
 |RETURNABLE_PURCHASE| Customer has order(s) still in the return window |Wait until return window has closed (14 days after last order). \<br /\> It can also be bypassed with `ignore-order-return` query parameter.|
@@ -185,7 +185,7 @@ These REASON_CODE values are included in the `additionalDetails` array for 5117 
 |HVD_CUSTOMER| Customer is not eligible for transfer. |Reach out to support for assistance.|
 |INVALID_PRICE_LEVEL_LM_MIGRATION | Customer’s Price Level is greater than 04 and has Linked Membership. |Reach out to support for assistance.|
 |LM_OWNER_NOT_MIGRATED | Group member is trying to migrate to VMP prior to Group Owner migration. |Wait for the Group Owner to migrate first|
-|NOT_A_WORLDWIDE_PURCHASER| Customer is WorldWide, but Parnter is not tagged as WorldWide. |Reach out to support for assistance.|
+|NOT_A_WORLDWIDE_PURCHASER| Customer is WorldWide, but Partner is not tagged as WorldWide. |Reach out to support for assistance.|
 |3YC_DISCOUNT_LEVEL_MISMATCH | Customer’s discount level is greater than the level determined by MCQ. |Reach out to support for assistance.|
 |HVD_CUSTOMER| Customer is not eligible for transfer. |Reach out to support for assistance.|
 |MINIMUM_HVD_QTY_NOT_MET| Customer is not eligible for transfer. |Reach out to support for assistance.|

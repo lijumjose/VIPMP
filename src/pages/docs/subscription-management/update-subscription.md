@@ -80,7 +80,7 @@ Ensure that you are aware of the following before updating the auto-renewal conf
 }
 ```
 
-**Note:** Any contacts specified in this call will receive the admin welcome email. This can be resend if an end-user did not receive it.
+**Note:** Any contacts specified in this call will receive the admin welcome email. This can be resent if an end-user did not receive it.
 
 ## HTTP status codes
 

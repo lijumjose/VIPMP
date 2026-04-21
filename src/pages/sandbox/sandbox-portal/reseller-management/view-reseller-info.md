@@ -27,7 +27,7 @@ You can sort the reseller list based on:
 - Status
 - Name
 
-The sorted order can be set in the descending (default) or ascending.
+The sorted order can be set in the descending (default) or ascending order.
 
 The number of resellers shown per page can be set to 10 (default), 20, 30, 50, or 100. Sorting criteria can be adjusted by using the corresponding sorting dropdown menus.
 

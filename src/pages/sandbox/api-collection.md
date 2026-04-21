@@ -10,7 +10,7 @@ You can opt for an alternate method to interact with CPAPI. Read more about [get
 
 ### Get and renew an API OAuth access token
 
-Having a valid access token is essential to get a successful response when making a call in the CPAPI collection. You can generate the access token by using the `POST Generate OAuth Token` call in the **Initialization** folder of the Postman collection. This token authenticates the principle and remains valid for 24 hours. Calls made without a valid token will result in a `403 Unauthorized error`.
+Having a valid access token is essential to get a successful response when making a call in the CPAPI collection. You can generate the access token by using the `POST Generate OAuth Token` call in the **Initialization** folder of the Postman collection. This token authenticates the principal and remains valid for 24 hours. Calls made without a valid token will result in a `403 Unauthorized error`.
 
 ### API documentation
 

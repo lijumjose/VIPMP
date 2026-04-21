@@ -13,10 +13,10 @@ Use the `POST /v3/customers/<customer-id>/subscriptions` endpoint to create new 
 - The `Enabled` flag can only be set to `true`
 - The `renewalQuantity` field is mandatory for the subscription creation
 - Creation of subscription is allowed only when a customer intends to add a product (that they are not currently subscribed to) during the next auto-renewal.
-- Discount level is calculated and applied on the anniversary date with Renewal order. The subscription becomes active with success renewal.
-- Customers with no active subscriptions are not allowed to create subscription
-- Eligibility checks are evaluated while accepting the create request
-- Creating a subscription is allowed only during current date is between 30 days prior to anniversary date to 3 days prior to anniversary date.
+- Discount level is calculated and applied on the anniversary date with Renewal order. The subscription becomes active with a successful renewal.
+- Customers with no active subscriptions are not allowed to create a subscription.
+- Eligibility checks are evaluated while accepting the create request.
+- Creating a subscription is allowed only when the current date is between 30 days prior to anniversary date to 3 days prior to anniversary date.
 - Global customers can create subscriptions. To do so, they need to include the `currencyCode` in their request. For subscriptions outside the customer’s home country, both `currencyCode` and `deploymentID` must be included in the request.
 
 - The `flexDiscountCodes` parameter indicates the flexible discounts applicable for the subscription. For more information, see [Manage Flexible Discounts using APIs](../flex-discounts/apis.md).
@@ -46,7 +46,7 @@ Use the `POST /v3/customers/<customer-id>/subscriptions` endpoint to create new 
 }
 ```
 
-**Note:** The `renewalCode` parameter indicates the the Minimum Order Quantity Offer. For more information, see [Manage High Growth Offers through APIs](../customer-account/high-growth-apis.md).
+**Note:** The `renewalCode` parameter indicates the Minimum Order Quantity Offer. For more information, see [Manage High Growth Offers through APIs](../customer-account/high-growth-apis.md).
 
 For global customers to create subscriptions outside the customer’s home country, both `currencyCode` and `deploymentID` must be included in the request, as illustrated in the following example:
 

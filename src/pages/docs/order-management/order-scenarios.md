@@ -168,7 +168,7 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 - Include the query parameter `fetch-price=true` to retrieve pricing details.
 - Returns the best available offer ID for the customer and the order.
   - Input Offer ID can be any level representing the same product.
-  - If the Offer IDs in the request provides a better discount than customer is eligible for, then the correct lower-level Offer IDs are returned.
+  - If the Offer IDs in the request provide a better discount than customer is eligible for, then the correct lower-level Offer IDs are returned.
     - For a PREVIEW order, the request gets rejected if the customer is not eligible for an Offer ID.
 - If the `PREVIEW` order is rejected, then the `NEW` order will also fail with the same error.
 - The `discountCode` is applicable only to High Volume Discount customers who have migrated from VIP to VIP MP. You can use the discount code only if their discount level in VIP is between 17 and 22.
@@ -288,7 +288,7 @@ Pricing data is sourced directly from Adobe’s systems, reflecting official pri
 | partnerPrice                | Non-prorated full-term unit price for the given offer, including any applicable volume discounts, but before applying flexible discounts and taxes.|
 | discountedPartnerPrice     | Unit price after applying discount. \<br /\> |
 | netPartnerPrice                 | Prorated unit price after discount. |
-| lineItemPartnerPrice      | Prorated price of item after discount and before tax. This is the price partner need to pay to Adobe for this item.  |
+| lineItemPartnerPrice      | Prorated price of item after discount and before tax. This is the price partner needs to pay to Adobe for this item.  |
 
 **Note:** The `proratedDays` parameter in the response specifies the number of days for which the order will be invoiced. This parameter appears only when the `fetch-price` parameter is set to `true` in the request. It is relevant for mid-term purchases.
 
@@ -326,7 +326,7 @@ For complete set of request and response parameter descriptions, refer to [Order
 
 **Response:**
 
-**Note:** Pricing details is included in the response as the query parameter `fetch-price` was set to `true` in the request URL.
+**Note:** Pricing details are included in the response as the query parameter `fetch-price` was set to `true` in the request URL.
 
 ```json
 {
@@ -395,7 +395,7 @@ A few of the benefits of previewing a renewal order include:
   - **1004** indicates that the subscription is active or scheduled, but the associated product has expired, so the renewal will not proceed.
 - Include the query parameter `fetch-price=true` to retrieve pricing details. 
 - Pricing details are not available in Preview Order and Preview Renewal scenarios for global sales involving multiple currencies.
-- `proratedDays` in the response indicates the number of days for which order will be invoiced. This applies in the case of mid-term purchases. 
+- `proratedDays` in the response indicates the number of days for which the order will be invoiced. This applies in the case of mid-term purchases. 
 
 ### Sample request
 
@@ -477,7 +477,7 @@ OR
 
 **Response:**
 
-**Note:** Pricing details is included in the response as the query parameter `fetch-price` was set to `true` in the request URL.
+**Note:** Pricing details are included in the response as the query parameter `fetch-price` was set to `true` in the request URL.
 
 ```json
 {
@@ -574,7 +574,7 @@ OR
 
 - RENEWAL order type is used for late renewals, which are initiated after the anniversary date.
 - Subscription ID is required in the request line item.
-- The license quantities must be less than or equal to customer’s current subscription current quantities.
+- The license quantities must be less than or equal to the customer’s current subscription quantities.
 - Order ID is created by this service and returned synchronously.
 - Partner Marketplaces are expected to check the status of the order for success.
 - You can select the expired subscriptions for manual renewal by using the [Get All Subscriptions for a Customer](../subscription-management/get-details-for-customers.md) API. Subscriptions that can be selected for manual renewal are indicated by the `allowedActions`": `["MANUAL_RENEWAL"]` parameter of the Get All Subscriptions of a Customer API response.
