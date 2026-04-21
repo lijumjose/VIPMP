@@ -1,6 +1,6 @@
 # Other API tools
 
-This topic discusses about the Test Addresses page tool.
+This topic discusses the Test Addresses page tool.
 
 The Test Addresses page is a tool designed to test custom addresses to see how they interact with the CPAPI.
 

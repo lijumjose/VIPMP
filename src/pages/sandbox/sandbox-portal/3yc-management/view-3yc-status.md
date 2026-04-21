@@ -22,7 +22,7 @@ The 3YC status can have the following values:
 
 There are some differences between the 3YC workflow in sandbox and production:
 
-- **Emails:** In production, the customer admin received emails throughout the 3-year commit lifecycle (request, acceptance, termination). These emails are not sent in the sandbox environment.
+- **Emails:** In production, the customer admin receives emails throughout the 3-year commit lifecycle (request, acceptance, termination). These emails are not sent in the sandbox environment.
 - **Expiration:** In production, unaccepted (REQUESTED) 3YC requests expire after 7 days, and accepted 3YC requests also expire after 7 days if they do not move to COMMITTED status. In sandbox, 3YC requests will not expire in either scenario.
 - **Order returns and subscription updates are not included in sandbox:**
   - Returning an order is normally rejected if the return would drop the customer below committed quantities.

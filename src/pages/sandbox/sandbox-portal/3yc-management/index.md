@@ -4,7 +4,7 @@ The 3-Year Commit (3YC) program is a loyalty initiative that offers customers gr
 
 To determine the correct discount level, use the [Preview Order API](../../../docs/migration/preview-offers.md). This API considers the customer’s 3YC commitment and any accepted commitment requests to return the Offer ID with the best discount.
 
-## 3YC enrollment methods for 3YC
+## 3YC enrollment methods
 
 Customers can enroll in 3YC through four different methods. In all cases, they must accept the commitment terms, such as minimum quantities and commitment end date, in the Adobe Admin Console before receiving any discounts.
 

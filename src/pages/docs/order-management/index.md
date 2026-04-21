@@ -1,6 +1,6 @@
 # Manage orders
 
-To ensure that the best volume discounts are applied to each order, it is recommended to create a PREVIEW order prior to placing an order. Creating a PREVIEW order helps you determine the best volume discount Offer IDs for the order for which the customer is eligible. The payload for PREVIEW order is the same as creating a `NEW` order, and the response returns that payload with the best available offer IDs. You can then use it to place an order through the [Create Order API](create-order.md), by changing the `orderType` from `PREVIEW` to `NEW`).
+To ensure that the best volume discounts are applied to each order, it is recommended to create a PREVIEW order prior to placing an order. Creating a PREVIEW order helps you determine the best volume discount Offer IDs for the order for which the customer is eligible. The payload for PREVIEW order is the same as creating a `NEW` order, and the response returns that payload with the best available offer IDs. You can then use it to place an order through the [Create Order API](create-order.md), by changing the `orderType` from `PREVIEW` to `NEW`.
 
 The following list describes certain important aspects about volume discounting:
 

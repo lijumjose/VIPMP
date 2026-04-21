@@ -59,7 +59,7 @@ Selecting the Edit 3YC terms button will enable you to edit the Start Date, End 
 
 ## Trigger Auto-renewal
 
-**Note:**  This option is available only in the Sandbox. You cannot modifiy this in the production environment.
+**Note:**  This option is available only in the Sandbox. You cannot modify this in the production environment.
 
 To trigger auto-renewal, expand the Customer view by clicking on the down arrowhead next to the desired customer ID, which will reveal the Trigger Auto Renewal button.
 

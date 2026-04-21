@@ -108,7 +108,7 @@ The following sections provide more details of the changes to the objects:
 
 #### commitmentRequest object
 
-**Example 1:** Sample request before placing the order or if the total order quantity is less than the Minimum Purchase Quanity (MPQ):
+**Example 1:** Sample request before placing the order or if the total order quantity is less than the Minimum Purchase Quantity (MPQ):
 
 ```json
 {
@@ -201,7 +201,7 @@ The following sections provide more details of the changes to the objects:
 
 If the total ordered quantity exceeds the MPQ for one offer type, for example, CONSUMABLES, while not exceeding the MPQ for another offer type (LICENSE), the system will behave as follows:
 
-- Both `commitment` and `commitmentRequest` parameteres will not be null.
+- Both `commitment` and `commitmentRequest` parameters will not be null.
 - The offer type that has satisfied the MPQ will be reflected in the `commitment` section.
 - The offer type that has not satisfied the MPQ will remain in the `commitmentRequest` section.
 

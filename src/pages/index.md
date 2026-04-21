@@ -1,6 +1,6 @@
 ---
 title: VIPMP
-description: Overview of Adobe VIP MarketPlace
+description: Overview of Adobe VIP Marketplace
 contributors:
   - https://github.com/sparecycles
 ---

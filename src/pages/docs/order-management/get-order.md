@@ -139,7 +139,7 @@ The request body is the same as mentioned in the [previous endpoint](#request-he
 }
 ```
 
-If `promotions` array indicates the promotions applied to the Order. For example:
+The `promotions` array indicates the promotions applied to the Order. For example:
 
 ```json
 { 

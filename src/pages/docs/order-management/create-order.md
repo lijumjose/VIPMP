@@ -4,7 +4,7 @@ Use the `POST /v3/customers/<customer-id>/orders` endpoint to place an order for
 
 ## Assumptions
 
-Ensure that you are aware of the following before creating an offer details:
+Ensure that you are aware of the following before creating an order:
 
 - `orderType` is required in the Create Order request.
   - Possible values are: NEW, RETURN, PREVIEW, PREVIEW_RENEWAL, or RENEWAL
@@ -13,7 +13,7 @@ Ensure that you are aware of the following before creating an offer details:
   - `orderType` PREVIEW_RENEWAL if lineitems are present
 - `referenceOrderId` is required for RETURN orders and should not be included for other order types.
 - `currencyCode` should now be sent at the lineItem-level instead of order level.
-  - For backwards compatability, `currencyCode` can still be sent at the order level.
+  - For backwards compatibility, `currencyCode` can still be sent at the order level.
 - The `discountCode` is applicable only to High Volume Discount customers who have migrated from VIP to VIP MP. You can use the discount code only if their discount level in VIP is between 17 and 22.
 - `flexDiscountCodes` can be used in the request to apply Flexible Discounts for customers who meet the eligibility criteria. For additional details, see [Managing Flexible Discounts](../flex-discounts/apis.md).
 

@@ -14,4 +14,4 @@
 | 403         | Forbidden             | The API key is invalid                                                                                                                |
 | 404         | Not Found             | The requested resource does not exist                                                                                                 |
 | 429         | Too Many Requests     | Too many requests have been made in a brief period. Currently there is no limiting being done, so this status code should not appear. |
-| 500         | Internal Server Error | There was an error on Adobe’s end. Please try request again                                                                           |
+| 500         | Internal Server Error | There was an error on Adobe’s end. Please try the request again                                                                           |

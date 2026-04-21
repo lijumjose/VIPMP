@@ -746,7 +746,7 @@ Verify `currentQuantity` restored to pre-switch value.
 
 ### What happens to user assignments if I don't use reassign-users=true?
 
-**Answer:** Users will get removed from original license.
+**Answer:** Users will get removed from the original license.
 
 - **Impact:**
 

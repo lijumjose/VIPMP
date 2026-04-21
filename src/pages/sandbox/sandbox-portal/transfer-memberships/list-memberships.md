@@ -1,6 +1,6 @@
 # View memberships
 
-This topic discusses about:
+This topic discusses:
 
 - [List ineligible memberships](#list-ineligible-memberships)
 - [List created memberships](#list-created-memberships)

@@ -10,7 +10,7 @@ As explained in the [High growth offer use cases](high-growth-scenarios.md) sect
 
 ## Preview renewal offers
 
-Use the `PreviewRenwal` API to preview the renewal order for the customer. This is the same `POST v3/customers/{customer-id}/orders` API with `orderType` as _PREVIEW_RENEWAL_.
+Use the `PreviewRenewal` API to preview the renewal order for the customer. This is the same `POST v3/customers/{customer-id}/orders` API with `orderType` as _PREVIEW_RENEWAL_.
 
 **Assumptions:**
 

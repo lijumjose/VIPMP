@@ -60,7 +60,7 @@ Ensure that you are aware of the following before updating an order:
 
 | Status code | Description                  |
 | ----------- | ---------------------------- |
-| 200         | Account successfully updated |
+| 200         | Order successfully updated |
 | 400         | Bad request                  |
 | 401         | Invalid Authorization token  |
 | 403         | Invalid API Key              |

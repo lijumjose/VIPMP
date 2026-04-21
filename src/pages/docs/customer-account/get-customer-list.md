@@ -100,7 +100,7 @@ A sample request is as follows:
 | limit      | Integer             | Yes          | Requested page size. Number of customer items limited in the response. |
 | customers   | Array of Customer   | Yes          | Customer object. |
 
-**Customer obect**
+**Customer object**
 
 | **Parameter**     | **Type**           | **Required** | **Description** |
 |---------------|--------------------|--------------|------------------|

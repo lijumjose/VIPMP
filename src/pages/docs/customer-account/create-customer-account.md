@@ -133,7 +133,7 @@ Customer resource without read-only fields:
 |customerId (read only)| String | Unique ID for customer created upon account creation| Max: 40 characters|
 |resellerId | String | ID of reseller tied to customer | Max: 40 characters|
 |globalSalesEnabled  | String | Global status of a customer  | Max: 40 characters|
-|tags | String |Special label on thhe customer. Example: _HVD_MIGRATED_CUSTOMER_ | Max: 40 characters|
+|tags | String |Special label on the customer. Example: _HVD_MIGRATED_CUSTOMER_ | Max: 40 characters|
 |linkedMembership  | `linkedMembership` resource  | Information about the linked membership  | |
 |companyProfile | `CompanyProfile` resource| Information about the customer | |
 |discounts | `discounts` resource| Details of the discount applicable to the customer, including the discount level.  | |

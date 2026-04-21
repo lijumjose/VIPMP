@@ -32,7 +32,7 @@ Enterprise and Team customers of Acrobat Pro in the commerce, government, and ed
 
 3 - **MCQ requirement:** The number of seats committed (MCQ) must be greater than or equal to the number of subscriptions at the renewal date.
 
-  | Current seats at renewal \<br /\> Acrobat Pro + Standard | Eligible Minimum Order Quantity (MOQ) | 3YC Minimum Commit Quantities (MCQ) - Needs to be increased based on the MOQ) |
+  | Current seats at renewal \<br /\> Acrobat Pro + Standard | Eligible Minimum Order Quantity (MOQ) | 3YC Minimum Commit Quantities (MCQ) - Needs to be increased based on the MOQ |
   |-------------------------------------------------------|---------------------------------------|-------------------------------------------------------------------------------|
   | ≤ 50 seats                                            | 100 \<br /\> 250 \<br /\> 500             | 100+                                                                          |
   | ≤ 125 seats                                           | 250 \<br /\> 500                        | 250+                                                                          |
