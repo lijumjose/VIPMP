@@ -483,6 +483,13 @@ Read more about [Mid-term upgrades](../mid-term/index.md).
 
 ## Sandbox changes
 
+### July 27, 2026
+
+Support for closed discounts in the Sandbox portal:
+
+- The **Portal Resources > View Available Flex Discounts** page now includes two new tabs, **Closed Discount Templates** and **Closed Discounts (Customer-Specific)**. Distributors can view available closed discount templates by market segment and create, search for, or delete customer-specific closed discount codes for testing purposes.
+- For more information, see [Create, view, and manage closed discounts](../../sandbox/sandbox-portal/flex-discounts/index.md#create-view-and-manage-closed-discounts).
+
 ### January 08, 2026
 
 Changes to support on-demand flexible discount release:

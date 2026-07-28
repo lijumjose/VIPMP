@@ -8,6 +8,7 @@ You can explore and test the Flexible Discounts feature in the Sandbox environme
 
 - [View the available flexible discounts](#view-the-available-flexible-discounts)
 - [Edit reusable flexible discounts](#edit-reusable-flexible-discounts)
+- [Create, view, and manage closed discounts](#create-view-and-manage-closed-discounts)
 - [View flexible discounts applied to an Order](#view-flexible-discounts-applied-to-an-order)
 - [View flexible discounts applied to a subscription](#view-flexible-discounts-applied-to-a-subscription)
 - [Flexible discounts for 3YC customers](#)
@@ -79,6 +80,103 @@ Example for editing the end date of reusable flexible discounts:
 - The customer can then place another order using the same reusable flexible discount after the updated end date but before the `discountLockEndDate`, for example on 1 April 2026 at 13:45:00 UTC.
 
 **Note:** The time displayed in the Edit Reusable Flex Discounts UI tab, the Get Flexible Discounts API, and the Get Orders API is in UTC.
+
+### Create, view, and manage closed discounts
+
+Closed discounts are discounts that are not returned in the [Get Flexible Discount API](../../../docs/flex-discounts/apis.md#get-flexible-discounts) call. In the Sandbox environment, you can browse the available closed discount templates, create closed discount codes for your customers based on those templates, and manage those codes.
+
+You can manage closed discounts by navigating to the following tabs under  **Portal Resources > View Available Flex Discounts**:
+
+- **Closed Discount Templates:** Displays the available test templates that you can use to create closed discounts.
+- **Closed Discounts (Customer-Specific):** Displays the closed discounts you have created, with options to search, create, and delete them.
+
+#### View closed discount templates
+
+The **Closed Discount Templates** tab displays the closed discount templates available for closed discount creation. Select a market segment, such as COM, to view the templates available for that segment.
+
+![Closed discount templates](../image/closed-discount-templates.png)
+
+The list includes the following columns:
+
+- **Template ID:** The alphanumeric identifier for the template corresponding to each closed discount listed in the **Closed Discounts (Customer-Specific)** tab.
+- **Label:** A short description of the template. Example: `20% off - COM - Add Seats And Renewal New to 3YC, Rest of Term`.
+
+**Note:** Templates with **FAILURE** in the label are always-fail variants intended for validating failure of order scenarios.
+
+#### View closed discount codes
+
+The **Closed Discounts (Customer-Specific)** tab lists all closed discount codes created by your distributor, across all customers and statuses. The list includes the following columns:
+
+- **Closed Discount Code:** The unique identifier of the discount code to be used while placing an order.
+- **Customer ID:** The customer for whom the the closed discount code is valid.
+- **Closed Discount Label:** Label describing the closed discount to be used for the customer.
+- **Template ID:** The template ID corresponding to that label.
+- **Redemption Status:** Possible values are: `ACTIVE`, `EXPIRED`, or `REDEEMED`.
+- **Expiry Date:** The date and time when the closed discount code expires, displayed in UTC.
+
+![Closed discount codes](../image/closed-discount-codes.png)
+
+**Search and filter**
+
+You can search and filter closed discount codes by code, customer ID, label, template ID, or status. Searches are case-insensitive and support partial matches.
+
+#### Create a closed discount code
+
+To create a closed discount code:
+
+1. On the **Closed Discounts (Customer-Specific)** tab, select **Create Closed Discount Code**. The **Create Closed Discount Code** dialog opens.
+
+   ![Closed Discount Dialog](../image/closed-discount-dialog.png)
+
+2. Complete the following fields:
+
+   - Market Segment
+   - Customer ID
+   - Flex Discount Template
+   - Expiry Date and Expiry Time
+
+3. Select **Create**.
+
+4. After the code is created successfully, the **Closed Discount Code Created** dialog displays the generated discount code and the Customer ID, each with a copy button. Select **Done** to close the dialog.
+
+   ![Closed discount code created](../image/closed-discount-created.png)
+
+5. If an active code already exists for that customer and template, the same code is returned with an **Existing Code Returned** message, showing the existing active code and customer ID.
+
+   ![Existing code returned](../image/existing-code-returned.png)
+
+   ![Code reuse message](../image/closed-discount-reuse.png)
+
+You can use the generated code while placing an order using the [Create Order API](../../../docs/order-management/create-order.md). Depending on the renewal preferences, you can also use the code with the [Update Subscription API](../../../docs/subscription-management/update-subscription.md).
+
+**Note:** Customer specific closed discount codes are unique to a customer can only be used by the customer for whom they were generated.
+
+#### Delete a closed discount code
+
+To delete a closed discount code, select **Delete** for the corresponding code in the **Closed Discounts (Customer-Specific)** tab.
+
+You can delete closed discount codes in any redemption status, including `ACTIVE`, `REDEEMED`, and `EXPIRED`. Deleting unused or no longer needed codes helps free up available slots for creating new closed discount codes.
+
+**Note:** A distributor can have a maximum of 20 closed discount codes in the Sandbox environment at any given time, across all customers and redemption statuses. If you reach this limit, delete one or more existing closed discount codes before creating additional codes.
+
+#### Error messages
+
+When creating a closed discount code, you may encounter the following validation errors:
+
+- **Customer validation**
+  - `Customer {customerID} does not belong to this distributor.`
+  - `Customer {customerID} does not belong to the selected market segment: {marketSegment}.`
+- **Field validation**
+  - `Please select a valid flex discount template.`
+  - `Please enter a valid customer ID.`
+  - `Please select an expiry date.`
+- **Expiry date**
+  - `Expiry date must be a valid ISO-8601 format (YYYY-MM-DDThh:mm:ssZ).`
+  - `Expiry date must be in the future.`
+- **Cap reached**
+  - `Closed discount code creation limit reached (max 20). Please delete an existing code to create a new one.`
+- **Existing code (reuse)**
+  - `A closed discount code already exists for this customer and flex discount. See the existing active code and customer ID below.`
 
 ### View flexible discounts applied to an Order
 
