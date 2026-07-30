@@ -12,10 +12,9 @@ Watch Bridge Overview video:
 
 **Watch video [Sample video for testing]:**
 
-<video controls width="640">
-  <source src="../../../assets/localize_content.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<Embed slots="video" />
+
+[Trial video](../assets/localize_content.mp4)
 
 ## Who can use the Bridge
 
@@ -25,9 +24,9 @@ The Bridge is provisioned only for allowlisted distributor and Platinum partner 
 
 Use the following production URL to access the Bridge:
 
-| Environment | URL |
-|---|---|
-| Production | [https://bridge.marketplace.adobe.com/](https://bridge.marketplace.adobe.com/) |
+| Environment | URL                                                                            |
+|-------------|--------------------------------------------------------------------------------|
+| Production  | [https://bridge.marketplace.adobe.com/](https://bridge.marketplace.adobe.com/) |
 
 Sign-in uses your normal Adobe ID, or IMS, credentials, which are the same credentials used elsewhere in the VIP Marketplace ecosystem.
 
