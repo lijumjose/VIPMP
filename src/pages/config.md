@@ -7,7 +7,7 @@
         - [Recent releases](/docs/release-notes/index.md)
         - [Upcoming releases](/docs/release-notes/upcoming-releases.md)
     - [API Use Cases](/docs/index.md)
-    - [The Bridge](/bridge/index.md)
+    - [The Bridge](bridge/index.md)
     - [Sandbox User Guide](sandbox/index.md)
     - [AI Kit](https://github.com/adobe/adobe-commerce-partnerships-ai-kit)
 
