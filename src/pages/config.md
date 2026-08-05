@@ -6,8 +6,9 @@
     - Release Notes
         - [Recent releases](/docs/release-notes/index.md)
         - [Upcoming releases](/docs/release-notes/upcoming-releases.md)
-    - [Use Cases](/docs/index.md)
+    - [API Use Cases](/docs/index.md)
     - [Sandbox User Guide](sandbox/index.md)
+    - [AI Kit](https://github.com/adobe/adobe-commerce-partnerships-ai-kit)
 
 - subPages:
     - [Introduction](/docs/index.md)
@@ -86,6 +87,10 @@
         - [Resources and fields](docs/references/resources.md)
         - [Validations and regular expressions](docs/references/validations.md)
     - [Support](docs/support.md)
+    - [The Bridge](/bridge/index.md)
+        - [Overview](/bridge/index.md)
+        - [Getting started](/bridge/getting-started.md)
+        - [Supported features](/bridge/supported-features.md)
     - [Sandbox User Guide](sandbox/index.md)
         - [API collection and interaction basics](sandbox/api-collection.md)
         - [Manage resources](sandbox/sandbox-portal/index.md)
