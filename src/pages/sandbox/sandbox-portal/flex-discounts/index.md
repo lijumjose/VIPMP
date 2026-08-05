@@ -83,9 +83,9 @@ Example for editing the end date of reusable flexible discounts:
 
 ### Create, view, and manage closed discounts
 
-Closed discounts are discounts that are not returned in the [Get Flexible Discount API](../../../docs/flex-discounts/apis.md#get-flexible-discounts) call. In the Sandbox environment, you can browse the available closed discount templates, create closed discount codes for your customers based on those templates, and manage those codes.
+Closed discounts are discounts that are not returned by default in the [Get Flexible Discount API](../../../docs/flex-discounts/apis.md#get-flexible-discounts). However, you can retrieve a closed discount through the GET  Flexble Discount API by searching with the specific discount code.
 
-You can manage closed discounts by navigating to the following tabs under  **Portal Resources > View Available Flex Discounts**:
+In the Sandbox environment, you can browse the available closed discount templates, create closed discount codes for your customers based on those templates, and manage those codes by navigating to the following tabs under  **Portal Resources > View Available Flex Discounts**:
 
 - **Closed Discount Templates:** Displays the available test templates that you can use to create closed discounts.
 - **Closed Discounts (Customer-Specific):** Displays the closed discounts you have created, with options to search, create, and delete them.

@@ -6,8 +6,9 @@
     - Release Notes
         - [Recent releases](/docs/release-notes/index.md)
         - [Upcoming releases](/docs/release-notes/upcoming-releases.md)
-    - [Use Cases](/docs/index.md)
+    - [API Use Cases](/docs/index.md)
     - [Sandbox User Guide](sandbox/index.md)
+    - [AI Kit](https://github.com/adobe/adobe-commerce-partnerships-ai-kit)
 
 - subPages:
     - [Introduction](/docs/index.md)
