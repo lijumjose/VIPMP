@@ -91,6 +91,8 @@
     - [The Bridge](/bridge/index.md)
         - [Overview](/bridge/index.md)
         - [Getting started](/bridge/getting-started.md)
+          - [Assign Bridge roles to users](./bridge/assign-bridge-roles.md)
+          - [Sign in and select your distribution](./bridge/sign-in.md)
         - [Supported features](/bridge/supported-features.md)
     - [Sandbox User Guide](sandbox/index.md)
         - [API collection and interaction basics](sandbox/api-collection.md)
