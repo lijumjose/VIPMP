@@ -2,6 +2,12 @@
 
 Access to the Bridge is granted in two steps: Adobe enables your organization, and then your Admin Console administrator assigns each user a Bridge role. Adobe does not enable individual users by default.
 
+**Watch video on how to provision access:**
+
+<Embed slots="video" />
+
+[Trial video](../assets/provisioning-access.mp4)
+
 ## Part 1: Assign Bridge roles to users
 
 Bridge access is based on assigned roles. Only an Admin Console administrator for your organization can assign roles. Granting a user access is a two-step process:
