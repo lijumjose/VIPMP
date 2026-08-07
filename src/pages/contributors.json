@@ -1,7 +1,7 @@
 {
-  "total": 137,
+  "total": 139,
   "offset": 0,
-  "limit": 137,
+  "limit": 139,
   "data": [
     {
       "page": "/",
@@ -28,10 +28,24 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/160894503?v=4"
       ],
-      "lastUpdated": "7/30/2026"
+      "lastUpdated": "8/6/2026"
+    },
+    {
+      "page": "/bridge/assign-bridge-roles",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160894503?v=4"
+      ],
+      "lastUpdated": "8/6/2026"
     },
     {
       "page": "/bridge/getting-started",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160894503?v=4"
+      ],
+      "lastUpdated": "8/6/2026"
+    },
+    {
+      "page": "/bridge/sign-in",
       "avatars": [
         "https://avatars.githubusercontent.com/u/160894503?v=4"
       ],
@@ -42,7 +56,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/160894503?v=4"
       ],
-      "lastUpdated": "7/30/2026"
+      "lastUpdated": "8/6/2026"
     },
     {
       "page": "/config",
@@ -50,7 +64,7 @@
         "https://avatars.githubusercontent.com/u/160894503?v=4",
         "https://avatars.githubusercontent.com/u/115529590?v=4"
       ],
-      "lastUpdated": "7/30/2026"
+      "lastUpdated": "8/6/2026"
     },
     {
       "page": "/docs/",
