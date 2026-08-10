@@ -5,6 +5,33 @@
 
 **Important:** This section lists only features that are currently available in production. For planned enhancements and upcoming changes, see [Upcoming releases](./upcoming-releases.md).
 
+## The Bridge
+
+### August 10, 2026
+
+#### The Bridge is now available
+
+The Bridge, a partner-facing marketplace UI built directly on top of the VIP Marketplace Commerce Partner APIs (CPAPI), is now  available to distributors and platinum resellers.
+
+The Bridge gives partners a direct, browser-based interface to VIP Marketplace capabilities. It is a complementary, ready-to-use UI that gives partners immediate access to new VIP Marketplace capabilities as they are released and serves as a fail-safe to help ensure revenue continuity if a partner's platform integration is temporarily unavailable.
+
+**What's included**
+
+- Reseller and customer management, including searching and viewing account details.
+- Customer insights, including active products, purchase history, and personalized recommendations.
+- Discounts and programs, including flexible discounts and Three-Year Commit (3YC) enrollment. 3YC enrollment is available only to platinum resellers and is not available to distributors.
+- Product catalog and ordering, including browsing pricelists, placing new orders, and returns.
+- Subscription management, including adding licenses, mid-term upgrades, and auto-renewal preferences.
+- Renewals, including early and late renewals.
+
+The Bridge includes the most important capabilities, including the latest growth features such as Anytime Upgrades, Recommendations, and Flexible Discounts. A few lower-priority features are not available at launch; see [Supported features](../../bridge/supported-features.md) for details.
+
+**Access**
+
+Adobe grants access at the organization level. Once enabled, your organization's system administrators provision access for individual users and assign each user one of two Bridge roles: **View-only** or **Full Access**. This gives partners granular control over how the Bridge is used across their users and teams.
+
+For more information, see [The Bridge](../../bridge/index.md), [Getting started with the Bridge](../../bridge/getting-started.md), and [Supported features](../../bridge/supported-features.md).
+
 ## AI kit
 
 ### June 26, 2026

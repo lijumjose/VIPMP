@@ -29,7 +29,7 @@ Only users assigned the **Bridge Admin** or **Bridge Viewer** role can sign in t
 
 1. Sign in to [adminconsole.adobe.com](https://adminconsole.adobe.com) using the administrator account provided for your distribution, and select the correct account or organization.
 
-2. From the top navigation bar, select **Roles**.
+2. From the top navigation bar, select **Users**.
 
    ![alt text](image-13.png)
 
