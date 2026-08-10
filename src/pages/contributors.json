@@ -1,7 +1,7 @@
 {
-  "total": 134,
+  "total": 139,
   "offset": 0,
-  "limit": 134,
+  "limit": 139,
   "data": [
     {
       "page": "/",
@@ -24,12 +24,47 @@
       "lastUpdated": "2/17/2025"
     },
     {
+      "page": "/bridge/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160894503?v=4"
+      ],
+      "lastUpdated": "8/6/2026"
+    },
+    {
+      "page": "/bridge/assign-bridge-roles",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160894503?v=4"
+      ],
+      "lastUpdated": "8/10/2026"
+    },
+    {
+      "page": "/bridge/getting-started",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160894503?v=4"
+      ],
+      "lastUpdated": "8/6/2026"
+    },
+    {
+      "page": "/bridge/sign-in",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160894503?v=4"
+      ],
+      "lastUpdated": "8/6/2026"
+    },
+    {
+      "page": "/bridge/supported-features",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/160894503?v=4"
+      ],
+      "lastUpdated": "8/6/2026"
+    },
+    {
       "page": "/config",
       "avatars": [
         "https://avatars.githubusercontent.com/u/160894503?v=4",
         "https://avatars.githubusercontent.com/u/115529590?v=4"
       ],
-      "lastUpdated": "8/5/2026"
+      "lastUpdated": "8/6/2026"
     },
     {
       "page": "/docs/",
@@ -443,7 +478,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/160894503?v=4"
       ],
-      "lastUpdated": "7/28/2026"
+      "lastUpdated": "8/10/2026"
     },
     {
       "page": "/docs/release-notes/fy24",
