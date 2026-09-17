@@ -10,30 +10,30 @@ Ask questions about a specific customer's account, discount programs, orders, an
 
 **Account and profile**
 
-- "Show me the account details for customer {customerId}."
-- "What discount levels are on {customerId}'s account?"
+- "Show me the account details for customer `{customerId}`."
+- "What discount levels are on `{customerId}`'s account?"
 
 **Discount programs**
 
-- "Is {customerId} on 3YC, and what tier?"
-- "Does {customerId} have a Linked Membership? Who is the owner?"
-- "What volume discount tier is {customerId} on, and what would move them up?"
+- "Is `{customerId}` on 3YC, and what tier?"
+- "Does `{customerId}` have a Linked Membership? Who is the owner?"
+- "What volume discount tier is `{customerId}` on, and what would move them up?"
 
 **3YC status and compliance**
 
-- "Is customer {customerId} 3YC compliant?"
-- "Give me the 3YC summary for {customerId}."
-- "What is the last date to accept the 3YC clause for {customerId}?"
+- "Is customer `{customerId}` 3YC compliant?"
+- "Give me the 3YC summary for `{customerId}`."
+- "What is the last date to accept the 3YC clause for `{customerId}`?"
 
 **Orders**
 
-- "Show me {customerId}'s order history."
-- "Show me the details for order {orderId}."
-- "Why did order {orderId} fail? Can it still be returned?"
+- "Show me `{customerId}`'s order history."
+- "Show me the details for order `{orderId}`."
+- "Why did order `{orderId}` fail? Can it still be returned?"
 
 **Subscriptions**
 
-- "Show me all subscriptions for {customerId}."
+- "Show me all subscriptions for `{customerId}`."
 - "Why is this subscription not auto-renewing?"
 
 **What to expect:** Responses use live data from the system of record rather than cached or estimated values. Marketplace Assistant cannot reconstruct historical changes, such as when or why a value changed, because audit history is unavailable. If required data cannot be verified, Marketplace Assistant explicitly states this instead of inferring a compliance status or discount level.
@@ -44,12 +44,12 @@ Ask about pricing, SKU discovery, and discount eligibility, including Three-Year
 
 **Example prompts**
 
-- "What's the price for SKU {skuId} in Germany, commercial segment?"
+- "What's the price for SKU `{skuId}` in Germany, commercial segment?"
 - "How much does Creative Cloud cost in Canada?"
-- "Why is this customer's discount level {level}?"
-- "What is {customerId}'s 3YC lock-in price for Acrobat Pro?"
-- "How does this customer get to discount level {level}?"
-- "How close is {customerId} to the next discount level, and what would get them there?"
+- "Why is this customer's discount level `{level}`?"
+- "What is `{customerId}`'s 3YC lock-in price for Acrobat Pro?"
+- "How does this customer get to discount level `{level}`?"
+- "How close is `{customerId}` to the next discount level, and what would get them there?"
 - "Which SKUs are available in France?"
 - "What SKUs are available for Adobe Sign?"
 
@@ -70,12 +70,12 @@ Ask about upcoming renewals, auto-renewal status, and why a renewal did not comp
 
 **Example prompts**
 
-- "When is the renewal happening for customer {customerId}?"
-- "How much will customer {customerId} be charged at renewal?"
-- "Give me a line-by-line breakdown of the renewal for {customerId}, including product name, quantity, and price."
-- "Which subscriptions for {customerId} are not set to auto-renew?"
-- "Will the renewal go through for customer {customerId}?"
-- "Customer {customerId} did not renew last cycle. Why?"
+- "When is the renewal happening for customer `{customerId}`?"
+- "How much will customer `{customerId}` be charged at renewal?"
+- "Give me a line-by-line breakdown of the renewal for `{customerId}`, including product name, quantity, and price."
+- "Which subscriptions for `{customerId}` are not set to auto-renew?"
+- "Will the renewal go through for customer `{customerId}`?"
+- "Customer `{customerId}` did not renew last cycle. Why?"
 
 **What to expect:** Marketplace Assistant returns a clear status for each renewal question, such as *On track*, *At risk*, or *Not renewed*, along with a product-level breakdown and, when applicable, the specific reason a renewal did not proceed. When action is required, the response identifies whether the next step must be completed by your organization or Adobe and provides specific dates rather than relative time references.
 
