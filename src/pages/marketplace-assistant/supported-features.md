@@ -1,3 +1,8 @@
+---
+title: Supported features
+description: Learn which capabilities are currently supported by Marketplace Assistant.
+---
+
 # Supported features
 
 Marketplace Assistant currently supports four capability areas: customer data, catalog and price list, renewals, and VIP Marketplace product knowledge. Responses are generated using live data from Commerce Partner APIs or content from Adobe documentation and knowledge bases. Each response identifies its source so you can verify the information.
@@ -95,10 +100,3 @@ The quality and depth of these responses depend on the underlying documentation.
 ## Upcoming capabilities
 
 Adobe adds new capabilities to Marketplace Assistant on an ongoing basis, typically every few weeks. Planned additions include flexible discounts and early renewals. This page is updated as new capabilities become available.
-
-## Related
-
-Use the following resources for additional information:
-
-- [Overview](./index.md)
-- [Getting started](./getting-started.md)
